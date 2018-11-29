@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Pintu</title>
+<link rel="stylesheet" type="text/css" href="Pintu.css">
+<script type="text/javascript" src="Pintu.js"></script>
+</head>
+<body>
+<!--最外面的DIV，用来包含里面的结构-->
+<div id="container">
+    <!--游戏区，也就是大DIV方块-->
+    <div id="game">
+        <!--小DIV，也就是8个小方块。当点击的时候执行move()函数，参数是显示的编号，这样我们就知道点击了那个方块-->
+        <div id="d1" onclick="move(1)">1</div>         
+        <div id="d2" onclick="move(2)">2</div>
+        <div id="d3" onclick="move(3)">3</div>
+        <div id="d4" onclick="move(4)">4</div>
+        <div id="d5" onclick="move(5)">5</div>
+        <div id="d6" onclick="move(6)">6</div>
+        <div id="d7" onclick="move(7)">7</div>
+        <div id="d8" onclick="move(8)">8</div>
+    </div>
+    <!--游戏控制区-->
+    <div id="control">
+        <!--显示游戏时间区域-->
+        <p>
+            <rowspan id="timeText">总用时</rowspan>
+            <rowspan id="timer"></rowspan>
+        </p>
+        <!--显示控制按钮区域-->
+        <p>
+            <rowspan id="start" onclick="start()">开始</rowspan>
+            <rowspan id="reset" onclick="reset()">重来</rowspan>
+        </p>
+    </div>
+</div>
+</body>
+</html>
