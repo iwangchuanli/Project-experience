@@ -13,6 +13,7 @@
 - 雷霆战机
 - 汤姆猫TomCat
 - java版计算器
+- java版五子棋
 
 ### python项目
 
