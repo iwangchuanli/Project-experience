@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans 
+	xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo" 
+	
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+						http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+	
+	<http pattern="/*.html" security="none"/>
+	<http pattern="/css/**" security="none"/>
+	<http pattern="/img/**" security="none"/>
+	<http pattern="/js/**" security="none"/>
+	<http pattern="/plugins/**" security="none"/>
+	<http pattern="/seller/add.do" security="none"/>
+	
+	<!-- use-expressions:设置是否启动SpEL表达式，默认值是true。 -->
+	<http use-expressions="false">
+		<!-- 
+			配置SpringSecurity的拦截路径（拦截规则） 
+			* pattern:配置拦截规则。   /* 代表的是根路径下的所有资源（不包含子路径） /**代表的是根路径下所有的资源（包含子路径）
+			* access:设置角色  角色命名 ROLE_角色名称  如：  ROLE_USER  
+		-->
+		<intercept-url pattern="/**" access="ROLE_SELLER"/>
+		
+		<!-- 
+		开启表单验证 
+			username-parameter="username" 
+			password-parameter="password" 
+			login-page			:登录页面名称  以  / 开始
+			default-target-url	:登录成功后跳转的页面
+			login-processing-url:提交的路径的设置 默认值"/login" 可以修改
+		-->
+		<form-login login-page="/shoplogin.html" default-target-url="/admin/index.html" always-use-default-target="true" authentication-failure-url="/shoplogin.html"/>
+		
+		<!-- 不使用csrf的校验 -->
+		<csrf disabled="true"/>
+		
+		<!-- 配置框架页面不拦截 -->
+		<headers>
+			<frame-options policy="SAMEORIGIN"/>
+		</headers>
+		
+		<!-- 注销的配置 -->
+		<logout logout-url="/logout" logout-success-url="/shoplogin.html" />
+	</http>
+	
+	<!-- 配置认证管理器 -->
+	<authentication-manager>
+		<!-- 认证的提供者 -->
+		<authentication-provider user-service-ref="userDetailsService">
+			<!-- <user-service>
+				<user name="admin" password="123456" authorities="ROLE_ADMIN"/>
+				<user name="wc" password="123456" authorities="ROLE_ADMIN"/>
+			</user-service> -->
+			<password-encoder ref="passwordEncoder"/>
+		</authentication-provider>
+	</authentication-manager>
+		
+		
+	<!-- 配置自定义的认证类 -->
+	<beans:bean id="userDetailsService" class="com.pinyougou.service.UserDetailsServiceImpl">
+		<beans:property name="sellerService" ref="sellerService"/>
+	</beans:bean>
+	
+	<!-- 引用dubbo 服务 -->
+	<dubbo:application name="pinyougou-shop-web" />
+	<dubbo:registry address="zookeeper://192.168.25.135:2181"/>
+<!-- 	<dubbo:annotation package="com.pinyougou.shop.controller" />  	 -->
+	<dubbo:reference id="sellerService" interface="com.pinyougou.sellergoods.service.SellerService"/>
+
+	<beans:bean id="passwordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
+</beans:beans>
