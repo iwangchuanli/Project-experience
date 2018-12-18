@@ -1,0 +1,6 @@
+0:0:0:0:0:0:0:1 - - [25/Apr/2018:15:24:07 +0800] "GET /js/cart.js?v=20160713 HTTP/1.1" 304 - http-bio-8086-exec-8 842
+0:0:0:0:0:0:0:1 - - [25/Apr/2018:15:24:08 +0800] "GET /item/1231490.html HTTP/1.1" 200 216332 http-bio-8086-exec-7 13450
+0:0:0:0:0:0:0:1 - - [25/Apr/2018:15:24:10 +0800] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-8086-exec-10 1
+0:0:0:0:0:0:0:1 - - [25/Apr/2018:15:24:28 +0800] "GET /html/web/_public/_ajaxStaticMenu.html?v20140430 HTTP/1.1" 404 949 http-bio-8086-exec-4 4
+0:0:0:0:0:0:0:1 - - [25/Apr/2018:15:24:29 +0800] "GET /html/web/_public/_ajaxStaticMenu.html?v20140430 HTTP/1.1" 404 949 http-bio-8086-exec-4 3
+0:0:0:0:0:0:0:1 - - [25/Apr/2018:15:24:31 +0800] "GET /food/6-0-0-0-0-2-0-0-0-0-0.html HTTP/1.1" 404 949 http-bio-8086-exec-4 1
