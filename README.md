@@ -12,7 +12,7 @@
 - [C/S图书管理系统]()
 - [雷霆战机]()
 - [汤姆猫TomCat]()
-- [易立方商城]()
+- [易立方商城](./Enterprise_mall)
 <br><img src="_img/1633d29bdd56246f.png" width="200" height="200">
 
 #### python
@@ -35,8 +35,8 @@
 
 - [java编译器]()
 <br><img src="_img/javaide.png" width="200" height="200">
-- [java实现邮件工具]()
-- [java版计算器]()
+- [java实现邮件工具](./EMailUtils)
+- [java版计算器](./Calculator)
 - [java版五子棋]()
 <br><img src="_img/calculator.PNG" width="200" height="200">
 - [java爬虫项目]()
