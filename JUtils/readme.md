@@ -22,13 +22,15 @@
 
 | 返回值 | 方法体 | 描述 |
 | :------:| :------ | :------ |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
+| int[] | converCharToInt(char[]) | 将字符数组转为整型数组 |
+| String | getCheckCodeBySum(int) | 将和值与11取模得到余数进行校验码判断 |
+| int | getPowerSum(int[]) | 将身份证的每位和对应位的加权因子相乘之后，再得到和值 |
+| int | getUserSex(String) | 身份证信息中代表性别的数值 |
+| boolean | is18Idcard(String) | 18位身份证号码的基本数字和位数验校 |
+| boolean | isDigital(String) | 数字验证 |
+| boolean | isValidate18Idcard(String) | 判断18位身份证的合法性 |
+| boolean | isValidatedAllIdcard(String) | 验证身份证是否合法 |
+
+### 
 
 
