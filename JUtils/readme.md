@@ -1,6 +1,5 @@
 ### 转换工具类 com.jUtils.base.ConvertUtils
 
-|  |  |  |
 | 返回值 | 方法体 | 描述 |
 | :------:| :------ | :------ |
 | Date | dateToSqlDate(Date) | util date 转换为 sqldate |
@@ -16,7 +15,7 @@
 | int | strToInt(String, int) | 字符串转换为int |
 | long | strToLong(String, long) | String转换为long |
 | String | strToStr(String, String) | 如果字符串为空则使用默认字符串 |
-
+|  |  |  |
 
 ### 身份证处理类 com.jUtils.base.IdcardValidator
 
