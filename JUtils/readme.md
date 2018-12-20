@@ -1,10 +1,10 @@
 ### 转换工具类 com.jUtils.base.ConvertUtils
 
+|  |  |  |
 | 返回值 | 方法体 | 描述 |
 | :------:| :------ | :------ |
 | Date | dateToSqlDate(Date) | util date 转换为 sqldate |
 | Timestamp | dateToSqlTimestamp(Date) | date 转换为 timestamp |
-|  |  |  |
 | String | dateToStr(Date, String) | 日期转换为字符串 |
 | String | dateToStr(Date, String, String) | 日期转换为指定格式的字符串 |
 | java.util.Date | qlTimestampToDate(Timestamp) | timestamp 转换为date |
@@ -31,6 +31,14 @@
 | boolean | isValidate18Idcard(String) | 判断18位身份证的合法性 |
 | boolean | isValidatedAllIdcard(String) | 验证身份证是否合法 |
 
-### 
+### com.jUtils.base.MoneyUtils
 
-
+| 返回值 | 方法体 | 描述 |
+| :------:| :------ | :------ |
+| String | accountantMoney(BigDecimal) | 将人民币转换为会计格式金额(xxxx,xxxx,xxxx.xx),保留两位小数 |
+| String | accountantMoney(BigDecimal, int, double) | 将人民币转换为会计格式金额(xxxx,xxxx,xxxx.xx) |
+| String | formatMoney(BigDecimal, int, double) | 格式化金额，显示为xxx万元，xxx百万,xxx亿 |
+| String | getAccountantMoney(BigDecimal, int, double) | 获取会计格式的人民币(格式为:xxxx,xxxx,xxxx.xx) |
+| String | getFormatMoney(BigDecimal, int, double) | 格式化金额，显示为xxx万元，xxx百万,xxx亿 |
+| String | number2CNMontray(BigDecimal) | 人民币转换为大写,格式为：x万x千x百x十x元x角x分 |
+| String | number2CNMontray(String) | 人民币转换为大写,格式为：x万x千x百x十x元x角x分 |
