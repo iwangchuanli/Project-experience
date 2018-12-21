@@ -3,10 +3,14 @@
 
 ## 项目整理
 
+|  | PROJECTS |
+| ------ | ------|
+| 完整项目 | > [B/S分布式电商项目-品优购](./pinyougou-parent) |
+
 
 #### 整体项目
 
-- [B/S分布式电商项目-品优购](./pinyougou-parent)
+- 
 - [java学生管理系统](./TheStudentSystem)
 <br><img src="_img/frame.png" width="200" height="200">
 - [java服装销售系统](./FZXS)
@@ -18,8 +22,8 @@
 
 #### python
 
-- [图片转字符画](./PythonDrawAscii)
-- [Python爬虫项目](./PythonCrawler)
+> [图片转字符画](./PythonDrawAscii)
+> [Python爬虫项目](./PythonCrawler)
 <br><img src="_img/book.png" width="200" height="200">
 <br><img src="_img/bg.png" width="200" height="200">
 <br><img src="_img/emoji.png" width="200" height="200">
