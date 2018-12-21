@@ -3,11 +3,11 @@
 <br>
 <div align="center">
 	<img src="_img/touxiang.jpg" width="100" height="100">
-<br>
-	<a href="#"><img src="_markdown/size-phaser-craft.min.js.svg"></a>
-	<a href="#"><img src="_markdown/issues.min.js.svg"></a>
+<hr><br>
+	<a href="#"><img src="_markdown/size-file.min.js.svg"></a>&nbsp;&nbsp;
+	<a href="#"><img src="_markdown/issues.min.js.svg"></a>&nbsp;&nbsp;
 	<a href="#"><img src="_markdown/license.min.js.svg"></a>
-<br>
+<br><br>
 	<a href="#"><img src="_markdown/java.min.js.svg"></a>
 	<a href="#"><img src="_markdown/python.min.js.svg"></a>
 	<a href="#"><img src="_markdown/c.min.js.svg"></a>
