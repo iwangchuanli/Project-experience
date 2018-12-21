@@ -26,7 +26,7 @@
 	</thead>
 </table>
 -->
-
+<div>
 	<table>
 		<thead>
 			<tr>
@@ -184,6 +184,7 @@
 		</tbody>
 	</table>
 <hr>
+<div>
 <br>
 
 | :floppy_disk: | :computer:PROJECTS | :pencil2: |
