@@ -29,7 +29,7 @@
 
 
 | :floppy_disk: | :computer:PROJECTS | :pencil2: |
-| :------: | :------ | :------|
+| :------: | :------: | :------:|
 | 1 | [B/S分布式电商项目-品优购](./pinyougou-parent) | 基于B/S的分布式电商项目，实现了B2B2C的功能。技术栈：Spring+SpringMVC+MyBatis+solr+Redis+Maven+...,实现的功能模块有运营商管理、商品管理、广告管理、购物车管理、页面静态化、搜索管理、秒杀模块等。。。 |
 | 2 | [java服装销售系统](./FZXS) | 基于C/S设计的服装销售系统，使用简单的MVC实现功能，具有仓库管理、订单管理、销售管理... |
 | 3 | [java学生管理系统](./TheStudentSystem) | 基于C/S设计开发的学生管理系统，实现了教师和学生的用户管理、成绩管理、课程管理、选课服务。。。 |
@@ -59,3 +59,24 @@
 | 28 |  |  |
 | 29 |  |  |
 | 30 |  |  |
+
+
+<table>
+<thead>
+<tr>
+<th align="center" width="50"><g-emoji class="g-emoji" alias="floppy_disk" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4be.png">💾</g-emoji></th>
+<th align="center" width="220"><g-emoji class="g-emoji" alias="computer" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png">💻</g-emoji>PROJECTS</th>
+<th align="center" width="630"><g-emoji class="g-emoji" alias="pencil2" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/270f.png">✏️</g-emoji></th>
+</tr>
+</thead>
+<tbody>
+
+
+<tr>
+<td>1212</td>
+<td>1212</td>
+<td>1212</td>
+</tr>
+
+</tbody>
+</table>
