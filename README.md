@@ -22,6 +22,7 @@
 			<th>:computer:PROJECTS</th>
 			<th>:pencil2:</th>
 		</tr>
+	</thead>
 
 | 1 | [B/S分布式电商项目-品优购](./pinyougou-parent) | 基于B/S的分布式电商项目，实现了B2B2C的功能。技术栈：Spring+SpringMVC+MyBatis+solr+Redis+Maven+...,实现的功能模块有运营商管理、商品管理、广告管理、购物车管理、页面静态化、搜索管理、秒杀模块等。。。 |
 | 2 | [java服装销售系统](./FZXS) | 基于C/S设计的服装销售系统，使用简单的MVC实现功能，具有仓库管理、订单管理、销售管理... |
@@ -54,7 +55,7 @@
 | 30 |  |  |
 
 
-	</thead>
+	
 </table>
 
 
