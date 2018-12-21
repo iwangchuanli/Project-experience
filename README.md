@@ -1,11 +1,11 @@
-### 项目整理集合 <img src="_img/ship.ico">
+### 项目整理集合 <img src="_img/Ship.ico">
 <br>
 <br>
 <div align="center">
 	<img src="_img/touxiang.jpg" width="100" height="100">
 </div>
 <br>
-> 
+
 | :computer:PROJECTS | :pencil2: |
 | :------: | :------|
 | [B/S分布式电商项目-品优购](./pinyougou-parent) |  |
