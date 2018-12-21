@@ -3,8 +3,16 @@
 <br>
 <div align="center">
 	<img src="_img/touxiang.jpg" width="100" height="100">
-	<img src="_markdown/size-phaser-craft.min.js.svg">
-
+<br>
+	<a href="#"><img src="_markdown/size-phaser-craft.min.js.svg"></a>
+	<a href="#"><img src="_markdown/issues.min.js.svg"></a>
+	<a href="#"><img src="_markdown/license.min.js.svg"></a>
+<br>
+	<a href="#"><img src="_markdown/java.min.js.svg"></a>
+	<a href="#"><img src="_markdown/python.min.js.svg"></a>
+	<a href="#"><img src="_markdown/c.min.js.svg"></a>
+	<a href="#"><img src="_markdown/javascript.min.js.svg"></a>
+	<a href="#"><img src="_markdown/html.min.js.svg"></a>
 </div>
 <br>
 
