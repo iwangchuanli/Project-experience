@@ -1,35 +1,26 @@
-<img src="_img/ship.icon"><h3>项目整理集合</h3>
+### 项目整理集合 <img src="_img/ship.ico">
 <br>
 <br>
 <div align="center">
 	<img src="_img/touxiang.jpg" width="100" height="100">
 </div>
 <br>
+> 
+| :computer:PROJECTS | :pencil2: |
+| :------: | :------|
+| [B/S分布式电商项目-品优购](./pinyougou-parent) |  |
+| [java服装销售系统](./FZXS) |  |
+| [java学生管理系统](./TheStudentSystem) |  |
+| [C/S图书管理系统](./LibraryManager) |  |
+| [雷霆战机](./LeiTingZhanJi) |  |
+| [汤姆猫TomCat](./MyTomCat) |  |
+| [易立方商城](./Enterprise_mall) |  |
+| [图片转字符画](./PythonDrawAscii) |  |
+| [Python爬虫项目](./PythonCrawler) |  |
+|  |  |
+|  |  |
+|  |  |
 
-## 项目整理
-
-| :computer: | PROJECTS |
-| ------ | ------|
-| 完整项目 | [B/S分布式电商项目-品优购](./pinyougou-parent) <br><hr> [java学生管理系统](./TheStudentSystem) |
-
-
-#### 整体项目 :computer:
-
-- 
-- 
-<br><img src="_img/frame.png" width="200" height="200">
-- [java服装销售系统](./FZXS)
-- [C/S图书管理系统](./LibraryManager)
-- [雷霆战机](./LeiTingZhanJi)
-- [汤姆猫TomCat](./MyTomCat)
-- [易立方商城](./Enterprise_mall)
-<br><img src="_img/1633d29bdd56246f.png" width="200" height="200">
-
-#### python
-
-> [图片转字符画](./PythonDrawAscii)
-
-> [Python爬虫项目](./PythonCrawler)
 
 
 <br><img src="_img/book.png" width="200" height="200">
