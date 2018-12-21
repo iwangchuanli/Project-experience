@@ -7,7 +7,7 @@
 <br>
 
 | :floppy_disk: | :computer:PROJECTS | :pencil2: |
-| ：------： | :------: | :------|
+| :------: | :------: | :------|
 | 1 | [B/S分布式电商项目-品优购](./pinyougou-parent) | 基于B/S的分布式电商项目，实现了B2B2C的功能。技术栈：Spring+SpringMVC+MyBatis+solr+Redis+... |
 | 2 | [java服装销售系统](./FZXS) | 基于C/S设计的服装销售系统，具有仓库管理、订单管理、销售管理... |
 | 3 | [java学生管理系统](./TheStudentSystem) |  |
