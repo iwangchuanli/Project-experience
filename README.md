@@ -3,6 +3,8 @@
 <br>
 <div align="center">
 	<img src="_img/touxiang.jpg" width="100" height="100">
+	<img src="_markdown/size-phaser-craft.min.js.svg">
+
 </div>
 <br>
 
@@ -20,14 +22,20 @@
 | 10 | [C语言版五子棋]() |  |
 | 11 | [贪吃蛇]() |  |
 | 12 | [俄罗斯方块]() |  |
-|  | [词法分析]() |  |
-|  | [回溯法]() |  |
-|  | [java编译器](./JavaIDE) |  |
-|  | [java实现邮件工具](./EMailUtils) |  |
-|  | [java版计算器](./Calculator) |  |
-|  | [java版五子棋](./Gomoku) |  |
-|  | [java爬虫项目](./JavaCrawler) |  |
-|  | [获取本机MAC地址]() |  |
-|  | [html实现拼图游戏](./Html_Pintu) |  |
-|  | [Quark网络交流平台](./OnlineFriend) |  |
-
+| 13 | [词法分析]() |  |
+| 15 | [回溯法]() |  |
+| 16 | [java编译器](./JavaIDE) |  |
+| 17 | [java实现邮件工具](./EMailUtils) |  |
+| 18 | [java版计算器](./Calculator) |  |
+| 19 | [java版五子棋](./Gomoku) |  |
+| 20 | [java爬虫项目](./JavaCrawler) |  |
+| 21 | [获取本机MAC地址]() |  |
+| 22 | [html实现拼图游戏](./Html_Pintu) |  |
+| 23 | [Quark网络交流平台](./OnlineFriend) |  |
+| 24 |  |  |
+| 25 |  |  |
+| 26 |  |  |
+| 27 |  |  |
+| 28 |  |  |
+| 29 |  |  |
+| 30 |  |  |
