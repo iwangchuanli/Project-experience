@@ -15,17 +15,7 @@
 	<a href="#"><img src="_markdown/html.min.js.svg"></a>
 </div>
 <br>
-<!--
-<table>
-	<thead>
-		<tr>
-			<th>:floppy_disk:</th>
-			<th>:computer:PROJECTS</th>
-			<th>:pencil2:</th>
-		</tr>
-	</thead>
-</table>
--->
+
 <div>
 	<table>
 		<thead>
