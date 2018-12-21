@@ -12,58 +12,48 @@ import java.util.zip.ZipOutputStream;
 /**
  * 文件压缩、解压工具类。文件压缩格式为zip
  *
- * @Author:chenssy
- * @date:2016年5月24日 下午9:16:01
  */
 public class ZipUitls {
 	/** 文件后缀名 */
 	private static final String ZIP_FILE_SUFFIX = ".zip";
-	
+
 	/**
 	 * 压缩文件
 	 *
-	 * @author:chenssy
-	 * @date : 2016年5月24日 下午9:56:36
-	 *
-	 * @param resourcePath
-	 * 						源文件
-	 * @param targetPath
-	 * 						目的文件,保存文件路径
+	 * @param resourcePath 源文件
+	 * @param targetPath   目的文件,保存文件路径
 	 */
-	public static void zipFile(String resourcePath,String targetPath){
-		File resourcesFile = new File(resourcePath); 
+	public static void zipFile(String resourcePath, String targetPath) {
+		File resourcesFile = new File(resourcePath);
 		File targetFile = new File(targetPath);
-		
-		//目的文件不存在，则新建
-		if(!targetFile.exists()){
+
+		// 目的文件不存在，则新建
+		if (!targetFile.exists()) {
 			targetFile.mkdirs();
 		}
-		//文件名
+		// 文件名
 		String targetName = resourcesFile.getName() + ZIP_FILE_SUFFIX;
-		
+
 		ZipOutputStream out = null;
 		try {
-			FileOutputStream outputStream = new FileOutputStream(targetPath+"//"+targetName);
+			FileOutputStream outputStream = new FileOutputStream(targetPath + "//" + targetName);
 			out = new ZipOutputStream(new BufferedOutputStream(outputStream));
 
 			compressedFile(out, resourcesFile, "");
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
-		}finally{
+		} finally {
 			if (out != null) {
 				try {
 					out.close();
 				} catch (IOException e) {
 					e.printStackTrace();
-				} 
+				}
 			}
 		}
 	}
 
 	/**
-	 *
-	 * @author:chenssy
-	 * @date : 2016年5月24日 下午10:00:22
 	 *
 	 * @param out
 	 * @param resourcesFile
@@ -72,7 +62,7 @@ public class ZipUitls {
 	private static void compressedFile(ZipOutputStream out, File file, String dir) {
 		FileInputStream fis = null;
 		try {
-			if (file.isDirectory()) {	//文件夹
+			if (file.isDirectory()) { // 文件夹
 				// 得到文件列表信息
 				File[] files = file.listFiles();
 				// 将文件夹添加到下一级打包目录
@@ -84,7 +74,7 @@ public class ZipUitls {
 				for (int i = 0; i < files.length; i++) {
 					compressedFile(out, files[i], dir + files[i].getName()); // 递归处理
 				}
-			} else { 	//如果是文件则打包处理
+			} else { // 如果是文件则打包处理
 				fis = new FileInputStream(file);
 
 				out.putNextEntry(new ZipEntry(dir));
@@ -100,8 +90,8 @@ public class ZipUitls {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
-		} finally{
-			if(fis != null){
+		} finally {
+			if (fis != null) {
 				try {
 					fis.close();
 				} catch (IOException e) {

@@ -137,8 +137,6 @@ public class MoneyUtils {
 	/**
 	 * 将人民币转换为会计格式金额(xxxx,xxxx,xxxx.xx),保留两位小数
 	 * 
-	 * @autor:chenssy
-	 * @date:2014年8月7日
 	 *
 	 * @param money 待转换的金额
 	 * @return
