@@ -1,19 +1,19 @@
-:computer:<h2>项目整理集合</h2>
+<img src="_img/ship.icon"><h3>项目整理集合</h3>
 <br>
 <br>
 <div align="center">
-	<img src="_img/icon.jpg" width="200" height="200">
+	<img src="_img/touxiang.jpg" width="100" height="100">
 </div>
 <br>
 
 ## 项目整理
 
-|  | PROJECTS |
+| :computer: | PROJECTS |
 | ------ | ------|
 | 完整项目 | [B/S分布式电商项目-品优购](./pinyougou-parent) <br><hr> [java学生管理系统](./TheStudentSystem) |
 
 
-#### 整体项目
+#### 整体项目 :computer:
 
 - 
 - 
