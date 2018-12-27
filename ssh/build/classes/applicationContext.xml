@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="    
+            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd  
+            http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd  
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+            http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.2.xsd  
+            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
+
+	<!--Action Bean -->
+	<bean id="ListAction" class="ssh.action.ListAction"
+		scope="prototype">
+		<property name="LS" ref="ListService" />
+	</bean>
+	<bean id="RegisterAction" class="ssh.action.RegisterAction"
+		scope="prototype">
+		<property name="RS" ref="RegisterService" />
+	</bean>
+	<bean id="LoadAction" class="ssh.action.LoadAction"
+		scope="prototype">
+		<property name="LoadSer" ref="LoadService" />
+	</bean>
+
+	<!-- 服务Bean -->
+	<bean id="ListService" class="ssh.service.ListServiceImpl"
+		scope="prototype">
+		<property name="UD" ref="UserDao" />
+	</bean>
+	<bean id="RegisterService" class="ssh.service.RegisterServiceImpl"
+		scope="prototype">
+		<property name="UD" ref="UserDao" />
+	</bean>
+	<bean id="LoadService" class="ssh.service.LoadServiceImpl"
+		scope="prototype">
+		<property name="UD" ref="UserDao" />
+	</bean>
+
+	<!-- Dao 数据处理 -->
+	<bean id="UserDao" class="ssh.dao.UserDaoImpl" scope="prototype">
+		<!-- 把sessionFactory 注入给IndexDao -->
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- 添加sessionFactory bane 该类是Spring提供的 -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean"
+		scope="prototype">
+		<!-- 注入Hibernate 配置文件路径,前面要加上 classpath: -->
+		<property name="configLocation"
+			value="classpath:hibernate.cfg.xml" />
+	</bean>
+
+</beans>

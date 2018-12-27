@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC 
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN" 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<!-- 数据库连接配置 -->
+
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost/userinfo</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">123456</property>
+		<!-- 每个数据库都有1个，针对特定的关系型数据库生成优化的SQL -->
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+
+		<!-- 设置默认的数据库连接池 -->
+		<property name="connection.pool_size">5</property>
+
+		<!-- 显示SQL -->
+		<property name="show_sql">true</property>
+
+		<!-- 格式化SQL -->
+		<property name="format_sql">true</property>
+
+		<!-- 根据schema更新数据表的工具 -->
+		<property name="hbm2ddl.auto">update</property>
+
+		<!-- 数据表映射配置文件 -->
+		<mapping resource="ssh/entity/Loginusers.hbm.xml" />
+
+	</session-factory>
+</hibernate-configuration>
