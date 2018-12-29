@@ -42,7 +42,7 @@
 				<td align="center">2</td>
 				<td align="center"><a
 					href="/wangchuanli001/MyProjects/blob/master/FZXS">java服装销售系统</a></td>
-				<td align="center">基于C/S设计的服装销售系统，使用简单的MVC实现功能，具有仓库管理、订单管理、销售管理...</td>
+				<td align="center">基于C/S架构设计的服装销售系统，使用简单的MVC实现功能，具有仓库管理、订单管理、销售管理...</td>
 			</tr>
 			<tr>
 				<td align="center">3</td>
@@ -60,7 +60,7 @@
 				<td align="center">5</td>
 				<td align="center"><a
 					href="/wangchuanli001/MyProjects/blob/master/LeiTingZhanJi">雷霆战机</a></td>
-				<td align="center">使用JAVA开发的防雷霆战机小游戏</td>
+				<td align="center">使用JAVA开发的雷霆战机小游戏，利用到了java的画板的线程进行重绘</td>
 			</tr>
 			<tr>
 				<td align="center">6</td>
