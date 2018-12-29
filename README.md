@@ -156,7 +156,7 @@
 				<td align="center">22</td>
 				<td align="center"><a
 					href="/wangchuanli001/MyProjects/blob/master/Html_Pintu">html实现拼图游戏</a></td>
-				<td align="center">利用html实现的网页版拼图游戏</td>
+				<td align="center">利用html实现的网页版九宫格拼图游戏</td>
 			</tr>
 			<tr>
 				<td align="center">23</td>
