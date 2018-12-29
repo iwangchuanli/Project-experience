@@ -78,7 +78,7 @@
 				<td align="center">8</td>
 				<td align="center"><a
 					href="/wangchuanli001/MyProjects/blob/master/PythonDrawAscii">图片转字符画</a></td>
-				<td align="center">使用Python的PIL库实现的图片转字符画</td>
+				<td align="center">使用Python的PIL库实现的图片转字符画，（视频转字符视频未完成，格式问题）</td>
 			</tr>
 			<tr>
 				<td align="center">9</td>
