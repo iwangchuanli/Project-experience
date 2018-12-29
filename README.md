@@ -83,7 +83,7 @@
 			<tr>
 				<td align="center">9</td>
 				<td align="center"><a
-					href="/wangchuanli001/MyProjects/blob/master/PythonCrawler">Python爬虫项目</a></td>
+					href="/wangchuanli001/MyProjects/blob/master/PythonCrawler">各种Python爬虫小项目，简单的从网页上爬取并进行下载</a></td>
 				<td align="center"></td>
 			</tr>
 			<tr>
@@ -108,7 +108,7 @@
 				<td align="center">13</td>
 				<td align="center"><a
 					href="/wangchuanli001/MyProjects/blob/master/CGames/%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90.cpp">词法分析</a></td>
-				<td align="center">C语言实现词法分析</td>
+				<td align="center">C语言实现词法分析器</td>
 			</tr>
 			<tr>
 				<td align="center">15</td>
