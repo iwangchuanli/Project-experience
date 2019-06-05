@@ -1,0 +1,6 @@
+0:0:0:0:0:0:0:1 - - [24/Dec/2018:15:45:40 +0800] "GET / HTTP/1.1" 404 1139 http-bio-8090-exec-1 160
+0:0:0:0:0:0:0:1 - - [24/Dec/2018:15:45:41 +0800] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-8090-exec-3 10
+0:0:0:0:0:0:0:1 - - [24/Dec/2018:15:45:54 +0800] "GET /forminput.jsp HTTP/1.1" 200 579 http-bio-8090-exec-4 787
+0:0:0:0:0:0:0:1 - - [24/Dec/2018:15:46:10 +0800] "POST /user.action HTTP/1.1" 200 254 http-bio-8090-exec-6 145
+0:0:0:0:0:0:0:1 - - [24/Dec/2018:15:47:14 +0800] "POST /user.action HTTP/1.1" 200 340 http-bio-8090-exec-9 114
+0:0:0:0:0:0:0:1 - - [24/Dec/2018:15:47:22 +0800] "POST /user.action HTTP/1.1" 200 254 http-bio-8090-exec-9 27

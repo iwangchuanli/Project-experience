@@ -1,0 +1,8 @@
+eclipse.preferences.version=1
+encoding//com/mysql/demo/MysqlDemo.py=utf-8
+encoding//com/mysql/demo/createTable.py=utf-8
+encoding//com/mysql/demo/mysqlCon.py=utf-8
+encoding//com/mysql/demo/sqlDelete.py=utf-8
+encoding//com/mysql/demo/sqlInsert.py=utf-8
+encoding//com/mysql/demo/sqlQuery.py=utf-8
+encoding//com/mysql/demo/sqlUpdate.py=utf-8

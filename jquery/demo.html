@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>JQueryDemo</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $("#select").click(function() {
+            $("#select").hide();
+        });
+
+        $("button").click(function() {
+            $("#select").toggle(slow);
+        });
+    });
+</script>
+</head>
+<body>
+    <button type="button">选择器</button>
+    <p id="ptest">This is a p!</p>
+    <p id="select">选择器：<br>
+    <br>&nbsp;&nbsp;元素选择器：("p")
+    <br>&nbsp;&nbsp;id选择器：("#test")
+    <br>&nbsp;&nbsp;class选择器:(".test")
+    <br>&nbsp;&nbsp;当前元素：("this")
+    <br>&nbsp;&nbsp;选择第一个p元素：("p:first")
+    <br>&nbsp;&nbsp;选择带有href属性的元素：("[href]")
+    <br>&nbsp;&nbsp;选取偶数位置的 <tr> 元素:("tr:even")
+    <br>&nbsp;&nbsp;选取奇数位置的 <tr> 元素:("tr:odd")
+    </p>
+    <p>jQuery效果
+    隐藏/显示   淡入淡出    滑动     动画       停止动画
+    CallBack    jQuery链
+    </p>
+
+</body>
+</html>

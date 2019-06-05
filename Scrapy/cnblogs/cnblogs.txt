@@ -1,0 +1,480 @@
+python抓取电影<海王>影评词云生成
+https://www.cnblogs.com/sdu20112013/p/10193392.html
+sdu20112013
+        评论(0)阅读(62)
+-----------------------------
+容器在公有云上的落地姿势
+https://www.cnblogs.com/sammyliu/p/10193750.html
+SammyLiu
+        评论(0)阅读(34)
+-----------------------------
+Python爬虫入门教程 15-100 石家庄政民互动数据爬取
+https://www.cnblogs.com/happymeng/p/10194447.html
+梦想橡皮擦
+        评论(0)阅读(54)
+-----------------------------
+人群捕捞，不知不觉控制你
+https://www.cnblogs.com/elninowang/p/10194393.html
+Omnigeeker
+        评论(0)阅读(159)
+-----------------------------
+EFCore扩展Update方法(实现 Update User SET Id=Id+1)
+https://www.cnblogs.com/castyuan/p/10194325.html
+coder拾遗
+        评论(2)阅读(68)
+-----------------------------
+ASP.NET Core 中的实时框架 SingalR
+https://www.cnblogs.com/royzshare/p/10194326.html
+车骑
+        评论(2)阅读(109)
+-----------------------------
+我的2018年终总结
+https://www.cnblogs.com/embedded-coder/p/10180554.html
+嵌入式码农
+        评论(2)阅读(248)
+-----------------------------
+浅析空指针
+https://www.cnblogs.com/chenzhuantou/p/10194258.html
+布尔bl
+        评论(0)阅读(43)
+-----------------------------
+Java并发编程：JMM (Java内存模型) 以及与volatile关键字详解
+https://www.cnblogs.com/yeya/p/10194238.html
+xue无止境
+        评论(0)阅读(66)
+-----------------------------
+ASP.NET Core 入门教程 8、ASP.NET Core + Entity Framework Core 数据访问入门
+https://www.cnblogs.com/ken-io/p/aspnet-core-tutorial-entity-framework-core-mysql.html
+ken-io
+        评论(2)阅读(125)
+-----------------------------
+【博客园2018总结帖】21天，在Github上获取 6300 star
+https://www.cnblogs.com/fivestudy/p/10194221.html
+五分钟学算法
+        评论(3)阅读(226)
+-----------------------------
+Quartz.Net进阶之五：TriggerListener 、JobListener 和 SchedulerListener
+https://www.cnblogs.com/PatrickLiu/p/10193973.html
+可均可可
+        评论(1)阅读(79)
+-----------------------------
+说说跳槽的事
+https://www.cnblogs.com/yuanzipeng/p/10191021.html
+袁子弹
+        评论(4)阅读(453)
+-----------------------------
+深入理解Java的三种工厂模式
+https://www.cnblogs.com/xiguadadage/p/10193918.html
+苹果大大个
+        评论(0)阅读(60)
+-----------------------------
+深度学习与计算机视觉： 搞懂反向传播算法的四个基本方程
+https://www.cnblogs.com/wangguchangqing/p/10191289.html
+Brook_icv
+        评论(0)阅读(46)
+-----------------------------
+ES6躬行记（1）——let和const
+https://www.cnblogs.com/strick/p/10161595.html
+咖啡机（K.F.J）
+        评论(0)阅读(46)
+-----------------------------
+类数组对象解析
+https://www.cnblogs.com/oxiaojiano/p/10193905.html
+color_小浣熊
+        评论(0)阅读(23)
+-----------------------------
+程序员十大热门flag，有你的吗？
+https://www.cnblogs.com/codelove/p/10193888.html
+雪雁
+        评论(1)阅读(270)
+-----------------------------
+redis scan删除key的方法封装
+https://www.cnblogs.com/ryanlamp/p/10193881.html
+Ryanyanglibin
+        评论(0)阅读(22)
+-----------------------------
+从零开始学习PYTHON3讲义（十二）画一颗心送给你
+https://www.cnblogs.com/andrewwang/p/10193813.html
+俺踏月色而来
+        评论(0)阅读(108)
+-----------------------------
+东南亚网约车大战升级 Grab融资目标高达50亿美元
+//news.cnblogs.com/n/616091/
+itwriter
+                        评论(0)
+                    阅读(6)
+-----------------------------
+2019年，你最关心哪些科学事件的进展？
+//news.cnblogs.com/n/616090/
+itwriter
+                        评论(0)
+                    阅读(13)
+-----------------------------
+Twitter声称账户劫持漏洞已修复 黑客：胡扯
+//news.cnblogs.com/n/616089/
+itwriter
+                        评论(0)
+                    阅读(54)
+-----------------------------
+亏损近8.6亿的瑞幸咖啡狂发补贴 下单弹窗喊用户充钱
+//news.cnblogs.com/n/616087/
+itwriter
+                        评论(2)
+                    阅读(150)
+-----------------------------
+体面地增长，负责任地烧钱
+//news.cnblogs.com/n/616086/
+itwriter
+                        评论(0)
+                    阅读(97)
+-----------------------------
+途歌“抛锚”：债务及押金遭挤兑 管理不善陷经营危机
+//news.cnblogs.com/n/616085/
+itwriter
+                        评论(0)
+                    阅读(57)
+-----------------------------
+为什么我们支持转基因食品，却反对基因编辑婴儿？
+//news.cnblogs.com/n/616084/
+itwriter
+                        评论(0)
+                    阅读(98)
+-----------------------------
+微软正在为Windows 10添加对AVIF图像的支持
+//news.cnblogs.com/n/616083/
+itwriter
+                        评论(0)
+                    阅读(89)
+-----------------------------
+社区拼购，“围城”渐成
+//news.cnblogs.com/n/616062/
+itwriter
+                        评论(0)
+                    阅读(99)
+-----------------------------
+新视野号元旦进行历史性探索：掠过最远距离天体
+//news.cnblogs.com/n/616082/
+itwriter
+                        评论(0)
+                    阅读(43)
+-----------------------------
+六大经典商业案例，盘点科技巨头的2018
+//news.cnblogs.com/n/616055/
+itwriter
+                        评论(1)
+                    阅读(233)
+-----------------------------
+面试造核弹，入职拧螺丝，裁员我先来？凭什么？
+//news.cnblogs.com/n/616072/
+itwriter
+                        评论(5)
+                    阅读(918)
+-----------------------------
+特斯拉选聘甲骨文创始人埃里森担任独立董事获分析师大赞
+//news.cnblogs.com/n/616078/
+itwriter
+                        评论(0)
+                    阅读(137)
+-----------------------------
+2018年非洲科技关键词：风投、全球扩张、区块链和无人机
+//news.cnblogs.com/n/616081/
+itwriter
+                        评论(0)
+                    阅读(71)
+-----------------------------
+传詹克团和吴忌寒将同时卸任比特大陆CEO
+//news.cnblogs.com/n/616069/
+itwriter
+                        评论(0)
+                    阅读(74)
+-----------------------------
+火币矿池欲上线EOS交易所，矿池新丁能否实现“弯道超车”？
+//news.cnblogs.com/n/616063/
+itwriter
+                        评论(0)
+                    阅读(93)
+-----------------------------
+不会升维思考的人：不是原地踏步，就是不断倒退
+//news.cnblogs.com/n/616071/
+itwriter
+                        评论(2)
+                    阅读(415)
+-----------------------------
+阿拉丁发布小游戏年度报告：60亿规模市场，头部公司还没出现
+//news.cnblogs.com/n/616057/
+itwriter
+                        评论(0)
+                    阅读(231)
+-----------------------------
+ofo溃败：曾估值200亿人民币 资本虚火与公司僵局
+//news.cnblogs.com/n/616077/
+itwriter
+                        评论(0)
+                    阅读(324)
+-----------------------------
+饿了么骑手报告：近20%为大学生 超10%月收入超8000
+//news.cnblogs.com/n/616070/
+itwriter
+                        评论(5)
+                    阅读(519)
+-----------------------------
+路透社：若字节跳动明年与百度合并 BAT组合将起变化
+//news.cnblogs.com/n/616080/
+itwriter
+                        评论(1)
+                    阅读(499)
+-----------------------------
+扎克伯格年终总结：Facebook已痛改前非
+//news.cnblogs.com/n/616079/
+itwriter
+                        评论(0)
+                    阅读(160)
+-----------------------------
+亏损、套路贷、数据造假 优信等二手车电商进入冰封
+//news.cnblogs.com/n/616076/
+itwriter
+                        评论(0)
+                    阅读(179)
+-----------------------------
+科技股收盘|美三大股指周五涨跌不一 戴尔重新上市首日涨近2%
+//news.cnblogs.com/n/616075/
+itwriter
+                        评论(0)
+                    阅读(74)
+-----------------------------
+蛋壳公寓自如等中介负面消息不断 长租市场盈利隐忧
+//news.cnblogs.com/n/616074/
+itwriter
+                        评论(0)
+                    阅读(202)
+-----------------------------
+富途证券递交美国IPO申请 拟最高融资3亿美元
+//news.cnblogs.com/n/616073/
+itwriter
+                        评论(0)
+                    阅读(46)
+-----------------------------
+戴尔正式回归美国证券市场 开盘价46.3美元
+//news.cnblogs.com/n/616067/
+itwriter
+                        评论(0)
+                    阅读(117)
+-----------------------------
+乐视网：因乐视体育融资涉四项诉讼
+//news.cnblogs.com/n/616068/
+itwriter
+                        评论(0)
+                    阅读(48)
+-----------------------------
+苏宁易购：完成出售阿里部分股份，预计实现净利52亿元
+//news.cnblogs.com/n/616066/
+itwriter
+                        评论(0)
+                    阅读(226)
+-----------------------------
+特斯拉增加两名新独立董事 完成SEC和解要求
+//news.cnblogs.com/n/616065/
+itwriter
+                        评论(0)
+                    阅读(46)
+-----------------------------
+通俗易懂，C#如何安全、高效地玩转任何种类的内存之Span的本质(一)。
+https://www.cnblogs.com/justmine/p/10006621.html
+无痴迷，不成功
+        评论(60)阅读(4264)
+-----------------------------
+分布式系统关注点——99%的人都能看懂的「熔断」以及最佳实践
+https://www.cnblogs.com/Zachary-Fan/p/9976197.html
+Zachary_Fan
+        评论(21)阅读(6986)
+-----------------------------
+神经网络的基本工作原理
+https://www.cnblogs.com/ms-uap/p/9928254.html
+UniversalAIPlatform
+        评论(43)阅读(8849)
+-----------------------------
+哎呀，我老大写Bug啦——记一次MessageQueue的优化
+https://www.cnblogs.com/EminemJK/p/9921800.html
+山治先生
+        评论(73)阅读(7231)
+-----------------------------
+机器学习web服务化实战：一次吐血的服务化之路
+https://www.cnblogs.com/haolujun/p/9778939.html
+haolujun
+        评论(23)阅读(4955)
+-----------------------------
+Windbg分析高内存占用问题
+https://www.cnblogs.com/sheng-jie/p/9503650.html
+『圣杰』
+        评论(50)阅读(7184)
+-----------------------------
+我是怎么把一个项目带崩的
+https://www.cnblogs.com/zer0Black/p/9463206.html
+zer0black
+        评论(139)阅读(30482)
+-----------------------------
+彼之蜜糖，吾之砒霜——聊聊软件开发中的最佳实践
+https://www.cnblogs.com/sherrywasp/p/9436623.html
+sherrywasp
+        评论(96)阅读(11609)
+-----------------------------
+Linux的内存分页管理
+https://www.cnblogs.com/vamei/p/9329278.html
+Vamei
+        评论(11)阅读(7467)
+-----------------------------
+通俗易懂，什么是.NET?什么是.NET Framework？什么是.NET Core?
+https://www.cnblogs.com/1996V/p/9037603.html
+小曾看世界
+        评论(101)阅读(23974)
+-----------------------------
+藏在正则表达式里的陷阱
+https://www.cnblogs.com/chanshuyi/p/9197164.html
+陈树义
+        评论(68)阅读(15631)
+-----------------------------
+你所不知道的日志异步落库
+https://www.cnblogs.com/scy251147/p/9193075.html
+程序诗人
+        评论(38)阅读(7775)
+-----------------------------
+为什么说 Java 程序员到了必须掌握 Spring Boot 的时候？
+https://www.cnblogs.com/ityouknow/p/9175980.html
+纯洁的微笑
+        评论(14)阅读(14639)
+-----------------------------
+高并发请求的缓存设计策略
+https://www.cnblogs.com/bethunebtj/p/9159914.html
+老白讲互联网
+        评论(31)阅读(14690)
+-----------------------------
+从 docker 到 runC
+https://www.cnblogs.com/sparkdev/p/9129334.html
+sparkdev
+        评论(18)阅读(23916)
+-----------------------------
+从架构特点到功能缺陷，重新认识分析型分布式数据库
+https://www.cnblogs.com/ivan-uno/p/9051225.html
+海边的Ivan
+        评论(14)阅读(8228)
+-----------------------------
+【原创】分布式之数据库和缓存双写一致性方案解析
+https://www.cnblogs.com/rjzheng/p/9041659.html
+孤独烟
+        评论(116)阅读(17933)
+-----------------------------
+【原创】分布式之消息队列复习精讲
+https://www.cnblogs.com/rjzheng/p/8994962.html
+孤独烟
+        评论(100)阅读(15596)
+-----------------------------
+.net环境下跨进程、高频率读写数据
+https://www.cnblogs.com/lanxiaoke/p/8971301.html
+漂亮的猫
+        评论(68)阅读(12944)
+-----------------------------
+微服务化的基石——持续集成
+https://www.cnblogs.com/163yun/p/8867738.html
+网易云
+        评论(32)阅读(13118)
+-----------------------------
+[CQOI2011] 动态逆序对
+https://www.cnblogs.com/nosta/p/10194809.html
+nosta
+        评论(0)阅读(1)
+-----------------------------
+zabbix 磁盘的自动发现于监控
+https://www.cnblogs.com/ZFBG/p/10194768.html
+zfno11
+        评论(0)阅读(2)
+-----------------------------
+福利 | 互联网产品经理学习资料免费下载（可下载）
+https://www.cnblogs.com/zhangweizhong/p/10194755.html
+章为忠
+        评论(0)阅读(3)
+-----------------------------
+Javascript高级编程学习笔记（26）—— 函数表达式（4）私有变量
+https://www.cnblogs.com/lhyxq/p/10194748.html
+巽秋
+        评论(0)阅读(2)
+-----------------------------
+JSON Web Token（JWT）使用步骤说明
+https://www.cnblogs.com/renhui/p/10194681.html
+灰色飘零
+        评论(0)阅读(2)
+-----------------------------
+用Python学分析 - 正态分布
+https://www.cnblogs.com/violetchan/p/10194477.html
+马露天使
+        评论(0)阅读(3)
+-----------------------------
+做一个超级老板键软件，一键隐藏任务
+https://www.cnblogs.com/jy8888/p/9916279.html
+自闭的程序员J
+        评论(0)阅读(89)
+-----------------------------
+配置文件读取（架构师的成长之路---第2篇）
+https://www.cnblogs.com/ltlm/p/10194395.html
+狼兔联盟
+        评论(0)阅读(15)
+-----------------------------
+Python  time, datetime模块常用时间格式转换方法
+https://www.cnblogs.com/yao-zhang/p/10194316.html
+水色蓝天不见云
+        评论(0)阅读(6)
+-----------------------------
+Scala之集合Collection
+https://www.cnblogs.com/duodushuduokanbao/p/10194283.html
+多读书多看报
+        评论(0)阅读(2)
+-----------------------------
+Linux centos7搭建SVN
+https://www.cnblogs.com/agegg/p/10194266.html
+AGEGG
+        评论(0)阅读(4)
+-----------------------------
+http协议、web服务器、并发服务器（下）
+https://www.cnblogs.com/zhangfengxian/p/10194271.html
+张风闲
+        评论(0)阅读(5)
+-----------------------------
+jvm详情——6、堆大小设置简单说明
+https://www.cnblogs.com/lemon-flm/p/10194229.html
+低调人生
+        评论(0)阅读(6)
+-----------------------------
+Springboot2注解使用Mybatis动态SQL
+https://www.cnblogs.com/luohanguo/p/10194160.html
+神仙果
+        评论(0)阅读(6)
+-----------------------------
+设计模式之观察者模式--中英文结合理解版
+https://www.cnblogs.com/zpdMulti/p/596957458_qq19.html
+艾斯cancel
+        评论(0)阅读(6)
+-----------------------------
+微信自动跳转到手机浏览器
+https://www.cnblogs.com/ko88/p/10193958.html
+奥特教授
+        评论(0)阅读(8)
+-----------------------------
+linux下docker的安装配置
+https://www.cnblogs.com/wuyoucao/p/10193936.html
+烦嚣的人
+        评论(0)阅读(6)
+-----------------------------
+在用AJAX跨域请求时遇到的问题
+https://www.cnblogs.com/gaozhihui/p/gzh_ajax.html
+努力GZH
+        评论(0)阅读(10)
+-----------------------------
+docker(包括docker、mysql、tomcat的安装，以及部署web工程文件)
+https://www.cnblogs.com/yuanshanlch/p/10193912.html
+风岚远山
+        评论(0)阅读(4)
+-----------------------------
+记 判断手机号运营商function
+https://www.cnblogs.com/liiu/p/10193867.html
+Liiu
+        评论(0)阅读(5)
+-----------------------------

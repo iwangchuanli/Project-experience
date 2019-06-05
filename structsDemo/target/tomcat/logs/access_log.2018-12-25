@@ -1,0 +1,3 @@
+0:0:0:0:0:0:0:1 - - [25/Dec/2018:15:26:04 +0800] "GET /forminput.jsp HTTP/1.1" 200 579 http-bio-8090-exec-1 359
+0:0:0:0:0:0:0:1 - - [25/Dec/2018:15:26:05 +0800] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-8090-exec-3 3
+0:0:0:0:0:0:0:1 - - [25/Dec/2018:15:26:13 +0800] "POST /user.action HTTP/1.1" 200 342 http-bio-8090-exec-4 200

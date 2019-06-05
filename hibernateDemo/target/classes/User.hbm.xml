@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www/hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.hibernate.domain.User">
+	
+		<id name="id" type="int" column="id">
+			<!-- 主键生成策略 -->
+			<generator class="native"></generator>
+		</id>
+		<!-- 一些常规操作 -->
+		<property name="name" type="string" column="name"></property>
+		<property name="date" type="timestamp" column="date"></property>
+		<property name="address" type="string" column="address"></property>
+
+	</class>
+</hibernate-mapping>
