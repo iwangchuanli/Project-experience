@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Class-Path: logback-classic-1.2.3.jar spring-boot-starter-logging-2.1.
+ 4.RELEASE.jar spring-boot-2.1.4.RELEASE.jar tomcat-embed-core-9.0.17.
+ jar snakeyaml-1.23.jar spring-boot-starter-2.1.4.RELEASE.jar validati
+ on-api-2.0.1.Final.jar spring-webmvc-5.1.6.RELEASE.jar tomcat-embed-w
+ ebsocket-9.0.17.jar spring-boot-autoconfigure-2.1.4.RELEASE.jar jacks
+ on-datatype-jsr310-2.9.8.jar jackson-databind-2.9.8.jar jackson-core-
+ 2.9.8.jar spring-beans-5.1.6.RELEASE.jar spring-core-5.1.6.RELEASE.ja
+ r jul-to-slf4j-1.7.26.jar tomcat-embed-el-9.0.17.jar hibernate-valida
+ tor-6.0.16.Final.jar spring-boot-starter-json-2.1.4.RELEASE.jar jacks
+ on-module-parameter-names-2.9.8.jar log4j-to-slf4j-2.11.2.jar jackson
+ -datatype-jdk8-2.9.8.jar logback-core-1.2.3.jar spring-boot-starter-w
+ eb-2.1.4.RELEASE.jar spring-expression-5.1.6.RELEASE.jar jackson-anno
+ tations-2.9.0.jar spring-jcl-5.1.6.RELEASE.jar jboss-logging-3.3.2.Fi
+ nal.jar spring-aop-5.1.6.RELEASE.jar log4j-api-2.11.2.jar spring-boot
+ -starter-tomcat-2.1.4.RELEASE.jar javax.annotation-api-1.3.2.jar spri
+ ng-context-5.1.6.RELEASE.jar spring-web-5.1.6.RELEASE.jar classmate-1
+ .4.0.jar slf4j-api-1.7.26.jar
+Main-Class: com.wangcl.love.LoveApplication
+
