@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE taglib
+          PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN"
+          "http://java.sun.com/j2ee/dtds/web-jsptaglib_1_1.dtd">
+
+<!-- The tags above say that this is an XML document, and formally  -->
+<!-- specify the document type. -->
+
+<taglib>                        <!-- Define a tag library -->
+  <tlibversion>0.1</tlibversion>  <!-- The version of this tag library -->
+  <jspversion>1.1</jspversion>    <!-- The version of JSP -->
+  <shortname>decor</shortname>    <!-- The common name for the library -->
+  <uri>                           <!-- A URL that uniquely identifies it -->
+    http://www.davidflanagan.com/tlds/decor_0_1.tld
+  </uri>
+  <info>                          <!-- A simple description of the library -->
+     A simple tag library for decorative HTML output
+  </info>
+
+  <!-- The <tag> tag defines a single tag of the tag library -->
+  <tag>
+    <!-- First, define the tag name, implementation class, and description -->
+    <name>box</name>       
+    <tagclass>com.davidflanagan.examples.servlet.DecorBox</tagclass>
+    <info>Display a colored box with a border</info>
+
+    <!-- Next, define each attribute that the tag supports -->
+    <!-- For each, specify the name, whether it is required, and whether -->
+    <!-- the tag value may be specified with a JSP <%= %> construct -->
+    <attribute>
+      <name>align</name>              <!-- The 'align' attribute -->
+      <required>false</required>      <!-- It is not required -->
+      <rtexprvalue>true</rtexprvalue> <!-- It may have a <%= %> value -->
+    </attribute>
+    <attribute>                       <!-- Etc., etc., etc. -->
+      <name>color</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>borderColor</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>margin</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>borderWidth</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>title</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>titleColor</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>titleAlign</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+</taglib>

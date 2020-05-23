@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>   <!-- This is an xml file -->
+<!-- This is document type of the xml file -->
+<!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.2//EN"
+    "http://java.sun.com/j2ee/dtds/web-app_2.2.dtd">
+
+<!-- Define configuration and deployment information for a web application -->
+<web-app>   
+  <!-- Each servlet tag defines information about a servlet.  This one -->
+  <!-- defines a name for a specific Servlet implementation class.  It maps -->
+  <!-- /servlet/hello (relative to the webapp root) to the specified class -->
+  <servlet>
+    <servlet-name>hello</servlet-name>
+    <servlet-class>com.davidflanagan.examples.servlet.Hello</servlet-class>
+  </servlet>
+  
+  <!-- Here's another servlet tag.  This one also defines initialization -->
+  <!-- parameters that the servlet reads in its init() method. -->
+  <servlet>  <!-- The counter servlet -->
+    <servlet-name>counter</servlet-name>  
+    <servlet-class>com.davidflanagan.examples.servlet.Counter</servlet-class>
+    <init-param>
+      <param-name>countfile</param-name>         <!-- where to save state -->
+      <param-value>/tmp/counts.ser</param-value> <!-- adjust for your system-->
+    </init-param>
+    <init-param>
+      <param-name>saveInterval</param-name>      <!-- how often to save -->
+      <param-value>30000</param-value>           <!-- every 30 seconds -->
+    </init-param>
+  </servlet>
+  
+  <servlet>  <!-- The query servlet -->
+    <servlet-name>query</servlet-name>
+    <servlet-class>com.davidflanagan.examples.servlet.Query</servlet-class>
+    <!-- Configure all these init params for your database -->
+    <init-param>
+      <param-name>driverClassName</param-name>   <!-- JDBC driver classname -->
+      <param-value>org.gjt.mm.mysql.Driver</param-value> <!-- mysql driver -->
+    </init-param>
+    <init-param>
+      <param-name>url</param-name>               <!-- URL for the database -->
+      <param-value>jdbc:mysql://dbserver.my.domain.com/dbname</param-value>
+    </init-param>
+    <init-param>
+      <param-name>username</param-name>          <!-- Database username -->
+      <param-value>david</param-value>
+    </init-param>
+    <init-param>
+      <param-name>password</param-name>          <!-- Database password -->
+      <param-value>secret</param-value>
+    </init-param>
+  </servlet>
+
+  <!-- Note that you can define multiple named instances of a single -->
+  <!-- servlet class.  If you have two different databases, for example, -->
+  <!-- you could define another instance of the Query servlet using a -->
+  <!-- with a different name and a different set of initialization params -->
+  <servlet>  <!-- Another query servlet -->
+    <servlet-name>queryOtherDatabase</servlet-name>
+    <servlet-class>com.davidflanagan.examples.servlet.Query</servlet-class>
+    <!-- Add init params here, or this servlet won't work right -->
+  </servlet>
+  
+  <servlet>  <!-- The logout servlet -->
+    <servlet-name>logout</servlet-name>
+    <servlet-class>com.davidflanagan.examples.servlet.Logout</servlet-class>
+  </servlet>
+
+  <!-- A servlet mapping specifies URL prefixes or suffixes that cause a -->
+  <!-- particular named servlet to be invoked.  This one specifies that any -->
+  <!-- URL ending with ".count" will invoke the "counter" servlet -->
+  <servlet-mapping>
+    <servlet-name>counter</servlet-name>  <!-- A name from a <servlet> tag -->
+    <url-pattern>*.count</url-pattern>    <!-- What URLs invoke it -->
+  </servlet-mapping>
+  
+  <!-- This tag specifies session management information for our webapp --> 
+  <session-config>
+    <session-timeout>15</session-timeout> <!-- timeout after 15 minutes idle-->
+  </session-config>
+  
+  <!-- Mapping information about the tag libraries used in the webapp -->
+  <taglib>
+    <!-- When you see this unique identifier for a tag library... -->
+    <taglib-uri>http://www.davidflanagan.com/tlds/decor_0_1.tld</taglib-uri>
+    <!-- ...use this local copy of the Tag Library Descriptor file -->
+    <taglib-location>tlds/decor_0_1.tld</taglib-location>
+  </taglib>
+</web-app>

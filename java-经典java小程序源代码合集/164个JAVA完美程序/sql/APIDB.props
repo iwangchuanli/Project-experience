@@ -1,0 +1,4 @@
+driver=org.gjt.mm.mysql.Driver
+database=jdbc:mysql://dbserver.mydomain.org/APIDB
+user=my_user_name
+password=my_secret_password

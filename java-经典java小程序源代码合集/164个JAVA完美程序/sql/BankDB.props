@@ -1,0 +1,5 @@
+driver: postgresql.Driver
+database: jdbc:postgresql:bank
+user: david
+password: 
+
