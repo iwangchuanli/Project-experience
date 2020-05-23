@@ -1,0 +1,1121 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-button">next ¡ú</a>
+<a class="next" href="python-programs">¡û prev</a>
+</div>
+<h1 class="h1">Python Tkinter</h1>
+<img alt="Python Tkinter Tutorial" class="imageright" src="python/images/tkinter-tutorial.png"/>
+<p>Python provides the standard library for creating the graphical user interface for desktop based applications.</p>
+<p>Developing desktop based applications with python Tkinter is not a complex task. An empty Tkinter top-level window can be created by using the following steps.</p>
+<ol class="points">
+<li>import the Tkinter module.</li>
+<li>Create the main application window.</li>
+<li>Add the widgets like labels, buttons, frames, etc. to the window.</li>
+<li>Call the main event loop so that the actions can take place on the user's computer screen.</li>
+</ol>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+# !/usr/bin/python3
+from tkinter import *
+
+#creating the application main window. 
+top = Tk()
+
+#Entering the event main loop
+top.mainloop()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter" src="python/images/python-tkinter.png"/>
+<hr/>
+<h2 class="h2">Tkinter widgets </h2>
+<p>There are various widgets like button, canvas, checkbutton, entry, etc. that are used to build the python GUI applications.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Widget</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="python-tkinter-button">Button</a></td>
+<td>The Button is used to add various kinds of buttons to the python application.</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="python-tkinter-canvas">Canvas</a></td>
+<td>The canvas widget is used to draw the canvas on the window.</td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="python-tkinter-checkbutton">Checkbutton</a></td>
+<td>The Checkbutton is used to display the CheckButton on the window.</td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="python-tkinter-entry">Entry</a></td>
+<td>The entry widget is used to display the single-line text field to the user. It is commonly used to accept user values.</td>
+</tr>
+<tr>
+<td>5</td>
+<td><a href="python-tkinter-frame">Frame</a></td>
+<td>It can be defined as a container to which, another widget can be added and organized.</td>
+</tr>
+<tr>
+<td>6</td>
+<td><a href="python-tkinter-label">Label</a></td>
+<td>A label is a text used to display some message or information about the other widgets.</td>
+</tr>
+<tr>
+<td>7</td>
+<td><a href="python-tkinter-listbox">ListBox</a></td>
+<td>The ListBox widget is used to display a list of options to the user.</td>
+</tr>
+<tr>
+<td>8</td>
+<td><a href="python-tkinter-menubutton">Menubutton</a></td>
+<td>The Menubutton is used to display the menu items to the user.</td>
+</tr>
+<tr>
+<td>9</td>
+<td><a href="python-tkinter-menu">Menu</a></td>
+<td>It is used to add menu items to the user.</td>
+</tr>
+<tr>
+<td>10</td>
+<td><a href="python-tkinter-message">Message</a></td>
+<td>The Message widget is used to display the message-box to the user.</td>
+</tr>
+<tr>
+<td>11</td>
+<td><a href="python-tkinter-radiobutton">Radiobutton</a></td>
+<td>The Radiobutton is different from a checkbutton. Here, the user is provided with various options and the user can select only one option among them.</td>
+</tr>
+<tr>
+<td>12</td>
+<td><a href="python-tkinter-scale">Scale</a></td>
+<td>It is used to provide the slider to the user. </td>
+</tr>
+<tr>
+<td>13</td>
+<td><a href="python-tkinter-scrollbar">Scrollbar</a></td>
+<td>It provides the scrollbar to the user so that the user can scroll the window up and down.</td>
+</tr>
+<tr>
+<td>14</td>
+<td><a href="python-tkinter-text">Text</a></td>
+<td>It is different from Entry because it provides a multi-line text field to the user so that the user can write the text and edit the text inside it.</td>
+</tr>
+<tr>
+<td>14</td>
+<td><a href="python-tkinter-toplevel">Toplevel</a></td>
+<td>It is used to create a separate window container.</td>
+</tr>
+<tr>
+<td>15</td>
+<td><a href="python-tkinter-spinbox">Spinbox</a></td>
+<td>It is an entry widget used to select from options of values.</td>
+</tr>
+<tr>
+<td>16</td>
+<td><a href="python-tkinter-panedwindow">PanedWindow</a></td>
+<td>It is like a container widget that contains horizontal or vertical panes.</td>
+</tr>
+<tr>
+<td>17</td>
+<td><a href="python-tkinter-labelframe">LabelFrame</a></td>
+<td>A LabelFrame is a container widget that acts as the container</td>
+</tr>
+<tr>
+<td>18</td>
+<td><a href="python-tkinter-messagebox">MessageBox</a></td>
+<td>This module is used to display the message-box in the desktop based applications.</td>
+</tr>
+</table>
+<hr/>
+<h2 class="h2">Python Tkinter Geometry </h2>
+<p>The Tkinter geometry specifies the method by using which, the widgets are represented on display. The python Tkinter provides the following geometry methods.</p>
+<ol class="points">
+<li>The pack() method </li>
+<li>The grid() method </li>
+<li>The place() method</li>
+</ol>
+<p>Let's discuss each one of them in detail.</p>
+<h3 class="h2">Python Tkinter pack() method </h3>
+<p>The pack() widget is used to organize widget in the block. The positions widgets added to the python application using the pack() method can be controlled by using the various options specified in the method call. </p>
+<p>However, the controls are less and widgets are generally added in the less organized manner. </p>
+<p>The syntax to use the pack() is given below.</p>
+<h3 class="h3">syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+widget.pack(options)
+</textarea></div>
+<p>A list of possible options that can be passed in pack() is given below.</p>
+<ul class="points">
+<li><strong>expand:</strong> If the expand is set to true, the widget expands to fill any space. </li>
+<li><strong>Fill:</strong> By default, the fill is set to NONE. However, we can set it to X or Y to determine whether the widget contains any extra space.</li>
+<li><strong>size:</strong> it represents the side of the parent to which the widget is to be placed on the window.</li>
+</ul>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+# !/usr/bin/python3
+from tkinter import *
+
+parent = Tk()
+
+redbutton = Button(parent, text = "Red", fg = "red")
+redbutton.pack( side = LEFT)
+
+greenbutton = Button(parent, text = "Black", fg = "black")
+greenbutton.pack( side = RIGHT )
+
+bluebutton = Button(parent, text = "Blue", fg = "blue")
+bluebutton.pack( side = TOP )
+
+blackbutton = Button(parent, text = "Green", fg = "red")
+blackbutton.pack( side = BOTTOM)
+
+parent.mainloop()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter" src="python/images/python-tkinter2.png"/>
+<h3 class="h2">Python Tkinter grid() method</h3>
+<p>The grid() geometry manager organizes the widgets in the tabular form. We can specify the rows and columns as the options in the method call. We can also specify the column span (width) or rowspan(height) of a widget. </p>
+<p>This is a more organized way to place the widgets to the python application. The syntax to use the grid() is given below.</p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+widget.grid(options)
+</textarea></div>
+<p>A list of possible options that can be passed inside the grid() method is given below.</p>
+<ul class="points">
+<li><strong>Column</strong><br/>
+The column number in which the widget is to be placed. The leftmost column is represented by 0. </li>
+<li><strong>Columnspan</strong> <br/>
+The width of the widget. It represents the number of columns up to which, the column is expanded. </li>
+<li><strong>ipadx, ipady</strong><br/>
+	It represents the number of pixels to pad the widget inside the widget's border.</li>
+<li><strong>padx, pady </strong><br/>
+	It represents the number of pixels to pad the widget outside the widget's border.</li>
+<li><strong>row</strong><br/>
+	The row number in which the widget is to be placed. The topmost row is represented by 0.</li>
+<li><strong>rowspan</strong><br/>
+	The height of the widget, i.e. the number of the row up to which the widget is expanded.</li>
+<li><strong>Sticky</strong><br/>
+	If the cell is larger than a widget, then sticky is used to specify the position of the widget inside the cell. It may be the concatenation of the sticky letters representing the position of the widget. It may be N,  E, W, S, NE, NW, NS, EW, ES.</li>
+</ul>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+# !/usr/bin/python3
+from tkinter import *
+
+parent = Tk()
+
+name = Label(parent,text = "Name").grid(row = 0, column = 0)
+
+e1 = Entry(parent).grid(row = 0, column = 1)
+
+password = Label(parent,text = "Password").grid(row = 1, column = 0)
+
+e2 = Entry(parent).grid(row = 1, column = 1)
+
+submit = Button(parent, text = "Submit").grid(row = 4, column = 0)
+
+parent.mainloop()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter" src="python/images/python-tkinter3.png"/>
+<h3 class="h2">Python Tkinter place() method</h3>
+<p>The place() geometry manager organizes the widgets to the specific x and y coordinates.</p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+widget.place(options)
+</textarea></div>
+<p>A list of possible options is given below.</p>
+<ul class="points">
+<li><strong>Anchor:</strong>  It represents the exact position of the widget within the container. The default value (direction) is NW (the upper left corner)</li>
+<li><strong>bordermode:</strong>  The default value of the border type is INSIDE that refers to ignore the parent's inside the border. The other option is OUTSIDE.</li>
+<li><strong>height, width:</strong>  It refers to the height and width in pixels.</li>
+<li><strong>relheight, relwidth:</strong>  It is represented as the float between 0.0 and 1.0 indicating the fraction of the parent's height and width.</li>
+<li><strong>relx, rely:</strong>  It is represented as the float between 0.0 and 1.0 that is the offset in the horizontal and vertical direction.</li>
+<li><strong>x, y:</strong> It refers to the horizontal and vertical offset in the pixels.</li>
+</ul>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+# !/usr/bin/python3
+from tkinter import *
+
+top = Tk()
+
+top.geometry("400x250")
+
+name = Label(top, text = "Name").place(x = 30,y = 50)
+
+email = Label(top, text = "Email").place(x = 30, y = 90)
+
+password = Label(top, text = "Password").place(x = 30, y = 130)
+
+e1 = Entry(top).place(x = 80, y = 50)
+
+
+e2 = Entry(top).place(x = 80, y = 90)
+
+
+e3 = Entry(top).place(x = 95, y = 130)
+
+top.mainloop()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter" src="python/images/python-tkinter4.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-button">Python Tkinter Button</a></span>
+</div>
+<!-- link -->
+<br><br>
+<div id="bottomnext">
+<a class="next" href="python-programs" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-button" style="float:right">next ¡ú</a>
+</div>
+<br><br>
+</br></br></br></br></td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-button">next ¡ú</a>
+<a class="next" href="python-programs">¡û prev</a>
+</div>
+<h1 class="h1">Python Tkinter</h1>
+<img alt="Python Tkinter Tutorial" class="imageright" src="python/images/tkinter-tutorial.png"/>
+<p>Python provides the standard library for creating the graphical user interface for desktop based applications.</p>
+<p>Developing desktop based applications with python Tkinter is not a complex task. An empty Tkinter top-level window can be created by using the following steps.</p>
+<ol class="points">
+<li>import the Tkinter module.</li>
+<li>Create the main application window.</li>
+<li>Add the widgets like labels, buttons, frames, etc. to the window.</li>
+<li>Call the main event loop so that the actions can take place on the user's computer screen.</li>
+</ol>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+# !/usr/bin/python3
+from tkinter import *
+
+#creating the application main window. 
+top = Tk()
+
+#Entering the event main loop
+top.mainloop()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter" src="python/images/python-tkinter.png"/>
+<hr/>
+<h2 class="h2">Tkinter widgets </h2>
+<p>There are various widgets like button, canvas, checkbutton, entry, etc. that are used to build the python GUI applications.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Widget</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="python-tkinter-button">Button</a></td>
+<td>The Button is used to add various kinds of buttons to the python application.</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="python-tkinter-canvas">Canvas</a></td>
+<td>The canvas widget is used to draw the canvas on the window.</td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="python-tkinter-checkbutton">Checkbutton</a></td>
+<td>The Checkbutton is used to display the CheckButton on the window.</td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="python-tkinter-entry">Entry</a></td>
+<td>The entry widget is used to display the single-line text field to the user. It is commonly used to accept user values.</td>
+</tr>
+<tr>
+<td>5</td>
+<td><a href="python-tkinter-frame">Frame</a></td>
+<td>It can be defined as a container to which, another widget can be added and organized.</td>
+</tr>
+<tr>
+<td>6</td>
+<td><a href="python-tkinter-label">Label</a></td>
+<td>A label is a text used to display some message or information about the other widgets.</td>
+</tr>
+<tr>
+<td>7</td>
+<td><a href="python-tkinter-listbox">ListBox</a></td>
+<td>The ListBox widget is used to display a list of options to the user.</td>
+</tr>
+<tr>
+<td>8</td>
+<td><a href="python-tkinter-menubutton">Menubutton</a></td>
+<td>The Menubutton is used to display the menu items to the user.</td>
+</tr>
+<tr>
+<td>9</td>
+<td><a href="python-tkinter-menu">Menu</a></td>
+<td>It is used to add menu items to the user.</td>
+</tr>
+<tr>
+<td>10</td>
+<td><a href="python-tkinter-message">Message</a></td>
+<td>The Message widget is used to display the message-box to the user.</td>
+</tr>
+<tr>
+<td>11</td>
+<td><a href="python-tkinter-radiobutton">Radiobutton</a></td>
+<td>The Radiobutton is different from a checkbutton. Here, the user is provided with various options and the user can select only one option among them.</td>
+</tr>
+<tr>
+<td>12</td>
+<td><a href="python-tkinter-scale">Scale</a></td>
+<td>It is used to provide the slider to the user. </td>
+</tr>
+<tr>
+<td>13</td>
+<td><a href="python-tkinter-scrollbar">Scrollbar</a></td>
+<td>It provides the scrollbar to the user so that the user can scroll the window up and down.</td>
+</tr>
+<tr>
+<td>14</td>
+<td><a href="python-tkinter-text">Text</a></td>
+<td>It is different from Entry because it provides a multi-line text field to the user so that the user can write the text and edit the text inside it.</td>
+</tr>
+<tr>
+<td>14</td>
+<td><a href="python-tkinter-toplevel">Toplevel</a></td>
+<td>It is used to create a separate window container.</td>
+</tr>
+<tr>
+<td>15</td>
+<td><a href="python-tkinter-spinbox">Spinbox</a></td>
+<td>It is an entry widget used to select from options of values.</td>
+</tr>
+<tr>
+<td>16</td>
+<td><a href="python-tkinter-panedwindow">PanedWindow</a></td>
+<td>It is like a container widget that contains horizontal or vertical panes.</td>
+</tr>
+<tr>
+<td>17</td>
+<td><a href="python-tkinter-labelframe">LabelFrame</a></td>
+<td>A LabelFrame is a container widget that acts as the container</td>
+</tr>
+<tr>
+<td>18</td>
+<td><a href="python-tkinter-messagebox">MessageBox</a></td>
+<td>This module is used to display the message-box in the desktop based applications.</td>
+</tr>
+</table>
+<hr/>
+<h2 class="h2">Python Tkinter Geometry </h2>
+<p>The Tkinter geometry specifies the method by using which, the widgets are represented on display. The python Tkinter provides the following geometry methods.</p>
+<ol class="points">
+<li>The pack() method </li>
+<li>The grid() method </li>
+<li>The place() method</li>
+</ol>
+<p>Let's discuss each one of them in detail.</p>
+<h3 class="h2">Python Tkinter pack() method </h3>
+<p>The pack() widget is used to organize widget in the block. The positions widgets added to the python application using the pack() method can be controlled by using the various options specified in the method call. </p>
+<p>However, the controls are less and widgets are generally added in the less organized manner. </p>
+<p>The syntax to use the pack() is given below.</p>
+<h3 class="h3">syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+widget.pack(options)
+</textarea></div>
+<p>A list of possible options that can be passed in pack() is given below.</p>
+<ul class="points">
+<li><strong>expand:</strong> If the expand is set to true, the widget expands to fill any space. </li>
+<li><strong>Fill:</strong> By default, the fill is set to NONE. However, we can set it to X or Y to determine whether the widget contains any extra space.</li>
+<li><strong>size:</strong> it represents the side of the parent to which the widget is to be placed on the window.</li>
+</ul>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+# !/usr/bin/python3
+from tkinter import *
+
+parent = Tk()
+
+redbutton = Button(parent, text = "Red", fg = "red")
+redbutton.pack( side = LEFT)
+
+greenbutton = Button(parent, text = "Black", fg = "black")
+greenbutton.pack( side = RIGHT )
+
+bluebutton = Button(parent, text = "Blue", fg = "blue")
+bluebutton.pack( side = TOP )
+
+blackbutton = Button(parent, text = "Green", fg = "red")
+blackbutton.pack( side = BOTTOM)
+
+parent.mainloop()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter" src="python/images/python-tkinter2.png"/>
+<h3 class="h2">Python Tkinter grid() method</h3>
+<p>The grid() geometry manager organizes the widgets in the tabular form. We can specify the rows and columns as the options in the method call. We can also specify the column span (width) or rowspan(height) of a widget. </p>
+<p>This is a more organized way to place the widgets to the python application. The syntax to use the grid() is given below.</p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+widget.grid(options)
+</textarea></div>
+<p>A list of possible options that can be passed inside the grid() method is given below.</p>
+<ul class="points">
+<li><strong>Column</strong><br/>
+The column number in which the widget is to be placed. The leftmost column is represented by 0. </li>
+<li><strong>Columnspan</strong> <br/>
+The width of the widget. It represents the number of columns up to which, the column is expanded. </li>
+<li><strong>ipadx, ipady</strong><br/>
+	It represents the number of pixels to pad the widget inside the widget's border.</li>
+<li><strong>padx, pady </strong><br/>
+	It represents the number of pixels to pad the widget outside the widget's border.</li>
+<li><strong>row</strong><br/>
+	The row number in which the widget is to be placed. The topmost row is represented by 0.</li>
+<li><strong>rowspan</strong><br/>
+	The height of the widget, i.e. the number of the row up to which the widget is expanded.</li>
+<li><strong>Sticky</strong><br/>
+	If the cell is larger than a widget, then sticky is used to specify the position of the widget inside the cell. It may be the concatenation of the sticky letters representing the position of the widget. It may be N,  E, W, S, NE, NW, NS, EW, ES.</li>
+</ul>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+# !/usr/bin/python3
+from tkinter import *
+
+parent = Tk()
+
+name = Label(parent,text = "Name").grid(row = 0, column = 0)
+
+e1 = Entry(parent).grid(row = 0, column = 1)
+
+password = Label(parent,text = "Password").grid(row = 1, column = 0)
+
+e2 = Entry(parent).grid(row = 1, column = 1)
+
+submit = Button(parent, text = "Submit").grid(row = 4, column = 0)
+
+parent.mainloop()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter" src="python/images/python-tkinter3.png"/>
+<h3 class="h2">Python Tkinter place() method</h3>
+<p>The place() geometry manager organizes the widgets to the specific x and y coordinates.</p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+widget.place(options)
+</textarea></div>
+<p>A list of possible options is given below.</p>
+<ul class="points">
+<li><strong>Anchor:</strong>  It represents the exact position of the widget within the container. The default value (direction) is NW (the upper left corner)</li>
+<li><strong>bordermode:</strong>  The default value of the border type is INSIDE that refers to ignore the parent's inside the border. The other option is OUTSIDE.</li>
+<li><strong>height, width:</strong>  It refers to the height and width in pixels.</li>
+<li><strong>relheight, relwidth:</strong>  It is represented as the float between 0.0 and 1.0 indicating the fraction of the parent's height and width.</li>
+<li><strong>relx, rely:</strong>  It is represented as the float between 0.0 and 1.0 that is the offset in the horizontal and vertical direction.</li>
+<li><strong>x, y:</strong> It refers to the horizontal and vertical offset in the pixels.</li>
+</ul>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+# !/usr/bin/python3
+from tkinter import *
+
+top = Tk()
+
+top.geometry("400x250")
+
+name = Label(top, text = "Name").place(x = 30,y = 50)
+
+email = Label(top, text = "Email").place(x = 30, y = 90)
+
+password = Label(top, text = "Password").place(x = 30, y = 130)
+
+e1 = Entry(top).place(x = 80, y = 50)
+
+
+e2 = Entry(top).place(x = 80, y = 90)
+
+
+e3 = Entry(top).place(x = 95, y = 130)
+
+top.mainloop()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter" src="python/images/python-tkinter4.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-button">Python Tkinter Button</a></span>
+</div>
+<!-- link -->
+<br><br>
+<div id="bottomnext">
+<a class="next" href="python-programs" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-button" style="float:right">next ¡ú</a>
+</div>
+<br><br>
+</br></br></br></br></td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-button">next ¡ú</a>
+<a class="next" href="python-programs">¡û prev</a>
+</div>
+<h1 class="h1">Python Tkinter</h1>
+<img alt="Python Tkinter Tutorial" class="imageright" src="python/images/tkinter-tutorial.png"/>
+<p>Python provides the standard library for creating the graphical user interface for desktop based applications.</p>
+<p>Developing desktop based applications with python Tkinter is not a complex task. An empty Tkinter top-level window can be created by using the following steps.</p>
+<ol class="points">
+<li>import the Tkinter module.</li>
+<li>Create the main application window.</li>
+<li>Add the widgets like labels, buttons, frames, etc. to the window.</li>
+<li>Call the main event loop so that the actions can take place on the user's computer screen.</li>
+</ol>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+# !/usr/bin/python3
+from tkinter import *
+
+#creating the application main window. 
+top = Tk()
+
+#Entering the event main loop
+top.mainloop()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter" src="python/images/python-tkinter.png"/>
+<hr/>
+<h2 class="h2">Tkinter widgets </h2>
+<p>There are various widgets like button, canvas, checkbutton, entry, etc. that are used to build the python GUI applications.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Widget</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="python-tkinter-button">Button</a></td>
+<td>The Button is used to add various kinds of buttons to the python application.</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="python-tkinter-canvas">Canvas</a></td>
+<td>The canvas widget is used to draw the canvas on the window.</td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="python-tkinter-checkbutton">Checkbutton</a></td>
+<td>The Checkbutton is used to display the CheckButton on the window.</td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="python-tkinter-entry">Entry</a></td>
+<td>The entry widget is used to display the single-line text field to the user. It is commonly used to accept user values.</td>
+</tr>
+<tr>
+<td>5</td>
+<td><a href="python-tkinter-frame">Frame</a></td>
+<td>It can be defined as a container to which, another widget can be added and organized.</td>
+</tr>
+<tr>
+<td>6</td>
+<td><a href="python-tkinter-label">Label</a></td>
+<td>A label is a text used to display some message or information about the other widgets.</td>
+</tr>
+<tr>
+<td>7</td>
+<td><a href="python-tkinter-listbox">ListBox</a></td>
+<td>The ListBox widget is used to display a list of options to the user.</td>
+</tr>
+<tr>
+<td>8</td>
+<td><a href="python-tkinter-menubutton">Menubutton</a></td>
+<td>The Menubutton is used to display the menu items to the user.</td>
+</tr>
+<tr>
+<td>9</td>
+<td><a href="python-tkinter-menu">Menu</a></td>
+<td>It is used to add menu items to the user.</td>
+</tr>
+<tr>
+<td>10</td>
+<td><a href="python-tkinter-message">Message</a></td>
+<td>The Message widget is used to display the message-box to the user.</td>
+</tr>
+<tr>
+<td>11</td>
+<td><a href="python-tkinter-radiobutton">Radiobutton</a></td>
+<td>The Radiobutton is different from a checkbutton. Here, the user is provided with various options and the user can select only one option among them.</td>
+</tr>
+<tr>
+<td>12</td>
+<td><a href="python-tkinter-scale">Scale</a></td>
+<td>It is used to provide the slider to the user. </td>
+</tr>
+<tr>
+<td>13</td>
+<td><a href="python-tkinter-scrollbar">Scrollbar</a></td>
+<td>It provides the scrollbar to the user so that the user can scroll the window up and down.</td>
+</tr>
+<tr>
+<td>14</td>
+<td><a href="python-tkinter-text">Text</a></td>
+<td>It is different from Entry because it provides a multi-line text field to the user so that the user can write the text and edit the text inside it.</td>
+</tr>
+<tr>
+<td>14</td>
+<td><a href="python-tkinter-toplevel">Toplevel</a></td>
+<td>It is used to create a separate window container.</td>
+</tr>
+<tr>
+<td>15</td>
+<td><a href="python-tkinter-spinbox">Spinbox</a></td>
+<td>It is an entry widget used to select from options of values.</td>
+</tr>
+<tr>
+<td>16</td>
+<td><a href="python-tkinter-panedwindow">PanedWindow</a></td>
+<td>It is like a container widget that contains horizontal or vertical panes.</td>
+</tr>
+<tr>
+<td>17</td>
+<td><a href="python-tkinter-labelframe">LabelFrame</a></td>
+<td>A LabelFrame is a container widget that acts as the container</td>
+</tr>
+<tr>
+<td>18</td>
+<td><a href="python-tkinter-messagebox">MessageBox</a></td>
+<td>This module is used to display the message-box in the desktop based applications.</td>
+</tr>
+</table>
+<hr/>
+<h2 class="h2">Python Tkinter Geometry </h2>
+<p>The Tkinter geometry specifies the method by using which, the widgets are represented on display. The python Tkinter provides the following geometry methods.</p>
+<ol class="points">
+<li>The pack() method </li>
+<li>The grid() method </li>
+<li>The place() method</li>
+</ol>
+<p>Let's discuss each one of them in detail.</p>
+<h3 class="h2">Python Tkinter pack() method </h3>
+<p>The pack() widget is used to organize widget in the block. The positions widgets added to the python application using the pack() method can be controlled by using the various options specified in the method call. </p>
+<p>However, the controls are less and widgets are generally added in the less organized manner. </p>
+<p>The syntax to use the pack() is given below.</p>
+<h3 class="h3">syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+widget.pack(options)
+</textarea></div>
+<p>A list of possible options that can be passed in pack() is given below.</p>
+<ul class="points">
+<li><strong>expand:</strong> If the expand is set to true, the widget expands to fill any space. </li>
+<li><strong>Fill:</strong> By default, the fill is set to NONE. However, we can set it to X or Y to determine whether the widget contains any extra space.</li>
+<li><strong>size:</strong> it represents the side of the parent to which the widget is to be placed on the window.</li>
+</ul>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+# !/usr/bin/python3
+from tkinter import *
+
+parent = Tk()
+
+redbutton = Button(parent, text = "Red", fg = "red")
+redbutton.pack( side = LEFT)
+
+greenbutton = Button(parent, text = "Black", fg = "black")
+greenbutton.pack( side = RIGHT )
+
+bluebutton = Button(parent, text = "Blue", fg = "blue")
+bluebutton.pack( side = TOP )
+
+blackbutton = Button(parent, text = "Green", fg = "red")
+blackbutton.pack( side = BOTTOM)
+
+parent.mainloop()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter" src="python/images/python-tkinter2.png"/>
+<h3 class="h2">Python Tkinter grid() method</h3>
+<p>The grid() geometry manager organizes the widgets in the tabular form. We can specify the rows and columns as the options in the method call. We can also specify the column span (width) or rowspan(height) of a widget. </p>
+<p>This is a more organized way to place the widgets to the python application. The syntax to use the grid() is given below.</p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+widget.grid(options)
+</textarea></div>
+<p>A list of possible options that can be passed inside the grid() method is given below.</p>
+<ul class="points">
+<li><strong>Column</strong><br/>
+The column number in which the widget is to be placed. The leftmost column is represented by 0. </li>
+<li><strong>Columnspan</strong> <br/>
+The width of the widget. It represents the number of columns up to which, the column is expanded. </li>
+<li><strong>ipadx, ipady</strong><br/>
+	It represents the number of pixels to pad the widget inside the widget's border.</li>
+<li><strong>padx, pady </strong><br/>
+	It represents the number of pixels to pad the widget outside the widget's border.</li>
+<li><strong>row</strong><br/>
+	The row number in which the widget is to be placed. The topmost row is represented by 0.</li>
+<li><strong>rowspan</strong><br/>
+	The height of the widget, i.e. the number of the row up to which the widget is expanded.</li>
+<li><strong>Sticky</strong><br/>
+	If the cell is larger than a widget, then sticky is used to specify the position of the widget inside the cell. It may be the concatenation of the sticky letters representing the position of the widget. It may be N,  E, W, S, NE, NW, NS, EW, ES.</li>
+</ul>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+# !/usr/bin/python3
+from tkinter import *
+
+parent = Tk()
+
+name = Label(parent,text = "Name").grid(row = 0, column = 0)
+
+e1 = Entry(parent).grid(row = 0, column = 1)
+
+password = Label(parent,text = "Password").grid(row = 1, column = 0)
+
+e2 = Entry(parent).grid(row = 1, column = 1)
+
+submit = Button(parent, text = "Submit").grid(row = 4, column = 0)
+
+parent.mainloop()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter" src="python/images/python-tkinter3.png"/>
+<h3 class="h2">Python Tkinter place() method</h3>
+<p>The place() geometry manager organizes the widgets to the specific x and y coordinates.</p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+widget.place(options)
+</textarea></div>
+<p>A list of possible options is given below.</p>
+<ul class="points">
+<li><strong>Anchor:</strong>  It represents the exact position of the widget within the container. The default value (direction) is NW (the upper left corner)</li>
+<li><strong>bordermode:</strong>  The default value of the border type is INSIDE that refers to ignore the parent's inside the border. The other option is OUTSIDE.</li>
+<li><strong>height, width:</strong>  It refers to the height and width in pixels.</li>
+<li><strong>relheight, relwidth:</strong>  It is represented as the float between 0.0 and 1.0 indicating the fraction of the parent's height and width.</li>
+<li><strong>relx, rely:</strong>  It is represented as the float between 0.0 and 1.0 that is the offset in the horizontal and vertical direction.</li>
+<li><strong>x, y:</strong> It refers to the horizontal and vertical offset in the pixels.</li>
+</ul>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+# !/usr/bin/python3
+from tkinter import *
+
+top = Tk()
+
+top.geometry("400x250")
+
+name = Label(top, text = "Name").place(x = 30,y = 50)
+
+email = Label(top, text = "Email").place(x = 30, y = 90)
+
+password = Label(top, text = "Password").place(x = 30, y = 130)
+
+e1 = Entry(top).place(x = 80, y = 50)
+
+
+e2 = Entry(top).place(x = 80, y = 90)
+
+
+e3 = Entry(top).place(x = 95, y = 130)
+
+top.mainloop()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter" src="python/images/python-tkinter4.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-button">Python Tkinter Button</a></span>
+</div>
+<!-- link -->
+<br><br>
+<div id="bottomnext">
+<a class="next" href="python-programs" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-button" style="float:right">next ¡ú</a>
+</div>
+<br><br>
+</br></br></br></br></td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-button">next ¡ú</a>
+<a class="next" href="python-programs">¡û prev</a>
+</div>
+<h1 class="h1">Python Tkinter</h1>
+<img alt="Python Tkinter Tutorial" class="imageright" src="python/images/tkinter-tutorial.png"/>
+<p>Python provides the standard library for creating the graphical user interface for desktop based applications.</p>
+<p>Developing desktop based applications with python Tkinter is not a complex task. An empty Tkinter top-level window can be created by using the following steps.</p>
+<ol class="points">
+<li>import the Tkinter module.</li>
+<li>Create the main application window.</li>
+<li>Add the widgets like labels, buttons, frames, etc. to the window.</li>
+<li>Call the main event loop so that the actions can take place on the user's computer screen.</li>
+</ol>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+# !/usr/bin/python3
+from tkinter import *
+
+#creating the application main window. 
+top = Tk()
+
+#Entering the event main loop
+top.mainloop()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter" src="python/images/python-tkinter.png"/>
+<hr/>
+<h2 class="h2">Tkinter widgets </h2>
+<p>There are various widgets like button, canvas, checkbutton, entry, etc. that are used to build the python GUI applications.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Widget</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="python-tkinter-button">Button</a></td>
+<td>The Button is used to add various kinds of buttons to the python application.</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="python-tkinter-canvas">Canvas</a></td>
+<td>The canvas widget is used to draw the canvas on the window.</td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="python-tkinter-checkbutton">Checkbutton</a></td>
+<td>The Checkbutton is used to display the CheckButton on the window.</td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="python-tkinter-entry">Entry</a></td>
+<td>The entry widget is used to display the single-line text field to the user. It is commonly used to accept user values.</td>
+</tr>
+<tr>
+<td>5</td>
+<td><a href="python-tkinter-frame">Frame</a></td>
+<td>It can be defined as a container to which, another widget can be added and organized.</td>
+</tr>
+<tr>
+<td>6</td>
+<td><a href="python-tkinter-label">Label</a></td>
+<td>A label is a text used to display some message or information about the other widgets.</td>
+</tr>
+<tr>
+<td>7</td>
+<td><a href="python-tkinter-listbox">ListBox</a></td>
+<td>The ListBox widget is used to display a list of options to the user.</td>
+</tr>
+<tr>
+<td>8</td>
+<td><a href="python-tkinter-menubutton">Menubutton</a></td>
+<td>The Menubutton is used to display the menu items to the user.</td>
+</tr>
+<tr>
+<td>9</td>
+<td><a href="python-tkinter-menu">Menu</a></td>
+<td>It is used to add menu items to the user.</td>
+</tr>
+<tr>
+<td>10</td>
+<td><a href="python-tkinter-message">Message</a></td>
+<td>The Message widget is used to display the message-box to the user.</td>
+</tr>
+<tr>
+<td>11</td>
+<td><a href="python-tkinter-radiobutton">Radiobutton</a></td>
+<td>The Radiobutton is different from a checkbutton. Here, the user is provided with various options and the user can select only one option among them.</td>
+</tr>
+<tr>
+<td>12</td>
+<td><a href="python-tkinter-scale">Scale</a></td>
+<td>It is used to provide the slider to the user. </td>
+</tr>
+<tr>
+<td>13</td>
+<td><a href="python-tkinter-scrollbar">Scrollbar</a></td>
+<td>It provides the scrollbar to the user so that the user can scroll the window up and down.</td>
+</tr>
+<tr>
+<td>14</td>
+<td><a href="python-tkinter-text">Text</a></td>
+<td>It is different from Entry because it provides a multi-line text field to the user so that the user can write the text and edit the text inside it.</td>
+</tr>
+<tr>
+<td>14</td>
+<td><a href="python-tkinter-toplevel">Toplevel</a></td>
+<td>It is used to create a separate window container.</td>
+</tr>
+<tr>
+<td>15</td>
+<td><a href="python-tkinter-spinbox">Spinbox</a></td>
+<td>It is an entry widget used to select from options of values.</td>
+</tr>
+<tr>
+<td>16</td>
+<td><a href="python-tkinter-panedwindow">PanedWindow</a></td>
+<td>It is like a container widget that contains horizontal or vertical panes.</td>
+</tr>
+<tr>
+<td>17</td>
+<td><a href="python-tkinter-labelframe">LabelFrame</a></td>
+<td>A LabelFrame is a container widget that acts as the container</td>
+</tr>
+<tr>
+<td>18</td>
+<td><a href="python-tkinter-messagebox">MessageBox</a></td>
+<td>This module is used to display the message-box in the desktop based applications.</td>
+</tr>
+</table>
+<hr/>
+<h2 class="h2">Python Tkinter Geometry </h2>
+<p>The Tkinter geometry specifies the method by using which, the widgets are represented on display. The python Tkinter provides the following geometry methods.</p>
+<ol class="points">
+<li>The pack() method </li>
+<li>The grid() method </li>
+<li>The place() method</li>
+</ol>
+<p>Let's discuss each one of them in detail.</p>
+<h3 class="h2">Python Tkinter pack() method </h3>
+<p>The pack() widget is used to organize widget in the block. The positions widgets added to the python application using the pack() method can be controlled by using the various options specified in the method call. </p>
+<p>However, the controls are less and widgets are generally added in the less organized manner. </p>
+<p>The syntax to use the pack() is given below.</p>
+<h3 class="h3">syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+widget.pack(options)
+</textarea></div>
+<p>A list of possible options that can be passed in pack() is given below.</p>
+<ul class="points">
+<li><strong>expand:</strong> If the expand is set to true, the widget expands to fill any space. </li>
+<li><strong>Fill:</strong> By default, the fill is set to NONE. However, we can set it to X or Y to determine whether the widget contains any extra space.</li>
+<li><strong>size:</strong> it represents the side of the parent to which the widget is to be placed on the window.</li>
+</ul>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+# !/usr/bin/python3
+from tkinter import *
+
+parent = Tk()
+
+redbutton = Button(parent, text = "Red", fg = "red")
+redbutton.pack( side = LEFT)
+
+greenbutton = Button(parent, text = "Black", fg = "black")
+greenbutton.pack( side = RIGHT )
+
+bluebutton = Button(parent, text = "Blue", fg = "blue")
+bluebutton.pack( side = TOP )
+
+blackbutton = Button(parent, text = "Green", fg = "red")
+blackbutton.pack( side = BOTTOM)
+
+parent.mainloop()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter" src="python/images/python-tkinter2.png"/>
+<h3 class="h2">Python Tkinter grid() method</h3>
+<p>The grid() geometry manager organizes the widgets in the tabular form. We can specify the rows and columns as the options in the method call. We can also specify the column span (width) or rowspan(height) of a widget. </p>
+<p>This is a more organized way to place the widgets to the python application. The syntax to use the grid() is given below.</p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+widget.grid(options)
+</textarea></div>
+<p>A list of possible options that can be passed inside the grid() method is given below.</p>
+<ul class="points">
+<li><strong>Column</strong><br/>
+The column number in which the widget is to be placed. The leftmost column is represented by 0. </li>
+<li><strong>Columnspan</strong> <br/>
+The width of the widget. It represents the number of columns up to which, the column is expanded. </li>
+<li><strong>ipadx, ipady</strong><br/>
+	It represents the number of pixels to pad the widget inside the widget's border.</li>
+<li><strong>padx, pady </strong><br/>
+	It represents the number of pixels to pad the widget outside the widget's border.</li>
+<li><strong>row</strong><br/>
+	The row number in which the widget is to be placed. The topmost row is represented by 0.</li>
+<li><strong>rowspan</strong><br/>
+	The height of the widget, i.e. the number of the row up to which the widget is expanded.</li>
+<li><strong>Sticky</strong><br/>
+	If the cell is larger than a widget, then sticky is used to specify the position of the widget inside the cell. It may be the concatenation of the sticky letters representing the position of the widget. It may be N,  E, W, S, NE, NW, NS, EW, ES.</li>
+</ul>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+# !/usr/bin/python3
+from tkinter import *
+
+parent = Tk()
+
+name = Label(parent,text = "Name").grid(row = 0, column = 0)
+
+e1 = Entry(parent).grid(row = 0, column = 1)
+
+password = Label(parent,text = "Password").grid(row = 1, column = 0)
+
+e2 = Entry(parent).grid(row = 1, column = 1)
+
+submit = Button(parent, text = "Submit").grid(row = 4, column = 0)
+
+parent.mainloop()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter" src="python/images/python-tkinter3.png"/>
+<h3 class="h2">Python Tkinter place() method</h3>
+<p>The place() geometry manager organizes the widgets to the specific x and y coordinates.</p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+widget.place(options)
+</textarea></div>
+<p>A list of possible options is given below.</p>
+<ul class="points">
+<li><strong>Anchor:</strong>  It represents the exact position of the widget within the container. The default value (direction) is NW (the upper left corner)</li>
+<li><strong>bordermode:</strong>  The default value of the border type is INSIDE that refers to ignore the parent's inside the border. The other option is OUTSIDE.</li>
+<li><strong>height, width:</strong>  It refers to the height and width in pixels.</li>
+<li><strong>relheight, relwidth:</strong>  It is represented as the float between 0.0 and 1.0 indicating the fraction of the parent's height and width.</li>
+<li><strong>relx, rely:</strong>  It is represented as the float between 0.0 and 1.0 that is the offset in the horizontal and vertical direction.</li>
+<li><strong>x, y:</strong> It refers to the horizontal and vertical offset in the pixels.</li>
+</ul>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+# !/usr/bin/python3
+from tkinter import *
+
+top = Tk()
+
+top.geometry("400x250")
+
+name = Label(top, text = "Name").place(x = 30,y = 50)
+
+email = Label(top, text = "Email").place(x = 30, y = 90)
+
+password = Label(top, text = "Password").place(x = 30, y = 130)
+
+e1 = Entry(top).place(x = 80, y = 50)
+
+
+e2 = Entry(top).place(x = 80, y = 90)
+
+
+e3 = Entry(top).place(x = 95, y = 130)
+
+top.mainloop()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter" src="python/images/python-tkinter4.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-button">Python Tkinter Button</a></span>
+</div>
+<!-- link -->
+<br><br>
+<div id="bottomnext">
+<a class="next" href="python-programs" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-button" style="float:right">next ¡ú</a>
+</div>
+<br><br>
+</br></br></br></br></td></tr>
+</table>
+</div></body></html></body></html>

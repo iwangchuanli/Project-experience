@@ -1,0 +1,1193 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-copies-and-views">next ¡ú</a>
+<a class="next" href="numpy-statistical-functions">¡û prev</a>
+</div>
+<h1 class="h1">NumPy Sorting and Searching</h1>
+<p>Numpy provides a variety of functions for sorting and searching. There are various sorting algorithms like quicksort, merge sort and heapsort which is implemented using the numpy.sort() function.</p>
+<p>The kind of the sorting algorithm to be used in the sort operation must be mentioned in the function call.</p>
+<p>Let's discuss the sorting algorithm which is implemented in numpy.sort()</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Algorithm</th>
+<th>Worst case complexity</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Quick Sort</td>
+<td>O (n ^ 2)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Merge Sort</td>
+<td>O (n * log(n))</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Heap Sort</td>
+<td>O (n * log(n))</td>
+</tr>
+</table>
+<p>The syntax to use the numpy.sort() function is given below. </p>
+<div class="codeblock"><textarea class="python" name="code">
+numpy.sort(a, axis, kind, order)
+</textarea></div>
+<p>It accepts the following parameters. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>input</td>
+<td>It represents the input array which is to be sorted.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>axis</td>
+<td>It represents the axis along which the array is to be sorted. If the axis is not mentioned, then the sorting is done along the last available axis. </td>
+</tr>
+<tr>
+<td>3</td>
+<td>kind</td>
+<td>It represents the type of sorting algorithm which is to be used while sorting. The default is quick sort.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>order</td>
+<td>It represents the filed according to which the array is to be sorted in the case if the array contains the fields.</td>
+</tr>
+</table>
+<p>Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+
+a = np.array([[10,2,3],[4,5,6],[7,8,9]])
+
+print("Sorting along the columns:")
+print(np.sort(a))
+
+print("Sorting along the rows:")
+print(np.sort(a, 0))
+
+data_type = np.dtype([('name', 'S10'),('marks',int)])
+
+arr = np.array([('Mukesh',200),('John',251)],dtype = data_type)
+
+print("Sorting data ordered by name")
+
+print(np.sort(arr,order = 'name'))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Sorting along the columns:
+[[ 2  3 10]
+ [ 4  5  6]
+ [ 7  8  9]]
+Sorting along the rows:
+[[ 4  2  3]
+ [ 7  5  6]
+ [10  8  9]]
+Sorting data ordered by name
+[(b'John', 251) (b'Mukesh', 200)]
+</pre></div>
+<h3 class="h2">numpy.argsort() function </h3>
+<p>This function is used to perform an indirect sort on an input array that is, it returns an array of indices of data which is used to construct the array of sorted data. </p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+
+a = np.array([90, 29, 89, 12])
+
+print("Original array:\n",a)
+
+sort_ind = np.argsort(a)
+
+print("Printing indices of sorted data\n",sort_ind)
+
+sort_a = a[sort_ind]
+
+print("printing sorted array")
+
+for i in sort_ind:
+    print(a[i],end = " ")
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Original array:
+ [90 29 89 12]
+Printing indices of sorted data
+ [3 1 2 0]
+printing sorted array
+12 29 89 90 
+</pre></div>
+<h3 class="h2">numpy.lexsort() function </h3>
+<p>This function is used to sort the array using the sequence of keys indirectly. This function performs similarly to the numpy.argsort() which returns the array of indices of sorted data.</p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+
+a = np.array(['a','b','c','d','e'])
+
+b = np.array([12, 90, 380, 12, 211])
+
+ind = np.lexsort((a,b))
+
+print("printing indices of sorted data")
+
+print(ind)
+
+print("using the indices to sort the array")
+
+for i in ind:
+    print(a[i],b[i])
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+printing indices of sorted data
+[0 3 1 4 2]
+using the indices to sort the array
+a 12
+d 12
+b 90
+e 211
+c 380
+</pre></div>
+<h3 class="h2">numpy.nonzero() function</h3>
+<p>This function is used to find the location of the non-zero elements from the array. </p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+
+b = np.array([12, 90, 380, 12, 211])
+
+print("printing original array",b)
+
+print("printing location of the non-zero elements")
+
+print(b.nonzero())
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+printing original array [ 12  90 380  12 211]
+printing location of the non-zero elements
+(array([0, 1, 2, 3, 4]),)
+</pre></div>
+<h3 class="h2">numpy.where() function</h3>
+<p>This function is used to return the indices of all the elements which satisfies a particular condition. </p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+
+b = np.array([12, 90, 380, 12, 211])
+
+print(np.where(b&gt;12))
+
+c = np.array([[20, 24],[21, 23]])
+
+print(np.where(c&gt;20))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+(array([1, 2, 4]),)
+(array([0, 1, 1]), array([1, 0, 1]))
+</pre></div>
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-copies-and-views">NumPy Copies and Views</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="numpy-statistical-functions" style="float:left">¡û prev</a>
+<a class="next" href="numpy-copies-and-views" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-copies-and-views">next ¡ú</a>
+<a class="next" href="numpy-statistical-functions">¡û prev</a>
+</div>
+<h1 class="h1">NumPy Sorting and Searching</h1>
+<p>Numpy provides a variety of functions for sorting and searching. There are various sorting algorithms like quicksort, merge sort and heapsort which is implemented using the numpy.sort() function.</p>
+<p>The kind of the sorting algorithm to be used in the sort operation must be mentioned in the function call.</p>
+<p>Let's discuss the sorting algorithm which is implemented in numpy.sort()</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Algorithm</th>
+<th>Worst case complexity</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Quick Sort</td>
+<td>O (n ^ 2)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Merge Sort</td>
+<td>O (n * log(n))</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Heap Sort</td>
+<td>O (n * log(n))</td>
+</tr>
+</table>
+<p>The syntax to use the numpy.sort() function is given below. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+numpy.sort(a, axis, kind, order)
+
+</textarea></div>
+<p>It accepts the following parameters. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>input</td>
+<td>It represents the input array which is to be sorted.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>axis</td>
+<td>It represents the axis along which the array is to be sorted. If the axis is not mentioned, then the sorting is done along the last available axis. </td>
+</tr>
+<tr>
+<td>3</td>
+<td>kind</td>
+<td>It represents the type of sorting algorithm which is to be used while sorting. The default is quick sort.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>order</td>
+<td>It represents the filed according to which the array is to be sorted in the case if the array contains the fields.</td>
+</tr>
+</table>
+<p>Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+a = np.array([[10,2,3],[4,5,6],[7,8,9]])
+
+
+
+print("Sorting along the columns:")
+
+print(np.sort(a))
+
+
+
+print("Sorting along the rows:")
+
+print(np.sort(a, 0))
+
+
+
+data_type = np.dtype([('name', 'S10'),('marks',int)])
+
+
+
+arr = np.array([('Mukesh',200),('John',251)],dtype = data_type)
+
+
+
+print("Sorting data ordered by name")
+
+
+
+print(np.sort(arr,order = 'name'))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Sorting along the columns:
+
+[[ 2  3 10]
+
+ [ 4  5  6]
+
+ [ 7  8  9]]
+
+Sorting along the rows:
+
+[[ 4  2  3]
+
+ [ 7  5  6]
+
+ [10  8  9]]
+
+Sorting data ordered by name
+
+[(b'John', 251) (b'Mukesh', 200)]
+
+</pre></div>
+<h3 class="h2">numpy.argsort() function </h3>
+<p>This function is used to perform an indirect sort on an input array that is, it returns an array of indices of data which is used to construct the array of sorted data. </p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+a = np.array([90, 29, 89, 12])
+
+
+
+print("Original array:\n",a)
+
+
+
+sort_ind = np.argsort(a)
+
+
+
+print("Printing indices of sorted data\n",sort_ind)
+
+
+
+sort_a = a[sort_ind]
+
+
+
+print("printing sorted array")
+
+
+
+for i in sort_ind:
+
+    print(a[i],end = " ")
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Original array:
+
+ [90 29 89 12]
+
+Printing indices of sorted data
+
+ [3 1 2 0]
+
+printing sorted array
+
+12 29 89 90 
+
+</pre></div>
+<h3 class="h2">numpy.lexsort() function </h3>
+<p>This function is used to sort the array using the sequence of keys indirectly. This function performs similarly to the numpy.argsort() which returns the array of indices of sorted data.</p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+a = np.array(['a','b','c','d','e'])
+
+
+
+b = np.array([12, 90, 380, 12, 211])
+
+
+
+ind = np.lexsort((a,b))
+
+
+
+print("printing indices of sorted data")
+
+
+
+print(ind)
+
+
+
+print("using the indices to sort the array")
+
+
+
+for i in ind:
+
+    print(a[i],b[i])
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+printing indices of sorted data
+
+[0 3 1 4 2]
+
+using the indices to sort the array
+
+a 12
+
+d 12
+
+b 90
+
+e 211
+
+c 380
+
+</pre></div>
+<h3 class="h2">numpy.nonzero() function</h3>
+<p>This function is used to find the location of the non-zero elements from the array. </p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+b = np.array([12, 90, 380, 12, 211])
+
+
+
+print("printing original array",b)
+
+
+
+print("printing location of the non-zero elements")
+
+
+
+print(b.nonzero())
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+printing original array [ 12  90 380  12 211]
+
+printing location of the non-zero elements
+
+(array([0, 1, 2, 3, 4]),)
+
+</pre></div>
+<h3 class="h2">numpy.where() function</h3>
+<p>This function is used to return the indices of all the elements which satisfies a particular condition. </p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+b = np.array([12, 90, 380, 12, 211])
+
+
+
+print(np.where(b&gt;12))
+
+
+
+c = np.array([[20, 24],[21, 23]])
+
+
+
+print(np.where(c&gt;20))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+(array([1, 2, 4]),)
+
+(array([0, 1, 1]), array([1, 0, 1]))
+
+</pre></div>
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-copies-and-views">NumPy Copies and Views</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="numpy-statistical-functions" style="float:left">¡û prev</a>
+<a class="next" href="numpy-copies-and-views" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-copies-and-views">next ¡ú</a>
+<a class="next" href="numpy-statistical-functions">¡û prev</a>
+</div>
+<h1 class="h1">NumPy Sorting and Searching</h1>
+<p>Numpy provides a variety of functions for sorting and searching. There are various sorting algorithms like quicksort, merge sort and heapsort which is implemented using the numpy.sort() function.</p>
+<p>The kind of the sorting algorithm to be used in the sort operation must be mentioned in the function call.</p>
+<p>Let's discuss the sorting algorithm which is implemented in numpy.sort()</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Algorithm</th>
+<th>Worst case complexity</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Quick Sort</td>
+<td>O (n ^ 2)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Merge Sort</td>
+<td>O (n * log(n))</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Heap Sort</td>
+<td>O (n * log(n))</td>
+</tr>
+</table>
+<p>The syntax to use the numpy.sort() function is given below. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+numpy.sort(a, axis, kind, order)
+
+</textarea></div>
+<p>It accepts the following parameters. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>input</td>
+<td>It represents the input array which is to be sorted.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>axis</td>
+<td>It represents the axis along which the array is to be sorted. If the axis is not mentioned, then the sorting is done along the last available axis. </td>
+</tr>
+<tr>
+<td>3</td>
+<td>kind</td>
+<td>It represents the type of sorting algorithm which is to be used while sorting. The default is quick sort.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>order</td>
+<td>It represents the filed according to which the array is to be sorted in the case if the array contains the fields.</td>
+</tr>
+</table>
+<p>Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+a = np.array([[10,2,3],[4,5,6],[7,8,9]])
+
+
+
+print("Sorting along the columns:")
+
+print(np.sort(a))
+
+
+
+print("Sorting along the rows:")
+
+print(np.sort(a, 0))
+
+
+
+data_type = np.dtype([('name', 'S10'),('marks',int)])
+
+
+
+arr = np.array([('Mukesh',200),('John',251)],dtype = data_type)
+
+
+
+print("Sorting data ordered by name")
+
+
+
+print(np.sort(arr,order = 'name'))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Sorting along the columns:
+
+[[ 2  3 10]
+
+ [ 4  5  6]
+
+ [ 7  8  9]]
+
+Sorting along the rows:
+
+[[ 4  2  3]
+
+ [ 7  5  6]
+
+ [10  8  9]]
+
+Sorting data ordered by name
+
+[(b'John', 251) (b'Mukesh', 200)]
+
+</pre></div>
+<h3 class="h2">numpy.argsort() function </h3>
+<p>This function is used to perform an indirect sort on an input array that is, it returns an array of indices of data which is used to construct the array of sorted data. </p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+a = np.array([90, 29, 89, 12])
+
+
+
+print("Original array:\n",a)
+
+
+
+sort_ind = np.argsort(a)
+
+
+
+print("Printing indices of sorted data\n",sort_ind)
+
+
+
+sort_a = a[sort_ind]
+
+
+
+print("printing sorted array")
+
+
+
+for i in sort_ind:
+
+    print(a[i],end = " ")
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Original array:
+
+ [90 29 89 12]
+
+Printing indices of sorted data
+
+ [3 1 2 0]
+
+printing sorted array
+
+12 29 89 90 
+
+</pre></div>
+<h3 class="h2">numpy.lexsort() function </h3>
+<p>This function is used to sort the array using the sequence of keys indirectly. This function performs similarly to the numpy.argsort() which returns the array of indices of sorted data.</p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+a = np.array(['a','b','c','d','e'])
+
+
+
+b = np.array([12, 90, 380, 12, 211])
+
+
+
+ind = np.lexsort((a,b))
+
+
+
+print("printing indices of sorted data")
+
+
+
+print(ind)
+
+
+
+print("using the indices to sort the array")
+
+
+
+for i in ind:
+
+    print(a[i],b[i])
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+printing indices of sorted data
+
+[0 3 1 4 2]
+
+using the indices to sort the array
+
+a 12
+
+d 12
+
+b 90
+
+e 211
+
+c 380
+
+</pre></div>
+<h3 class="h2">numpy.nonzero() function</h3>
+<p>This function is used to find the location of the non-zero elements from the array. </p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+b = np.array([12, 90, 380, 12, 211])
+
+
+
+print("printing original array",b)
+
+
+
+print("printing location of the non-zero elements")
+
+
+
+print(b.nonzero())
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+printing original array [ 12  90 380  12 211]
+
+printing location of the non-zero elements
+
+(array([0, 1, 2, 3, 4]),)
+
+</pre></div>
+<h3 class="h2">numpy.where() function</h3>
+<p>This function is used to return the indices of all the elements which satisfies a particular condition. </p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+b = np.array([12, 90, 380, 12, 211])
+
+
+
+print(np.where(b&gt;12))
+
+
+
+c = np.array([[20, 24],[21, 23]])
+
+
+
+print(np.where(c&gt;20))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+(array([1, 2, 4]),)
+
+(array([0, 1, 1]), array([1, 0, 1]))
+
+</pre></div>
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-copies-and-views">NumPy Copies and Views</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="numpy-statistical-functions" style="float:left">¡û prev</a>
+<a class="next" href="numpy-copies-and-views" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-copies-and-views">next ¡ú</a>
+<a class="next" href="numpy-statistical-functions">¡û prev</a>
+</div>
+<h1 class="h1">NumPy Sorting and Searching</h1>
+<p>Numpy provides a variety of functions for sorting and searching. There are various sorting algorithms like quicksort, merge sort and heapsort which is implemented using the numpy.sort() function.</p>
+<p>The kind of the sorting algorithm to be used in the sort operation must be mentioned in the function call.</p>
+<p>Let's discuss the sorting algorithm which is implemented in numpy.sort()</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Algorithm</th>
+<th>Worst case complexity</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Quick Sort</td>
+<td>O (n ^ 2)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Merge Sort</td>
+<td>O (n * log(n))</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Heap Sort</td>
+<td>O (n * log(n))</td>
+</tr>
+</table>
+<p>The syntax to use the numpy.sort() function is given below. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+numpy.sort(a, axis, kind, order)
+
+</textarea></div>
+<p>It accepts the following parameters. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>input</td>
+<td>It represents the input array which is to be sorted.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>axis</td>
+<td>It represents the axis along which the array is to be sorted. If the axis is not mentioned, then the sorting is done along the last available axis. </td>
+</tr>
+<tr>
+<td>3</td>
+<td>kind</td>
+<td>It represents the type of sorting algorithm which is to be used while sorting. The default is quick sort.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>order</td>
+<td>It represents the filed according to which the array is to be sorted in the case if the array contains the fields.</td>
+</tr>
+</table>
+<p>Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+a = np.array([[10,2,3],[4,5,6],[7,8,9]])
+
+
+
+print("Sorting along the columns:")
+
+print(np.sort(a))
+
+
+
+print("Sorting along the rows:")
+
+print(np.sort(a, 0))
+
+
+
+data_type = np.dtype([('name', 'S10'),('marks',int)])
+
+
+
+arr = np.array([('Mukesh',200),('John',251)],dtype = data_type)
+
+
+
+print("Sorting data ordered by name")
+
+
+
+print(np.sort(arr,order = 'name'))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Sorting along the columns:
+
+[[ 2  3 10]
+
+ [ 4  5  6]
+
+ [ 7  8  9]]
+
+Sorting along the rows:
+
+[[ 4  2  3]
+
+ [ 7  5  6]
+
+ [10  8  9]]
+
+Sorting data ordered by name
+
+[(b'John', 251) (b'Mukesh', 200)]
+
+</pre></div>
+<h3 class="h2">numpy.argsort() function </h3>
+<p>This function is used to perform an indirect sort on an input array that is, it returns an array of indices of data which is used to construct the array of sorted data. </p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+a = np.array([90, 29, 89, 12])
+
+
+
+print("Original array:\n",a)
+
+
+
+sort_ind = np.argsort(a)
+
+
+
+print("Printing indices of sorted data\n",sort_ind)
+
+
+
+sort_a = a[sort_ind]
+
+
+
+print("printing sorted array")
+
+
+
+for i in sort_ind:
+
+    print(a[i],end = " ")
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Original array:
+
+ [90 29 89 12]
+
+Printing indices of sorted data
+
+ [3 1 2 0]
+
+printing sorted array
+
+12 29 89 90 
+
+</pre></div>
+<h3 class="h2">numpy.lexsort() function </h3>
+<p>This function is used to sort the array using the sequence of keys indirectly. This function performs similarly to the numpy.argsort() which returns the array of indices of sorted data.</p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+a = np.array(['a','b','c','d','e'])
+
+
+
+b = np.array([12, 90, 380, 12, 211])
+
+
+
+ind = np.lexsort((a,b))
+
+
+
+print("printing indices of sorted data")
+
+
+
+print(ind)
+
+
+
+print("using the indices to sort the array")
+
+
+
+for i in ind:
+
+    print(a[i],b[i])
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+printing indices of sorted data
+
+[0 3 1 4 2]
+
+using the indices to sort the array
+
+a 12
+
+d 12
+
+b 90
+
+e 211
+
+c 380
+
+</pre></div>
+<h3 class="h2">numpy.nonzero() function</h3>
+<p>This function is used to find the location of the non-zero elements from the array. </p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+b = np.array([12, 90, 380, 12, 211])
+
+
+
+print("printing original array",b)
+
+
+
+print("printing location of the non-zero elements")
+
+
+
+print(b.nonzero())
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+printing original array [ 12  90 380  12 211]
+
+printing location of the non-zero elements
+
+(array([0, 1, 2, 3, 4]),)
+
+</pre></div>
+<h3 class="h2">numpy.where() function</h3>
+<p>This function is used to return the indices of all the elements which satisfies a particular condition. </p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+b = np.array([12, 90, 380, 12, 211])
+
+
+
+print(np.where(b&gt;12))
+
+
+
+c = np.array([[20, 24],[21, 23]])
+
+
+
+print(np.where(c&gt;20))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+(array([1, 2, 4]),)
+
+(array([0, 1, 1]), array([1, 0, 1]))
+
+</pre></div>
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-copies-and-views">NumPy Copies and Views</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="numpy-statistical-functions" style="float:left">¡û prev</a>
+<a class="next" href="numpy-copies-and-views" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html></body></html>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebResourcesPaths">
+    <contentEntries>
+      <entry url="file://$PROJECT_DIR$">
+        <entryData>
+          <resourceRoots>
+            <path value="file://$PROJECT_DIR$/sql" />
+            <path value="file://$PROJECT_DIR$/detector" />
+            <path value="file://$PROJECT_DIR$/utils" />
+            <path value="file://$PROJECT_DIR$/spider" />
+            <path value="file://$PROJECT_DIR$/spider/baidu_index" />
+          </resourceRoots>
+        </entryData>
+      </entry>
+    </contentEntries>
+  </component>
+</project>

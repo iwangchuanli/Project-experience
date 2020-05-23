@@ -1,0 +1,132 @@
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_index/baidu_index.py", line 136, in <module>
+    get_index()
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_index/baidu_index.py", line 126, in get_index
+    print(baidu_index.result['php']['all']['index'])
+TypeError: list indices must be integers or slices, not str
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_index/baidu_index.py", line 143, in <module>
+    get_index()
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_index/baidu_index.py", line 133, in get_index
+    sum_index += random.choices(baidu_index.result[item]['all'])
+TypeError: unsupported operand type(s) for +=: 'int' and 'list'
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_index/baidu_index.py", line 143, in <module>
+    get_index()
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_index/baidu_index.py", line 133, in get_index
+    sum_index += random.choices(baidu_index.result[item]['all'])[0]['index']
+TypeError: unsupported operand type(s) for +=: 'int' and 'str'
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_index/baidu_index.py", line 143, in <module>
+    get_index()
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_index/baidu_index.py", line 133, in get_index
+    sum_index += int(random.choices(baidu_index.result[item]['all'])[0]['index'])
+  File "D:\Develop\Tools\Python37\lib\random.py", line 356, in choices
+    return [population[_int(random() * total)] for i in range(k)]
+  File "D:\Develop\Tools\Python37\lib\random.py", line 356, in <listcomp>
+    return [population[_int(random() * total)] for i in range(k)]
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_index/baidu_index.py", line 162, in <module>
+    get_index()
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_index/baidu_index.py", line 139, in get_index
+    mysql_operation.baseoperation(insert_sql)
+TypeError: baseoperation() missing 1 required positional argument: 'sql'
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_index/baidu_index.py", line 161, in <module>
+    timer(5)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_index/baidu_index.py", line 109, in timer
+    get_index()
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_index/baidu_index.py", line 125, in get_index
+    baidu_index = BaiduIndex(search_list, '2018-01-01', '2019-04-01')
+  File "D:\Develop\WorkSpace\Python\seo_prj\spider\baidu_index\get_index.py", line 36, in __init__
+    self.get_result()
+  File "D:\Develop\WorkSpace\Python\seo_prj\spider\baidu_index\get_index.py", line 42, in get_result
+    encrypt_datas, uniqid = self.get_encrypt_datas(start_date, end_date)
+  File "D:\Develop\WorkSpace\Python\seo_prj\spider\baidu_index\get_index.py", line 63, in get_encrypt_datas
+    uniqid = datas['data']['uniqid']
+TypeError: string indices must be integers
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_index/baidu_index.py", line 161, in <module>
+    timer(5)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_index/baidu_index.py", line 109, in timer
+    get_index()
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_index/baidu_index.py", line 125, in get_index
+    baidu_index = BaiduIndex(search_list, '2018-01-01', '2019-04-01')
+  File "D:\Develop\WorkSpace\Python\seo_prj\spider\baidu_index\get_index.py", line 36, in __init__
+    self.get_result()
+  File "D:\Develop\WorkSpace\Python\seo_prj\spider\baidu_index\get_index.py", line 42, in get_result
+    encrypt_datas, uniqid = self.get_encrypt_datas(start_date, end_date)
+  File "D:\Develop\WorkSpace\Python\seo_prj\spider\baidu_index\get_index.py", line 63, in get_encrypt_datas
+    uniqid = datas['data']['uniqid']
+TypeError: string indices must be integers
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_index/baidu_index.py", line 161, in <module>
+    timer(5)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_index/baidu_index.py", line 109, in timer
+    get_index()
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_index/baidu_index.py", line 125, in get_index
+    baidu_index = BaiduIndex(search_list, '2018-01-01', '2019-04-01')
+  File "D:\Develop\WorkSpace\Python\seo_prj\spider\baidu_index\get_index.py", line 36, in __init__
+    self.get_result()
+  File "D:\Develop\WorkSpace\Python\seo_prj\spider\baidu_index\get_index.py", line 42, in get_result
+    encrypt_datas, uniqid = self.get_encrypt_datas(start_date, end_date)
+  File "D:\Develop\WorkSpace\Python\seo_prj\spider\baidu_index\get_index.py", line 63, in get_encrypt_datas
+    uniqid = datas['data']['uniqid']
+TypeError: string indices must be integers
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_index/baidu_index.py", line 162, in <module>
+    timer(5)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_index/baidu_index.py", line 110, in timer
+    get_index()
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_index/baidu_index.py", line 126, in get_index
+    baidu_index = BaiduIndex(search_list, '2018-01-01', '2019-04-01')
+  File "D:\Develop\WorkSpace\Python\seo_prj\spider\baidu_index\get_index.py", line 36, in __init__
+    self.get_result()
+  File "D:\Develop\WorkSpace\Python\seo_prj\spider\baidu_index\get_index.py", line 42, in get_result
+    encrypt_datas, uniqid = self.get_encrypt_datas(start_date, end_date)
+  File "D:\Develop\WorkSpace\Python\seo_prj\spider\baidu_index\get_index.py", line 63, in get_encrypt_datas
+    uniqid = datas['data']['uniqid']
+TypeError: string indices must be integers
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_index/baidu_index.py", line 162, in <module>
+    timer(5)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_index/baidu_index.py", line 110, in timer
+    get_index()
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_index/baidu_index.py", line 126, in get_index
+    baidu_index = BaiduIndex(search_list, '2018-01-01', '2019-04-01')
+  File "D:\Develop\WorkSpace\Python\seo_prj\spider\baidu_index\get_index.py", line 36, in __init__
+    self.get_result()
+  File "D:\Develop\WorkSpace\Python\seo_prj\spider\baidu_index\get_index.py", line 42, in get_result
+    encrypt_datas, uniqid = self.get_encrypt_datas(start_date, end_date)
+  File "D:\Develop\WorkSpace\Python\seo_prj\spider\baidu_index\get_index.py", line 63, in get_encrypt_datas
+    uniqid = datas['data']['uniqid']
+TypeError: string indices must be integers
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_index/baidu_index.py", line 162, in <module>
+    timer(5)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_index/baidu_index.py", line 110, in timer
+    get_index()
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_index/baidu_index.py", line 126, in get_index
+    baidu_index = BaiduIndex(search_list, '2018-01-01', '2019-04-01')
+  File "D:\Develop\WorkSpace\Python\seo_prj\spider\baidu_index\get_index.py", line 36, in __init__
+    self.get_result()
+  File "D:\Develop\WorkSpace\Python\seo_prj\spider\baidu_index\get_index.py", line 42, in get_result
+    encrypt_datas, uniqid = self.get_encrypt_datas(start_date, end_date)
+  File "D:\Develop\WorkSpace\Python\seo_prj\spider\baidu_index\get_index.py", line 63, in get_encrypt_datas
+    uniqid = datas['data']['uniqid']
+TypeError: string indices must be integers
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_index/baidu_index.py", line 162, in <module>
+    timer(5)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_index/baidu_index.py", line 110, in timer
+    get_index()
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_index/baidu_index.py", line 126, in get_index
+    baidu_index = BaiduIndex(search_list, '2018-01-01', '2019-04-01')
+  File "D:\Develop\WorkSpace\Python\seo_prj\spider\baidu_index\get_index.py", line 36, in __init__
+    self.get_result()
+  File "D:\Develop\WorkSpace\Python\seo_prj\spider\baidu_index\get_index.py", line 42, in get_result
+    encrypt_datas, uniqid = self.get_encrypt_datas(start_date, end_date)
+  File "D:\Develop\WorkSpace\Python\seo_prj\spider\baidu_index\get_index.py", line 63, in get_encrypt_datas
+    uniqid = datas['data']['uniqid']
+TypeError: string indices must be integers

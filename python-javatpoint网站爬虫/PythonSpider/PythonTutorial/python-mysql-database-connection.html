@@ -1,0 +1,283 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-mysql-creating-new-database">next ¡ú</a>
+<a class="next" href="python-mysql-environment-setup">¡û prev</a>
+</div>
+<h1 class="h1">Database Connection</h1>
+<p>In this section of the tutorial, we will discuss the steps to connect the python application to the database. </p>
+<p>There are the following steps to connect a python application to our database.</p>
+<ol class="points">
+<li>Import mysql.connector module</li>
+<li>Create the connection object. </li>
+<li>Create the cursor object</li>
+<li>Execute the query</li>
+</ol>
+<hr/>
+<h2 class="h2">Creating the connection</h2>
+<p>To create a connection between the MySQL database and the python application, the connect() method of mysql.connector module is used. </p>
+<p>Pass the database details like HostName, username, and the database password in the method call. The method returns the connection object. </p>
+<p>The syntax to use the connect() is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+Connection-Object= mysql.connector.connect(host = &lt;host-name&gt; , user = &lt;username&gt; , passwd = &lt;password&gt; )
+</textarea></div>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import mysql.connector
+
+#Create the connection object 
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google")
+
+#printing the connection object 
+print(myconn)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+&lt;mysql.connector.connection.MySQLConnection object at 0x7fb142edd780&gt; 
+</pre></div>
+<p>Here, we must notice that we can specify the database name in the connect() method if we want to connect to a specific database.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import mysql.connector
+
+#Create the connection object 
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google", database = "mydb")
+
+#printing the connection object 
+print(myconn) 
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+&lt;mysql.connector.connection.MySQLConnection object at 0x7ff64aa3d7b8&gt; 
+</pre></div>
+</td></tr></table></div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-mysql-creating-new-database">next ¡ú</a>
+<a class="next" href="python-mysql-environment-setup">¡û prev</a>
+</div>
+<h1 class="h1">Database Connection</h1>
+<p>In this section of the tutorial, we will discuss the steps to connect the python application to the database. </p>
+<p>There are the following steps to connect a python application to our database.</p>
+<ol class="points">
+<li>Import mysql.connector module</li>
+<li>Create the connection object. </li>
+<li>Create the cursor object</li>
+<li>Execute the query</li>
+</ol>
+<hr/>
+<h2 class="h2">Creating the connection</h2>
+<p>To create a connection between the MySQL database and the python application, the connect() method of mysql.connector module is used. </p>
+<p>Pass the database details like HostName, username, and the database password in the method call. The method returns the connection object. </p>
+<p>The syntax to use the connect() is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+Connection-Object= mysql.connector.connect(host = &lt;host-name&gt; , user = &lt;username&gt; , passwd = &lt;password&gt; )
+
+</textarea></div>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google")
+
+
+
+#printing the connection object 
+
+print(myconn)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+&lt;mysql.connector.connection.MySQLConnection object at 0x7fb142edd780&gt; 
+
+</pre></div>
+<p>Here, we must notice that we can specify the database name in the connect() method if we want to connect to a specific database.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google", database = "mydb")
+
+
+
+#printing the connection object 
+
+print(myconn) 
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+&lt;mysql.connector.connection.MySQLConnection object at 0x7ff64aa3d7b8&gt; 
+
+</pre></div>
+</td></tr></table></div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-mysql-creating-new-database">next ¡ú</a>
+<a class="next" href="python-mysql-environment-setup">¡û prev</a>
+</div>
+<h1 class="h1">Database Connection</h1>
+<p>In this section of the tutorial, we will discuss the steps to connect the python application to the database. </p>
+<p>There are the following steps to connect a python application to our database.</p>
+<ol class="points">
+<li>Import mysql.connector module</li>
+<li>Create the connection object. </li>
+<li>Create the cursor object</li>
+<li>Execute the query</li>
+</ol>
+<hr/>
+<h2 class="h2">Creating the connection</h2>
+<p>To create a connection between the MySQL database and the python application, the connect() method of mysql.connector module is used. </p>
+<p>Pass the database details like HostName, username, and the database password in the method call. The method returns the connection object. </p>
+<p>The syntax to use the connect() is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+Connection-Object= mysql.connector.connect(host = &lt;host-name&gt; , user = &lt;username&gt; , passwd = &lt;password&gt; )
+
+</textarea></div>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google")
+
+
+
+#printing the connection object 
+
+print(myconn)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+&lt;mysql.connector.connection.MySQLConnection object at 0x7fb142edd780&gt; 
+
+</pre></div>
+<p>Here, we must notice that we can specify the database name in the connect() method if we want to connect to a specific database.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google", database = "mydb")
+
+
+
+#printing the connection object 
+
+print(myconn) 
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+&lt;mysql.connector.connection.MySQLConnection object at 0x7ff64aa3d7b8&gt; 
+
+</pre></div>
+</td></tr></table></div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-mysql-creating-new-database">next ¡ú</a>
+<a class="next" href="python-mysql-environment-setup">¡û prev</a>
+</div>
+<h1 class="h1">Database Connection</h1>
+<p>In this section of the tutorial, we will discuss the steps to connect the python application to the database. </p>
+<p>There are the following steps to connect a python application to our database.</p>
+<ol class="points">
+<li>Import mysql.connector module</li>
+<li>Create the connection object. </li>
+<li>Create the cursor object</li>
+<li>Execute the query</li>
+</ol>
+<hr/>
+<h2 class="h2">Creating the connection</h2>
+<p>To create a connection between the MySQL database and the python application, the connect() method of mysql.connector module is used. </p>
+<p>Pass the database details like HostName, username, and the database password in the method call. The method returns the connection object. </p>
+<p>The syntax to use the connect() is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+Connection-Object= mysql.connector.connect(host = &lt;host-name&gt; , user = &lt;username&gt; , passwd = &lt;password&gt; )
+
+</textarea></div>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google")
+
+
+
+#printing the connection object 
+
+print(myconn)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+&lt;mysql.connector.connection.MySQLConnection object at 0x7fb142edd780&gt; 
+
+</pre></div>
+<p>Here, we must notice that we can specify the database name in the connect() method if we want to connect to a specific database.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google", database = "mydb")
+
+
+
+#printing the connection object 
+
+print(myconn) 
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+&lt;mysql.connector.connection.MySQLConnection object at 0x7ff64aa3d7b8&gt; 
+
+</pre></div>
+</td></tr></table></div></body></html></body></html>

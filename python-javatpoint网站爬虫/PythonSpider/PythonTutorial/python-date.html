@@ -1,0 +1,933 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-regex">next ¡ú</a>
+<a class="next" href="python-exception-handling">¡û prev</a>
+</div>
+<h1 class="h1">Python Date and time</h1>
+<p>In the real world applications, there are the scenarios where we need to work with the date and time. There are the examples in python where we have to schedule the script to run at some particular timings. </p>
+<p>In python, the date is not a data type, but we can work with the date objects by importing the module named with datetime, time, and calendar.</p>
+<p>In this section of the tutorial, we will discuss how to work with the date and time objects in python.</p>
+<hr/>
+<h2 class="h2">Tick</h2>
+<p>In python, the time instants are counted since 12 AM, 1st January 1970. The function time() of the module time returns the total number of ticks spent since 12 AM, 1st January 1970. A tick can be seen as the smallest unit to measure the time.</p>
+<p>Consider the following example.</p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+import time;
+
+#prints the number of ticks spent since 12 AM, 1st January 1970
+
+print(time.time())
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+1545124460.9151757
+</pre></div>
+<hr/>
+<h2 class="h2">How to get the current time?</h2>
+<p>The localtime() functions of the time module are used to get the current time tuple. Consider the following example.</p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+import time;
+
+#returns a time tuple 
+
+print(time.localtime(time.time()))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+time.struct_time(tm_year=2018, tm_mon=12, tm_mday=18, tm_hour=15, tm_min=1, 
+tm_sec=32, tm_wday=1, tm_yday=352, tm_isdst=0)
+</pre></div>
+<hr/>
+<h2 class="h2">Time tuple</h2>
+<p>The time is treated as the tuple of 9 numbers. Let's look at the members of the time tuple.</p>
+<table class="alt">
+<tr>
+<th>Index</th>
+<th>Attribute</th>
+<th>Values</th>
+</tr>
+<tr>
+<td>0</td>
+<td>Year</td>
+<td>4 digit (for example 2018)</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Month</td>
+<td>1 to 12</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Day</td>
+<td>1 to 31</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Hour</td>
+<td>0 to 23</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Minute</td>
+<td>0 to 59</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Second</td>
+<td>0 to 60</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Day of weak</td>
+<td>0 to 6</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Day of year</td>
+<td>1 to 366</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Daylight savings</td>
+<td>-1, 0, 1 , or -1</td>
+</tr>
+</table>
+<hr/>
+<h2 class="h2">Getting formatted time</h2>
+<p>The time can be formatted by using the asctime() function of time module. It returns the formatted time for the time tuple being passed. </p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+import time;
+
+#returns the formatted time  
+
+print(time.asctime(time.localtime(time.time())))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Tue Dec 18 15:31:39 2018
+</pre></div>
+<hr/>
+<h2 class="h2">Python sleep time</h2>
+<p>The sleep() method of time module is used to stop the execution of the script for a given amount of time. The output will be delayed for the number of seconds given as float.</p>
+<p>Consider the following example.</p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+import time
+for i in range(0,5):
+	print(i)
+	#Each element will be printed after 1 second
+	time.sleep(1)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+0
+1
+2
+3
+4
+</pre></div>
+<hr/>
+<h2 class="h2">The datetime Module</h2>
+<p>The datetime module enables us to create the custom date objects, perform various operations on dates like the comparison, etc.</p>
+<p>To work with dates as date objects, we have to import datetime module into the python source code.</p>
+<p>Consider the following example to get the datetime object representation for the current time.</p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+import datetime;
+
+#returns the current datetime object 
+
+print(datetime.datetime.now())
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+2018-12-18 16:16:45.462778
+</pre></div>
+<hr/>
+<h2 class="h2">Creating date objects</h2>
+<p>We can create the date objects by passing the desired date in the datetime constructor for which the date objects are to be created.</p>
+<p>Consider the following example.</p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+import datetime;
+
+#returns the datetime object for the specified date
+
+print(datetime.datetime(2018,12,10))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+2018-12-10 00:00:00
+</pre></div>
+<p>We can also specify the time along with the date to create the datetime object. Consider the following example.</p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+import datetime;
+
+#returns the datetime object for the specified time  
+
+print(datetime.datetime(2018,12,10,14,15,10))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+2018-12-10 14:15:10
+</pre></div>
+<hr/>
+<h2 class="h2">Comparison of two dates</h2>
+<p>We can compare two dates by using the comparison operators like &gt;, &gt;=, &lt;, and &lt;=.</p>
+<p>Consider the following example. </p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+from datetime import datetime as dt
+#Compares the time. If the time is in between 8AM and 4PM, then it prints working hours otherwise it prints fun hours
+if dt(dt.now().year,dt.now().month,dt.now().day,8)&lt;dt.now()&lt;dt(dt.now().year,dt.now().month,dt.now().day,16):
+	print("Working hours....")
+else:
+	print("fun hours")
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+fun hours
+</pre></div>
+<hr/>
+<h2 class="h2">The calendar module</h2>
+<p>Python provides a calendar object that contains various methods to work with the calendars.</p>
+<p>Consider the following example to print the Calendar of the last month of 2018.</p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+import calendar;
+cal = calendar.month(2018,12)
+#printing the calendar of December 2018
+print(cal)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Date and time" src="https://static.javatpoint.com/python/images/python-date-and-time.png"/>
+<hr/>
+<h2 class="h2">Printing the calendar of whole year</h2>
+<p>The prcal() method of calendar module is used to print the calendar of the whole year. The year of which the calendar is to be printed must be passed into this method.</p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+import calendar
+
+#printing the calendar of the year 2019
+calendar.prcal(2019)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Date and time" src="https://static.javatpoint.com/python/images/python-date-and-time2.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-regex">Python Regular Expressions</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-exception-handling" style="float:left">¡û prev</a>
+<a class="next" href="python-regex" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-regex">next ¡ú</a>
+<a class="next" href="python-exception-handling">¡û prev</a>
+</div>
+<h1 class="h1">Python Date and time</h1>
+<p>In the real world applications, there are the scenarios where we need to work with the date and time. There are the examples in python where we have to schedule the script to run at some particular timings. </p>
+<p>In python, the date is not a data type, but we can work with the date objects by importing the module named with datetime, time, and calendar.</p>
+<p>In this section of the tutorial, we will discuss how to work with the date and time objects in python.</p>
+<hr/>
+<h2 class="h2">Tick</h2>
+<p>In python, the time instants are counted since 12 AM, 1st January 1970. The function time() of the module time returns the total number of ticks spent since 12 AM, 1st January 1970. A tick can be seen as the smallest unit to measure the time.</p>
+<p>Consider the following example.</p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+import time;
+
+#prints the number of ticks spent since 12 AM, 1st January 1970
+
+print(time.time())
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+1545124460.9151757
+</pre></div>
+<hr/>
+<h2 class="h2">How to get the current time?</h2>
+<p>The localtime() functions of the time module are used to get the current time tuple. Consider the following example.</p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+import time;
+
+#returns a time tuple 
+
+print(time.localtime(time.time()))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+time.struct_time(tm_year=2018, tm_mon=12, tm_mday=18, tm_hour=15, tm_min=1, 
+tm_sec=32, tm_wday=1, tm_yday=352, tm_isdst=0)
+</pre></div>
+<hr/>
+<h2 class="h2">Time tuple</h2>
+<p>The time is treated as the tuple of 9 numbers. Let's look at the members of the time tuple.</p>
+<table class="alt">
+<tr>
+<th>Index</th>
+<th>Attribute</th>
+<th>Values</th>
+</tr>
+<tr>
+<td>0</td>
+<td>Year</td>
+<td>4 digit (for example 2018)</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Month</td>
+<td>1 to 12</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Day</td>
+<td>1 to 31</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Hour</td>
+<td>0 to 23</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Minute</td>
+<td>0 to 59</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Second</td>
+<td>0 to 60</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Day of weak</td>
+<td>0 to 6</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Day of year</td>
+<td>1 to 366</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Daylight savings</td>
+<td>-1, 0, 1 , or -1</td>
+</tr>
+</table>
+<hr/>
+<h2 class="h2">Getting formatted time</h2>
+<p>The time can be formatted by using the asctime() function of time module. It returns the formatted time for the time tuple being passed. </p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+import time;
+
+#returns the formatted time  
+
+print(time.asctime(time.localtime(time.time())))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Tue Dec 18 15:31:39 2018
+</pre></div>
+<hr/>
+<h2 class="h2">Python sleep time</h2>
+<p>The sleep() method of time module is used to stop the execution of the script for a given amount of time. The output will be delayed for the number of seconds given as float.</p>
+<p>Consider the following example.</p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+import time
+for i in range(0,5):
+	print(i)
+	#Each element will be printed after 1 second
+	time.sleep(1)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+0
+1
+2
+3
+4
+</pre></div>
+<hr/>
+<h2 class="h2">The datetime Module</h2>
+<p>The datetime module enables us to create the custom date objects, perform various operations on dates like the comparison, etc.</p>
+<p>To work with dates as date objects, we have to import datetime module into the python source code.</p>
+<p>Consider the following example to get the datetime object representation for the current time.</p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+import datetime;
+
+#returns the current datetime object 
+
+print(datetime.datetime.now())
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+2018-12-18 16:16:45.462778
+</pre></div>
+<hr/>
+<h2 class="h2">Creating date objects</h2>
+<p>We can create the date objects by passing the desired date in the datetime constructor for which the date objects are to be created.</p>
+<p>Consider the following example.</p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+import datetime;
+
+#returns the datetime object for the specified date
+
+print(datetime.datetime(2018,12,10))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+2018-12-10 00:00:00
+</pre></div>
+<p>We can also specify the time along with the date to create the datetime object. Consider the following example.</p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+import datetime;
+
+#returns the datetime object for the specified time  
+
+print(datetime.datetime(2018,12,10,14,15,10))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+2018-12-10 14:15:10
+</pre></div>
+<hr/>
+<h2 class="h2">Comparison of two dates</h2>
+<p>We can compare two dates by using the comparison operators like &gt;, &gt;=, &lt;, and &lt;=.</p>
+<p>Consider the following example. </p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+from datetime import datetime as dt
+#Compares the time. If the time is in between 8AM and 4PM, then it prints working hours otherwise it prints fun hours
+if dt(dt.now().year,dt.now().month,dt.now().day,8)&lt;dt.now()&lt;dt(dt.now().year,dt.now().month,dt.now().day,16):
+	print("Working hours....")
+else:
+	print("fun hours")
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+fun hours
+</pre></div>
+<hr/>
+<h2 class="h2">The calendar module</h2>
+<p>Python provides a calendar object that contains various methods to work with the calendars.</p>
+<p>Consider the following example to print the Calendar of the last month of 2018.</p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+import calendar;
+cal = calendar.month(2018,12)
+#printing the calendar of December 2018
+print(cal)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Date and time" src="https://static.javatpoint.com/python/images/python-date-and-time.png"/>
+<hr/>
+<h2 class="h2">Printing the calendar of whole year</h2>
+<p>The prcal() method of calendar module is used to print the calendar of the whole year. The year of which the calendar is to be printed must be passed into this method.</p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+import calendar
+
+#printing the calendar of the year 2019
+calendar.prcal(2019)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Date and time" src="https://static.javatpoint.com/python/images/python-date-and-time2.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-regex">Python Regular Expressions</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-exception-handling" style="float:left">¡û prev</a>
+<a class="next" href="python-regex" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-regex">next ¡ú</a>
+<a class="next" href="python-exception-handling">¡û prev</a>
+</div>
+<h1 class="h1">Python Date and time</h1>
+<p>In the real world applications, there are the scenarios where we need to work with the date and time. There are the examples in python where we have to schedule the script to run at some particular timings. </p>
+<p>In python, the date is not a data type, but we can work with the date objects by importing the module named with datetime, time, and calendar.</p>
+<p>In this section of the tutorial, we will discuss how to work with the date and time objects in python.</p>
+<hr/>
+<h2 class="h2">Tick</h2>
+<p>In python, the time instants are counted since 12 AM, 1st January 1970. The function time() of the module time returns the total number of ticks spent since 12 AM, 1st January 1970. A tick can be seen as the smallest unit to measure the time.</p>
+<p>Consider the following example.</p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+import time;
+
+#prints the number of ticks spent since 12 AM, 1st January 1970
+
+print(time.time())
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+1545124460.9151757
+</pre></div>
+<hr/>
+<h2 class="h2">How to get the current time?</h2>
+<p>The localtime() functions of the time module are used to get the current time tuple. Consider the following example.</p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+import time;
+
+#returns a time tuple 
+
+print(time.localtime(time.time()))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+time.struct_time(tm_year=2018, tm_mon=12, tm_mday=18, tm_hour=15, tm_min=1, 
+tm_sec=32, tm_wday=1, tm_yday=352, tm_isdst=0)
+</pre></div>
+<hr/>
+<h2 class="h2">Time tuple</h2>
+<p>The time is treated as the tuple of 9 numbers. Let's look at the members of the time tuple.</p>
+<table class="alt">
+<tr>
+<th>Index</th>
+<th>Attribute</th>
+<th>Values</th>
+</tr>
+<tr>
+<td>0</td>
+<td>Year</td>
+<td>4 digit (for example 2018)</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Month</td>
+<td>1 to 12</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Day</td>
+<td>1 to 31</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Hour</td>
+<td>0 to 23</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Minute</td>
+<td>0 to 59</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Second</td>
+<td>0 to 60</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Day of weak</td>
+<td>0 to 6</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Day of year</td>
+<td>1 to 366</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Daylight savings</td>
+<td>-1, 0, 1 , or -1</td>
+</tr>
+</table>
+<hr/>
+<h2 class="h2">Getting formatted time</h2>
+<p>The time can be formatted by using the asctime() function of time module. It returns the formatted time for the time tuple being passed. </p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+import time;
+
+#returns the formatted time  
+
+print(time.asctime(time.localtime(time.time())))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Tue Dec 18 15:31:39 2018
+</pre></div>
+<hr/>
+<h2 class="h2">Python sleep time</h2>
+<p>The sleep() method of time module is used to stop the execution of the script for a given amount of time. The output will be delayed for the number of seconds given as float.</p>
+<p>Consider the following example.</p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+import time
+for i in range(0,5):
+	print(i)
+	#Each element will be printed after 1 second
+	time.sleep(1)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+0
+1
+2
+3
+4
+</pre></div>
+<hr/>
+<h2 class="h2">The datetime Module</h2>
+<p>The datetime module enables us to create the custom date objects, perform various operations on dates like the comparison, etc.</p>
+<p>To work with dates as date objects, we have to import datetime module into the python source code.</p>
+<p>Consider the following example to get the datetime object representation for the current time.</p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+import datetime;
+
+#returns the current datetime object 
+
+print(datetime.datetime.now())
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+2018-12-18 16:16:45.462778
+</pre></div>
+<hr/>
+<h2 class="h2">Creating date objects</h2>
+<p>We can create the date objects by passing the desired date in the datetime constructor for which the date objects are to be created.</p>
+<p>Consider the following example.</p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+import datetime;
+
+#returns the datetime object for the specified date
+
+print(datetime.datetime(2018,12,10))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+2018-12-10 00:00:00
+</pre></div>
+<p>We can also specify the time along with the date to create the datetime object. Consider the following example.</p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+import datetime;
+
+#returns the datetime object for the specified time  
+
+print(datetime.datetime(2018,12,10,14,15,10))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+2018-12-10 14:15:10
+</pre></div>
+<hr/>
+<h2 class="h2">Comparison of two dates</h2>
+<p>We can compare two dates by using the comparison operators like &gt;, &gt;=, &lt;, and &lt;=.</p>
+<p>Consider the following example. </p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+from datetime import datetime as dt
+#Compares the time. If the time is in between 8AM and 4PM, then it prints working hours otherwise it prints fun hours
+if dt(dt.now().year,dt.now().month,dt.now().day,8)&lt;dt.now()&lt;dt(dt.now().year,dt.now().month,dt.now().day,16):
+	print("Working hours....")
+else:
+	print("fun hours")
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+fun hours
+</pre></div>
+<hr/>
+<h2 class="h2">The calendar module</h2>
+<p>Python provides a calendar object that contains various methods to work with the calendars.</p>
+<p>Consider the following example to print the Calendar of the last month of 2018.</p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+import calendar;
+cal = calendar.month(2018,12)
+#printing the calendar of December 2018
+print(cal)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Date and time" src="https://static.javatpoint.com/python/images/python-date-and-time.png"/>
+<hr/>
+<h2 class="h2">Printing the calendar of whole year</h2>
+<p>The prcal() method of calendar module is used to print the calendar of the whole year. The year of which the calendar is to be printed must be passed into this method.</p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+import calendar
+
+#printing the calendar of the year 2019
+calendar.prcal(2019)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Date and time" src="https://static.javatpoint.com/python/images/python-date-and-time2.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-regex">Python Regular Expressions</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-exception-handling" style="float:left">¡û prev</a>
+<a class="next" href="python-regex" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-regex">next ¡ú</a>
+<a class="next" href="python-exception-handling">¡û prev</a>
+</div>
+<h1 class="h1">Python Date and time</h1>
+<p>In the real world applications, there are the scenarios where we need to work with the date and time. There are the examples in python where we have to schedule the script to run at some particular timings. </p>
+<p>In python, the date is not a data type, but we can work with the date objects by importing the module named with datetime, time, and calendar.</p>
+<p>In this section of the tutorial, we will discuss how to work with the date and time objects in python.</p>
+<hr/>
+<h2 class="h2">Tick</h2>
+<p>In python, the time instants are counted since 12 AM, 1st January 1970. The function time() of the module time returns the total number of ticks spent since 12 AM, 1st January 1970. A tick can be seen as the smallest unit to measure the time.</p>
+<p>Consider the following example.</p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+import time;
+
+#prints the number of ticks spent since 12 AM, 1st January 1970
+
+print(time.time())
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+1545124460.9151757
+</pre></div>
+<hr/>
+<h2 class="h2">How to get the current time?</h2>
+<p>The localtime() functions of the time module are used to get the current time tuple. Consider the following example.</p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+import time;
+
+#returns a time tuple 
+
+print(time.localtime(time.time()))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+time.struct_time(tm_year=2018, tm_mon=12, tm_mday=18, tm_hour=15, tm_min=1, 
+tm_sec=32, tm_wday=1, tm_yday=352, tm_isdst=0)
+</pre></div>
+<hr/>
+<h2 class="h2">Time tuple</h2>
+<p>The time is treated as the tuple of 9 numbers. Let's look at the members of the time tuple.</p>
+<table class="alt">
+<tr>
+<th>Index</th>
+<th>Attribute</th>
+<th>Values</th>
+</tr>
+<tr>
+<td>0</td>
+<td>Year</td>
+<td>4 digit (for example 2018)</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Month</td>
+<td>1 to 12</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Day</td>
+<td>1 to 31</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Hour</td>
+<td>0 to 23</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Minute</td>
+<td>0 to 59</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Second</td>
+<td>0 to 60</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Day of weak</td>
+<td>0 to 6</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Day of year</td>
+<td>1 to 366</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Daylight savings</td>
+<td>-1, 0, 1 , or -1</td>
+</tr>
+</table>
+<hr/>
+<h2 class="h2">Getting formatted time</h2>
+<p>The time can be formatted by using the asctime() function of time module. It returns the formatted time for the time tuple being passed. </p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+import time;
+
+#returns the formatted time  
+
+print(time.asctime(time.localtime(time.time())))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Tue Dec 18 15:31:39 2018
+</pre></div>
+<hr/>
+<h2 class="h2">Python sleep time</h2>
+<p>The sleep() method of time module is used to stop the execution of the script for a given amount of time. The output will be delayed for the number of seconds given as float.</p>
+<p>Consider the following example.</p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+import time
+for i in range(0,5):
+	print(i)
+	#Each element will be printed after 1 second
+	time.sleep(1)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+0
+1
+2
+3
+4
+</pre></div>
+<hr/>
+<h2 class="h2">The datetime Module</h2>
+<p>The datetime module enables us to create the custom date objects, perform various operations on dates like the comparison, etc.</p>
+<p>To work with dates as date objects, we have to import datetime module into the python source code.</p>
+<p>Consider the following example to get the datetime object representation for the current time.</p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+import datetime;
+
+#returns the current datetime object 
+
+print(datetime.datetime.now())
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+2018-12-18 16:16:45.462778
+</pre></div>
+<hr/>
+<h2 class="h2">Creating date objects</h2>
+<p>We can create the date objects by passing the desired date in the datetime constructor for which the date objects are to be created.</p>
+<p>Consider the following example.</p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+import datetime;
+
+#returns the datetime object for the specified date
+
+print(datetime.datetime(2018,12,10))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+2018-12-10 00:00:00
+</pre></div>
+<p>We can also specify the time along with the date to create the datetime object. Consider the following example.</p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+import datetime;
+
+#returns the datetime object for the specified time  
+
+print(datetime.datetime(2018,12,10,14,15,10))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+2018-12-10 14:15:10
+</pre></div>
+<hr/>
+<h2 class="h2">Comparison of two dates</h2>
+<p>We can compare two dates by using the comparison operators like &gt;, &gt;=, &lt;, and &lt;=.</p>
+<p>Consider the following example. </p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+from datetime import datetime as dt
+#Compares the time. If the time is in between 8AM and 4PM, then it prints working hours otherwise it prints fun hours
+if dt(dt.now().year,dt.now().month,dt.now().day,8)&lt;dt.now()&lt;dt(dt.now().year,dt.now().month,dt.now().day,16):
+	print("Working hours....")
+else:
+	print("fun hours")
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+fun hours
+</pre></div>
+<hr/>
+<h2 class="h2">The calendar module</h2>
+<p>Python provides a calendar object that contains various methods to work with the calendars.</p>
+<p>Consider the following example to print the Calendar of the last month of 2018.</p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+import calendar;
+cal = calendar.month(2018,12)
+#printing the calendar of December 2018
+print(cal)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Date and time" src="https://static.javatpoint.com/python/images/python-date-and-time.png"/>
+<hr/>
+<h2 class="h2">Printing the calendar of whole year</h2>
+<p>The prcal() method of calendar module is used to print the calendar of the whole year. The year of which the calendar is to be printed must be passed into this method.</p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+import calendar
+
+#printing the calendar of the year 2019
+calendar.prcal(2019)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Date and time" src="https://static.javatpoint.com/python/images/python-date-and-time2.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-regex">Python Regular Expressions</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-exception-handling" style="float:left">¡û prev</a>
+<a class="next" href="python-regex" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html></body></html>

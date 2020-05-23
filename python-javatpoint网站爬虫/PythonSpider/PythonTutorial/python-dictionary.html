@@ -1,0 +1,1679 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-functions">next ¡ú</a>
+<a class="next" href="python-tuples">¡û prev</a>
+</div>
+<h1 class="h1">Python Dictionary</h1>
+<p>Dictionary is used to implement the key-value pair in python. The dictionary is the data type in python which can simulate the real-life data arrangement where some specific value exists for some particular key. </p>
+<p>In other words, we can say that a dictionary is the collection of key-value pairs where the value can be any python object whereas the keys are the immutable python object, i.e., Numbers,  string or tuple. </p>
+<p>Dictionary simulates Java hash-map in python.</p>
+<h2 class="h2">Creating the dictionary </h2>
+<p>The dictionary can be created by using multiple key-value pairs enclosed with the small brackets () and separated by the colon (:). The collections of the key-value pairs are enclosed within the curly braces {}. </p>
+<p>The syntax to define the dictionary is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+Dict = {"Name": "Ayush","Age": 22}
+</textarea></div>
+<p>In the above dictionary <strong>Dict</strong>, The keys <strong>Name</strong>, and <strong>Age</strong> are the string that is an immutable object. </p>
+<p>Let's see an example to create a dictionary and printing its content.</p>
+<div class="codeblock"><textarea class="python" name="code">
+Employee = {"Name": "John", "Age": 29, "salary":25000,"Company":"GOOGLE"}
+print(type(Employee))
+print("printing Employee data .... ")
+print(Employee)
+</textarea></div>
+<p><strong>Output</strong></p>
+<div class="codeblock3"><pre>
+&lt;class 'dict'&gt;
+printing Employee data .... 
+{'Age': 29, 'salary': 25000, 'Name': 'John', 'Company': 'GOOGLE'}
+</pre></div>
+<h2 class="h2">Accessing the dictionary values</h2>
+<p>We have discussed how the data can be accessed in the list and tuple by using the indexing.</p>
+<p>However, the values can be accessed in the dictionary by using the keys as keys are unique in the dictionary.</p>
+<p>The dictionary values can be accessed in the following way.</p>
+<div class="codeblock"><textarea class="python" name="code">
+Employee = {"Name": "John", "Age": 29, "salary":25000,"Company":"GOOGLE"}
+print(type(Employee))
+print("printing Employee data .... ")
+print("Name : %s" %Employee["Name"])
+print("Age : %d" %Employee["Age"])
+print("Salary : %d" %Employee["salary"])
+print("Company : %s" %Employee["Company"])
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+&lt;class 'dict'&gt;
+printing Employee data .... 
+Name : John
+Age : 29
+Salary : 25000
+Company : GOOGLE
+</pre></div>
+<p>Python provides us with an alternative to use the get() method to access the dictionary values. It would give the same result as given by the indexing.</p>
+<h2 class="h2">Updating dictionary values</h2>
+<p>The dictionary is a mutable data type, and its values can be updated by using the specific keys. </p>
+<p>Let's see an example to update the dictionary values. </p>
+<div class="codeblock"><textarea class="python" name="code">
+Employee = {"Name": "John", "Age": 29, "salary":25000,"Company":"GOOGLE"}
+print(type(Employee))
+print("printing Employee data .... ")
+print(Employee)
+print("Enter the details of the new employee....");
+Employee["Name"] = input("Name: ");
+Employee["Age"] = int(input("Age: "));
+Employee["salary"] = int(input("Salary: "));
+Employee["Company"] = input("Company:");
+print("printing the new data");
+print(Employee)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+&lt;class 'dict'&gt;
+printing Employee data .... 
+{'Name': 'John', 'salary': 25000, 'Company': 'GOOGLE', 'Age': 29}
+Enter the details of the new employee....
+Name: David
+Age: 19
+Salary: 8900
+Company:JTP
+printing the new data
+{'Name': 'David', 'salary': 8900, 'Company': 'JTP', 'Age': 19}
+</pre></div>
+<h2 class="h2">Deleting elements using del keyword</h2>
+<p>The items of the dictionary can be deleted by using the del keyword as given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+Employee = {"Name": "John", "Age": 29, "salary":25000,"Company":"GOOGLE"}
+print(type(Employee))
+print("printing Employee data .... ")
+print(Employee)
+print("Deleting some of the employee data") 
+del Employee["Name"]
+del Employee["Company"]
+print("printing the modified information ")
+print(Employee)
+print("Deleting the dictionary: Employee");
+del Employee
+print("Lets try to print it again ");
+print(Employee)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+&lt;class 'dict'&gt;
+printing Employee data .... 
+{'Age': 29, 'Company': 'GOOGLE', 'Name': 'John', 'salary': 25000}
+Deleting some of the employee data
+printing the modified information 
+{'Age': 29, 'salary': 25000}
+Deleting the dictionary: Employee
+Lets try to print it again 
+Traceback (most recent call last):
+  File "list.py", line 13, in &lt;module&gt;
+    print(Employee)
+NameError: name 'Employee' is not defined
+</pre></div>
+<h2 class="h2">Iterating Dictionary</h2>
+<p>A dictionary can be iterated using the for loop as given below. </p>
+<h2 class="h3">Example 1</h2>
+<p><strong># for loop to print all the keys of a dictionary</strong></p>
+<div class="codeblock"><textarea class="python" name="code">
+Employee = {"Name": "John", "Age": 29, "salary":25000,"Company":"GOOGLE"}
+for x in Employee:
+	print(x);
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Name
+Company
+salary
+Age
+</pre></div>
+<h2 class="h3">Example 2</h2>
+<p><strong>#for loop to print all the values of the dictionary</strong></p>
+<div class="codeblock"><textarea class="python" name="code">
+Employee = {"Name": "John", "Age": 29, "salary":25000,"Company":"GOOGLE"}
+for x in Employee:
+	print(Employee[x]);
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+29
+GOOGLE
+John
+25000
+</pre></div>
+<h2 class="h3">Example 3</h2>
+<p><strong>#for loop to print the values of the dictionary by using values() method. </strong></p>
+<div class="codeblock"><textarea class="python" name="code">
+Employee = {"Name": "John", "Age": 29, "salary":25000,"Company":"GOOGLE"}
+for x in Employee.values():
+	print(x);
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+GOOGLE
+25000
+John
+29
+</pre></div>
+<h2 class="h3">Example 4</h2>
+<p>#for loop to print the items of the dictionary by using items() method.</p>
+<div class="codeblock"><textarea class="python" name="code">
+Employee = {"Name": "John", "Age": 29, "salary":25000,"Company":"GOOGLE"}
+for x in Employee.items():
+	print(x);
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+('Name', 'John')
+('Age', 29)
+('salary', 25000)
+('Company', 'GOOGLE')
+</pre></div>
+<h2 class="h2">Properties of Dictionary keys</h2>
+<p>1. In the dictionary, we can not store multiple values for the same keys. If we pass more than one values for a single key, then the value which is last assigned is considered as the value of the key.</p>
+<p>Consider the following example.</p>
+<div class="codeblock"><textarea class="python" name="code">
+Employee = {"Name": "John", "Age": 29, "Salary":25000,"Company":"GOOGLE","Name":"Johnn"}
+for x,y in Employee.items():
+	print(x,y)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Salary 25000
+Company GOOGLE
+Name Johnn
+Age 29
+</pre></div>
+<p>2. In python, the key cannot be any mutable object. We can use numbers, strings, or tuple as the key but we can not use any mutable object like the list as the key in the dictionary.</p>
+<p>Consider the following example.</p>
+<div class="codeblock"><textarea class="python" name="code">
+Employee = {"Name": "John", "Age": 29, "salary":25000,"Company":"GOOGLE",[100,201,301]:"Department ID"}
+for x,y in Employee.items():
+	print(x,y)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Traceback (most recent call last):
+  File "list.py", line 1, in <module>
+    Employee = {"Name": "John", "Age": 29, "salary":25000,"Company":"GOOGLE",[100,201,301]:"Department ID"}
+TypeError: unhashable type: 'list'
+</module></pre></div>
+<h2 class="h2">Built-in Dictionary functions</h2>
+<p>The built-in python dictionary methods along with the description are given below.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Function</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>cmp(dict1, dict2)</td>
+<td>It compares the items of both the dictionary and returns true if the first dictionary values are greater than the second dictionary, otherwise it returns false.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>len(dict)</td>
+<td>It is used to calculate the length of the dictionary.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>str(dict)</td>
+<td>It converts the dictionary into the printable string representation.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>type(variable)</td>
+<td>It is used to print the type of the passed variable.</td>
+</tr>
+</table>
+<h2 class="h2">Built-in Dictionary methods</h2>
+<p>The built-in python dictionary methods along with the description are given below.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Method</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="python-dictionary-clear-method">dic.clear()</a></td>
+<td>It is used to delete all the items of the dictionary.</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="python-dictionary-copy-method">dict.copy()</a></td>
+<td>It returns a shallow copy of the dictionary. </td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="python-dictionary-fromkeys-method">dict.fromkeys(iterable, value = None, /)</a></td>
+<td>Create a new dictionary from the iterable with the values equal to value.</td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="python-dictionary-get-method">dict.get(key, default = "None")</a></td>
+<td>It is used to get the value specified for the passed key.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>dict.has_key(key)</td>
+<td>It returns true if the dictionary contains the specified key.</td>
+</tr>
+<tr>
+<td>6</td>
+<td><a href="python-dictionary-items-method">dict.items()</a></td>
+<td>It returns all the key-value pairs as a tuple.</td>
+</tr>
+<tr>
+<td>7</td>
+<td><a href="python-dictionary-keys-method">dict.keys()</a></td>
+<td>It returns all the keys of the dictionary.</td>
+</tr>
+<tr>
+<td>8</td>
+<td><a href="python-dictionary-setdefault-method">dict.setdefault(key,default= "None")</a></td>
+<td>It is used to set the key to the default value if the key is not specified in the dictionary</td>
+</tr>
+<tr>
+<td>9</td>
+<td><a href="python-dictionary-update-method">dict.update(dict2)</a></td>
+<td>It updates the dictionary by adding the key-value pair of dict2 to this dictionary.</td>
+</tr>
+<tr>
+<td>10</td>
+<td><a href="python-dictionary-values-method">dict.values()</a></td>
+<td>It returns all the values of the dictionary.</td>
+</tr>
+<tr>
+<td><a href="python-dictionary-len-method">len()</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="python-dictionary-popitem-method">popItem()</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="python-dictionary-pop-method">pop()</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="python-dictionary-count-method">count()</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="python-dictionary-index-method">index()</a></td>
+<td></td>
+</tr>
+</table>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-functions">Python Functions</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tuples" style="float:left">¡û prev</a>
+<a class="next" href="python-functions" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-functions">next ¡ú</a>
+<a class="next" href="python-tuples">¡û prev</a>
+</div>
+<h1 class="h1">Python Dictionary</h1>
+<p>Dictionary is used to implement the key-value pair in python. The dictionary is the data type in python which can simulate the real-life data arrangement where some specific value exists for some particular key. </p>
+<p>In other words, we can say that a dictionary is the collection of key-value pairs where the value can be any python object whereas the keys are the immutable python object, i.e., Numbers,  string or tuple. </p>
+<p>Dictionary simulates Java hash-map in python.</p>
+<h2 class="h2">Creating the dictionary </h2>
+<p>The dictionary can be created by using multiple key-value pairs enclosed with the small brackets () and separated by the colon (:). The collections of the key-value pairs are enclosed within the curly braces {}. </p>
+<p>The syntax to define the dictionary is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+Dict = {"Name": "Ayush","Age": 22}
+
+</textarea></div>
+<p>In the above dictionary <strong>Dict</strong>, The keys <strong>Name</strong>, and <strong>Age</strong> are the string that is an immutable object. </p>
+<p>Let's see an example to create a dictionary and printing its content.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+Employee = {"Name": "John", "Age": 29, "salary":25000,"Company":"GOOGLE"}
+
+print(type(Employee))
+
+print("printing Employee data .... ")
+
+print(Employee)
+
+</textarea></div>
+<p><strong>Output</strong></p>
+<div class="codeblock3"><pre>
+
+&lt;class 'dict'&gt;
+
+printing Employee data .... 
+
+{'Age': 29, 'salary': 25000, 'Name': 'John', 'Company': 'GOOGLE'}
+
+</pre></div>
+<h2 class="h2">Accessing the dictionary values</h2>
+<p>We have discussed how the data can be accessed in the list and tuple by using the indexing.</p>
+<p>However, the values can be accessed in the dictionary by using the keys as keys are unique in the dictionary.</p>
+<p>The dictionary values can be accessed in the following way.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+Employee = {"Name": "John", "Age": 29, "salary":25000,"Company":"GOOGLE"}
+
+print(type(Employee))
+
+print("printing Employee data .... ")
+
+print("Name : %s" %Employee["Name"])
+
+print("Age : %d" %Employee["Age"])
+
+print("Salary : %d" %Employee["salary"])
+
+print("Company : %s" %Employee["Company"])
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+&lt;class 'dict'&gt;
+
+printing Employee data .... 
+
+Name : John
+
+Age : 29
+
+Salary : 25000
+
+Company : GOOGLE
+
+</pre></div>
+<p>Python provides us with an alternative to use the get() method to access the dictionary values. It would give the same result as given by the indexing.</p>
+<h2 class="h2">Updating dictionary values</h2>
+<p>The dictionary is a mutable data type, and its values can be updated by using the specific keys. </p>
+<p>Let's see an example to update the dictionary values. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+Employee = {"Name": "John", "Age": 29, "salary":25000,"Company":"GOOGLE"}
+
+print(type(Employee))
+
+print("printing Employee data .... ")
+
+print(Employee)
+
+print("Enter the details of the new employee....");
+
+Employee["Name"] = input("Name: ");
+
+Employee["Age"] = int(input("Age: "));
+
+Employee["salary"] = int(input("Salary: "));
+
+Employee["Company"] = input("Company:");
+
+print("printing the new data");
+
+print(Employee)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+&lt;class 'dict'&gt;
+
+printing Employee data .... 
+
+{'Name': 'John', 'salary': 25000, 'Company': 'GOOGLE', 'Age': 29}
+
+Enter the details of the new employee....
+
+Name: David
+
+Age: 19
+
+Salary: 8900
+
+Company:JTP
+
+printing the new data
+
+{'Name': 'David', 'salary': 8900, 'Company': 'JTP', 'Age': 19}
+
+</pre></div>
+<h2 class="h2">Deleting elements using del keyword</h2>
+<p>The items of the dictionary can be deleted by using the del keyword as given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+Employee = {"Name": "John", "Age": 29, "salary":25000,"Company":"GOOGLE"}
+
+print(type(Employee))
+
+print("printing Employee data .... ")
+
+print(Employee)
+
+print("Deleting some of the employee data") 
+
+del Employee["Name"]
+
+del Employee["Company"]
+
+print("printing the modified information ")
+
+print(Employee)
+
+print("Deleting the dictionary: Employee");
+
+del Employee
+
+print("Lets try to print it again ");
+
+print(Employee)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+&lt;class 'dict'&gt;
+
+printing Employee data .... 
+
+{'Age': 29, 'Company': 'GOOGLE', 'Name': 'John', 'salary': 25000}
+
+Deleting some of the employee data
+
+printing the modified information 
+
+{'Age': 29, 'salary': 25000}
+
+Deleting the dictionary: Employee
+
+Lets try to print it again 
+
+Traceback (most recent call last):
+
+  File "list.py", line 13, in &lt;module&gt;
+
+    print(Employee)
+
+NameError: name 'Employee' is not defined
+
+</pre></div>
+<h2 class="h2">Iterating Dictionary</h2>
+<p>A dictionary can be iterated using the for loop as given below. </p>
+<h2 class="h3">Example 1</h2>
+<p><strong># for loop to print all the keys of a dictionary</strong></p>
+<div class="codeblock"><textarea class="python" name="code">
+
+Employee = {"Name": "John", "Age": 29, "salary":25000,"Company":"GOOGLE"}
+
+for x in Employee:
+
+	print(x);
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Name
+
+Company
+
+salary
+
+Age
+
+</pre></div>
+<h2 class="h3">Example 2</h2>
+<p><strong>#for loop to print all the values of the dictionary</strong></p>
+<div class="codeblock"><textarea class="python" name="code">
+
+Employee = {"Name": "John", "Age": 29, "salary":25000,"Company":"GOOGLE"}
+
+for x in Employee:
+
+	print(Employee[x]);
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+29
+
+GOOGLE
+
+John
+
+25000
+
+</pre></div>
+<h2 class="h3">Example 3</h2>
+<p><strong>#for loop to print the values of the dictionary by using values() method. </strong></p>
+<div class="codeblock"><textarea class="python" name="code">
+
+Employee = {"Name": "John", "Age": 29, "salary":25000,"Company":"GOOGLE"}
+
+for x in Employee.values():
+
+	print(x);
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+GOOGLE
+
+25000
+
+John
+
+29
+
+</pre></div>
+<h2 class="h3">Example 4</h2>
+<p>#for loop to print the items of the dictionary by using items() method.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+Employee = {"Name": "John", "Age": 29, "salary":25000,"Company":"GOOGLE"}
+
+for x in Employee.items():
+
+	print(x);
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+('Name', 'John')
+
+('Age', 29)
+
+('salary', 25000)
+
+('Company', 'GOOGLE')
+
+</pre></div>
+<h2 class="h2">Properties of Dictionary keys</h2>
+<p>1. In the dictionary, we can not store multiple values for the same keys. If we pass more than one values for a single key, then the value which is last assigned is considered as the value of the key.</p>
+<p>Consider the following example.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+Employee = {"Name": "John", "Age": 29, "Salary":25000,"Company":"GOOGLE","Name":"Johnn"}
+
+for x,y in Employee.items():
+
+	print(x,y)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Salary 25000
+
+Company GOOGLE
+
+Name Johnn
+
+Age 29
+
+</pre></div>
+<p>2. In python, the key cannot be any mutable object. We can use numbers, strings, or tuple as the key but we can not use any mutable object like the list as the key in the dictionary.</p>
+<p>Consider the following example.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+Employee = {"Name": "John", "Age": 29, "salary":25000,"Company":"GOOGLE",[100,201,301]:"Department ID"}
+
+for x,y in Employee.items():
+
+	print(x,y)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Traceback (most recent call last):
+
+  File "list.py", line 1, in <module>
+
+    Employee = {"Name": "John", "Age": 29, "salary":25000,"Company":"GOOGLE",[100,201,301]:"Department ID"}
+
+TypeError: unhashable type: 'list'
+
+</module></pre></div>
+<h2 class="h2">Built-in Dictionary functions</h2>
+<p>The built-in python dictionary methods along with the description are given below.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Function</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>cmp(dict1, dict2)</td>
+<td>It compares the items of both the dictionary and returns true if the first dictionary values are greater than the second dictionary, otherwise it returns false.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>len(dict)</td>
+<td>It is used to calculate the length of the dictionary.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>str(dict)</td>
+<td>It converts the dictionary into the printable string representation.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>type(variable)</td>
+<td>It is used to print the type of the passed variable.</td>
+</tr>
+</table>
+<h2 class="h2">Built-in Dictionary methods</h2>
+<p>The built-in python dictionary methods along with the description are given below.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Method</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="python-dictionary-clear-method">dic.clear()</a></td>
+<td>It is used to delete all the items of the dictionary.</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="python-dictionary-copy-method">dict.copy()</a></td>
+<td>It returns a shallow copy of the dictionary. </td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="python-dictionary-fromkeys-method">dict.fromkeys(iterable, value = None, /)</a></td>
+<td>Create a new dictionary from the iterable with the values equal to value.</td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="python-dictionary-get-method">dict.get(key, default = "None")</a></td>
+<td>It is used to get the value specified for the passed key.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>dict.has_key(key)</td>
+<td>It returns true if the dictionary contains the specified key.</td>
+</tr>
+<tr>
+<td>6</td>
+<td><a href="python-dictionary-items-method">dict.items()</a></td>
+<td>It returns all the key-value pairs as a tuple.</td>
+</tr>
+<tr>
+<td>7</td>
+<td><a href="python-dictionary-keys-method">dict.keys()</a></td>
+<td>It returns all the keys of the dictionary.</td>
+</tr>
+<tr>
+<td>8</td>
+<td><a href="python-dictionary-setdefault-method">dict.setdefault(key,default= "None")</a></td>
+<td>It is used to set the key to the default value if the key is not specified in the dictionary</td>
+</tr>
+<tr>
+<td>9</td>
+<td><a href="python-dictionary-update-method">dict.update(dict2)</a></td>
+<td>It updates the dictionary by adding the key-value pair of dict2 to this dictionary.</td>
+</tr>
+<tr>
+<td>10</td>
+<td><a href="python-dictionary-values-method">dict.values()</a></td>
+<td>It returns all the values of the dictionary.</td>
+</tr>
+<tr>
+<td><a href="python-dictionary-len-method">len()</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="python-dictionary-popitem-method">popItem()</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="python-dictionary-pop-method">pop()</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="python-dictionary-count-method">count()</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="python-dictionary-index-method">index()</a></td>
+<td></td>
+</tr>
+</table>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-functions">Python Functions</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tuples" style="float:left">¡û prev</a>
+<a class="next" href="python-functions" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-functions">next ¡ú</a>
+<a class="next" href="python-tuples">¡û prev</a>
+</div>
+<h1 class="h1">Python Dictionary</h1>
+<p>Dictionary is used to implement the key-value pair in python. The dictionary is the data type in python which can simulate the real-life data arrangement where some specific value exists for some particular key. </p>
+<p>In other words, we can say that a dictionary is the collection of key-value pairs where the value can be any python object whereas the keys are the immutable python object, i.e., Numbers,  string or tuple. </p>
+<p>Dictionary simulates Java hash-map in python.</p>
+<h2 class="h2">Creating the dictionary </h2>
+<p>The dictionary can be created by using multiple key-value pairs enclosed with the small brackets () and separated by the colon (:). The collections of the key-value pairs are enclosed within the curly braces {}. </p>
+<p>The syntax to define the dictionary is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+Dict = {"Name": "Ayush","Age": 22}
+
+</textarea></div>
+<p>In the above dictionary <strong>Dict</strong>, The keys <strong>Name</strong>, and <strong>Age</strong> are the string that is an immutable object. </p>
+<p>Let's see an example to create a dictionary and printing its content.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+Employee = {"Name": "John", "Age": 29, "salary":25000,"Company":"GOOGLE"}
+
+print(type(Employee))
+
+print("printing Employee data .... ")
+
+print(Employee)
+
+</textarea></div>
+<p><strong>Output</strong></p>
+<div class="codeblock3"><pre>
+
+&lt;class 'dict'&gt;
+
+printing Employee data .... 
+
+{'Age': 29, 'salary': 25000, 'Name': 'John', 'Company': 'GOOGLE'}
+
+</pre></div>
+<h2 class="h2">Accessing the dictionary values</h2>
+<p>We have discussed how the data can be accessed in the list and tuple by using the indexing.</p>
+<p>However, the values can be accessed in the dictionary by using the keys as keys are unique in the dictionary.</p>
+<p>The dictionary values can be accessed in the following way.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+Employee = {"Name": "John", "Age": 29, "salary":25000,"Company":"GOOGLE"}
+
+print(type(Employee))
+
+print("printing Employee data .... ")
+
+print("Name : %s" %Employee["Name"])
+
+print("Age : %d" %Employee["Age"])
+
+print("Salary : %d" %Employee["salary"])
+
+print("Company : %s" %Employee["Company"])
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+&lt;class 'dict'&gt;
+
+printing Employee data .... 
+
+Name : John
+
+Age : 29
+
+Salary : 25000
+
+Company : GOOGLE
+
+</pre></div>
+<p>Python provides us with an alternative to use the get() method to access the dictionary values. It would give the same result as given by the indexing.</p>
+<h2 class="h2">Updating dictionary values</h2>
+<p>The dictionary is a mutable data type, and its values can be updated by using the specific keys. </p>
+<p>Let's see an example to update the dictionary values. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+Employee = {"Name": "John", "Age": 29, "salary":25000,"Company":"GOOGLE"}
+
+print(type(Employee))
+
+print("printing Employee data .... ")
+
+print(Employee)
+
+print("Enter the details of the new employee....");
+
+Employee["Name"] = input("Name: ");
+
+Employee["Age"] = int(input("Age: "));
+
+Employee["salary"] = int(input("Salary: "));
+
+Employee["Company"] = input("Company:");
+
+print("printing the new data");
+
+print(Employee)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+&lt;class 'dict'&gt;
+
+printing Employee data .... 
+
+{'Name': 'John', 'salary': 25000, 'Company': 'GOOGLE', 'Age': 29}
+
+Enter the details of the new employee....
+
+Name: David
+
+Age: 19
+
+Salary: 8900
+
+Company:JTP
+
+printing the new data
+
+{'Name': 'David', 'salary': 8900, 'Company': 'JTP', 'Age': 19}
+
+</pre></div>
+<h2 class="h2">Deleting elements using del keyword</h2>
+<p>The items of the dictionary can be deleted by using the del keyword as given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+Employee = {"Name": "John", "Age": 29, "salary":25000,"Company":"GOOGLE"}
+
+print(type(Employee))
+
+print("printing Employee data .... ")
+
+print(Employee)
+
+print("Deleting some of the employee data") 
+
+del Employee["Name"]
+
+del Employee["Company"]
+
+print("printing the modified information ")
+
+print(Employee)
+
+print("Deleting the dictionary: Employee");
+
+del Employee
+
+print("Lets try to print it again ");
+
+print(Employee)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+&lt;class 'dict'&gt;
+
+printing Employee data .... 
+
+{'Age': 29, 'Company': 'GOOGLE', 'Name': 'John', 'salary': 25000}
+
+Deleting some of the employee data
+
+printing the modified information 
+
+{'Age': 29, 'salary': 25000}
+
+Deleting the dictionary: Employee
+
+Lets try to print it again 
+
+Traceback (most recent call last):
+
+  File "list.py", line 13, in &lt;module&gt;
+
+    print(Employee)
+
+NameError: name 'Employee' is not defined
+
+</pre></div>
+<h2 class="h2">Iterating Dictionary</h2>
+<p>A dictionary can be iterated using the for loop as given below. </p>
+<h2 class="h3">Example 1</h2>
+<p><strong># for loop to print all the keys of a dictionary</strong></p>
+<div class="codeblock"><textarea class="python" name="code">
+
+Employee = {"Name": "John", "Age": 29, "salary":25000,"Company":"GOOGLE"}
+
+for x in Employee:
+
+	print(x);
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Name
+
+Company
+
+salary
+
+Age
+
+</pre></div>
+<h2 class="h3">Example 2</h2>
+<p><strong>#for loop to print all the values of the dictionary</strong></p>
+<div class="codeblock"><textarea class="python" name="code">
+
+Employee = {"Name": "John", "Age": 29, "salary":25000,"Company":"GOOGLE"}
+
+for x in Employee:
+
+	print(Employee[x]);
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+29
+
+GOOGLE
+
+John
+
+25000
+
+</pre></div>
+<h2 class="h3">Example 3</h2>
+<p><strong>#for loop to print the values of the dictionary by using values() method. </strong></p>
+<div class="codeblock"><textarea class="python" name="code">
+
+Employee = {"Name": "John", "Age": 29, "salary":25000,"Company":"GOOGLE"}
+
+for x in Employee.values():
+
+	print(x);
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+GOOGLE
+
+25000
+
+John
+
+29
+
+</pre></div>
+<h2 class="h3">Example 4</h2>
+<p>#for loop to print the items of the dictionary by using items() method.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+Employee = {"Name": "John", "Age": 29, "salary":25000,"Company":"GOOGLE"}
+
+for x in Employee.items():
+
+	print(x);
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+('Name', 'John')
+
+('Age', 29)
+
+('salary', 25000)
+
+('Company', 'GOOGLE')
+
+</pre></div>
+<h2 class="h2">Properties of Dictionary keys</h2>
+<p>1. In the dictionary, we can not store multiple values for the same keys. If we pass more than one values for a single key, then the value which is last assigned is considered as the value of the key.</p>
+<p>Consider the following example.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+Employee = {"Name": "John", "Age": 29, "Salary":25000,"Company":"GOOGLE","Name":"Johnn"}
+
+for x,y in Employee.items():
+
+	print(x,y)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Salary 25000
+
+Company GOOGLE
+
+Name Johnn
+
+Age 29
+
+</pre></div>
+<p>2. In python, the key cannot be any mutable object. We can use numbers, strings, or tuple as the key but we can not use any mutable object like the list as the key in the dictionary.</p>
+<p>Consider the following example.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+Employee = {"Name": "John", "Age": 29, "salary":25000,"Company":"GOOGLE",[100,201,301]:"Department ID"}
+
+for x,y in Employee.items():
+
+	print(x,y)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Traceback (most recent call last):
+
+  File "list.py", line 1, in <module>
+
+    Employee = {"Name": "John", "Age": 29, "salary":25000,"Company":"GOOGLE",[100,201,301]:"Department ID"}
+
+TypeError: unhashable type: 'list'
+
+</module></pre></div>
+<h2 class="h2">Built-in Dictionary functions</h2>
+<p>The built-in python dictionary methods along with the description are given below.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Function</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>cmp(dict1, dict2)</td>
+<td>It compares the items of both the dictionary and returns true if the first dictionary values are greater than the second dictionary, otherwise it returns false.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>len(dict)</td>
+<td>It is used to calculate the length of the dictionary.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>str(dict)</td>
+<td>It converts the dictionary into the printable string representation.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>type(variable)</td>
+<td>It is used to print the type of the passed variable.</td>
+</tr>
+</table>
+<h2 class="h2">Built-in Dictionary methods</h2>
+<p>The built-in python dictionary methods along with the description are given below.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Method</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="python-dictionary-clear-method">dic.clear()</a></td>
+<td>It is used to delete all the items of the dictionary.</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="python-dictionary-copy-method">dict.copy()</a></td>
+<td>It returns a shallow copy of the dictionary. </td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="python-dictionary-fromkeys-method">dict.fromkeys(iterable, value = None, /)</a></td>
+<td>Create a new dictionary from the iterable with the values equal to value.</td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="python-dictionary-get-method">dict.get(key, default = "None")</a></td>
+<td>It is used to get the value specified for the passed key.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>dict.has_key(key)</td>
+<td>It returns true if the dictionary contains the specified key.</td>
+</tr>
+<tr>
+<td>6</td>
+<td><a href="python-dictionary-items-method">dict.items()</a></td>
+<td>It returns all the key-value pairs as a tuple.</td>
+</tr>
+<tr>
+<td>7</td>
+<td><a href="python-dictionary-keys-method">dict.keys()</a></td>
+<td>It returns all the keys of the dictionary.</td>
+</tr>
+<tr>
+<td>8</td>
+<td><a href="python-dictionary-setdefault-method">dict.setdefault(key,default= "None")</a></td>
+<td>It is used to set the key to the default value if the key is not specified in the dictionary</td>
+</tr>
+<tr>
+<td>9</td>
+<td><a href="python-dictionary-update-method">dict.update(dict2)</a></td>
+<td>It updates the dictionary by adding the key-value pair of dict2 to this dictionary.</td>
+</tr>
+<tr>
+<td>10</td>
+<td><a href="python-dictionary-values-method">dict.values()</a></td>
+<td>It returns all the values of the dictionary.</td>
+</tr>
+<tr>
+<td><a href="python-dictionary-len-method">len()</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="python-dictionary-popitem-method">popItem()</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="python-dictionary-pop-method">pop()</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="python-dictionary-count-method">count()</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="python-dictionary-index-method">index()</a></td>
+<td></td>
+</tr>
+</table>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-functions">Python Functions</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tuples" style="float:left">¡û prev</a>
+<a class="next" href="python-functions" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-functions">next ¡ú</a>
+<a class="next" href="python-tuples">¡û prev</a>
+</div>
+<h1 class="h1">Python Dictionary</h1>
+<p>Dictionary is used to implement the key-value pair in python. The dictionary is the data type in python which can simulate the real-life data arrangement where some specific value exists for some particular key. </p>
+<p>In other words, we can say that a dictionary is the collection of key-value pairs where the value can be any python object whereas the keys are the immutable python object, i.e., Numbers,  string or tuple. </p>
+<p>Dictionary simulates Java hash-map in python.</p>
+<h2 class="h2">Creating the dictionary </h2>
+<p>The dictionary can be created by using multiple key-value pairs enclosed with the small brackets () and separated by the colon (:). The collections of the key-value pairs are enclosed within the curly braces {}. </p>
+<p>The syntax to define the dictionary is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+Dict = {"Name": "Ayush","Age": 22}
+
+</textarea></div>
+<p>In the above dictionary <strong>Dict</strong>, The keys <strong>Name</strong>, and <strong>Age</strong> are the string that is an immutable object. </p>
+<p>Let's see an example to create a dictionary and printing its content.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+Employee = {"Name": "John", "Age": 29, "salary":25000,"Company":"GOOGLE"}
+
+print(type(Employee))
+
+print("printing Employee data .... ")
+
+print(Employee)
+
+</textarea></div>
+<p><strong>Output</strong></p>
+<div class="codeblock3"><pre>
+
+&lt;class 'dict'&gt;
+
+printing Employee data .... 
+
+{'Age': 29, 'salary': 25000, 'Name': 'John', 'Company': 'GOOGLE'}
+
+</pre></div>
+<h2 class="h2">Accessing the dictionary values</h2>
+<p>We have discussed how the data can be accessed in the list and tuple by using the indexing.</p>
+<p>However, the values can be accessed in the dictionary by using the keys as keys are unique in the dictionary.</p>
+<p>The dictionary values can be accessed in the following way.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+Employee = {"Name": "John", "Age": 29, "salary":25000,"Company":"GOOGLE"}
+
+print(type(Employee))
+
+print("printing Employee data .... ")
+
+print("Name : %s" %Employee["Name"])
+
+print("Age : %d" %Employee["Age"])
+
+print("Salary : %d" %Employee["salary"])
+
+print("Company : %s" %Employee["Company"])
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+&lt;class 'dict'&gt;
+
+printing Employee data .... 
+
+Name : John
+
+Age : 29
+
+Salary : 25000
+
+Company : GOOGLE
+
+</pre></div>
+<p>Python provides us with an alternative to use the get() method to access the dictionary values. It would give the same result as given by the indexing.</p>
+<h2 class="h2">Updating dictionary values</h2>
+<p>The dictionary is a mutable data type, and its values can be updated by using the specific keys. </p>
+<p>Let's see an example to update the dictionary values. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+Employee = {"Name": "John", "Age": 29, "salary":25000,"Company":"GOOGLE"}
+
+print(type(Employee))
+
+print("printing Employee data .... ")
+
+print(Employee)
+
+print("Enter the details of the new employee....");
+
+Employee["Name"] = input("Name: ");
+
+Employee["Age"] = int(input("Age: "));
+
+Employee["salary"] = int(input("Salary: "));
+
+Employee["Company"] = input("Company:");
+
+print("printing the new data");
+
+print(Employee)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+&lt;class 'dict'&gt;
+
+printing Employee data .... 
+
+{'Name': 'John', 'salary': 25000, 'Company': 'GOOGLE', 'Age': 29}
+
+Enter the details of the new employee....
+
+Name: David
+
+Age: 19
+
+Salary: 8900
+
+Company:JTP
+
+printing the new data
+
+{'Name': 'David', 'salary': 8900, 'Company': 'JTP', 'Age': 19}
+
+</pre></div>
+<h2 class="h2">Deleting elements using del keyword</h2>
+<p>The items of the dictionary can be deleted by using the del keyword as given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+Employee = {"Name": "John", "Age": 29, "salary":25000,"Company":"GOOGLE"}
+
+print(type(Employee))
+
+print("printing Employee data .... ")
+
+print(Employee)
+
+print("Deleting some of the employee data") 
+
+del Employee["Name"]
+
+del Employee["Company"]
+
+print("printing the modified information ")
+
+print(Employee)
+
+print("Deleting the dictionary: Employee");
+
+del Employee
+
+print("Lets try to print it again ");
+
+print(Employee)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+&lt;class 'dict'&gt;
+
+printing Employee data .... 
+
+{'Age': 29, 'Company': 'GOOGLE', 'Name': 'John', 'salary': 25000}
+
+Deleting some of the employee data
+
+printing the modified information 
+
+{'Age': 29, 'salary': 25000}
+
+Deleting the dictionary: Employee
+
+Lets try to print it again 
+
+Traceback (most recent call last):
+
+  File "list.py", line 13, in &lt;module&gt;
+
+    print(Employee)
+
+NameError: name 'Employee' is not defined
+
+</pre></div>
+<h2 class="h2">Iterating Dictionary</h2>
+<p>A dictionary can be iterated using the for loop as given below. </p>
+<h2 class="h3">Example 1</h2>
+<p><strong># for loop to print all the keys of a dictionary</strong></p>
+<div class="codeblock"><textarea class="python" name="code">
+
+Employee = {"Name": "John", "Age": 29, "salary":25000,"Company":"GOOGLE"}
+
+for x in Employee:
+
+	print(x);
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Name
+
+Company
+
+salary
+
+Age
+
+</pre></div>
+<h2 class="h3">Example 2</h2>
+<p><strong>#for loop to print all the values of the dictionary</strong></p>
+<div class="codeblock"><textarea class="python" name="code">
+
+Employee = {"Name": "John", "Age": 29, "salary":25000,"Company":"GOOGLE"}
+
+for x in Employee:
+
+	print(Employee[x]);
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+29
+
+GOOGLE
+
+John
+
+25000
+
+</pre></div>
+<h2 class="h3">Example 3</h2>
+<p><strong>#for loop to print the values of the dictionary by using values() method. </strong></p>
+<div class="codeblock"><textarea class="python" name="code">
+
+Employee = {"Name": "John", "Age": 29, "salary":25000,"Company":"GOOGLE"}
+
+for x in Employee.values():
+
+	print(x);
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+GOOGLE
+
+25000
+
+John
+
+29
+
+</pre></div>
+<h2 class="h3">Example 4</h2>
+<p>#for loop to print the items of the dictionary by using items() method.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+Employee = {"Name": "John", "Age": 29, "salary":25000,"Company":"GOOGLE"}
+
+for x in Employee.items():
+
+	print(x);
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+('Name', 'John')
+
+('Age', 29)
+
+('salary', 25000)
+
+('Company', 'GOOGLE')
+
+</pre></div>
+<h2 class="h2">Properties of Dictionary keys</h2>
+<p>1. In the dictionary, we can not store multiple values for the same keys. If we pass more than one values for a single key, then the value which is last assigned is considered as the value of the key.</p>
+<p>Consider the following example.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+Employee = {"Name": "John", "Age": 29, "Salary":25000,"Company":"GOOGLE","Name":"Johnn"}
+
+for x,y in Employee.items():
+
+	print(x,y)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Salary 25000
+
+Company GOOGLE
+
+Name Johnn
+
+Age 29
+
+</pre></div>
+<p>2. In python, the key cannot be any mutable object. We can use numbers, strings, or tuple as the key but we can not use any mutable object like the list as the key in the dictionary.</p>
+<p>Consider the following example.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+Employee = {"Name": "John", "Age": 29, "salary":25000,"Company":"GOOGLE",[100,201,301]:"Department ID"}
+
+for x,y in Employee.items():
+
+	print(x,y)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Traceback (most recent call last):
+
+  File "list.py", line 1, in <module>
+
+    Employee = {"Name": "John", "Age": 29, "salary":25000,"Company":"GOOGLE",[100,201,301]:"Department ID"}
+
+TypeError: unhashable type: 'list'
+
+</module></pre></div>
+<h2 class="h2">Built-in Dictionary functions</h2>
+<p>The built-in python dictionary methods along with the description are given below.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Function</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>cmp(dict1, dict2)</td>
+<td>It compares the items of both the dictionary and returns true if the first dictionary values are greater than the second dictionary, otherwise it returns false.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>len(dict)</td>
+<td>It is used to calculate the length of the dictionary.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>str(dict)</td>
+<td>It converts the dictionary into the printable string representation.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>type(variable)</td>
+<td>It is used to print the type of the passed variable.</td>
+</tr>
+</table>
+<h2 class="h2">Built-in Dictionary methods</h2>
+<p>The built-in python dictionary methods along with the description are given below.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Method</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="python-dictionary-clear-method">dic.clear()</a></td>
+<td>It is used to delete all the items of the dictionary.</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="python-dictionary-copy-method">dict.copy()</a></td>
+<td>It returns a shallow copy of the dictionary. </td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="python-dictionary-fromkeys-method">dict.fromkeys(iterable, value = None, /)</a></td>
+<td>Create a new dictionary from the iterable with the values equal to value.</td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="python-dictionary-get-method">dict.get(key, default = "None")</a></td>
+<td>It is used to get the value specified for the passed key.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>dict.has_key(key)</td>
+<td>It returns true if the dictionary contains the specified key.</td>
+</tr>
+<tr>
+<td>6</td>
+<td><a href="python-dictionary-items-method">dict.items()</a></td>
+<td>It returns all the key-value pairs as a tuple.</td>
+</tr>
+<tr>
+<td>7</td>
+<td><a href="python-dictionary-keys-method">dict.keys()</a></td>
+<td>It returns all the keys of the dictionary.</td>
+</tr>
+<tr>
+<td>8</td>
+<td><a href="python-dictionary-setdefault-method">dict.setdefault(key,default= "None")</a></td>
+<td>It is used to set the key to the default value if the key is not specified in the dictionary</td>
+</tr>
+<tr>
+<td>9</td>
+<td><a href="python-dictionary-update-method">dict.update(dict2)</a></td>
+<td>It updates the dictionary by adding the key-value pair of dict2 to this dictionary.</td>
+</tr>
+<tr>
+<td>10</td>
+<td><a href="python-dictionary-values-method">dict.values()</a></td>
+<td>It returns all the values of the dictionary.</td>
+</tr>
+<tr>
+<td><a href="python-dictionary-len-method">len()</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="python-dictionary-popitem-method">popItem()</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="python-dictionary-pop-method">pop()</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="python-dictionary-count-method">count()</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="python-dictionary-index-method">index()</a></td>
+<td></td>
+</tr>
+</table>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-functions">Python Functions</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tuples" style="float:left">¡û prev</a>
+<a class="next" href="python-functions" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html></body></html>

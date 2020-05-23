@@ -1,0 +1,797 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-sorting-and-searching">next ¡ú</a>
+<a class="next" href="numpy-mathematical-functions">¡û prev</a>
+</div>
+<h1 class="h1">Numpy statistical functions </h1>
+<p>Numpy provides various statistical functions which are used to perform some statistical data analysis. In this section of the tutorial, we will discuss the statistical functions provided by the numpy. </p>
+<h2 class="h2">Finding the minimum and maximum elements from the array</h2>
+<p>The numpy.amin() and numpy.amax() functions are used to find the minimum and maximum of the array elements along the specified axis respectively.</p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+
+a = np.array([[2,10,20],[80,43,31],[22,43,10]])
+
+print("The original array:\n")
+print(a)
+
+
+print("\nThe minimum element among the array:",np.amin(a))
+print("The maximum element among the array:",np.amax(a))
+
+print("\nThe minimum element among the rows of array",np.amin(a,0))
+print("The maximum element among the rows of array",np.amax(a,0))
+
+print("\nThe minimum element among the columns of array",np.amin(a,1))
+print("The maximum element among the columns of array",np.amax(a,1))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+The original array:
+
+[[ 2 10 20]
+ [80 43 31]
+ [22 43 10]]
+
+The minimum element among the array: 2
+The maximum element among the array: 80
+
+The minimum element among the rows of array [ 2 10 10]
+The maximum element among the rows of array [80 43 31]
+
+The minimum element among the columns of array [ 2 31 10]
+The maximum element among the columns of array [20 80 43]
+</pre></div>
+<h2 class="h2">numpy.ptp() function</h2>
+<p>The name of the function numpy.ptp() is derived from the name peak-to-peak. It is used to return the range of values along an axis. Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+
+a = np.array([[2,10,20],[80,43,31],[22,43,10]])
+
+print("Original array:\n",a)
+
+print("\nptp value along axis 1:",np.ptp(a,1))
+
+print("ptp value along axis 0:",np.ptp(a,0))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Original array:
+ [[ 2 10 20]
+ [80 43 31]
+ [22 43 10]]
+
+ptp value along axis 1: [18 49 33]
+ptp value along axis 0: [78 33 21]
+</pre></div>
+<h2 class="h2">numpy.percentile() function</h2>
+<p>The syntax to use the function is given below. </p>
+<div class="codeblock"><textarea class="python" name="code">
+numpy.percentile(input, q, axis)
+</textarea></div>
+<p>It accepts the following parameters. </p>
+<ol class="points">
+<li><strong>input:</strong> It is the input array.</li>
+<li><strong>q:</strong> It is the percentile (1-100) which is calculated of the array element.</li>
+<li><strong>axis:</strong> It is the axis along which the percentile is to be calculated. </li>
+</ol>
+<p>Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+
+a = np.array([[2,10,20],[80,43,31],[22,43,10]])
+
+print("Array:\n",a)
+
+print("\nPercentile along axis 0",np.percentile(a, 10,0))
+
+print("Percentile along axis 1",np.percentile(a, 10, 1))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Array:
+ [[ 2 10 20]
+ [80 43 31]
+ [22 43 10]]
+
+Percentile along axis 0 [ 6.  16.6 12. ]
+Percentile along axis 1 [ 3.6 33.4 12.4]
+</pre></div>
+<h2 class="h2">Calculating median, mean, and average of array items</h2>
+<h2 class="h2">The numpy.median() function: </h2>
+<p><strong>Median</strong> is defined as the value that is used to separate the higher range of data sample with a lower range of data sample. The function numpy.median() is used to calculate the median of the multi-dimensional or one-dimensional arrays.</p>
+<h2 class="h2">The numpy.mean() function:</h2>
+<p>The mean can be calculated by adding all the items of the arrays dividing by the number of array elements. We can also mention the axis along which the mean can be calculated. </p>
+<h2 class="h2">The numpy.average() function:</h2>
+<p>The numpy.average() function is used to find the weighted average along the axis of the multi-dimensional arrays where their weights are given in another array.</p>
+<p>Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+
+a = np.array([[1,2,3],[4,5,6],[7,8,9]])
+
+print("Array:\n",a)
+
+print("\nMedian of array along axis 0:",np.median(a,0))
+print("Mean of array along axis 0:",np.mean(a,0))
+print("Average of array along axis 1:",np.average(a,1))
+</textarea></div>
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-sorting-and-searching">NumPy Sorting and Searching</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="numpy-mathematical-functions" style="float:left">¡û prev</a>
+<a class="next" href="numpy-sorting-and-searching" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-sorting-and-searching">next ¡ú</a>
+<a class="next" href="numpy-mathematical-functions">¡û prev</a>
+</div>
+<h1 class="h1">Numpy statistical functions </h1>
+<p>Numpy provides various statistical functions which are used to perform some statistical data analysis. In this section of the tutorial, we will discuss the statistical functions provided by the numpy. </p>
+<h2 class="h2">Finding the minimum and maximum elements from the array</h2>
+<p>The numpy.amin() and numpy.amax() functions are used to find the minimum and maximum of the array elements along the specified axis respectively.</p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+a = np.array([[2,10,20],[80,43,31],[22,43,10]])
+
+
+
+print("The original array:\n")
+
+print(a)
+
+
+
+
+
+print("\nThe minimum element among the array:",np.amin(a))
+
+print("The maximum element among the array:",np.amax(a))
+
+
+
+print("\nThe minimum element among the rows of array",np.amin(a,0))
+
+print("The maximum element among the rows of array",np.amax(a,0))
+
+
+
+print("\nThe minimum element among the columns of array",np.amin(a,1))
+
+print("The maximum element among the columns of array",np.amax(a,1))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+The original array:
+
+
+
+[[ 2 10 20]
+
+ [80 43 31]
+
+ [22 43 10]]
+
+
+
+The minimum element among the array: 2
+
+The maximum element among the array: 80
+
+
+
+The minimum element among the rows of array [ 2 10 10]
+
+The maximum element among the rows of array [80 43 31]
+
+
+
+The minimum element among the columns of array [ 2 31 10]
+
+The maximum element among the columns of array [20 80 43]
+
+</pre></div>
+<h2 class="h2">numpy.ptp() function</h2>
+<p>The name of the function numpy.ptp() is derived from the name peak-to-peak. It is used to return the range of values along an axis. Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+a = np.array([[2,10,20],[80,43,31],[22,43,10]])
+
+
+
+print("Original array:\n",a)
+
+
+
+print("\nptp value along axis 1:",np.ptp(a,1))
+
+
+
+print("ptp value along axis 0:",np.ptp(a,0))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Original array:
+
+ [[ 2 10 20]
+
+ [80 43 31]
+
+ [22 43 10]]
+
+
+
+ptp value along axis 1: [18 49 33]
+
+ptp value along axis 0: [78 33 21]
+
+</pre></div>
+<h2 class="h2">numpy.percentile() function</h2>
+<p>The syntax to use the function is given below. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+numpy.percentile(input, q, axis)
+
+</textarea></div>
+<p>It accepts the following parameters. </p>
+<ol class="points">
+<li><strong>input:</strong> It is the input array.</li>
+<li><strong>q:</strong> It is the percentile (1-100) which is calculated of the array element.</li>
+<li><strong>axis:</strong> It is the axis along which the percentile is to be calculated. </li>
+</ol>
+<p>Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+a = np.array([[2,10,20],[80,43,31],[22,43,10]])
+
+
+
+print("Array:\n",a)
+
+
+
+print("\nPercentile along axis 0",np.percentile(a, 10,0))
+
+
+
+print("Percentile along axis 1",np.percentile(a, 10, 1))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Array:
+
+ [[ 2 10 20]
+
+ [80 43 31]
+
+ [22 43 10]]
+
+
+
+Percentile along axis 0 [ 6.  16.6 12. ]
+
+Percentile along axis 1 [ 3.6 33.4 12.4]
+
+</pre></div>
+<h2 class="h2">Calculating median, mean, and average of array items</h2>
+<h2 class="h2">The numpy.median() function: </h2>
+<p><strong>Median</strong> is defined as the value that is used to separate the higher range of data sample with a lower range of data sample. The function numpy.median() is used to calculate the median of the multi-dimensional or one-dimensional arrays.</p>
+<h2 class="h2">The numpy.mean() function:</h2>
+<p>The mean can be calculated by adding all the items of the arrays dividing by the number of array elements. We can also mention the axis along which the mean can be calculated. </p>
+<h2 class="h2">The numpy.average() function:</h2>
+<p>The numpy.average() function is used to find the weighted average along the axis of the multi-dimensional arrays where their weights are given in another array.</p>
+<p>Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+a = np.array([[1,2,3],[4,5,6],[7,8,9]])
+
+
+
+print("Array:\n",a)
+
+
+
+print("\nMedian of array along axis 0:",np.median(a,0))
+
+print("Mean of array along axis 0:",np.mean(a,0))
+
+print("Average of array along axis 1:",np.average(a,1))
+
+</textarea></div>
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-sorting-and-searching">NumPy Sorting and Searching</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="numpy-mathematical-functions" style="float:left">¡û prev</a>
+<a class="next" href="numpy-sorting-and-searching" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-sorting-and-searching">next ¡ú</a>
+<a class="next" href="numpy-mathematical-functions">¡û prev</a>
+</div>
+<h1 class="h1">Numpy statistical functions </h1>
+<p>Numpy provides various statistical functions which are used to perform some statistical data analysis. In this section of the tutorial, we will discuss the statistical functions provided by the numpy. </p>
+<h2 class="h2">Finding the minimum and maximum elements from the array</h2>
+<p>The numpy.amin() and numpy.amax() functions are used to find the minimum and maximum of the array elements along the specified axis respectively.</p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+a = np.array([[2,10,20],[80,43,31],[22,43,10]])
+
+
+
+print("The original array:\n")
+
+print(a)
+
+
+
+
+
+print("\nThe minimum element among the array:",np.amin(a))
+
+print("The maximum element among the array:",np.amax(a))
+
+
+
+print("\nThe minimum element among the rows of array",np.amin(a,0))
+
+print("The maximum element among the rows of array",np.amax(a,0))
+
+
+
+print("\nThe minimum element among the columns of array",np.amin(a,1))
+
+print("The maximum element among the columns of array",np.amax(a,1))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+The original array:
+
+
+
+[[ 2 10 20]
+
+ [80 43 31]
+
+ [22 43 10]]
+
+
+
+The minimum element among the array: 2
+
+The maximum element among the array: 80
+
+
+
+The minimum element among the rows of array [ 2 10 10]
+
+The maximum element among the rows of array [80 43 31]
+
+
+
+The minimum element among the columns of array [ 2 31 10]
+
+The maximum element among the columns of array [20 80 43]
+
+</pre></div>
+<h2 class="h2">numpy.ptp() function</h2>
+<p>The name of the function numpy.ptp() is derived from the name peak-to-peak. It is used to return the range of values along an axis. Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+a = np.array([[2,10,20],[80,43,31],[22,43,10]])
+
+
+
+print("Original array:\n",a)
+
+
+
+print("\nptp value along axis 1:",np.ptp(a,1))
+
+
+
+print("ptp value along axis 0:",np.ptp(a,0))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Original array:
+
+ [[ 2 10 20]
+
+ [80 43 31]
+
+ [22 43 10]]
+
+
+
+ptp value along axis 1: [18 49 33]
+
+ptp value along axis 0: [78 33 21]
+
+</pre></div>
+<h2 class="h2">numpy.percentile() function</h2>
+<p>The syntax to use the function is given below. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+numpy.percentile(input, q, axis)
+
+</textarea></div>
+<p>It accepts the following parameters. </p>
+<ol class="points">
+<li><strong>input:</strong> It is the input array.</li>
+<li><strong>q:</strong> It is the percentile (1-100) which is calculated of the array element.</li>
+<li><strong>axis:</strong> It is the axis along which the percentile is to be calculated. </li>
+</ol>
+<p>Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+a = np.array([[2,10,20],[80,43,31],[22,43,10]])
+
+
+
+print("Array:\n",a)
+
+
+
+print("\nPercentile along axis 0",np.percentile(a, 10,0))
+
+
+
+print("Percentile along axis 1",np.percentile(a, 10, 1))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Array:
+
+ [[ 2 10 20]
+
+ [80 43 31]
+
+ [22 43 10]]
+
+
+
+Percentile along axis 0 [ 6.  16.6 12. ]
+
+Percentile along axis 1 [ 3.6 33.4 12.4]
+
+</pre></div>
+<h2 class="h2">Calculating median, mean, and average of array items</h2>
+<h2 class="h2">The numpy.median() function: </h2>
+<p><strong>Median</strong> is defined as the value that is used to separate the higher range of data sample with a lower range of data sample. The function numpy.median() is used to calculate the median of the multi-dimensional or one-dimensional arrays.</p>
+<h2 class="h2">The numpy.mean() function:</h2>
+<p>The mean can be calculated by adding all the items of the arrays dividing by the number of array elements. We can also mention the axis along which the mean can be calculated. </p>
+<h2 class="h2">The numpy.average() function:</h2>
+<p>The numpy.average() function is used to find the weighted average along the axis of the multi-dimensional arrays where their weights are given in another array.</p>
+<p>Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+a = np.array([[1,2,3],[4,5,6],[7,8,9]])
+
+
+
+print("Array:\n",a)
+
+
+
+print("\nMedian of array along axis 0:",np.median(a,0))
+
+print("Mean of array along axis 0:",np.mean(a,0))
+
+print("Average of array along axis 1:",np.average(a,1))
+
+</textarea></div>
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-sorting-and-searching">NumPy Sorting and Searching</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="numpy-mathematical-functions" style="float:left">¡û prev</a>
+<a class="next" href="numpy-sorting-and-searching" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-sorting-and-searching">next ¡ú</a>
+<a class="next" href="numpy-mathematical-functions">¡û prev</a>
+</div>
+<h1 class="h1">Numpy statistical functions </h1>
+<p>Numpy provides various statistical functions which are used to perform some statistical data analysis. In this section of the tutorial, we will discuss the statistical functions provided by the numpy. </p>
+<h2 class="h2">Finding the minimum and maximum elements from the array</h2>
+<p>The numpy.amin() and numpy.amax() functions are used to find the minimum and maximum of the array elements along the specified axis respectively.</p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+a = np.array([[2,10,20],[80,43,31],[22,43,10]])
+
+
+
+print("The original array:\n")
+
+print(a)
+
+
+
+
+
+print("\nThe minimum element among the array:",np.amin(a))
+
+print("The maximum element among the array:",np.amax(a))
+
+
+
+print("\nThe minimum element among the rows of array",np.amin(a,0))
+
+print("The maximum element among the rows of array",np.amax(a,0))
+
+
+
+print("\nThe minimum element among the columns of array",np.amin(a,1))
+
+print("The maximum element among the columns of array",np.amax(a,1))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+The original array:
+
+
+
+[[ 2 10 20]
+
+ [80 43 31]
+
+ [22 43 10]]
+
+
+
+The minimum element among the array: 2
+
+The maximum element among the array: 80
+
+
+
+The minimum element among the rows of array [ 2 10 10]
+
+The maximum element among the rows of array [80 43 31]
+
+
+
+The minimum element among the columns of array [ 2 31 10]
+
+The maximum element among the columns of array [20 80 43]
+
+</pre></div>
+<h2 class="h2">numpy.ptp() function</h2>
+<p>The name of the function numpy.ptp() is derived from the name peak-to-peak. It is used to return the range of values along an axis. Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+a = np.array([[2,10,20],[80,43,31],[22,43,10]])
+
+
+
+print("Original array:\n",a)
+
+
+
+print("\nptp value along axis 1:",np.ptp(a,1))
+
+
+
+print("ptp value along axis 0:",np.ptp(a,0))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Original array:
+
+ [[ 2 10 20]
+
+ [80 43 31]
+
+ [22 43 10]]
+
+
+
+ptp value along axis 1: [18 49 33]
+
+ptp value along axis 0: [78 33 21]
+
+</pre></div>
+<h2 class="h2">numpy.percentile() function</h2>
+<p>The syntax to use the function is given below. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+numpy.percentile(input, q, axis)
+
+</textarea></div>
+<p>It accepts the following parameters. </p>
+<ol class="points">
+<li><strong>input:</strong> It is the input array.</li>
+<li><strong>q:</strong> It is the percentile (1-100) which is calculated of the array element.</li>
+<li><strong>axis:</strong> It is the axis along which the percentile is to be calculated. </li>
+</ol>
+<p>Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+a = np.array([[2,10,20],[80,43,31],[22,43,10]])
+
+
+
+print("Array:\n",a)
+
+
+
+print("\nPercentile along axis 0",np.percentile(a, 10,0))
+
+
+
+print("Percentile along axis 1",np.percentile(a, 10, 1))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Array:
+
+ [[ 2 10 20]
+
+ [80 43 31]
+
+ [22 43 10]]
+
+
+
+Percentile along axis 0 [ 6.  16.6 12. ]
+
+Percentile along axis 1 [ 3.6 33.4 12.4]
+
+</pre></div>
+<h2 class="h2">Calculating median, mean, and average of array items</h2>
+<h2 class="h2">The numpy.median() function: </h2>
+<p><strong>Median</strong> is defined as the value that is used to separate the higher range of data sample with a lower range of data sample. The function numpy.median() is used to calculate the median of the multi-dimensional or one-dimensional arrays.</p>
+<h2 class="h2">The numpy.mean() function:</h2>
+<p>The mean can be calculated by adding all the items of the arrays dividing by the number of array elements. We can also mention the axis along which the mean can be calculated. </p>
+<h2 class="h2">The numpy.average() function:</h2>
+<p>The numpy.average() function is used to find the weighted average along the axis of the multi-dimensional arrays where their weights are given in another array.</p>
+<p>Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+a = np.array([[1,2,3],[4,5,6],[7,8,9]])
+
+
+
+print("Array:\n",a)
+
+
+
+print("\nMedian of array along axis 0:",np.median(a,0))
+
+print("Mean of array along axis 0:",np.mean(a,0))
+
+print("Average of array along axis 1:",np.average(a,1))
+
+</textarea></div>
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-sorting-and-searching">NumPy Sorting and Searching</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="numpy-mathematical-functions" style="float:left">¡û prev</a>
+<a class="next" href="numpy-sorting-and-searching" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html></body></html>

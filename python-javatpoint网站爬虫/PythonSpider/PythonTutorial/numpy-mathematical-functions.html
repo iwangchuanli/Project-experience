@@ -1,0 +1,1036 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-statistical-functions">next ¡ú</a>
+<a class="next" href="numpy-string-functions">¡û prev</a>
+</div>
+<h1 class="h1">NumPy Mathematical Functions </h1>
+<p>Numpy contains a large number of mathematical functions which can be used to perform various mathematical operations. The mathematical functions include trigonometric functions, arithmetic functions, and functions for handling complex numbers. Let's discuss the mathematical functions.</p>
+<h2 class="h2">Trigonometric functions</h2>
+<p>Numpy contains the trigonometric functions which are used to calculate the sine, cosine, and tangent of the different angles in radian.</p>
+<p>The sin, cos, and tan functions return the trigonometric ratio for the specified angles. Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+arr = np.array([0, 30, 60, 90, 120, 150, 180])
+print("\nThe sin value of the angles",end = " ")
+print(np.sin(arr * np.pi/180))
+print("\nThe cosine value of the angles",end = " ")
+print(np.cos(arr * np.pi/180))
+print("\nThe tangent value of the angles",end = " ")
+print(np.tan(arr * np.pi/180))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+The sin value of the angles 
+[0.00000000e+00 5.00000000e-01 8.66025404e-01 1.00000000e+00
+ 8.66025404e-01 5.00000000e-01 1.22464680e-16]
+
+The cosine value of the angles 
+[ 1.00000000e+00  8.66025404e-01  5.00000000e-01  6.12323400e-17
+ -5.00000000e-01 -8.66025404e-01 -1.00000000e+00]
+
+The tangent value of the angles [ 0.00000000e+00  5.77350269e-01  1.73205081e+00  1.63312394e+16
+ -1.73205081e+00 -5.77350269e-01 -1.22464680e-16]
+</pre></div>
+<p>On the other hand, arcsin(), arccos(), and arctan() functions return the trigonometric inverse of the specified angles.</p>
+<p>The numpy.degrees() function can be used to verify the result of these trigonometric functions. Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+arr = np.array([0, 30, 60, 90])
+print("printing the sin values of different angles")
+
+sinval = np.sin(arr*np.pi/180)
+
+print(sinval)
+print("printing the inverse of the sin")
+cosec = np.arcsin(sinval)
+
+print(cosec)
+
+print("printing the values in degrees")
+print(np.degrees(cosec))
+
+print("\nprinting the cos values of different angles")
+cosval = np.cos(arr*np.pi/180)
+
+print(cosval)
+print("printing the inverse of the cos")
+sec = np.arccos(cosval)
+print(sec)
+
+print("\nprinting the values in degrees")
+print(np.degrees(sec))
+
+print("\nprinting the tan values of different angles")
+tanval = np.tan(arr*np.pi/180)
+
+print(tanval)
+print("printing the inverse of the tan")
+cot = np.arctan(tanval)
+print(cot)
+
+print("\nprinting the values in degrees")
+print(np.degrees(cot))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+printing the sin values of different angles
+[0.        0.5       0.8660254 1.       ]
+printing the inverse of the sin
+[0.         0.52359878 1.04719755 1.57079633]
+printing the values in degrees
+[ 0. 30. 60. 90.]
+
+printing the cos values of different angles
+[1.00000000e+00 8.66025404e-01 5.00000000e-01 6.12323400e-17]
+printing the inverse of the cos
+[0.         0.52359878 1.04719755 1.57079633]
+
+printing the values in degrees
+[ 0. 30. 60. 90.]
+
+printing the tan values of different angles
+[0.00000000e+00 5.77350269e-01 1.73205081e+00 1.63312394e+16]
+printing the inverse of the tan
+[0.         0.52359878 1.04719755 1.57079633]
+
+printing the values in degrees
+[ 0. 30. 60. 90.]
+</pre></div>
+<h2 class="h2">Rounding Functions </h2>
+<p>The numpy provides various functions that can be used to truncate the value of a decimal float number rounded to a particular precision of decimal numbers. Let's discuss the rounding functions.</p>
+<h3 class="h3">The numpy.around() function </h3>
+<p>This function returns a decimal value rounded to a desired position of the decimal. The syntax of the function is given below. </p>
+<div class="codeblock"><textarea class="python" name="code">
+numpy.around(num, decimals)
+</textarea></div>
+<p>It accepts the following parameters. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>num</td>
+<td>It is the input number.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>decimals</td>
+<td>It is the number of decimals which to which the number is to be rounded. The default value is 0. If this value is negative, then the decimal will be moved to the left.</td>
+</tr>
+</table>
+<p>Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+arr = np.array([12.202, 90.23120, 123.020, 23.202])
+print("printing the original array values:",end = " ")
+print(arr)
+print("Array values rounded off to 2 decimal position",np.around(arr, 2))
+print("Array values rounded off to -1 decimal position",np.around(arr, -1))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+printing the original array values: [ 12.202   90.2312 123.02    23.202 ]
+Array values rounded off to 2 decimal position [ 12.2   90.23 123.02  23.2 ]
+Array values rounded off to -2 decimal position [ 10.  90. 120.  20.]
+</pre></div>
+<h3 class="h3">The numpy.floor() function </h3>
+<p>This function is used to return the floor value of the input data which is the largest integer not greater than the input value. Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+arr = np.array([12.202, 90.23120, 123.020, 23.202])
+print(np.floor(arr))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+[ 12.  90. 123.  23.]
+</pre></div>
+<h3 class="h3">The numpy.ceil() function </h3>
+<p>This function is used to return the ceiling value of the array values which is the smallest integer value greater than the array element. Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+arr = np.array([12.202, 90.23120, 123.020, 23.202])
+print(np.ceil(arr))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+[ 13.  91. 124.  24.]
+</pre></div>
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-statistical-functions">Numpy statistical functions</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="numpy-string-functions" style="float:left">¡û prev</a>
+<a class="next" href="numpy-statistical-functions" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-statistical-functions">next ¡ú</a>
+<a class="next" href="numpy-string-functions">¡û prev</a>
+</div>
+<h1 class="h1">NumPy Mathematical Functions </h1>
+<p>Numpy contains a large number of mathematical functions which can be used to perform various mathematical operations. The mathematical functions include trigonometric functions, arithmetic functions, and functions for handling complex numbers. Let's discuss the mathematical functions.</p>
+<h2 class="h2">Trigonometric functions</h2>
+<p>Numpy contains the trigonometric functions which are used to calculate the sine, cosine, and tangent of the different angles in radian.</p>
+<p>The sin, cos, and tan functions return the trigonometric ratio for the specified angles. Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+arr = np.array([0, 30, 60, 90, 120, 150, 180])
+
+print("\nThe sin value of the angles",end = " ")
+
+print(np.sin(arr * np.pi/180))
+
+print("\nThe cosine value of the angles",end = " ")
+
+print(np.cos(arr * np.pi/180))
+
+print("\nThe tangent value of the angles",end = " ")
+
+print(np.tan(arr * np.pi/180))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+The sin value of the angles 
+
+[0.00000000e+00 5.00000000e-01 8.66025404e-01 1.00000000e+00
+
+ 8.66025404e-01 5.00000000e-01 1.22464680e-16]
+
+
+
+The cosine value of the angles 
+
+[ 1.00000000e+00  8.66025404e-01  5.00000000e-01  6.12323400e-17
+
+ -5.00000000e-01 -8.66025404e-01 -1.00000000e+00]
+
+
+
+The tangent value of the angles [ 0.00000000e+00  5.77350269e-01  1.73205081e+00  1.63312394e+16
+
+ -1.73205081e+00 -5.77350269e-01 -1.22464680e-16]
+
+</pre></div>
+<p>On the other hand, arcsin(), arccos(), and arctan() functions return the trigonometric inverse of the specified angles.</p>
+<p>The numpy.degrees() function can be used to verify the result of these trigonometric functions. Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+arr = np.array([0, 30, 60, 90])
+
+print("printing the sin values of different angles")
+
+
+
+sinval = np.sin(arr*np.pi/180)
+
+
+
+print(sinval)
+
+print("printing the inverse of the sin")
+
+cosec = np.arcsin(sinval)
+
+
+
+print(cosec)
+
+
+
+print("printing the values in degrees")
+
+print(np.degrees(cosec))
+
+
+
+print("\nprinting the cos values of different angles")
+
+cosval = np.cos(arr*np.pi/180)
+
+
+
+print(cosval)
+
+print("printing the inverse of the cos")
+
+sec = np.arccos(cosval)
+
+print(sec)
+
+
+
+print("\nprinting the values in degrees")
+
+print(np.degrees(sec))
+
+
+
+print("\nprinting the tan values of different angles")
+
+tanval = np.tan(arr*np.pi/180)
+
+
+
+print(tanval)
+
+print("printing the inverse of the tan")
+
+cot = np.arctan(tanval)
+
+print(cot)
+
+
+
+print("\nprinting the values in degrees")
+
+print(np.degrees(cot))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+printing the sin values of different angles
+
+[0.        0.5       0.8660254 1.       ]
+
+printing the inverse of the sin
+
+[0.         0.52359878 1.04719755 1.57079633]
+
+printing the values in degrees
+
+[ 0. 30. 60. 90.]
+
+
+
+printing the cos values of different angles
+
+[1.00000000e+00 8.66025404e-01 5.00000000e-01 6.12323400e-17]
+
+printing the inverse of the cos
+
+[0.         0.52359878 1.04719755 1.57079633]
+
+
+
+printing the values in degrees
+
+[ 0. 30. 60. 90.]
+
+
+
+printing the tan values of different angles
+
+[0.00000000e+00 5.77350269e-01 1.73205081e+00 1.63312394e+16]
+
+printing the inverse of the tan
+
+[0.         0.52359878 1.04719755 1.57079633]
+
+
+
+printing the values in degrees
+
+[ 0. 30. 60. 90.]
+
+</pre></div>
+<h2 class="h2">Rounding Functions </h2>
+<p>The numpy provides various functions that can be used to truncate the value of a decimal float number rounded to a particular precision of decimal numbers. Let's discuss the rounding functions.</p>
+<h3 class="h3">The numpy.around() function </h3>
+<p>This function returns a decimal value rounded to a desired position of the decimal. The syntax of the function is given below. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+numpy.around(num, decimals)
+
+</textarea></div>
+<p>It accepts the following parameters. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>num</td>
+<td>It is the input number.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>decimals</td>
+<td>It is the number of decimals which to which the number is to be rounded. The default value is 0. If this value is negative, then the decimal will be moved to the left.</td>
+</tr>
+</table>
+<p>Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+arr = np.array([12.202, 90.23120, 123.020, 23.202])
+
+print("printing the original array values:",end = " ")
+
+print(arr)
+
+print("Array values rounded off to 2 decimal position",np.around(arr, 2))
+
+print("Array values rounded off to -1 decimal position",np.around(arr, -1))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+printing the original array values: [ 12.202   90.2312 123.02    23.202 ]
+
+Array values rounded off to 2 decimal position [ 12.2   90.23 123.02  23.2 ]
+
+Array values rounded off to -2 decimal position [ 10.  90. 120.  20.]
+
+</pre></div>
+<h3 class="h3">The numpy.floor() function </h3>
+<p>This function is used to return the floor value of the input data which is the largest integer not greater than the input value. Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+arr = np.array([12.202, 90.23120, 123.020, 23.202])
+
+print(np.floor(arr))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+[ 12.  90. 123.  23.]
+
+</pre></div>
+<h3 class="h3">The numpy.ceil() function </h3>
+<p>This function is used to return the ceiling value of the array values which is the smallest integer value greater than the array element. Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+arr = np.array([12.202, 90.23120, 123.020, 23.202])
+
+print(np.ceil(arr))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+[ 13.  91. 124.  24.]
+
+</pre></div>
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-statistical-functions">Numpy statistical functions</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="numpy-string-functions" style="float:left">¡û prev</a>
+<a class="next" href="numpy-statistical-functions" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-statistical-functions">next ¡ú</a>
+<a class="next" href="numpy-string-functions">¡û prev</a>
+</div>
+<h1 class="h1">NumPy Mathematical Functions </h1>
+<p>Numpy contains a large number of mathematical functions which can be used to perform various mathematical operations. The mathematical functions include trigonometric functions, arithmetic functions, and functions for handling complex numbers. Let's discuss the mathematical functions.</p>
+<h2 class="h2">Trigonometric functions</h2>
+<p>Numpy contains the trigonometric functions which are used to calculate the sine, cosine, and tangent of the different angles in radian.</p>
+<p>The sin, cos, and tan functions return the trigonometric ratio for the specified angles. Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+arr = np.array([0, 30, 60, 90, 120, 150, 180])
+
+print("\nThe sin value of the angles",end = " ")
+
+print(np.sin(arr * np.pi/180))
+
+print("\nThe cosine value of the angles",end = " ")
+
+print(np.cos(arr * np.pi/180))
+
+print("\nThe tangent value of the angles",end = " ")
+
+print(np.tan(arr * np.pi/180))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+The sin value of the angles 
+
+[0.00000000e+00 5.00000000e-01 8.66025404e-01 1.00000000e+00
+
+ 8.66025404e-01 5.00000000e-01 1.22464680e-16]
+
+
+
+The cosine value of the angles 
+
+[ 1.00000000e+00  8.66025404e-01  5.00000000e-01  6.12323400e-17
+
+ -5.00000000e-01 -8.66025404e-01 -1.00000000e+00]
+
+
+
+The tangent value of the angles [ 0.00000000e+00  5.77350269e-01  1.73205081e+00  1.63312394e+16
+
+ -1.73205081e+00 -5.77350269e-01 -1.22464680e-16]
+
+</pre></div>
+<p>On the other hand, arcsin(), arccos(), and arctan() functions return the trigonometric inverse of the specified angles.</p>
+<p>The numpy.degrees() function can be used to verify the result of these trigonometric functions. Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+arr = np.array([0, 30, 60, 90])
+
+print("printing the sin values of different angles")
+
+
+
+sinval = np.sin(arr*np.pi/180)
+
+
+
+print(sinval)
+
+print("printing the inverse of the sin")
+
+cosec = np.arcsin(sinval)
+
+
+
+print(cosec)
+
+
+
+print("printing the values in degrees")
+
+print(np.degrees(cosec))
+
+
+
+print("\nprinting the cos values of different angles")
+
+cosval = np.cos(arr*np.pi/180)
+
+
+
+print(cosval)
+
+print("printing the inverse of the cos")
+
+sec = np.arccos(cosval)
+
+print(sec)
+
+
+
+print("\nprinting the values in degrees")
+
+print(np.degrees(sec))
+
+
+
+print("\nprinting the tan values of different angles")
+
+tanval = np.tan(arr*np.pi/180)
+
+
+
+print(tanval)
+
+print("printing the inverse of the tan")
+
+cot = np.arctan(tanval)
+
+print(cot)
+
+
+
+print("\nprinting the values in degrees")
+
+print(np.degrees(cot))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+printing the sin values of different angles
+
+[0.        0.5       0.8660254 1.       ]
+
+printing the inverse of the sin
+
+[0.         0.52359878 1.04719755 1.57079633]
+
+printing the values in degrees
+
+[ 0. 30. 60. 90.]
+
+
+
+printing the cos values of different angles
+
+[1.00000000e+00 8.66025404e-01 5.00000000e-01 6.12323400e-17]
+
+printing the inverse of the cos
+
+[0.         0.52359878 1.04719755 1.57079633]
+
+
+
+printing the values in degrees
+
+[ 0. 30. 60. 90.]
+
+
+
+printing the tan values of different angles
+
+[0.00000000e+00 5.77350269e-01 1.73205081e+00 1.63312394e+16]
+
+printing the inverse of the tan
+
+[0.         0.52359878 1.04719755 1.57079633]
+
+
+
+printing the values in degrees
+
+[ 0. 30. 60. 90.]
+
+</pre></div>
+<h2 class="h2">Rounding Functions </h2>
+<p>The numpy provides various functions that can be used to truncate the value of a decimal float number rounded to a particular precision of decimal numbers. Let's discuss the rounding functions.</p>
+<h3 class="h3">The numpy.around() function </h3>
+<p>This function returns a decimal value rounded to a desired position of the decimal. The syntax of the function is given below. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+numpy.around(num, decimals)
+
+</textarea></div>
+<p>It accepts the following parameters. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>num</td>
+<td>It is the input number.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>decimals</td>
+<td>It is the number of decimals which to which the number is to be rounded. The default value is 0. If this value is negative, then the decimal will be moved to the left.</td>
+</tr>
+</table>
+<p>Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+arr = np.array([12.202, 90.23120, 123.020, 23.202])
+
+print("printing the original array values:",end = " ")
+
+print(arr)
+
+print("Array values rounded off to 2 decimal position",np.around(arr, 2))
+
+print("Array values rounded off to -1 decimal position",np.around(arr, -1))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+printing the original array values: [ 12.202   90.2312 123.02    23.202 ]
+
+Array values rounded off to 2 decimal position [ 12.2   90.23 123.02  23.2 ]
+
+Array values rounded off to -2 decimal position [ 10.  90. 120.  20.]
+
+</pre></div>
+<h3 class="h3">The numpy.floor() function </h3>
+<p>This function is used to return the floor value of the input data which is the largest integer not greater than the input value. Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+arr = np.array([12.202, 90.23120, 123.020, 23.202])
+
+print(np.floor(arr))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+[ 12.  90. 123.  23.]
+
+</pre></div>
+<h3 class="h3">The numpy.ceil() function </h3>
+<p>This function is used to return the ceiling value of the array values which is the smallest integer value greater than the array element. Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+arr = np.array([12.202, 90.23120, 123.020, 23.202])
+
+print(np.ceil(arr))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+[ 13.  91. 124.  24.]
+
+</pre></div>
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-statistical-functions">Numpy statistical functions</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="numpy-string-functions" style="float:left">¡û prev</a>
+<a class="next" href="numpy-statistical-functions" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-statistical-functions">next ¡ú</a>
+<a class="next" href="numpy-string-functions">¡û prev</a>
+</div>
+<h1 class="h1">NumPy Mathematical Functions </h1>
+<p>Numpy contains a large number of mathematical functions which can be used to perform various mathematical operations. The mathematical functions include trigonometric functions, arithmetic functions, and functions for handling complex numbers. Let's discuss the mathematical functions.</p>
+<h2 class="h2">Trigonometric functions</h2>
+<p>Numpy contains the trigonometric functions which are used to calculate the sine, cosine, and tangent of the different angles in radian.</p>
+<p>The sin, cos, and tan functions return the trigonometric ratio for the specified angles. Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+arr = np.array([0, 30, 60, 90, 120, 150, 180])
+
+print("\nThe sin value of the angles",end = " ")
+
+print(np.sin(arr * np.pi/180))
+
+print("\nThe cosine value of the angles",end = " ")
+
+print(np.cos(arr * np.pi/180))
+
+print("\nThe tangent value of the angles",end = " ")
+
+print(np.tan(arr * np.pi/180))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+The sin value of the angles 
+
+[0.00000000e+00 5.00000000e-01 8.66025404e-01 1.00000000e+00
+
+ 8.66025404e-01 5.00000000e-01 1.22464680e-16]
+
+
+
+The cosine value of the angles 
+
+[ 1.00000000e+00  8.66025404e-01  5.00000000e-01  6.12323400e-17
+
+ -5.00000000e-01 -8.66025404e-01 -1.00000000e+00]
+
+
+
+The tangent value of the angles [ 0.00000000e+00  5.77350269e-01  1.73205081e+00  1.63312394e+16
+
+ -1.73205081e+00 -5.77350269e-01 -1.22464680e-16]
+
+</pre></div>
+<p>On the other hand, arcsin(), arccos(), and arctan() functions return the trigonometric inverse of the specified angles.</p>
+<p>The numpy.degrees() function can be used to verify the result of these trigonometric functions. Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+arr = np.array([0, 30, 60, 90])
+
+print("printing the sin values of different angles")
+
+
+
+sinval = np.sin(arr*np.pi/180)
+
+
+
+print(sinval)
+
+print("printing the inverse of the sin")
+
+cosec = np.arcsin(sinval)
+
+
+
+print(cosec)
+
+
+
+print("printing the values in degrees")
+
+print(np.degrees(cosec))
+
+
+
+print("\nprinting the cos values of different angles")
+
+cosval = np.cos(arr*np.pi/180)
+
+
+
+print(cosval)
+
+print("printing the inverse of the cos")
+
+sec = np.arccos(cosval)
+
+print(sec)
+
+
+
+print("\nprinting the values in degrees")
+
+print(np.degrees(sec))
+
+
+
+print("\nprinting the tan values of different angles")
+
+tanval = np.tan(arr*np.pi/180)
+
+
+
+print(tanval)
+
+print("printing the inverse of the tan")
+
+cot = np.arctan(tanval)
+
+print(cot)
+
+
+
+print("\nprinting the values in degrees")
+
+print(np.degrees(cot))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+printing the sin values of different angles
+
+[0.        0.5       0.8660254 1.       ]
+
+printing the inverse of the sin
+
+[0.         0.52359878 1.04719755 1.57079633]
+
+printing the values in degrees
+
+[ 0. 30. 60. 90.]
+
+
+
+printing the cos values of different angles
+
+[1.00000000e+00 8.66025404e-01 5.00000000e-01 6.12323400e-17]
+
+printing the inverse of the cos
+
+[0.         0.52359878 1.04719755 1.57079633]
+
+
+
+printing the values in degrees
+
+[ 0. 30. 60. 90.]
+
+
+
+printing the tan values of different angles
+
+[0.00000000e+00 5.77350269e-01 1.73205081e+00 1.63312394e+16]
+
+printing the inverse of the tan
+
+[0.         0.52359878 1.04719755 1.57079633]
+
+
+
+printing the values in degrees
+
+[ 0. 30. 60. 90.]
+
+</pre></div>
+<h2 class="h2">Rounding Functions </h2>
+<p>The numpy provides various functions that can be used to truncate the value of a decimal float number rounded to a particular precision of decimal numbers. Let's discuss the rounding functions.</p>
+<h3 class="h3">The numpy.around() function </h3>
+<p>This function returns a decimal value rounded to a desired position of the decimal. The syntax of the function is given below. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+numpy.around(num, decimals)
+
+</textarea></div>
+<p>It accepts the following parameters. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>num</td>
+<td>It is the input number.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>decimals</td>
+<td>It is the number of decimals which to which the number is to be rounded. The default value is 0. If this value is negative, then the decimal will be moved to the left.</td>
+</tr>
+</table>
+<p>Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+arr = np.array([12.202, 90.23120, 123.020, 23.202])
+
+print("printing the original array values:",end = " ")
+
+print(arr)
+
+print("Array values rounded off to 2 decimal position",np.around(arr, 2))
+
+print("Array values rounded off to -1 decimal position",np.around(arr, -1))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+printing the original array values: [ 12.202   90.2312 123.02    23.202 ]
+
+Array values rounded off to 2 decimal position [ 12.2   90.23 123.02  23.2 ]
+
+Array values rounded off to -2 decimal position [ 10.  90. 120.  20.]
+
+</pre></div>
+<h3 class="h3">The numpy.floor() function </h3>
+<p>This function is used to return the floor value of the input data which is the largest integer not greater than the input value. Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+arr = np.array([12.202, 90.23120, 123.020, 23.202])
+
+print(np.floor(arr))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+[ 12.  90. 123.  23.]
+
+</pre></div>
+<h3 class="h3">The numpy.ceil() function </h3>
+<p>This function is used to return the ceiling value of the array values which is the smallest integer value greater than the array element. Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+arr = np.array([12.202, 90.23120, 123.020, 23.202])
+
+print(np.ceil(arr))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+[ 13.  91. 124.  24.]
+
+</pre></div>
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-statistical-functions">Numpy statistical functions</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="numpy-string-functions" style="float:left">¡û prev</a>
+<a class="next" href="numpy-statistical-functions" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html></body></html>

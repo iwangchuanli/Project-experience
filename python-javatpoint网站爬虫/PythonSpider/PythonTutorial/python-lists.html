@@ -1,0 +1,1482 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tuples">next ¡ú</a>
+<a class="next" href="python-strings">¡û prev</a>
+</div>
+<h1 class="h1">Python List</h1>
+<p>List in python is implemented to store the sequence of various type of data. However, python contains six data types that are capable to store the sequences but the most common and reliable type is list. </p>
+<p>A list can be defined as a collection of values or items of different types. The items in the list are separated with the comma (,) and enclosed with the square brackets []. </p>
+<p>A list can be defined as follows. </p>
+<div class="codeblock"><textarea class="python" name="code">
+L1 = ["John", 102, "USA"]
+L2 = [1, 2, 3, 4, 5, 6]
+L3 = [1, "Ryan"]
+</textarea></div>
+<p>If we try to print the type of L1, L2, and L3 then it will come out to be a list. </p>
+<p>Lets consider a proper example to define a list and printing its values. </p>
+<div class="codeblock"><textarea class="python" name="code">
+emp = ["John", 102, "USA"] 
+Dep1 = ["CS",10];
+Dep2 = ["IT",11];
+HOD_CS = [10,"Mr. Holding"]
+HOD_IT = [11, "Mr. Bewon"]
+print("printing employee data...");
+print("Name : %s, ID: %d, Country: %s"%(emp[0],emp[1],emp[2]))
+print("printing departments...");
+print("Department 1:\nName: %s, ID: %d\nDepartment 2:\nName: %s, ID: %s"%(Dep1[0],Dep2[1],Dep2[0],Dep2[1]));
+print("HOD Details ....");
+print("CS HOD Name: %s, Id: %d"%(HOD_CS[1],HOD_CS[0]));
+print("IT HOD Name: %s, Id: %d"%(HOD_IT[1],HOD_IT[0]));
+print(type(emp),type(Dep1),type(Dep2),type(HOD_CS),type(HOD_IT)); 
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+printing employee data...
+Name : John, ID: 102, Country: USA
+printing departments...
+Department 1:
+Name: CS, ID: 11
+Department 2:
+Name: IT, ID: 11
+HOD Details ....
+CS HOD Name: Mr. Holding, Id: 10
+IT HOD Name: Mr. Bewon, Id: 11
+&lt;class 'list'&gt; &lt;class 'list'&gt; &lt;class 'list'&gt; &lt;class 'list'&gt; &lt;class 'list'&gt;
+</pre></div>
+<h2 class="h2">List indexing and splitting</h2>
+<p>The indexing are processed in the same way as it happens with the strings. The elements of the list can be accessed by using the slice operator [].</p>
+<p>The index starts from 0 and goes to length - 1. The first element of the list is stored at the 0th index, the second element of the list is stored at the 1st index, and so on. </p>
+<p>Consider the following example. </p>
+<img alt="Python Lists" src="python/images/lists-indexing-and-splitting.png"/>
+<p>Unlike other languages, python provides us the flexibility to use the negative indexing also. The negative indices are counted from the right. The last element (right most) of the list has the index -1, its adjacent left element is present at the index -2 and so on until the left most element is encountered. </p>
+<img alt="Python Lists" src="python/images/lists-indexing-and-splitting2.png"/>
+<h2 class="h2">Updating List values </h2>
+<p>Lists are the most versatile data structures in python since they are immutable and their values can be updated by using the slice and assignment operator. </p>
+<p>Python also provide us the append() method which can be used to add values to the string. </p>
+<p>Consider the following example to update the values inside the list. </p>
+<div class="codeblock"><textarea class="python" name="code">
+List = [1, 2, 3, 4, 5, 6] 
+print(List) 
+List[2] = 10;
+print(List)
+List[1:3] = [89, 78] 
+print(List)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+[1, 2, 3, 4, 5, 6]
+[1, 2, 10, 4, 5, 6]
+[1, 89, 78, 4, 5, 6]
+</pre></div>
+<p>The list elements can also be deleted by using the <strong>del</strong> keyword. Python also provides us the remove() method if we do not know which element is to be deleted from the list. </p>
+<p>Consider the following example to delete the list elements. </p>
+<div class="codeblock"><textarea class="python" name="code">
+List = [0,1,2,3,4] 
+print(List)
+del List[0]
+print(List) 
+del List[3]
+print(List)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+[0, 1, 2, 3, 4]
+[1, 2, 3, 4]
+[1, 2, 3]
+</pre></div>
+<h2 class="h2">Python List Operations</h2>
+<p>The concatenation (+) and repetition (*) operator work in the same way as they were working with the strings. </p>
+<p>Lets see how the list responds to various operators. </p>
+<div class="codeblock"><textarea class="python" name="code">
+Consider a List l1 = [1, 2, 3, 4], and l2 = [5, 6, 7, 8]
+</textarea></div>
+<table class="alt">
+<tr>
+<th>Operator</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+<tr>
+<td>Repetition </td>
+<td>The repetition operator enables the list elements to be repeated multiple times. </td>
+<td><pre>L1*2 = [1, 2, 3, 4, 1, 2, 3, 4]</pre></td>
+</tr>
+<tr>
+<td>Concatenation </td>
+<td>It concatenates the list mentioned on either side of the operator. </td>
+<td><pre>l1+l2 = [1, 2, 3, 4, 5, 6, 7, 8]</pre></td>
+</tr>
+<tr>
+<td>Membership</td>
+<td>It returns true if a particular item exists in a particular list otherwise false. </td>
+<td><pre>print(2 in l1) prints True.</pre> </td>
+</tr>
+<tr>
+<td>Iteration </td>
+<td>The for loop is used to iterate over the list elements.</td>
+<td><pre>for i in l1: 
+    print(i)</pre>
+<strong>Output</strong><pre>
+1
+2
+3
+4</pre></td>
+</tr>
+<tr>
+<td>Length</td>
+<td>It is used to get the length of the list</td>
+<td><pre>len(l1) = 4 </pre></td>
+</tr>
+</table>
+<h2 class="h2">Iterating a List </h2>
+<p>A list can be iterated by using a for - in loop. A simple list containing four strings can be iterated as follows. </p>
+<div class="codeblock"><textarea class="python" name="code">
+List = ["John", "David", "James", "Jonathan"]
+for i in List: #i will iterate over the elements of the List and contains each element in each iteration. 
+	print(i);
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+John
+David
+James
+Jonathan
+</pre></div>
+<h2 class="h3">Adding elements to the list </h2>
+<p>Python provides append() function by using which we can add an element to the list. However, the append() method can only add the value to the end of the list. </p>
+<p>Consider the following example in which, we are taking the elements of the list from the user and printing the list on the console. </p>
+<div class="codeblock"><textarea class="python" name="code">
+l =[];
+n = int(input("Enter the number of elements in the list")); #Number of elements will be entered by the user
+for i in range(0,n): # for loop to take the input
+	l.append(input("Enter the item?")); # The input is taken from the user and added to the list as the item
+print("printing the list items...."); 
+for i in l: # traversal loop to print the list items
+	print(i, end = "  "); 
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Enter the number of elements in the list 5
+Enter the item?1
+Enter the item?2
+Enter the item?3
+Enter the item?4
+Enter the item?5
+printing the list items....
+1  2  3  4  5 
+</pre></div>
+<h2 class="h3">Removing elements from the list </h2>
+<div class="codeblock"><textarea class="python" name="code">
+List = [0,1,2,3,4] 
+print("printing original list: ");
+for i in List:
+	print(i,end=" ")
+List.remove(0)
+print("\nprinting the list after the removal of first element...")
+for i in List:
+	print(i,end=" ")
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+printing original list: 
+0 1 2 3 4 
+printing the list after the removal of first element...
+1 2 3 4 
+</pre></div>
+<h2 class="h2">Python List Built-in functions </h2>
+<p>Python provides the following built-in functions which can be used with the lists. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Function </th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>cmp(list1, list2)</td>
+<td>It compares the elements of both the lists. </td>
+</tr>
+<tr>
+<td>2</td>
+<td>len(list)</td>
+<td>It is used to calculate the length of the list. </td>
+</tr>
+<tr>
+<td>3</td>
+<td>max(list)</td>
+<td>It returns the maximum element of the list.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>min(list)</td>
+<td>It returns the minimum element of the list. </td>
+</tr>
+<tr>
+<td>5</td>
+<td>list(seq)</td>
+<td>It converts any sequence to the list. </td>
+</tr>
+</table>
+<h2 class="h2">Python List built-in methods </h2>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Function </th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="python-list-append-method">list.append(obj)</a></td>
+<td>The element represented by the object obj is added to the list. </td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="python-list-clear-method">list.clear()</a></td>
+<td>It removes all the elements from the list. </td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="python-list-copy-method">List.copy()</a></td>
+<td>It returns a shallow copy of the list. </td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="python-list-count-method">list.count(obj)</a></td>
+<td>It returns the number of occurrences of the specified object in the list.   </td>
+</tr>
+<tr>
+<td>5</td>
+<td><a href="python-list-extend-method">list.extend(seq)</a></td>
+<td>The sequence represented by the object seq is extended to the list. </td>
+</tr>
+<tr>
+<td>6</td>
+<td><a href="python-list-index-method">list.index(obj)</a></td>
+<td>It returns the lowest index in the list that object appears. </td>
+</tr>
+<tr>
+<td>7</td>
+<td><a href="python-list-insert-method">list.insert(index, obj)</a></td>
+<td>The object is inserted into the list at the specified index. </td>
+</tr>
+<tr>
+<td>8</td>
+<td><a href="python-list-pop-method">list.pop(obj=list[-1])</a></td>
+<td>It removes and returns the last object of the list. </td>
+</tr>
+<tr>
+<td>9</td>
+<td><a href="python-list-remove-method">list.remove(obj)</a></td>
+<td>It removes the specified object from the list. </td>
+</tr>
+<tr>
+<td>10</td>
+<td><a href="python-list-reverse-method">list.reverse()</a></td>
+<td>It reverses the list. </td>
+</tr>
+<tr>
+<td>11</td>
+<td><a href="python-list-sort-method">list.sort([func])</a></td>
+<td>It sorts the list by using the specified compare function if given. </td>
+</tr>
+</table>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tuples">Python Tuples</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-strings" style="float:left">¡û prev</a>
+<a class="next" href="python-tuples" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tuples">next ¡ú</a>
+<a class="next" href="python-strings">¡û prev</a>
+</div>
+<h1 class="h1">Python List</h1>
+<p>List in python is implemented to store the sequence of various type of data. However, python contains six data types that are capable to store the sequences but the most common and reliable type is list. </p>
+<p>A list can be defined as a collection of values or items of different types. The items in the list are separated with the comma (,) and enclosed with the square brackets []. </p>
+<p>A list can be defined as follows. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+L1 = ["John", 102, "USA"]
+
+L2 = [1, 2, 3, 4, 5, 6]
+
+L3 = [1, "Ryan"]
+
+</textarea></div>
+<p>If we try to print the type of L1, L2, and L3 then it will come out to be a list. </p>
+<p>Lets consider a proper example to define a list and printing its values. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+emp = ["John", 102, "USA"] 
+
+Dep1 = ["CS",10];
+
+Dep2 = ["IT",11];
+
+HOD_CS = [10,"Mr. Holding"]
+
+HOD_IT = [11, "Mr. Bewon"]
+
+print("printing employee data...");
+
+print("Name : %s, ID: %d, Country: %s"%(emp[0],emp[1],emp[2]))
+
+print("printing departments...");
+
+print("Department 1:\nName: %s, ID: %d\nDepartment 2:\nName: %s, ID: %s"%(Dep1[0],Dep2[1],Dep2[0],Dep2[1]));
+
+print("HOD Details ....");
+
+print("CS HOD Name: %s, Id: %d"%(HOD_CS[1],HOD_CS[0]));
+
+print("IT HOD Name: %s, Id: %d"%(HOD_IT[1],HOD_IT[0]));
+
+print(type(emp),type(Dep1),type(Dep2),type(HOD_CS),type(HOD_IT)); 
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+printing employee data...
+
+Name : John, ID: 102, Country: USA
+
+printing departments...
+
+Department 1:
+
+Name: CS, ID: 11
+
+Department 2:
+
+Name: IT, ID: 11
+
+HOD Details ....
+
+CS HOD Name: Mr. Holding, Id: 10
+
+IT HOD Name: Mr. Bewon, Id: 11
+
+&lt;class 'list'&gt; &lt;class 'list'&gt; &lt;class 'list'&gt; &lt;class 'list'&gt; &lt;class 'list'&gt;
+
+</pre></div>
+<h2 class="h2">List indexing and splitting</h2>
+<p>The indexing are processed in the same way as it happens with the strings. The elements of the list can be accessed by using the slice operator [].</p>
+<p>The index starts from 0 and goes to length - 1. The first element of the list is stored at the 0th index, the second element of the list is stored at the 1st index, and so on. </p>
+<p>Consider the following example. </p>
+<img alt="Python Lists" src="python/images/lists-indexing-and-splitting.png"/>
+<p>Unlike other languages, python provides us the flexibility to use the negative indexing also. The negative indices are counted from the right. The last element (right most) of the list has the index -1, its adjacent left element is present at the index -2 and so on until the left most element is encountered. </p>
+<img alt="Python Lists" src="python/images/lists-indexing-and-splitting2.png"/>
+<h2 class="h2">Updating List values </h2>
+<p>Lists are the most versatile data structures in python since they are immutable and their values can be updated by using the slice and assignment operator. </p>
+<p>Python also provide us the append() method which can be used to add values to the string. </p>
+<p>Consider the following example to update the values inside the list. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+List = [1, 2, 3, 4, 5, 6] 
+
+print(List) 
+
+List[2] = 10;
+
+print(List)
+
+List[1:3] = [89, 78] 
+
+print(List)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+[1, 2, 3, 4, 5, 6]
+
+[1, 2, 10, 4, 5, 6]
+
+[1, 89, 78, 4, 5, 6]
+
+</pre></div>
+<p>The list elements can also be deleted by using the <strong>del</strong> keyword. Python also provides us the remove() method if we do not know which element is to be deleted from the list. </p>
+<p>Consider the following example to delete the list elements. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+List = [0,1,2,3,4] 
+
+print(List)
+
+del List[0]
+
+print(List) 
+
+del List[3]
+
+print(List)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+[0, 1, 2, 3, 4]
+
+[1, 2, 3, 4]
+
+[1, 2, 3]
+
+</pre></div>
+<h2 class="h2">Python List Operations</h2>
+<p>The concatenation (+) and repetition (*) operator work in the same way as they were working with the strings. </p>
+<p>Lets see how the list responds to various operators. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+Consider a List l1 = [1, 2, 3, 4], and l2 = [5, 6, 7, 8]
+
+</textarea></div>
+<table class="alt">
+<tr>
+<th>Operator</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+<tr>
+<td>Repetition </td>
+<td>The repetition operator enables the list elements to be repeated multiple times. </td>
+<td><pre>L1*2 = [1, 2, 3, 4, 1, 2, 3, 4]</pre></td>
+</tr>
+<tr>
+<td>Concatenation </td>
+<td>It concatenates the list mentioned on either side of the operator. </td>
+<td><pre>l1+l2 = [1, 2, 3, 4, 5, 6, 7, 8]</pre></td>
+</tr>
+<tr>
+<td>Membership</td>
+<td>It returns true if a particular item exists in a particular list otherwise false. </td>
+<td><pre>print(2 in l1) prints True.</pre> </td>
+</tr>
+<tr>
+<td>Iteration </td>
+<td>The for loop is used to iterate over the list elements.</td>
+<td><pre>for i in l1: 
+
+    print(i)</pre>
+<strong>Output</strong><pre>
+
+1
+
+2
+
+3
+
+4</pre></td>
+</tr>
+<tr>
+<td>Length</td>
+<td>It is used to get the length of the list</td>
+<td><pre>len(l1) = 4 </pre></td>
+</tr>
+</table>
+<h2 class="h2">Iterating a List </h2>
+<p>A list can be iterated by using a for - in loop. A simple list containing four strings can be iterated as follows. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+List = ["John", "David", "James", "Jonathan"]
+
+for i in List: #i will iterate over the elements of the List and contains each element in each iteration. 
+
+	print(i);
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+John
+
+David
+
+James
+
+Jonathan
+
+</pre></div>
+<h2 class="h3">Adding elements to the list </h2>
+<p>Python provides append() function by using which we can add an element to the list. However, the append() method can only add the value to the end of the list. </p>
+<p>Consider the following example in which, we are taking the elements of the list from the user and printing the list on the console. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+l =[];
+
+n = int(input("Enter the number of elements in the list")); #Number of elements will be entered by the user
+
+for i in range(0,n): # for loop to take the input
+
+	l.append(input("Enter the item?")); # The input is taken from the user and added to the list as the item
+
+print("printing the list items...."); 
+
+for i in l: # traversal loop to print the list items
+
+	print(i, end = "  "); 
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Enter the number of elements in the list 5
+
+Enter the item?1
+
+Enter the item?2
+
+Enter the item?3
+
+Enter the item?4
+
+Enter the item?5
+
+printing the list items....
+
+1  2  3  4  5 
+
+</pre></div>
+<h2 class="h3">Removing elements from the list </h2>
+<div class="codeblock"><textarea class="python" name="code">
+
+List = [0,1,2,3,4] 
+
+print("printing original list: ");
+
+for i in List:
+
+	print(i,end=" ")
+
+List.remove(0)
+
+print("\nprinting the list after the removal of first element...")
+
+for i in List:
+
+	print(i,end=" ")
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+printing original list: 
+
+0 1 2 3 4 
+
+printing the list after the removal of first element...
+
+1 2 3 4 
+
+</pre></div>
+<h2 class="h2">Python List Built-in functions </h2>
+<p>Python provides the following built-in functions which can be used with the lists. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Function </th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>cmp(list1, list2)</td>
+<td>It compares the elements of both the lists. </td>
+</tr>
+<tr>
+<td>2</td>
+<td>len(list)</td>
+<td>It is used to calculate the length of the list. </td>
+</tr>
+<tr>
+<td>3</td>
+<td>max(list)</td>
+<td>It returns the maximum element of the list.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>min(list)</td>
+<td>It returns the minimum element of the list. </td>
+</tr>
+<tr>
+<td>5</td>
+<td>list(seq)</td>
+<td>It converts any sequence to the list. </td>
+</tr>
+</table>
+<h2 class="h2">Python List built-in methods </h2>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Function </th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="python-list-append-method">list.append(obj)</a></td>
+<td>The element represented by the object obj is added to the list. </td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="python-list-clear-method">list.clear()</a></td>
+<td>It removes all the elements from the list. </td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="python-list-copy-method">List.copy()</a></td>
+<td>It returns a shallow copy of the list. </td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="python-list-count-method">list.count(obj)</a></td>
+<td>It returns the number of occurrences of the specified object in the list.   </td>
+</tr>
+<tr>
+<td>5</td>
+<td><a href="python-list-extend-method">list.extend(seq)</a></td>
+<td>The sequence represented by the object seq is extended to the list. </td>
+</tr>
+<tr>
+<td>6</td>
+<td><a href="python-list-index-method">list.index(obj)</a></td>
+<td>It returns the lowest index in the list that object appears. </td>
+</tr>
+<tr>
+<td>7</td>
+<td><a href="python-list-insert-method">list.insert(index, obj)</a></td>
+<td>The object is inserted into the list at the specified index. </td>
+</tr>
+<tr>
+<td>8</td>
+<td><a href="python-list-pop-method">list.pop(obj=list[-1])</a></td>
+<td>It removes and returns the last object of the list. </td>
+</tr>
+<tr>
+<td>9</td>
+<td><a href="python-list-remove-method">list.remove(obj)</a></td>
+<td>It removes the specified object from the list. </td>
+</tr>
+<tr>
+<td>10</td>
+<td><a href="python-list-reverse-method">list.reverse()</a></td>
+<td>It reverses the list. </td>
+</tr>
+<tr>
+<td>11</td>
+<td><a href="python-list-sort-method">list.sort([func])</a></td>
+<td>It sorts the list by using the specified compare function if given. </td>
+</tr>
+</table>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tuples">Python Tuples</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-strings" style="float:left">¡û prev</a>
+<a class="next" href="python-tuples" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tuples">next ¡ú</a>
+<a class="next" href="python-strings">¡û prev</a>
+</div>
+<h1 class="h1">Python List</h1>
+<p>List in python is implemented to store the sequence of various type of data. However, python contains six data types that are capable to store the sequences but the most common and reliable type is list. </p>
+<p>A list can be defined as a collection of values or items of different types. The items in the list are separated with the comma (,) and enclosed with the square brackets []. </p>
+<p>A list can be defined as follows. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+L1 = ["John", 102, "USA"]
+
+L2 = [1, 2, 3, 4, 5, 6]
+
+L3 = [1, "Ryan"]
+
+</textarea></div>
+<p>If we try to print the type of L1, L2, and L3 then it will come out to be a list. </p>
+<p>Lets consider a proper example to define a list and printing its values. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+emp = ["John", 102, "USA"] 
+
+Dep1 = ["CS",10];
+
+Dep2 = ["IT",11];
+
+HOD_CS = [10,"Mr. Holding"]
+
+HOD_IT = [11, "Mr. Bewon"]
+
+print("printing employee data...");
+
+print("Name : %s, ID: %d, Country: %s"%(emp[0],emp[1],emp[2]))
+
+print("printing departments...");
+
+print("Department 1:\nName: %s, ID: %d\nDepartment 2:\nName: %s, ID: %s"%(Dep1[0],Dep2[1],Dep2[0],Dep2[1]));
+
+print("HOD Details ....");
+
+print("CS HOD Name: %s, Id: %d"%(HOD_CS[1],HOD_CS[0]));
+
+print("IT HOD Name: %s, Id: %d"%(HOD_IT[1],HOD_IT[0]));
+
+print(type(emp),type(Dep1),type(Dep2),type(HOD_CS),type(HOD_IT)); 
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+printing employee data...
+
+Name : John, ID: 102, Country: USA
+
+printing departments...
+
+Department 1:
+
+Name: CS, ID: 11
+
+Department 2:
+
+Name: IT, ID: 11
+
+HOD Details ....
+
+CS HOD Name: Mr. Holding, Id: 10
+
+IT HOD Name: Mr. Bewon, Id: 11
+
+&lt;class 'list'&gt; &lt;class 'list'&gt; &lt;class 'list'&gt; &lt;class 'list'&gt; &lt;class 'list'&gt;
+
+</pre></div>
+<h2 class="h2">List indexing and splitting</h2>
+<p>The indexing are processed in the same way as it happens with the strings. The elements of the list can be accessed by using the slice operator [].</p>
+<p>The index starts from 0 and goes to length - 1. The first element of the list is stored at the 0th index, the second element of the list is stored at the 1st index, and so on. </p>
+<p>Consider the following example. </p>
+<img alt="Python Lists" src="python/images/lists-indexing-and-splitting.png"/>
+<p>Unlike other languages, python provides us the flexibility to use the negative indexing also. The negative indices are counted from the right. The last element (right most) of the list has the index -1, its adjacent left element is present at the index -2 and so on until the left most element is encountered. </p>
+<img alt="Python Lists" src="python/images/lists-indexing-and-splitting2.png"/>
+<h2 class="h2">Updating List values </h2>
+<p>Lists are the most versatile data structures in python since they are immutable and their values can be updated by using the slice and assignment operator. </p>
+<p>Python also provide us the append() method which can be used to add values to the string. </p>
+<p>Consider the following example to update the values inside the list. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+List = [1, 2, 3, 4, 5, 6] 
+
+print(List) 
+
+List[2] = 10;
+
+print(List)
+
+List[1:3] = [89, 78] 
+
+print(List)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+[1, 2, 3, 4, 5, 6]
+
+[1, 2, 10, 4, 5, 6]
+
+[1, 89, 78, 4, 5, 6]
+
+</pre></div>
+<p>The list elements can also be deleted by using the <strong>del</strong> keyword. Python also provides us the remove() method if we do not know which element is to be deleted from the list. </p>
+<p>Consider the following example to delete the list elements. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+List = [0,1,2,3,4] 
+
+print(List)
+
+del List[0]
+
+print(List) 
+
+del List[3]
+
+print(List)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+[0, 1, 2, 3, 4]
+
+[1, 2, 3, 4]
+
+[1, 2, 3]
+
+</pre></div>
+<h2 class="h2">Python List Operations</h2>
+<p>The concatenation (+) and repetition (*) operator work in the same way as they were working with the strings. </p>
+<p>Lets see how the list responds to various operators. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+Consider a List l1 = [1, 2, 3, 4], and l2 = [5, 6, 7, 8]
+
+</textarea></div>
+<table class="alt">
+<tr>
+<th>Operator</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+<tr>
+<td>Repetition </td>
+<td>The repetition operator enables the list elements to be repeated multiple times. </td>
+<td><pre>L1*2 = [1, 2, 3, 4, 1, 2, 3, 4]</pre></td>
+</tr>
+<tr>
+<td>Concatenation </td>
+<td>It concatenates the list mentioned on either side of the operator. </td>
+<td><pre>l1+l2 = [1, 2, 3, 4, 5, 6, 7, 8]</pre></td>
+</tr>
+<tr>
+<td>Membership</td>
+<td>It returns true if a particular item exists in a particular list otherwise false. </td>
+<td><pre>print(2 in l1) prints True.</pre> </td>
+</tr>
+<tr>
+<td>Iteration </td>
+<td>The for loop is used to iterate over the list elements.</td>
+<td><pre>for i in l1: 
+
+    print(i)</pre>
+<strong>Output</strong><pre>
+
+1
+
+2
+
+3
+
+4</pre></td>
+</tr>
+<tr>
+<td>Length</td>
+<td>It is used to get the length of the list</td>
+<td><pre>len(l1) = 4 </pre></td>
+</tr>
+</table>
+<h2 class="h2">Iterating a List </h2>
+<p>A list can be iterated by using a for - in loop. A simple list containing four strings can be iterated as follows. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+List = ["John", "David", "James", "Jonathan"]
+
+for i in List: #i will iterate over the elements of the List and contains each element in each iteration. 
+
+	print(i);
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+John
+
+David
+
+James
+
+Jonathan
+
+</pre></div>
+<h2 class="h3">Adding elements to the list </h2>
+<p>Python provides append() function by using which we can add an element to the list. However, the append() method can only add the value to the end of the list. </p>
+<p>Consider the following example in which, we are taking the elements of the list from the user and printing the list on the console. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+l =[];
+
+n = int(input("Enter the number of elements in the list")); #Number of elements will be entered by the user
+
+for i in range(0,n): # for loop to take the input
+
+	l.append(input("Enter the item?")); # The input is taken from the user and added to the list as the item
+
+print("printing the list items...."); 
+
+for i in l: # traversal loop to print the list items
+
+	print(i, end = "  "); 
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Enter the number of elements in the list 5
+
+Enter the item?1
+
+Enter the item?2
+
+Enter the item?3
+
+Enter the item?4
+
+Enter the item?5
+
+printing the list items....
+
+1  2  3  4  5 
+
+</pre></div>
+<h2 class="h3">Removing elements from the list </h2>
+<div class="codeblock"><textarea class="python" name="code">
+
+List = [0,1,2,3,4] 
+
+print("printing original list: ");
+
+for i in List:
+
+	print(i,end=" ")
+
+List.remove(0)
+
+print("\nprinting the list after the removal of first element...")
+
+for i in List:
+
+	print(i,end=" ")
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+printing original list: 
+
+0 1 2 3 4 
+
+printing the list after the removal of first element...
+
+1 2 3 4 
+
+</pre></div>
+<h2 class="h2">Python List Built-in functions </h2>
+<p>Python provides the following built-in functions which can be used with the lists. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Function </th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>cmp(list1, list2)</td>
+<td>It compares the elements of both the lists. </td>
+</tr>
+<tr>
+<td>2</td>
+<td>len(list)</td>
+<td>It is used to calculate the length of the list. </td>
+</tr>
+<tr>
+<td>3</td>
+<td>max(list)</td>
+<td>It returns the maximum element of the list.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>min(list)</td>
+<td>It returns the minimum element of the list. </td>
+</tr>
+<tr>
+<td>5</td>
+<td>list(seq)</td>
+<td>It converts any sequence to the list. </td>
+</tr>
+</table>
+<h2 class="h2">Python List built-in methods </h2>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Function </th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="python-list-append-method">list.append(obj)</a></td>
+<td>The element represented by the object obj is added to the list. </td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="python-list-clear-method">list.clear()</a></td>
+<td>It removes all the elements from the list. </td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="python-list-copy-method">List.copy()</a></td>
+<td>It returns a shallow copy of the list. </td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="python-list-count-method">list.count(obj)</a></td>
+<td>It returns the number of occurrences of the specified object in the list.   </td>
+</tr>
+<tr>
+<td>5</td>
+<td><a href="python-list-extend-method">list.extend(seq)</a></td>
+<td>The sequence represented by the object seq is extended to the list. </td>
+</tr>
+<tr>
+<td>6</td>
+<td><a href="python-list-index-method">list.index(obj)</a></td>
+<td>It returns the lowest index in the list that object appears. </td>
+</tr>
+<tr>
+<td>7</td>
+<td><a href="python-list-insert-method">list.insert(index, obj)</a></td>
+<td>The object is inserted into the list at the specified index. </td>
+</tr>
+<tr>
+<td>8</td>
+<td><a href="python-list-pop-method">list.pop(obj=list[-1])</a></td>
+<td>It removes and returns the last object of the list. </td>
+</tr>
+<tr>
+<td>9</td>
+<td><a href="python-list-remove-method">list.remove(obj)</a></td>
+<td>It removes the specified object from the list. </td>
+</tr>
+<tr>
+<td>10</td>
+<td><a href="python-list-reverse-method">list.reverse()</a></td>
+<td>It reverses the list. </td>
+</tr>
+<tr>
+<td>11</td>
+<td><a href="python-list-sort-method">list.sort([func])</a></td>
+<td>It sorts the list by using the specified compare function if given. </td>
+</tr>
+</table>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tuples">Python Tuples</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-strings" style="float:left">¡û prev</a>
+<a class="next" href="python-tuples" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tuples">next ¡ú</a>
+<a class="next" href="python-strings">¡û prev</a>
+</div>
+<h1 class="h1">Python List</h1>
+<p>List in python is implemented to store the sequence of various type of data. However, python contains six data types that are capable to store the sequences but the most common and reliable type is list. </p>
+<p>A list can be defined as a collection of values or items of different types. The items in the list are separated with the comma (,) and enclosed with the square brackets []. </p>
+<p>A list can be defined as follows. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+L1 = ["John", 102, "USA"]
+
+L2 = [1, 2, 3, 4, 5, 6]
+
+L3 = [1, "Ryan"]
+
+</textarea></div>
+<p>If we try to print the type of L1, L2, and L3 then it will come out to be a list. </p>
+<p>Lets consider a proper example to define a list and printing its values. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+emp = ["John", 102, "USA"] 
+
+Dep1 = ["CS",10];
+
+Dep2 = ["IT",11];
+
+HOD_CS = [10,"Mr. Holding"]
+
+HOD_IT = [11, "Mr. Bewon"]
+
+print("printing employee data...");
+
+print("Name : %s, ID: %d, Country: %s"%(emp[0],emp[1],emp[2]))
+
+print("printing departments...");
+
+print("Department 1:\nName: %s, ID: %d\nDepartment 2:\nName: %s, ID: %s"%(Dep1[0],Dep2[1],Dep2[0],Dep2[1]));
+
+print("HOD Details ....");
+
+print("CS HOD Name: %s, Id: %d"%(HOD_CS[1],HOD_CS[0]));
+
+print("IT HOD Name: %s, Id: %d"%(HOD_IT[1],HOD_IT[0]));
+
+print(type(emp),type(Dep1),type(Dep2),type(HOD_CS),type(HOD_IT)); 
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+printing employee data...
+
+Name : John, ID: 102, Country: USA
+
+printing departments...
+
+Department 1:
+
+Name: CS, ID: 11
+
+Department 2:
+
+Name: IT, ID: 11
+
+HOD Details ....
+
+CS HOD Name: Mr. Holding, Id: 10
+
+IT HOD Name: Mr. Bewon, Id: 11
+
+&lt;class 'list'&gt; &lt;class 'list'&gt; &lt;class 'list'&gt; &lt;class 'list'&gt; &lt;class 'list'&gt;
+
+</pre></div>
+<h2 class="h2">List indexing and splitting</h2>
+<p>The indexing are processed in the same way as it happens with the strings. The elements of the list can be accessed by using the slice operator [].</p>
+<p>The index starts from 0 and goes to length - 1. The first element of the list is stored at the 0th index, the second element of the list is stored at the 1st index, and so on. </p>
+<p>Consider the following example. </p>
+<img alt="Python Lists" src="python/images/lists-indexing-and-splitting.png"/>
+<p>Unlike other languages, python provides us the flexibility to use the negative indexing also. The negative indices are counted from the right. The last element (right most) of the list has the index -1, its adjacent left element is present at the index -2 and so on until the left most element is encountered. </p>
+<img alt="Python Lists" src="python/images/lists-indexing-and-splitting2.png"/>
+<h2 class="h2">Updating List values </h2>
+<p>Lists are the most versatile data structures in python since they are immutable and their values can be updated by using the slice and assignment operator. </p>
+<p>Python also provide us the append() method which can be used to add values to the string. </p>
+<p>Consider the following example to update the values inside the list. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+List = [1, 2, 3, 4, 5, 6] 
+
+print(List) 
+
+List[2] = 10;
+
+print(List)
+
+List[1:3] = [89, 78] 
+
+print(List)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+[1, 2, 3, 4, 5, 6]
+
+[1, 2, 10, 4, 5, 6]
+
+[1, 89, 78, 4, 5, 6]
+
+</pre></div>
+<p>The list elements can also be deleted by using the <strong>del</strong> keyword. Python also provides us the remove() method if we do not know which element is to be deleted from the list. </p>
+<p>Consider the following example to delete the list elements. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+List = [0,1,2,3,4] 
+
+print(List)
+
+del List[0]
+
+print(List) 
+
+del List[3]
+
+print(List)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+[0, 1, 2, 3, 4]
+
+[1, 2, 3, 4]
+
+[1, 2, 3]
+
+</pre></div>
+<h2 class="h2">Python List Operations</h2>
+<p>The concatenation (+) and repetition (*) operator work in the same way as they were working with the strings. </p>
+<p>Lets see how the list responds to various operators. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+Consider a List l1 = [1, 2, 3, 4], and l2 = [5, 6, 7, 8]
+
+</textarea></div>
+<table class="alt">
+<tr>
+<th>Operator</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+<tr>
+<td>Repetition </td>
+<td>The repetition operator enables the list elements to be repeated multiple times. </td>
+<td><pre>L1*2 = [1, 2, 3, 4, 1, 2, 3, 4]</pre></td>
+</tr>
+<tr>
+<td>Concatenation </td>
+<td>It concatenates the list mentioned on either side of the operator. </td>
+<td><pre>l1+l2 = [1, 2, 3, 4, 5, 6, 7, 8]</pre></td>
+</tr>
+<tr>
+<td>Membership</td>
+<td>It returns true if a particular item exists in a particular list otherwise false. </td>
+<td><pre>print(2 in l1) prints True.</pre> </td>
+</tr>
+<tr>
+<td>Iteration </td>
+<td>The for loop is used to iterate over the list elements.</td>
+<td><pre>for i in l1: 
+
+    print(i)</pre>
+<strong>Output</strong><pre>
+
+1
+
+2
+
+3
+
+4</pre></td>
+</tr>
+<tr>
+<td>Length</td>
+<td>It is used to get the length of the list</td>
+<td><pre>len(l1) = 4 </pre></td>
+</tr>
+</table>
+<h2 class="h2">Iterating a List </h2>
+<p>A list can be iterated by using a for - in loop. A simple list containing four strings can be iterated as follows. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+List = ["John", "David", "James", "Jonathan"]
+
+for i in List: #i will iterate over the elements of the List and contains each element in each iteration. 
+
+	print(i);
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+John
+
+David
+
+James
+
+Jonathan
+
+</pre></div>
+<h2 class="h3">Adding elements to the list </h2>
+<p>Python provides append() function by using which we can add an element to the list. However, the append() method can only add the value to the end of the list. </p>
+<p>Consider the following example in which, we are taking the elements of the list from the user and printing the list on the console. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+l =[];
+
+n = int(input("Enter the number of elements in the list")); #Number of elements will be entered by the user
+
+for i in range(0,n): # for loop to take the input
+
+	l.append(input("Enter the item?")); # The input is taken from the user and added to the list as the item
+
+print("printing the list items...."); 
+
+for i in l: # traversal loop to print the list items
+
+	print(i, end = "  "); 
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Enter the number of elements in the list 5
+
+Enter the item?1
+
+Enter the item?2
+
+Enter the item?3
+
+Enter the item?4
+
+Enter the item?5
+
+printing the list items....
+
+1  2  3  4  5 
+
+</pre></div>
+<h2 class="h3">Removing elements from the list </h2>
+<div class="codeblock"><textarea class="python" name="code">
+
+List = [0,1,2,3,4] 
+
+print("printing original list: ");
+
+for i in List:
+
+	print(i,end=" ")
+
+List.remove(0)
+
+print("\nprinting the list after the removal of first element...")
+
+for i in List:
+
+	print(i,end=" ")
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+printing original list: 
+
+0 1 2 3 4 
+
+printing the list after the removal of first element...
+
+1 2 3 4 
+
+</pre></div>
+<h2 class="h2">Python List Built-in functions </h2>
+<p>Python provides the following built-in functions which can be used with the lists. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Function </th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>cmp(list1, list2)</td>
+<td>It compares the elements of both the lists. </td>
+</tr>
+<tr>
+<td>2</td>
+<td>len(list)</td>
+<td>It is used to calculate the length of the list. </td>
+</tr>
+<tr>
+<td>3</td>
+<td>max(list)</td>
+<td>It returns the maximum element of the list.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>min(list)</td>
+<td>It returns the minimum element of the list. </td>
+</tr>
+<tr>
+<td>5</td>
+<td>list(seq)</td>
+<td>It converts any sequence to the list. </td>
+</tr>
+</table>
+<h2 class="h2">Python List built-in methods </h2>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Function </th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="python-list-append-method">list.append(obj)</a></td>
+<td>The element represented by the object obj is added to the list. </td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="python-list-clear-method">list.clear()</a></td>
+<td>It removes all the elements from the list. </td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="python-list-copy-method">List.copy()</a></td>
+<td>It returns a shallow copy of the list. </td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="python-list-count-method">list.count(obj)</a></td>
+<td>It returns the number of occurrences of the specified object in the list.   </td>
+</tr>
+<tr>
+<td>5</td>
+<td><a href="python-list-extend-method">list.extend(seq)</a></td>
+<td>The sequence represented by the object seq is extended to the list. </td>
+</tr>
+<tr>
+<td>6</td>
+<td><a href="python-list-index-method">list.index(obj)</a></td>
+<td>It returns the lowest index in the list that object appears. </td>
+</tr>
+<tr>
+<td>7</td>
+<td><a href="python-list-insert-method">list.insert(index, obj)</a></td>
+<td>The object is inserted into the list at the specified index. </td>
+</tr>
+<tr>
+<td>8</td>
+<td><a href="python-list-pop-method">list.pop(obj=list[-1])</a></td>
+<td>It removes and returns the last object of the list. </td>
+</tr>
+<tr>
+<td>9</td>
+<td><a href="python-list-remove-method">list.remove(obj)</a></td>
+<td>It removes the specified object from the list. </td>
+</tr>
+<tr>
+<td>10</td>
+<td><a href="python-list-reverse-method">list.reverse()</a></td>
+<td>It reverses the list. </td>
+</tr>
+<tr>
+<td>11</td>
+<td><a href="python-list-sort-method">list.sort([func])</a></td>
+<td>It sorts the list by using the specified compare function if given. </td>
+</tr>
+</table>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tuples">Python Tuples</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-strings" style="float:left">¡û prev</a>
+<a class="next" href="python-tuples" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html></body></html>

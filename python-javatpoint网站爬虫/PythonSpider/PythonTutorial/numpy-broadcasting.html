@@ -1,0 +1,501 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-array-iteration">next ¡ú</a>
+<a class="next" href="numpy-arrays-within-the-numerical-range">¡û prev</a>
+</div>
+<h1 class="h1">NumPy Broadcasting </h1>
+<p>In Mathematical operations, we may need to consider the arrays of different shapes. NumPy can perform such operations where the array of different shapes are involved.</p>
+<p>For example, if we consider the matrix multiplication operation, if the shape of the two matrices is the same then this operation will be easily performed. However, we may also need to operate if the shape is not similar.</p>
+<p>Consider the following example to multiply two arrays.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+a = np.array([1,2,3,4,5,6,7])
+b = np.array([2,4,6,8,10,12,14])
+c = a*b;
+print(c)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+[ 2  8 18 32 50 72 98]
+</pre></div>
+<p>However, in the above example, if we consider arrays of different shapes, we will get the errors as shown below. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+a = np.array([1,2,3,4,5,6,7])
+b = np.array([2,4,6,8,10,12,14,19])
+c = a*b;
+print(c)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+ValueError: operands could not be broadcast together with shapes (7,) (8,) 
+</pre></div>
+<p>In the above example, we can see that the shapes of the two arrays are not similar and therefore they cannot be multiplied together. NumPy can perform such operation by using the concept of broadcasting.</p>
+<p>In broadcasting, the smaller array is broadcast to the larger array to make their shapes compatible with each other.</p>
+<h2 class="h2">Broadcasting Rules </h2>
+<p>Broadcasting is possible if the following cases are satisfied. </p>
+<ol class="points">
+<li>The smaller dimension array can be appended with '1' in its shape. </li>
+<li>Size of each output dimension is the maximum of the input sizes in the dimension. </li>
+<li>An input can be used in the calculation if its size in a particular dimension matches the output size or its value is exactly 1.</li>
+<li>If the input size is 1, then the first data entry is used for the calculation along the dimension.</li>
+</ol>
+<p>Broadcasting can be applied to the arrays if the following rules are satisfied. </p>
+<ol class="points">
+<li>All the input arrays have the same shape. </li>
+<li>Arrays have the same number of dimensions, and the length of each dimension is either a common length or 1.</li>
+<li>Array with the fewer dimension can be appended with '1' in its shape. </li>
+</ol>
+<p>Let's see an example of broadcasting.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+a = np.array([[1,2,3,4],[2,4,5,6],[10,20,39,3]])
+b = np.array([2,4,6,8])
+print("\nprinting array a..")
+print(a)
+print("\nprinting array b..")
+print(b)
+print("\nAdding arrays a and b ..")
+c = a + b;
+print(c)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+printing array a..
+[[ 1  2  3  4]
+ [ 2  4  5  6]
+ [10 20 39  3]]
+
+printing array b..
+[2 4 6 8]
+
+Adding arrays a and b ..
+[[ 3  6  9 12]
+ [ 4  8 11 14]
+ [12 24 45 11]]
+</pre></div>
+<img alt="NumPy Broadcasting" src="https://static.javatpoint.com/tutorial/numpy/images/numpy-broadcasting.png"/>
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-array-iteration">NumPy Array Iteration</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="numpy-arrays-within-the-numerical-range" style="float:left">¡û prev</a>
+<a class="next" href="numpy-array-iteration" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-array-iteration">next ¡ú</a>
+<a class="next" href="numpy-arrays-within-the-numerical-range">¡û prev</a>
+</div>
+<h1 class="h1">NumPy Broadcasting </h1>
+<p>In Mathematical operations, we may need to consider the arrays of different shapes. NumPy can perform such operations where the array of different shapes are involved.</p>
+<p>For example, if we consider the matrix multiplication operation, if the shape of the two matrices is the same then this operation will be easily performed. However, we may also need to operate if the shape is not similar.</p>
+<p>Consider the following example to multiply two arrays.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+a = np.array([1,2,3,4,5,6,7])
+
+b = np.array([2,4,6,8,10,12,14])
+
+c = a*b;
+
+print(c)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+[ 2  8 18 32 50 72 98]
+
+</pre></div>
+<p>However, in the above example, if we consider arrays of different shapes, we will get the errors as shown below. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+a = np.array([1,2,3,4,5,6,7])
+
+b = np.array([2,4,6,8,10,12,14,19])
+
+c = a*b;
+
+print(c)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+ValueError: operands could not be broadcast together with shapes (7,) (8,) 
+
+</pre></div>
+<p>In the above example, we can see that the shapes of the two arrays are not similar and therefore they cannot be multiplied together. NumPy can perform such operation by using the concept of broadcasting.</p>
+<p>In broadcasting, the smaller array is broadcast to the larger array to make their shapes compatible with each other.</p>
+<h2 class="h2">Broadcasting Rules </h2>
+<p>Broadcasting is possible if the following cases are satisfied. </p>
+<ol class="points">
+<li>The smaller dimension array can be appended with '1' in its shape. </li>
+<li>Size of each output dimension is the maximum of the input sizes in the dimension. </li>
+<li>An input can be used in the calculation if its size in a particular dimension matches the output size or its value is exactly 1.</li>
+<li>If the input size is 1, then the first data entry is used for the calculation along the dimension.</li>
+</ol>
+<p>Broadcasting can be applied to the arrays if the following rules are satisfied. </p>
+<ol class="points">
+<li>All the input arrays have the same shape. </li>
+<li>Arrays have the same number of dimensions, and the length of each dimension is either a common length or 1.</li>
+<li>Array with the fewer dimension can be appended with '1' in its shape. </li>
+</ol>
+<p>Let's see an example of broadcasting.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+a = np.array([[1,2,3,4],[2,4,5,6],[10,20,39,3]])
+
+b = np.array([2,4,6,8])
+
+print("\nprinting array a..")
+
+print(a)
+
+print("\nprinting array b..")
+
+print(b)
+
+print("\nAdding arrays a and b ..")
+
+c = a + b;
+
+print(c)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+printing array a..
+
+[[ 1  2  3  4]
+
+ [ 2  4  5  6]
+
+ [10 20 39  3]]
+
+
+
+printing array b..
+
+[2 4 6 8]
+
+
+
+Adding arrays a and b ..
+
+[[ 3  6  9 12]
+
+ [ 4  8 11 14]
+
+ [12 24 45 11]]
+
+</pre></div>
+<img alt="NumPy Broadcasting" src="https://static.javatpoint.com/tutorial/numpy/images/numpy-broadcasting.png"/>
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-array-iteration">NumPy Array Iteration</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="numpy-arrays-within-the-numerical-range" style="float:left">¡û prev</a>
+<a class="next" href="numpy-array-iteration" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-array-iteration">next ¡ú</a>
+<a class="next" href="numpy-arrays-within-the-numerical-range">¡û prev</a>
+</div>
+<h1 class="h1">NumPy Broadcasting </h1>
+<p>In Mathematical operations, we may need to consider the arrays of different shapes. NumPy can perform such operations where the array of different shapes are involved.</p>
+<p>For example, if we consider the matrix multiplication operation, if the shape of the two matrices is the same then this operation will be easily performed. However, we may also need to operate if the shape is not similar.</p>
+<p>Consider the following example to multiply two arrays.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+a = np.array([1,2,3,4,5,6,7])
+
+b = np.array([2,4,6,8,10,12,14])
+
+c = a*b;
+
+print(c)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+[ 2  8 18 32 50 72 98]
+
+</pre></div>
+<p>However, in the above example, if we consider arrays of different shapes, we will get the errors as shown below. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+a = np.array([1,2,3,4,5,6,7])
+
+b = np.array([2,4,6,8,10,12,14,19])
+
+c = a*b;
+
+print(c)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+ValueError: operands could not be broadcast together with shapes (7,) (8,) 
+
+</pre></div>
+<p>In the above example, we can see that the shapes of the two arrays are not similar and therefore they cannot be multiplied together. NumPy can perform such operation by using the concept of broadcasting.</p>
+<p>In broadcasting, the smaller array is broadcast to the larger array to make their shapes compatible with each other.</p>
+<h2 class="h2">Broadcasting Rules </h2>
+<p>Broadcasting is possible if the following cases are satisfied. </p>
+<ol class="points">
+<li>The smaller dimension array can be appended with '1' in its shape. </li>
+<li>Size of each output dimension is the maximum of the input sizes in the dimension. </li>
+<li>An input can be used in the calculation if its size in a particular dimension matches the output size or its value is exactly 1.</li>
+<li>If the input size is 1, then the first data entry is used for the calculation along the dimension.</li>
+</ol>
+<p>Broadcasting can be applied to the arrays if the following rules are satisfied. </p>
+<ol class="points">
+<li>All the input arrays have the same shape. </li>
+<li>Arrays have the same number of dimensions, and the length of each dimension is either a common length or 1.</li>
+<li>Array with the fewer dimension can be appended with '1' in its shape. </li>
+</ol>
+<p>Let's see an example of broadcasting.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+a = np.array([[1,2,3,4],[2,4,5,6],[10,20,39,3]])
+
+b = np.array([2,4,6,8])
+
+print("\nprinting array a..")
+
+print(a)
+
+print("\nprinting array b..")
+
+print(b)
+
+print("\nAdding arrays a and b ..")
+
+c = a + b;
+
+print(c)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+printing array a..
+
+[[ 1  2  3  4]
+
+ [ 2  4  5  6]
+
+ [10 20 39  3]]
+
+
+
+printing array b..
+
+[2 4 6 8]
+
+
+
+Adding arrays a and b ..
+
+[[ 3  6  9 12]
+
+ [ 4  8 11 14]
+
+ [12 24 45 11]]
+
+</pre></div>
+<img alt="NumPy Broadcasting" src="https://static.javatpoint.com/tutorial/numpy/images/numpy-broadcasting.png"/>
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-array-iteration">NumPy Array Iteration</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="numpy-arrays-within-the-numerical-range" style="float:left">¡û prev</a>
+<a class="next" href="numpy-array-iteration" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-array-iteration">next ¡ú</a>
+<a class="next" href="numpy-arrays-within-the-numerical-range">¡û prev</a>
+</div>
+<h1 class="h1">NumPy Broadcasting </h1>
+<p>In Mathematical operations, we may need to consider the arrays of different shapes. NumPy can perform such operations where the array of different shapes are involved.</p>
+<p>For example, if we consider the matrix multiplication operation, if the shape of the two matrices is the same then this operation will be easily performed. However, we may also need to operate if the shape is not similar.</p>
+<p>Consider the following example to multiply two arrays.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+a = np.array([1,2,3,4,5,6,7])
+
+b = np.array([2,4,6,8,10,12,14])
+
+c = a*b;
+
+print(c)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+[ 2  8 18 32 50 72 98]
+
+</pre></div>
+<p>However, in the above example, if we consider arrays of different shapes, we will get the errors as shown below. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+a = np.array([1,2,3,4,5,6,7])
+
+b = np.array([2,4,6,8,10,12,14,19])
+
+c = a*b;
+
+print(c)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+ValueError: operands could not be broadcast together with shapes (7,) (8,) 
+
+</pre></div>
+<p>In the above example, we can see that the shapes of the two arrays are not similar and therefore they cannot be multiplied together. NumPy can perform such operation by using the concept of broadcasting.</p>
+<p>In broadcasting, the smaller array is broadcast to the larger array to make their shapes compatible with each other.</p>
+<h2 class="h2">Broadcasting Rules </h2>
+<p>Broadcasting is possible if the following cases are satisfied. </p>
+<ol class="points">
+<li>The smaller dimension array can be appended with '1' in its shape. </li>
+<li>Size of each output dimension is the maximum of the input sizes in the dimension. </li>
+<li>An input can be used in the calculation if its size in a particular dimension matches the output size or its value is exactly 1.</li>
+<li>If the input size is 1, then the first data entry is used for the calculation along the dimension.</li>
+</ol>
+<p>Broadcasting can be applied to the arrays if the following rules are satisfied. </p>
+<ol class="points">
+<li>All the input arrays have the same shape. </li>
+<li>Arrays have the same number of dimensions, and the length of each dimension is either a common length or 1.</li>
+<li>Array with the fewer dimension can be appended with '1' in its shape. </li>
+</ol>
+<p>Let's see an example of broadcasting.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+a = np.array([[1,2,3,4],[2,4,5,6],[10,20,39,3]])
+
+b = np.array([2,4,6,8])
+
+print("\nprinting array a..")
+
+print(a)
+
+print("\nprinting array b..")
+
+print(b)
+
+print("\nAdding arrays a and b ..")
+
+c = a + b;
+
+print(c)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+printing array a..
+
+[[ 1  2  3  4]
+
+ [ 2  4  5  6]
+
+ [10 20 39  3]]
+
+
+
+printing array b..
+
+[2 4 6 8]
+
+
+
+Adding arrays a and b ..
+
+[[ 3  6  9 12]
+
+ [ 4  8 11 14]
+
+ [12 24 45 11]]
+
+</pre></div>
+<img alt="NumPy Broadcasting" src="https://static.javatpoint.com/tutorial/numpy/images/numpy-broadcasting.png"/>
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-array-iteration">NumPy Array Iteration</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="numpy-arrays-within-the-numerical-range" style="float:left">¡û prev</a>
+<a class="next" href="numpy-array-iteration" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html></body></html>

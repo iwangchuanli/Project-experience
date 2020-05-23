@@ -1,0 +1,1539 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-date">next ¡ú</a>
+<a class="next" href="python-modules">¡û prev</a>
+</div>
+<h1 class="h1">Python Exceptions </h1>
+<p>An exception can be defined as an abnormal condition in a program resulting in the disruption in the flow of the program.</p>
+<p>Whenever an exception occurs, the program halts the execution, and thus the further code is not executed. Therefore, an exception is the error which python script is unable to tackle with.</p>
+<p>Python provides us with the way to handle the Exception so that the other part of the code can be executed without any disruption. However, if we do not handle the exception, the interpreter doesn't execute all the code that exists after the that. </p>
+<h2 class="h2">Common Exceptions</h2>
+<p>A list of common exceptions that can be thrown from a normal python program is given below. </p>
+<ol class="points">
+<li><strong>ZeroDivisionError:</strong> Occurs when a number is divided by zero.</li>
+<li><strong>NameError:</strong> It occurs when a name is not found. It may be local or global.</li>
+<li><strong>IndentationError:</strong> If incorrect indentation is given.</li>
+<li><strong>IOError:</strong> It occurs when Input Output operation fails.</li>
+<li><strong>EOFError:</strong> It occurs when the end of the file is reached, and yet operations are being performed.</li>
+</ol>
+<hr/>
+<h2 class="h2">Problem without handling exceptions </h2>
+<p>As we have already discussed, the exception is an abnormal condition that halts the execution of the program. Consider the following example. </p>
+<h3 class="h3">Example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+a = int(input("Enter a:"))
+b = int(input("Enter b:"))
+c = a/b;
+print("a/b = %d"%c)
+
+#other code:
+print("Hi I am other part of the program")
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+Enter a:10
+Enter b:0
+Traceback (most recent call last):
+  File "exception-test.py", line 3, in &lt;module&gt;
+    c = a/b;
+ZeroDivisionError: division by zero
+</pre></div>
+<hr/>
+<h2 class="h2">Exception handling in python </h2>
+<p>If the python program contains suspicious code that may throw the exception, we must place that code in the try block. The try block must be followed with the except statement which contains a block of code that will be executed if there is some exception in the try block.</p>
+<img alt="Python Exception handling" src="python/images/python-exception-handling.png"/>
+<h3 class="h3">Syntax </h3>
+<div class="codeblock"><textarea class="python" name="code">
+try:
+	#block of code 
+
+except Exception1:
+	#block of code
+
+except Exception2:
+	#block of code
+
+#other code
+</textarea></div>
+<br/>
+<p>We can also use the else statement with the try-except statement in which, we can place the code which will be executed in the scenario if no exception occurs in the try block. </p>
+<p>The syntax to use the else statement with the try-except statement is given below. </p>
+<div class="codeblock"><textarea class="python" name="code">
+try:
+	#block of code 
+
+except Exception1:
+	#block of code 
+
+else:
+	#this code executes if no except block is executed
+</textarea></div>
+<img alt="Python Exception handling" src="python/images/python-exception-handling2.png"/>
+<h3 class="h3">Example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+try:
+	a = int(input("Enter a:"))
+	b = int(input("Enter b:"))
+	c = a/b;
+	print("a/b = %d"%c)
+except Exception:
+	print("can't divide by zero")
+else:
+	print("Hi I am else block") 
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+Enter a:10
+Enter b:2
+a/b = 5
+Hi I am else block
+</pre></div>
+<h2 class="h3">The except statement with no exception </h2>
+<p>Python provides the flexibility not to specify the name of exception with the except statement. </p>
+<p>Consider the following example. </p>
+<h3 class="h3">Example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+try:
+	a = int(input("Enter a:"))
+	b = int(input("Enter b:"))
+	c = a/b;
+	print("a/b = %d"%c)
+except:
+	print("can't divide by zero")
+else:
+	print("Hi I am else block") 
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+Enter a:10
+Enter b:0
+can't divide by zero
+</pre></div>
+<h2 class="h3">Points to remember </h2>
+<ol class="points">
+<li>Python facilitates us to not specify the exception with the except statement.</li>
+<li>We can declare multiple exceptions in the except statement since the try block may contain the statements which throw the different type of exceptions.</li>
+<li>We can also specify an else block along with the try-except statement which will be executed if no exception is raised in the try block.</li>
+<li>The statements that don't throw the exception should be placed inside the else block. </li>
+</ol>
+<h3 class="h3">Example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+try:
+	#this will throw an exception if the file doesn't exist. 
+	fileptr = open("file.txt","r")
+except IOError:
+	print("File not found")
+else:
+	print("The file opened successfully")
+	fileptr.close()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+File not found
+</pre></div><hr/>
+<h2 class="h2">Declaring multiple exceptions </h2>
+<p>The python allows us to declare the multiple exceptions with the except clause. Declaring multiple exceptions is useful in the cases where a try block throws multiple exceptions. </p>
+<h3 class="h3">Syntax </h3>
+<div class="codeblock"><textarea class="python" name="code">
+try:
+	#block of code 
+
+except (&lt;Exception 1&gt;,&lt;Exception 2&gt;,&lt;Exception 3&gt;,...&lt;Exception n&gt;)
+	#block of code 
+
+else:
+	#block of code
+</textarea></div>
+<h3 class="h3">Example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+try:  
+    a=10/0;  
+except ArithmeticError,StandardError:  
+    print "Arithmetic Exception"  
+else:  
+    print "Successfully Done"  
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+Arithmetic Exception 
+</pre></div><hr/>
+<h2 class="h2">The finally block </h2>
+<p>We can use the finally block with the try block in which, we can pace the important code which must be executed before the try statement throws an exception. </p>
+<p>The syntax to use the finally block is given below. </p>
+<h3 class="h3">syntax </h3>
+<div class="codeblock"><textarea class="python" name="code">
+try:
+	# block of code 
+	# this may throw an exception
+finally:
+	# block of code
+	# this will always be executed 
+</textarea></div>
+<img alt="Python Exception handling" src="python/images/python-exception-handling3.png"/>
+<h3 class="h3">Example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+try:
+	fileptr = open("file.txt","r")	
+	try:
+		fileptr.write("Hi I am good")
+	finally:
+		fileptr.close()
+		print("file closed")
+except:
+	print("Error")
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+file closed
+Error
+</pre></div><hr/>
+<h2 class="h2">Raising exceptions</h2>
+<p>An exception can be raised by using the raise clause in python. The syntax to use the raise statement is given below. </p>
+<h3 class="h3">syntax </h3>
+<div class="codeblock"><textarea class="python" name="code">
+raise Exception_class,&lt;value&gt;
+</textarea></div>
+<h2 class="h3">Points to remember </h2>
+<ol class="points">
+<li>To raise an exception, raise statement is used. The exception class name follows it.</li>
+<li>An exception can be provided with a value that can be given in the parenthesis.</li>
+<li>To access the value "as" keyword is used. "e" is used as a reference variable which stores the value of the exception.</li>
+</ol>
+<h3 class="h3">Example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+try:
+	age = int(input("Enter the age?"))
+	if age&lt;18:
+		raise ValueError;
+	else:
+		print("the age is valid")
+except ValueError:
+	print("The age is not valid")
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+Enter the age?17
+The age is not valid
+</pre></div>
+<h3 class="h3">Example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+try:
+	a = int(input("Enter a?"))
+	b = int(input("Enter b?"))
+	if b is 0:
+		raise ArithmeticError;
+	else:
+		print("a/b = ",a/b)
+except ArithmeticError:
+	print("The value of b can't be 0")
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+Enter a?10
+Enter b?0
+The value of b can't be 0
+</pre></div>
+<h2 class="h3">Custom Exception </h2>
+<p>The python allows us to create our exceptions that can be raised from the program and caught using the except clause. However, we suggest you read this section after visiting the Python object and classes. </p>
+<p>Consider the following example. </p>
+<h3 class="h3">Example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+class ErrorInCode(Exception):  
+	def __init__(self, data):  
+		self.data = data  
+	def __str__(self):  
+		return repr(self.data)  
+  
+try:  
+    raise ErrorInCode(2000)  
+except ErrorInCode as ae:  
+    print("Received error:", ae.data)  
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+Received error: 2000
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-date">Python Date and Time</a></span>
+</div>
+<!-- link -->
+<br><br/>
+<div id="bottomnext">
+<a class="next" href="python-modules" style="float:left">¡û prev</a>
+<a class="next" href="python-date" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</br></td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-date">next ¡ú</a>
+<a class="next" href="python-modules">¡û prev</a>
+</div>
+<h1 class="h1">Python Exceptions </h1>
+<p>An exception can be defined as an abnormal condition in a program resulting in the disruption in the flow of the program.</p>
+<p>Whenever an exception occurs, the program halts the execution, and thus the further code is not executed. Therefore, an exception is the error which python script is unable to tackle with.</p>
+<p>Python provides us with the way to handle the Exception so that the other part of the code can be executed without any disruption. However, if we do not handle the exception, the interpreter doesn't execute all the code that exists after the that. </p>
+<h2 class="h2">Common Exceptions</h2>
+<p>A list of common exceptions that can be thrown from a normal python program is given below. </p>
+<ol class="points">
+<li><strong>ZeroDivisionError:</strong> Occurs when a number is divided by zero.</li>
+<li><strong>NameError:</strong> It occurs when a name is not found. It may be local or global.</li>
+<li><strong>IndentationError:</strong> If incorrect indentation is given.</li>
+<li><strong>IOError:</strong> It occurs when Input Output operation fails.</li>
+<li><strong>EOFError:</strong> It occurs when the end of the file is reached, and yet operations are being performed.</li>
+</ol>
+<hr/>
+<h2 class="h2">Problem without handling exceptions </h2>
+<p>As we have already discussed, the exception is an abnormal condition that halts the execution of the program. Consider the following example. </p>
+<h3 class="h3">Example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+a = int(input("Enter a:"))
+
+b = int(input("Enter b:"))
+
+c = a/b;
+
+print("a/b = %d"%c)
+
+
+
+#other code:
+
+print("Hi I am other part of the program")
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+
+Enter a:10
+
+Enter b:0
+
+Traceback (most recent call last):
+
+  File "exception-test.py", line 3, in &lt;module&gt;
+
+    c = a/b;
+
+ZeroDivisionError: division by zero
+
+</pre></div>
+<hr/>
+<h2 class="h2">Exception handling in python </h2>
+<p>If the python program contains suspicious code that may throw the exception, we must place that code in the try block. The try block must be followed with the except statement which contains a block of code that will be executed if there is some exception in the try block.</p>
+<img alt="Python Exception handling" src="python/images/python-exception-handling.png"/>
+<h3 class="h3">Syntax </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+try:
+
+	#block of code 
+
+
+
+except Exception1:
+
+	#block of code
+
+
+
+except Exception2:
+
+	#block of code
+
+
+
+#other code
+
+</textarea></div>
+<br/>
+<p>We can also use the else statement with the try-except statement in which, we can place the code which will be executed in the scenario if no exception occurs in the try block. </p>
+<p>The syntax to use the else statement with the try-except statement is given below. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+try:
+
+	#block of code 
+
+
+
+except Exception1:
+
+	#block of code 
+
+
+
+else:
+
+	#this code executes if no except block is executed
+
+</textarea></div>
+<img alt="Python Exception handling" src="python/images/python-exception-handling2.png"/>
+<h3 class="h3">Example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+try:
+
+	a = int(input("Enter a:"))
+
+	b = int(input("Enter b:"))
+
+	c = a/b;
+
+	print("a/b = %d"%c)
+
+except Exception:
+
+	print("can't divide by zero")
+
+else:
+
+	print("Hi I am else block") 
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+
+Enter a:10
+
+Enter b:2
+
+a/b = 5
+
+Hi I am else block
+
+</pre></div>
+<h2 class="h3">The except statement with no exception </h2>
+<p>Python provides the flexibility not to specify the name of exception with the except statement. </p>
+<p>Consider the following example. </p>
+<h3 class="h3">Example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+try:
+
+	a = int(input("Enter a:"))
+
+	b = int(input("Enter b:"))
+
+	c = a/b;
+
+	print("a/b = %d"%c)
+
+except:
+
+	print("can't divide by zero")
+
+else:
+
+	print("Hi I am else block") 
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+
+Enter a:10
+
+Enter b:0
+
+can't divide by zero
+
+</pre></div>
+<h2 class="h3">Points to remember </h2>
+<ol class="points">
+<li>Python facilitates us to not specify the exception with the except statement.</li>
+<li>We can declare multiple exceptions in the except statement since the try block may contain the statements which throw the different type of exceptions.</li>
+<li>We can also specify an else block along with the try-except statement which will be executed if no exception is raised in the try block.</li>
+<li>The statements that don't throw the exception should be placed inside the else block. </li>
+</ol>
+<h3 class="h3">Example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+try:
+
+	#this will throw an exception if the file doesn't exist. 
+
+	fileptr = open("file.txt","r")
+
+except IOError:
+
+	print("File not found")
+
+else:
+
+	print("The file opened successfully")
+
+	fileptr.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+
+File not found
+
+</pre></div><hr/>
+<h2 class="h2">Declaring multiple exceptions </h2>
+<p>The python allows us to declare the multiple exceptions with the except clause. Declaring multiple exceptions is useful in the cases where a try block throws multiple exceptions. </p>
+<h3 class="h3">Syntax </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+try:
+
+	#block of code 
+
+
+
+except (&lt;Exception 1&gt;,&lt;Exception 2&gt;,&lt;Exception 3&gt;,...&lt;Exception n&gt;)
+
+	#block of code 
+
+
+
+else:
+
+	#block of code
+
+</textarea></div>
+<h3 class="h3">Example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+try:  
+
+    a=10/0;  
+
+except ArithmeticError,StandardError:  
+
+    print "Arithmetic Exception"  
+
+else:  
+
+    print "Successfully Done"  
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+
+Arithmetic Exception 
+
+</pre></div><hr/>
+<h2 class="h2">The finally block </h2>
+<p>We can use the finally block with the try block in which, we can pace the important code which must be executed before the try statement throws an exception. </p>
+<p>The syntax to use the finally block is given below. </p>
+<h3 class="h3">syntax </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+try:
+
+	# block of code 
+
+	# this may throw an exception
+
+finally:
+
+	# block of code
+
+	# this will always be executed 
+
+</textarea></div>
+<img alt="Python Exception handling" src="python/images/python-exception-handling3.png"/>
+<h3 class="h3">Example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+try:
+
+	fileptr = open("file.txt","r")	
+
+	try:
+
+		fileptr.write("Hi I am good")
+
+	finally:
+
+		fileptr.close()
+
+		print("file closed")
+
+except:
+
+	print("Error")
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+
+file closed
+
+Error
+
+</pre></div><hr/>
+<h2 class="h2">Raising exceptions</h2>
+<p>An exception can be raised by using the raise clause in python. The syntax to use the raise statement is given below. </p>
+<h3 class="h3">syntax </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+raise Exception_class,&lt;value&gt;
+
+</textarea></div>
+<h2 class="h3">Points to remember </h2>
+<ol class="points">
+<li>To raise an exception, raise statement is used. The exception class name follows it.</li>
+<li>An exception can be provided with a value that can be given in the parenthesis.</li>
+<li>To access the value "as" keyword is used. "e" is used as a reference variable which stores the value of the exception.</li>
+</ol>
+<h3 class="h3">Example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+try:
+
+	age = int(input("Enter the age?"))
+
+	if age&lt;18:
+
+		raise ValueError;
+
+	else:
+
+		print("the age is valid")
+
+except ValueError:
+
+	print("The age is not valid")
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+
+Enter the age?17
+
+The age is not valid
+
+</pre></div>
+<h3 class="h3">Example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+try:
+
+	a = int(input("Enter a?"))
+
+	b = int(input("Enter b?"))
+
+	if b is 0:
+
+		raise ArithmeticError;
+
+	else:
+
+		print("a/b = ",a/b)
+
+except ArithmeticError:
+
+	print("The value of b can't be 0")
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+
+Enter a?10
+
+Enter b?0
+
+The value of b can't be 0
+
+</pre></div>
+<h2 class="h3">Custom Exception </h2>
+<p>The python allows us to create our exceptions that can be raised from the program and caught using the except clause. However, we suggest you read this section after visiting the Python object and classes. </p>
+<p>Consider the following example. </p>
+<h3 class="h3">Example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class ErrorInCode(Exception):  
+
+	def __init__(self, data):  
+
+		self.data = data  
+
+	def __str__(self):  
+
+		return repr(self.data)  
+
+  
+
+try:  
+
+    raise ErrorInCode(2000)  
+
+except ErrorInCode as ae:  
+
+    print("Received error:", ae.data)  
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+
+Received error: 2000
+
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-date">Python Date and Time</a></span>
+</div>
+<!-- link -->
+<br><br/>
+<div id="bottomnext">
+<a class="next" href="python-modules" style="float:left">¡û prev</a>
+<a class="next" href="python-date" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</br></td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-date">next ¡ú</a>
+<a class="next" href="python-modules">¡û prev</a>
+</div>
+<h1 class="h1">Python Exceptions </h1>
+<p>An exception can be defined as an abnormal condition in a program resulting in the disruption in the flow of the program.</p>
+<p>Whenever an exception occurs, the program halts the execution, and thus the further code is not executed. Therefore, an exception is the error which python script is unable to tackle with.</p>
+<p>Python provides us with the way to handle the Exception so that the other part of the code can be executed without any disruption. However, if we do not handle the exception, the interpreter doesn't execute all the code that exists after the that. </p>
+<h2 class="h2">Common Exceptions</h2>
+<p>A list of common exceptions that can be thrown from a normal python program is given below. </p>
+<ol class="points">
+<li><strong>ZeroDivisionError:</strong> Occurs when a number is divided by zero.</li>
+<li><strong>NameError:</strong> It occurs when a name is not found. It may be local or global.</li>
+<li><strong>IndentationError:</strong> If incorrect indentation is given.</li>
+<li><strong>IOError:</strong> It occurs when Input Output operation fails.</li>
+<li><strong>EOFError:</strong> It occurs when the end of the file is reached, and yet operations are being performed.</li>
+</ol>
+<hr/>
+<h2 class="h2">Problem without handling exceptions </h2>
+<p>As we have already discussed, the exception is an abnormal condition that halts the execution of the program. Consider the following example. </p>
+<h3 class="h3">Example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+a = int(input("Enter a:"))
+
+b = int(input("Enter b:"))
+
+c = a/b;
+
+print("a/b = %d"%c)
+
+
+
+#other code:
+
+print("Hi I am other part of the program")
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+
+Enter a:10
+
+Enter b:0
+
+Traceback (most recent call last):
+
+  File "exception-test.py", line 3, in &lt;module&gt;
+
+    c = a/b;
+
+ZeroDivisionError: division by zero
+
+</pre></div>
+<hr/>
+<h2 class="h2">Exception handling in python </h2>
+<p>If the python program contains suspicious code that may throw the exception, we must place that code in the try block. The try block must be followed with the except statement which contains a block of code that will be executed if there is some exception in the try block.</p>
+<img alt="Python Exception handling" src="python/images/python-exception-handling.png"/>
+<h3 class="h3">Syntax </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+try:
+
+	#block of code 
+
+
+
+except Exception1:
+
+	#block of code
+
+
+
+except Exception2:
+
+	#block of code
+
+
+
+#other code
+
+</textarea></div>
+<br/>
+<p>We can also use the else statement with the try-except statement in which, we can place the code which will be executed in the scenario if no exception occurs in the try block. </p>
+<p>The syntax to use the else statement with the try-except statement is given below. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+try:
+
+	#block of code 
+
+
+
+except Exception1:
+
+	#block of code 
+
+
+
+else:
+
+	#this code executes if no except block is executed
+
+</textarea></div>
+<img alt="Python Exception handling" src="python/images/python-exception-handling2.png"/>
+<h3 class="h3">Example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+try:
+
+	a = int(input("Enter a:"))
+
+	b = int(input("Enter b:"))
+
+	c = a/b;
+
+	print("a/b = %d"%c)
+
+except Exception:
+
+	print("can't divide by zero")
+
+else:
+
+	print("Hi I am else block") 
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+
+Enter a:10
+
+Enter b:2
+
+a/b = 5
+
+Hi I am else block
+
+</pre></div>
+<h2 class="h3">The except statement with no exception </h2>
+<p>Python provides the flexibility not to specify the name of exception with the except statement. </p>
+<p>Consider the following example. </p>
+<h3 class="h3">Example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+try:
+
+	a = int(input("Enter a:"))
+
+	b = int(input("Enter b:"))
+
+	c = a/b;
+
+	print("a/b = %d"%c)
+
+except:
+
+	print("can't divide by zero")
+
+else:
+
+	print("Hi I am else block") 
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+
+Enter a:10
+
+Enter b:0
+
+can't divide by zero
+
+</pre></div>
+<h2 class="h3">Points to remember </h2>
+<ol class="points">
+<li>Python facilitates us to not specify the exception with the except statement.</li>
+<li>We can declare multiple exceptions in the except statement since the try block may contain the statements which throw the different type of exceptions.</li>
+<li>We can also specify an else block along with the try-except statement which will be executed if no exception is raised in the try block.</li>
+<li>The statements that don't throw the exception should be placed inside the else block. </li>
+</ol>
+<h3 class="h3">Example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+try:
+
+	#this will throw an exception if the file doesn't exist. 
+
+	fileptr = open("file.txt","r")
+
+except IOError:
+
+	print("File not found")
+
+else:
+
+	print("The file opened successfully")
+
+	fileptr.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+
+File not found
+
+</pre></div><hr/>
+<h2 class="h2">Declaring multiple exceptions </h2>
+<p>The python allows us to declare the multiple exceptions with the except clause. Declaring multiple exceptions is useful in the cases where a try block throws multiple exceptions. </p>
+<h3 class="h3">Syntax </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+try:
+
+	#block of code 
+
+
+
+except (&lt;Exception 1&gt;,&lt;Exception 2&gt;,&lt;Exception 3&gt;,...&lt;Exception n&gt;)
+
+	#block of code 
+
+
+
+else:
+
+	#block of code
+
+</textarea></div>
+<h3 class="h3">Example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+try:  
+
+    a=10/0;  
+
+except ArithmeticError,StandardError:  
+
+    print "Arithmetic Exception"  
+
+else:  
+
+    print "Successfully Done"  
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+
+Arithmetic Exception 
+
+</pre></div><hr/>
+<h2 class="h2">The finally block </h2>
+<p>We can use the finally block with the try block in which, we can pace the important code which must be executed before the try statement throws an exception. </p>
+<p>The syntax to use the finally block is given below. </p>
+<h3 class="h3">syntax </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+try:
+
+	# block of code 
+
+	# this may throw an exception
+
+finally:
+
+	# block of code
+
+	# this will always be executed 
+
+</textarea></div>
+<img alt="Python Exception handling" src="python/images/python-exception-handling3.png"/>
+<h3 class="h3">Example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+try:
+
+	fileptr = open("file.txt","r")	
+
+	try:
+
+		fileptr.write("Hi I am good")
+
+	finally:
+
+		fileptr.close()
+
+		print("file closed")
+
+except:
+
+	print("Error")
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+
+file closed
+
+Error
+
+</pre></div><hr/>
+<h2 class="h2">Raising exceptions</h2>
+<p>An exception can be raised by using the raise clause in python. The syntax to use the raise statement is given below. </p>
+<h3 class="h3">syntax </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+raise Exception_class,&lt;value&gt;
+
+</textarea></div>
+<h2 class="h3">Points to remember </h2>
+<ol class="points">
+<li>To raise an exception, raise statement is used. The exception class name follows it.</li>
+<li>An exception can be provided with a value that can be given in the parenthesis.</li>
+<li>To access the value "as" keyword is used. "e" is used as a reference variable which stores the value of the exception.</li>
+</ol>
+<h3 class="h3">Example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+try:
+
+	age = int(input("Enter the age?"))
+
+	if age&lt;18:
+
+		raise ValueError;
+
+	else:
+
+		print("the age is valid")
+
+except ValueError:
+
+	print("The age is not valid")
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+
+Enter the age?17
+
+The age is not valid
+
+</pre></div>
+<h3 class="h3">Example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+try:
+
+	a = int(input("Enter a?"))
+
+	b = int(input("Enter b?"))
+
+	if b is 0:
+
+		raise ArithmeticError;
+
+	else:
+
+		print("a/b = ",a/b)
+
+except ArithmeticError:
+
+	print("The value of b can't be 0")
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+
+Enter a?10
+
+Enter b?0
+
+The value of b can't be 0
+
+</pre></div>
+<h2 class="h3">Custom Exception </h2>
+<p>The python allows us to create our exceptions that can be raised from the program and caught using the except clause. However, we suggest you read this section after visiting the Python object and classes. </p>
+<p>Consider the following example. </p>
+<h3 class="h3">Example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class ErrorInCode(Exception):  
+
+	def __init__(self, data):  
+
+		self.data = data  
+
+	def __str__(self):  
+
+		return repr(self.data)  
+
+  
+
+try:  
+
+    raise ErrorInCode(2000)  
+
+except ErrorInCode as ae:  
+
+    print("Received error:", ae.data)  
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+
+Received error: 2000
+
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-date">Python Date and Time</a></span>
+</div>
+<!-- link -->
+<br><br/>
+<div id="bottomnext">
+<a class="next" href="python-modules" style="float:left">¡û prev</a>
+<a class="next" href="python-date" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</br></td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-date">next ¡ú</a>
+<a class="next" href="python-modules">¡û prev</a>
+</div>
+<h1 class="h1">Python Exceptions </h1>
+<p>An exception can be defined as an abnormal condition in a program resulting in the disruption in the flow of the program.</p>
+<p>Whenever an exception occurs, the program halts the execution, and thus the further code is not executed. Therefore, an exception is the error which python script is unable to tackle with.</p>
+<p>Python provides us with the way to handle the Exception so that the other part of the code can be executed without any disruption. However, if we do not handle the exception, the interpreter doesn't execute all the code that exists after the that. </p>
+<h2 class="h2">Common Exceptions</h2>
+<p>A list of common exceptions that can be thrown from a normal python program is given below. </p>
+<ol class="points">
+<li><strong>ZeroDivisionError:</strong> Occurs when a number is divided by zero.</li>
+<li><strong>NameError:</strong> It occurs when a name is not found. It may be local or global.</li>
+<li><strong>IndentationError:</strong> If incorrect indentation is given.</li>
+<li><strong>IOError:</strong> It occurs when Input Output operation fails.</li>
+<li><strong>EOFError:</strong> It occurs when the end of the file is reached, and yet operations are being performed.</li>
+</ol>
+<hr/>
+<h2 class="h2">Problem without handling exceptions </h2>
+<p>As we have already discussed, the exception is an abnormal condition that halts the execution of the program. Consider the following example. </p>
+<h3 class="h3">Example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+a = int(input("Enter a:"))
+
+b = int(input("Enter b:"))
+
+c = a/b;
+
+print("a/b = %d"%c)
+
+
+
+#other code:
+
+print("Hi I am other part of the program")
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+
+Enter a:10
+
+Enter b:0
+
+Traceback (most recent call last):
+
+  File "exception-test.py", line 3, in &lt;module&gt;
+
+    c = a/b;
+
+ZeroDivisionError: division by zero
+
+</pre></div>
+<hr/>
+<h2 class="h2">Exception handling in python </h2>
+<p>If the python program contains suspicious code that may throw the exception, we must place that code in the try block. The try block must be followed with the except statement which contains a block of code that will be executed if there is some exception in the try block.</p>
+<img alt="Python Exception handling" src="python/images/python-exception-handling.png"/>
+<h3 class="h3">Syntax </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+try:
+
+	#block of code 
+
+
+
+except Exception1:
+
+	#block of code
+
+
+
+except Exception2:
+
+	#block of code
+
+
+
+#other code
+
+</textarea></div>
+<br/>
+<p>We can also use the else statement with the try-except statement in which, we can place the code which will be executed in the scenario if no exception occurs in the try block. </p>
+<p>The syntax to use the else statement with the try-except statement is given below. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+try:
+
+	#block of code 
+
+
+
+except Exception1:
+
+	#block of code 
+
+
+
+else:
+
+	#this code executes if no except block is executed
+
+</textarea></div>
+<img alt="Python Exception handling" src="python/images/python-exception-handling2.png"/>
+<h3 class="h3">Example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+try:
+
+	a = int(input("Enter a:"))
+
+	b = int(input("Enter b:"))
+
+	c = a/b;
+
+	print("a/b = %d"%c)
+
+except Exception:
+
+	print("can't divide by zero")
+
+else:
+
+	print("Hi I am else block") 
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+
+Enter a:10
+
+Enter b:2
+
+a/b = 5
+
+Hi I am else block
+
+</pre></div>
+<h2 class="h3">The except statement with no exception </h2>
+<p>Python provides the flexibility not to specify the name of exception with the except statement. </p>
+<p>Consider the following example. </p>
+<h3 class="h3">Example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+try:
+
+	a = int(input("Enter a:"))
+
+	b = int(input("Enter b:"))
+
+	c = a/b;
+
+	print("a/b = %d"%c)
+
+except:
+
+	print("can't divide by zero")
+
+else:
+
+	print("Hi I am else block") 
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+
+Enter a:10
+
+Enter b:0
+
+can't divide by zero
+
+</pre></div>
+<h2 class="h3">Points to remember </h2>
+<ol class="points">
+<li>Python facilitates us to not specify the exception with the except statement.</li>
+<li>We can declare multiple exceptions in the except statement since the try block may contain the statements which throw the different type of exceptions.</li>
+<li>We can also specify an else block along with the try-except statement which will be executed if no exception is raised in the try block.</li>
+<li>The statements that don't throw the exception should be placed inside the else block. </li>
+</ol>
+<h3 class="h3">Example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+try:
+
+	#this will throw an exception if the file doesn't exist. 
+
+	fileptr = open("file.txt","r")
+
+except IOError:
+
+	print("File not found")
+
+else:
+
+	print("The file opened successfully")
+
+	fileptr.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+
+File not found
+
+</pre></div><hr/>
+<h2 class="h2">Declaring multiple exceptions </h2>
+<p>The python allows us to declare the multiple exceptions with the except clause. Declaring multiple exceptions is useful in the cases where a try block throws multiple exceptions. </p>
+<h3 class="h3">Syntax </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+try:
+
+	#block of code 
+
+
+
+except (&lt;Exception 1&gt;,&lt;Exception 2&gt;,&lt;Exception 3&gt;,...&lt;Exception n&gt;)
+
+	#block of code 
+
+
+
+else:
+
+	#block of code
+
+</textarea></div>
+<h3 class="h3">Example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+try:  
+
+    a=10/0;  
+
+except ArithmeticError,StandardError:  
+
+    print "Arithmetic Exception"  
+
+else:  
+
+    print "Successfully Done"  
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+
+Arithmetic Exception 
+
+</pre></div><hr/>
+<h2 class="h2">The finally block </h2>
+<p>We can use the finally block with the try block in which, we can pace the important code which must be executed before the try statement throws an exception. </p>
+<p>The syntax to use the finally block is given below. </p>
+<h3 class="h3">syntax </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+try:
+
+	# block of code 
+
+	# this may throw an exception
+
+finally:
+
+	# block of code
+
+	# this will always be executed 
+
+</textarea></div>
+<img alt="Python Exception handling" src="python/images/python-exception-handling3.png"/>
+<h3 class="h3">Example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+try:
+
+	fileptr = open("file.txt","r")	
+
+	try:
+
+		fileptr.write("Hi I am good")
+
+	finally:
+
+		fileptr.close()
+
+		print("file closed")
+
+except:
+
+	print("Error")
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+
+file closed
+
+Error
+
+</pre></div><hr/>
+<h2 class="h2">Raising exceptions</h2>
+<p>An exception can be raised by using the raise clause in python. The syntax to use the raise statement is given below. </p>
+<h3 class="h3">syntax </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+raise Exception_class,&lt;value&gt;
+
+</textarea></div>
+<h2 class="h3">Points to remember </h2>
+<ol class="points">
+<li>To raise an exception, raise statement is used. The exception class name follows it.</li>
+<li>An exception can be provided with a value that can be given in the parenthesis.</li>
+<li>To access the value "as" keyword is used. "e" is used as a reference variable which stores the value of the exception.</li>
+</ol>
+<h3 class="h3">Example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+try:
+
+	age = int(input("Enter the age?"))
+
+	if age&lt;18:
+
+		raise ValueError;
+
+	else:
+
+		print("the age is valid")
+
+except ValueError:
+
+	print("The age is not valid")
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+
+Enter the age?17
+
+The age is not valid
+
+</pre></div>
+<h3 class="h3">Example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+try:
+
+	a = int(input("Enter a?"))
+
+	b = int(input("Enter b?"))
+
+	if b is 0:
+
+		raise ArithmeticError;
+
+	else:
+
+		print("a/b = ",a/b)
+
+except ArithmeticError:
+
+	print("The value of b can't be 0")
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+
+Enter a?10
+
+Enter b?0
+
+The value of b can't be 0
+
+</pre></div>
+<h2 class="h3">Custom Exception </h2>
+<p>The python allows us to create our exceptions that can be raised from the program and caught using the except clause. However, we suggest you read this section after visiting the Python object and classes. </p>
+<p>Consider the following example. </p>
+<h3 class="h3">Example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class ErrorInCode(Exception):  
+
+	def __init__(self, data):  
+
+		self.data = data  
+
+	def __str__(self):  
+
+		return repr(self.data)  
+
+  
+
+try:  
+
+    raise ErrorInCode(2000)  
+
+except ErrorInCode as ae:  
+
+    print("Received error:", ae.data)  
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+
+Received error: 2000
+
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-date">Python Date and Time</a></span>
+</div>
+<!-- link -->
+<br><br/>
+<div id="bottomnext">
+<a class="next" href="python-modules" style="float:left">¡û prev</a>
+<a class="next" href="python-date" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</br></td></tr>
+</table>
+</div></body></html></body></html>

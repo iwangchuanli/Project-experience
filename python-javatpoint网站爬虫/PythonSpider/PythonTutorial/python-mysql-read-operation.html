@@ -1,0 +1,1912 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-mysql-update-operation">next ¡ú</a>
+<a class="next" href="python-mysql-insert-operation">¡û prev</a>
+</div>
+<h1 class="h1">Read Operation</h1>
+<p>The SELECT statement is used to read the values from the databases. We can restrict the output of a select query by using various clause in SQL like where, limit, etc. </p>
+<p>Python provides the fetchall() method returns the data stored inside the table in the form of rows. We can iterate the result to get the individual rows.</p>
+<p>In this section of the tutorial, we will extract the data from the database by using the python script. We will also format the output to print it on the console.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import mysql.connector
+
+#Create the connection object 
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+#creating the cursor object
+cur = myconn.cursor()
+
+try:
+    #Reading the Employee data    
+    cur.execute("select * from Employee")
+
+    #fetching the rows from the cursor object
+    result = cur.fetchall()
+    #printing the result
+    
+    for x in result:
+        print(x);
+except:
+    myconn.rollback()
+
+myconn.close()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+('John', 101, 25000.0, 201, 'Newyork')
+('John', 102, 25000.0, 201, 'Newyork')
+('David', 103, 25000.0, 202, 'Port of spain')
+('Nick', 104, 90000.0, 201, 'Newyork')
+('Mike', 105, 28000.0, 202, 'Guyana')
+</pre></div>
+<hr/>
+<h2 class="h2">Reading specific columns</h2>
+<p>We can read the specific columns by mentioning their names instead of using star (*).</p>
+<p>In the following example, we will read the name, id, and salary from the Employee table and print it on the console.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import mysql.connector
+#Create the connection object 
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+#creating the cursor object
+cur = myconn.cursor()
+try:
+    #Reading the Employee data    
+    cur.execute("select name, id, salary from Employee")
+
+    #fetching the rows from the cursor object
+    result = cur.fetchall()
+    #printing the result
+    for x in result:
+        print(x);
+except:
+    myconn.rollback()
+myconn.close()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+('John', 101, 25000.0)
+('John', 102, 25000.0)
+('David', 103, 25000.0)
+('Nick', 104, 90000.0)
+('Mike', 105, 28000.0)
+</pre></div>
+<hr/>
+<h2 class="h2">The fetchone() method</h2>
+<p>The fetchone() method is used to fetch only one row from the table. The fetchone() method returns the next row of the result-set. </p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import mysql.connector
+
+#Create the connection object 
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+#creating the cursor object
+cur = myconn.cursor()
+
+try:
+    #Reading the Employee data    
+    cur.execute("select name, id, salary from Employee")
+
+    #fetching the first row from the cursor object
+    result = cur.fetchone()
+
+    #printing the result
+    print(result)
+
+except:
+    myconn.rollback()
+    
+myconn.close()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+('John', 101, 25000.0)
+</pre></div>
+<hr/>
+<h2 class="h2">Formatting the result</h2>
+<p>We can format the result by iterating over the result produced by the fetchall() or fetchone() method of cursor object since the result exists as the tuple object which is not readable.</p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import mysql.connector
+
+#Create the connection object 
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+#creating the cursor object
+cur = myconn.cursor()
+
+try:
+
+    #Reading the Employee data    
+    cur.execute("select name, id, salary from Employee")
+
+    #fetching the rows from the cursor object
+    result = cur.fetchall()
+
+    print("Name    id    Salary");
+    for row in result:
+        print("%s    %d    %d"%(row[0],row[1],row[2]))
+except:
+    myconn.rollback()
+
+myconn.close()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Name    id    Salary
+John    101    25000
+John    102    25000
+David    103    25000
+Nick    104    90000
+Mike    105    28000
+</pre></div>
+<hr/>
+<h2 class="h2">Using where clause</h2>
+<p>We can restrict the result produced by the select statement by using the where clause. This will extract only those columns which satisfy the where condition. </p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example: printing the names that start with j</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import mysql.connector
+
+#Create the connection object 
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+#creating the cursor object
+cur = myconn.cursor()
+
+try:
+    #Reading the Employee data    
+    cur.execute("select name, id, salary from Employee where name like 'J%'")
+
+    #fetching the rows from the cursor object
+    result = cur.fetchall()
+
+    print("Name    id    Salary");
+
+    for row in result:
+        print("%s    %d    %d"%(row[0],row[1],row[2]))
+except:
+    myconn.rollback()
+
+myconn.close()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Name    id    Salary
+John    101    25000
+John    102    25000
+</pre></div>
+<h3 class="h3">Example: printing the names with id = 101, 102, and 103</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import mysql.connector
+
+#Create the connection object 
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+#creating the cursor object
+cur = myconn.cursor()
+
+try:
+    #Reading the Employee data    
+    cur.execute("select name, id, salary from Employee where id in (101,102,103)")
+
+    #fetching the rows from the cursor object
+    result = cur.fetchall()
+
+    print("Name    id    Salary");
+
+    for row in result:
+        print("%s    %d    %d"%(row[0],row[1],row[2]))
+except:
+    myconn.rollback()
+    
+myconn.close()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Name    id    Salary
+John    101    25000
+John    102    25000
+David    103    2500
+</pre></div>
+<hr/>
+<h2 class="h2">Ordering the result</h2>
+<p>The ORDER BY clause is used to order the result. Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import mysql.connector
+
+#Create the connection object 
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+#creating the cursor object
+cur = myconn.cursor()
+
+try:
+    #Reading the Employee data    
+    cur.execute("select name, id, salary from Employee order by name")
+
+    #fetching the rows from the cursor object
+    result = cur.fetchall()
+
+    print("Name    id    Salary");
+
+    for row in result:
+        print("%s    %d    %d"%(row[0],row[1],row[2]))
+except:
+    myconn.rollback()
+
+myconn.close()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Name    id    Salary
+David   103    25000
+John    101    25000
+John    102    25000
+Mike    105    28000
+Nick    104    90000
+</pre></div>
+<hr/>
+<h2 class="h2">Order by DESC</h2>
+<p>This orders the result in the decreasing order of a particular column.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import mysql.connector
+
+#Create the connection object 
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+#creating the cursor object
+cur = myconn.cursor()
+
+try:
+    #Reading the Employee data    
+    cur.execute("select name, id, salary from Employee order by name desc")
+
+    #fetching the rows from the cursor object
+    result = cur.fetchall()
+
+    #printing the result
+    print("Name    id    Salary");
+    for row in result:
+        print("%s    %d    %d"%(row[0],row[1],row[2]))
+
+except:
+    myconn.rollback()
+
+myconn.close()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Name    id    Salary
+Nick    104    90000
+Mike    105    28000
+John    101    25000
+John    102    25000
+David    103    25000
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-mysql-update-operation">Update Operation</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-mysql-insert-operation" style="float:left">¡û prev</a>
+<a class="next" href="python-mysql-update-operation" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-mysql-update-operation">next ¡ú</a>
+<a class="next" href="python-mysql-insert-operation">¡û prev</a>
+</div>
+<h1 class="h1">Read Operation</h1>
+<p>The SELECT statement is used to read the values from the databases. We can restrict the output of a select query by using various clause in SQL like where, limit, etc. </p>
+<p>Python provides the fetchall() method returns the data stored inside the table in the form of rows. We can iterate the result to get the individual rows.</p>
+<p>In this section of the tutorial, we will extract the data from the database by using the python script. We will also format the output to print it on the console.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+
+
+try:
+
+    #Reading the Employee data    
+
+    cur.execute("select * from Employee")
+
+
+
+    #fetching the rows from the cursor object
+
+    result = cur.fetchall()
+
+    #printing the result
+
+    
+
+    for x in result:
+
+        print(x);
+
+except:
+
+    myconn.rollback()
+
+
+
+myconn.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+('John', 101, 25000.0, 201, 'Newyork')
+
+('John', 102, 25000.0, 201, 'Newyork')
+
+('David', 103, 25000.0, 202, 'Port of spain')
+
+('Nick', 104, 90000.0, 201, 'Newyork')
+
+('Mike', 105, 28000.0, 202, 'Guyana')
+
+</pre></div>
+<hr/>
+<h2 class="h2">Reading specific columns</h2>
+<p>We can read the specific columns by mentioning their names instead of using star (*).</p>
+<p>In the following example, we will read the name, id, and salary from the Employee table and print it on the console.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+try:
+
+    #Reading the Employee data    
+
+    cur.execute("select name, id, salary from Employee")
+
+
+
+    #fetching the rows from the cursor object
+
+    result = cur.fetchall()
+
+    #printing the result
+
+    for x in result:
+
+        print(x);
+
+except:
+
+    myconn.rollback()
+
+myconn.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+('John', 101, 25000.0)
+
+('John', 102, 25000.0)
+
+('David', 103, 25000.0)
+
+('Nick', 104, 90000.0)
+
+('Mike', 105, 28000.0)
+
+</pre></div>
+<hr/>
+<h2 class="h2">The fetchone() method</h2>
+<p>The fetchone() method is used to fetch only one row from the table. The fetchone() method returns the next row of the result-set. </p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+
+
+try:
+
+    #Reading the Employee data    
+
+    cur.execute("select name, id, salary from Employee")
+
+
+
+    #fetching the first row from the cursor object
+
+    result = cur.fetchone()
+
+
+
+    #printing the result
+
+    print(result)
+
+
+
+except:
+
+    myconn.rollback()
+
+    
+
+myconn.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+('John', 101, 25000.0)
+
+</pre></div>
+<hr/>
+<h2 class="h2">Formatting the result</h2>
+<p>We can format the result by iterating over the result produced by the fetchall() or fetchone() method of cursor object since the result exists as the tuple object which is not readable.</p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+
+
+try:
+
+
+
+    #Reading the Employee data    
+
+    cur.execute("select name, id, salary from Employee")
+
+
+
+    #fetching the rows from the cursor object
+
+    result = cur.fetchall()
+
+
+
+    print("Name    id    Salary");
+
+    for row in result:
+
+        print("%s    %d    %d"%(row[0],row[1],row[2]))
+
+except:
+
+    myconn.rollback()
+
+
+
+myconn.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Name    id    Salary
+
+John    101    25000
+
+John    102    25000
+
+David    103    25000
+
+Nick    104    90000
+
+Mike    105    28000
+
+</pre></div>
+<hr/>
+<h2 class="h2">Using where clause</h2>
+<p>We can restrict the result produced by the select statement by using the where clause. This will extract only those columns which satisfy the where condition. </p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example: printing the names that start with j</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+
+
+try:
+
+    #Reading the Employee data    
+
+    cur.execute("select name, id, salary from Employee where name like 'J%'")
+
+
+
+    #fetching the rows from the cursor object
+
+    result = cur.fetchall()
+
+
+
+    print("Name    id    Salary");
+
+
+
+    for row in result:
+
+        print("%s    %d    %d"%(row[0],row[1],row[2]))
+
+except:
+
+    myconn.rollback()
+
+
+
+myconn.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Name    id    Salary
+
+John    101    25000
+
+John    102    25000
+
+</pre></div>
+<h3 class="h3">Example: printing the names with id = 101, 102, and 103</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+
+
+try:
+
+    #Reading the Employee data    
+
+    cur.execute("select name, id, salary from Employee where id in (101,102,103)")
+
+
+
+    #fetching the rows from the cursor object
+
+    result = cur.fetchall()
+
+
+
+    print("Name    id    Salary");
+
+
+
+    for row in result:
+
+        print("%s    %d    %d"%(row[0],row[1],row[2]))
+
+except:
+
+    myconn.rollback()
+
+    
+
+myconn.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Name    id    Salary
+
+John    101    25000
+
+John    102    25000
+
+David    103    2500
+
+</pre></div>
+<hr/>
+<h2 class="h2">Ordering the result</h2>
+<p>The ORDER BY clause is used to order the result. Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+
+
+try:
+
+    #Reading the Employee data    
+
+    cur.execute("select name, id, salary from Employee order by name")
+
+
+
+    #fetching the rows from the cursor object
+
+    result = cur.fetchall()
+
+
+
+    print("Name    id    Salary");
+
+
+
+    for row in result:
+
+        print("%s    %d    %d"%(row[0],row[1],row[2]))
+
+except:
+
+    myconn.rollback()
+
+
+
+myconn.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Name    id    Salary
+
+David   103    25000
+
+John    101    25000
+
+John    102    25000
+
+Mike    105    28000
+
+Nick    104    90000
+
+</pre></div>
+<hr/>
+<h2 class="h2">Order by DESC</h2>
+<p>This orders the result in the decreasing order of a particular column.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+
+
+try:
+
+    #Reading the Employee data    
+
+    cur.execute("select name, id, salary from Employee order by name desc")
+
+
+
+    #fetching the rows from the cursor object
+
+    result = cur.fetchall()
+
+
+
+    #printing the result
+
+    print("Name    id    Salary");
+
+    for row in result:
+
+        print("%s    %d    %d"%(row[0],row[1],row[2]))
+
+
+
+except:
+
+    myconn.rollback()
+
+
+
+myconn.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Name    id    Salary
+
+Nick    104    90000
+
+Mike    105    28000
+
+John    101    25000
+
+John    102    25000
+
+David    103    25000
+
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-mysql-update-operation">Update Operation</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-mysql-insert-operation" style="float:left">¡û prev</a>
+<a class="next" href="python-mysql-update-operation" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-mysql-update-operation">next ¡ú</a>
+<a class="next" href="python-mysql-insert-operation">¡û prev</a>
+</div>
+<h1 class="h1">Read Operation</h1>
+<p>The SELECT statement is used to read the values from the databases. We can restrict the output of a select query by using various clause in SQL like where, limit, etc. </p>
+<p>Python provides the fetchall() method returns the data stored inside the table in the form of rows. We can iterate the result to get the individual rows.</p>
+<p>In this section of the tutorial, we will extract the data from the database by using the python script. We will also format the output to print it on the console.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+
+
+try:
+
+    #Reading the Employee data    
+
+    cur.execute("select * from Employee")
+
+
+
+    #fetching the rows from the cursor object
+
+    result = cur.fetchall()
+
+    #printing the result
+
+    
+
+    for x in result:
+
+        print(x);
+
+except:
+
+    myconn.rollback()
+
+
+
+myconn.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+('John', 101, 25000.0, 201, 'Newyork')
+
+('John', 102, 25000.0, 201, 'Newyork')
+
+('David', 103, 25000.0, 202, 'Port of spain')
+
+('Nick', 104, 90000.0, 201, 'Newyork')
+
+('Mike', 105, 28000.0, 202, 'Guyana')
+
+</pre></div>
+<hr/>
+<h2 class="h2">Reading specific columns</h2>
+<p>We can read the specific columns by mentioning their names instead of using star (*).</p>
+<p>In the following example, we will read the name, id, and salary from the Employee table and print it on the console.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+try:
+
+    #Reading the Employee data    
+
+    cur.execute("select name, id, salary from Employee")
+
+
+
+    #fetching the rows from the cursor object
+
+    result = cur.fetchall()
+
+    #printing the result
+
+    for x in result:
+
+        print(x);
+
+except:
+
+    myconn.rollback()
+
+myconn.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+('John', 101, 25000.0)
+
+('John', 102, 25000.0)
+
+('David', 103, 25000.0)
+
+('Nick', 104, 90000.0)
+
+('Mike', 105, 28000.0)
+
+</pre></div>
+<hr/>
+<h2 class="h2">The fetchone() method</h2>
+<p>The fetchone() method is used to fetch only one row from the table. The fetchone() method returns the next row of the result-set. </p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+
+
+try:
+
+    #Reading the Employee data    
+
+    cur.execute("select name, id, salary from Employee")
+
+
+
+    #fetching the first row from the cursor object
+
+    result = cur.fetchone()
+
+
+
+    #printing the result
+
+    print(result)
+
+
+
+except:
+
+    myconn.rollback()
+
+    
+
+myconn.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+('John', 101, 25000.0)
+
+</pre></div>
+<hr/>
+<h2 class="h2">Formatting the result</h2>
+<p>We can format the result by iterating over the result produced by the fetchall() or fetchone() method of cursor object since the result exists as the tuple object which is not readable.</p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+
+
+try:
+
+
+
+    #Reading the Employee data    
+
+    cur.execute("select name, id, salary from Employee")
+
+
+
+    #fetching the rows from the cursor object
+
+    result = cur.fetchall()
+
+
+
+    print("Name    id    Salary");
+
+    for row in result:
+
+        print("%s    %d    %d"%(row[0],row[1],row[2]))
+
+except:
+
+    myconn.rollback()
+
+
+
+myconn.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Name    id    Salary
+
+John    101    25000
+
+John    102    25000
+
+David    103    25000
+
+Nick    104    90000
+
+Mike    105    28000
+
+</pre></div>
+<hr/>
+<h2 class="h2">Using where clause</h2>
+<p>We can restrict the result produced by the select statement by using the where clause. This will extract only those columns which satisfy the where condition. </p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example: printing the names that start with j</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+
+
+try:
+
+    #Reading the Employee data    
+
+    cur.execute("select name, id, salary from Employee where name like 'J%'")
+
+
+
+    #fetching the rows from the cursor object
+
+    result = cur.fetchall()
+
+
+
+    print("Name    id    Salary");
+
+
+
+    for row in result:
+
+        print("%s    %d    %d"%(row[0],row[1],row[2]))
+
+except:
+
+    myconn.rollback()
+
+
+
+myconn.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Name    id    Salary
+
+John    101    25000
+
+John    102    25000
+
+</pre></div>
+<h3 class="h3">Example: printing the names with id = 101, 102, and 103</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+
+
+try:
+
+    #Reading the Employee data    
+
+    cur.execute("select name, id, salary from Employee where id in (101,102,103)")
+
+
+
+    #fetching the rows from the cursor object
+
+    result = cur.fetchall()
+
+
+
+    print("Name    id    Salary");
+
+
+
+    for row in result:
+
+        print("%s    %d    %d"%(row[0],row[1],row[2]))
+
+except:
+
+    myconn.rollback()
+
+    
+
+myconn.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Name    id    Salary
+
+John    101    25000
+
+John    102    25000
+
+David    103    2500
+
+</pre></div>
+<hr/>
+<h2 class="h2">Ordering the result</h2>
+<p>The ORDER BY clause is used to order the result. Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+
+
+try:
+
+    #Reading the Employee data    
+
+    cur.execute("select name, id, salary from Employee order by name")
+
+
+
+    #fetching the rows from the cursor object
+
+    result = cur.fetchall()
+
+
+
+    print("Name    id    Salary");
+
+
+
+    for row in result:
+
+        print("%s    %d    %d"%(row[0],row[1],row[2]))
+
+except:
+
+    myconn.rollback()
+
+
+
+myconn.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Name    id    Salary
+
+David   103    25000
+
+John    101    25000
+
+John    102    25000
+
+Mike    105    28000
+
+Nick    104    90000
+
+</pre></div>
+<hr/>
+<h2 class="h2">Order by DESC</h2>
+<p>This orders the result in the decreasing order of a particular column.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+
+
+try:
+
+    #Reading the Employee data    
+
+    cur.execute("select name, id, salary from Employee order by name desc")
+
+
+
+    #fetching the rows from the cursor object
+
+    result = cur.fetchall()
+
+
+
+    #printing the result
+
+    print("Name    id    Salary");
+
+    for row in result:
+
+        print("%s    %d    %d"%(row[0],row[1],row[2]))
+
+
+
+except:
+
+    myconn.rollback()
+
+
+
+myconn.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Name    id    Salary
+
+Nick    104    90000
+
+Mike    105    28000
+
+John    101    25000
+
+John    102    25000
+
+David    103    25000
+
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-mysql-update-operation">Update Operation</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-mysql-insert-operation" style="float:left">¡û prev</a>
+<a class="next" href="python-mysql-update-operation" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-mysql-update-operation">next ¡ú</a>
+<a class="next" href="python-mysql-insert-operation">¡û prev</a>
+</div>
+<h1 class="h1">Read Operation</h1>
+<p>The SELECT statement is used to read the values from the databases. We can restrict the output of a select query by using various clause in SQL like where, limit, etc. </p>
+<p>Python provides the fetchall() method returns the data stored inside the table in the form of rows. We can iterate the result to get the individual rows.</p>
+<p>In this section of the tutorial, we will extract the data from the database by using the python script. We will also format the output to print it on the console.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+
+
+try:
+
+    #Reading the Employee data    
+
+    cur.execute("select * from Employee")
+
+
+
+    #fetching the rows from the cursor object
+
+    result = cur.fetchall()
+
+    #printing the result
+
+    
+
+    for x in result:
+
+        print(x);
+
+except:
+
+    myconn.rollback()
+
+
+
+myconn.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+('John', 101, 25000.0, 201, 'Newyork')
+
+('John', 102, 25000.0, 201, 'Newyork')
+
+('David', 103, 25000.0, 202, 'Port of spain')
+
+('Nick', 104, 90000.0, 201, 'Newyork')
+
+('Mike', 105, 28000.0, 202, 'Guyana')
+
+</pre></div>
+<hr/>
+<h2 class="h2">Reading specific columns</h2>
+<p>We can read the specific columns by mentioning their names instead of using star (*).</p>
+<p>In the following example, we will read the name, id, and salary from the Employee table and print it on the console.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+try:
+
+    #Reading the Employee data    
+
+    cur.execute("select name, id, salary from Employee")
+
+
+
+    #fetching the rows from the cursor object
+
+    result = cur.fetchall()
+
+    #printing the result
+
+    for x in result:
+
+        print(x);
+
+except:
+
+    myconn.rollback()
+
+myconn.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+('John', 101, 25000.0)
+
+('John', 102, 25000.0)
+
+('David', 103, 25000.0)
+
+('Nick', 104, 90000.0)
+
+('Mike', 105, 28000.0)
+
+</pre></div>
+<hr/>
+<h2 class="h2">The fetchone() method</h2>
+<p>The fetchone() method is used to fetch only one row from the table. The fetchone() method returns the next row of the result-set. </p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+
+
+try:
+
+    #Reading the Employee data    
+
+    cur.execute("select name, id, salary from Employee")
+
+
+
+    #fetching the first row from the cursor object
+
+    result = cur.fetchone()
+
+
+
+    #printing the result
+
+    print(result)
+
+
+
+except:
+
+    myconn.rollback()
+
+    
+
+myconn.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+('John', 101, 25000.0)
+
+</pre></div>
+<hr/>
+<h2 class="h2">Formatting the result</h2>
+<p>We can format the result by iterating over the result produced by the fetchall() or fetchone() method of cursor object since the result exists as the tuple object which is not readable.</p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+
+
+try:
+
+
+
+    #Reading the Employee data    
+
+    cur.execute("select name, id, salary from Employee")
+
+
+
+    #fetching the rows from the cursor object
+
+    result = cur.fetchall()
+
+
+
+    print("Name    id    Salary");
+
+    for row in result:
+
+        print("%s    %d    %d"%(row[0],row[1],row[2]))
+
+except:
+
+    myconn.rollback()
+
+
+
+myconn.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Name    id    Salary
+
+John    101    25000
+
+John    102    25000
+
+David    103    25000
+
+Nick    104    90000
+
+Mike    105    28000
+
+</pre></div>
+<hr/>
+<h2 class="h2">Using where clause</h2>
+<p>We can restrict the result produced by the select statement by using the where clause. This will extract only those columns which satisfy the where condition. </p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example: printing the names that start with j</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+
+
+try:
+
+    #Reading the Employee data    
+
+    cur.execute("select name, id, salary from Employee where name like 'J%'")
+
+
+
+    #fetching the rows from the cursor object
+
+    result = cur.fetchall()
+
+
+
+    print("Name    id    Salary");
+
+
+
+    for row in result:
+
+        print("%s    %d    %d"%(row[0],row[1],row[2]))
+
+except:
+
+    myconn.rollback()
+
+
+
+myconn.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Name    id    Salary
+
+John    101    25000
+
+John    102    25000
+
+</pre></div>
+<h3 class="h3">Example: printing the names with id = 101, 102, and 103</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+
+
+try:
+
+    #Reading the Employee data    
+
+    cur.execute("select name, id, salary from Employee where id in (101,102,103)")
+
+
+
+    #fetching the rows from the cursor object
+
+    result = cur.fetchall()
+
+
+
+    print("Name    id    Salary");
+
+
+
+    for row in result:
+
+        print("%s    %d    %d"%(row[0],row[1],row[2]))
+
+except:
+
+    myconn.rollback()
+
+    
+
+myconn.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Name    id    Salary
+
+John    101    25000
+
+John    102    25000
+
+David    103    2500
+
+</pre></div>
+<hr/>
+<h2 class="h2">Ordering the result</h2>
+<p>The ORDER BY clause is used to order the result. Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+
+
+try:
+
+    #Reading the Employee data    
+
+    cur.execute("select name, id, salary from Employee order by name")
+
+
+
+    #fetching the rows from the cursor object
+
+    result = cur.fetchall()
+
+
+
+    print("Name    id    Salary");
+
+
+
+    for row in result:
+
+        print("%s    %d    %d"%(row[0],row[1],row[2]))
+
+except:
+
+    myconn.rollback()
+
+
+
+myconn.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Name    id    Salary
+
+David   103    25000
+
+John    101    25000
+
+John    102    25000
+
+Mike    105    28000
+
+Nick    104    90000
+
+</pre></div>
+<hr/>
+<h2 class="h2">Order by DESC</h2>
+<p>This orders the result in the decreasing order of a particular column.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+
+
+try:
+
+    #Reading the Employee data    
+
+    cur.execute("select name, id, salary from Employee order by name desc")
+
+
+
+    #fetching the rows from the cursor object
+
+    result = cur.fetchall()
+
+
+
+    #printing the result
+
+    print("Name    id    Salary");
+
+    for row in result:
+
+        print("%s    %d    %d"%(row[0],row[1],row[2]))
+
+
+
+except:
+
+    myconn.rollback()
+
+
+
+myconn.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Name    id    Salary
+
+Nick    104    90000
+
+Mike    105    28000
+
+John    101    25000
+
+John    102    25000
+
+David    103    25000
+
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-mysql-update-operation">Update Operation</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-mysql-insert-operation" style="float:left">¡û prev</a>
+<a class="next" href="python-mysql-update-operation" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html></body></html>

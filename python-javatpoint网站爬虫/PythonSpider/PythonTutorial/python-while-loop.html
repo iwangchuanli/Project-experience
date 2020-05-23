@@ -1,0 +1,601 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-break">next ¡ú</a>
+<a class="next" href="python-for-loop">¡û prev</a>
+</div>
+<h1 class="h1">Python while loop</h1>
+<p>The while loop is also known as a pre-tested loop. In general, a while loop allows a part of the code to be executed as long as the given condition is true.  </p>
+<p>It can be viewed as a repeating if statement. The while loop is mostly used in the case where the number of iterations is not known in advance.</p>
+<p>The syntax is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+while expression:
+	statements
+</textarea></div>
+<p>Here, the statements can be a single statement or the group of statements. The expression should be any valid python expression resulting into true or false. The true is any non-zero value.</p>
+<img alt="Python while loop" src="python/images/python-while-loop.png"/>
+<h2 class="h3">Example 1</h2>
+<div class="codeblock"><textarea class="python" name="code">
+i=1;
+while i&lt;=10:
+    print(i);
+    i=i+1;
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></div>
+<h2 class="h3">Example 2</h2>
+<div class="codeblock"><textarea class="python" name="code">
+i=1
+number=0
+b=9
+number = int(input("Enter the number?"))
+while i&lt;=10:
+    print("%d X %d = %d \n"%(number,i,number*i));
+    i = i+1;
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Enter the number?10
+
+10 X 1 = 10 
+
+10 X 2 = 20 
+
+10 X 3 = 30 
+
+10 X 4 = 40 
+
+10 X 5 = 50 
+
+10 X 6 = 60 
+
+10 X 7 = 70 
+
+10 X 8 = 80 
+
+10 X 9 = 90 
+
+10 X 10 = 100 
+</pre></div>
+<hr/>
+<h2 class="h2">Infinite while loop</h2>
+<p>If the condition given in the while loop never becomes false then the while loop will never terminate and result into the infinite while loop. </p>
+<p>Any non-zero value in the while loop indicates an always-true condition whereas 0 indicates the always-false condition. This type of approach is useful if we want our program to run continuously in the loop without any disturbance.</p>
+<h2 class="h3">Example 1</h2>
+<div class="codeblock"><textarea class="python" name="code">
+while (1):
+    print("Hi! we are inside the infinite while loop");
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Hi! we are inside the infinite while loop
+(infinite times)
+</pre></div>
+<h2 class="h3">Example 2</h2>
+<div class="codeblock"><textarea class="python" name="code">
+var = 1
+while var != 2:
+    i = int(input("Enter the number?"))
+    print ("Entered value is %d"%(i))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Enter the number?102
+Entered value is 102
+Enter the number?102
+Entered value is 102
+Enter the number?103
+Entered value is 103
+Enter the number?103
+(infinite loop)
+</pre></div>
+<hr/>
+<h2 class="h2">Using else with Python while loop</h2>
+<p>Python enables us to use the while loop with the while loop also. The else block is executed when the condition given in the while statement becomes false. Like for loop, if the while loop is broken using break statement, then the else block will not be executed and the statement present after else block will be executed.</p>
+<p>Consider the following example.</p>
+<div class="codeblock"><textarea class="python" name="code">
+i=1;
+while i&lt;=5:
+	print(i)
+	i=i+1;
+else:print("The while loop exhausted");
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+1
+2
+3
+4
+5
+The while loop exhausted
+</pre></div>
+<h2 class="h3">Example 2</h2>
+<div class="codeblock"><textarea class="python" name="code">
+i=1;
+while i&lt;=5:
+	print(i)
+	i=i+1;
+	if(i==3):
+		break;
+else:print("The while loop exhausted");
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+1
+2
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-break">Python break statement</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-for-loop" style="float:left">¡û prev</a>
+<a class="next" href="python-break" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-break">next ¡ú</a>
+<a class="next" href="python-for-loop">¡û prev</a>
+</div>
+<h1 class="h1">Python while loop</h1>
+<p>The while loop is also known as a pre-tested loop. In general, a while loop allows a part of the code to be executed as long as the given condition is true.  </p>
+<p>It can be viewed as a repeating if statement. The while loop is mostly used in the case where the number of iterations is not known in advance.</p>
+<p>The syntax is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+while expression:
+	statements
+</textarea></div>
+<p>Here, the statements can be a single statement or the group of statements. The expression should be any valid python expression resulting into true or false. The true is any non-zero value.</p>
+<img alt="Python while loop" src="python/images/python-while-loop.png"/>
+<h2 class="h3">Example 1</h2>
+<div class="codeblock"><textarea class="python" name="code">
+i=1;
+while i&lt;=10:
+    print(i);
+    i=i+1;
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></div>
+<h2 class="h3">Example 2</h2>
+<div class="codeblock"><textarea class="python" name="code">
+i=1
+number=0
+b=9
+number = int(input("Enter the number?"))
+while i&lt;=10:
+    print("%d X %d = %d \n"%(number,i,number*i));
+    i = i+1;
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Enter the number?10
+
+10 X 1 = 10 
+
+10 X 2 = 20 
+
+10 X 3 = 30 
+
+10 X 4 = 40 
+
+10 X 5 = 50 
+
+10 X 6 = 60 
+
+10 X 7 = 70 
+
+10 X 8 = 80 
+
+10 X 9 = 90 
+
+10 X 10 = 100 
+</pre></div>
+<hr/>
+<h2 class="h2">Infinite while loop</h2>
+<p>If the condition given in the while loop never becomes false then the while loop will never terminate and result into the infinite while loop. </p>
+<p>Any non-zero value in the while loop indicates an always-true condition whereas 0 indicates the always-false condition. This type of approach is useful if we want our program to run continuously in the loop without any disturbance.</p>
+<h2 class="h3">Example 1</h2>
+<div class="codeblock"><textarea class="python" name="code">
+while (1):
+    print("Hi! we are inside the infinite while loop");
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Hi! we are inside the infinite while loop
+(infinite times)
+</pre></div>
+<h2 class="h3">Example 2</h2>
+<div class="codeblock"><textarea class="python" name="code">
+var = 1
+while var != 2:
+    i = int(input("Enter the number?"))
+    print ("Entered value is %d"%(i))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Enter the number?102
+Entered value is 102
+Enter the number?102
+Entered value is 102
+Enter the number?103
+Entered value is 103
+Enter the number?103
+(infinite loop)
+</pre></div>
+<hr/>
+<h2 class="h2">Using else with Python while loop</h2>
+<p>Python enables us to use the while loop with the while loop also. The else block is executed when the condition given in the while statement becomes false. Like for loop, if the while loop is broken using break statement, then the else block will not be executed and the statement present after else block will be executed.</p>
+<p>Consider the following example.</p>
+<div class="codeblock"><textarea class="python" name="code">
+i=1;
+while i&lt;=5:
+	print(i)
+	i=i+1;
+else:print("The while loop exhausted");
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+1
+2
+3
+4
+5
+The while loop exhausted
+</pre></div>
+<h2 class="h3">Example 2</h2>
+<div class="codeblock"><textarea class="python" name="code">
+i=1;
+while i&lt;=5:
+	print(i)
+	i=i+1;
+	if(i==3):
+		break;
+else:print("The while loop exhausted");
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+1
+2
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-break">Python break statement</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-for-loop" style="float:left">¡û prev</a>
+<a class="next" href="python-break" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-break">next ¡ú</a>
+<a class="next" href="python-for-loop">¡û prev</a>
+</div>
+<h1 class="h1">Python while loop</h1>
+<p>The while loop is also known as a pre-tested loop. In general, a while loop allows a part of the code to be executed as long as the given condition is true.  </p>
+<p>It can be viewed as a repeating if statement. The while loop is mostly used in the case where the number of iterations is not known in advance.</p>
+<p>The syntax is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+while expression:
+	statements
+</textarea></div>
+<p>Here, the statements can be a single statement or the group of statements. The expression should be any valid python expression resulting into true or false. The true is any non-zero value.</p>
+<img alt="Python while loop" src="python/images/python-while-loop.png"/>
+<h2 class="h3">Example 1</h2>
+<div class="codeblock"><textarea class="python" name="code">
+i=1;
+while i&lt;=10:
+    print(i);
+    i=i+1;
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></div>
+<h2 class="h3">Example 2</h2>
+<div class="codeblock"><textarea class="python" name="code">
+i=1
+number=0
+b=9
+number = int(input("Enter the number?"))
+while i&lt;=10:
+    print("%d X %d = %d \n"%(number,i,number*i));
+    i = i+1;
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Enter the number?10
+
+10 X 1 = 10 
+
+10 X 2 = 20 
+
+10 X 3 = 30 
+
+10 X 4 = 40 
+
+10 X 5 = 50 
+
+10 X 6 = 60 
+
+10 X 7 = 70 
+
+10 X 8 = 80 
+
+10 X 9 = 90 
+
+10 X 10 = 100 
+</pre></div>
+<hr/>
+<h2 class="h2">Infinite while loop</h2>
+<p>If the condition given in the while loop never becomes false then the while loop will never terminate and result into the infinite while loop. </p>
+<p>Any non-zero value in the while loop indicates an always-true condition whereas 0 indicates the always-false condition. This type of approach is useful if we want our program to run continuously in the loop without any disturbance.</p>
+<h2 class="h3">Example 1</h2>
+<div class="codeblock"><textarea class="python" name="code">
+while (1):
+    print("Hi! we are inside the infinite while loop");
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Hi! we are inside the infinite while loop
+(infinite times)
+</pre></div>
+<h2 class="h3">Example 2</h2>
+<div class="codeblock"><textarea class="python" name="code">
+var = 1
+while var != 2:
+    i = int(input("Enter the number?"))
+    print ("Entered value is %d"%(i))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Enter the number?102
+Entered value is 102
+Enter the number?102
+Entered value is 102
+Enter the number?103
+Entered value is 103
+Enter the number?103
+(infinite loop)
+</pre></div>
+<hr/>
+<h2 class="h2">Using else with Python while loop</h2>
+<p>Python enables us to use the while loop with the while loop also. The else block is executed when the condition given in the while statement becomes false. Like for loop, if the while loop is broken using break statement, then the else block will not be executed and the statement present after else block will be executed.</p>
+<p>Consider the following example.</p>
+<div class="codeblock"><textarea class="python" name="code">
+i=1;
+while i&lt;=5:
+	print(i)
+	i=i+1;
+else:print("The while loop exhausted");
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+1
+2
+3
+4
+5
+The while loop exhausted
+</pre></div>
+<h2 class="h3">Example 2</h2>
+<div class="codeblock"><textarea class="python" name="code">
+i=1;
+while i&lt;=5:
+	print(i)
+	i=i+1;
+	if(i==3):
+		break;
+else:print("The while loop exhausted");
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+1
+2
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-break">Python break statement</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-for-loop" style="float:left">¡û prev</a>
+<a class="next" href="python-break" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-break">next ¡ú</a>
+<a class="next" href="python-for-loop">¡û prev</a>
+</div>
+<h1 class="h1">Python while loop</h1>
+<p>The while loop is also known as a pre-tested loop. In general, a while loop allows a part of the code to be executed as long as the given condition is true.  </p>
+<p>It can be viewed as a repeating if statement. The while loop is mostly used in the case where the number of iterations is not known in advance.</p>
+<p>The syntax is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+while expression:
+	statements
+</textarea></div>
+<p>Here, the statements can be a single statement or the group of statements. The expression should be any valid python expression resulting into true or false. The true is any non-zero value.</p>
+<img alt="Python while loop" src="python/images/python-while-loop.png"/>
+<h2 class="h3">Example 1</h2>
+<div class="codeblock"><textarea class="python" name="code">
+i=1;
+while i&lt;=10:
+    print(i);
+    i=i+1;
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></div>
+<h2 class="h3">Example 2</h2>
+<div class="codeblock"><textarea class="python" name="code">
+i=1
+number=0
+b=9
+number = int(input("Enter the number?"))
+while i&lt;=10:
+    print("%d X %d = %d \n"%(number,i,number*i));
+    i = i+1;
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Enter the number?10
+
+10 X 1 = 10 
+
+10 X 2 = 20 
+
+10 X 3 = 30 
+
+10 X 4 = 40 
+
+10 X 5 = 50 
+
+10 X 6 = 60 
+
+10 X 7 = 70 
+
+10 X 8 = 80 
+
+10 X 9 = 90 
+
+10 X 10 = 100 
+</pre></div>
+<hr/>
+<h2 class="h2">Infinite while loop</h2>
+<p>If the condition given in the while loop never becomes false then the while loop will never terminate and result into the infinite while loop. </p>
+<p>Any non-zero value in the while loop indicates an always-true condition whereas 0 indicates the always-false condition. This type of approach is useful if we want our program to run continuously in the loop without any disturbance.</p>
+<h2 class="h3">Example 1</h2>
+<div class="codeblock"><textarea class="python" name="code">
+while (1):
+    print("Hi! we are inside the infinite while loop");
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Hi! we are inside the infinite while loop
+(infinite times)
+</pre></div>
+<h2 class="h3">Example 2</h2>
+<div class="codeblock"><textarea class="python" name="code">
+var = 1
+while var != 2:
+    i = int(input("Enter the number?"))
+    print ("Entered value is %d"%(i))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Enter the number?102
+Entered value is 102
+Enter the number?102
+Entered value is 102
+Enter the number?103
+Entered value is 103
+Enter the number?103
+(infinite loop)
+</pre></div>
+<hr/>
+<h2 class="h2">Using else with Python while loop</h2>
+<p>Python enables us to use the while loop with the while loop also. The else block is executed when the condition given in the while statement becomes false. Like for loop, if the while loop is broken using break statement, then the else block will not be executed and the statement present after else block will be executed.</p>
+<p>Consider the following example.</p>
+<div class="codeblock"><textarea class="python" name="code">
+i=1;
+while i&lt;=5:
+	print(i)
+	i=i+1;
+else:print("The while loop exhausted");
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+1
+2
+3
+4
+5
+The while loop exhausted
+</pre></div>
+<h2 class="h3">Example 2</h2>
+<div class="codeblock"><textarea class="python" name="code">
+i=1;
+while i&lt;=5:
+	print(i)
+	i=i+1;
+	if(i==3):
+		break;
+else:print("The while loop exhausted");
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+1
+2
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-break">Python break statement</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-for-loop" style="float:left">¡û prev</a>
+<a class="next" href="python-break" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html></body></html>

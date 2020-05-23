@@ -1,0 +1,1105 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-matrix-library">next ¡ú</a>
+<a class="next" href="numpy-sorting-and-searching">¡û prev</a>
+</div>
+<h1 class="h1">NumPy Copies and Views </h1>
+<p>The copy of an input array is physically stored at some other location and the content stored at that particular location is returned which is the copy of the input array whereas the different view of the same memory location is returned in the case of view.</p>
+<p>In this section of the tutorial, we will consider the way by which, the different copies and views are generated from some memory location.</p>
+<h2 class="h2">Array Assignment</h2>
+<p>The assignment of a numpy array to another array doesn't make the direct copy of the original array, instead, it makes another array with the same content and same id. It represents the reference to the original array. Changes made on this reference are also reflected in the original array.</p>
+<p>The id() function returns the universal identifier of the array similar to the pointer in C.</p>
+<p>Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+
+a = np.array([[1,2,3,4],[9,0,2,3],[1,2,3,19]])
+
+print("Original Array:\n",a)
+
+print("\nID of array a:",id(a))
+
+b = a 
+
+print("\nmaking copy of the array a")
+
+print("\nID of b:",id(b))
+
+b.shape = 4,3;
+
+print("\nChanges on b also reflect to a:")
+print(a)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Original Array:
+ [[ 1  2  3  4]
+ [ 9  0  2  3]
+ [ 1  2  3 19]]
+
+ID of array a: 139663602288640
+
+making copy of the array a
+
+ID of b: 139663602288640
+
+Changes on b also reflect to a:
+[[ 1  2  3]
+ [ 4  9  0]
+ [ 2  3  1]
+ [ 2  3 19]]
+</pre></div>
+<h3 class="h2">ndarray.view() method</h3>
+<p>The ndarray.view() method returns the new array object which contains the same content as the original array does. Since it is a new array object, changes made on this object do not reflect the original array.</p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+
+a = np.array([[1,2,3,4],[9,0,2,3],[1,2,3,19]])
+
+print("Original Array:\n",a)
+
+print("\nID of array a:",id(a))
+
+b = a.view()
+
+print("\nID of b:",id(b))
+
+print("\nprinting the view b")
+print(b)
+
+b.shape = 4,3;
+
+print("\nChanges made to the view b do not reflect a")
+print("\nOriginal array \n",a)
+print("\nview\n",b)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Original Array:
+ [[ 1  2  3  4]
+ [ 9  0  2  3]
+ [ 1  2  3 19]]
+
+ID of array a: 140280414447456
+
+ID of b: 140280287000656
+
+printing the view b
+[[ 1  2  3  4]
+ [ 9  0  2  3]
+ [ 1  2  3 19]]
+
+Changes made to the view b do not reflect a
+
+Original array 
+ [[ 1  2  3  4]
+ [ 9  0  2  3]
+ [ 1  2  3 19]]
+
+view
+ [[ 1  2  3]
+ [ 4  9  0]
+ [ 2  3  1]
+ [ 2  3 19]]
+</pre></div>
+<h3 class="h2">ndarray.copy() method </h3>
+<p>It returns the deep copy of the original array which doesn't share any memory with the original array. The modification made to the deep copy of the original array doesn't reflect the original array.</p>
+<p>Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+
+a = np.array([[1,2,3,4],[9,0,2,3],[1,2,3,19]])
+
+print("Original Array:\n",a)
+
+print("\nID of array a:",id(a))
+
+b = a.copy()
+
+print("\nID of b:",id(b))
+
+print("\nprinting the deep copy b")
+print(b)
+
+b.shape = 4,3;
+
+print("\nChanges made to the copy b do not reflect a")
+print("\nOriginal array \n",a)
+print("\nCopy\n",b)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Original Array:
+ [[ 1  2  3  4]
+ [ 9  0  2  3]
+ [ 1  2  3 19]]
+
+ID of array a: 139895697586176
+
+ID of b: 139895570139296
+
+printing the deep copy b
+[[ 1  2  3  4]
+ [ 9  0  2  3]
+ [ 1  2  3 19]]
+
+Changes made to the copy b do not reflect a
+
+Original array 
+ [[ 1  2  3  4]
+ [ 9  0  2  3]
+ [ 1  2  3 19]]
+
+Copy
+ [[ 1  2  3]
+ [ 4  9  0]
+ [ 2  3  1]
+ [ 2  3 19]]
+</pre></div>
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-matrix-library">NumPy Matrix Library</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="numpy-sorting-and-searching" style="float:left">¡û prev</a>
+<a class="next" href="numpy-matrix-library" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-matrix-library">next ¡ú</a>
+<a class="next" href="numpy-sorting-and-searching">¡û prev</a>
+</div>
+<h1 class="h1">NumPy Copies and Views </h1>
+<p>The copy of an input array is physically stored at some other location and the content stored at that particular location is returned which is the copy of the input array whereas the different view of the same memory location is returned in the case of view.</p>
+<p>In this section of the tutorial, we will consider the way by which, the different copies and views are generated from some memory location.</p>
+<h2 class="h2">Array Assignment</h2>
+<p>The assignment of a numpy array to another array doesn't make the direct copy of the original array, instead, it makes another array with the same content and same id. It represents the reference to the original array. Changes made on this reference are also reflected in the original array.</p>
+<p>The id() function returns the universal identifier of the array similar to the pointer in C.</p>
+<p>Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+a = np.array([[1,2,3,4],[9,0,2,3],[1,2,3,19]])
+
+
+
+print("Original Array:\n",a)
+
+
+
+print("\nID of array a:",id(a))
+
+
+
+b = a 
+
+
+
+print("\nmaking copy of the array a")
+
+
+
+print("\nID of b:",id(b))
+
+
+
+b.shape = 4,3;
+
+
+
+print("\nChanges on b also reflect to a:")
+
+print(a)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Original Array:
+
+ [[ 1  2  3  4]
+
+ [ 9  0  2  3]
+
+ [ 1  2  3 19]]
+
+
+
+ID of array a: 139663602288640
+
+
+
+making copy of the array a
+
+
+
+ID of b: 139663602288640
+
+
+
+Changes on b also reflect to a:
+
+[[ 1  2  3]
+
+ [ 4  9  0]
+
+ [ 2  3  1]
+
+ [ 2  3 19]]
+
+</pre></div>
+<h3 class="h2">ndarray.view() method</h3>
+<p>The ndarray.view() method returns the new array object which contains the same content as the original array does. Since it is a new array object, changes made on this object do not reflect the original array.</p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+a = np.array([[1,2,3,4],[9,0,2,3],[1,2,3,19]])
+
+
+
+print("Original Array:\n",a)
+
+
+
+print("\nID of array a:",id(a))
+
+
+
+b = a.view()
+
+
+
+print("\nID of b:",id(b))
+
+
+
+print("\nprinting the view b")
+
+print(b)
+
+
+
+b.shape = 4,3;
+
+
+
+print("\nChanges made to the view b do not reflect a")
+
+print("\nOriginal array \n",a)
+
+print("\nview\n",b)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Original Array:
+
+ [[ 1  2  3  4]
+
+ [ 9  0  2  3]
+
+ [ 1  2  3 19]]
+
+
+
+ID of array a: 140280414447456
+
+
+
+ID of b: 140280287000656
+
+
+
+printing the view b
+
+[[ 1  2  3  4]
+
+ [ 9  0  2  3]
+
+ [ 1  2  3 19]]
+
+
+
+Changes made to the view b do not reflect a
+
+
+
+Original array 
+
+ [[ 1  2  3  4]
+
+ [ 9  0  2  3]
+
+ [ 1  2  3 19]]
+
+
+
+view
+
+ [[ 1  2  3]
+
+ [ 4  9  0]
+
+ [ 2  3  1]
+
+ [ 2  3 19]]
+
+</pre></div>
+<h3 class="h2">ndarray.copy() method </h3>
+<p>It returns the deep copy of the original array which doesn't share any memory with the original array. The modification made to the deep copy of the original array doesn't reflect the original array.</p>
+<p>Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+a = np.array([[1,2,3,4],[9,0,2,3],[1,2,3,19]])
+
+
+
+print("Original Array:\n",a)
+
+
+
+print("\nID of array a:",id(a))
+
+
+
+b = a.copy()
+
+
+
+print("\nID of b:",id(b))
+
+
+
+print("\nprinting the deep copy b")
+
+print(b)
+
+
+
+b.shape = 4,3;
+
+
+
+print("\nChanges made to the copy b do not reflect a")
+
+print("\nOriginal array \n",a)
+
+print("\nCopy\n",b)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Original Array:
+
+ [[ 1  2  3  4]
+
+ [ 9  0  2  3]
+
+ [ 1  2  3 19]]
+
+
+
+ID of array a: 139895697586176
+
+
+
+ID of b: 139895570139296
+
+
+
+printing the deep copy b
+
+[[ 1  2  3  4]
+
+ [ 9  0  2  3]
+
+ [ 1  2  3 19]]
+
+
+
+Changes made to the copy b do not reflect a
+
+
+
+Original array 
+
+ [[ 1  2  3  4]
+
+ [ 9  0  2  3]
+
+ [ 1  2  3 19]]
+
+
+
+Copy
+
+ [[ 1  2  3]
+
+ [ 4  9  0]
+
+ [ 2  3  1]
+
+ [ 2  3 19]]
+
+</pre></div>
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-matrix-library">NumPy Matrix Library</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="numpy-sorting-and-searching" style="float:left">¡û prev</a>
+<a class="next" href="numpy-matrix-library" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-matrix-library">next ¡ú</a>
+<a class="next" href="numpy-sorting-and-searching">¡û prev</a>
+</div>
+<h1 class="h1">NumPy Copies and Views </h1>
+<p>The copy of an input array is physically stored at some other location and the content stored at that particular location is returned which is the copy of the input array whereas the different view of the same memory location is returned in the case of view.</p>
+<p>In this section of the tutorial, we will consider the way by which, the different copies and views are generated from some memory location.</p>
+<h2 class="h2">Array Assignment</h2>
+<p>The assignment of a numpy array to another array doesn't make the direct copy of the original array, instead, it makes another array with the same content and same id. It represents the reference to the original array. Changes made on this reference are also reflected in the original array.</p>
+<p>The id() function returns the universal identifier of the array similar to the pointer in C.</p>
+<p>Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+a = np.array([[1,2,3,4],[9,0,2,3],[1,2,3,19]])
+
+
+
+print("Original Array:\n",a)
+
+
+
+print("\nID of array a:",id(a))
+
+
+
+b = a 
+
+
+
+print("\nmaking copy of the array a")
+
+
+
+print("\nID of b:",id(b))
+
+
+
+b.shape = 4,3;
+
+
+
+print("\nChanges on b also reflect to a:")
+
+print(a)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Original Array:
+
+ [[ 1  2  3  4]
+
+ [ 9  0  2  3]
+
+ [ 1  2  3 19]]
+
+
+
+ID of array a: 139663602288640
+
+
+
+making copy of the array a
+
+
+
+ID of b: 139663602288640
+
+
+
+Changes on b also reflect to a:
+
+[[ 1  2  3]
+
+ [ 4  9  0]
+
+ [ 2  3  1]
+
+ [ 2  3 19]]
+
+</pre></div>
+<h3 class="h2">ndarray.view() method</h3>
+<p>The ndarray.view() method returns the new array object which contains the same content as the original array does. Since it is a new array object, changes made on this object do not reflect the original array.</p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+a = np.array([[1,2,3,4],[9,0,2,3],[1,2,3,19]])
+
+
+
+print("Original Array:\n",a)
+
+
+
+print("\nID of array a:",id(a))
+
+
+
+b = a.view()
+
+
+
+print("\nID of b:",id(b))
+
+
+
+print("\nprinting the view b")
+
+print(b)
+
+
+
+b.shape = 4,3;
+
+
+
+print("\nChanges made to the view b do not reflect a")
+
+print("\nOriginal array \n",a)
+
+print("\nview\n",b)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Original Array:
+
+ [[ 1  2  3  4]
+
+ [ 9  0  2  3]
+
+ [ 1  2  3 19]]
+
+
+
+ID of array a: 140280414447456
+
+
+
+ID of b: 140280287000656
+
+
+
+printing the view b
+
+[[ 1  2  3  4]
+
+ [ 9  0  2  3]
+
+ [ 1  2  3 19]]
+
+
+
+Changes made to the view b do not reflect a
+
+
+
+Original array 
+
+ [[ 1  2  3  4]
+
+ [ 9  0  2  3]
+
+ [ 1  2  3 19]]
+
+
+
+view
+
+ [[ 1  2  3]
+
+ [ 4  9  0]
+
+ [ 2  3  1]
+
+ [ 2  3 19]]
+
+</pre></div>
+<h3 class="h2">ndarray.copy() method </h3>
+<p>It returns the deep copy of the original array which doesn't share any memory with the original array. The modification made to the deep copy of the original array doesn't reflect the original array.</p>
+<p>Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+a = np.array([[1,2,3,4],[9,0,2,3],[1,2,3,19]])
+
+
+
+print("Original Array:\n",a)
+
+
+
+print("\nID of array a:",id(a))
+
+
+
+b = a.copy()
+
+
+
+print("\nID of b:",id(b))
+
+
+
+print("\nprinting the deep copy b")
+
+print(b)
+
+
+
+b.shape = 4,3;
+
+
+
+print("\nChanges made to the copy b do not reflect a")
+
+print("\nOriginal array \n",a)
+
+print("\nCopy\n",b)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Original Array:
+
+ [[ 1  2  3  4]
+
+ [ 9  0  2  3]
+
+ [ 1  2  3 19]]
+
+
+
+ID of array a: 139895697586176
+
+
+
+ID of b: 139895570139296
+
+
+
+printing the deep copy b
+
+[[ 1  2  3  4]
+
+ [ 9  0  2  3]
+
+ [ 1  2  3 19]]
+
+
+
+Changes made to the copy b do not reflect a
+
+
+
+Original array 
+
+ [[ 1  2  3  4]
+
+ [ 9  0  2  3]
+
+ [ 1  2  3 19]]
+
+
+
+Copy
+
+ [[ 1  2  3]
+
+ [ 4  9  0]
+
+ [ 2  3  1]
+
+ [ 2  3 19]]
+
+</pre></div>
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-matrix-library">NumPy Matrix Library</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="numpy-sorting-and-searching" style="float:left">¡û prev</a>
+<a class="next" href="numpy-matrix-library" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-matrix-library">next ¡ú</a>
+<a class="next" href="numpy-sorting-and-searching">¡û prev</a>
+</div>
+<h1 class="h1">NumPy Copies and Views </h1>
+<p>The copy of an input array is physically stored at some other location and the content stored at that particular location is returned which is the copy of the input array whereas the different view of the same memory location is returned in the case of view.</p>
+<p>In this section of the tutorial, we will consider the way by which, the different copies and views are generated from some memory location.</p>
+<h2 class="h2">Array Assignment</h2>
+<p>The assignment of a numpy array to another array doesn't make the direct copy of the original array, instead, it makes another array with the same content and same id. It represents the reference to the original array. Changes made on this reference are also reflected in the original array.</p>
+<p>The id() function returns the universal identifier of the array similar to the pointer in C.</p>
+<p>Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+a = np.array([[1,2,3,4],[9,0,2,3],[1,2,3,19]])
+
+
+
+print("Original Array:\n",a)
+
+
+
+print("\nID of array a:",id(a))
+
+
+
+b = a 
+
+
+
+print("\nmaking copy of the array a")
+
+
+
+print("\nID of b:",id(b))
+
+
+
+b.shape = 4,3;
+
+
+
+print("\nChanges on b also reflect to a:")
+
+print(a)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Original Array:
+
+ [[ 1  2  3  4]
+
+ [ 9  0  2  3]
+
+ [ 1  2  3 19]]
+
+
+
+ID of array a: 139663602288640
+
+
+
+making copy of the array a
+
+
+
+ID of b: 139663602288640
+
+
+
+Changes on b also reflect to a:
+
+[[ 1  2  3]
+
+ [ 4  9  0]
+
+ [ 2  3  1]
+
+ [ 2  3 19]]
+
+</pre></div>
+<h3 class="h2">ndarray.view() method</h3>
+<p>The ndarray.view() method returns the new array object which contains the same content as the original array does. Since it is a new array object, changes made on this object do not reflect the original array.</p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+a = np.array([[1,2,3,4],[9,0,2,3],[1,2,3,19]])
+
+
+
+print("Original Array:\n",a)
+
+
+
+print("\nID of array a:",id(a))
+
+
+
+b = a.view()
+
+
+
+print("\nID of b:",id(b))
+
+
+
+print("\nprinting the view b")
+
+print(b)
+
+
+
+b.shape = 4,3;
+
+
+
+print("\nChanges made to the view b do not reflect a")
+
+print("\nOriginal array \n",a)
+
+print("\nview\n",b)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Original Array:
+
+ [[ 1  2  3  4]
+
+ [ 9  0  2  3]
+
+ [ 1  2  3 19]]
+
+
+
+ID of array a: 140280414447456
+
+
+
+ID of b: 140280287000656
+
+
+
+printing the view b
+
+[[ 1  2  3  4]
+
+ [ 9  0  2  3]
+
+ [ 1  2  3 19]]
+
+
+
+Changes made to the view b do not reflect a
+
+
+
+Original array 
+
+ [[ 1  2  3  4]
+
+ [ 9  0  2  3]
+
+ [ 1  2  3 19]]
+
+
+
+view
+
+ [[ 1  2  3]
+
+ [ 4  9  0]
+
+ [ 2  3  1]
+
+ [ 2  3 19]]
+
+</pre></div>
+<h3 class="h2">ndarray.copy() method </h3>
+<p>It returns the deep copy of the original array which doesn't share any memory with the original array. The modification made to the deep copy of the original array doesn't reflect the original array.</p>
+<p>Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+a = np.array([[1,2,3,4],[9,0,2,3],[1,2,3,19]])
+
+
+
+print("Original Array:\n",a)
+
+
+
+print("\nID of array a:",id(a))
+
+
+
+b = a.copy()
+
+
+
+print("\nID of b:",id(b))
+
+
+
+print("\nprinting the deep copy b")
+
+print(b)
+
+
+
+b.shape = 4,3;
+
+
+
+print("\nChanges made to the copy b do not reflect a")
+
+print("\nOriginal array \n",a)
+
+print("\nCopy\n",b)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Original Array:
+
+ [[ 1  2  3  4]
+
+ [ 9  0  2  3]
+
+ [ 1  2  3 19]]
+
+
+
+ID of array a: 139895697586176
+
+
+
+ID of b: 139895570139296
+
+
+
+printing the deep copy b
+
+[[ 1  2  3  4]
+
+ [ 9  0  2  3]
+
+ [ 1  2  3 19]]
+
+
+
+Changes made to the copy b do not reflect a
+
+
+
+Original array 
+
+ [[ 1  2  3  4]
+
+ [ 9  0  2  3]
+
+ [ 1  2  3 19]]
+
+
+
+Copy
+
+ [[ 1  2  3]
+
+ [ 4  9  0]
+
+ [ 2  3  1]
+
+ [ 2  3 19]]
+
+</pre></div>
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-matrix-library">NumPy Matrix Library</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="numpy-sorting-and-searching" style="float:left">¡û prev</a>
+<a class="next" href="numpy-matrix-library" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html></body></html>

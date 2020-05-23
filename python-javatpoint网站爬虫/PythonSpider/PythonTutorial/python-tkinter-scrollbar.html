@@ -1,0 +1,667 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-text">next ¡ú</a>
+<a class="next" href="python-tkinter-scale">¡û prev</a>
+</div>
+<h1 class="h1">Python Tkinter Scrollbar </h1>
+<p>The scrollbar widget is used to scroll down the content of the other widgets like listbox, text, and canvas. However, we can also create the horizontal scrollbars to the Entry widget. </p>
+<p>The syntax to use the Scrollbar widget is given below. </p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+w = Scrollbar(top, options) 
+</textarea></div>
+<p>A list of possible options is given below. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>activebackground</td>
+<td>The background color of the widget when it has the focus.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>bg</td>
+<td>The background color of the widget.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>bd</td>
+<td>The border width of the widget. </td>
+</tr>
+<tr>
+<td>4</td>
+<td>command</td>
+<td>It can be set to the procedure associated with the list which can be called each time when the scrollbar is moved.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>cursor</td>
+<td>The mouse pointer is changed to the cursor type set to this option which can be an arrow, dot, etc.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>elementborderwidth</td>
+<td>It represents the border width around the arrow heads and slider. The default value is -1.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Highlightbackground</td>
+<td>The focus highlighcolor when the widget doesn't have the focus.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>highlighcolor</td>
+<td>The focus highlighcolor when the widget has the focus. </td>
+</tr>
+<tr>
+<td>9</td>
+<td>highlightthickness</td>
+<td>It represents the thickness of the focus highlight.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>jump</td>
+<td>It is used to control the behavior of the scroll jump. If it set to 1, then the callback is called when the user releases the mouse button.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>orient</td>
+<td>It can be set to HORIZONTAL or VERTICAL depending upon the orientation of the scrollbar. </td>
+</tr>
+<tr>
+<td>12</td>
+<td>repeatdelay</td>
+<td>This option tells the duration up to which the button is to be pressed before the slider starts moving in that direction repeatedly. The default is 300 ms.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>repeatinterval</td>
+<td>The default value of the repeat interval is 100.</td>
+</tr>
+<tr>
+<td>14</td>
+<td>takefocus</td>
+<td>We can tab the focus through this widget by default. We can set this option to 0 if we don't want this behavior.</td>
+</tr>
+<tr>
+<td>15</td>
+<td>troughcolor</td>
+<td>It represents the color of the trough. </td>
+</tr>
+<tr>
+<td>16</td>
+<td>width</td>
+<td>It represents the width of the scrollbar.</td>
+</tr>
+</table>
+<h2 class="h2">Methods </h2>
+<p>The widget provides the following methods. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Method</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>get()</td>
+<td>It returns the two numbers a and b which represents the current position of the scrollbar.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>set(first, last)</td>
+<td>It is used to connect the scrollbar to the other widget w. The yscrollcommand or xscrollcommand of the other widget to this method. </td>
+</tr>
+</table>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+from tkinter import *
+
+top = Tk()
+sb = Scrollbar(top)
+sb.pack(side = RIGHT, fill = Y)
+
+mylist = Listbox(top, yscrollcommand = sb.set )
+
+for line in range(30):
+    mylist.insert(END, "Number " + str(line))
+
+mylist.pack( side = LEFT )
+sb.config( command = mylist.yview )
+
+mainloop()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Scrollbar" src="python/images/python-tkinter-scrollbar-output.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-text">Tkinter Text</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-scale" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-text" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-text">next ¡ú</a>
+<a class="next" href="python-tkinter-scale">¡û prev</a>
+</div>
+<h1 class="h1">Python Tkinter Scrollbar </h1>
+<p>The scrollbar widget is used to scroll down the content of the other widgets like listbox, text, and canvas. However, we can also create the horizontal scrollbars to the Entry widget. </p>
+<p>The syntax to use the Scrollbar widget is given below. </p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+w = Scrollbar(top, options) 
+
+</textarea></div>
+<p>A list of possible options is given below. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>activebackground</td>
+<td>The background color of the widget when it has the focus.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>bg</td>
+<td>The background color of the widget.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>bd</td>
+<td>The border width of the widget. </td>
+</tr>
+<tr>
+<td>4</td>
+<td>command</td>
+<td>It can be set to the procedure associated with the list which can be called each time when the scrollbar is moved.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>cursor</td>
+<td>The mouse pointer is changed to the cursor type set to this option which can be an arrow, dot, etc.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>elementborderwidth</td>
+<td>It represents the border width around the arrow heads and slider. The default value is -1.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Highlightbackground</td>
+<td>The focus highlighcolor when the widget doesn't have the focus.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>highlighcolor</td>
+<td>The focus highlighcolor when the widget has the focus. </td>
+</tr>
+<tr>
+<td>9</td>
+<td>highlightthickness</td>
+<td>It represents the thickness of the focus highlight.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>jump</td>
+<td>It is used to control the behavior of the scroll jump. If it set to 1, then the callback is called when the user releases the mouse button.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>orient</td>
+<td>It can be set to HORIZONTAL or VERTICAL depending upon the orientation of the scrollbar. </td>
+</tr>
+<tr>
+<td>12</td>
+<td>repeatdelay</td>
+<td>This option tells the duration up to which the button is to be pressed before the slider starts moving in that direction repeatedly. The default is 300 ms.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>repeatinterval</td>
+<td>The default value of the repeat interval is 100.</td>
+</tr>
+<tr>
+<td>14</td>
+<td>takefocus</td>
+<td>We can tab the focus through this widget by default. We can set this option to 0 if we don't want this behavior.</td>
+</tr>
+<tr>
+<td>15</td>
+<td>troughcolor</td>
+<td>It represents the color of the trough. </td>
+</tr>
+<tr>
+<td>16</td>
+<td>width</td>
+<td>It represents the width of the scrollbar.</td>
+</tr>
+</table>
+<h2 class="h2">Methods </h2>
+<p>The widget provides the following methods. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Method</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>get()</td>
+<td>It returns the two numbers a and b which represents the current position of the scrollbar.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>set(first, last)</td>
+<td>It is used to connect the scrollbar to the other widget w. The yscrollcommand or xscrollcommand of the other widget to this method. </td>
+</tr>
+</table>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+from tkinter import *
+
+
+
+top = Tk()
+
+sb = Scrollbar(top)
+
+sb.pack(side = RIGHT, fill = Y)
+
+
+
+mylist = Listbox(top, yscrollcommand = sb.set )
+
+
+
+for line in range(30):
+
+    mylist.insert(END, "Number " + str(line))
+
+
+
+mylist.pack( side = LEFT )
+
+sb.config( command = mylist.yview )
+
+
+
+mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Scrollbar" src="python/images/python-tkinter-scrollbar-output.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-text">Tkinter Text</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-scale" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-text" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-text">next ¡ú</a>
+<a class="next" href="python-tkinter-scale">¡û prev</a>
+</div>
+<h1 class="h1">Python Tkinter Scrollbar </h1>
+<p>The scrollbar widget is used to scroll down the content of the other widgets like listbox, text, and canvas. However, we can also create the horizontal scrollbars to the Entry widget. </p>
+<p>The syntax to use the Scrollbar widget is given below. </p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+w = Scrollbar(top, options) 
+
+</textarea></div>
+<p>A list of possible options is given below. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>activebackground</td>
+<td>The background color of the widget when it has the focus.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>bg</td>
+<td>The background color of the widget.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>bd</td>
+<td>The border width of the widget. </td>
+</tr>
+<tr>
+<td>4</td>
+<td>command</td>
+<td>It can be set to the procedure associated with the list which can be called each time when the scrollbar is moved.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>cursor</td>
+<td>The mouse pointer is changed to the cursor type set to this option which can be an arrow, dot, etc.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>elementborderwidth</td>
+<td>It represents the border width around the arrow heads and slider. The default value is -1.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Highlightbackground</td>
+<td>The focus highlighcolor when the widget doesn't have the focus.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>highlighcolor</td>
+<td>The focus highlighcolor when the widget has the focus. </td>
+</tr>
+<tr>
+<td>9</td>
+<td>highlightthickness</td>
+<td>It represents the thickness of the focus highlight.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>jump</td>
+<td>It is used to control the behavior of the scroll jump. If it set to 1, then the callback is called when the user releases the mouse button.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>orient</td>
+<td>It can be set to HORIZONTAL or VERTICAL depending upon the orientation of the scrollbar. </td>
+</tr>
+<tr>
+<td>12</td>
+<td>repeatdelay</td>
+<td>This option tells the duration up to which the button is to be pressed before the slider starts moving in that direction repeatedly. The default is 300 ms.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>repeatinterval</td>
+<td>The default value of the repeat interval is 100.</td>
+</tr>
+<tr>
+<td>14</td>
+<td>takefocus</td>
+<td>We can tab the focus through this widget by default. We can set this option to 0 if we don't want this behavior.</td>
+</tr>
+<tr>
+<td>15</td>
+<td>troughcolor</td>
+<td>It represents the color of the trough. </td>
+</tr>
+<tr>
+<td>16</td>
+<td>width</td>
+<td>It represents the width of the scrollbar.</td>
+</tr>
+</table>
+<h2 class="h2">Methods </h2>
+<p>The widget provides the following methods. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Method</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>get()</td>
+<td>It returns the two numbers a and b which represents the current position of the scrollbar.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>set(first, last)</td>
+<td>It is used to connect the scrollbar to the other widget w. The yscrollcommand or xscrollcommand of the other widget to this method. </td>
+</tr>
+</table>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+from tkinter import *
+
+
+
+top = Tk()
+
+sb = Scrollbar(top)
+
+sb.pack(side = RIGHT, fill = Y)
+
+
+
+mylist = Listbox(top, yscrollcommand = sb.set )
+
+
+
+for line in range(30):
+
+    mylist.insert(END, "Number " + str(line))
+
+
+
+mylist.pack( side = LEFT )
+
+sb.config( command = mylist.yview )
+
+
+
+mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Scrollbar" src="python/images/python-tkinter-scrollbar-output.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-text">Tkinter Text</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-scale" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-text" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-text">next ¡ú</a>
+<a class="next" href="python-tkinter-scale">¡û prev</a>
+</div>
+<h1 class="h1">Python Tkinter Scrollbar </h1>
+<p>The scrollbar widget is used to scroll down the content of the other widgets like listbox, text, and canvas. However, we can also create the horizontal scrollbars to the Entry widget. </p>
+<p>The syntax to use the Scrollbar widget is given below. </p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+w = Scrollbar(top, options) 
+
+</textarea></div>
+<p>A list of possible options is given below. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>activebackground</td>
+<td>The background color of the widget when it has the focus.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>bg</td>
+<td>The background color of the widget.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>bd</td>
+<td>The border width of the widget. </td>
+</tr>
+<tr>
+<td>4</td>
+<td>command</td>
+<td>It can be set to the procedure associated with the list which can be called each time when the scrollbar is moved.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>cursor</td>
+<td>The mouse pointer is changed to the cursor type set to this option which can be an arrow, dot, etc.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>elementborderwidth</td>
+<td>It represents the border width around the arrow heads and slider. The default value is -1.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Highlightbackground</td>
+<td>The focus highlighcolor when the widget doesn't have the focus.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>highlighcolor</td>
+<td>The focus highlighcolor when the widget has the focus. </td>
+</tr>
+<tr>
+<td>9</td>
+<td>highlightthickness</td>
+<td>It represents the thickness of the focus highlight.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>jump</td>
+<td>It is used to control the behavior of the scroll jump. If it set to 1, then the callback is called when the user releases the mouse button.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>orient</td>
+<td>It can be set to HORIZONTAL or VERTICAL depending upon the orientation of the scrollbar. </td>
+</tr>
+<tr>
+<td>12</td>
+<td>repeatdelay</td>
+<td>This option tells the duration up to which the button is to be pressed before the slider starts moving in that direction repeatedly. The default is 300 ms.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>repeatinterval</td>
+<td>The default value of the repeat interval is 100.</td>
+</tr>
+<tr>
+<td>14</td>
+<td>takefocus</td>
+<td>We can tab the focus through this widget by default. We can set this option to 0 if we don't want this behavior.</td>
+</tr>
+<tr>
+<td>15</td>
+<td>troughcolor</td>
+<td>It represents the color of the trough. </td>
+</tr>
+<tr>
+<td>16</td>
+<td>width</td>
+<td>It represents the width of the scrollbar.</td>
+</tr>
+</table>
+<h2 class="h2">Methods </h2>
+<p>The widget provides the following methods. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Method</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>get()</td>
+<td>It returns the two numbers a and b which represents the current position of the scrollbar.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>set(first, last)</td>
+<td>It is used to connect the scrollbar to the other widget w. The yscrollcommand or xscrollcommand of the other widget to this method. </td>
+</tr>
+</table>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+from tkinter import *
+
+
+
+top = Tk()
+
+sb = Scrollbar(top)
+
+sb.pack(side = RIGHT, fill = Y)
+
+
+
+mylist = Listbox(top, yscrollcommand = sb.set )
+
+
+
+for line in range(30):
+
+    mylist.insert(END, "Number " + str(line))
+
+
+
+mylist.pack( side = LEFT )
+
+sb.config( command = mylist.yview )
+
+
+
+mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Scrollbar" src="python/images/python-tkinter-scrollbar-output.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-text">Tkinter Text</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-scale" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-text" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html></body></html>

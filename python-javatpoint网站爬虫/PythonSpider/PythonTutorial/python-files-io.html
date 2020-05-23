@@ -1,0 +1,345 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-modules">next ¡ú</a>
+<a class="next" href="python-functions">¡û prev</a>
+</div>
+<h1 class="h1">Python File Handling </h1>
+<p>Till now, we were taking the input from the console and writing it back to the console to interact with the user.</p>
+<p>Sometimes, it is not enough to only display the data on the console. The data to be displayed may be very large, and only a limited amount of data can be displayed on the console, and since the memory is volatile, it is impossible to recover the programmatically generated data again and again.</p>
+<p>However, if we need to do so, we may store it onto the local file system which is volatile and can be accessed every time. Here, comes the need of file handling.</p>
+<p>In this section of the tutorial, we will learn all about file handling in python including, creating a file, opening a file, closing a file, writing and appending the file, etc.</p>
+<h2 class="h2">Opening a file </h2>
+<p>Python provides the open() function which accepts two arguments, file name and access mode in which the file is accessed. The function returns a file object which can be used to perform various operations like reading, writing, etc.</p>
+<p>The syntax to use the open() function is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+file object = open(&lt;file-name&gt;, &lt;access-mode&gt;, &lt;buffering&gt;)   
+</textarea></div>
+<p>The files can be accessed using various modes like read, write, or append. The following are the details about the access mode to open a file.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Access mode</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>r</td>
+<td>It opens the file to read-only. The file pointer exists at the beginning. The file is by default open in this mode if no access mode is passed.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>rb</td>
+<td>It opens the file to read only in binary format. The file pointer exists at the beginning of the file. </td>
+</tr>
+<tr>
+<td>3</td>
+<td>r+</td>
+<td>It opens the file to read and write both. The file pointer exists at the beginning of the file. </td>
+</tr>
+<tr>
+<td>4</td>
+<td>rb+</td>
+<td>It opens the file to read and write both in binary format. The file pointer exists at the beginning of the file.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>w</td>
+<td>It opens the file to write only. It overwrites the file if previously exists or creates a new one if no file exists with the same name. The file pointer exists at the beginning of the file. </td>
+</tr>
+<tr>
+<td>6</td>
+<td>wb</td>
+<td>It opens the file to write only in binary format. It overwrites the file if it exists previously or creates a new one if no file exists with the same name. The file pointer exists at the beginning of the file. </td>
+</tr>
+<tr>
+<td>7</td>
+<td>w+</td>
+<td>It opens the file to write and read both. It is different from r+ in the sense that it overwrites the previous file if one exists whereas r+ doesn?t overwrite the previously written file. It creates a new file if no file exists. The file pointer exists at the beginning of the file.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>wb+</td>
+<td>It opens the file to write and read both in binary format. The file pointer exists at the beginning of the file. </td>
+</tr>
+<tr>
+<td>9</td>
+<td>a</td>
+<td>It opens the file in the append mode. The file pointer exists at the end of the previously written file if exists any. It creates a new file if no file exists with the same name. </td>
+</tr>
+<tr>
+<td>10</td>
+<td>ab</td>
+<td>It opens the file in the append mode in binary format. The pointer exists at the end of the previously written file. It creates a new file in binary format if no file exists with the same name. </td>
+</tr>
+<tr>
+<td>11</td>
+<td>a+</td>
+<td>It opens a file to append and read both. The file pointer remains at the end of the file if a file exists. It creates a new file if no file exists with the same name. </td>
+</tr>
+<tr>
+<td>12</td>
+<td>ab+</td>
+<td>It opens a file to append and read both in binary format. The file pointer remains at the end of the file. </td>
+</tr>
+</table>
+<p0>Let's look at the simple example to open a file named "file.txt" (stored in the same directory) in read mode and printing its content on the console.</p0></td></tr></table></div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-modules">next ¡ú</a>
+<a class="next" href="python-functions">¡û prev</a>
+</div>
+<h1 class="h1">Python File Handling </h1>
+<p>Till now, we were taking the input from the console and writing it back to the console to interact with the user.</p>
+<p>Sometimes, it is not enough to only display the data on the console. The data to be displayed may be very large, and only a limited amount of data can be displayed on the console, and since the memory is volatile, it is impossible to recover the programmatically generated data again and again.</p>
+<p>However, if we need to do so, we may store it onto the local file system which is volatile and can be accessed every time. Here, comes the need of file handling.</p>
+<p>In this section of the tutorial, we will learn all about file handling in python including, creating a file, opening a file, closing a file, writing and appending the file, etc.</p>
+<h2 class="h2">Opening a file </h2>
+<p>Python provides the open() function which accepts two arguments, file name and access mode in which the file is accessed. The function returns a file object which can be used to perform various operations like reading, writing, etc.</p>
+<p>The syntax to use the open() function is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+file object = open(&lt;file-name&gt;, &lt;access-mode&gt;, &lt;buffering&gt;)   
+</textarea></div>
+<p>The files can be accessed using various modes like read, write, or append. The following are the details about the access mode to open a file.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Access mode</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>r</td>
+<td>It opens the file to read-only. The file pointer exists at the beginning. The file is by default open in this mode if no access mode is passed.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>rb</td>
+<td>It opens the file to read only in binary format. The file pointer exists at the beginning of the file. </td>
+</tr>
+<tr>
+<td>3</td>
+<td>r+</td>
+<td>It opens the file to read and write both. The file pointer exists at the beginning of the file. </td>
+</tr>
+<tr>
+<td>4</td>
+<td>rb+</td>
+<td>It opens the file to read and write both in binary format. The file pointer exists at the beginning of the file.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>w</td>
+<td>It opens the file to write only. It overwrites the file if previously exists or creates a new one if no file exists with the same name. The file pointer exists at the beginning of the file. </td>
+</tr>
+<tr>
+<td>6</td>
+<td>wb</td>
+<td>It opens the file to write only in binary format. It overwrites the file if it exists previously or creates a new one if no file exists with the same name. The file pointer exists at the beginning of the file. </td>
+</tr>
+<tr>
+<td>7</td>
+<td>w+</td>
+<td>It opens the file to write and read both. It is different from r+ in the sense that it overwrites the previous file if one exists whereas r+ doesn?t overwrite the previously written file. It creates a new file if no file exists. The file pointer exists at the beginning of the file.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>wb+</td>
+<td>It opens the file to write and read both in binary format. The file pointer exists at the beginning of the file. </td>
+</tr>
+<tr>
+<td>9</td>
+<td>a</td>
+<td>It opens the file in the append mode. The file pointer exists at the end of the previously written file if exists any. It creates a new file if no file exists with the same name. </td>
+</tr>
+<tr>
+<td>10</td>
+<td>ab</td>
+<td>It opens the file in the append mode in binary format. The pointer exists at the end of the previously written file. It creates a new file in binary format if no file exists with the same name. </td>
+</tr>
+<tr>
+<td>11</td>
+<td>a+</td>
+<td>It opens a file to append and read both. The file pointer remains at the end of the file if a file exists. It creates a new file if no file exists with the same name. </td>
+</tr>
+<tr>
+<td>12</td>
+<td>ab+</td>
+<td>It opens a file to append and read both in binary format. The file pointer remains at the end of the file. </td>
+</tr>
+</table>
+<p0>Let's look at the simple example to open a file named "file.txt" (stored in the same directory) in read mode and printing its content on the console.</p0></td></tr></table></div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-modules">next ¡ú</a>
+<a class="next" href="python-functions">¡û prev</a>
+</div>
+<h1 class="h1">Python File Handling </h1>
+<p>Till now, we were taking the input from the console and writing it back to the console to interact with the user.</p>
+<p>Sometimes, it is not enough to only display the data on the console. The data to be displayed may be very large, and only a limited amount of data can be displayed on the console, and since the memory is volatile, it is impossible to recover the programmatically generated data again and again.</p>
+<p>However, if we need to do so, we may store it onto the local file system which is volatile and can be accessed every time. Here, comes the need of file handling.</p>
+<p>In this section of the tutorial, we will learn all about file handling in python including, creating a file, opening a file, closing a file, writing and appending the file, etc.</p>
+<h2 class="h2">Opening a file </h2>
+<p>Python provides the open() function which accepts two arguments, file name and access mode in which the file is accessed. The function returns a file object which can be used to perform various operations like reading, writing, etc.</p>
+<p>The syntax to use the open() function is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+file object = open(&lt;file-name&gt;, &lt;access-mode&gt;, &lt;buffering&gt;)   
+</textarea></div>
+<p>The files can be accessed using various modes like read, write, or append. The following are the details about the access mode to open a file.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Access mode</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>r</td>
+<td>It opens the file to read-only. The file pointer exists at the beginning. The file is by default open in this mode if no access mode is passed.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>rb</td>
+<td>It opens the file to read only in binary format. The file pointer exists at the beginning of the file. </td>
+</tr>
+<tr>
+<td>3</td>
+<td>r+</td>
+<td>It opens the file to read and write both. The file pointer exists at the beginning of the file. </td>
+</tr>
+<tr>
+<td>4</td>
+<td>rb+</td>
+<td>It opens the file to read and write both in binary format. The file pointer exists at the beginning of the file.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>w</td>
+<td>It opens the file to write only. It overwrites the file if previously exists or creates a new one if no file exists with the same name. The file pointer exists at the beginning of the file. </td>
+</tr>
+<tr>
+<td>6</td>
+<td>wb</td>
+<td>It opens the file to write only in binary format. It overwrites the file if it exists previously or creates a new one if no file exists with the same name. The file pointer exists at the beginning of the file. </td>
+</tr>
+<tr>
+<td>7</td>
+<td>w+</td>
+<td>It opens the file to write and read both. It is different from r+ in the sense that it overwrites the previous file if one exists whereas r+ doesn?t overwrite the previously written file. It creates a new file if no file exists. The file pointer exists at the beginning of the file.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>wb+</td>
+<td>It opens the file to write and read both in binary format. The file pointer exists at the beginning of the file. </td>
+</tr>
+<tr>
+<td>9</td>
+<td>a</td>
+<td>It opens the file in the append mode. The file pointer exists at the end of the previously written file if exists any. It creates a new file if no file exists with the same name. </td>
+</tr>
+<tr>
+<td>10</td>
+<td>ab</td>
+<td>It opens the file in the append mode in binary format. The pointer exists at the end of the previously written file. It creates a new file in binary format if no file exists with the same name. </td>
+</tr>
+<tr>
+<td>11</td>
+<td>a+</td>
+<td>It opens a file to append and read both. The file pointer remains at the end of the file if a file exists. It creates a new file if no file exists with the same name. </td>
+</tr>
+<tr>
+<td>12</td>
+<td>ab+</td>
+<td>It opens a file to append and read both in binary format. The file pointer remains at the end of the file. </td>
+</tr>
+</table>
+<p0>Let's look at the simple example to open a file named "file.txt" (stored in the same directory) in read mode and printing its content on the console.</p0></td></tr></table></div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-modules">next ¡ú</a>
+<a class="next" href="python-functions">¡û prev</a>
+</div>
+<h1 class="h1">Python File Handling </h1>
+<p>Till now, we were taking the input from the console and writing it back to the console to interact with the user.</p>
+<p>Sometimes, it is not enough to only display the data on the console. The data to be displayed may be very large, and only a limited amount of data can be displayed on the console, and since the memory is volatile, it is impossible to recover the programmatically generated data again and again.</p>
+<p>However, if we need to do so, we may store it onto the local file system which is volatile and can be accessed every time. Here, comes the need of file handling.</p>
+<p>In this section of the tutorial, we will learn all about file handling in python including, creating a file, opening a file, closing a file, writing and appending the file, etc.</p>
+<h2 class="h2">Opening a file </h2>
+<p>Python provides the open() function which accepts two arguments, file name and access mode in which the file is accessed. The function returns a file object which can be used to perform various operations like reading, writing, etc.</p>
+<p>The syntax to use the open() function is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+file object = open(&lt;file-name&gt;, &lt;access-mode&gt;, &lt;buffering&gt;)   
+</textarea></div>
+<p>The files can be accessed using various modes like read, write, or append. The following are the details about the access mode to open a file.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Access mode</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>r</td>
+<td>It opens the file to read-only. The file pointer exists at the beginning. The file is by default open in this mode if no access mode is passed.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>rb</td>
+<td>It opens the file to read only in binary format. The file pointer exists at the beginning of the file. </td>
+</tr>
+<tr>
+<td>3</td>
+<td>r+</td>
+<td>It opens the file to read and write both. The file pointer exists at the beginning of the file. </td>
+</tr>
+<tr>
+<td>4</td>
+<td>rb+</td>
+<td>It opens the file to read and write both in binary format. The file pointer exists at the beginning of the file.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>w</td>
+<td>It opens the file to write only. It overwrites the file if previously exists or creates a new one if no file exists with the same name. The file pointer exists at the beginning of the file. </td>
+</tr>
+<tr>
+<td>6</td>
+<td>wb</td>
+<td>It opens the file to write only in binary format. It overwrites the file if it exists previously or creates a new one if no file exists with the same name. The file pointer exists at the beginning of the file. </td>
+</tr>
+<tr>
+<td>7</td>
+<td>w+</td>
+<td>It opens the file to write and read both. It is different from r+ in the sense that it overwrites the previous file if one exists whereas r+ doesn?t overwrite the previously written file. It creates a new file if no file exists. The file pointer exists at the beginning of the file.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>wb+</td>
+<td>It opens the file to write and read both in binary format. The file pointer exists at the beginning of the file. </td>
+</tr>
+<tr>
+<td>9</td>
+<td>a</td>
+<td>It opens the file in the append mode. The file pointer exists at the end of the previously written file if exists any. It creates a new file if no file exists with the same name. </td>
+</tr>
+<tr>
+<td>10</td>
+<td>ab</td>
+<td>It opens the file in the append mode in binary format. The pointer exists at the end of the previously written file. It creates a new file in binary format if no file exists with the same name. </td>
+</tr>
+<tr>
+<td>11</td>
+<td>a+</td>
+<td>It opens a file to append and read both. The file pointer remains at the end of the file if a file exists. It creates a new file if no file exists with the same name. </td>
+</tr>
+<tr>
+<td>12</td>
+<td>ab+</td>
+<td>It opens a file to append and read both in binary format. The file pointer remains at the end of the file. </td>
+</tr>
+</table>
+<p0>Let's look at the simple example to open a file named "file.txt" (stored in the same directory) in read mode and printing its content on the console.</p0></td></tr></table></div></body></html></body></html>

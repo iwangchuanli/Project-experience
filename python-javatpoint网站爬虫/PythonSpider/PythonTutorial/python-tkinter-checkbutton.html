@@ -1,0 +1,1001 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-entry">next ¡ú</a>
+<a class="next" href="python-tkinter-canvas">¡û prev</a>
+</div>
+<h1 class="h1">Python Tkinter Checkbutton</h1>
+<p>The Checkbutton is used to track the user's choices provided to the application. In other words, we can say that Checkbutton is used to implement the on/off selections. </p>
+<p>The Checkbutton can contain the text or images. The Checkbutton is mostly used to provide many choices to the user among which, the user needs to choose the one. It generally implements many of many selections. </p>
+<p>The syntax to use the checkbutton is given below.</p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+w = checkbutton(master, options)
+</textarea></div>
+<p>A list of possible options is given below.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>activebackground</td>
+<td>It represents the background color when the checkbutton is under the cursor.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>activeforeground</td>
+<td>It represents the foreground color of the checkbutton when the checkbutton is under the cursor.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>bg</td>
+<td>The background color of the button.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>bitmap</td>
+<td>It displays an image (monochrome) on the button. </td>
+</tr>
+<tr>
+<td>5</td>
+<td>bd</td>
+<td>The size of the border around the corner.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>command</td>
+<td>It is associated with a function to be called when the state of the checkbutton is changed.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>cursor</td>
+<td>The mouse pointer will be changed to the cursor name when it is over the checkbutton. </td>
+</tr>
+<tr>
+<td>8</td>
+<td>disableforeground</td>
+<td>It is the color which is used to represent the text of a disabled checkbutton.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>font</td>
+<td>It represents the font of the checkbutton.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>fg</td>
+<td>The foreground color (text color) of the checkbutton.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>height</td>
+<td>It represents the height of the checkbutton (number of lines). The default height is 1.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>highlightcolor</td>
+<td>The color of the focus highlight when the checkbutton is under focus.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>image</td>
+<td>The image used to represent the checkbutton.</td>
+</tr>
+<tr>
+<td>14</td>
+<td>justify</td>
+<td>This specifies the justification of the text if the text contains multiple lines.</td>
+</tr>
+<tr>
+<td>15</td>
+<td>offvalue</td>
+<td>The associated control variable is set to 0 by default if the button is unchecked. We can change the state of an unchecked variable to some other one.</td>
+</tr>
+<tr>
+<td>16</td>
+<td>onvalue</td>
+<td>The associated control variable is set to 1 by default if the button is checked. We can change the state of the checked variable to some other one.</td>
+</tr>
+<tr>
+<td>17</td>
+<td>padx</td>
+<td>The horizontal padding of the checkbutton</td>
+</tr>
+<tr>
+<td>18</td>
+<td>pady</td>
+<td>The vertical padding of the checkbutton.</td>
+</tr>
+<tr>
+<td>19</td>
+<td>relief</td>
+<td>The type of the border of the checkbutton. By default, it is set to FLAT.</td>
+</tr>
+<tr>
+<td>20</td>
+<td>selectcolor</td>
+<td>The color of the checkbutton when it is set. By default, it is red.</td>
+</tr>
+<tr>
+<td>21</td>
+<td>selectimage</td>
+<td>The image is shown on the checkbutton when it is set.</td>
+</tr>
+<tr>
+<td>22</td>
+<td>state</td>
+<td>It represents the state of the checkbutton. By default, it is set to normal. We can change it to DISABLED to make the checkbutton unresponsive. The state of the checkbutton is ACTIVE when it is under focus. </td>
+</tr>
+<tr>
+<td>24</td>
+<td>underline</td>
+<td>It represents the index of the character in the text which is to be underlined. The indexing starts with zero in the text.</td>
+</tr>
+<tr>
+<td>25</td>
+<td>variable</td>
+<td>It represents the associated variable that tracks the state of the checkbutton.</td>
+</tr>
+<tr>
+<td>26</td>
+<td>width</td>
+<td>It represents the width of the checkbutton. It is represented in the number of characters that are represented in the form of texts.</td>
+</tr>
+<tr>
+<td>27</td>
+<td>wraplength</td>
+<td>If this option is set to an integer number, the text will be broken into the number of pieces.</td>
+</tr>
+</table>
+<h2 class="h2">Methods</h2>
+<p>The methods that can be called with the Checkbuttons are described in the following table.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Method</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>deselect()</td>
+<td>It is called to turn off the checkbutton.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>flash()</td>
+<td>The checkbutton is flashed between the active and normal colors.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>invoke()</td>
+<td>This will invoke the method associated with the checkbutton.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>select()</td>
+<td>It is called to turn on the checkbutton.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>toggle()</td>
+<td>It is used to toggle between the different Checkbuttons.</td>
+</tr>
+</table>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+from tkinter import * 
+
+top = Tk()
+
+top.geometry("200x200")
+
+checkvar1 = IntVar()
+
+checkvar2 = IntVar()
+
+checkvar3 = IntVar()
+
+chkbtn1 = Checkbutton(top, text = "C", variable = checkvar1, onvalue = 1, offvalue = 0, height = 2, width = 10)
+
+chkbtn2 = Checkbutton(top, text = "C++", variable = checkvar2, onvalue = 1, offvalue = 0, height = 2, width = 10)
+
+chkbtn3 = Checkbutton(top, text = "Java", variable = checkvar3, onvalue = 1, offvalue = 0, height = 2, width = 10)
+
+chkbtn1.pack()
+
+chkbtn2.pack()
+
+chkbtn3.pack()
+
+top.mainloop()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Checkbutton" src="python/images/python-tkinter-checkbutton.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-entry">Python Tkinter Entry </a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-canvas" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-entry" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-entry">next ¡ú</a>
+<a class="next" href="python-tkinter-canvas">¡û prev</a>
+</div>
+<h1 class="h1">Python Tkinter Checkbutton</h1>
+<p>The Checkbutton is used to track the user's choices provided to the application. In other words, we can say that Checkbutton is used to implement the on/off selections. </p>
+<p>The Checkbutton can contain the text or images. The Checkbutton is mostly used to provide many choices to the user among which, the user needs to choose the one. It generally implements many of many selections. </p>
+<p>The syntax to use the checkbutton is given below.</p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+w = checkbutton(master, options)
+
+</textarea></div>
+<p>A list of possible options is given below.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>activebackground</td>
+<td>It represents the background color when the checkbutton is under the cursor.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>activeforeground</td>
+<td>It represents the foreground color of the checkbutton when the checkbutton is under the cursor.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>bg</td>
+<td>The background color of the button.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>bitmap</td>
+<td>It displays an image (monochrome) on the button. </td>
+</tr>
+<tr>
+<td>5</td>
+<td>bd</td>
+<td>The size of the border around the corner.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>command</td>
+<td>It is associated with a function to be called when the state of the checkbutton is changed.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>cursor</td>
+<td>The mouse pointer will be changed to the cursor name when it is over the checkbutton. </td>
+</tr>
+<tr>
+<td>8</td>
+<td>disableforeground</td>
+<td>It is the color which is used to represent the text of a disabled checkbutton.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>font</td>
+<td>It represents the font of the checkbutton.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>fg</td>
+<td>The foreground color (text color) of the checkbutton.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>height</td>
+<td>It represents the height of the checkbutton (number of lines). The default height is 1.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>highlightcolor</td>
+<td>The color of the focus highlight when the checkbutton is under focus.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>image</td>
+<td>The image used to represent the checkbutton.</td>
+</tr>
+<tr>
+<td>14</td>
+<td>justify</td>
+<td>This specifies the justification of the text if the text contains multiple lines.</td>
+</tr>
+<tr>
+<td>15</td>
+<td>offvalue</td>
+<td>The associated control variable is set to 0 by default if the button is unchecked. We can change the state of an unchecked variable to some other one.</td>
+</tr>
+<tr>
+<td>16</td>
+<td>onvalue</td>
+<td>The associated control variable is set to 1 by default if the button is checked. We can change the state of the checked variable to some other one.</td>
+</tr>
+<tr>
+<td>17</td>
+<td>padx</td>
+<td>The horizontal padding of the checkbutton</td>
+</tr>
+<tr>
+<td>18</td>
+<td>pady</td>
+<td>The vertical padding of the checkbutton.</td>
+</tr>
+<tr>
+<td>19</td>
+<td>relief</td>
+<td>The type of the border of the checkbutton. By default, it is set to FLAT.</td>
+</tr>
+<tr>
+<td>20</td>
+<td>selectcolor</td>
+<td>The color of the checkbutton when it is set. By default, it is red.</td>
+</tr>
+<tr>
+<td>21</td>
+<td>selectimage</td>
+<td>The image is shown on the checkbutton when it is set.</td>
+</tr>
+<tr>
+<td>22</td>
+<td>state</td>
+<td>It represents the state of the checkbutton. By default, it is set to normal. We can change it to DISABLED to make the checkbutton unresponsive. The state of the checkbutton is ACTIVE when it is under focus. </td>
+</tr>
+<tr>
+<td>24</td>
+<td>underline</td>
+<td>It represents the index of the character in the text which is to be underlined. The indexing starts with zero in the text.</td>
+</tr>
+<tr>
+<td>25</td>
+<td>variable</td>
+<td>It represents the associated variable that tracks the state of the checkbutton.</td>
+</tr>
+<tr>
+<td>26</td>
+<td>width</td>
+<td>It represents the width of the checkbutton. It is represented in the number of characters that are represented in the form of texts.</td>
+</tr>
+<tr>
+<td>27</td>
+<td>wraplength</td>
+<td>If this option is set to an integer number, the text will be broken into the number of pieces.</td>
+</tr>
+</table>
+<h2 class="h2">Methods</h2>
+<p>The methods that can be called with the Checkbuttons are described in the following table.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Method</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>deselect()</td>
+<td>It is called to turn off the checkbutton.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>flash()</td>
+<td>The checkbutton is flashed between the active and normal colors.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>invoke()</td>
+<td>This will invoke the method associated with the checkbutton.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>select()</td>
+<td>It is called to turn on the checkbutton.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>toggle()</td>
+<td>It is used to toggle between the different Checkbuttons.</td>
+</tr>
+</table>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+from tkinter import * 
+
+
+
+top = Tk()
+
+
+
+top.geometry("200x200")
+
+
+
+checkvar1 = IntVar()
+
+
+
+checkvar2 = IntVar()
+
+
+
+checkvar3 = IntVar()
+
+
+
+chkbtn1 = Checkbutton(top, text = "C", variable = checkvar1, onvalue = 1, offvalue = 0, height = 2, width = 10)
+
+
+
+chkbtn2 = Checkbutton(top, text = "C++", variable = checkvar2, onvalue = 1, offvalue = 0, height = 2, width = 10)
+
+
+
+chkbtn3 = Checkbutton(top, text = "Java", variable = checkvar3, onvalue = 1, offvalue = 0, height = 2, width = 10)
+
+
+
+chkbtn1.pack()
+
+
+
+chkbtn2.pack()
+
+
+
+chkbtn3.pack()
+
+
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Checkbutton" src="python/images/python-tkinter-checkbutton.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-entry">Python Tkinter Entry </a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-canvas" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-entry" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-entry">next ¡ú</a>
+<a class="next" href="python-tkinter-canvas">¡û prev</a>
+</div>
+<h1 class="h1">Python Tkinter Checkbutton</h1>
+<p>The Checkbutton is used to track the user's choices provided to the application. In other words, we can say that Checkbutton is used to implement the on/off selections. </p>
+<p>The Checkbutton can contain the text or images. The Checkbutton is mostly used to provide many choices to the user among which, the user needs to choose the one. It generally implements many of many selections. </p>
+<p>The syntax to use the checkbutton is given below.</p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+w = checkbutton(master, options)
+
+</textarea></div>
+<p>A list of possible options is given below.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>activebackground</td>
+<td>It represents the background color when the checkbutton is under the cursor.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>activeforeground</td>
+<td>It represents the foreground color of the checkbutton when the checkbutton is under the cursor.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>bg</td>
+<td>The background color of the button.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>bitmap</td>
+<td>It displays an image (monochrome) on the button. </td>
+</tr>
+<tr>
+<td>5</td>
+<td>bd</td>
+<td>The size of the border around the corner.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>command</td>
+<td>It is associated with a function to be called when the state of the checkbutton is changed.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>cursor</td>
+<td>The mouse pointer will be changed to the cursor name when it is over the checkbutton. </td>
+</tr>
+<tr>
+<td>8</td>
+<td>disableforeground</td>
+<td>It is the color which is used to represent the text of a disabled checkbutton.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>font</td>
+<td>It represents the font of the checkbutton.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>fg</td>
+<td>The foreground color (text color) of the checkbutton.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>height</td>
+<td>It represents the height of the checkbutton (number of lines). The default height is 1.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>highlightcolor</td>
+<td>The color of the focus highlight when the checkbutton is under focus.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>image</td>
+<td>The image used to represent the checkbutton.</td>
+</tr>
+<tr>
+<td>14</td>
+<td>justify</td>
+<td>This specifies the justification of the text if the text contains multiple lines.</td>
+</tr>
+<tr>
+<td>15</td>
+<td>offvalue</td>
+<td>The associated control variable is set to 0 by default if the button is unchecked. We can change the state of an unchecked variable to some other one.</td>
+</tr>
+<tr>
+<td>16</td>
+<td>onvalue</td>
+<td>The associated control variable is set to 1 by default if the button is checked. We can change the state of the checked variable to some other one.</td>
+</tr>
+<tr>
+<td>17</td>
+<td>padx</td>
+<td>The horizontal padding of the checkbutton</td>
+</tr>
+<tr>
+<td>18</td>
+<td>pady</td>
+<td>The vertical padding of the checkbutton.</td>
+</tr>
+<tr>
+<td>19</td>
+<td>relief</td>
+<td>The type of the border of the checkbutton. By default, it is set to FLAT.</td>
+</tr>
+<tr>
+<td>20</td>
+<td>selectcolor</td>
+<td>The color of the checkbutton when it is set. By default, it is red.</td>
+</tr>
+<tr>
+<td>21</td>
+<td>selectimage</td>
+<td>The image is shown on the checkbutton when it is set.</td>
+</tr>
+<tr>
+<td>22</td>
+<td>state</td>
+<td>It represents the state of the checkbutton. By default, it is set to normal. We can change it to DISABLED to make the checkbutton unresponsive. The state of the checkbutton is ACTIVE when it is under focus. </td>
+</tr>
+<tr>
+<td>24</td>
+<td>underline</td>
+<td>It represents the index of the character in the text which is to be underlined. The indexing starts with zero in the text.</td>
+</tr>
+<tr>
+<td>25</td>
+<td>variable</td>
+<td>It represents the associated variable that tracks the state of the checkbutton.</td>
+</tr>
+<tr>
+<td>26</td>
+<td>width</td>
+<td>It represents the width of the checkbutton. It is represented in the number of characters that are represented in the form of texts.</td>
+</tr>
+<tr>
+<td>27</td>
+<td>wraplength</td>
+<td>If this option is set to an integer number, the text will be broken into the number of pieces.</td>
+</tr>
+</table>
+<h2 class="h2">Methods</h2>
+<p>The methods that can be called with the Checkbuttons are described in the following table.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Method</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>deselect()</td>
+<td>It is called to turn off the checkbutton.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>flash()</td>
+<td>The checkbutton is flashed between the active and normal colors.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>invoke()</td>
+<td>This will invoke the method associated with the checkbutton.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>select()</td>
+<td>It is called to turn on the checkbutton.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>toggle()</td>
+<td>It is used to toggle between the different Checkbuttons.</td>
+</tr>
+</table>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+from tkinter import * 
+
+
+
+top = Tk()
+
+
+
+top.geometry("200x200")
+
+
+
+checkvar1 = IntVar()
+
+
+
+checkvar2 = IntVar()
+
+
+
+checkvar3 = IntVar()
+
+
+
+chkbtn1 = Checkbutton(top, text = "C", variable = checkvar1, onvalue = 1, offvalue = 0, height = 2, width = 10)
+
+
+
+chkbtn2 = Checkbutton(top, text = "C++", variable = checkvar2, onvalue = 1, offvalue = 0, height = 2, width = 10)
+
+
+
+chkbtn3 = Checkbutton(top, text = "Java", variable = checkvar3, onvalue = 1, offvalue = 0, height = 2, width = 10)
+
+
+
+chkbtn1.pack()
+
+
+
+chkbtn2.pack()
+
+
+
+chkbtn3.pack()
+
+
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Checkbutton" src="python/images/python-tkinter-checkbutton.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-entry">Python Tkinter Entry </a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-canvas" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-entry" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-entry">next ¡ú</a>
+<a class="next" href="python-tkinter-canvas">¡û prev</a>
+</div>
+<h1 class="h1">Python Tkinter Checkbutton</h1>
+<p>The Checkbutton is used to track the user's choices provided to the application. In other words, we can say that Checkbutton is used to implement the on/off selections. </p>
+<p>The Checkbutton can contain the text or images. The Checkbutton is mostly used to provide many choices to the user among which, the user needs to choose the one. It generally implements many of many selections. </p>
+<p>The syntax to use the checkbutton is given below.</p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+w = checkbutton(master, options)
+
+</textarea></div>
+<p>A list of possible options is given below.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>activebackground</td>
+<td>It represents the background color when the checkbutton is under the cursor.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>activeforeground</td>
+<td>It represents the foreground color of the checkbutton when the checkbutton is under the cursor.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>bg</td>
+<td>The background color of the button.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>bitmap</td>
+<td>It displays an image (monochrome) on the button. </td>
+</tr>
+<tr>
+<td>5</td>
+<td>bd</td>
+<td>The size of the border around the corner.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>command</td>
+<td>It is associated with a function to be called when the state of the checkbutton is changed.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>cursor</td>
+<td>The mouse pointer will be changed to the cursor name when it is over the checkbutton. </td>
+</tr>
+<tr>
+<td>8</td>
+<td>disableforeground</td>
+<td>It is the color which is used to represent the text of a disabled checkbutton.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>font</td>
+<td>It represents the font of the checkbutton.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>fg</td>
+<td>The foreground color (text color) of the checkbutton.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>height</td>
+<td>It represents the height of the checkbutton (number of lines). The default height is 1.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>highlightcolor</td>
+<td>The color of the focus highlight when the checkbutton is under focus.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>image</td>
+<td>The image used to represent the checkbutton.</td>
+</tr>
+<tr>
+<td>14</td>
+<td>justify</td>
+<td>This specifies the justification of the text if the text contains multiple lines.</td>
+</tr>
+<tr>
+<td>15</td>
+<td>offvalue</td>
+<td>The associated control variable is set to 0 by default if the button is unchecked. We can change the state of an unchecked variable to some other one.</td>
+</tr>
+<tr>
+<td>16</td>
+<td>onvalue</td>
+<td>The associated control variable is set to 1 by default if the button is checked. We can change the state of the checked variable to some other one.</td>
+</tr>
+<tr>
+<td>17</td>
+<td>padx</td>
+<td>The horizontal padding of the checkbutton</td>
+</tr>
+<tr>
+<td>18</td>
+<td>pady</td>
+<td>The vertical padding of the checkbutton.</td>
+</tr>
+<tr>
+<td>19</td>
+<td>relief</td>
+<td>The type of the border of the checkbutton. By default, it is set to FLAT.</td>
+</tr>
+<tr>
+<td>20</td>
+<td>selectcolor</td>
+<td>The color of the checkbutton when it is set. By default, it is red.</td>
+</tr>
+<tr>
+<td>21</td>
+<td>selectimage</td>
+<td>The image is shown on the checkbutton when it is set.</td>
+</tr>
+<tr>
+<td>22</td>
+<td>state</td>
+<td>It represents the state of the checkbutton. By default, it is set to normal. We can change it to DISABLED to make the checkbutton unresponsive. The state of the checkbutton is ACTIVE when it is under focus. </td>
+</tr>
+<tr>
+<td>24</td>
+<td>underline</td>
+<td>It represents the index of the character in the text which is to be underlined. The indexing starts with zero in the text.</td>
+</tr>
+<tr>
+<td>25</td>
+<td>variable</td>
+<td>It represents the associated variable that tracks the state of the checkbutton.</td>
+</tr>
+<tr>
+<td>26</td>
+<td>width</td>
+<td>It represents the width of the checkbutton. It is represented in the number of characters that are represented in the form of texts.</td>
+</tr>
+<tr>
+<td>27</td>
+<td>wraplength</td>
+<td>If this option is set to an integer number, the text will be broken into the number of pieces.</td>
+</tr>
+</table>
+<h2 class="h2">Methods</h2>
+<p>The methods that can be called with the Checkbuttons are described in the following table.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Method</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>deselect()</td>
+<td>It is called to turn off the checkbutton.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>flash()</td>
+<td>The checkbutton is flashed between the active and normal colors.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>invoke()</td>
+<td>This will invoke the method associated with the checkbutton.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>select()</td>
+<td>It is called to turn on the checkbutton.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>toggle()</td>
+<td>It is used to toggle between the different Checkbuttons.</td>
+</tr>
+</table>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+from tkinter import * 
+
+
+
+top = Tk()
+
+
+
+top.geometry("200x200")
+
+
+
+checkvar1 = IntVar()
+
+
+
+checkvar2 = IntVar()
+
+
+
+checkvar3 = IntVar()
+
+
+
+chkbtn1 = Checkbutton(top, text = "C", variable = checkvar1, onvalue = 1, offvalue = 0, height = 2, width = 10)
+
+
+
+chkbtn2 = Checkbutton(top, text = "C++", variable = checkvar2, onvalue = 1, offvalue = 0, height = 2, width = 10)
+
+
+
+chkbtn3 = Checkbutton(top, text = "Java", variable = checkvar3, onvalue = 1, offvalue = 0, height = 2, width = 10)
+
+
+
+chkbtn1.pack()
+
+
+
+chkbtn2.pack()
+
+
+
+chkbtn3.pack()
+
+
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Checkbutton" src="python/images/python-tkinter-checkbutton.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-entry">Python Tkinter Entry </a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-canvas" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-entry" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html></body></html>

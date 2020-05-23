@@ -1,0 +1,753 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-exception-handling">next ¡ú</a>
+<a class="next" href="python-files-io">¡û prev</a>
+</div>
+<h1 class="h1">Python Modules</h1>
+<p>A python module can be defined as a python program file which contains a python code including python functions, class, or variables. In other words, we can say that our python code file saved with the extension (.py) is treated as the module. We may have a runnable code inside the python module. </p>
+<p>Modules in Python provides us the flexibility to organize the code in a logical way.</p>
+<p>To use the functionality of one module into another, we must have to import the specific module.</p>
+<h2 class="h3">Example</h2>
+<p>In this example, we will create a module named as file.py which contains a function func that contains a code to print some message on the console. </p>
+<p>Let's create the module named as <strong>file.py.</strong></p>
+<div class="codeblock"><textarea class="python" name="code">
+#displayMsg prints a message to the name being passed. 
+def displayMsg(name)
+	print("Hi "+name);  
+</textarea></div>
+<p>Here, we need to include this module into our main module to call the method displayMsg() defined in the module named file.</p>
+<h2 class="h2">Loading the module in our python code</h2>
+<p>We need to load the module in our python code to use its functionality. Python provides two types of statements as defined below. </p>
+<ol class="points">
+<li>The import statement </li>
+<li>The from-import statement</li>
+</ol>
+<h2 class="h2">The import statement</h2>
+<p>The import statement is used to import all the functionality of one module into another. Here, we must notice that we can use the functionality of any python source file by importing that file as the module into another python source file. </p>
+<p>We can import multiple modules with a single import statement, but a module is loaded once regardless of the number of times, it has been imported into our file.</p>
+<p>The syntax to use the import statement is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+import module1,module2,........ module n
+</textarea></div>
+<p>Hence, if we need to call the function displayMsg() defined in the file file.py, we have to import that file as a module into our module as shown in the example below. </p>
+<h2 class="h3">Example:</h2>
+<div class="codeblock"><textarea class="python" name="code">
+import file;
+name = input("Enter the name?")
+file.displayMsg(name)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Enter the name?John
+Hi John
+</pre></div>
+<h2 class="h2">The from-import statement</h2>
+<p>Instead of importing the whole module into the namespace, python provides the flexibility to import only the specific attributes of a module. This can be done by using from? import statement. The syntax to use the from-import statement is given below. </p>
+<div class="codeblock"><textarea class="python" name="code">
+from &lt; module-name&gt; import &lt;name 1&gt;, &lt;name 2&gt;..,&lt;name n&gt; 
+</textarea></div>
+<p>Consider the following module named as calculation which contains three functions as summation, multiplication, and divide.</p>
+<p><strong>calculation.py:</strong></p>
+<div class="codeblock"><textarea class="python" name="code">
+#place the code in the calculation.py 
+def summation(a,b):
+	return a+b
+def multiplication(a,b):
+	return a*b;
+def divide(a,b):
+	return a/b;
+</textarea></div>
+<p><strong>Main.py:</strong></p>
+<div class="codeblock"><textarea class="python" name="code">
+from calculation import summation  
+#it will import only the summation() from calculation.py
+a = int(input("Enter the first number"))
+b = int(input("Enter the second number"))
+print("Sum = ",summation(a,b)) #we do not need to specify the module name while accessing summation()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Enter the first number10
+Enter the second number20
+Sum =  30
+</pre></div>
+<p>The from...import statement is always better to use if we know the attributes to be imported from the module in advance. It doesn't let our code to be heavier. We can also import all the attributes from a module by using *. </p>
+<p>Consider the following syntax.</p>
+<div class="codeblock"><textarea class="python" name="code">
+from &lt;module&gt; import * 
+</textarea></div>
+<h2 class="h2">Renaming a module</h2>
+<p>Python provides us the flexibility to import some module with a specific name so that we can use this name to use that module in our python source file. </p>
+<p>The syntax to rename a module is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+import &lt;module-name&gt; as &lt;specific-name&gt; 
+</textarea></div>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+#the module calculation of previous example is imported in this example as cal. 
+import calculation as cal;
+a = int(input("Enter a?"));
+b = int(input("Enter b?"));
+print("Sum = ",cal.summation(a,b))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Enter a?10
+Enter b?20
+Sum =  30
+</pre></div>
+<h2 class="h2">Using dir() function</h2>
+<p>The dir() function returns a sorted list of names defined in the passed module. This list contains all the sub-modules, variables and functions defined in this module. </p>
+<p>Consider the following example.</p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+import json
+
+List = dir(json)
+
+print(List)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+['JSONDecoder', 'JSONEncoder', '__all__', '__author__', '__builtins__', '__cached__', '__doc__',
+'__file__', '__loader__', '__name__', '__package__', '__path__', '__spec__', '__version__', 
+'_default_decoder', '_default_encoder', 'decoder', 'dump', 'dumps', 'encoder', 'load', 'loads', 'scanner']
+</pre></div>
+<h2 class="h2">The reload() function</h2>
+<p>As we have already stated that, a module is loaded once regardless of the number of times it is imported into the python source file. However, if you want to reload the already imported module to re-execute the top-level code, python provides us the reload() function. The syntax to use the reload() function is given below. </p>
+<div class="codeblock"><textarea class="python" name="code">
+reload(&lt;module-name&gt;)
+</textarea></div>
+<p>for example, to reload the module calculation defined in the previous example, we must use the following line of code.</p>
+<div class="codeblock"><textarea class="python" name="code">
+reload(calculation)
+</textarea></div>
+<h2 class="h2">Scope of variables</h2>
+<p>In Python, variables are associated with two types of scopes. All the variables defined in a module contain the global scope unless or until it is defined within a function.</p>
+<p>All the variables defined inside a function contain a local scope that is limited to this function itself. We can not access a local variable globally. </p>
+<p>If two variables are defined with the same name with the two different scopes, i.e., local and global, then the priority will always be given to the local variable.</p>
+<p>Consider the following example.</p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+name = "john"
+def print_name(name):
+	print("Hi",name) #prints the name that is local to this function only.
+name = input("Enter the name?")
+print_name(name)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Hi David 
+</pre></div>
+<hr/>
+<h2 class="h2">Python packages</h2>
+<p>The packages in python facilitate the developer with the application development environment by providing a hierarchical directory structure where a package contains sub-packages, modules, and sub-modules. The packages are used to categorize the application level code efficiently.</p>
+<p>Let's create a package named Employees in your home directory. Consider the following steps.</p>
+<p>1. Create a directory with name Employees on path /<strong>home</strong>.</p>
+<p>2.  Create a python source file with name ITEmployees.py on the path /<strong>home</strong>/<strong>Employees</strong>.</p>
+<p><strong>ITEmployees.py</strong></p>
+<div class="codeblock"><textarea class="python" name="code">
+def getITNames():
+	List = ["John", "David", "Nick", 	"Martin"]
+	return List;
+</textarea></div>
+<p>3. Similarly, create one more python file with name BPOEmployees.py and create a function getBPONames(). </p>
+<p>4. Now, the directory Employees which we have created in the first step contains two python modules. To make this directory a package, we need to include one more file here, that is __init__.py which contains the import statements of the modules defined in this directory.</p>
+<p><strong>__init__.py </strong></p>
+<div class="codeblock"><textarea class="python" name="code">
+from ITEmployees import getITNames
+from BPOEmployees import getBPONames
+</textarea></div>
+<p>5. Now, the directory <strong>Employees</strong> has become the package containing two python modules. Here we must notice that we must have to create __init__.py inside a directory to convert this directory to a package.</p>
+<p>6. To use the modules defined inside the package Employees, we must have to import this in our python source file. Let's create a simple python source file at our home directory (/home) which uses the modules defined in this package.</p>
+<p><strong>Test.py</strong></p>
+<div class="codeblock"><textarea class="python" name="code">
+import Employees
+print(Employees.getNames())
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+['John', 'David', 'Nick', 'Martin']
+</pre></div>
+<p>We can have sub-packages inside the packages. We can nest the packages up to any level depending upon the application requirements. </p>
+<p>The following image shows the directory structure of an application Library management system which contains three sub-packages as Admin, Librarian, and Student. The sub-packages contain the python modules.</p>
+<img alt="Python packages" src="python/images/python-packages.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-exception-handling">Python Exception Handling</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-files-io" style="float:left">¡û prev</a>
+<a class="next" href="python-exception-handling" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-exception-handling">next ¡ú</a>
+<a class="next" href="python-files-io">¡û prev</a>
+</div>
+<h1 class="h1">Python Modules</h1>
+<p>A python module can be defined as a python program file which contains a python code including python functions, class, or variables. In other words, we can say that our python code file saved with the extension (.py) is treated as the module. We may have a runnable code inside the python module. </p>
+<p>Modules in Python provides us the flexibility to organize the code in a logical way.</p>
+<p>To use the functionality of one module into another, we must have to import the specific module.</p>
+<h2 class="h3">Example</h2>
+<p>In this example, we will create a module named as file.py which contains a function func that contains a code to print some message on the console. </p>
+<p>Let's create the module named as <strong>file.py.</strong></p>
+<div class="codeblock"><textarea class="python" name="code">
+#displayMsg prints a message to the name being passed. 
+def displayMsg(name)
+	print("Hi "+name);  
+</textarea></div>
+<p>Here, we need to include this module into our main module to call the method displayMsg() defined in the module named file.</p>
+<h2 class="h2">Loading the module in our python code</h2>
+<p>We need to load the module in our python code to use its functionality. Python provides two types of statements as defined below. </p>
+<ol class="points">
+<li>The import statement </li>
+<li>The from-import statement</li>
+</ol>
+<h2 class="h2">The import statement</h2>
+<p>The import statement is used to import all the functionality of one module into another. Here, we must notice that we can use the functionality of any python source file by importing that file as the module into another python source file. </p>
+<p>We can import multiple modules with a single import statement, but a module is loaded once regardless of the number of times, it has been imported into our file.</p>
+<p>The syntax to use the import statement is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+import module1,module2,........ module n
+</textarea></div>
+<p>Hence, if we need to call the function displayMsg() defined in the file file.py, we have to import that file as a module into our module as shown in the example below. </p>
+<h2 class="h3">Example:</h2>
+<div class="codeblock"><textarea class="python" name="code">
+import file;
+name = input("Enter the name?")
+file.displayMsg(name)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Enter the name?John
+Hi John
+</pre></div>
+<h2 class="h2">The from-import statement</h2>
+<p>Instead of importing the whole module into the namespace, python provides the flexibility to import only the specific attributes of a module. This can be done by using from? import statement. The syntax to use the from-import statement is given below. </p>
+<div class="codeblock"><textarea class="python" name="code">
+from &lt; module-name&gt; import &lt;name 1&gt;, &lt;name 2&gt;..,&lt;name n&gt; 
+</textarea></div>
+<p>Consider the following module named as calculation which contains three functions as summation, multiplication, and divide.</p>
+<p><strong>calculation.py:</strong></p>
+<div class="codeblock"><textarea class="python" name="code">
+#place the code in the calculation.py 
+def summation(a,b):
+	return a+b
+def multiplication(a,b):
+	return a*b;
+def divide(a,b):
+	return a/b;
+</textarea></div>
+<p><strong>Main.py:</strong></p>
+<div class="codeblock"><textarea class="python" name="code">
+from calculation import summation  
+#it will import only the summation() from calculation.py
+a = int(input("Enter the first number"))
+b = int(input("Enter the second number"))
+print("Sum = ",summation(a,b)) #we do not need to specify the module name while accessing summation()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Enter the first number10
+Enter the second number20
+Sum =  30
+</pre></div>
+<p>The from...import statement is always better to use if we know the attributes to be imported from the module in advance. It doesn't let our code to be heavier. We can also import all the attributes from a module by using *. </p>
+<p>Consider the following syntax.</p>
+<div class="codeblock"><textarea class="python" name="code">
+from &lt;module&gt; import * 
+</textarea></div>
+<h2 class="h2">Renaming a module</h2>
+<p>Python provides us the flexibility to import some module with a specific name so that we can use this name to use that module in our python source file. </p>
+<p>The syntax to rename a module is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+import &lt;module-name&gt; as &lt;specific-name&gt; 
+</textarea></div>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+#the module calculation of previous example is imported in this example as cal. 
+import calculation as cal;
+a = int(input("Enter a?"));
+b = int(input("Enter b?"));
+print("Sum = ",cal.summation(a,b))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Enter a?10
+Enter b?20
+Sum =  30
+</pre></div>
+<h2 class="h2">Using dir() function</h2>
+<p>The dir() function returns a sorted list of names defined in the passed module. This list contains all the sub-modules, variables and functions defined in this module. </p>
+<p>Consider the following example.</p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+import json
+
+List = dir(json)
+
+print(List)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+['JSONDecoder', 'JSONEncoder', '__all__', '__author__', '__builtins__', '__cached__', '__doc__',
+'__file__', '__loader__', '__name__', '__package__', '__path__', '__spec__', '__version__', 
+'_default_decoder', '_default_encoder', 'decoder', 'dump', 'dumps', 'encoder', 'load', 'loads', 'scanner']
+</pre></div>
+<h2 class="h2">The reload() function</h2>
+<p>As we have already stated that, a module is loaded once regardless of the number of times it is imported into the python source file. However, if you want to reload the already imported module to re-execute the top-level code, python provides us the reload() function. The syntax to use the reload() function is given below. </p>
+<div class="codeblock"><textarea class="python" name="code">
+reload(&lt;module-name&gt;)
+</textarea></div>
+<p>for example, to reload the module calculation defined in the previous example, we must use the following line of code.</p>
+<div class="codeblock"><textarea class="python" name="code">
+reload(calculation)
+</textarea></div>
+<h2 class="h2">Scope of variables</h2>
+<p>In Python, variables are associated with two types of scopes. All the variables defined in a module contain the global scope unless or until it is defined within a function.</p>
+<p>All the variables defined inside a function contain a local scope that is limited to this function itself. We can not access a local variable globally. </p>
+<p>If two variables are defined with the same name with the two different scopes, i.e., local and global, then the priority will always be given to the local variable.</p>
+<p>Consider the following example.</p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+name = "john"
+def print_name(name):
+	print("Hi",name) #prints the name that is local to this function only.
+name = input("Enter the name?")
+print_name(name)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Hi David 
+</pre></div>
+<hr/>
+<h2 class="h2">Python packages</h2>
+<p>The packages in python facilitate the developer with the application development environment by providing a hierarchical directory structure where a package contains sub-packages, modules, and sub-modules. The packages are used to categorize the application level code efficiently.</p>
+<p>Let's create a package named Employees in your home directory. Consider the following steps.</p>
+<p>1. Create a directory with name Employees on path /<strong>home</strong>.</p>
+<p>2.  Create a python source file with name ITEmployees.py on the path /<strong>home</strong>/<strong>Employees</strong>.</p>
+<p><strong>ITEmployees.py</strong></p>
+<div class="codeblock"><textarea class="python" name="code">
+def getITNames():
+	List = ["John", "David", "Nick", 	"Martin"]
+	return List;
+</textarea></div>
+<p>3. Similarly, create one more python file with name BPOEmployees.py and create a function getBPONames(). </p>
+<p>4. Now, the directory Employees which we have created in the first step contains two python modules. To make this directory a package, we need to include one more file here, that is __init__.py which contains the import statements of the modules defined in this directory.</p>
+<p><strong>__init__.py </strong></p>
+<div class="codeblock"><textarea class="python" name="code">
+from ITEmployees import getITNames
+from BPOEmployees import getBPONames
+</textarea></div>
+<p>5. Now, the directory <strong>Employees</strong> has become the package containing two python modules. Here we must notice that we must have to create __init__.py inside a directory to convert this directory to a package.</p>
+<p>6. To use the modules defined inside the package Employees, we must have to import this in our python source file. Let's create a simple python source file at our home directory (/home) which uses the modules defined in this package.</p>
+<p><strong>Test.py</strong></p>
+<div class="codeblock"><textarea class="python" name="code">
+import Employees
+print(Employees.getNames())
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+['John', 'David', 'Nick', 'Martin']
+</pre></div>
+<p>We can have sub-packages inside the packages. We can nest the packages up to any level depending upon the application requirements. </p>
+<p>The following image shows the directory structure of an application Library management system which contains three sub-packages as Admin, Librarian, and Student. The sub-packages contain the python modules.</p>
+<img alt="Python packages" src="python/images/python-packages.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-exception-handling">Python Exception Handling</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-files-io" style="float:left">¡û prev</a>
+<a class="next" href="python-exception-handling" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-exception-handling">next ¡ú</a>
+<a class="next" href="python-files-io">¡û prev</a>
+</div>
+<h1 class="h1">Python Modules</h1>
+<p>A python module can be defined as a python program file which contains a python code including python functions, class, or variables. In other words, we can say that our python code file saved with the extension (.py) is treated as the module. We may have a runnable code inside the python module. </p>
+<p>Modules in Python provides us the flexibility to organize the code in a logical way.</p>
+<p>To use the functionality of one module into another, we must have to import the specific module.</p>
+<h2 class="h3">Example</h2>
+<p>In this example, we will create a module named as file.py which contains a function func that contains a code to print some message on the console. </p>
+<p>Let's create the module named as <strong>file.py.</strong></p>
+<div class="codeblock"><textarea class="python" name="code">
+#displayMsg prints a message to the name being passed. 
+def displayMsg(name)
+	print("Hi "+name);  
+</textarea></div>
+<p>Here, we need to include this module into our main module to call the method displayMsg() defined in the module named file.</p>
+<h2 class="h2">Loading the module in our python code</h2>
+<p>We need to load the module in our python code to use its functionality. Python provides two types of statements as defined below. </p>
+<ol class="points">
+<li>The import statement </li>
+<li>The from-import statement</li>
+</ol>
+<h2 class="h2">The import statement</h2>
+<p>The import statement is used to import all the functionality of one module into another. Here, we must notice that we can use the functionality of any python source file by importing that file as the module into another python source file. </p>
+<p>We can import multiple modules with a single import statement, but a module is loaded once regardless of the number of times, it has been imported into our file.</p>
+<p>The syntax to use the import statement is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+import module1,module2,........ module n
+</textarea></div>
+<p>Hence, if we need to call the function displayMsg() defined in the file file.py, we have to import that file as a module into our module as shown in the example below. </p>
+<h2 class="h3">Example:</h2>
+<div class="codeblock"><textarea class="python" name="code">
+import file;
+name = input("Enter the name?")
+file.displayMsg(name)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Enter the name?John
+Hi John
+</pre></div>
+<h2 class="h2">The from-import statement</h2>
+<p>Instead of importing the whole module into the namespace, python provides the flexibility to import only the specific attributes of a module. This can be done by using from? import statement. The syntax to use the from-import statement is given below. </p>
+<div class="codeblock"><textarea class="python" name="code">
+from &lt; module-name&gt; import &lt;name 1&gt;, &lt;name 2&gt;..,&lt;name n&gt; 
+</textarea></div>
+<p>Consider the following module named as calculation which contains three functions as summation, multiplication, and divide.</p>
+<p><strong>calculation.py:</strong></p>
+<div class="codeblock"><textarea class="python" name="code">
+#place the code in the calculation.py 
+def summation(a,b):
+	return a+b
+def multiplication(a,b):
+	return a*b;
+def divide(a,b):
+	return a/b;
+</textarea></div>
+<p><strong>Main.py:</strong></p>
+<div class="codeblock"><textarea class="python" name="code">
+from calculation import summation  
+#it will import only the summation() from calculation.py
+a = int(input("Enter the first number"))
+b = int(input("Enter the second number"))
+print("Sum = ",summation(a,b)) #we do not need to specify the module name while accessing summation()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Enter the first number10
+Enter the second number20
+Sum =  30
+</pre></div>
+<p>The from...import statement is always better to use if we know the attributes to be imported from the module in advance. It doesn't let our code to be heavier. We can also import all the attributes from a module by using *. </p>
+<p>Consider the following syntax.</p>
+<div class="codeblock"><textarea class="python" name="code">
+from &lt;module&gt; import * 
+</textarea></div>
+<h2 class="h2">Renaming a module</h2>
+<p>Python provides us the flexibility to import some module with a specific name so that we can use this name to use that module in our python source file. </p>
+<p>The syntax to rename a module is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+import &lt;module-name&gt; as &lt;specific-name&gt; 
+</textarea></div>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+#the module calculation of previous example is imported in this example as cal. 
+import calculation as cal;
+a = int(input("Enter a?"));
+b = int(input("Enter b?"));
+print("Sum = ",cal.summation(a,b))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Enter a?10
+Enter b?20
+Sum =  30
+</pre></div>
+<h2 class="h2">Using dir() function</h2>
+<p>The dir() function returns a sorted list of names defined in the passed module. This list contains all the sub-modules, variables and functions defined in this module. </p>
+<p>Consider the following example.</p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+import json
+
+List = dir(json)
+
+print(List)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+['JSONDecoder', 'JSONEncoder', '__all__', '__author__', '__builtins__', '__cached__', '__doc__',
+'__file__', '__loader__', '__name__', '__package__', '__path__', '__spec__', '__version__', 
+'_default_decoder', '_default_encoder', 'decoder', 'dump', 'dumps', 'encoder', 'load', 'loads', 'scanner']
+</pre></div>
+<h2 class="h2">The reload() function</h2>
+<p>As we have already stated that, a module is loaded once regardless of the number of times it is imported into the python source file. However, if you want to reload the already imported module to re-execute the top-level code, python provides us the reload() function. The syntax to use the reload() function is given below. </p>
+<div class="codeblock"><textarea class="python" name="code">
+reload(&lt;module-name&gt;)
+</textarea></div>
+<p>for example, to reload the module calculation defined in the previous example, we must use the following line of code.</p>
+<div class="codeblock"><textarea class="python" name="code">
+reload(calculation)
+</textarea></div>
+<h2 class="h2">Scope of variables</h2>
+<p>In Python, variables are associated with two types of scopes. All the variables defined in a module contain the global scope unless or until it is defined within a function.</p>
+<p>All the variables defined inside a function contain a local scope that is limited to this function itself. We can not access a local variable globally. </p>
+<p>If two variables are defined with the same name with the two different scopes, i.e., local and global, then the priority will always be given to the local variable.</p>
+<p>Consider the following example.</p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+name = "john"
+def print_name(name):
+	print("Hi",name) #prints the name that is local to this function only.
+name = input("Enter the name?")
+print_name(name)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Hi David 
+</pre></div>
+<hr/>
+<h2 class="h2">Python packages</h2>
+<p>The packages in python facilitate the developer with the application development environment by providing a hierarchical directory structure where a package contains sub-packages, modules, and sub-modules. The packages are used to categorize the application level code efficiently.</p>
+<p>Let's create a package named Employees in your home directory. Consider the following steps.</p>
+<p>1. Create a directory with name Employees on path /<strong>home</strong>.</p>
+<p>2.  Create a python source file with name ITEmployees.py on the path /<strong>home</strong>/<strong>Employees</strong>.</p>
+<p><strong>ITEmployees.py</strong></p>
+<div class="codeblock"><textarea class="python" name="code">
+def getITNames():
+	List = ["John", "David", "Nick", 	"Martin"]
+	return List;
+</textarea></div>
+<p>3. Similarly, create one more python file with name BPOEmployees.py and create a function getBPONames(). </p>
+<p>4. Now, the directory Employees which we have created in the first step contains two python modules. To make this directory a package, we need to include one more file here, that is __init__.py which contains the import statements of the modules defined in this directory.</p>
+<p><strong>__init__.py </strong></p>
+<div class="codeblock"><textarea class="python" name="code">
+from ITEmployees import getITNames
+from BPOEmployees import getBPONames
+</textarea></div>
+<p>5. Now, the directory <strong>Employees</strong> has become the package containing two python modules. Here we must notice that we must have to create __init__.py inside a directory to convert this directory to a package.</p>
+<p>6. To use the modules defined inside the package Employees, we must have to import this in our python source file. Let's create a simple python source file at our home directory (/home) which uses the modules defined in this package.</p>
+<p><strong>Test.py</strong></p>
+<div class="codeblock"><textarea class="python" name="code">
+import Employees
+print(Employees.getNames())
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+['John', 'David', 'Nick', 'Martin']
+</pre></div>
+<p>We can have sub-packages inside the packages. We can nest the packages up to any level depending upon the application requirements. </p>
+<p>The following image shows the directory structure of an application Library management system which contains three sub-packages as Admin, Librarian, and Student. The sub-packages contain the python modules.</p>
+<img alt="Python packages" src="python/images/python-packages.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-exception-handling">Python Exception Handling</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-files-io" style="float:left">¡û prev</a>
+<a class="next" href="python-exception-handling" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-exception-handling">next ¡ú</a>
+<a class="next" href="python-files-io">¡û prev</a>
+</div>
+<h1 class="h1">Python Modules</h1>
+<p>A python module can be defined as a python program file which contains a python code including python functions, class, or variables. In other words, we can say that our python code file saved with the extension (.py) is treated as the module. We may have a runnable code inside the python module. </p>
+<p>Modules in Python provides us the flexibility to organize the code in a logical way.</p>
+<p>To use the functionality of one module into another, we must have to import the specific module.</p>
+<h2 class="h3">Example</h2>
+<p>In this example, we will create a module named as file.py which contains a function func that contains a code to print some message on the console. </p>
+<p>Let's create the module named as <strong>file.py.</strong></p>
+<div class="codeblock"><textarea class="python" name="code">
+#displayMsg prints a message to the name being passed. 
+def displayMsg(name)
+	print("Hi "+name);  
+</textarea></div>
+<p>Here, we need to include this module into our main module to call the method displayMsg() defined in the module named file.</p>
+<h2 class="h2">Loading the module in our python code</h2>
+<p>We need to load the module in our python code to use its functionality. Python provides two types of statements as defined below. </p>
+<ol class="points">
+<li>The import statement </li>
+<li>The from-import statement</li>
+</ol>
+<h2 class="h2">The import statement</h2>
+<p>The import statement is used to import all the functionality of one module into another. Here, we must notice that we can use the functionality of any python source file by importing that file as the module into another python source file. </p>
+<p>We can import multiple modules with a single import statement, but a module is loaded once regardless of the number of times, it has been imported into our file.</p>
+<p>The syntax to use the import statement is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+import module1,module2,........ module n
+</textarea></div>
+<p>Hence, if we need to call the function displayMsg() defined in the file file.py, we have to import that file as a module into our module as shown in the example below. </p>
+<h2 class="h3">Example:</h2>
+<div class="codeblock"><textarea class="python" name="code">
+import file;
+name = input("Enter the name?")
+file.displayMsg(name)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Enter the name?John
+Hi John
+</pre></div>
+<h2 class="h2">The from-import statement</h2>
+<p>Instead of importing the whole module into the namespace, python provides the flexibility to import only the specific attributes of a module. This can be done by using from? import statement. The syntax to use the from-import statement is given below. </p>
+<div class="codeblock"><textarea class="python" name="code">
+from &lt; module-name&gt; import &lt;name 1&gt;, &lt;name 2&gt;..,&lt;name n&gt; 
+</textarea></div>
+<p>Consider the following module named as calculation which contains three functions as summation, multiplication, and divide.</p>
+<p><strong>calculation.py:</strong></p>
+<div class="codeblock"><textarea class="python" name="code">
+#place the code in the calculation.py 
+def summation(a,b):
+	return a+b
+def multiplication(a,b):
+	return a*b;
+def divide(a,b):
+	return a/b;
+</textarea></div>
+<p><strong>Main.py:</strong></p>
+<div class="codeblock"><textarea class="python" name="code">
+from calculation import summation  
+#it will import only the summation() from calculation.py
+a = int(input("Enter the first number"))
+b = int(input("Enter the second number"))
+print("Sum = ",summation(a,b)) #we do not need to specify the module name while accessing summation()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Enter the first number10
+Enter the second number20
+Sum =  30
+</pre></div>
+<p>The from...import statement is always better to use if we know the attributes to be imported from the module in advance. It doesn't let our code to be heavier. We can also import all the attributes from a module by using *. </p>
+<p>Consider the following syntax.</p>
+<div class="codeblock"><textarea class="python" name="code">
+from &lt;module&gt; import * 
+</textarea></div>
+<h2 class="h2">Renaming a module</h2>
+<p>Python provides us the flexibility to import some module with a specific name so that we can use this name to use that module in our python source file. </p>
+<p>The syntax to rename a module is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+import &lt;module-name&gt; as &lt;specific-name&gt; 
+</textarea></div>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+#the module calculation of previous example is imported in this example as cal. 
+import calculation as cal;
+a = int(input("Enter a?"));
+b = int(input("Enter b?"));
+print("Sum = ",cal.summation(a,b))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Enter a?10
+Enter b?20
+Sum =  30
+</pre></div>
+<h2 class="h2">Using dir() function</h2>
+<p>The dir() function returns a sorted list of names defined in the passed module. This list contains all the sub-modules, variables and functions defined in this module. </p>
+<p>Consider the following example.</p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+import json
+
+List = dir(json)
+
+print(List)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+['JSONDecoder', 'JSONEncoder', '__all__', '__author__', '__builtins__', '__cached__', '__doc__',
+'__file__', '__loader__', '__name__', '__package__', '__path__', '__spec__', '__version__', 
+'_default_decoder', '_default_encoder', 'decoder', 'dump', 'dumps', 'encoder', 'load', 'loads', 'scanner']
+</pre></div>
+<h2 class="h2">The reload() function</h2>
+<p>As we have already stated that, a module is loaded once regardless of the number of times it is imported into the python source file. However, if you want to reload the already imported module to re-execute the top-level code, python provides us the reload() function. The syntax to use the reload() function is given below. </p>
+<div class="codeblock"><textarea class="python" name="code">
+reload(&lt;module-name&gt;)
+</textarea></div>
+<p>for example, to reload the module calculation defined in the previous example, we must use the following line of code.</p>
+<div class="codeblock"><textarea class="python" name="code">
+reload(calculation)
+</textarea></div>
+<h2 class="h2">Scope of variables</h2>
+<p>In Python, variables are associated with two types of scopes. All the variables defined in a module contain the global scope unless or until it is defined within a function.</p>
+<p>All the variables defined inside a function contain a local scope that is limited to this function itself. We can not access a local variable globally. </p>
+<p>If two variables are defined with the same name with the two different scopes, i.e., local and global, then the priority will always be given to the local variable.</p>
+<p>Consider the following example.</p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+name = "john"
+def print_name(name):
+	print("Hi",name) #prints the name that is local to this function only.
+name = input("Enter the name?")
+print_name(name)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Hi David 
+</pre></div>
+<hr/>
+<h2 class="h2">Python packages</h2>
+<p>The packages in python facilitate the developer with the application development environment by providing a hierarchical directory structure where a package contains sub-packages, modules, and sub-modules. The packages are used to categorize the application level code efficiently.</p>
+<p>Let's create a package named Employees in your home directory. Consider the following steps.</p>
+<p>1. Create a directory with name Employees on path /<strong>home</strong>.</p>
+<p>2.  Create a python source file with name ITEmployees.py on the path /<strong>home</strong>/<strong>Employees</strong>.</p>
+<p><strong>ITEmployees.py</strong></p>
+<div class="codeblock"><textarea class="python" name="code">
+def getITNames():
+	List = ["John", "David", "Nick", 	"Martin"]
+	return List;
+</textarea></div>
+<p>3. Similarly, create one more python file with name BPOEmployees.py and create a function getBPONames(). </p>
+<p>4. Now, the directory Employees which we have created in the first step contains two python modules. To make this directory a package, we need to include one more file here, that is __init__.py which contains the import statements of the modules defined in this directory.</p>
+<p><strong>__init__.py </strong></p>
+<div class="codeblock"><textarea class="python" name="code">
+from ITEmployees import getITNames
+from BPOEmployees import getBPONames
+</textarea></div>
+<p>5. Now, the directory <strong>Employees</strong> has become the package containing two python modules. Here we must notice that we must have to create __init__.py inside a directory to convert this directory to a package.</p>
+<p>6. To use the modules defined inside the package Employees, we must have to import this in our python source file. Let's create a simple python source file at our home directory (/home) which uses the modules defined in this package.</p>
+<p><strong>Test.py</strong></p>
+<div class="codeblock"><textarea class="python" name="code">
+import Employees
+print(Employees.getNames())
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+['John', 'David', 'Nick', 'Martin']
+</pre></div>
+<p>We can have sub-packages inside the packages. We can nest the packages up to any level depending upon the application requirements. </p>
+<p>The following image shows the directory structure of an application Library management system which contains three sub-packages as Admin, Librarian, and Student. The sub-packages contain the python modules.</p>
+<img alt="Python packages" src="python/images/python-packages.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-exception-handling">Python Exception Handling</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-files-io" style="float:left">¡û prev</a>
+<a class="next" href="python-exception-handling" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html></body></html>

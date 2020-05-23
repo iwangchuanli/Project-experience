@@ -1,0 +1,361 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-pass">next ¡ú</a>
+<a class="next" href="python-break">¡û prev</a>
+</div>
+<h1 class="h1">Python continue Statement</h1>
+<p>The continue statement in python is used to bring the program control to the beginning of the loop. The continue statement skips the remaining lines of code inside the loop and start with the next iteration. It is mainly used for a particular condition inside the loop so that we can skip some specific code for a particular condition.</p>
+<p>The syntax of Python continue statement is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+#loop statements
+continue;
+#the code to be skipped 
+</textarea></div>
+<h2 class="h3">Example 1</h2>
+<div class="codeblock"><textarea class="python" name="code">
+i = 0;
+while i!=10:
+    print("%d"%i);
+    continue;
+    i=i+1;
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+infinite loop
+</pre></div>
+<h2 class="h3">Example 2</h2>
+<div class="codeblock"><textarea class="python" name="code">
+i=1; #initializing a local variable
+#starting a loop from 1 to 10
+for i in range(1,11):
+    if i==5:
+        continue;
+    print("%d"%i);
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+1
+2
+3
+4
+6
+7
+8
+9
+10
+</pre></div>
+<hr/>
+<h2 class="h2">Pass Statement</h2>
+<p>The pass statement is a null operation since nothing happens when it is executed. It is used in the cases where a statement is syntactically needed but we don?t want to use any executable statement at its place.</p>
+<p>For example, it can be used while overriding a parent class method in the subclass but don't want to give its specific implementation in the subclass.</p>
+<p>Pass is also used where the code will be written somewhere but not yet written in the program file. </p>
+<p>The syntax of the pass statement is given below.</p>
+<h2 class="h3">Example </h2>
+<div class="codeblock"><textarea class="python" name="code">
+list = [1,2,3,4,5]
+flag = 0
+for i in list:
+    print("Current element:",i,end=" ");
+    if i==3:
+        pass;
+        print("\nWe are inside pass block\n");
+        flag = 1;
+    if flag==1:
+        print("\nCame out of pass\n");
+        flag=0;
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Current element: 1 Current element: 2 Current element: 3 
+We are inside pass block
+
+
+Came out of pass
+
+Current element: 4 Current element: 5 
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-pass">Python Pass</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-break" style="float:left">¡û prev</a>
+<a class="next" href="python-pass" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-pass">next ¡ú</a>
+<a class="next" href="python-break">¡û prev</a>
+</div>
+<h1 class="h1">Python continue Statement</h1>
+<p>The continue statement in python is used to bring the program control to the beginning of the loop. The continue statement skips the remaining lines of code inside the loop and start with the next iteration. It is mainly used for a particular condition inside the loop so that we can skip some specific code for a particular condition.</p>
+<p>The syntax of Python continue statement is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+#loop statements
+continue;
+#the code to be skipped 
+</textarea></div>
+<h2 class="h3">Example 1</h2>
+<div class="codeblock"><textarea class="python" name="code">
+i = 0;
+while i!=10:
+    print("%d"%i);
+    continue;
+    i=i+1;
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+infinite loop
+</pre></div>
+<h2 class="h3">Example 2</h2>
+<div class="codeblock"><textarea class="python" name="code">
+i=1; #initializing a local variable
+#starting a loop from 1 to 10
+for i in range(1,11):
+    if i==5:
+        continue;
+    print("%d"%i);
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+1
+2
+3
+4
+6
+7
+8
+9
+10
+</pre></div>
+<hr/>
+<h2 class="h2">Pass Statement</h2>
+<p>The pass statement is a null operation since nothing happens when it is executed. It is used in the cases where a statement is syntactically needed but we don?t want to use any executable statement at its place.</p>
+<p>For example, it can be used while overriding a parent class method in the subclass but don't want to give its specific implementation in the subclass.</p>
+<p>Pass is also used where the code will be written somewhere but not yet written in the program file. </p>
+<p>The syntax of the pass statement is given below.</p>
+<h2 class="h3">Example </h2>
+<div class="codeblock"><textarea class="python" name="code">
+list = [1,2,3,4,5]
+flag = 0
+for i in list:
+    print("Current element:",i,end=" ");
+    if i==3:
+        pass;
+        print("\nWe are inside pass block\n");
+        flag = 1;
+    if flag==1:
+        print("\nCame out of pass\n");
+        flag=0;
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Current element: 1 Current element: 2 Current element: 3 
+We are inside pass block
+
+
+Came out of pass
+
+Current element: 4 Current element: 5 
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-pass">Python Pass</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-break" style="float:left">¡û prev</a>
+<a class="next" href="python-pass" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-pass">next ¡ú</a>
+<a class="next" href="python-break">¡û prev</a>
+</div>
+<h1 class="h1">Python continue Statement</h1>
+<p>The continue statement in python is used to bring the program control to the beginning of the loop. The continue statement skips the remaining lines of code inside the loop and start with the next iteration. It is mainly used for a particular condition inside the loop so that we can skip some specific code for a particular condition.</p>
+<p>The syntax of Python continue statement is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+#loop statements
+continue;
+#the code to be skipped 
+</textarea></div>
+<h2 class="h3">Example 1</h2>
+<div class="codeblock"><textarea class="python" name="code">
+i = 0;
+while i!=10:
+    print("%d"%i);
+    continue;
+    i=i+1;
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+infinite loop
+</pre></div>
+<h2 class="h3">Example 2</h2>
+<div class="codeblock"><textarea class="python" name="code">
+i=1; #initializing a local variable
+#starting a loop from 1 to 10
+for i in range(1,11):
+    if i==5:
+        continue;
+    print("%d"%i);
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+1
+2
+3
+4
+6
+7
+8
+9
+10
+</pre></div>
+<hr/>
+<h2 class="h2">Pass Statement</h2>
+<p>The pass statement is a null operation since nothing happens when it is executed. It is used in the cases where a statement is syntactically needed but we don?t want to use any executable statement at its place.</p>
+<p>For example, it can be used while overriding a parent class method in the subclass but don't want to give its specific implementation in the subclass.</p>
+<p>Pass is also used where the code will be written somewhere but not yet written in the program file. </p>
+<p>The syntax of the pass statement is given below.</p>
+<h2 class="h3">Example </h2>
+<div class="codeblock"><textarea class="python" name="code">
+list = [1,2,3,4,5]
+flag = 0
+for i in list:
+    print("Current element:",i,end=" ");
+    if i==3:
+        pass;
+        print("\nWe are inside pass block\n");
+        flag = 1;
+    if flag==1:
+        print("\nCame out of pass\n");
+        flag=0;
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Current element: 1 Current element: 2 Current element: 3 
+We are inside pass block
+
+
+Came out of pass
+
+Current element: 4 Current element: 5 
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-pass">Python Pass</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-break" style="float:left">¡û prev</a>
+<a class="next" href="python-pass" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-pass">next ¡ú</a>
+<a class="next" href="python-break">¡û prev</a>
+</div>
+<h1 class="h1">Python continue Statement</h1>
+<p>The continue statement in python is used to bring the program control to the beginning of the loop. The continue statement skips the remaining lines of code inside the loop and start with the next iteration. It is mainly used for a particular condition inside the loop so that we can skip some specific code for a particular condition.</p>
+<p>The syntax of Python continue statement is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+#loop statements
+continue;
+#the code to be skipped 
+</textarea></div>
+<h2 class="h3">Example 1</h2>
+<div class="codeblock"><textarea class="python" name="code">
+i = 0;
+while i!=10:
+    print("%d"%i);
+    continue;
+    i=i+1;
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+infinite loop
+</pre></div>
+<h2 class="h3">Example 2</h2>
+<div class="codeblock"><textarea class="python" name="code">
+i=1; #initializing a local variable
+#starting a loop from 1 to 10
+for i in range(1,11):
+    if i==5:
+        continue;
+    print("%d"%i);
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+1
+2
+3
+4
+6
+7
+8
+9
+10
+</pre></div>
+<hr/>
+<h2 class="h2">Pass Statement</h2>
+<p>The pass statement is a null operation since nothing happens when it is executed. It is used in the cases where a statement is syntactically needed but we don?t want to use any executable statement at its place.</p>
+<p>For example, it can be used while overriding a parent class method in the subclass but don't want to give its specific implementation in the subclass.</p>
+<p>Pass is also used where the code will be written somewhere but not yet written in the program file. </p>
+<p>The syntax of the pass statement is given below.</p>
+<h2 class="h3">Example </h2>
+<div class="codeblock"><textarea class="python" name="code">
+list = [1,2,3,4,5]
+flag = 0
+for i in list:
+    print("Current element:",i,end=" ");
+    if i==3:
+        pass;
+        print("\nWe are inside pass block\n");
+        flag = 1;
+    if flag==1:
+        print("\nCame out of pass\n");
+        flag=0;
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Current element: 1 Current element: 2 Current element: 3 
+We are inside pass block
+
+
+Came out of pass
+
+Current element: 4 Current element: 5 
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-pass">Python Pass</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-break" style="float:left">¡û prev</a>
+<a class="next" href="python-pass" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html></body></html>

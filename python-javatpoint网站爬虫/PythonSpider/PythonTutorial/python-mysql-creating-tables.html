@@ -1,0 +1,393 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-mysql-insert-operation">next ¡ú</a>
+<a class="next" href="python-mysql-creating-new-database">¡û prev</a>
+</div>
+<h1 class="h1">Creating the table</h1>
+<p>In this section of the tutorial, we will create the new table Employee. We have to mention the database name while establishing the connection object. </p>
+<p>We can create the new table by using the CREATE TABLE statement of SQL. In our database PythonDB, the table Employee will have the four columns, i.e., name, id, salary, and department_id initially.</p>
+<p>The following query is used to create the new table Employee.</p>
+<div class="codeblock"><textarea class="python" name="code">
+&gt;  create table Employee (name varchar(20) not null, id int primary key, salary float not null, Dept_Id int not null)
+</textarea></div>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import mysql.connector
+
+#Create the connection object 
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+#creating the cursor object
+cur = myconn.cursor()
+
+try:
+    #Creating a table with name Employee having four columns i.e., name, id, salary, and department id
+    dbs = cur.execute("create table Employee(name varchar(20) not null, id int(20) not null primary key, salary float not null, Dept_id int not null)")
+except:
+    myconn.rollback()
+
+myconn.close()
+</textarea></div>
+<img alt="Creating table" src="python/images/creating-the-table.png"/>
+<p>Now, we may check that the table Employee is present in the database.</p>
+<h2 class="h2">Alter Table</h2>
+<p>Sometimes, we may forget to create some columns, or we may need to update the table schema. The alter statement used to alter the table schema if required. Here, we will add the column branch_name to the table Employee. The following SQL query is used for this purpose.</p>
+<div class="codeblock"><textarea class="python" name="code">
+alter table Employee add branch_name varchar(20) not null
+</textarea></div>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import mysql.connector
+
+#Create the connection object 
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+#creating the cursor object
+cur = myconn.cursor()
+
+try:
+    #adding a column branch name to the table Employee
+    cur.execute("alter table Employee add branch_name varchar(20) not null")
+except:
+    myconn.rollback()
+
+myconn.close()
+</textarea></div>
+<img alt="Creating the table" src="python/images/creating-the-table2.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-mysql-insert-operation">Insert Operation</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-mysql-creating-new-database" style="float:left">¡û prev</a>
+<a class="next" href="python-mysql-insert-operation" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-mysql-insert-operation">next ¡ú</a>
+<a class="next" href="python-mysql-creating-new-database">¡û prev</a>
+</div>
+<h1 class="h1">Creating the table</h1>
+<p>In this section of the tutorial, we will create the new table Employee. We have to mention the database name while establishing the connection object. </p>
+<p>We can create the new table by using the CREATE TABLE statement of SQL. In our database PythonDB, the table Employee will have the four columns, i.e., name, id, salary, and department_id initially.</p>
+<p>The following query is used to create the new table Employee.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+&gt;  create table Employee (name varchar(20) not null, id int primary key, salary float not null, Dept_Id int not null)
+
+</textarea></div>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+
+
+try:
+
+    #Creating a table with name Employee having four columns i.e., name, id, salary, and department id
+
+    dbs = cur.execute("create table Employee(name varchar(20) not null, id int(20) not null primary key, salary float not null, Dept_id int not null)")
+
+except:
+
+    myconn.rollback()
+
+
+
+myconn.close()
+
+</textarea></div>
+<img alt="Creating table" src="python/images/creating-the-table.png"/>
+<p>Now, we may check that the table Employee is present in the database.</p>
+<h2 class="h2">Alter Table</h2>
+<p>Sometimes, we may forget to create some columns, or we may need to update the table schema. The alter statement used to alter the table schema if required. Here, we will add the column branch_name to the table Employee. The following SQL query is used for this purpose.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+alter table Employee add branch_name varchar(20) not null
+
+</textarea></div>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+
+
+try:
+
+    #adding a column branch name to the table Employee
+
+    cur.execute("alter table Employee add branch_name varchar(20) not null")
+
+except:
+
+    myconn.rollback()
+
+
+
+myconn.close()
+
+</textarea></div>
+<img alt="Creating the table" src="python/images/creating-the-table2.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-mysql-insert-operation">Insert Operation</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-mysql-creating-new-database" style="float:left">¡û prev</a>
+<a class="next" href="python-mysql-insert-operation" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-mysql-insert-operation">next ¡ú</a>
+<a class="next" href="python-mysql-creating-new-database">¡û prev</a>
+</div>
+<h1 class="h1">Creating the table</h1>
+<p>In this section of the tutorial, we will create the new table Employee. We have to mention the database name while establishing the connection object. </p>
+<p>We can create the new table by using the CREATE TABLE statement of SQL. In our database PythonDB, the table Employee will have the four columns, i.e., name, id, salary, and department_id initially.</p>
+<p>The following query is used to create the new table Employee.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+&gt;  create table Employee (name varchar(20) not null, id int primary key, salary float not null, Dept_Id int not null)
+
+</textarea></div>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+
+
+try:
+
+    #Creating a table with name Employee having four columns i.e., name, id, salary, and department id
+
+    dbs = cur.execute("create table Employee(name varchar(20) not null, id int(20) not null primary key, salary float not null, Dept_id int not null)")
+
+except:
+
+    myconn.rollback()
+
+
+
+myconn.close()
+
+</textarea></div>
+<img alt="Creating table" src="python/images/creating-the-table.png"/>
+<p>Now, we may check that the table Employee is present in the database.</p>
+<h2 class="h2">Alter Table</h2>
+<p>Sometimes, we may forget to create some columns, or we may need to update the table schema. The alter statement used to alter the table schema if required. Here, we will add the column branch_name to the table Employee. The following SQL query is used for this purpose.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+alter table Employee add branch_name varchar(20) not null
+
+</textarea></div>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+
+
+try:
+
+    #adding a column branch name to the table Employee
+
+    cur.execute("alter table Employee add branch_name varchar(20) not null")
+
+except:
+
+    myconn.rollback()
+
+
+
+myconn.close()
+
+</textarea></div>
+<img alt="Creating the table" src="python/images/creating-the-table2.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-mysql-insert-operation">Insert Operation</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-mysql-creating-new-database" style="float:left">¡û prev</a>
+<a class="next" href="python-mysql-insert-operation" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-mysql-insert-operation">next ¡ú</a>
+<a class="next" href="python-mysql-creating-new-database">¡û prev</a>
+</div>
+<h1 class="h1">Creating the table</h1>
+<p>In this section of the tutorial, we will create the new table Employee. We have to mention the database name while establishing the connection object. </p>
+<p>We can create the new table by using the CREATE TABLE statement of SQL. In our database PythonDB, the table Employee will have the four columns, i.e., name, id, salary, and department_id initially.</p>
+<p>The following query is used to create the new table Employee.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+&gt;  create table Employee (name varchar(20) not null, id int primary key, salary float not null, Dept_Id int not null)
+
+</textarea></div>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+
+
+try:
+
+    #Creating a table with name Employee having four columns i.e., name, id, salary, and department id
+
+    dbs = cur.execute("create table Employee(name varchar(20) not null, id int(20) not null primary key, salary float not null, Dept_id int not null)")
+
+except:
+
+    myconn.rollback()
+
+
+
+myconn.close()
+
+</textarea></div>
+<img alt="Creating table" src="python/images/creating-the-table.png"/>
+<p>Now, we may check that the table Employee is present in the database.</p>
+<h2 class="h2">Alter Table</h2>
+<p>Sometimes, we may forget to create some columns, or we may need to update the table schema. The alter statement used to alter the table schema if required. Here, we will add the column branch_name to the table Employee. The following SQL query is used for this purpose.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+alter table Employee add branch_name varchar(20) not null
+
+</textarea></div>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+
+
+try:
+
+    #adding a column branch name to the table Employee
+
+    cur.execute("alter table Employee add branch_name varchar(20) not null")
+
+except:
+
+    myconn.rollback()
+
+
+
+myconn.close()
+
+</textarea></div>
+<img alt="Creating the table" src="python/images/creating-the-table2.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-mysql-insert-operation">Insert Operation</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-mysql-creating-new-database" style="float:left">¡û prev</a>
+<a class="next" href="python-mysql-insert-operation" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html></body></html>

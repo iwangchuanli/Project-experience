@@ -1,0 +1,2033 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-dictionary">next ¡ú</a>
+<a class="next" href="python-tuples">¡û prev</a>
+</div>
+<h1 class="h1">Python Set </h1>
+<p>The set in python can be defined as the unordered collection of various items enclosed within the curly braces. The elements of the set can not be duplicate. The elements of the python set must be immutable. </p>
+<p>Unlike other collections in python, there is no index attached to the elements of the set, i.e., we cannot directly access any element of the set by the index. However, we can print them all together or we can get the list of elements by looping through the set. </p>
+<h2 class="h2">Creating a set</h2>
+<p>The set can be created by enclosing the comma separated items with the curly braces. Python also provides the set method which can be used to create the set by the passed sequence. </p>
+<h2 class="h3">Example 1: using curly braces </h2>
+<div class="codeblock"><textarea class="python" name="code">
+Days = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"}
+print(Days)
+print(type(Days))
+print("looping through the set elements ... ")
+for i in Days:
+	print(i)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+{'Friday', 'Tuesday', 'Monday', 'Saturday', 'Thursday', 'Sunday', 'Wednesday'}
+&lt;class 'set'&gt;
+looping through the set elements ... 
+Friday
+Tuesday
+Monday
+Saturday
+Thursday
+Sunday
+Wednesday
+</pre></div>
+<h2 class="h3">Example 2: using set() method </h2>
+<div class="codeblock"><textarea class="python" name="code">
+Days = set(["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"])
+print(Days)
+print(type(Days))
+print("looping through the set elements ... ")
+for i in Days:
+	print(i)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+{'Friday', 'Wednesday', 'Thursday', 'Saturday', 'Monday', 'Tuesday', 'Sunday'}
+&lt;class 'set'&gt;
+looping through the set elements ... 
+Friday
+Wednesday
+Thursday
+Saturday
+Monday
+Tuesday
+Sunday
+</pre></div>
+<hr/>
+<h2 class="h3">Python Set operations </h2>
+<p>In the previous example, we have discussed about how the set is created in python. However, we can perform various mathematical operations on  python sets like union, intersection,  difference, etc. </p>
+<h2 class="h3">Adding items to the set</h2>
+<p>Python provides the add() method which can be used to add some particular item to the set. Consider the following example. </p>
+<h2 class="h3">Example:</h2>
+<div class="codeblock"><textarea class="python" name="code">
+Months = set(["January","February", "March", "April", "May", "June"])
+print("\nprinting the original set ... ")
+print(Months)
+print("\nAdding other months to the set...");
+Months.add("July");
+Months.add("August");
+print("\nPrinting the modified set...");
+print(Months)
+print("\nlooping through the set elements ... ")
+for i in Months:
+	print(i)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+printing the original set ... 
+{'February', 'May', 'April', 'March', 'June', 'January'}
+
+Adding other months to the set...
+
+Printing the modified set...
+{'February', 'July', 'May', 'April', 'March', 'August', 'June', 'January'}
+
+looping through the set elements ... 
+February
+July
+May
+April
+March
+August
+June
+January 
+</pre></div>
+<p>To add more than one item in the set, Python provides the <strong>update()</strong> method. </p>
+<p>Consider the following example. </p>
+<h2 class="h3">Example </h2>
+<div class="codeblock"><textarea class="python" name="code">
+Months = set(["January","February", "March", "April", "May", "June"])
+print("\nprinting the original set ... ")
+print(Months)
+print("\nupdating the original set ... ")
+Months.update(["July","August","September","October"]);
+print("\nprinting the modified set ... ") 
+print(Months); 
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+printing the original set ... 
+{'January', 'February', 'April', 'May', 'June', 'March'}
+
+updating the original set ... 
+
+printing the modified set ... 
+{'January', 'February', 'April', 'August', 'October', 'May', 'June', 'July', 'September', 'March'}
+</pre></div>
+<h2 class="h3">Removing items from the set </h2>
+<p>Python provides <strong>discard()</strong> method which can be used to remove the items from the set. </p>
+<p>Consider the following example. </p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+Months = set(["January","February", "March", "April", "May", "June"])
+print("\nprinting the original set ... ")
+print(Months)
+print("\nRemoving some months from the set...");
+Months.discard("January");
+Months.discard("May");
+print("\nPrinting the modified set...");
+print(Months)
+print("\nlooping through the set elements ... ")
+for i in Months:
+	print(i)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+printing the original set ... 
+{'February', 'January', 'March', 'April', 'June', 'May'}
+
+Removing some months from the set...
+
+Printing the modified set...
+{'February', 'March', 'April', 'June'}
+
+looping through the set elements ... 
+February
+March
+April
+June
+</pre></div>
+<p>Python also provide the remove() method to remove the items from the set. Consider the following example to remove the items using remove() method. </p>
+<h2 class="h3">Example </h2>
+<div class="codeblock"><textarea class="python" name="code">
+Months = set(["January","February", "March", "April", "May", "June"])
+print("\nprinting the original set ... ")
+print(Months)
+print("\nRemoving some months from the set...");
+Months.remove("January");
+Months.remove("May");
+print("\nPrinting the modified set...");
+print(Months)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+printing the original set ... 
+{'February', 'June', 'April', 'May', 'January', 'March'}
+
+Removing some months from the set...
+
+Printing the modified set...
+{'February', 'June', 'April', 'March'}
+</pre></div>
+<p>We can also use the pop() method to remove the item. However, this method will always remove the last item.</p>
+<p>Consider the following example to remove the last item from the set. </p>
+<div class="codeblock"><textarea class="python" name="code">
+Months = set(["January","February", "March", "April", "May", "June"])
+print("\nprinting the original set ... ")
+print(Months)
+print("\nRemoving some months from the set...");
+Months.pop();
+Months.pop();
+print("\nPrinting the modified set...");
+print(Months)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+printing the original set ... 
+{'June', 'January', 'May', 'April', 'February', 'March'}
+
+Removing some months from the set...
+
+Printing the modified set...
+{'May', 'April', 'February', 'March'}
+</pre></div>
+<p>Python provides the clear() method to remove all the items from the set. </p>
+<p>Consider the following example. </p>
+<div class="codeblock"><textarea class="python" name="code">
+Months = set(["January","February", "March", "April", "May", "June"])
+print("\nprinting the original set ... ")
+print(Months)
+print("\nRemoving all the items from the set...");
+Months.clear()
+print("\nPrinting the modified set...")
+print(Months)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+printing the original set ... 
+{'January', 'May', 'June', 'April', 'March', 'February'}
+
+Removing all the items from the set...
+
+Printing the modified set...
+set()
+</pre></div>
+<hr/>
+<h2 class="h2">Difference between discard() and remove() </h2>
+<p>Despite the fact that discard() and remove() method both perform the same task, There is one main difference between discard() and remove(). </p>
+<p>If the key to be deleted from the set using discard() doesn't exist in the set, the python will not give the error. The program maintains its control flow.</p>
+<p>On the other hand, if the item to be deleted from the set using remove() doesn't exist in the set, the python will give the error. </p>
+<p>Consider the following example. </p>
+<h2 class="h3">Example </h2>
+<div class="codeblock"><textarea class="python" name="code">
+Months = set(["January","February", "March", "April", "May", "June"])
+print("\nprinting the original set ... ")
+print(Months)
+print("\nRemoving items through discard() method...");
+Months.discard("Feb"); #will not give an error although the key feb is not available in the set
+print("\nprinting the modified set...")
+print(Months)
+print("\nRemoving items through remove() method...");
+Months.remove("Jan") #will give an error as the key jan is not available in the set. 
+print("\nPrinting the modified set...")
+print(Months)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+printing the original set ... 
+{'March', 'January', 'April', 'June', 'February', 'May'}
+
+Removing items through discard() method...
+
+printing the modified set...
+{'March', 'January', 'April', 'June', 'February', 'May'}
+
+Removing items through remove() method...
+Traceback (most recent call last):
+  File "set.py", line 9, in <module>
+    Months.remove("Jan")
+KeyError: 'Jan'
+</module></pre></div>
+<h2 class="h2">Union of two Sets </h2>
+<p>The union of two sets are calculated by using the or (|) operator. The union of the two sets contains the all the items that are present in both the sets. </p>
+<p>Consider the following example to calculate the union of two sets. </p>
+<h2 class="h3">Example 1 : using union | operator </h2>
+<div class="codeblock"><textarea class="python" name="code">
+Days1 = {"Monday","Tuesday","Wednesday","Thursday"}
+Days2 = {"Friday","Saturday","Sunday"}
+print(Days1|Days2) #printing the union of the sets 
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+{'Friday', 'Sunday', 'Saturday', 'Tuesday', 'Wednesday', 'Monday', 'Thursday'}
+</pre></div>
+<p>Python also provides the <strong>union()</strong> method which can also be used to calculate the union of two sets. Consider the following example. </p>
+<h2 class="h3">Example 2: using union() method </h2>
+<div class="codeblock"><textarea class="python" name="code">
+Days1 = {"Monday","Tuesday","Wednesday","Thursday"}
+Days2 = {"Friday","Saturday","Sunday"}
+print(Days1.union(Days2)) #printing the union of the sets 
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+{'Friday', 'Monday', 'Tuesday', 'Thursday', 'Wednesday', 'Sunday', 'Saturday'}
+</pre></div>
+<h2 class="h2">Intersection of two sets </h2>
+<p>The &amp; (intersection) operator is used to calculate the intersection of the two sets in python. The intersection of the two sets are given as the set of the elements that common in both sets. </p>
+<p>Consider the following example. </p>
+<h2 class="h3">Example 1: using &amp; operator </h2>
+<div class="codeblock"><textarea class="python" name="code">
+set1 = {"Ayush","John", "David", "Martin"}
+set2 = {"Steve","Milan","David", "Martin"}
+print(set1&amp;set2) #prints the intersection of the two sets
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+{'Martin', 'David'}
+</pre></div>
+<h2 class="h3">Example 2: using intersection() method </h2>
+<div class="codeblock"><textarea class="python" name="code">
+set1 = {"Ayush","John", "David", "Martin"}
+set2 = {"Steave","Milan","David", "Martin"}
+print(set1.intersection(set2)) #prints the intersection of the two sets
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+{'Martin', 'David'}
+</pre></div>
+<h2 class="h2">The intersection_update() method</h2>
+<p>The intersection_update() method removes the items from the original set that are not present in both the sets (all the sets if more than one are specified).</p>
+<p>The Intersection_update() method is different from intersection() method since it modifies the original set by removing the unwanted items, on the other hand, intersection() method returns a new set. </p>
+<p>Consider the following example. </p>
+<div class="codeblock"><textarea class="python" name="code">
+a = {"ayush", "bob", "castle"}
+b = {"castle", "dude", "emyway"}
+c = {"fuson", "gaurav", "castle"}
+
+a.intersection_update(b, c)
+
+print(a)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+{'castle'}
+</pre></div>
+<h2 class="h2">Difference of two sets </h2>
+<p>The difference of two sets can be calculated by using the subtraction (-) operator. The resulting set will be obtained by removing all the elements from set 1 that are present in set 2. </p>
+<p>Consider the following example. </p>
+<h2 class="h3">Example 1 : using subtraction ( - ) operator </h2>
+<div class="codeblock"><textarea class="python" name="code">
+Days1 = {"Monday",  "Tuesday", "Wednesday", "Thursday"}
+Days2 = {"Monday", "Tuesday", "Sunday"}
+print(Days1-Days2) #{"Wednesday", "Thursday" will be printed}
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+{'Thursday', 'Wednesday'}
+</pre></div>
+<h2 class="h3">Example 2 : using difference() method </h2>
+<div class="codeblock"><textarea class="python" name="code">
+Days1 = {"Monday",  "Tuesday", "Wednesday", "Thursday"}
+Days2 = {"Monday", "Tuesday", "Sunday"}
+print(Days1.difference(Days2)) # prints the difference of the two sets Days1 and Days2
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+{'Thursday', 'Wednesday'}
+</pre></div>
+<hr/>
+<h2 class="h2">Set comparisons </h2>
+<p>Python allows us to use the comparison operators i.e., &lt;, &gt;, &lt;=, &gt;= , == with the sets by using which we can check whether a set is subset, superset, or equivalent to other set. The boolean true or false is returned depending upon the items present inside the sets. </p>
+<p>Consider the following example. </p>
+<div class="codeblock"><textarea class="python" name="code">
+Days1 = {"Monday",  "Tuesday", "Wednesday", "Thursday"}
+Days2 = {"Monday", "Tuesday"}
+Days3 = {"Monday", "Tuesday", "Friday"}
+
+#Days1 is the superset of Days2 hence it will print true. 
+print (Days1&gt;Days2) 
+
+#prints false since Days1 is not the subset of Days2 
+print (Days1<days2) #prints="" (days2="Days3)" <="" and="" are="" days2="" days3="" equivalent="" false="" not="" print="" since="" textarea=""></days2)></textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+True
+False
+False
+</pre></div>
+<hr/>
+<h2 class="h2">FrozenSets </h2>
+<p>The frozen sets are the immutable form of the normal sets, i.e., the items of the frozen set can not be changed and therefore it can be used as a key in dictionary. </p>
+<p>The elements of the frozen set can not be changed after the creation. We cannot change or append the content of the frozen sets by using the methods like add() or remove().</p>
+<p>The frozenset() method is used to create the frozenset object. The iterable sequence is passed into this method which is converted into the frozen set as a return type of the method. </p>
+<p>Consider the following example to create the frozen set. </p>
+<div class="codeblock"><textarea class="python" name="code">
+Frozenset = frozenset([1,2,3,4,5]) 
+print(type(Frozenset))
+print("\nprinting the content of frozen set...")
+for i in Frozenset:
+	print(i);
+Frozenset.add(6) #gives an error since we cannot change the content of Frozenset after creation 
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+&lt;class 'frozenset'&gt;
+
+printing the content of frozen set...
+1
+2
+3
+4
+5
+Traceback (most recent call last):
+  File "set.py", line 6, in &lt;module&gt;
+    Frozenset.add(6) #gives an error since we can change the content of Frozenset after creation 
+AttributeError: 'frozenset' object has no attribute 'add'
+</pre></div>
+<h2 class="h2">Frozenset for the dictionary </h2>
+<p>If we pass the dictionary as the sequence inside the frozenset() method, it will take only the keys from the dictionary and returns a frozenset that contains the key of the dictionary as its elements. </p>
+<p>Consider the following example. </p>
+<div class="codeblock"><textarea class="python" name="code">
+Dictionary = {"Name":"John", "Country":"USA", "ID":101} 
+print(type(Dictionary))
+Frozenset = frozenset(Dictionary); #Frozenset will contain the keys of the dictionary
+print(type(Frozenset))
+for i in Frozenset: 
+	print(i)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+&lt;class 'dict'&gt;
+&lt;class 'frozenset'&gt;
+Name
+Country
+ID
+</pre></div>
+<hr/>
+<h2 class="h2">Python Built-in set methods </h2>
+<p>Python contains the following methods to be used with the sets. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Method </th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="python-set-add-method">add(item)</a></td>
+<td>It adds an item to the set. It has no effect if the item is already present in the set. </td>
+</tr>
+<tr>
+<td>2</td>
+<td>clear()</td>
+<td>It deletes all the items from the set. </td>
+</tr>
+<tr>
+<td>3</td>
+<td>copy()</td>
+<td>It returns a shallow copy of the set. </td>
+</tr>
+<tr>
+<td>4</td>
+<td>difference_update(....)</td>
+<td>It modifies this set by removing all the items that are also present in the specified sets. </td>
+</tr>
+<tr>
+<td>5</td>
+<td><a href="python-set-discard-method">discard(item)</a></td>
+<td>It removes the specified item from the set. </td>
+</tr>
+<tr>
+<td>6</td>
+<td>intersection()</td>
+<td>It returns a new set that contains only the common elements of both the sets. (all the sets if more than two are specified). </td>
+</tr>
+<tr>
+<td>7</td>
+<td>intersection_update(....)</td>
+<td>It removes the items from the original set that are not present in both the sets (all the sets if more than one are specified).</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Isdisjoint(....)</td>
+<td>Return True if two sets have a null intersection.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Issubset(....)</td>
+<td>Report whether another set contains this set.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Issuperset(....)</td>
+<td>Report whether this set contains another set.</td>
+</tr>
+<tr>
+<td>11</td>
+<td><a href="python-set-pop-method">pop()</a></td>
+<td>Remove and return an arbitrary set element that is the last element of the set. Raises KeyError if the set is empty.</td>
+</tr>
+<tr>
+<td>12</td>
+<td><a href="python-set-remove-method">remove(item)</a></td>
+<td>Remove an element from a set; it must be a member.  If the element is not a member, raise a KeyError.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>symmetric_difference(....)</td>
+<td>Remove an element from a set; it must be a member. If the element is not a member, raise a KeyError.</td>
+</tr>
+<tr>
+<td>14</td>
+<td>symmetric_difference_update(....)</td>
+<td>Update a set with the symmetric difference of itself and another.</td>
+</tr>
+<tr>
+<td>15</td>
+<td>union(....)</td>
+<td>Return the union of sets as a new set.<br/>(i.e. all elements that are in either set.)</td>
+</tr>
+<tr>
+<td>16</td>
+<td>update()</td>
+<td>Update a set with the union of itself and others.</td>
+</tr>
+</table>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-dictionary">Python Dictionary</a></span>
+</div>
+<!-- link -->
+<br><br/>
+<div id="bottomnext">
+<a class="next" href="python-tuples" style="float:left">¡û prev</a>
+<a class="next" href="python-dictionary" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</br></td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-dictionary">next ¡ú</a>
+<a class="next" href="python-tuples">¡û prev</a>
+</div>
+<h1 class="h1">Python Set </h1>
+<p>The set in python can be defined as the unordered collection of various items enclosed within the curly braces. The elements of the set can not be duplicate. The elements of the python set must be immutable. </p>
+<p>Unlike other collections in python, there is no index attached to the elements of the set, i.e., we cannot directly access any element of the set by the index. However, we can print them all together or we can get the list of elements by looping through the set. </p>
+<h2 class="h2">Creating a set</h2>
+<p>The set can be created by enclosing the comma separated items with the curly braces. Python also provides the set method which can be used to create the set by the passed sequence. </p>
+<h2 class="h3">Example 1: using curly braces </h2>
+<div class="codeblock"><textarea class="python" name="code">
+Days = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"}
+print(Days)
+print(type(Days))
+print("looping through the set elements ... ")
+for i in Days:
+	print(i)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+{'Friday', 'Tuesday', 'Monday', 'Saturday', 'Thursday', 'Sunday', 'Wednesday'}
+&lt;class 'set'&gt;
+looping through the set elements ... 
+Friday
+Tuesday
+Monday
+Saturday
+Thursday
+Sunday
+Wednesday
+</pre></div>
+<h2 class="h3">Example 2: using set() method </h2>
+<div class="codeblock"><textarea class="python" name="code">
+Days = set(["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"])
+print(Days)
+print(type(Days))
+print("looping through the set elements ... ")
+for i in Days:
+	print(i)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+{'Friday', 'Wednesday', 'Thursday', 'Saturday', 'Monday', 'Tuesday', 'Sunday'}
+&lt;class 'set'&gt;
+looping through the set elements ... 
+Friday
+Wednesday
+Thursday
+Saturday
+Monday
+Tuesday
+Sunday
+</pre></div>
+<hr/>
+<h2 class="h3">Python Set operations </h2>
+<p>In the previous example, we have discussed about how the set is created in python. However, we can perform various mathematical operations on  python sets like union, intersection,  difference, etc. </p>
+<h2 class="h3">Adding items to the set</h2>
+<p>Python provides the add() method which can be used to add some particular item to the set. Consider the following example. </p>
+<h2 class="h3">Example:</h2>
+<div class="codeblock"><textarea class="python" name="code">
+Months = set(["January","February", "March", "April", "May", "June"])
+print("\nprinting the original set ... ")
+print(Months)
+print("\nAdding other months to the set...");
+Months.add("July");
+Months.add("August");
+print("\nPrinting the modified set...");
+print(Months)
+print("\nlooping through the set elements ... ")
+for i in Months:
+	print(i)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+printing the original set ... 
+{'February', 'May', 'April', 'March', 'June', 'January'}
+
+Adding other months to the set...
+
+Printing the modified set...
+{'February', 'July', 'May', 'April', 'March', 'August', 'June', 'January'}
+
+looping through the set elements ... 
+February
+July
+May
+April
+March
+August
+June
+January 
+</pre></div>
+<p>To add more than one item in the set, Python provides the <strong>update()</strong> method. </p>
+<p>Consider the following example. </p>
+<h2 class="h3">Example </h2>
+<div class="codeblock"><textarea class="python" name="code">
+Months = set(["January","February", "March", "April", "May", "June"])
+print("\nprinting the original set ... ")
+print(Months)
+print("\nupdating the original set ... ")
+Months.update(["July","August","September","October"]);
+print("\nprinting the modified set ... ") 
+print(Months); 
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+printing the original set ... 
+{'January', 'February', 'April', 'May', 'June', 'March'}
+
+updating the original set ... 
+
+printing the modified set ... 
+{'January', 'February', 'April', 'August', 'October', 'May', 'June', 'July', 'September', 'March'}
+</pre></div>
+<h2 class="h3">Removing items from the set </h2>
+<p>Python provides <strong>discard()</strong> method which can be used to remove the items from the set. </p>
+<p>Consider the following example. </p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+Months = set(["January","February", "March", "April", "May", "June"])
+print("\nprinting the original set ... ")
+print(Months)
+print("\nRemoving some months from the set...");
+Months.discard("January");
+Months.discard("May");
+print("\nPrinting the modified set...");
+print(Months)
+print("\nlooping through the set elements ... ")
+for i in Months:
+	print(i)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+printing the original set ... 
+{'February', 'January', 'March', 'April', 'June', 'May'}
+
+Removing some months from the set...
+
+Printing the modified set...
+{'February', 'March', 'April', 'June'}
+
+looping through the set elements ... 
+February
+March
+April
+June
+</pre></div>
+<p>Python also provide the remove() method to remove the items from the set. Consider the following example to remove the items using remove() method. </p>
+<h2 class="h3">Example </h2>
+<div class="codeblock"><textarea class="python" name="code">
+Months = set(["January","February", "March", "April", "May", "June"])
+print("\nprinting the original set ... ")
+print(Months)
+print("\nRemoving some months from the set...");
+Months.remove("January");
+Months.remove("May");
+print("\nPrinting the modified set...");
+print(Months)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+printing the original set ... 
+{'February', 'June', 'April', 'May', 'January', 'March'}
+
+Removing some months from the set...
+
+Printing the modified set...
+{'February', 'June', 'April', 'March'}
+</pre></div>
+<p>We can also use the pop() method to remove the item. However, this method will always remove the last item.</p>
+<p>Consider the following example to remove the last item from the set. </p>
+<div class="codeblock"><textarea class="python" name="code">
+Months = set(["January","February", "March", "April", "May", "June"])
+print("\nprinting the original set ... ")
+print(Months)
+print("\nRemoving some months from the set...");
+Months.pop();
+Months.pop();
+print("\nPrinting the modified set...");
+print(Months)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+printing the original set ... 
+{'June', 'January', 'May', 'April', 'February', 'March'}
+
+Removing some months from the set...
+
+Printing the modified set...
+{'May', 'April', 'February', 'March'}
+</pre></div>
+<p>Python provides the clear() method to remove all the items from the set. </p>
+<p>Consider the following example. </p>
+<div class="codeblock"><textarea class="python" name="code">
+Months = set(["January","February", "March", "April", "May", "June"])
+print("\nprinting the original set ... ")
+print(Months)
+print("\nRemoving all the items from the set...");
+Months.clear()
+print("\nPrinting the modified set...")
+print(Months)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+printing the original set ... 
+{'January', 'May', 'June', 'April', 'March', 'February'}
+
+Removing all the items from the set...
+
+Printing the modified set...
+set()
+</pre></div>
+<hr/>
+<h2 class="h2">Difference between discard() and remove() </h2>
+<p>Despite the fact that discard() and remove() method both perform the same task, There is one main difference between discard() and remove(). </p>
+<p>If the key to be deleted from the set using discard() doesn't exist in the set, the python will not give the error. The program maintains its control flow.</p>
+<p>On the other hand, if the item to be deleted from the set using remove() doesn't exist in the set, the python will give the error. </p>
+<p>Consider the following example. </p>
+<h2 class="h3">Example </h2>
+<div class="codeblock"><textarea class="python" name="code">
+Months = set(["January","February", "March", "April", "May", "June"])
+print("\nprinting the original set ... ")
+print(Months)
+print("\nRemoving items through discard() method...");
+Months.discard("Feb"); #will not give an error although the key feb is not available in the set
+print("\nprinting the modified set...")
+print(Months)
+print("\nRemoving items through remove() method...");
+Months.remove("Jan") #will give an error as the key jan is not available in the set. 
+print("\nPrinting the modified set...")
+print(Months)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+printing the original set ... 
+{'March', 'January', 'April', 'June', 'February', 'May'}
+
+Removing items through discard() method...
+
+printing the modified set...
+{'March', 'January', 'April', 'June', 'February', 'May'}
+
+Removing items through remove() method...
+Traceback (most recent call last):
+  File "set.py", line 9, in <module>
+    Months.remove("Jan")
+KeyError: 'Jan'
+</module></pre></div>
+<h2 class="h2">Union of two Sets </h2>
+<p>The union of two sets are calculated by using the or (|) operator. The union of the two sets contains the all the items that are present in both the sets. </p>
+<p>Consider the following example to calculate the union of two sets. </p>
+<h2 class="h3">Example 1 : using union | operator </h2>
+<div class="codeblock"><textarea class="python" name="code">
+Days1 = {"Monday","Tuesday","Wednesday","Thursday"}
+Days2 = {"Friday","Saturday","Sunday"}
+print(Days1|Days2) #printing the union of the sets 
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+{'Friday', 'Sunday', 'Saturday', 'Tuesday', 'Wednesday', 'Monday', 'Thursday'}
+</pre></div>
+<p>Python also provides the <strong>union()</strong> method which can also be used to calculate the union of two sets. Consider the following example. </p>
+<h2 class="h3">Example 2: using union() method </h2>
+<div class="codeblock"><textarea class="python" name="code">
+Days1 = {"Monday","Tuesday","Wednesday","Thursday"}
+Days2 = {"Friday","Saturday","Sunday"}
+print(Days1.union(Days2)) #printing the union of the sets 
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+{'Friday', 'Monday', 'Tuesday', 'Thursday', 'Wednesday', 'Sunday', 'Saturday'}
+</pre></div>
+<h2 class="h2">Intersection of two sets </h2>
+<p>The &amp; (intersection) operator is used to calculate the intersection of the two sets in python. The intersection of the two sets are given as the set of the elements that common in both sets. </p>
+<p>Consider the following example. </p>
+<h2 class="h3">Example 1: using &amp; operator </h2>
+<div class="codeblock"><textarea class="python" name="code">
+set1 = {"Ayush","John", "David", "Martin"}
+set2 = {"Steve","Milan","David", "Martin"}
+print(set1&amp;set2) #prints the intersection of the two sets
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+{'Martin', 'David'}
+</pre></div>
+<h2 class="h3">Example 2: using intersection() method </h2>
+<div class="codeblock"><textarea class="python" name="code">
+set1 = {"Ayush","John", "David", "Martin"}
+set2 = {"Steave","Milan","David", "Martin"}
+print(set1.intersection(set2)) #prints the intersection of the two sets
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+{'Martin', 'David'}
+</pre></div>
+<h2 class="h2">The intersection_update() method</h2>
+<p>The intersection_update() method removes the items from the original set that are not present in both the sets (all the sets if more than one are specified).</p>
+<p>The Intersection_update() method is different from intersection() method since it modifies the original set by removing the unwanted items, on the other hand, intersection() method returns a new set. </p>
+<p>Consider the following example. </p>
+<div class="codeblock"><textarea class="python" name="code">
+a = {"ayush", "bob", "castle"}
+b = {"castle", "dude", "emyway"}
+c = {"fuson", "gaurav", "castle"}
+
+a.intersection_update(b, c)
+
+print(a)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+{'castle'}
+</pre></div>
+<h2 class="h2">Difference of two sets </h2>
+<p>The difference of two sets can be calculated by using the subtraction (-) operator. The resulting set will be obtained by removing all the elements from set 1 that are present in set 2. </p>
+<p>Consider the following example. </p>
+<h2 class="h3">Example 1 : using subtraction ( - ) operator </h2>
+<div class="codeblock"><textarea class="python" name="code">
+Days1 = {"Monday",  "Tuesday", "Wednesday", "Thursday"}
+Days2 = {"Monday", "Tuesday", "Sunday"}
+print(Days1-Days2) #{"Wednesday", "Thursday" will be printed}
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+{'Thursday', 'Wednesday'}
+</pre></div>
+<h2 class="h3">Example 2 : using difference() method </h2>
+<div class="codeblock"><textarea class="python" name="code">
+Days1 = {"Monday",  "Tuesday", "Wednesday", "Thursday"}
+Days2 = {"Monday", "Tuesday", "Sunday"}
+print(Days1.difference(Days2)) # prints the difference of the two sets Days1 and Days2
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+{'Thursday', 'Wednesday'}
+</pre></div>
+<hr/>
+<h2 class="h2">Set comparisons </h2>
+<p>Python allows us to use the comparison operators i.e., &lt;, &gt;, &lt;=, &gt;= , == with the sets by using which we can check whether a set is subset, superset, or equivalent to other set. The boolean true or false is returned depending upon the items present inside the sets. </p>
+<p>Consider the following example. </p>
+<div class="codeblock"><textarea class="python" name="code">
+Days1 = {"Monday",  "Tuesday", "Wednesday", "Thursday"}
+Days2 = {"Monday", "Tuesday"}
+Days3 = {"Monday", "Tuesday", "Friday"}
+
+#Days1 is the superset of Days2 hence it will print true. 
+print (Days1&gt;Days2) 
+
+#prints false since Days1 is not the subset of Days2 
+print (Days1<days2) #prints="" (days2="Days3)" <="" and="" are="" days2="" days3="" equivalent="" false="" not="" print="" since="" textarea=""></days2)></textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+True
+False
+False
+</pre></div>
+<hr/>
+<h2 class="h2">FrozenSets </h2>
+<p>The frozen sets are the immutable form of the normal sets, i.e., the items of the frozen set can not be changed and therefore it can be used as a key in dictionary. </p>
+<p>The elements of the frozen set can not be changed after the creation. We cannot change or append the content of the frozen sets by using the methods like add() or remove().</p>
+<p>The frozenset() method is used to create the frozenset object. The iterable sequence is passed into this method which is converted into the frozen set as a return type of the method. </p>
+<p>Consider the following example to create the frozen set. </p>
+<div class="codeblock"><textarea class="python" name="code">
+Frozenset = frozenset([1,2,3,4,5]) 
+print(type(Frozenset))
+print("\nprinting the content of frozen set...")
+for i in Frozenset:
+	print(i);
+Frozenset.add(6) #gives an error since we cannot change the content of Frozenset after creation 
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+&lt;class 'frozenset'&gt;
+
+printing the content of frozen set...
+1
+2
+3
+4
+5
+Traceback (most recent call last):
+  File "set.py", line 6, in &lt;module&gt;
+    Frozenset.add(6) #gives an error since we can change the content of Frozenset after creation 
+AttributeError: 'frozenset' object has no attribute 'add'
+</pre></div>
+<h2 class="h2">Frozenset for the dictionary </h2>
+<p>If we pass the dictionary as the sequence inside the frozenset() method, it will take only the keys from the dictionary and returns a frozenset that contains the key of the dictionary as its elements. </p>
+<p>Consider the following example. </p>
+<div class="codeblock"><textarea class="python" name="code">
+Dictionary = {"Name":"John", "Country":"USA", "ID":101} 
+print(type(Dictionary))
+Frozenset = frozenset(Dictionary); #Frozenset will contain the keys of the dictionary
+print(type(Frozenset))
+for i in Frozenset: 
+	print(i)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+&lt;class 'dict'&gt;
+&lt;class 'frozenset'&gt;
+Name
+Country
+ID
+</pre></div>
+<hr/>
+<h2 class="h2">Python Built-in set methods </h2>
+<p>Python contains the following methods to be used with the sets. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Method </th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="python-set-add-method">add(item)</a></td>
+<td>It adds an item to the set. It has no effect if the item is already present in the set. </td>
+</tr>
+<tr>
+<td>2</td>
+<td>clear()</td>
+<td>It deletes all the items from the set. </td>
+</tr>
+<tr>
+<td>3</td>
+<td>copy()</td>
+<td>It returns a shallow copy of the set. </td>
+</tr>
+<tr>
+<td>4</td>
+<td>difference_update(....)</td>
+<td>It modifies this set by removing all the items that are also present in the specified sets. </td>
+</tr>
+<tr>
+<td>5</td>
+<td><a href="python-set-discard-method">discard(item)</a></td>
+<td>It removes the specified item from the set. </td>
+</tr>
+<tr>
+<td>6</td>
+<td>intersection()</td>
+<td>It returns a new set that contains only the common elements of both the sets. (all the sets if more than two are specified). </td>
+</tr>
+<tr>
+<td>7</td>
+<td>intersection_update(....)</td>
+<td>It removes the items from the original set that are not present in both the sets (all the sets if more than one are specified).</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Isdisjoint(....)</td>
+<td>Return True if two sets have a null intersection.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Issubset(....)</td>
+<td>Report whether another set contains this set.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Issuperset(....)</td>
+<td>Report whether this set contains another set.</td>
+</tr>
+<tr>
+<td>11</td>
+<td><a href="python-set-pop-method">pop()</a></td>
+<td>Remove and return an arbitrary set element that is the last element of the set. Raises KeyError if the set is empty.</td>
+</tr>
+<tr>
+<td>12</td>
+<td><a href="python-set-remove-method">remove(item)</a></td>
+<td>Remove an element from a set; it must be a member.  If the element is not a member, raise a KeyError.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>symmetric_difference(....)</td>
+<td>Remove an element from a set; it must be a member. If the element is not a member, raise a KeyError.</td>
+</tr>
+<tr>
+<td>14</td>
+<td>symmetric_difference_update(....)</td>
+<td>Update a set with the symmetric difference of itself and another.</td>
+</tr>
+<tr>
+<td>15</td>
+<td>union(....)</td>
+<td>Return the union of sets as a new set.<br/>(i.e. all elements that are in either set.)</td>
+</tr>
+<tr>
+<td>16</td>
+<td>update()</td>
+<td>Update a set with the union of itself and others.</td>
+</tr>
+</table>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-dictionary">Python Dictionary</a></span>
+</div>
+<!-- link -->
+<br><br/>
+<div id="bottomnext">
+<a class="next" href="python-tuples" style="float:left">¡û prev</a>
+<a class="next" href="python-dictionary" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</br></td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-dictionary">next ¡ú</a>
+<a class="next" href="python-tuples">¡û prev</a>
+</div>
+<h1 class="h1">Python Set </h1>
+<p>The set in python can be defined as the unordered collection of various items enclosed within the curly braces. The elements of the set can not be duplicate. The elements of the python set must be immutable. </p>
+<p>Unlike other collections in python, there is no index attached to the elements of the set, i.e., we cannot directly access any element of the set by the index. However, we can print them all together or we can get the list of elements by looping through the set. </p>
+<h2 class="h2">Creating a set</h2>
+<p>The set can be created by enclosing the comma separated items with the curly braces. Python also provides the set method which can be used to create the set by the passed sequence. </p>
+<h2 class="h3">Example 1: using curly braces </h2>
+<div class="codeblock"><textarea class="python" name="code">
+Days = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"}
+print(Days)
+print(type(Days))
+print("looping through the set elements ... ")
+for i in Days:
+	print(i)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+{'Friday', 'Tuesday', 'Monday', 'Saturday', 'Thursday', 'Sunday', 'Wednesday'}
+&lt;class 'set'&gt;
+looping through the set elements ... 
+Friday
+Tuesday
+Monday
+Saturday
+Thursday
+Sunday
+Wednesday
+</pre></div>
+<h2 class="h3">Example 2: using set() method </h2>
+<div class="codeblock"><textarea class="python" name="code">
+Days = set(["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"])
+print(Days)
+print(type(Days))
+print("looping through the set elements ... ")
+for i in Days:
+	print(i)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+{'Friday', 'Wednesday', 'Thursday', 'Saturday', 'Monday', 'Tuesday', 'Sunday'}
+&lt;class 'set'&gt;
+looping through the set elements ... 
+Friday
+Wednesday
+Thursday
+Saturday
+Monday
+Tuesday
+Sunday
+</pre></div>
+<hr/>
+<h2 class="h3">Python Set operations </h2>
+<p>In the previous example, we have discussed about how the set is created in python. However, we can perform various mathematical operations on  python sets like union, intersection,  difference, etc. </p>
+<h2 class="h3">Adding items to the set</h2>
+<p>Python provides the add() method which can be used to add some particular item to the set. Consider the following example. </p>
+<h2 class="h3">Example:</h2>
+<div class="codeblock"><textarea class="python" name="code">
+Months = set(["January","February", "March", "April", "May", "June"])
+print("\nprinting the original set ... ")
+print(Months)
+print("\nAdding other months to the set...");
+Months.add("July");
+Months.add("August");
+print("\nPrinting the modified set...");
+print(Months)
+print("\nlooping through the set elements ... ")
+for i in Months:
+	print(i)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+printing the original set ... 
+{'February', 'May', 'April', 'March', 'June', 'January'}
+
+Adding other months to the set...
+
+Printing the modified set...
+{'February', 'July', 'May', 'April', 'March', 'August', 'June', 'January'}
+
+looping through the set elements ... 
+February
+July
+May
+April
+March
+August
+June
+January 
+</pre></div>
+<p>To add more than one item in the set, Python provides the <strong>update()</strong> method. </p>
+<p>Consider the following example. </p>
+<h2 class="h3">Example </h2>
+<div class="codeblock"><textarea class="python" name="code">
+Months = set(["January","February", "March", "April", "May", "June"])
+print("\nprinting the original set ... ")
+print(Months)
+print("\nupdating the original set ... ")
+Months.update(["July","August","September","October"]);
+print("\nprinting the modified set ... ") 
+print(Months); 
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+printing the original set ... 
+{'January', 'February', 'April', 'May', 'June', 'March'}
+
+updating the original set ... 
+
+printing the modified set ... 
+{'January', 'February', 'April', 'August', 'October', 'May', 'June', 'July', 'September', 'March'}
+</pre></div>
+<h2 class="h3">Removing items from the set </h2>
+<p>Python provides <strong>discard()</strong> method which can be used to remove the items from the set. </p>
+<p>Consider the following example. </p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+Months = set(["January","February", "March", "April", "May", "June"])
+print("\nprinting the original set ... ")
+print(Months)
+print("\nRemoving some months from the set...");
+Months.discard("January");
+Months.discard("May");
+print("\nPrinting the modified set...");
+print(Months)
+print("\nlooping through the set elements ... ")
+for i in Months:
+	print(i)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+printing the original set ... 
+{'February', 'January', 'March', 'April', 'June', 'May'}
+
+Removing some months from the set...
+
+Printing the modified set...
+{'February', 'March', 'April', 'June'}
+
+looping through the set elements ... 
+February
+March
+April
+June
+</pre></div>
+<p>Python also provide the remove() method to remove the items from the set. Consider the following example to remove the items using remove() method. </p>
+<h2 class="h3">Example </h2>
+<div class="codeblock"><textarea class="python" name="code">
+Months = set(["January","February", "March", "April", "May", "June"])
+print("\nprinting the original set ... ")
+print(Months)
+print("\nRemoving some months from the set...");
+Months.remove("January");
+Months.remove("May");
+print("\nPrinting the modified set...");
+print(Months)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+printing the original set ... 
+{'February', 'June', 'April', 'May', 'January', 'March'}
+
+Removing some months from the set...
+
+Printing the modified set...
+{'February', 'June', 'April', 'March'}
+</pre></div>
+<p>We can also use the pop() method to remove the item. However, this method will always remove the last item.</p>
+<p>Consider the following example to remove the last item from the set. </p>
+<div class="codeblock"><textarea class="python" name="code">
+Months = set(["January","February", "March", "April", "May", "June"])
+print("\nprinting the original set ... ")
+print(Months)
+print("\nRemoving some months from the set...");
+Months.pop();
+Months.pop();
+print("\nPrinting the modified set...");
+print(Months)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+printing the original set ... 
+{'June', 'January', 'May', 'April', 'February', 'March'}
+
+Removing some months from the set...
+
+Printing the modified set...
+{'May', 'April', 'February', 'March'}
+</pre></div>
+<p>Python provides the clear() method to remove all the items from the set. </p>
+<p>Consider the following example. </p>
+<div class="codeblock"><textarea class="python" name="code">
+Months = set(["January","February", "March", "April", "May", "June"])
+print("\nprinting the original set ... ")
+print(Months)
+print("\nRemoving all the items from the set...");
+Months.clear()
+print("\nPrinting the modified set...")
+print(Months)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+printing the original set ... 
+{'January', 'May', 'June', 'April', 'March', 'February'}
+
+Removing all the items from the set...
+
+Printing the modified set...
+set()
+</pre></div>
+<hr/>
+<h2 class="h2">Difference between discard() and remove() </h2>
+<p>Despite the fact that discard() and remove() method both perform the same task, There is one main difference between discard() and remove(). </p>
+<p>If the key to be deleted from the set using discard() doesn't exist in the set, the python will not give the error. The program maintains its control flow.</p>
+<p>On the other hand, if the item to be deleted from the set using remove() doesn't exist in the set, the python will give the error. </p>
+<p>Consider the following example. </p>
+<h2 class="h3">Example </h2>
+<div class="codeblock"><textarea class="python" name="code">
+Months = set(["January","February", "March", "April", "May", "June"])
+print("\nprinting the original set ... ")
+print(Months)
+print("\nRemoving items through discard() method...");
+Months.discard("Feb"); #will not give an error although the key feb is not available in the set
+print("\nprinting the modified set...")
+print(Months)
+print("\nRemoving items through remove() method...");
+Months.remove("Jan") #will give an error as the key jan is not available in the set. 
+print("\nPrinting the modified set...")
+print(Months)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+printing the original set ... 
+{'March', 'January', 'April', 'June', 'February', 'May'}
+
+Removing items through discard() method...
+
+printing the modified set...
+{'March', 'January', 'April', 'June', 'February', 'May'}
+
+Removing items through remove() method...
+Traceback (most recent call last):
+  File "set.py", line 9, in <module>
+    Months.remove("Jan")
+KeyError: 'Jan'
+</module></pre></div>
+<h2 class="h2">Union of two Sets </h2>
+<p>The union of two sets are calculated by using the or (|) operator. The union of the two sets contains the all the items that are present in both the sets. </p>
+<p>Consider the following example to calculate the union of two sets. </p>
+<h2 class="h3">Example 1 : using union | operator </h2>
+<div class="codeblock"><textarea class="python" name="code">
+Days1 = {"Monday","Tuesday","Wednesday","Thursday"}
+Days2 = {"Friday","Saturday","Sunday"}
+print(Days1|Days2) #printing the union of the sets 
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+{'Friday', 'Sunday', 'Saturday', 'Tuesday', 'Wednesday', 'Monday', 'Thursday'}
+</pre></div>
+<p>Python also provides the <strong>union()</strong> method which can also be used to calculate the union of two sets. Consider the following example. </p>
+<h2 class="h3">Example 2: using union() method </h2>
+<div class="codeblock"><textarea class="python" name="code">
+Days1 = {"Monday","Tuesday","Wednesday","Thursday"}
+Days2 = {"Friday","Saturday","Sunday"}
+print(Days1.union(Days2)) #printing the union of the sets 
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+{'Friday', 'Monday', 'Tuesday', 'Thursday', 'Wednesday', 'Sunday', 'Saturday'}
+</pre></div>
+<h2 class="h2">Intersection of two sets </h2>
+<p>The &amp; (intersection) operator is used to calculate the intersection of the two sets in python. The intersection of the two sets are given as the set of the elements that common in both sets. </p>
+<p>Consider the following example. </p>
+<h2 class="h3">Example 1: using &amp; operator </h2>
+<div class="codeblock"><textarea class="python" name="code">
+set1 = {"Ayush","John", "David", "Martin"}
+set2 = {"Steve","Milan","David", "Martin"}
+print(set1&amp;set2) #prints the intersection of the two sets
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+{'Martin', 'David'}
+</pre></div>
+<h2 class="h3">Example 2: using intersection() method </h2>
+<div class="codeblock"><textarea class="python" name="code">
+set1 = {"Ayush","John", "David", "Martin"}
+set2 = {"Steave","Milan","David", "Martin"}
+print(set1.intersection(set2)) #prints the intersection of the two sets
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+{'Martin', 'David'}
+</pre></div>
+<h2 class="h2">The intersection_update() method</h2>
+<p>The intersection_update() method removes the items from the original set that are not present in both the sets (all the sets if more than one are specified).</p>
+<p>The Intersection_update() method is different from intersection() method since it modifies the original set by removing the unwanted items, on the other hand, intersection() method returns a new set. </p>
+<p>Consider the following example. </p>
+<div class="codeblock"><textarea class="python" name="code">
+a = {"ayush", "bob", "castle"}
+b = {"castle", "dude", "emyway"}
+c = {"fuson", "gaurav", "castle"}
+
+a.intersection_update(b, c)
+
+print(a)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+{'castle'}
+</pre></div>
+<h2 class="h2">Difference of two sets </h2>
+<p>The difference of two sets can be calculated by using the subtraction (-) operator. The resulting set will be obtained by removing all the elements from set 1 that are present in set 2. </p>
+<p>Consider the following example. </p>
+<h2 class="h3">Example 1 : using subtraction ( - ) operator </h2>
+<div class="codeblock"><textarea class="python" name="code">
+Days1 = {"Monday",  "Tuesday", "Wednesday", "Thursday"}
+Days2 = {"Monday", "Tuesday", "Sunday"}
+print(Days1-Days2) #{"Wednesday", "Thursday" will be printed}
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+{'Thursday', 'Wednesday'}
+</pre></div>
+<h2 class="h3">Example 2 : using difference() method </h2>
+<div class="codeblock"><textarea class="python" name="code">
+Days1 = {"Monday",  "Tuesday", "Wednesday", "Thursday"}
+Days2 = {"Monday", "Tuesday", "Sunday"}
+print(Days1.difference(Days2)) # prints the difference of the two sets Days1 and Days2
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+{'Thursday', 'Wednesday'}
+</pre></div>
+<hr/>
+<h2 class="h2">Set comparisons </h2>
+<p>Python allows us to use the comparison operators i.e., &lt;, &gt;, &lt;=, &gt;= , == with the sets by using which we can check whether a set is subset, superset, or equivalent to other set. The boolean true or false is returned depending upon the items present inside the sets. </p>
+<p>Consider the following example. </p>
+<div class="codeblock"><textarea class="python" name="code">
+Days1 = {"Monday",  "Tuesday", "Wednesday", "Thursday"}
+Days2 = {"Monday", "Tuesday"}
+Days3 = {"Monday", "Tuesday", "Friday"}
+
+#Days1 is the superset of Days2 hence it will print true. 
+print (Days1&gt;Days2) 
+
+#prints false since Days1 is not the subset of Days2 
+print (Days1<days2) #prints="" (days2="Days3)" <="" and="" are="" days2="" days3="" equivalent="" false="" not="" print="" since="" textarea=""></days2)></textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+True
+False
+False
+</pre></div>
+<hr/>
+<h2 class="h2">FrozenSets </h2>
+<p>The frozen sets are the immutable form of the normal sets, i.e., the items of the frozen set can not be changed and therefore it can be used as a key in dictionary. </p>
+<p>The elements of the frozen set can not be changed after the creation. We cannot change or append the content of the frozen sets by using the methods like add() or remove().</p>
+<p>The frozenset() method is used to create the frozenset object. The iterable sequence is passed into this method which is converted into the frozen set as a return type of the method. </p>
+<p>Consider the following example to create the frozen set. </p>
+<div class="codeblock"><textarea class="python" name="code">
+Frozenset = frozenset([1,2,3,4,5]) 
+print(type(Frozenset))
+print("\nprinting the content of frozen set...")
+for i in Frozenset:
+	print(i);
+Frozenset.add(6) #gives an error since we cannot change the content of Frozenset after creation 
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+&lt;class 'frozenset'&gt;
+
+printing the content of frozen set...
+1
+2
+3
+4
+5
+Traceback (most recent call last):
+  File "set.py", line 6, in &lt;module&gt;
+    Frozenset.add(6) #gives an error since we can change the content of Frozenset after creation 
+AttributeError: 'frozenset' object has no attribute 'add'
+</pre></div>
+<h2 class="h2">Frozenset for the dictionary </h2>
+<p>If we pass the dictionary as the sequence inside the frozenset() method, it will take only the keys from the dictionary and returns a frozenset that contains the key of the dictionary as its elements. </p>
+<p>Consider the following example. </p>
+<div class="codeblock"><textarea class="python" name="code">
+Dictionary = {"Name":"John", "Country":"USA", "ID":101} 
+print(type(Dictionary))
+Frozenset = frozenset(Dictionary); #Frozenset will contain the keys of the dictionary
+print(type(Frozenset))
+for i in Frozenset: 
+	print(i)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+&lt;class 'dict'&gt;
+&lt;class 'frozenset'&gt;
+Name
+Country
+ID
+</pre></div>
+<hr/>
+<h2 class="h2">Python Built-in set methods </h2>
+<p>Python contains the following methods to be used with the sets. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Method </th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="python-set-add-method">add(item)</a></td>
+<td>It adds an item to the set. It has no effect if the item is already present in the set. </td>
+</tr>
+<tr>
+<td>2</td>
+<td>clear()</td>
+<td>It deletes all the items from the set. </td>
+</tr>
+<tr>
+<td>3</td>
+<td>copy()</td>
+<td>It returns a shallow copy of the set. </td>
+</tr>
+<tr>
+<td>4</td>
+<td>difference_update(....)</td>
+<td>It modifies this set by removing all the items that are also present in the specified sets. </td>
+</tr>
+<tr>
+<td>5</td>
+<td><a href="python-set-discard-method">discard(item)</a></td>
+<td>It removes the specified item from the set. </td>
+</tr>
+<tr>
+<td>6</td>
+<td>intersection()</td>
+<td>It returns a new set that contains only the common elements of both the sets. (all the sets if more than two are specified). </td>
+</tr>
+<tr>
+<td>7</td>
+<td>intersection_update(....)</td>
+<td>It removes the items from the original set that are not present in both the sets (all the sets if more than one are specified).</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Isdisjoint(....)</td>
+<td>Return True if two sets have a null intersection.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Issubset(....)</td>
+<td>Report whether another set contains this set.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Issuperset(....)</td>
+<td>Report whether this set contains another set.</td>
+</tr>
+<tr>
+<td>11</td>
+<td><a href="python-set-pop-method">pop()</a></td>
+<td>Remove and return an arbitrary set element that is the last element of the set. Raises KeyError if the set is empty.</td>
+</tr>
+<tr>
+<td>12</td>
+<td><a href="python-set-remove-method">remove(item)</a></td>
+<td>Remove an element from a set; it must be a member.  If the element is not a member, raise a KeyError.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>symmetric_difference(....)</td>
+<td>Remove an element from a set; it must be a member. If the element is not a member, raise a KeyError.</td>
+</tr>
+<tr>
+<td>14</td>
+<td>symmetric_difference_update(....)</td>
+<td>Update a set with the symmetric difference of itself and another.</td>
+</tr>
+<tr>
+<td>15</td>
+<td>union(....)</td>
+<td>Return the union of sets as a new set.<br/>(i.e. all elements that are in either set.)</td>
+</tr>
+<tr>
+<td>16</td>
+<td>update()</td>
+<td>Update a set with the union of itself and others.</td>
+</tr>
+</table>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-dictionary">Python Dictionary</a></span>
+</div>
+<!-- link -->
+<br><br/>
+<div id="bottomnext">
+<a class="next" href="python-tuples" style="float:left">¡û prev</a>
+<a class="next" href="python-dictionary" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</br></td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-dictionary">next ¡ú</a>
+<a class="next" href="python-tuples">¡û prev</a>
+</div>
+<h1 class="h1">Python Set </h1>
+<p>The set in python can be defined as the unordered collection of various items enclosed within the curly braces. The elements of the set can not be duplicate. The elements of the python set must be immutable. </p>
+<p>Unlike other collections in python, there is no index attached to the elements of the set, i.e., we cannot directly access any element of the set by the index. However, we can print them all together or we can get the list of elements by looping through the set. </p>
+<h2 class="h2">Creating a set</h2>
+<p>The set can be created by enclosing the comma separated items with the curly braces. Python also provides the set method which can be used to create the set by the passed sequence. </p>
+<h2 class="h3">Example 1: using curly braces </h2>
+<div class="codeblock"><textarea class="python" name="code">
+Days = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"}
+print(Days)
+print(type(Days))
+print("looping through the set elements ... ")
+for i in Days:
+	print(i)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+{'Friday', 'Tuesday', 'Monday', 'Saturday', 'Thursday', 'Sunday', 'Wednesday'}
+&lt;class 'set'&gt;
+looping through the set elements ... 
+Friday
+Tuesday
+Monday
+Saturday
+Thursday
+Sunday
+Wednesday
+</pre></div>
+<h2 class="h3">Example 2: using set() method </h2>
+<div class="codeblock"><textarea class="python" name="code">
+Days = set(["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"])
+print(Days)
+print(type(Days))
+print("looping through the set elements ... ")
+for i in Days:
+	print(i)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+{'Friday', 'Wednesday', 'Thursday', 'Saturday', 'Monday', 'Tuesday', 'Sunday'}
+&lt;class 'set'&gt;
+looping through the set elements ... 
+Friday
+Wednesday
+Thursday
+Saturday
+Monday
+Tuesday
+Sunday
+</pre></div>
+<hr/>
+<h2 class="h3">Python Set operations </h2>
+<p>In the previous example, we have discussed about how the set is created in python. However, we can perform various mathematical operations on  python sets like union, intersection,  difference, etc. </p>
+<h2 class="h3">Adding items to the set</h2>
+<p>Python provides the add() method which can be used to add some particular item to the set. Consider the following example. </p>
+<h2 class="h3">Example:</h2>
+<div class="codeblock"><textarea class="python" name="code">
+Months = set(["January","February", "March", "April", "May", "June"])
+print("\nprinting the original set ... ")
+print(Months)
+print("\nAdding other months to the set...");
+Months.add("July");
+Months.add("August");
+print("\nPrinting the modified set...");
+print(Months)
+print("\nlooping through the set elements ... ")
+for i in Months:
+	print(i)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+printing the original set ... 
+{'February', 'May', 'April', 'March', 'June', 'January'}
+
+Adding other months to the set...
+
+Printing the modified set...
+{'February', 'July', 'May', 'April', 'March', 'August', 'June', 'January'}
+
+looping through the set elements ... 
+February
+July
+May
+April
+March
+August
+June
+January 
+</pre></div>
+<p>To add more than one item in the set, Python provides the <strong>update()</strong> method. </p>
+<p>Consider the following example. </p>
+<h2 class="h3">Example </h2>
+<div class="codeblock"><textarea class="python" name="code">
+Months = set(["January","February", "March", "April", "May", "June"])
+print("\nprinting the original set ... ")
+print(Months)
+print("\nupdating the original set ... ")
+Months.update(["July","August","September","October"]);
+print("\nprinting the modified set ... ") 
+print(Months); 
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+printing the original set ... 
+{'January', 'February', 'April', 'May', 'June', 'March'}
+
+updating the original set ... 
+
+printing the modified set ... 
+{'January', 'February', 'April', 'August', 'October', 'May', 'June', 'July', 'September', 'March'}
+</pre></div>
+<h2 class="h3">Removing items from the set </h2>
+<p>Python provides <strong>discard()</strong> method which can be used to remove the items from the set. </p>
+<p>Consider the following example. </p>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+Months = set(["January","February", "March", "April", "May", "June"])
+print("\nprinting the original set ... ")
+print(Months)
+print("\nRemoving some months from the set...");
+Months.discard("January");
+Months.discard("May");
+print("\nPrinting the modified set...");
+print(Months)
+print("\nlooping through the set elements ... ")
+for i in Months:
+	print(i)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+printing the original set ... 
+{'February', 'January', 'March', 'April', 'June', 'May'}
+
+Removing some months from the set...
+
+Printing the modified set...
+{'February', 'March', 'April', 'June'}
+
+looping through the set elements ... 
+February
+March
+April
+June
+</pre></div>
+<p>Python also provide the remove() method to remove the items from the set. Consider the following example to remove the items using remove() method. </p>
+<h2 class="h3">Example </h2>
+<div class="codeblock"><textarea class="python" name="code">
+Months = set(["January","February", "March", "April", "May", "June"])
+print("\nprinting the original set ... ")
+print(Months)
+print("\nRemoving some months from the set...");
+Months.remove("January");
+Months.remove("May");
+print("\nPrinting the modified set...");
+print(Months)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+printing the original set ... 
+{'February', 'June', 'April', 'May', 'January', 'March'}
+
+Removing some months from the set...
+
+Printing the modified set...
+{'February', 'June', 'April', 'March'}
+</pre></div>
+<p>We can also use the pop() method to remove the item. However, this method will always remove the last item.</p>
+<p>Consider the following example to remove the last item from the set. </p>
+<div class="codeblock"><textarea class="python" name="code">
+Months = set(["January","February", "March", "April", "May", "June"])
+print("\nprinting the original set ... ")
+print(Months)
+print("\nRemoving some months from the set...");
+Months.pop();
+Months.pop();
+print("\nPrinting the modified set...");
+print(Months)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+printing the original set ... 
+{'June', 'January', 'May', 'April', 'February', 'March'}
+
+Removing some months from the set...
+
+Printing the modified set...
+{'May', 'April', 'February', 'March'}
+</pre></div>
+<p>Python provides the clear() method to remove all the items from the set. </p>
+<p>Consider the following example. </p>
+<div class="codeblock"><textarea class="python" name="code">
+Months = set(["January","February", "March", "April", "May", "June"])
+print("\nprinting the original set ... ")
+print(Months)
+print("\nRemoving all the items from the set...");
+Months.clear()
+print("\nPrinting the modified set...")
+print(Months)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+printing the original set ... 
+{'January', 'May', 'June', 'April', 'March', 'February'}
+
+Removing all the items from the set...
+
+Printing the modified set...
+set()
+</pre></div>
+<hr/>
+<h2 class="h2">Difference between discard() and remove() </h2>
+<p>Despite the fact that discard() and remove() method both perform the same task, There is one main difference between discard() and remove(). </p>
+<p>If the key to be deleted from the set using discard() doesn't exist in the set, the python will not give the error. The program maintains its control flow.</p>
+<p>On the other hand, if the item to be deleted from the set using remove() doesn't exist in the set, the python will give the error. </p>
+<p>Consider the following example. </p>
+<h2 class="h3">Example </h2>
+<div class="codeblock"><textarea class="python" name="code">
+Months = set(["January","February", "March", "April", "May", "June"])
+print("\nprinting the original set ... ")
+print(Months)
+print("\nRemoving items through discard() method...");
+Months.discard("Feb"); #will not give an error although the key feb is not available in the set
+print("\nprinting the modified set...")
+print(Months)
+print("\nRemoving items through remove() method...");
+Months.remove("Jan") #will give an error as the key jan is not available in the set. 
+print("\nPrinting the modified set...")
+print(Months)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+printing the original set ... 
+{'March', 'January', 'April', 'June', 'February', 'May'}
+
+Removing items through discard() method...
+
+printing the modified set...
+{'March', 'January', 'April', 'June', 'February', 'May'}
+
+Removing items through remove() method...
+Traceback (most recent call last):
+  File "set.py", line 9, in <module>
+    Months.remove("Jan")
+KeyError: 'Jan'
+</module></pre></div>
+<h2 class="h2">Union of two Sets </h2>
+<p>The union of two sets are calculated by using the or (|) operator. The union of the two sets contains the all the items that are present in both the sets. </p>
+<p>Consider the following example to calculate the union of two sets. </p>
+<h2 class="h3">Example 1 : using union | operator </h2>
+<div class="codeblock"><textarea class="python" name="code">
+Days1 = {"Monday","Tuesday","Wednesday","Thursday"}
+Days2 = {"Friday","Saturday","Sunday"}
+print(Days1|Days2) #printing the union of the sets 
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+{'Friday', 'Sunday', 'Saturday', 'Tuesday', 'Wednesday', 'Monday', 'Thursday'}
+</pre></div>
+<p>Python also provides the <strong>union()</strong> method which can also be used to calculate the union of two sets. Consider the following example. </p>
+<h2 class="h3">Example 2: using union() method </h2>
+<div class="codeblock"><textarea class="python" name="code">
+Days1 = {"Monday","Tuesday","Wednesday","Thursday"}
+Days2 = {"Friday","Saturday","Sunday"}
+print(Days1.union(Days2)) #printing the union of the sets 
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+{'Friday', 'Monday', 'Tuesday', 'Thursday', 'Wednesday', 'Sunday', 'Saturday'}
+</pre></div>
+<h2 class="h2">Intersection of two sets </h2>
+<p>The &amp; (intersection) operator is used to calculate the intersection of the two sets in python. The intersection of the two sets are given as the set of the elements that common in both sets. </p>
+<p>Consider the following example. </p>
+<h2 class="h3">Example 1: using &amp; operator </h2>
+<div class="codeblock"><textarea class="python" name="code">
+set1 = {"Ayush","John", "David", "Martin"}
+set2 = {"Steve","Milan","David", "Martin"}
+print(set1&amp;set2) #prints the intersection of the two sets
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+{'Martin', 'David'}
+</pre></div>
+<h2 class="h3">Example 2: using intersection() method </h2>
+<div class="codeblock"><textarea class="python" name="code">
+set1 = {"Ayush","John", "David", "Martin"}
+set2 = {"Steave","Milan","David", "Martin"}
+print(set1.intersection(set2)) #prints the intersection of the two sets
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+{'Martin', 'David'}
+</pre></div>
+<h2 class="h2">The intersection_update() method</h2>
+<p>The intersection_update() method removes the items from the original set that are not present in both the sets (all the sets if more than one are specified).</p>
+<p>The Intersection_update() method is different from intersection() method since it modifies the original set by removing the unwanted items, on the other hand, intersection() method returns a new set. </p>
+<p>Consider the following example. </p>
+<div class="codeblock"><textarea class="python" name="code">
+a = {"ayush", "bob", "castle"}
+b = {"castle", "dude", "emyway"}
+c = {"fuson", "gaurav", "castle"}
+
+a.intersection_update(b, c)
+
+print(a)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+{'castle'}
+</pre></div>
+<h2 class="h2">Difference of two sets </h2>
+<p>The difference of two sets can be calculated by using the subtraction (-) operator. The resulting set will be obtained by removing all the elements from set 1 that are present in set 2. </p>
+<p>Consider the following example. </p>
+<h2 class="h3">Example 1 : using subtraction ( - ) operator </h2>
+<div class="codeblock"><textarea class="python" name="code">
+Days1 = {"Monday",  "Tuesday", "Wednesday", "Thursday"}
+Days2 = {"Monday", "Tuesday", "Sunday"}
+print(Days1-Days2) #{"Wednesday", "Thursday" will be printed}
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+{'Thursday', 'Wednesday'}
+</pre></div>
+<h2 class="h3">Example 2 : using difference() method </h2>
+<div class="codeblock"><textarea class="python" name="code">
+Days1 = {"Monday",  "Tuesday", "Wednesday", "Thursday"}
+Days2 = {"Monday", "Tuesday", "Sunday"}
+print(Days1.difference(Days2)) # prints the difference of the two sets Days1 and Days2
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+{'Thursday', 'Wednesday'}
+</pre></div>
+<hr/>
+<h2 class="h2">Set comparisons </h2>
+<p>Python allows us to use the comparison operators i.e., &lt;, &gt;, &lt;=, &gt;= , == with the sets by using which we can check whether a set is subset, superset, or equivalent to other set. The boolean true or false is returned depending upon the items present inside the sets. </p>
+<p>Consider the following example. </p>
+<div class="codeblock"><textarea class="python" name="code">
+Days1 = {"Monday",  "Tuesday", "Wednesday", "Thursday"}
+Days2 = {"Monday", "Tuesday"}
+Days3 = {"Monday", "Tuesday", "Friday"}
+
+#Days1 is the superset of Days2 hence it will print true. 
+print (Days1&gt;Days2) 
+
+#prints false since Days1 is not the subset of Days2 
+print (Days1<days2) #prints="" (days2="Days3)" <="" and="" are="" days2="" days3="" equivalent="" false="" not="" print="" since="" textarea=""></days2)></textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+True
+False
+False
+</pre></div>
+<hr/>
+<h2 class="h2">FrozenSets </h2>
+<p>The frozen sets are the immutable form of the normal sets, i.e., the items of the frozen set can not be changed and therefore it can be used as a key in dictionary. </p>
+<p>The elements of the frozen set can not be changed after the creation. We cannot change or append the content of the frozen sets by using the methods like add() or remove().</p>
+<p>The frozenset() method is used to create the frozenset object. The iterable sequence is passed into this method which is converted into the frozen set as a return type of the method. </p>
+<p>Consider the following example to create the frozen set. </p>
+<div class="codeblock"><textarea class="python" name="code">
+Frozenset = frozenset([1,2,3,4,5]) 
+print(type(Frozenset))
+print("\nprinting the content of frozen set...")
+for i in Frozenset:
+	print(i);
+Frozenset.add(6) #gives an error since we cannot change the content of Frozenset after creation 
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+&lt;class 'frozenset'&gt;
+
+printing the content of frozen set...
+1
+2
+3
+4
+5
+Traceback (most recent call last):
+  File "set.py", line 6, in &lt;module&gt;
+    Frozenset.add(6) #gives an error since we can change the content of Frozenset after creation 
+AttributeError: 'frozenset' object has no attribute 'add'
+</pre></div>
+<h2 class="h2">Frozenset for the dictionary </h2>
+<p>If we pass the dictionary as the sequence inside the frozenset() method, it will take only the keys from the dictionary and returns a frozenset that contains the key of the dictionary as its elements. </p>
+<p>Consider the following example. </p>
+<div class="codeblock"><textarea class="python" name="code">
+Dictionary = {"Name":"John", "Country":"USA", "ID":101} 
+print(type(Dictionary))
+Frozenset = frozenset(Dictionary); #Frozenset will contain the keys of the dictionary
+print(type(Frozenset))
+for i in Frozenset: 
+	print(i)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+&lt;class 'dict'&gt;
+&lt;class 'frozenset'&gt;
+Name
+Country
+ID
+</pre></div>
+<hr/>
+<h2 class="h2">Python Built-in set methods </h2>
+<p>Python contains the following methods to be used with the sets. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Method </th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="python-set-add-method">add(item)</a></td>
+<td>It adds an item to the set. It has no effect if the item is already present in the set. </td>
+</tr>
+<tr>
+<td>2</td>
+<td>clear()</td>
+<td>It deletes all the items from the set. </td>
+</tr>
+<tr>
+<td>3</td>
+<td>copy()</td>
+<td>It returns a shallow copy of the set. </td>
+</tr>
+<tr>
+<td>4</td>
+<td>difference_update(....)</td>
+<td>It modifies this set by removing all the items that are also present in the specified sets. </td>
+</tr>
+<tr>
+<td>5</td>
+<td><a href="python-set-discard-method">discard(item)</a></td>
+<td>It removes the specified item from the set. </td>
+</tr>
+<tr>
+<td>6</td>
+<td>intersection()</td>
+<td>It returns a new set that contains only the common elements of both the sets. (all the sets if more than two are specified). </td>
+</tr>
+<tr>
+<td>7</td>
+<td>intersection_update(....)</td>
+<td>It removes the items from the original set that are not present in both the sets (all the sets if more than one are specified).</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Isdisjoint(....)</td>
+<td>Return True if two sets have a null intersection.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Issubset(....)</td>
+<td>Report whether another set contains this set.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Issuperset(....)</td>
+<td>Report whether this set contains another set.</td>
+</tr>
+<tr>
+<td>11</td>
+<td><a href="python-set-pop-method">pop()</a></td>
+<td>Remove and return an arbitrary set element that is the last element of the set. Raises KeyError if the set is empty.</td>
+</tr>
+<tr>
+<td>12</td>
+<td><a href="python-set-remove-method">remove(item)</a></td>
+<td>Remove an element from a set; it must be a member.  If the element is not a member, raise a KeyError.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>symmetric_difference(....)</td>
+<td>Remove an element from a set; it must be a member. If the element is not a member, raise a KeyError.</td>
+</tr>
+<tr>
+<td>14</td>
+<td>symmetric_difference_update(....)</td>
+<td>Update a set with the symmetric difference of itself and another.</td>
+</tr>
+<tr>
+<td>15</td>
+<td>union(....)</td>
+<td>Return the union of sets as a new set.<br/>(i.e. all elements that are in either set.)</td>
+</tr>
+<tr>
+<td>16</td>
+<td>update()</td>
+<td>Update a set with the union of itself and others.</td>
+</tr>
+</table>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-dictionary">Python Dictionary</a></span>
+</div>
+<!-- link -->
+<br><br/>
+<div id="bottomnext">
+<a class="next" href="python-tuples" style="float:left">¡û prev</a>
+<a class="next" href="python-dictionary" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</br></td></tr>
+</table>
+</div></body></html></body></html>

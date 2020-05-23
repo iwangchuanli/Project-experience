@@ -1,0 +1,301 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-keywords">next ¡ú</a>
+<a class="next" href="python-variables">¡û prev</a>
+</div>
+<h1 class="h1">Python Data Types </h1>
+<p>Variables can hold values of different data types. Python is a dynamically typed language hence we need not define the type of the variable while declaring it. The interpreter implicitly binds the value with its type. </p>
+<p>Python enables us to check the type of the variable used in the program. Python provides us the <strong>type()</strong> function which returns the type of the variable passed. </p>
+<p>Consider the following example to define the values of different data types and checking its type. </p>
+<div class="codeblock"><textarea class="python" name="code">
+ A=10
+b="Hi Python"
+c = 10.5
+print(type(a)); 
+print(type(b)); 
+print(type(c)); 
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+&lt;type 'int'&gt;
+&lt;type 'str'&gt;
+&lt;type 'float'&gt;
+</pre></div>
+<h2 class="h2">Standard data types </h2>
+<p>A variable can hold different types of values. For example, a person?s name must be stored as a string whereas its id must be stored as an integer. </p>
+<p>Python provides various standard data types that define the storage method on each of them. The data types defined in Python are given below. </p>
+<ol class="points">
+<li><a href="#numbers">Numbers</a> </li>
+<li><a href="#string">String</a></li>
+<li><a href="#list">List</a></li>
+<li><a href="#tuple">Tuple</a></li>
+<li><a href="#dictionary">Dictionary</a></li>
+</ol>
+<p>In this section of the tutorial, we will give a brief introduction of the above data types. We will discuss each one of them in detail later in this tutorial. </p>
+<hr/>
+<h3 class="h3" id="numbers">Numbers </h3>
+<p>Number stores numeric values. Python creates Number objects when a number is assigned to a variable. For example; </p>
+<div class="codeblock"><textarea class="python" name="code">
+a = 3 , b = 5  #a and b are number objects
+</textarea></div>
+<p>Python supports 4 types of numeric data. </p>
+<ol class="points">
+<li>int (signed integers like 10, 2, 29, etc.)</li>
+<li>long (long integers used for a higher range of values like 908090800L, -0x1929292L, etc.)</li>
+<li>float (float is used to store floating point numbers like 1.9, 9.902, 15.2, etc.) </li>
+<li>complex (complex numbers like 2.14j, 2.0 + 2.3j, etc.) </li>
+</ol>
+<p>Python allows us to use a lower-case L to be used with long integers. However, we must always use an upper-case L to avoid confusion. </p>
+<p>A complex number contains an ordered pair, i.e., x + iy where x and y denote the real and imaginary parts respectively). </p>
+<hr/>
+<h3 class="h3" id="string">String </h3>
+<p>The string can be defined as the sequence of characters represented in the quotation marks. In python, we can use single, double, or triple quotes to define a string. </p>
+<p>String handling in python is a straightforward task since there are various inbuilt functions and operators provided. </p>
+<p>In the case of string handling, the operator + is used to concatenate two strings as the operation <em>"hello"+" python"</em> returns <em>"hello python"</em>.</p>
+<p>The operator * is known as repetition operator as the operation "Python " *2 returns "Python Python ".</p>
+<p>The following example illustrates the string handling in python. </p>
+<div class="codeblock"><textarea class="python" name="code">
+str1 = 'hello javatpoint' #string str1
+str2 = ' how are you' #string str2
+print (str1[0:2]) #printing first two character using slice operator
+print (str1[4]) #printing 4th character of the string
+print (str1*2) #printing the string twice
+print (str1 + str2) #printing the concatenation of str1 and str2
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+he
+o
+hello javatpointhello javatpoint
+hello javatpoint how are you
+</pre></div>
+<hr/>
+<h3 class="h3" id="list">List</h3>
+Lists are similar to arrays in C. However; the list can contain data of different types. The items stored in the list are separated with a comma (,) and enclosed within square brackets []. </td></tr></table></div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-keywords">next ¡ú</a>
+<a class="next" href="python-variables">¡û prev</a>
+</div>
+<h1 class="h1">Python Data Types </h1>
+<p>Variables can hold values of different data types. Python is a dynamically typed language hence we need not define the type of the variable while declaring it. The interpreter implicitly binds the value with its type. </p>
+<p>Python enables us to check the type of the variable used in the program. Python provides us the <strong>type()</strong> function which returns the type of the variable passed. </p>
+<p>Consider the following example to define the values of different data types and checking its type. </p>
+<div class="codeblock"><textarea class="python" name="code">
+ A=10
+b="Hi Python"
+c = 10.5
+print(type(a)); 
+print(type(b)); 
+print(type(c)); 
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+&lt;type 'int'&gt;
+&lt;type 'str'&gt;
+&lt;type 'float'&gt;
+</pre></div>
+<h2 class="h2">Standard data types </h2>
+<p>A variable can hold different types of values. For example, a person?s name must be stored as a string whereas its id must be stored as an integer. </p>
+<p>Python provides various standard data types that define the storage method on each of them. The data types defined in Python are given below. </p>
+<ol class="points">
+<li><a href="#numbers">Numbers</a> </li>
+<li><a href="#string">String</a></li>
+<li><a href="#list">List</a></li>
+<li><a href="#tuple">Tuple</a></li>
+<li><a href="#dictionary">Dictionary</a></li>
+</ol>
+<p>In this section of the tutorial, we will give a brief introduction of the above data types. We will discuss each one of them in detail later in this tutorial. </p>
+<hr/>
+<h3 class="h3" id="numbers">Numbers </h3>
+<p>Number stores numeric values. Python creates Number objects when a number is assigned to a variable. For example; </p>
+<div class="codeblock"><textarea class="python" name="code">
+a = 3 , b = 5  #a and b are number objects
+</textarea></div>
+<p>Python supports 4 types of numeric data. </p>
+<ol class="points">
+<li>int (signed integers like 10, 2, 29, etc.)</li>
+<li>long (long integers used for a higher range of values like 908090800L, -0x1929292L, etc.)</li>
+<li>float (float is used to store floating point numbers like 1.9, 9.902, 15.2, etc.) </li>
+<li>complex (complex numbers like 2.14j, 2.0 + 2.3j, etc.) </li>
+</ol>
+<p>Python allows us to use a lower-case L to be used with long integers. However, we must always use an upper-case L to avoid confusion. </p>
+<p>A complex number contains an ordered pair, i.e., x + iy where x and y denote the real and imaginary parts respectively). </p>
+<hr/>
+<h3 class="h3" id="string">String </h3>
+<p>The string can be defined as the sequence of characters represented in the quotation marks. In python, we can use single, double, or triple quotes to define a string. </p>
+<p>String handling in python is a straightforward task since there are various inbuilt functions and operators provided. </p>
+<p>In the case of string handling, the operator + is used to concatenate two strings as the operation <em>"hello"+" python"</em> returns <em>"hello python"</em>.</p>
+<p>The operator * is known as repetition operator as the operation "Python " *2 returns "Python Python ".</p>
+<p>The following example illustrates the string handling in python. </p>
+<div class="codeblock"><textarea class="python" name="code">
+str1 = 'hello javatpoint' #string str1
+str2 = ' how are you' #string str2
+print (str1[0:2]) #printing first two character using slice operator
+print (str1[4]) #printing 4th character of the string
+print (str1*2) #printing the string twice
+print (str1 + str2) #printing the concatenation of str1 and str2
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+he
+o
+hello javatpointhello javatpoint
+hello javatpoint how are you
+</pre></div>
+<hr/>
+<h3 class="h3" id="list">List</h3>
+Lists are similar to arrays in C. However; the list can contain data of different types. The items stored in the list are separated with a comma (,) and enclosed within square brackets []. </td></tr></table></div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-keywords">next ¡ú</a>
+<a class="next" href="python-variables">¡û prev</a>
+</div>
+<h1 class="h1">Python Data Types </h1>
+<p>Variables can hold values of different data types. Python is a dynamically typed language hence we need not define the type of the variable while declaring it. The interpreter implicitly binds the value with its type. </p>
+<p>Python enables us to check the type of the variable used in the program. Python provides us the <strong>type()</strong> function which returns the type of the variable passed. </p>
+<p>Consider the following example to define the values of different data types and checking its type. </p>
+<div class="codeblock"><textarea class="python" name="code">
+ A=10
+b="Hi Python"
+c = 10.5
+print(type(a)); 
+print(type(b)); 
+print(type(c)); 
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+&lt;type 'int'&gt;
+&lt;type 'str'&gt;
+&lt;type 'float'&gt;
+</pre></div>
+<h2 class="h2">Standard data types </h2>
+<p>A variable can hold different types of values. For example, a person?s name must be stored as a string whereas its id must be stored as an integer. </p>
+<p>Python provides various standard data types that define the storage method on each of them. The data types defined in Python are given below. </p>
+<ol class="points">
+<li><a href="#numbers">Numbers</a> </li>
+<li><a href="#string">String</a></li>
+<li><a href="#list">List</a></li>
+<li><a href="#tuple">Tuple</a></li>
+<li><a href="#dictionary">Dictionary</a></li>
+</ol>
+<p>In this section of the tutorial, we will give a brief introduction of the above data types. We will discuss each one of them in detail later in this tutorial. </p>
+<hr/>
+<h3 class="h3" id="numbers">Numbers </h3>
+<p>Number stores numeric values. Python creates Number objects when a number is assigned to a variable. For example; </p>
+<div class="codeblock"><textarea class="python" name="code">
+a = 3 , b = 5  #a and b are number objects
+</textarea></div>
+<p>Python supports 4 types of numeric data. </p>
+<ol class="points">
+<li>int (signed integers like 10, 2, 29, etc.)</li>
+<li>long (long integers used for a higher range of values like 908090800L, -0x1929292L, etc.)</li>
+<li>float (float is used to store floating point numbers like 1.9, 9.902, 15.2, etc.) </li>
+<li>complex (complex numbers like 2.14j, 2.0 + 2.3j, etc.) </li>
+</ol>
+<p>Python allows us to use a lower-case L to be used with long integers. However, we must always use an upper-case L to avoid confusion. </p>
+<p>A complex number contains an ordered pair, i.e., x + iy where x and y denote the real and imaginary parts respectively). </p>
+<hr/>
+<h3 class="h3" id="string">String </h3>
+<p>The string can be defined as the sequence of characters represented in the quotation marks. In python, we can use single, double, or triple quotes to define a string. </p>
+<p>String handling in python is a straightforward task since there are various inbuilt functions and operators provided. </p>
+<p>In the case of string handling, the operator + is used to concatenate two strings as the operation <em>"hello"+" python"</em> returns <em>"hello python"</em>.</p>
+<p>The operator * is known as repetition operator as the operation "Python " *2 returns "Python Python ".</p>
+<p>The following example illustrates the string handling in python. </p>
+<div class="codeblock"><textarea class="python" name="code">
+str1 = 'hello javatpoint' #string str1
+str2 = ' how are you' #string str2
+print (str1[0:2]) #printing first two character using slice operator
+print (str1[4]) #printing 4th character of the string
+print (str1*2) #printing the string twice
+print (str1 + str2) #printing the concatenation of str1 and str2
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+he
+o
+hello javatpointhello javatpoint
+hello javatpoint how are you
+</pre></div>
+<hr/>
+<h3 class="h3" id="list">List</h3>
+Lists are similar to arrays in C. However; the list can contain data of different types. The items stored in the list are separated with a comma (,) and enclosed within square brackets []. </td></tr></table></div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-keywords">next ¡ú</a>
+<a class="next" href="python-variables">¡û prev</a>
+</div>
+<h1 class="h1">Python Data Types </h1>
+<p>Variables can hold values of different data types. Python is a dynamically typed language hence we need not define the type of the variable while declaring it. The interpreter implicitly binds the value with its type. </p>
+<p>Python enables us to check the type of the variable used in the program. Python provides us the <strong>type()</strong> function which returns the type of the variable passed. </p>
+<p>Consider the following example to define the values of different data types and checking its type. </p>
+<div class="codeblock"><textarea class="python" name="code">
+ A=10
+b="Hi Python"
+c = 10.5
+print(type(a)); 
+print(type(b)); 
+print(type(c)); 
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+&lt;type 'int'&gt;
+&lt;type 'str'&gt;
+&lt;type 'float'&gt;
+</pre></div>
+<h2 class="h2">Standard data types </h2>
+<p>A variable can hold different types of values. For example, a person?s name must be stored as a string whereas its id must be stored as an integer. </p>
+<p>Python provides various standard data types that define the storage method on each of them. The data types defined in Python are given below. </p>
+<ol class="points">
+<li><a href="#numbers">Numbers</a> </li>
+<li><a href="#string">String</a></li>
+<li><a href="#list">List</a></li>
+<li><a href="#tuple">Tuple</a></li>
+<li><a href="#dictionary">Dictionary</a></li>
+</ol>
+<p>In this section of the tutorial, we will give a brief introduction of the above data types. We will discuss each one of them in detail later in this tutorial. </p>
+<hr/>
+<h3 class="h3" id="numbers">Numbers </h3>
+<p>Number stores numeric values. Python creates Number objects when a number is assigned to a variable. For example; </p>
+<div class="codeblock"><textarea class="python" name="code">
+a = 3 , b = 5  #a and b are number objects
+</textarea></div>
+<p>Python supports 4 types of numeric data. </p>
+<ol class="points">
+<li>int (signed integers like 10, 2, 29, etc.)</li>
+<li>long (long integers used for a higher range of values like 908090800L, -0x1929292L, etc.)</li>
+<li>float (float is used to store floating point numbers like 1.9, 9.902, 15.2, etc.) </li>
+<li>complex (complex numbers like 2.14j, 2.0 + 2.3j, etc.) </li>
+</ol>
+<p>Python allows us to use a lower-case L to be used with long integers. However, we must always use an upper-case L to avoid confusion. </p>
+<p>A complex number contains an ordered pair, i.e., x + iy where x and y denote the real and imaginary parts respectively). </p>
+<hr/>
+<h3 class="h3" id="string">String </h3>
+<p>The string can be defined as the sequence of characters represented in the quotation marks. In python, we can use single, double, or triple quotes to define a string. </p>
+<p>String handling in python is a straightforward task since there are various inbuilt functions and operators provided. </p>
+<p>In the case of string handling, the operator + is used to concatenate two strings as the operation <em>"hello"+" python"</em> returns <em>"hello python"</em>.</p>
+<p>The operator * is known as repetition operator as the operation "Python " *2 returns "Python Python ".</p>
+<p>The following example illustrates the string handling in python. </p>
+<div class="codeblock"><textarea class="python" name="code">
+str1 = 'hello javatpoint' #string str1
+str2 = ' how are you' #string str2
+print (str1[0:2]) #printing first two character using slice operator
+print (str1[4]) #printing 4th character of the string
+print (str1*2) #printing the string twice
+print (str1 + str2) #printing the concatenation of str1 and str2
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+he
+o
+hello javatpointhello javatpoint
+hello javatpoint how are you
+</pre></div>
+<hr/>
+<h3 class="h3" id="list">List</h3>
+Lists are similar to arrays in C. However; the list can contain data of different types. The items stored in the list are separated with a comma (,) and enclosed within square brackets []. </td></tr></table></div></body></html></body></html>

@@ -1,0 +1,1198 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-menubutton">next ¡ú</a>
+<a class="next" href="python-tkinter-label">¡û prev</a>
+</div>
+<h1 class="h1">Python Tkinter Listbox</h1>
+<p>The Listbox widget is used to display the list items to the user. We can place only text items in the Listbox and all text items contain the same font and color. </p>
+<p>The user can choose one or more items from the list depending upon the configuration.</p>
+<p>The syntax to use the Listbox is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+w = Listbox(parent, options) 
+</textarea></div>
+<p>A list of possible options is given below.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>bg</td>
+<td>The background color of the widget.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>bd</td>
+<td>It represents the size of the border. Default value is 2 pixel.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>cursor</td>
+<td>The mouse pointer will look like the cursor type like dot, arrow, etc.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>font</td>
+<td>The font type of the Listbox items. </td>
+</tr>
+<tr>
+<td>5</td>
+<td>fg</td>
+<td>The color of the text.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>height</td>
+<td>It represents the count of the lines shown in the Listbox. The default value is 10.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>highlightcolor</td>
+<td>The color of the Listbox items when the widget is under focus. </td>
+</tr>
+<tr>
+<td>8</td>
+<td>highlightthickness</td>
+<td>The thickness of the highlight.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>relief</td>
+<td>The type of the border. The default is SUNKEN.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>selectbackground</td>
+<td>The background color that is used to display the selected text.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>selectmode</td>
+<td>It is used to determine the number of items that can be selected from the list. It can set to BROWSE, SINGLE, MULTIPLE, EXTENDED.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>width</td>
+<td>It represents the width of the widget in characters.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>xscrollcommand</td>
+<td>It is used to let the user scroll the Listbox horizontally. </td>
+</tr>
+<tr>
+<td>14</td>
+<td>yscrollcommand</td>
+<td>It is used to let the user scroll the Listbox vertically.</td>
+</tr>
+</table>
+<h2 class="h2">Methods</h2>
+<p>There are the following methods associated with the Listbox.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Method</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>activate(index)</td>
+<td>It is used to select the lines at the specified index.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>curselection()</td>
+<td>It returns a tuple containing the line numbers of the selected element or elements, counting from 0. If nothing is selected, returns an empty tuple.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>delete(first, last = None)</td>
+<td>It is used to delete the lines which exist in the given range.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>get(first, last = None)</td>
+<td>It is used to get the list items that exist in the given range.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>index(i)</td>
+<td>It is used to place the line with the specified index at the top of the widget. </td>
+</tr>
+<tr>
+<td>6</td>
+<td>insert(index, &amp;midastelements)</td>
+<td>It is used to insert the new lines with the specified number of elements before the specified index.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>nearest(y)</td>
+<td>It returns the index of the nearest line to the y coordinate of the Listbox widget.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>see(index)</td>
+<td>It is used to adjust the position of the listbox to make the lines specified by the index visible.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>size()</td>
+<td>It returns the number of lines that are present in the Listbox widget.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>xview()</td>
+<td>This is used to make the widget horizontally scrollable.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>xview_moveto(fraction)</td>
+<td>It is used to make the listbox horizontally scrollable by the fraction of width of the longest line present in the listbox.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>xview_scroll(number, what)</td>
+<td>It is used to make the listbox horizontally scrollable by the number of characters specified.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>yview()</td>
+<td>It allows the Listbox to be vertically scrollable.</td>
+</tr>
+<tr>
+<td>14</td>
+<td>yview_moveto(fraction)</td>
+<td>It is used to make the listbox vertically scrollable by the fraction of width of the longest line present in the listbox.</td>
+</tr>
+<tr>
+<td>15</td>
+<td>yview_scroll (number, what)</td>
+<td>It is used to make the listbox vertically scrollable by the number of characters specified.</td>
+</tr>
+</table>
+<h3 class="h3">Example 1</h3>
+<div class="codeblock"><textarea class="python" name="code">
+# !/usr/bin/python3
+
+from tkinter import *
+
+top = Tk()
+
+top.geometry("200x250")
+
+lbl = Label(top,text = "A list of favourite countries...")
+
+listbox = Listbox(top)
+
+listbox.insert(1,"India")
+
+listbox.insert(2, "USA")
+
+listbox.insert(3, "Japan")
+
+listbox.insert(4, "Austrelia")
+
+lbl.pack()
+listbox.pack()
+
+top.mainloop()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Listbox" src="python/images/python-tkinter-listbox.png"/>
+<h3 class="h3">Example 2: Deleting the active items from the list</h3>
+<div class="codeblock"><textarea class="python" name="code">
+# !/usr/bin/python3
+
+from tkinter import *
+
+top = Tk()
+
+top.geometry("200x250")
+
+lbl = Label(top,text = "A list of favourite countries...")
+
+listbox = Listbox(top)
+
+listbox.insert(1,"India")
+
+listbox.insert(2, "USA")
+
+listbox.insert(3, "Japan")
+
+listbox.insert(4, "Austrelia")
+
+#this button will delete the selected item from the list 
+
+btn = Button(top, text = "delete", command = lambda listbox=listbox: listbox.delete(ANCHOR))
+
+lbl.pack()
+
+
+listbox.pack()
+
+btn.pack()
+top.mainloop()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Listbox" src="python/images/python-tkinter-listbox2.png"/><br/>
+<p>After pressing the delete button.</p>
+<img alt="Python Tkinter Listbox" src="python/images/python-tkinter-listbox3.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-menubutton">Python Tkinter Menubutton </a></span>
+</div>
+<!-- link -->
+<br><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-label" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-menubutton" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</br></td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-menubutton">next ¡ú</a>
+<a class="next" href="python-tkinter-label">¡û prev</a>
+</div>
+<h1 class="h1">Python Tkinter Listbox</h1>
+<p>The Listbox widget is used to display the list items to the user. We can place only text items in the Listbox and all text items contain the same font and color. </p>
+<p>The user can choose one or more items from the list depending upon the configuration.</p>
+<p>The syntax to use the Listbox is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+w = Listbox(parent, options) 
+
+</textarea></div>
+<p>A list of possible options is given below.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>bg</td>
+<td>The background color of the widget.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>bd</td>
+<td>It represents the size of the border. Default value is 2 pixel.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>cursor</td>
+<td>The mouse pointer will look like the cursor type like dot, arrow, etc.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>font</td>
+<td>The font type of the Listbox items. </td>
+</tr>
+<tr>
+<td>5</td>
+<td>fg</td>
+<td>The color of the text.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>height</td>
+<td>It represents the count of the lines shown in the Listbox. The default value is 10.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>highlightcolor</td>
+<td>The color of the Listbox items when the widget is under focus. </td>
+</tr>
+<tr>
+<td>8</td>
+<td>highlightthickness</td>
+<td>The thickness of the highlight.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>relief</td>
+<td>The type of the border. The default is SUNKEN.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>selectbackground</td>
+<td>The background color that is used to display the selected text.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>selectmode</td>
+<td>It is used to determine the number of items that can be selected from the list. It can set to BROWSE, SINGLE, MULTIPLE, EXTENDED.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>width</td>
+<td>It represents the width of the widget in characters.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>xscrollcommand</td>
+<td>It is used to let the user scroll the Listbox horizontally. </td>
+</tr>
+<tr>
+<td>14</td>
+<td>yscrollcommand</td>
+<td>It is used to let the user scroll the Listbox vertically.</td>
+</tr>
+</table>
+<h2 class="h2">Methods</h2>
+<p>There are the following methods associated with the Listbox.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Method</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>activate(index)</td>
+<td>It is used to select the lines at the specified index.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>curselection()</td>
+<td>It returns a tuple containing the line numbers of the selected element or elements, counting from 0. If nothing is selected, returns an empty tuple.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>delete(first, last = None)</td>
+<td>It is used to delete the lines which exist in the given range.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>get(first, last = None)</td>
+<td>It is used to get the list items that exist in the given range.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>index(i)</td>
+<td>It is used to place the line with the specified index at the top of the widget. </td>
+</tr>
+<tr>
+<td>6</td>
+<td>insert(index, &amp;midastelements)</td>
+<td>It is used to insert the new lines with the specified number of elements before the specified index.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>nearest(y)</td>
+<td>It returns the index of the nearest line to the y coordinate of the Listbox widget.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>see(index)</td>
+<td>It is used to adjust the position of the listbox to make the lines specified by the index visible.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>size()</td>
+<td>It returns the number of lines that are present in the Listbox widget.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>xview()</td>
+<td>This is used to make the widget horizontally scrollable.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>xview_moveto(fraction)</td>
+<td>It is used to make the listbox horizontally scrollable by the fraction of width of the longest line present in the listbox.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>xview_scroll(number, what)</td>
+<td>It is used to make the listbox horizontally scrollable by the number of characters specified.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>yview()</td>
+<td>It allows the Listbox to be vertically scrollable.</td>
+</tr>
+<tr>
+<td>14</td>
+<td>yview_moveto(fraction)</td>
+<td>It is used to make the listbox vertically scrollable by the fraction of width of the longest line present in the listbox.</td>
+</tr>
+<tr>
+<td>15</td>
+<td>yview_scroll (number, what)</td>
+<td>It is used to make the listbox vertically scrollable by the number of characters specified.</td>
+</tr>
+</table>
+<h3 class="h3">Example 1</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+# !/usr/bin/python3
+
+
+
+from tkinter import *
+
+
+
+top = Tk()
+
+
+
+top.geometry("200x250")
+
+
+
+lbl = Label(top,text = "A list of favourite countries...")
+
+
+
+listbox = Listbox(top)
+
+
+
+listbox.insert(1,"India")
+
+
+
+listbox.insert(2, "USA")
+
+
+
+listbox.insert(3, "Japan")
+
+
+
+listbox.insert(4, "Austrelia")
+
+
+
+lbl.pack()
+
+listbox.pack()
+
+
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Listbox" src="python/images/python-tkinter-listbox.png"/>
+<h3 class="h3">Example 2: Deleting the active items from the list</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+# !/usr/bin/python3
+
+
+
+from tkinter import *
+
+
+
+top = Tk()
+
+
+
+top.geometry("200x250")
+
+
+
+lbl = Label(top,text = "A list of favourite countries...")
+
+
+
+listbox = Listbox(top)
+
+
+
+listbox.insert(1,"India")
+
+
+
+listbox.insert(2, "USA")
+
+
+
+listbox.insert(3, "Japan")
+
+
+
+listbox.insert(4, "Austrelia")
+
+
+
+#this button will delete the selected item from the list 
+
+
+
+btn = Button(top, text = "delete", command = lambda listbox=listbox: listbox.delete(ANCHOR))
+
+
+
+lbl.pack()
+
+
+
+
+
+listbox.pack()
+
+
+
+btn.pack()
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Listbox" src="python/images/python-tkinter-listbox2.png"/><br/>
+<p>After pressing the delete button.</p>
+<img alt="Python Tkinter Listbox" src="python/images/python-tkinter-listbox3.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-menubutton">Python Tkinter Menubutton </a></span>
+</div>
+<!-- link -->
+<br><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-label" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-menubutton" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</br></td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-menubutton">next ¡ú</a>
+<a class="next" href="python-tkinter-label">¡û prev</a>
+</div>
+<h1 class="h1">Python Tkinter Listbox</h1>
+<p>The Listbox widget is used to display the list items to the user. We can place only text items in the Listbox and all text items contain the same font and color. </p>
+<p>The user can choose one or more items from the list depending upon the configuration.</p>
+<p>The syntax to use the Listbox is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+w = Listbox(parent, options) 
+
+</textarea></div>
+<p>A list of possible options is given below.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>bg</td>
+<td>The background color of the widget.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>bd</td>
+<td>It represents the size of the border. Default value is 2 pixel.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>cursor</td>
+<td>The mouse pointer will look like the cursor type like dot, arrow, etc.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>font</td>
+<td>The font type of the Listbox items. </td>
+</tr>
+<tr>
+<td>5</td>
+<td>fg</td>
+<td>The color of the text.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>height</td>
+<td>It represents the count of the lines shown in the Listbox. The default value is 10.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>highlightcolor</td>
+<td>The color of the Listbox items when the widget is under focus. </td>
+</tr>
+<tr>
+<td>8</td>
+<td>highlightthickness</td>
+<td>The thickness of the highlight.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>relief</td>
+<td>The type of the border. The default is SUNKEN.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>selectbackground</td>
+<td>The background color that is used to display the selected text.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>selectmode</td>
+<td>It is used to determine the number of items that can be selected from the list. It can set to BROWSE, SINGLE, MULTIPLE, EXTENDED.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>width</td>
+<td>It represents the width of the widget in characters.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>xscrollcommand</td>
+<td>It is used to let the user scroll the Listbox horizontally. </td>
+</tr>
+<tr>
+<td>14</td>
+<td>yscrollcommand</td>
+<td>It is used to let the user scroll the Listbox vertically.</td>
+</tr>
+</table>
+<h2 class="h2">Methods</h2>
+<p>There are the following methods associated with the Listbox.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Method</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>activate(index)</td>
+<td>It is used to select the lines at the specified index.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>curselection()</td>
+<td>It returns a tuple containing the line numbers of the selected element or elements, counting from 0. If nothing is selected, returns an empty tuple.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>delete(first, last = None)</td>
+<td>It is used to delete the lines which exist in the given range.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>get(first, last = None)</td>
+<td>It is used to get the list items that exist in the given range.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>index(i)</td>
+<td>It is used to place the line with the specified index at the top of the widget. </td>
+</tr>
+<tr>
+<td>6</td>
+<td>insert(index, &amp;midastelements)</td>
+<td>It is used to insert the new lines with the specified number of elements before the specified index.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>nearest(y)</td>
+<td>It returns the index of the nearest line to the y coordinate of the Listbox widget.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>see(index)</td>
+<td>It is used to adjust the position of the listbox to make the lines specified by the index visible.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>size()</td>
+<td>It returns the number of lines that are present in the Listbox widget.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>xview()</td>
+<td>This is used to make the widget horizontally scrollable.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>xview_moveto(fraction)</td>
+<td>It is used to make the listbox horizontally scrollable by the fraction of width of the longest line present in the listbox.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>xview_scroll(number, what)</td>
+<td>It is used to make the listbox horizontally scrollable by the number of characters specified.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>yview()</td>
+<td>It allows the Listbox to be vertically scrollable.</td>
+</tr>
+<tr>
+<td>14</td>
+<td>yview_moveto(fraction)</td>
+<td>It is used to make the listbox vertically scrollable by the fraction of width of the longest line present in the listbox.</td>
+</tr>
+<tr>
+<td>15</td>
+<td>yview_scroll (number, what)</td>
+<td>It is used to make the listbox vertically scrollable by the number of characters specified.</td>
+</tr>
+</table>
+<h3 class="h3">Example 1</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+# !/usr/bin/python3
+
+
+
+from tkinter import *
+
+
+
+top = Tk()
+
+
+
+top.geometry("200x250")
+
+
+
+lbl = Label(top,text = "A list of favourite countries...")
+
+
+
+listbox = Listbox(top)
+
+
+
+listbox.insert(1,"India")
+
+
+
+listbox.insert(2, "USA")
+
+
+
+listbox.insert(3, "Japan")
+
+
+
+listbox.insert(4, "Austrelia")
+
+
+
+lbl.pack()
+
+listbox.pack()
+
+
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Listbox" src="python/images/python-tkinter-listbox.png"/>
+<h3 class="h3">Example 2: Deleting the active items from the list</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+# !/usr/bin/python3
+
+
+
+from tkinter import *
+
+
+
+top = Tk()
+
+
+
+top.geometry("200x250")
+
+
+
+lbl = Label(top,text = "A list of favourite countries...")
+
+
+
+listbox = Listbox(top)
+
+
+
+listbox.insert(1,"India")
+
+
+
+listbox.insert(2, "USA")
+
+
+
+listbox.insert(3, "Japan")
+
+
+
+listbox.insert(4, "Austrelia")
+
+
+
+#this button will delete the selected item from the list 
+
+
+
+btn = Button(top, text = "delete", command = lambda listbox=listbox: listbox.delete(ANCHOR))
+
+
+
+lbl.pack()
+
+
+
+
+
+listbox.pack()
+
+
+
+btn.pack()
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Listbox" src="python/images/python-tkinter-listbox2.png"/><br/>
+<p>After pressing the delete button.</p>
+<img alt="Python Tkinter Listbox" src="python/images/python-tkinter-listbox3.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-menubutton">Python Tkinter Menubutton </a></span>
+</div>
+<!-- link -->
+<br><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-label" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-menubutton" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</br></td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-menubutton">next ¡ú</a>
+<a class="next" href="python-tkinter-label">¡û prev</a>
+</div>
+<h1 class="h1">Python Tkinter Listbox</h1>
+<p>The Listbox widget is used to display the list items to the user. We can place only text items in the Listbox and all text items contain the same font and color. </p>
+<p>The user can choose one or more items from the list depending upon the configuration.</p>
+<p>The syntax to use the Listbox is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+w = Listbox(parent, options) 
+
+</textarea></div>
+<p>A list of possible options is given below.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>bg</td>
+<td>The background color of the widget.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>bd</td>
+<td>It represents the size of the border. Default value is 2 pixel.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>cursor</td>
+<td>The mouse pointer will look like the cursor type like dot, arrow, etc.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>font</td>
+<td>The font type of the Listbox items. </td>
+</tr>
+<tr>
+<td>5</td>
+<td>fg</td>
+<td>The color of the text.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>height</td>
+<td>It represents the count of the lines shown in the Listbox. The default value is 10.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>highlightcolor</td>
+<td>The color of the Listbox items when the widget is under focus. </td>
+</tr>
+<tr>
+<td>8</td>
+<td>highlightthickness</td>
+<td>The thickness of the highlight.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>relief</td>
+<td>The type of the border. The default is SUNKEN.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>selectbackground</td>
+<td>The background color that is used to display the selected text.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>selectmode</td>
+<td>It is used to determine the number of items that can be selected from the list. It can set to BROWSE, SINGLE, MULTIPLE, EXTENDED.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>width</td>
+<td>It represents the width of the widget in characters.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>xscrollcommand</td>
+<td>It is used to let the user scroll the Listbox horizontally. </td>
+</tr>
+<tr>
+<td>14</td>
+<td>yscrollcommand</td>
+<td>It is used to let the user scroll the Listbox vertically.</td>
+</tr>
+</table>
+<h2 class="h2">Methods</h2>
+<p>There are the following methods associated with the Listbox.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Method</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>activate(index)</td>
+<td>It is used to select the lines at the specified index.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>curselection()</td>
+<td>It returns a tuple containing the line numbers of the selected element or elements, counting from 0. If nothing is selected, returns an empty tuple.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>delete(first, last = None)</td>
+<td>It is used to delete the lines which exist in the given range.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>get(first, last = None)</td>
+<td>It is used to get the list items that exist in the given range.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>index(i)</td>
+<td>It is used to place the line with the specified index at the top of the widget. </td>
+</tr>
+<tr>
+<td>6</td>
+<td>insert(index, &amp;midastelements)</td>
+<td>It is used to insert the new lines with the specified number of elements before the specified index.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>nearest(y)</td>
+<td>It returns the index of the nearest line to the y coordinate of the Listbox widget.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>see(index)</td>
+<td>It is used to adjust the position of the listbox to make the lines specified by the index visible.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>size()</td>
+<td>It returns the number of lines that are present in the Listbox widget.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>xview()</td>
+<td>This is used to make the widget horizontally scrollable.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>xview_moveto(fraction)</td>
+<td>It is used to make the listbox horizontally scrollable by the fraction of width of the longest line present in the listbox.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>xview_scroll(number, what)</td>
+<td>It is used to make the listbox horizontally scrollable by the number of characters specified.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>yview()</td>
+<td>It allows the Listbox to be vertically scrollable.</td>
+</tr>
+<tr>
+<td>14</td>
+<td>yview_moveto(fraction)</td>
+<td>It is used to make the listbox vertically scrollable by the fraction of width of the longest line present in the listbox.</td>
+</tr>
+<tr>
+<td>15</td>
+<td>yview_scroll (number, what)</td>
+<td>It is used to make the listbox vertically scrollable by the number of characters specified.</td>
+</tr>
+</table>
+<h3 class="h3">Example 1</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+# !/usr/bin/python3
+
+
+
+from tkinter import *
+
+
+
+top = Tk()
+
+
+
+top.geometry("200x250")
+
+
+
+lbl = Label(top,text = "A list of favourite countries...")
+
+
+
+listbox = Listbox(top)
+
+
+
+listbox.insert(1,"India")
+
+
+
+listbox.insert(2, "USA")
+
+
+
+listbox.insert(3, "Japan")
+
+
+
+listbox.insert(4, "Austrelia")
+
+
+
+lbl.pack()
+
+listbox.pack()
+
+
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Listbox" src="python/images/python-tkinter-listbox.png"/>
+<h3 class="h3">Example 2: Deleting the active items from the list</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+# !/usr/bin/python3
+
+
+
+from tkinter import *
+
+
+
+top = Tk()
+
+
+
+top.geometry("200x250")
+
+
+
+lbl = Label(top,text = "A list of favourite countries...")
+
+
+
+listbox = Listbox(top)
+
+
+
+listbox.insert(1,"India")
+
+
+
+listbox.insert(2, "USA")
+
+
+
+listbox.insert(3, "Japan")
+
+
+
+listbox.insert(4, "Austrelia")
+
+
+
+#this button will delete the selected item from the list 
+
+
+
+btn = Button(top, text = "delete", command = lambda listbox=listbox: listbox.delete(ANCHOR))
+
+
+
+lbl.pack()
+
+
+
+
+
+listbox.pack()
+
+
+
+btn.pack()
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Listbox" src="python/images/python-tkinter-listbox2.png"/><br/>
+<p>After pressing the delete button.</p>
+<img alt="Python Tkinter Listbox" src="python/images/python-tkinter-listbox3.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-menubutton">Python Tkinter Menubutton </a></span>
+</div>
+<!-- link -->
+<br><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-label" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-menubutton" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</br></td></tr>
+</table>
+</div></body></html></body></html>

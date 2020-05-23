@@ -1,0 +1,617 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-mysql-creating-tables">next ¡ú</a>
+<a class="next" href="python-mysql-database-connection">¡û prev</a>
+</div>
+<h1 class="h1">Creating new databases</h1>
+<p>In this section of the tutorial, we will create the new database PythonDB.</p>
+<h2 class="h2">Getting the list of existing databases </h2>
+<p>We can get the list of all the databases by using the following MySQL query.</p>
+<div class="codeblock"><textarea class="python" name="code">
+&gt;  show databases;
+</textarea></div>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import mysql.connector
+
+#Create the connection object 
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google")
+
+#creating the cursor object
+cur = myconn.cursor()
+
+try:
+    dbs = cur.execute("show databases")
+except:
+    myconn.rollback()
+for x in cur:
+    print(x)
+myconn.close()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+('EmployeeDB',)
+('Test',)
+('TestDB',)
+('information_schema',)
+('javatpoint',)
+('javatpoint1',)
+('mydb',)
+('mysql',)
+('performance_schema',)
+('testDB',)
+</pre></div>
+<h2 class="h2">Creating the new database</h2>
+<p>The new database can be created by using the following SQL query.</p>
+<div class="codeblock"><textarea class="python" name="code">
+&gt;  create database &lt;database-name&gt;  
+</textarea></div>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import mysql.connector
+
+#Create the connection object 
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google")
+
+#creating the cursor object
+cur = myconn.cursor()
+
+try:
+    #creating a new database
+    cur.execute("create database PythonDB2")
+
+    #getting the list of all the databases which will now include the new database PythonDB
+    dbs = cur.execute("show databases")
+    
+except:
+    myconn.rollback()
+
+for x in cur:
+        print(x)
+        
+myconn.close()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+('EmployeeDB',)
+('PythonDB',)
+('Test',)
+('TestDB',)
+('anshika',)
+('information_schema',)
+('javatpoint',)
+('javatpoint1',)
+('mydb',)
+('mydb1',)
+('mysql',)
+('performance_schema',)
+('testDB',)
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-mysql-creating-tables">Creating Tables</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-mysql-database-connection" style="float:left">¡û prev</a>
+<a class="next" href="python-mysql-creating-tables" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-mysql-creating-tables">next ¡ú</a>
+<a class="next" href="python-mysql-database-connection">¡û prev</a>
+</div>
+<h1 class="h1">Creating new databases</h1>
+<p>In this section of the tutorial, we will create the new database PythonDB.</p>
+<h2 class="h2">Getting the list of existing databases </h2>
+<p>We can get the list of all the databases by using the following MySQL query.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+&gt;  show databases;
+
+</textarea></div>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+
+
+try:
+
+    dbs = cur.execute("show databases")
+
+except:
+
+    myconn.rollback()
+
+for x in cur:
+
+    print(x)
+
+myconn.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+('EmployeeDB',)
+
+('Test',)
+
+('TestDB',)
+
+('information_schema',)
+
+('javatpoint',)
+
+('javatpoint1',)
+
+('mydb',)
+
+('mysql',)
+
+('performance_schema',)
+
+('testDB',)
+
+</pre></div>
+<h2 class="h2">Creating the new database</h2>
+<p>The new database can be created by using the following SQL query.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+&gt;  create database &lt;database-name&gt;  
+
+</textarea></div>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+
+
+try:
+
+    #creating a new database
+
+    cur.execute("create database PythonDB2")
+
+
+
+    #getting the list of all the databases which will now include the new database PythonDB
+
+    dbs = cur.execute("show databases")
+
+    
+
+except:
+
+    myconn.rollback()
+
+
+
+for x in cur:
+
+        print(x)
+
+        
+
+myconn.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+('EmployeeDB',)
+
+('PythonDB',)
+
+('Test',)
+
+('TestDB',)
+
+('anshika',)
+
+('information_schema',)
+
+('javatpoint',)
+
+('javatpoint1',)
+
+('mydb',)
+
+('mydb1',)
+
+('mysql',)
+
+('performance_schema',)
+
+('testDB',)
+
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-mysql-creating-tables">Creating Tables</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-mysql-database-connection" style="float:left">¡û prev</a>
+<a class="next" href="python-mysql-creating-tables" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-mysql-creating-tables">next ¡ú</a>
+<a class="next" href="python-mysql-database-connection">¡û prev</a>
+</div>
+<h1 class="h1">Creating new databases</h1>
+<p>In this section of the tutorial, we will create the new database PythonDB.</p>
+<h2 class="h2">Getting the list of existing databases </h2>
+<p>We can get the list of all the databases by using the following MySQL query.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+&gt;  show databases;
+
+</textarea></div>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+
+
+try:
+
+    dbs = cur.execute("show databases")
+
+except:
+
+    myconn.rollback()
+
+for x in cur:
+
+    print(x)
+
+myconn.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+('EmployeeDB',)
+
+('Test',)
+
+('TestDB',)
+
+('information_schema',)
+
+('javatpoint',)
+
+('javatpoint1',)
+
+('mydb',)
+
+('mysql',)
+
+('performance_schema',)
+
+('testDB',)
+
+</pre></div>
+<h2 class="h2">Creating the new database</h2>
+<p>The new database can be created by using the following SQL query.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+&gt;  create database &lt;database-name&gt;  
+
+</textarea></div>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+
+
+try:
+
+    #creating a new database
+
+    cur.execute("create database PythonDB2")
+
+
+
+    #getting the list of all the databases which will now include the new database PythonDB
+
+    dbs = cur.execute("show databases")
+
+    
+
+except:
+
+    myconn.rollback()
+
+
+
+for x in cur:
+
+        print(x)
+
+        
+
+myconn.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+('EmployeeDB',)
+
+('PythonDB',)
+
+('Test',)
+
+('TestDB',)
+
+('anshika',)
+
+('information_schema',)
+
+('javatpoint',)
+
+('javatpoint1',)
+
+('mydb',)
+
+('mydb1',)
+
+('mysql',)
+
+('performance_schema',)
+
+('testDB',)
+
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-mysql-creating-tables">Creating Tables</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-mysql-database-connection" style="float:left">¡û prev</a>
+<a class="next" href="python-mysql-creating-tables" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-mysql-creating-tables">next ¡ú</a>
+<a class="next" href="python-mysql-database-connection">¡û prev</a>
+</div>
+<h1 class="h1">Creating new databases</h1>
+<p>In this section of the tutorial, we will create the new database PythonDB.</p>
+<h2 class="h2">Getting the list of existing databases </h2>
+<p>We can get the list of all the databases by using the following MySQL query.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+&gt;  show databases;
+
+</textarea></div>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+
+
+try:
+
+    dbs = cur.execute("show databases")
+
+except:
+
+    myconn.rollback()
+
+for x in cur:
+
+    print(x)
+
+myconn.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+('EmployeeDB',)
+
+('Test',)
+
+('TestDB',)
+
+('information_schema',)
+
+('javatpoint',)
+
+('javatpoint1',)
+
+('mydb',)
+
+('mysql',)
+
+('performance_schema',)
+
+('testDB',)
+
+</pre></div>
+<h2 class="h2">Creating the new database</h2>
+<p>The new database can be created by using the following SQL query.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+&gt;  create database &lt;database-name&gt;  
+
+</textarea></div>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+
+
+try:
+
+    #creating a new database
+
+    cur.execute("create database PythonDB2")
+
+
+
+    #getting the list of all the databases which will now include the new database PythonDB
+
+    dbs = cur.execute("show databases")
+
+    
+
+except:
+
+    myconn.rollback()
+
+
+
+for x in cur:
+
+        print(x)
+
+        
+
+myconn.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+('EmployeeDB',)
+
+('PythonDB',)
+
+('Test',)
+
+('TestDB',)
+
+('anshika',)
+
+('information_schema',)
+
+('javatpoint',)
+
+('javatpoint1',)
+
+('mydb',)
+
+('mydb1',)
+
+('mysql',)
+
+('performance_schema',)
+
+('testDB',)
+
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-mysql-creating-tables">Creating Tables</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-mysql-database-connection" style="float:left">¡û prev</a>
+<a class="next" href="python-mysql-creating-tables" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html></body></html>

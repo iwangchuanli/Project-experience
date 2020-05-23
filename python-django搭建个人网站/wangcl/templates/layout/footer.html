@@ -1,0 +1,20 @@
+<div id="footer" class="row">
+    <div class="col c12 aligncenter">
+        <h3>&copy; Wangcl</h3>
+        <p><a href="http://www.python.com/">Develop</a> by <a href="http://www.wangcl.xyz/">wangcl</a></p>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    /*user js*/
+    $(document).ready(function () {
+        var request_url = "{{ request.path }}";
+        $("ul.menu").find("a").each(function () {
+            var this_url = "" + $(this).attr('href');
+            if (this_url == request_url) {
+                $(this).attr('class', 'current');
+            }
+        });
+    });
+</script>

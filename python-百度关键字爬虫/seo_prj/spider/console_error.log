@@ -1,0 +1,1484 @@
+Exception in thread Thread-387:
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 31, in page_parse
+    save_tail(full_list)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 62, in save_tail
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 37, in page_parse
+    error_word(keyword)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 43, in error_word
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+Exception in thread Thread-356:
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 31, in page_parse
+    save_tail(full_list)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 62, in save_tail
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 37, in page_parse
+    error_word(keyword)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 43, in error_word
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+
+Exception in thread Thread-360:
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 31, in page_parse
+    save_tail(full_list)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 62, in save_tail
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 37, in page_parse
+    error_word(keyword)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 43, in error_word
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+Exception in thread Thread-368:
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 31, in page_parse
+    save_tail(full_list)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 62, in save_tail
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 37, in page_parse
+    error_word(keyword)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 43, in error_word
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+Exception in thread Thread-379:
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 31, in page_parse
+    save_tail(full_list)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 62, in save_tail
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 37, in page_parse
+    error_word(keyword)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 43, in error_word
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+
+Exception in thread Thread-375:
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 31, in page_parse
+    save_tail(full_list)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 62, in save_tail
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 37, in page_parse
+    error_word(keyword)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 43, in error_word
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+Exception in thread Thread-373:
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 31, in page_parse
+    save_tail(full_list)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 62, in save_tail
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 37, in page_parse
+    error_word(keyword)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 43, in error_word
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+Exception in thread Thread-396:
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 31, in page_parse
+    save_tail(full_list)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 62, in save_tail
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 37, in page_parse
+    error_word(keyword)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 43, in error_word
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+Exception in thread Thread-170:
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 31, in page_parse
+    save_tail(full_list)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 62, in save_tail
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 37, in page_parse
+    error_word(keyword)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 43, in error_word
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+Exception in thread Thread-372:
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 31, in page_parse
+    save_tail(full_list)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 62, in save_tail
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 37, in page_parse
+    error_word(keyword)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 43, in error_word
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+Exception in thread Thread-361:
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 31, in page_parse
+    save_tail(full_list)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 62, in save_tail
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 37, in page_parse
+    error_word(keyword)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 43, in error_word
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+
+Exception in thread Thread-385:
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 31, in page_parse
+    save_tail(full_list)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 62, in save_tail
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 37, in page_parse
+    error_word(keyword)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 43, in error_word
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+Exception in thread Thread-366:
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 31, in page_parse
+    save_tail(full_list)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 62, in save_tail
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 37, in page_parse
+    error_word(keyword)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 43, in error_word
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+Exception in thread Thread-18:
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 31, in page_parse
+    save_tail(full_list)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 62, in save_tail
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 37, in page_parse
+    error_word(keyword)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 43, in error_word
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+Exception in thread Thread-25:
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 31, in page_parse
+    save_tail(full_list)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 62, in save_tail
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 37, in page_parse
+    error_word(keyword)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 43, in error_word
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+Exception in thread Thread-394:
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 31, in page_parse
+    save_tail(full_list)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 62, in save_tail
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 37, in page_parse
+    error_word(keyword)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 43, in error_word
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+Exception in thread Thread-351:
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 31, in page_parse
+    save_tail(full_list)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 62, in save_tail
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 37, in page_parse
+    error_word(keyword)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 43, in error_word
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+Exception in thread Thread-16:
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 31, in page_parse
+    save_tail(full_list)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 62, in save_tail
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 37, in page_parse
+    error_word(keyword)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 43, in error_word
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+Exception in thread Thread-400:
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 31, in page_parse
+    save_tail(full_list)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 62, in save_tail
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 37, in page_parse
+    error_word(keyword)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 43, in error_word
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+Exception in thread Thread-401:
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 31, in page_parse
+    save_tail(full_list)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 62, in save_tail
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 37, in page_parse
+    error_word(keyword)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 43, in error_word
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+Exception in thread Thread-354:
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 31, in page_parse
+    save_tail(full_list)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 62, in save_tail
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 37, in page_parse
+    error_word(keyword)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 43, in error_word
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+Exception in thread Thread-165:
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 31, in page_parse
+    save_tail(full_list)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 62, in save_tail
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 37, in page_parse
+    error_word(keyword)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 43, in error_word
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+
+Exception in thread Thread-365:
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 31, in page_parse
+    save_tail(full_list)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 62, in save_tail
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 37, in page_parse
+    error_word(keyword)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 43, in error_word
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+Exception in thread Thread-402:
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 31, in page_parse
+    save_tail(full_list)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 62, in save_tail
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 37, in page_parse
+    error_word(keyword)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 43, in error_word
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+Exception in thread Thread-340:
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 31, in page_parse
+    save_tail(full_list)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 62, in save_tail
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 37, in page_parse
+    error_word(keyword)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 43, in error_word
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+Exception in thread Thread-380:
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 31, in page_parse
+    save_tail(full_list)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 62, in save_tail
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 37, in page_parse
+    error_word(keyword)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 43, in error_word
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+Exception in thread Thread-20:
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 31, in page_parse
+    save_tail(full_list)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 62, in save_tail
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 37, in page_parse
+    error_word(keyword)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 43, in error_word
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+Exception in thread Thread-355:
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 31, in page_parse
+    save_tail(full_list)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 62, in save_tail
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 37, in page_parse
+    error_word(keyword)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 43, in error_word
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+Exception in thread Thread-370:
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 31, in page_parse
+    save_tail(full_list)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 62, in save_tail
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 37, in page_parse
+    error_word(keyword)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 43, in error_word
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+Exception in thread Thread-389:
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 31, in page_parse
+    save_tail(full_list)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 62, in save_tail
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 37, in page_parse
+    error_word(keyword)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 43, in error_word
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+Exception in thread Thread-173:
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 31, in page_parse
+    save_tail(full_list)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 62, in save_tail
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 37, in page_parse
+    error_word(keyword)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 43, in error_word
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+Exception in thread Thread-397:
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 31, in page_parse
+    save_tail(full_list)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 62, in save_tail
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 37, in page_parse
+    error_word(keyword)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 43, in error_word
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+
+
+Exception in thread Thread-333:
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 31, in page_parse
+    save_tail(full_list)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 62, in save_tail
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 37, in page_parse
+    error_word(keyword)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 43, in error_word
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+Exception in thread Thread-399:
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 31, in page_parse
+    save_tail(full_list)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 62, in save_tail
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 37, in page_parse
+    error_word(keyword)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 43, in error_word
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+Exception in thread Thread-347:
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 31, in page_parse
+    save_tail(full_list)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 62, in save_tail
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 37, in page_parse
+    error_word(keyword)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 43, in error_word
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+Exception in thread Thread-329:
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 31, in page_parse
+    save_tail(full_list)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 62, in save_tail
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 37, in page_parse
+    error_word(keyword)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 43, in error_word
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+Exception in thread Thread-7:
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 31, in page_parse
+    save_tail(full_list)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 62, in save_tail
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 37, in page_parse
+    error_word(keyword)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 43, in error_word
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+Exception in thread Thread-383:
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 31, in page_parse
+    save_tail(full_list)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 62, in save_tail
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 37, in page_parse
+    error_word(keyword)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 43, in error_word
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+Exception in thread Thread-334:
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 31, in page_parse
+    save_tail(full_list)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 62, in save_tail
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 37, in page_parse
+    error_word(keyword)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 43, in error_word
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+Exception in thread Thread-14:
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 31, in page_parse
+    save_tail(full_list)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 62, in save_tail
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 37, in page_parse
+    error_word(keyword)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 43, in error_word
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+Exception in thread Thread-363:
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 31, in page_parse
+    save_tail(full_list)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 62, in save_tail
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 37, in page_parse
+    error_word(keyword)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 43, in error_word
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+Exception in thread Thread-377:
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 31, in page_parse
+    save_tail(full_list)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 62, in save_tail
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 37, in page_parse
+    error_word(keyword)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 43, in error_word
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+Exception in thread Thread-343:
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 31, in page_parse
+    save_tail(full_list)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 62, in save_tail
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 37, in page_parse
+    error_word(keyword)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 43, in error_word
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+Exception in thread Thread-15:
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 31, in page_parse
+    save_tail(full_list)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 62, in save_tail
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 37, in page_parse
+    error_word(keyword)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 43, in error_word
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+Exception in thread Thread-349:
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 31, in page_parse
+    save_tail(full_list)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 62, in save_tail
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 37, in page_parse
+    error_word(keyword)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 43, in error_word
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1040, 'Too many connections')

@@ -1,0 +1,1228 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="inheritance-in-python">next ¡ú</a>
+<a class="next" href="python-objects-classes">¡û prev</a>
+</div>
+<h1 class="h1">Python Constructor</h1>
+<p>A constructor is a special type of method (function) which is used to initialize the instance members of the class.</p>
+<p>Constructors can be of two types.</p>
+<ol class="points">
+<li>Parameterized Constructor </li>
+<li>Non-parameterized Constructor</li>
+</ol>
+<p>Constructor definition is executed when we create the object of this class. Constructors also verify that there are enough resources for the object to perform any start-up task.</p>
+<hr/>
+<h2 class="h2">Creating the constructor in python</h2>
+<p>In python, the method __<strong>init</strong>__ simulates the constructor of the class. This method is called when the class is instantiated. We can pass any number of arguments at the time of creating the class object, depending upon __<strong>init</strong>__ definition. It is mostly used to initialize the class attributes. Every class must have a constructor, even if it simply relies on the default constructor.</p>
+<p>Consider the following example to initialize the Employee class attributes.</p>
+<h3 class="h2">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+class Employee:
+    def __init__(self,name,id):
+        self.id = id;
+        self.name = name;
+    def display (self):
+        print("ID: %d \nName: %s"%(self.id,self.name))
+emp1 = Employee("John",101)
+emp2 = Employee("David",102)
+
+#accessing display() method to print employee 1 information
+ 
+emp1.display(); 
+
+#accessing display() method to print employee 2 information
+emp2.display(); 
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+ID: 101 
+Name: John
+ID: 102 
+Name: David
+</pre></div>
+<h3 class="h2">Example: Counting the number of objects of a class</h3>
+<div class="codeblock"><textarea class="python" name="code">
+class Student:
+    count = 0
+    def __init__(self):
+        Student.count = Student.count + 1
+s1=Student()
+s2=Student()
+s3=Student()
+print("The number of students:",Student.count)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+The number of students: 3
+</pre></div>
+<hr/>
+<h2 class="h2">Python Non-Parameterized Constructor Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+class Student:  
+    # Constructor - non parameterized  
+    def __init__(self):  
+        print("This is non parametrized constructor")  
+    def show(self,name):  
+        print("Hello",name)  
+student = Student()  
+student.show("John")  
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+This is non parametrized constructor
+Hello John
+</pre></div>
+<hr/>
+<h2 class="h2">Python Parameterized Constructor Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+class Student:  
+    # Constructor - parameterized  
+    def __init__(self, name):  
+        print("This is parametrized constructor")  
+        self.name = name  
+    def show(self):  
+        print("Hello",self.name)  
+student = Student("John")  
+student.show()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+This is parametrized constructor
+Hello John
+</pre></div>
+<hr/>
+<h2 class="h2">Python In-built class functions</h2>
+<p>The in-built functions defined in the class are described in the following table.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Function</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>getattr(obj,name,default)</td>
+<td>It is used to access the attribute of the object.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>setattr(obj, name,value)</td>
+<td>It is used to set a particular value to the specific attribute of an object.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>delattr(obj, name)</td>
+<td>It is used to delete a specific attribute.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>hasattr(obj, name)</td>
+<td>It returns true if the object contains some specific attribute.</td>
+</tr>
+</table>
+<h3 class="h2">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+class Student:
+    def __init__(self,name,id,age):
+        self.name = name;
+        self.id = id;
+        self.age = age
+
+#creates the object of the class Student
+s = Student("John",101,22)
+
+#prints the attribute name of the object s
+print(getattr(s,'name'))
+
+# reset the value of attribute age to 23
+setattr(s,"age",23)
+
+# prints the modified value of age
+print(getattr(s,'age'))
+
+# prints true if the student contains the attribute with name id
+
+print(hasattr(s,'id'))
+# deletes the attribute age
+delattr(s,'age')
+
+# this will give an error since the attribute age has been deleted
+print(s.age)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+John
+23
+True
+AttributeError: 'Student' object has no attribute 'age'
+</pre></div>
+<hr/>
+<h2 class="h2">Built-in class attributes</h2>
+<p>Along with the other attributes, a python class also contains some built-in class attributes which provide information about the class. </p>
+<p>The built-in class attributes are given in the below table.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>__dict__</td>
+<td>It provides the dictionary containing the information about the class namespace.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>__doc__</td>
+<td>It contains a string which has the class documentation</td>
+</tr>
+<tr>
+<td>3</td>
+<td>__name__</td>
+<td>It is used to access the class name.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>__module__</td>
+<td>It is used to access the module in which, this class is defined.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>__bases__</td>
+<td>It contains a tuple including all base classes.</td>
+</tr>
+</table>
+<h3 class="h2">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+class Student:
+    def __init__(self,name,id,age):
+        self.name = name;
+        self.id = id;
+        self.age = age
+    def display_details(self):
+        print("Name:%s, ID:%d, age:%d"%(self.name,self.id))
+s = Student("John",101,22)
+print(s.__doc__)
+print(s.__dict__)
+print(s.__module__)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+None
+{'name': 'John', 'id': 101, 'age': 22}
+__main__
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="inheritance-in-python">Python Inheritance</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-objects-classes" style="float:left">¡û prev</a>
+<a class="next" href="inheritance-in-python" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="inheritance-in-python">next ¡ú</a>
+<a class="next" href="python-objects-classes">¡û prev</a>
+</div>
+<h1 class="h1">Python Constructor</h1>
+<p>A constructor is a special type of method (function) which is used to initialize the instance members of the class.</p>
+<p>Constructors can be of two types.</p>
+<ol class="points">
+<li>Parameterized Constructor </li>
+<li>Non-parameterized Constructor</li>
+</ol>
+<p>Constructor definition is executed when we create the object of this class. Constructors also verify that there are enough resources for the object to perform any start-up task.</p>
+<hr/>
+<h2 class="h2">Creating the constructor in python</h2>
+<p>In python, the method __<strong>init</strong>__ simulates the constructor of the class. This method is called when the class is instantiated. We can pass any number of arguments at the time of creating the class object, depending upon __<strong>init</strong>__ definition. It is mostly used to initialize the class attributes. Every class must have a constructor, even if it simply relies on the default constructor.</p>
+<p>Consider the following example to initialize the Employee class attributes.</p>
+<h3 class="h2">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Employee:
+
+    def __init__(self,name,id):
+
+        self.id = id;
+
+        self.name = name;
+
+    def display (self):
+
+        print("ID: %d \nName: %s"%(self.id,self.name))
+
+emp1 = Employee("John",101)
+
+emp2 = Employee("David",102)
+
+
+
+#accessing display() method to print employee 1 information
+
+ 
+
+emp1.display(); 
+
+
+
+#accessing display() method to print employee 2 information
+
+emp2.display(); 
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+ID: 101 
+
+Name: John
+
+ID: 102 
+
+Name: David
+
+</pre></div>
+<h3 class="h2">Example: Counting the number of objects of a class</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Student:
+
+    count = 0
+
+    def __init__(self):
+
+        Student.count = Student.count + 1
+
+s1=Student()
+
+s2=Student()
+
+s3=Student()
+
+print("The number of students:",Student.count)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+The number of students: 3
+
+</pre></div>
+<hr/>
+<h2 class="h2">Python Non-Parameterized Constructor Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Student:  
+
+    # Constructor - non parameterized  
+
+    def __init__(self):  
+
+        print("This is non parametrized constructor")  
+
+    def show(self,name):  
+
+        print("Hello",name)  
+
+student = Student()  
+
+student.show("John")  
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+This is non parametrized constructor
+
+Hello John
+
+</pre></div>
+<hr/>
+<h2 class="h2">Python Parameterized Constructor Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Student:  
+
+    # Constructor - parameterized  
+
+    def __init__(self, name):  
+
+        print("This is parametrized constructor")  
+
+        self.name = name  
+
+    def show(self):  
+
+        print("Hello",self.name)  
+
+student = Student("John")  
+
+student.show()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+This is parametrized constructor
+
+Hello John
+
+</pre></div>
+<hr/>
+<h2 class="h2">Python In-built class functions</h2>
+<p>The in-built functions defined in the class are described in the following table.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Function</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>getattr(obj,name,default)</td>
+<td>It is used to access the attribute of the object.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>setattr(obj, name,value)</td>
+<td>It is used to set a particular value to the specific attribute of an object.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>delattr(obj, name)</td>
+<td>It is used to delete a specific attribute.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>hasattr(obj, name)</td>
+<td>It returns true if the object contains some specific attribute.</td>
+</tr>
+</table>
+<h3 class="h2">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Student:
+
+    def __init__(self,name,id,age):
+
+        self.name = name;
+
+        self.id = id;
+
+        self.age = age
+
+
+
+#creates the object of the class Student
+
+s = Student("John",101,22)
+
+
+
+#prints the attribute name of the object s
+
+print(getattr(s,'name'))
+
+
+
+# reset the value of attribute age to 23
+
+setattr(s,"age",23)
+
+
+
+# prints the modified value of age
+
+print(getattr(s,'age'))
+
+
+
+# prints true if the student contains the attribute with name id
+
+
+
+print(hasattr(s,'id'))
+
+# deletes the attribute age
+
+delattr(s,'age')
+
+
+
+# this will give an error since the attribute age has been deleted
+
+print(s.age)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+John
+
+23
+
+True
+
+AttributeError: 'Student' object has no attribute 'age'
+
+</pre></div>
+<hr/>
+<h2 class="h2">Built-in class attributes</h2>
+<p>Along with the other attributes, a python class also contains some built-in class attributes which provide information about the class. </p>
+<p>The built-in class attributes are given in the below table.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>__dict__</td>
+<td>It provides the dictionary containing the information about the class namespace.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>__doc__</td>
+<td>It contains a string which has the class documentation</td>
+</tr>
+<tr>
+<td>3</td>
+<td>__name__</td>
+<td>It is used to access the class name.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>__module__</td>
+<td>It is used to access the module in which, this class is defined.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>__bases__</td>
+<td>It contains a tuple including all base classes.</td>
+</tr>
+</table>
+<h3 class="h2">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Student:
+
+    def __init__(self,name,id,age):
+
+        self.name = name;
+
+        self.id = id;
+
+        self.age = age
+
+    def display_details(self):
+
+        print("Name:%s, ID:%d, age:%d"%(self.name,self.id))
+
+s = Student("John",101,22)
+
+print(s.__doc__)
+
+print(s.__dict__)
+
+print(s.__module__)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+None
+
+{'name': 'John', 'id': 101, 'age': 22}
+
+__main__
+
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="inheritance-in-python">Python Inheritance</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-objects-classes" style="float:left">¡û prev</a>
+<a class="next" href="inheritance-in-python" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="inheritance-in-python">next ¡ú</a>
+<a class="next" href="python-objects-classes">¡û prev</a>
+</div>
+<h1 class="h1">Python Constructor</h1>
+<p>A constructor is a special type of method (function) which is used to initialize the instance members of the class.</p>
+<p>Constructors can be of two types.</p>
+<ol class="points">
+<li>Parameterized Constructor </li>
+<li>Non-parameterized Constructor</li>
+</ol>
+<p>Constructor definition is executed when we create the object of this class. Constructors also verify that there are enough resources for the object to perform any start-up task.</p>
+<hr/>
+<h2 class="h2">Creating the constructor in python</h2>
+<p>In python, the method __<strong>init</strong>__ simulates the constructor of the class. This method is called when the class is instantiated. We can pass any number of arguments at the time of creating the class object, depending upon __<strong>init</strong>__ definition. It is mostly used to initialize the class attributes. Every class must have a constructor, even if it simply relies on the default constructor.</p>
+<p>Consider the following example to initialize the Employee class attributes.</p>
+<h3 class="h2">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Employee:
+
+    def __init__(self,name,id):
+
+        self.id = id;
+
+        self.name = name;
+
+    def display (self):
+
+        print("ID: %d \nName: %s"%(self.id,self.name))
+
+emp1 = Employee("John",101)
+
+emp2 = Employee("David",102)
+
+
+
+#accessing display() method to print employee 1 information
+
+ 
+
+emp1.display(); 
+
+
+
+#accessing display() method to print employee 2 information
+
+emp2.display(); 
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+ID: 101 
+
+Name: John
+
+ID: 102 
+
+Name: David
+
+</pre></div>
+<h3 class="h2">Example: Counting the number of objects of a class</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Student:
+
+    count = 0
+
+    def __init__(self):
+
+        Student.count = Student.count + 1
+
+s1=Student()
+
+s2=Student()
+
+s3=Student()
+
+print("The number of students:",Student.count)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+The number of students: 3
+
+</pre></div>
+<hr/>
+<h2 class="h2">Python Non-Parameterized Constructor Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Student:  
+
+    # Constructor - non parameterized  
+
+    def __init__(self):  
+
+        print("This is non parametrized constructor")  
+
+    def show(self,name):  
+
+        print("Hello",name)  
+
+student = Student()  
+
+student.show("John")  
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+This is non parametrized constructor
+
+Hello John
+
+</pre></div>
+<hr/>
+<h2 class="h2">Python Parameterized Constructor Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Student:  
+
+    # Constructor - parameterized  
+
+    def __init__(self, name):  
+
+        print("This is parametrized constructor")  
+
+        self.name = name  
+
+    def show(self):  
+
+        print("Hello",self.name)  
+
+student = Student("John")  
+
+student.show()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+This is parametrized constructor
+
+Hello John
+
+</pre></div>
+<hr/>
+<h2 class="h2">Python In-built class functions</h2>
+<p>The in-built functions defined in the class are described in the following table.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Function</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>getattr(obj,name,default)</td>
+<td>It is used to access the attribute of the object.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>setattr(obj, name,value)</td>
+<td>It is used to set a particular value to the specific attribute of an object.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>delattr(obj, name)</td>
+<td>It is used to delete a specific attribute.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>hasattr(obj, name)</td>
+<td>It returns true if the object contains some specific attribute.</td>
+</tr>
+</table>
+<h3 class="h2">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Student:
+
+    def __init__(self,name,id,age):
+
+        self.name = name;
+
+        self.id = id;
+
+        self.age = age
+
+
+
+#creates the object of the class Student
+
+s = Student("John",101,22)
+
+
+
+#prints the attribute name of the object s
+
+print(getattr(s,'name'))
+
+
+
+# reset the value of attribute age to 23
+
+setattr(s,"age",23)
+
+
+
+# prints the modified value of age
+
+print(getattr(s,'age'))
+
+
+
+# prints true if the student contains the attribute with name id
+
+
+
+print(hasattr(s,'id'))
+
+# deletes the attribute age
+
+delattr(s,'age')
+
+
+
+# this will give an error since the attribute age has been deleted
+
+print(s.age)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+John
+
+23
+
+True
+
+AttributeError: 'Student' object has no attribute 'age'
+
+</pre></div>
+<hr/>
+<h2 class="h2">Built-in class attributes</h2>
+<p>Along with the other attributes, a python class also contains some built-in class attributes which provide information about the class. </p>
+<p>The built-in class attributes are given in the below table.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>__dict__</td>
+<td>It provides the dictionary containing the information about the class namespace.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>__doc__</td>
+<td>It contains a string which has the class documentation</td>
+</tr>
+<tr>
+<td>3</td>
+<td>__name__</td>
+<td>It is used to access the class name.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>__module__</td>
+<td>It is used to access the module in which, this class is defined.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>__bases__</td>
+<td>It contains a tuple including all base classes.</td>
+</tr>
+</table>
+<h3 class="h2">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Student:
+
+    def __init__(self,name,id,age):
+
+        self.name = name;
+
+        self.id = id;
+
+        self.age = age
+
+    def display_details(self):
+
+        print("Name:%s, ID:%d, age:%d"%(self.name,self.id))
+
+s = Student("John",101,22)
+
+print(s.__doc__)
+
+print(s.__dict__)
+
+print(s.__module__)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+None
+
+{'name': 'John', 'id': 101, 'age': 22}
+
+__main__
+
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="inheritance-in-python">Python Inheritance</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-objects-classes" style="float:left">¡û prev</a>
+<a class="next" href="inheritance-in-python" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="inheritance-in-python">next ¡ú</a>
+<a class="next" href="python-objects-classes">¡û prev</a>
+</div>
+<h1 class="h1">Python Constructor</h1>
+<p>A constructor is a special type of method (function) which is used to initialize the instance members of the class.</p>
+<p>Constructors can be of two types.</p>
+<ol class="points">
+<li>Parameterized Constructor </li>
+<li>Non-parameterized Constructor</li>
+</ol>
+<p>Constructor definition is executed when we create the object of this class. Constructors also verify that there are enough resources for the object to perform any start-up task.</p>
+<hr/>
+<h2 class="h2">Creating the constructor in python</h2>
+<p>In python, the method __<strong>init</strong>__ simulates the constructor of the class. This method is called when the class is instantiated. We can pass any number of arguments at the time of creating the class object, depending upon __<strong>init</strong>__ definition. It is mostly used to initialize the class attributes. Every class must have a constructor, even if it simply relies on the default constructor.</p>
+<p>Consider the following example to initialize the Employee class attributes.</p>
+<h3 class="h2">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Employee:
+
+    def __init__(self,name,id):
+
+        self.id = id;
+
+        self.name = name;
+
+    def display (self):
+
+        print("ID: %d \nName: %s"%(self.id,self.name))
+
+emp1 = Employee("John",101)
+
+emp2 = Employee("David",102)
+
+
+
+#accessing display() method to print employee 1 information
+
+ 
+
+emp1.display(); 
+
+
+
+#accessing display() method to print employee 2 information
+
+emp2.display(); 
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+ID: 101 
+
+Name: John
+
+ID: 102 
+
+Name: David
+
+</pre></div>
+<h3 class="h2">Example: Counting the number of objects of a class</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Student:
+
+    count = 0
+
+    def __init__(self):
+
+        Student.count = Student.count + 1
+
+s1=Student()
+
+s2=Student()
+
+s3=Student()
+
+print("The number of students:",Student.count)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+The number of students: 3
+
+</pre></div>
+<hr/>
+<h2 class="h2">Python Non-Parameterized Constructor Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Student:  
+
+    # Constructor - non parameterized  
+
+    def __init__(self):  
+
+        print("This is non parametrized constructor")  
+
+    def show(self,name):  
+
+        print("Hello",name)  
+
+student = Student()  
+
+student.show("John")  
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+This is non parametrized constructor
+
+Hello John
+
+</pre></div>
+<hr/>
+<h2 class="h2">Python Parameterized Constructor Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Student:  
+
+    # Constructor - parameterized  
+
+    def __init__(self, name):  
+
+        print("This is parametrized constructor")  
+
+        self.name = name  
+
+    def show(self):  
+
+        print("Hello",self.name)  
+
+student = Student("John")  
+
+student.show()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+This is parametrized constructor
+
+Hello John
+
+</pre></div>
+<hr/>
+<h2 class="h2">Python In-built class functions</h2>
+<p>The in-built functions defined in the class are described in the following table.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Function</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>getattr(obj,name,default)</td>
+<td>It is used to access the attribute of the object.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>setattr(obj, name,value)</td>
+<td>It is used to set a particular value to the specific attribute of an object.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>delattr(obj, name)</td>
+<td>It is used to delete a specific attribute.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>hasattr(obj, name)</td>
+<td>It returns true if the object contains some specific attribute.</td>
+</tr>
+</table>
+<h3 class="h2">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Student:
+
+    def __init__(self,name,id,age):
+
+        self.name = name;
+
+        self.id = id;
+
+        self.age = age
+
+
+
+#creates the object of the class Student
+
+s = Student("John",101,22)
+
+
+
+#prints the attribute name of the object s
+
+print(getattr(s,'name'))
+
+
+
+# reset the value of attribute age to 23
+
+setattr(s,"age",23)
+
+
+
+# prints the modified value of age
+
+print(getattr(s,'age'))
+
+
+
+# prints true if the student contains the attribute with name id
+
+
+
+print(hasattr(s,'id'))
+
+# deletes the attribute age
+
+delattr(s,'age')
+
+
+
+# this will give an error since the attribute age has been deleted
+
+print(s.age)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+John
+
+23
+
+True
+
+AttributeError: 'Student' object has no attribute 'age'
+
+</pre></div>
+<hr/>
+<h2 class="h2">Built-in class attributes</h2>
+<p>Along with the other attributes, a python class also contains some built-in class attributes which provide information about the class. </p>
+<p>The built-in class attributes are given in the below table.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>__dict__</td>
+<td>It provides the dictionary containing the information about the class namespace.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>__doc__</td>
+<td>It contains a string which has the class documentation</td>
+</tr>
+<tr>
+<td>3</td>
+<td>__name__</td>
+<td>It is used to access the class name.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>__module__</td>
+<td>It is used to access the module in which, this class is defined.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>__bases__</td>
+<td>It contains a tuple including all base classes.</td>
+</tr>
+</table>
+<h3 class="h2">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Student:
+
+    def __init__(self,name,id,age):
+
+        self.name = name;
+
+        self.id = id;
+
+        self.age = age
+
+    def display_details(self):
+
+        print("Name:%s, ID:%d, age:%d"%(self.name,self.id))
+
+s = Student("John",101,22)
+
+print(s.__doc__)
+
+print(s.__dict__)
+
+print(s.__module__)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+None
+
+{'name': 'John', 'id': 101, 'age': 22}
+
+__main__
+
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="inheritance-in-python">Python Inheritance</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-objects-classes" style="float:left">¡û prev</a>
+<a class="next" href="inheritance-in-python" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html></body></html>

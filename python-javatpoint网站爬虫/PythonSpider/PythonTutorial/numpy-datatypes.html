@@ -1,0 +1,787 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-array-creation">next ¡ú</a>
+<a class="next" href="numpy-ndarray">¡û prev</a>
+</div>
+<h1 class="h1">NumPy Datatypes </h1>
+<p>The NumPy provides a higher range of numeric data types than that provided by the Python. A list of numeric data types is given in the following table. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Data type</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>bool_</td>
+<td>It represents the boolean value indicating true or false. It is stored as a byte.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>int_</td>
+<td>It is the default type of integer. It is identical to long type in C that contains 64 bit or 32-bit integer. </td>
+</tr>
+<tr>
+<td>3</td>
+<td>intc</td>
+<td>It is similar to the C integer (c int) as it represents 32 or 64-bit int. </td>
+</tr>
+<tr>
+<td>4</td>
+<td>intp</td>
+<td>It represents the integers which are used for indexing.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>int8</td>
+<td>It is the 8-bit integer identical to a byte. The range of the value is -128 to 127. </td>
+</tr>
+<tr>
+<td>6</td>
+<td>int16</td>
+<td>It is the 2-byte (16-bit) integer. The range is -32768 to 32767. </td>
+</tr>
+<tr>
+<td>7</td>
+<td>int32</td>
+<td>It is the 4-byte (32-bit) integer. The range is -2147483648 to 2147483647. </td>
+</tr>
+<tr>
+<td>8</td>
+<td>int64</td>
+<td>It is the 8-byte (64-bit) integer. The range is -9223372036854775808 to 9223372036854775807. </td>
+</tr>
+<tr>
+<td>9</td>
+<td>uint8</td>
+<td>It is the 1-byte (8-bit) unsigned integer. </td>
+</tr>
+<tr>
+<td>10</td>
+<td>uint16</td>
+<td>It is the 2-byte (16-bit) unsigned integer.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>uint32</td>
+<td>It is the 4-byte (32-bit) unsigned integer. </td>
+</tr>
+<tr>
+<td>12</td>
+<td>uint64</td>
+<td>It is the 8 bytes (64-bit) unsigned integer.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>float_</td>
+<td>It is identical to float64. </td>
+</tr>
+<tr>
+<td>14</td>
+<td>float16</td>
+<td>It is the half-precision float. 5 bits are reserved for the exponent. 10 bits are reserved for mantissa, and 1 bit is reserved for the sign.</td>
+</tr>
+<tr>
+<td>15</td>
+<td>float32</td>
+<td>It is a single precision float. 8 bits are reserved for the exponent, 23 bits are reserved for mantissa, and 1 bit is reserved for the sign. </td>
+</tr>
+<tr>
+<td>16</td>
+<td>float64</td>
+<td>It is the double precision float. 11 bits are reserved for the exponent, 52 bits are reserved for mantissa, 1 bit is used for the sign. </td>
+</tr>
+<tr>
+<td>17</td>
+<td>complex_</td>
+<td>It is identical to complex128. </td>
+</tr>
+<tr>
+<td>18</td>
+<td>complex64</td>
+<td>It is used to represent the complex number where real and imaginary part shares 32 bits each.</td>
+</tr>
+<tr>
+<td>19</td>
+<td>complex128</td>
+<td>It is used to represent the complex number where real and imaginary part shares 64 bits each. </td>
+</tr>
+</table>
+<h2 class="h2">NumPy dtype </h2>
+<p>All the items of a numpy array are data type objects also known as numpy dtypes. A data type object implements the fixed size of memory corresponding to an array. </p>
+<p>We can create a dtype object by using the following syntax. </p>
+<div class="codeblock"><textarea class="python" name="code">
+numpy.dtype(object, align, copy)
+</textarea></div>
+<p>The constructor accepts the following object. </p>
+<p><strong>Object:</strong> It represents the object which is to be converted to the data type. </p>
+<p><strong>Align:</strong> It can be set to any boolean value. If true, then it adds extra padding to make it equivalent to a C struct.</p>
+<p><strong>Copy:</strong> It creates another copy of the dtype object.</p>
+<h3 class="h3">Example 1</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+d = np.dtype(np.int32)
+print(d)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+int32
+</pre></div>
+<h3 class="h3">Example 2</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np 
+d = np.int32(i4)
+print(d)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+int32
+</pre></div>
+<h2 class="h2">Creating a Structured data type</h2>
+<p>We can create a map-like (dictionary) data type which contains the mapping between the values. For example, it can contain the mapping between employees and salaries or the students and the age, etc.</p>
+<p>Consider the following example. </p>
+<h3 class="h3">Example 1</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+d = np.dtype([('salary',np.float)])
+print(d)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+[('salary', '<f8')] <="" pre=""></f8')]></pre></div>
+<h3 class="h3">Example 2</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+d=np.dtype([('salary',np.float)])
+arr = np.array([(10000.12,),(20000.50,)],dtype=d)
+print(arr['salary'])
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+[(10000.12,) (20000.5 ,)]
+</pre></div>
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-array-creation">NumPy Array Creation</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="numpy-ndarray" style="float:left">¡û prev</a>
+<a class="next" href="numpy-array-creation" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-array-creation">next ¡ú</a>
+<a class="next" href="numpy-ndarray">¡û prev</a>
+</div>
+<h1 class="h1">NumPy Datatypes </h1>
+<p>The NumPy provides a higher range of numeric data types than that provided by the Python. A list of numeric data types is given in the following table. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Data type</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>bool_</td>
+<td>It represents the boolean value indicating true or false. It is stored as a byte.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>int_</td>
+<td>It is the default type of integer. It is identical to long type in C that contains 64 bit or 32-bit integer. </td>
+</tr>
+<tr>
+<td>3</td>
+<td>intc</td>
+<td>It is similar to the C integer (c int) as it represents 32 or 64-bit int. </td>
+</tr>
+<tr>
+<td>4</td>
+<td>intp</td>
+<td>It represents the integers which are used for indexing.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>int8</td>
+<td>It is the 8-bit integer identical to a byte. The range of the value is -128 to 127. </td>
+</tr>
+<tr>
+<td>6</td>
+<td>int16</td>
+<td>It is the 2-byte (16-bit) integer. The range is -32768 to 32767. </td>
+</tr>
+<tr>
+<td>7</td>
+<td>int32</td>
+<td>It is the 4-byte (32-bit) integer. The range is -2147483648 to 2147483647. </td>
+</tr>
+<tr>
+<td>8</td>
+<td>int64</td>
+<td>It is the 8-byte (64-bit) integer. The range is -9223372036854775808 to 9223372036854775807. </td>
+</tr>
+<tr>
+<td>9</td>
+<td>uint8</td>
+<td>It is the 1-byte (8-bit) unsigned integer. </td>
+</tr>
+<tr>
+<td>10</td>
+<td>uint16</td>
+<td>It is the 2-byte (16-bit) unsigned integer.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>uint32</td>
+<td>It is the 4-byte (32-bit) unsigned integer. </td>
+</tr>
+<tr>
+<td>12</td>
+<td>uint64</td>
+<td>It is the 8 bytes (64-bit) unsigned integer.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>float_</td>
+<td>It is identical to float64. </td>
+</tr>
+<tr>
+<td>14</td>
+<td>float16</td>
+<td>It is the half-precision float. 5 bits are reserved for the exponent. 10 bits are reserved for mantissa, and 1 bit is reserved for the sign.</td>
+</tr>
+<tr>
+<td>15</td>
+<td>float32</td>
+<td>It is a single precision float. 8 bits are reserved for the exponent, 23 bits are reserved for mantissa, and 1 bit is reserved for the sign. </td>
+</tr>
+<tr>
+<td>16</td>
+<td>float64</td>
+<td>It is the double precision float. 11 bits are reserved for the exponent, 52 bits are reserved for mantissa, 1 bit is used for the sign. </td>
+</tr>
+<tr>
+<td>17</td>
+<td>complex_</td>
+<td>It is identical to complex128. </td>
+</tr>
+<tr>
+<td>18</td>
+<td>complex64</td>
+<td>It is used to represent the complex number where real and imaginary part shares 32 bits each.</td>
+</tr>
+<tr>
+<td>19</td>
+<td>complex128</td>
+<td>It is used to represent the complex number where real and imaginary part shares 64 bits each. </td>
+</tr>
+</table>
+<h2 class="h2">NumPy dtype </h2>
+<p>All the items of a numpy array are data type objects also known as numpy dtypes. A data type object implements the fixed size of memory corresponding to an array. </p>
+<p>We can create a dtype object by using the following syntax. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+numpy.dtype(object, align, copy)
+
+</textarea></div>
+<p>The constructor accepts the following object. </p>
+<p><strong>Object:</strong> It represents the object which is to be converted to the data type. </p>
+<p><strong>Align:</strong> It can be set to any boolean value. If true, then it adds extra padding to make it equivalent to a C struct.</p>
+<p><strong>Copy:</strong> It creates another copy of the dtype object.</p>
+<h3 class="h3">Example 1</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+d = np.dtype(np.int32)
+
+print(d)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+int32
+
+</pre></div>
+<h3 class="h3">Example 2</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np 
+
+d = np.int32(i4)
+
+print(d)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+int32
+
+</pre></div>
+<h2 class="h2">Creating a Structured data type</h2>
+<p>We can create a map-like (dictionary) data type which contains the mapping between the values. For example, it can contain the mapping between employees and salaries or the students and the age, etc.</p>
+<p>Consider the following example. </p>
+<h3 class="h3">Example 1</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+d = np.dtype([('salary',np.float)])
+
+print(d)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+[('salary', '<f8')] <="" pre=""></f8')]></pre></div>
+<h3 class="h3">Example 2</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+d=np.dtype([('salary',np.float)])
+
+arr = np.array([(10000.12,),(20000.50,)],dtype=d)
+
+print(arr['salary'])
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+[(10000.12,) (20000.5 ,)]
+
+</pre></div>
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-array-creation">NumPy Array Creation</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="numpy-ndarray" style="float:left">¡û prev</a>
+<a class="next" href="numpy-array-creation" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-array-creation">next ¡ú</a>
+<a class="next" href="numpy-ndarray">¡û prev</a>
+</div>
+<h1 class="h1">NumPy Datatypes </h1>
+<p>The NumPy provides a higher range of numeric data types than that provided by the Python. A list of numeric data types is given in the following table. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Data type</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>bool_</td>
+<td>It represents the boolean value indicating true or false. It is stored as a byte.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>int_</td>
+<td>It is the default type of integer. It is identical to long type in C that contains 64 bit or 32-bit integer. </td>
+</tr>
+<tr>
+<td>3</td>
+<td>intc</td>
+<td>It is similar to the C integer (c int) as it represents 32 or 64-bit int. </td>
+</tr>
+<tr>
+<td>4</td>
+<td>intp</td>
+<td>It represents the integers which are used for indexing.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>int8</td>
+<td>It is the 8-bit integer identical to a byte. The range of the value is -128 to 127. </td>
+</tr>
+<tr>
+<td>6</td>
+<td>int16</td>
+<td>It is the 2-byte (16-bit) integer. The range is -32768 to 32767. </td>
+</tr>
+<tr>
+<td>7</td>
+<td>int32</td>
+<td>It is the 4-byte (32-bit) integer. The range is -2147483648 to 2147483647. </td>
+</tr>
+<tr>
+<td>8</td>
+<td>int64</td>
+<td>It is the 8-byte (64-bit) integer. The range is -9223372036854775808 to 9223372036854775807. </td>
+</tr>
+<tr>
+<td>9</td>
+<td>uint8</td>
+<td>It is the 1-byte (8-bit) unsigned integer. </td>
+</tr>
+<tr>
+<td>10</td>
+<td>uint16</td>
+<td>It is the 2-byte (16-bit) unsigned integer.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>uint32</td>
+<td>It is the 4-byte (32-bit) unsigned integer. </td>
+</tr>
+<tr>
+<td>12</td>
+<td>uint64</td>
+<td>It is the 8 bytes (64-bit) unsigned integer.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>float_</td>
+<td>It is identical to float64. </td>
+</tr>
+<tr>
+<td>14</td>
+<td>float16</td>
+<td>It is the half-precision float. 5 bits are reserved for the exponent. 10 bits are reserved for mantissa, and 1 bit is reserved for the sign.</td>
+</tr>
+<tr>
+<td>15</td>
+<td>float32</td>
+<td>It is a single precision float. 8 bits are reserved for the exponent, 23 bits are reserved for mantissa, and 1 bit is reserved for the sign. </td>
+</tr>
+<tr>
+<td>16</td>
+<td>float64</td>
+<td>It is the double precision float. 11 bits are reserved for the exponent, 52 bits are reserved for mantissa, 1 bit is used for the sign. </td>
+</tr>
+<tr>
+<td>17</td>
+<td>complex_</td>
+<td>It is identical to complex128. </td>
+</tr>
+<tr>
+<td>18</td>
+<td>complex64</td>
+<td>It is used to represent the complex number where real and imaginary part shares 32 bits each.</td>
+</tr>
+<tr>
+<td>19</td>
+<td>complex128</td>
+<td>It is used to represent the complex number where real and imaginary part shares 64 bits each. </td>
+</tr>
+</table>
+<h2 class="h2">NumPy dtype </h2>
+<p>All the items of a numpy array are data type objects also known as numpy dtypes. A data type object implements the fixed size of memory corresponding to an array. </p>
+<p>We can create a dtype object by using the following syntax. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+numpy.dtype(object, align, copy)
+
+</textarea></div>
+<p>The constructor accepts the following object. </p>
+<p><strong>Object:</strong> It represents the object which is to be converted to the data type. </p>
+<p><strong>Align:</strong> It can be set to any boolean value. If true, then it adds extra padding to make it equivalent to a C struct.</p>
+<p><strong>Copy:</strong> It creates another copy of the dtype object.</p>
+<h3 class="h3">Example 1</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+d = np.dtype(np.int32)
+
+print(d)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+int32
+
+</pre></div>
+<h3 class="h3">Example 2</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np 
+
+d = np.int32(i4)
+
+print(d)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+int32
+
+</pre></div>
+<h2 class="h2">Creating a Structured data type</h2>
+<p>We can create a map-like (dictionary) data type which contains the mapping between the values. For example, it can contain the mapping between employees and salaries or the students and the age, etc.</p>
+<p>Consider the following example. </p>
+<h3 class="h3">Example 1</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+d = np.dtype([('salary',np.float)])
+
+print(d)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+[('salary', '<f8')] <="" pre=""></f8')]></pre></div>
+<h3 class="h3">Example 2</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+d=np.dtype([('salary',np.float)])
+
+arr = np.array([(10000.12,),(20000.50,)],dtype=d)
+
+print(arr['salary'])
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+[(10000.12,) (20000.5 ,)]
+
+</pre></div>
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-array-creation">NumPy Array Creation</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="numpy-ndarray" style="float:left">¡û prev</a>
+<a class="next" href="numpy-array-creation" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-array-creation">next ¡ú</a>
+<a class="next" href="numpy-ndarray">¡û prev</a>
+</div>
+<h1 class="h1">NumPy Datatypes </h1>
+<p>The NumPy provides a higher range of numeric data types than that provided by the Python. A list of numeric data types is given in the following table. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Data type</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>bool_</td>
+<td>It represents the boolean value indicating true or false. It is stored as a byte.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>int_</td>
+<td>It is the default type of integer. It is identical to long type in C that contains 64 bit or 32-bit integer. </td>
+</tr>
+<tr>
+<td>3</td>
+<td>intc</td>
+<td>It is similar to the C integer (c int) as it represents 32 or 64-bit int. </td>
+</tr>
+<tr>
+<td>4</td>
+<td>intp</td>
+<td>It represents the integers which are used for indexing.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>int8</td>
+<td>It is the 8-bit integer identical to a byte. The range of the value is -128 to 127. </td>
+</tr>
+<tr>
+<td>6</td>
+<td>int16</td>
+<td>It is the 2-byte (16-bit) integer. The range is -32768 to 32767. </td>
+</tr>
+<tr>
+<td>7</td>
+<td>int32</td>
+<td>It is the 4-byte (32-bit) integer. The range is -2147483648 to 2147483647. </td>
+</tr>
+<tr>
+<td>8</td>
+<td>int64</td>
+<td>It is the 8-byte (64-bit) integer. The range is -9223372036854775808 to 9223372036854775807. </td>
+</tr>
+<tr>
+<td>9</td>
+<td>uint8</td>
+<td>It is the 1-byte (8-bit) unsigned integer. </td>
+</tr>
+<tr>
+<td>10</td>
+<td>uint16</td>
+<td>It is the 2-byte (16-bit) unsigned integer.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>uint32</td>
+<td>It is the 4-byte (32-bit) unsigned integer. </td>
+</tr>
+<tr>
+<td>12</td>
+<td>uint64</td>
+<td>It is the 8 bytes (64-bit) unsigned integer.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>float_</td>
+<td>It is identical to float64. </td>
+</tr>
+<tr>
+<td>14</td>
+<td>float16</td>
+<td>It is the half-precision float. 5 bits are reserved for the exponent. 10 bits are reserved for mantissa, and 1 bit is reserved for the sign.</td>
+</tr>
+<tr>
+<td>15</td>
+<td>float32</td>
+<td>It is a single precision float. 8 bits are reserved for the exponent, 23 bits are reserved for mantissa, and 1 bit is reserved for the sign. </td>
+</tr>
+<tr>
+<td>16</td>
+<td>float64</td>
+<td>It is the double precision float. 11 bits are reserved for the exponent, 52 bits are reserved for mantissa, 1 bit is used for the sign. </td>
+</tr>
+<tr>
+<td>17</td>
+<td>complex_</td>
+<td>It is identical to complex128. </td>
+</tr>
+<tr>
+<td>18</td>
+<td>complex64</td>
+<td>It is used to represent the complex number where real and imaginary part shares 32 bits each.</td>
+</tr>
+<tr>
+<td>19</td>
+<td>complex128</td>
+<td>It is used to represent the complex number where real and imaginary part shares 64 bits each. </td>
+</tr>
+</table>
+<h2 class="h2">NumPy dtype </h2>
+<p>All the items of a numpy array are data type objects also known as numpy dtypes. A data type object implements the fixed size of memory corresponding to an array. </p>
+<p>We can create a dtype object by using the following syntax. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+numpy.dtype(object, align, copy)
+
+</textarea></div>
+<p>The constructor accepts the following object. </p>
+<p><strong>Object:</strong> It represents the object which is to be converted to the data type. </p>
+<p><strong>Align:</strong> It can be set to any boolean value. If true, then it adds extra padding to make it equivalent to a C struct.</p>
+<p><strong>Copy:</strong> It creates another copy of the dtype object.</p>
+<h3 class="h3">Example 1</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+d = np.dtype(np.int32)
+
+print(d)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+int32
+
+</pre></div>
+<h3 class="h3">Example 2</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np 
+
+d = np.int32(i4)
+
+print(d)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+int32
+
+</pre></div>
+<h2 class="h2">Creating a Structured data type</h2>
+<p>We can create a map-like (dictionary) data type which contains the mapping between the values. For example, it can contain the mapping between employees and salaries or the students and the age, etc.</p>
+<p>Consider the following example. </p>
+<h3 class="h3">Example 1</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+d = np.dtype([('salary',np.float)])
+
+print(d)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+[('salary', '<f8')] <="" pre=""></f8')]></pre></div>
+<h3 class="h3">Example 2</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+d=np.dtype([('salary',np.float)])
+
+arr = np.array([(10000.12,),(20000.50,)],dtype=d)
+
+print(arr['salary'])
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+[(10000.12,) (20000.5 ,)]
+
+</pre></div>
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-array-creation">NumPy Array Creation</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="numpy-ndarray" style="float:left">¡û prev</a>
+<a class="next" href="numpy-array-creation" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html></body></html>

@@ -1,0 +1,667 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-arrays-within-the-numerical-range">next ¡ú</a>
+<a class="next" href="numpy-array-creation">¡û prev</a>
+</div>
+<h1 class="h1">Numpy array from existing data</h1>
+<p>NumPy provides us the way to create an array by using the existing data. </p>
+<h2 class="h2">numpy.asarray</h2>
+<p>This routine is used to create an array by using the existing data in the form of lists, or tuples. This routine is useful in the scenario where we need to convert a python sequence into the numpy array object.</p>
+<p>The syntax to use the asarray() routine is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+numpy.asarray(sequence,  dtype = None, order = None)
+</textarea></div>
+<p>It accepts the following parameters. </p>
+<ol class="points">
+<li><strong>sequence:</strong> It is the python sequence which is to be converted into the python array.</li>
+<li><strong>dtype:</strong> It is the data type of each item of the array. </li>
+<li><strong>order:</strong> It can be set to C or F. The default is C.</li>
+</ol>
+<h3 class="h3">Example: creating numpy array using the list</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+l=[1,2,3,4,5,6,7]
+a = np.asarray(l);
+print(type(a))
+print(a)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+&lt;class 'numpy.ndarray'&gt;
+[1 2 3 4 5 6 7]
+</pre></div>
+<h3 class="h3">Example: creating a numpy array using Tuple</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+l=(1,2,3,4,5,6,7)   
+a = np.asarray(l);
+print(type(a))
+print(a)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+&lt;class 'numpy.ndarray'&gt;
+[1 2 3 4 5 6 7]
+</pre></div>
+<h3 class="h3">Example: creating a numpy array using more than one list </h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+l=[[1,2,3,4,5,6,7],[8,9]]
+a = np.asarray(l);
+print(type(a))
+print(a)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+&lt;class 'numpy.ndarray'&gt;
+[list([1, 2, 3, 4, 5, 6, 7]) list([8, 9])]
+</pre></div>
+<h2 class="h2">numpy.frombuffer </h2>
+<p>This function is used to create an array by using the specified buffer. The syntax to use this buffer is given below. </p>
+<div class="codeblock"><textarea class="python" name="code">
+numpy.frombuffer(buffer, dtype = float, count = -1, offset = 0)
+</textarea></div>
+<p>It accepts the following parameters. </p>
+<ul class="points">
+<li><strong>buffer:</strong> It represents an object that exposes a buffer interface. </li>
+<li><strong>dtype:</strong> It represents the data type of the returned data type array. The default value is 0. </li>
+<li><strong>count:</strong> It represents the length of the returned ndarray. The default value is -1.</li>
+<li><strong>offset:</strong> It represents the starting position to read from. The default value is 0. </li>
+</ul>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+l = b'hello world'
+print(type(l))
+a = np.frombuffer(l, dtype = "S1")
+print(a)
+print(type(a))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+&lt;class 'bytes'&gt;
+[b'h' b'e' b'l' b'l' b'o' b' ' b'w' b'o' b'r' b'l' b'd']
+&lt;class 'numpy.ndarray'&gt;
+</pre></div>
+<h2 class="h2">numpy.fromiter</h2>
+<p>This routine is used to create a ndarray by using an iterable object. It returns a one-dimensional ndarray object.</p>
+<p>The syntax is given below. </p>
+<div class="codeblock"><textarea class="python" name="code">
+numpy.fromiter(iterable, dtype, count = - 1)
+</textarea></div>
+<p>It accepts the following parameters. </p>
+<ol class="points">
+<li><strong>Iterable:</strong> It represents an iterable object.</li>
+<li><strong>dtype:</strong> It represents the data type of the resultant array items. </li>
+<li><strong>count:</strong> It represents the number of items to read from the buffer in the array. </li>
+</ol>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+list = [0,2,4,6]
+it = iter(list)
+x = np.fromiter(it, dtype = float)
+print(x)
+print(type(x))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+[0. 2. 4. 6.]
+&lt;class 'numpy.ndarray'&gt;
+</pre></div>
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-arrays-within-the-numerical-range">Numpy Arrays within the numerical range</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="numpy-array-creation" style="float:left">¡û prev</a>
+<a class="next" href="numpy-arrays-within-the-numerical-range" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-arrays-within-the-numerical-range">next ¡ú</a>
+<a class="next" href="numpy-array-creation">¡û prev</a>
+</div>
+<h1 class="h1">Numpy array from existing data</h1>
+<p>NumPy provides us the way to create an array by using the existing data. </p>
+<h2 class="h2">numpy.asarray</h2>
+<p>This routine is used to create an array by using the existing data in the form of lists, or tuples. This routine is useful in the scenario where we need to convert a python sequence into the numpy array object.</p>
+<p>The syntax to use the asarray() routine is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+numpy.asarray(sequence,  dtype = None, order = None)
+
+</textarea></div>
+<p>It accepts the following parameters. </p>
+<ol class="points">
+<li><strong>sequence:</strong> It is the python sequence which is to be converted into the python array.</li>
+<li><strong>dtype:</strong> It is the data type of each item of the array. </li>
+<li><strong>order:</strong> It can be set to C or F. The default is C.</li>
+</ol>
+<h3 class="h3">Example: creating numpy array using the list</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+l=[1,2,3,4,5,6,7]
+
+a = np.asarray(l);
+
+print(type(a))
+
+print(a)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+&lt;class 'numpy.ndarray'&gt;
+
+[1 2 3 4 5 6 7]
+
+</pre></div>
+<h3 class="h3">Example: creating a numpy array using Tuple</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+l=(1,2,3,4,5,6,7)   
+
+a = np.asarray(l);
+
+print(type(a))
+
+print(a)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+&lt;class 'numpy.ndarray'&gt;
+
+[1 2 3 4 5 6 7]
+
+</pre></div>
+<h3 class="h3">Example: creating a numpy array using more than one list </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+l=[[1,2,3,4,5,6,7],[8,9]]
+
+a = np.asarray(l);
+
+print(type(a))
+
+print(a)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+&lt;class 'numpy.ndarray'&gt;
+
+[list([1, 2, 3, 4, 5, 6, 7]) list([8, 9])]
+
+</pre></div>
+<h2 class="h2">numpy.frombuffer </h2>
+<p>This function is used to create an array by using the specified buffer. The syntax to use this buffer is given below. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+numpy.frombuffer(buffer, dtype = float, count = -1, offset = 0)
+
+</textarea></div>
+<p>It accepts the following parameters. </p>
+<ul class="points">
+<li><strong>buffer:</strong> It represents an object that exposes a buffer interface. </li>
+<li><strong>dtype:</strong> It represents the data type of the returned data type array. The default value is 0. </li>
+<li><strong>count:</strong> It represents the length of the returned ndarray. The default value is -1.</li>
+<li><strong>offset:</strong> It represents the starting position to read from. The default value is 0. </li>
+</ul>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+l = b'hello world'
+
+print(type(l))
+
+a = np.frombuffer(l, dtype = "S1")
+
+print(a)
+
+print(type(a))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+&lt;class 'bytes'&gt;
+
+[b'h' b'e' b'l' b'l' b'o' b' ' b'w' b'o' b'r' b'l' b'd']
+
+&lt;class 'numpy.ndarray'&gt;
+
+</pre></div>
+<h2 class="h2">numpy.fromiter</h2>
+<p>This routine is used to create a ndarray by using an iterable object. It returns a one-dimensional ndarray object.</p>
+<p>The syntax is given below. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+numpy.fromiter(iterable, dtype, count = - 1)
+
+</textarea></div>
+<p>It accepts the following parameters. </p>
+<ol class="points">
+<li><strong>Iterable:</strong> It represents an iterable object.</li>
+<li><strong>dtype:</strong> It represents the data type of the resultant array items. </li>
+<li><strong>count:</strong> It represents the number of items to read from the buffer in the array. </li>
+</ol>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+list = [0,2,4,6]
+
+it = iter(list)
+
+x = np.fromiter(it, dtype = float)
+
+print(x)
+
+print(type(x))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+[0. 2. 4. 6.]
+
+&lt;class 'numpy.ndarray'&gt;
+
+</pre></div>
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-arrays-within-the-numerical-range">Numpy Arrays within the numerical range</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="numpy-array-creation" style="float:left">¡û prev</a>
+<a class="next" href="numpy-arrays-within-the-numerical-range" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-arrays-within-the-numerical-range">next ¡ú</a>
+<a class="next" href="numpy-array-creation">¡û prev</a>
+</div>
+<h1 class="h1">Numpy array from existing data</h1>
+<p>NumPy provides us the way to create an array by using the existing data. </p>
+<h2 class="h2">numpy.asarray</h2>
+<p>This routine is used to create an array by using the existing data in the form of lists, or tuples. This routine is useful in the scenario where we need to convert a python sequence into the numpy array object.</p>
+<p>The syntax to use the asarray() routine is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+numpy.asarray(sequence,  dtype = None, order = None)
+
+</textarea></div>
+<p>It accepts the following parameters. </p>
+<ol class="points">
+<li><strong>sequence:</strong> It is the python sequence which is to be converted into the python array.</li>
+<li><strong>dtype:</strong> It is the data type of each item of the array. </li>
+<li><strong>order:</strong> It can be set to C or F. The default is C.</li>
+</ol>
+<h3 class="h3">Example: creating numpy array using the list</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+l=[1,2,3,4,5,6,7]
+
+a = np.asarray(l);
+
+print(type(a))
+
+print(a)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+&lt;class 'numpy.ndarray'&gt;
+
+[1 2 3 4 5 6 7]
+
+</pre></div>
+<h3 class="h3">Example: creating a numpy array using Tuple</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+l=(1,2,3,4,5,6,7)   
+
+a = np.asarray(l);
+
+print(type(a))
+
+print(a)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+&lt;class 'numpy.ndarray'&gt;
+
+[1 2 3 4 5 6 7]
+
+</pre></div>
+<h3 class="h3">Example: creating a numpy array using more than one list </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+l=[[1,2,3,4,5,6,7],[8,9]]
+
+a = np.asarray(l);
+
+print(type(a))
+
+print(a)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+&lt;class 'numpy.ndarray'&gt;
+
+[list([1, 2, 3, 4, 5, 6, 7]) list([8, 9])]
+
+</pre></div>
+<h2 class="h2">numpy.frombuffer </h2>
+<p>This function is used to create an array by using the specified buffer. The syntax to use this buffer is given below. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+numpy.frombuffer(buffer, dtype = float, count = -1, offset = 0)
+
+</textarea></div>
+<p>It accepts the following parameters. </p>
+<ul class="points">
+<li><strong>buffer:</strong> It represents an object that exposes a buffer interface. </li>
+<li><strong>dtype:</strong> It represents the data type of the returned data type array. The default value is 0. </li>
+<li><strong>count:</strong> It represents the length of the returned ndarray. The default value is -1.</li>
+<li><strong>offset:</strong> It represents the starting position to read from. The default value is 0. </li>
+</ul>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+l = b'hello world'
+
+print(type(l))
+
+a = np.frombuffer(l, dtype = "S1")
+
+print(a)
+
+print(type(a))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+&lt;class 'bytes'&gt;
+
+[b'h' b'e' b'l' b'l' b'o' b' ' b'w' b'o' b'r' b'l' b'd']
+
+&lt;class 'numpy.ndarray'&gt;
+
+</pre></div>
+<h2 class="h2">numpy.fromiter</h2>
+<p>This routine is used to create a ndarray by using an iterable object. It returns a one-dimensional ndarray object.</p>
+<p>The syntax is given below. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+numpy.fromiter(iterable, dtype, count = - 1)
+
+</textarea></div>
+<p>It accepts the following parameters. </p>
+<ol class="points">
+<li><strong>Iterable:</strong> It represents an iterable object.</li>
+<li><strong>dtype:</strong> It represents the data type of the resultant array items. </li>
+<li><strong>count:</strong> It represents the number of items to read from the buffer in the array. </li>
+</ol>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+list = [0,2,4,6]
+
+it = iter(list)
+
+x = np.fromiter(it, dtype = float)
+
+print(x)
+
+print(type(x))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+[0. 2. 4. 6.]
+
+&lt;class 'numpy.ndarray'&gt;
+
+</pre></div>
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-arrays-within-the-numerical-range">Numpy Arrays within the numerical range</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="numpy-array-creation" style="float:left">¡û prev</a>
+<a class="next" href="numpy-arrays-within-the-numerical-range" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-arrays-within-the-numerical-range">next ¡ú</a>
+<a class="next" href="numpy-array-creation">¡û prev</a>
+</div>
+<h1 class="h1">Numpy array from existing data</h1>
+<p>NumPy provides us the way to create an array by using the existing data. </p>
+<h2 class="h2">numpy.asarray</h2>
+<p>This routine is used to create an array by using the existing data in the form of lists, or tuples. This routine is useful in the scenario where we need to convert a python sequence into the numpy array object.</p>
+<p>The syntax to use the asarray() routine is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+numpy.asarray(sequence,  dtype = None, order = None)
+
+</textarea></div>
+<p>It accepts the following parameters. </p>
+<ol class="points">
+<li><strong>sequence:</strong> It is the python sequence which is to be converted into the python array.</li>
+<li><strong>dtype:</strong> It is the data type of each item of the array. </li>
+<li><strong>order:</strong> It can be set to C or F. The default is C.</li>
+</ol>
+<h3 class="h3">Example: creating numpy array using the list</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+l=[1,2,3,4,5,6,7]
+
+a = np.asarray(l);
+
+print(type(a))
+
+print(a)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+&lt;class 'numpy.ndarray'&gt;
+
+[1 2 3 4 5 6 7]
+
+</pre></div>
+<h3 class="h3">Example: creating a numpy array using Tuple</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+l=(1,2,3,4,5,6,7)   
+
+a = np.asarray(l);
+
+print(type(a))
+
+print(a)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+&lt;class 'numpy.ndarray'&gt;
+
+[1 2 3 4 5 6 7]
+
+</pre></div>
+<h3 class="h3">Example: creating a numpy array using more than one list </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+l=[[1,2,3,4,5,6,7],[8,9]]
+
+a = np.asarray(l);
+
+print(type(a))
+
+print(a)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+&lt;class 'numpy.ndarray'&gt;
+
+[list([1, 2, 3, 4, 5, 6, 7]) list([8, 9])]
+
+</pre></div>
+<h2 class="h2">numpy.frombuffer </h2>
+<p>This function is used to create an array by using the specified buffer. The syntax to use this buffer is given below. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+numpy.frombuffer(buffer, dtype = float, count = -1, offset = 0)
+
+</textarea></div>
+<p>It accepts the following parameters. </p>
+<ul class="points">
+<li><strong>buffer:</strong> It represents an object that exposes a buffer interface. </li>
+<li><strong>dtype:</strong> It represents the data type of the returned data type array. The default value is 0. </li>
+<li><strong>count:</strong> It represents the length of the returned ndarray. The default value is -1.</li>
+<li><strong>offset:</strong> It represents the starting position to read from. The default value is 0. </li>
+</ul>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+l = b'hello world'
+
+print(type(l))
+
+a = np.frombuffer(l, dtype = "S1")
+
+print(a)
+
+print(type(a))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+&lt;class 'bytes'&gt;
+
+[b'h' b'e' b'l' b'l' b'o' b' ' b'w' b'o' b'r' b'l' b'd']
+
+&lt;class 'numpy.ndarray'&gt;
+
+</pre></div>
+<h2 class="h2">numpy.fromiter</h2>
+<p>This routine is used to create a ndarray by using an iterable object. It returns a one-dimensional ndarray object.</p>
+<p>The syntax is given below. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+numpy.fromiter(iterable, dtype, count = - 1)
+
+</textarea></div>
+<p>It accepts the following parameters. </p>
+<ol class="points">
+<li><strong>Iterable:</strong> It represents an iterable object.</li>
+<li><strong>dtype:</strong> It represents the data type of the resultant array items. </li>
+<li><strong>count:</strong> It represents the number of items to read from the buffer in the array. </li>
+</ol>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+list = [0,2,4,6]
+
+it = iter(list)
+
+x = np.fromiter(it, dtype = float)
+
+print(x)
+
+print(type(x))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+[0. 2. 4. 6.]
+
+&lt;class 'numpy.ndarray'&gt;
+
+</pre></div>
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-arrays-within-the-numerical-range">Numpy Arrays within the numerical range</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="numpy-array-creation" style="float:left">¡û prev</a>
+<a class="next" href="numpy-arrays-within-the-numerical-range" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html></body></html>

@@ -1,0 +1,844 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-canvas">next ¡ú</a>
+<a class="next" href="python-tkinter">¡û prev</a>
+</div>
+<h1 class="h1">Python Tkinter Button</h1>
+<p>The button widget is used to add various types of buttons to the python application. Python allows us to configure the look of the button according to our requirements. Various options can be set or reset depending upon the requirements.</p>
+<p>We can also associate a method or function with a button which is called when the button is pressed.</p>
+<p>The syntax to use the button widget is given below.</p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+W = Button(parent, options) 
+</textarea></div>
+<p>A list of possible options is given below.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>activebackground</td>
+<td>It represents the background of the button when the mouse hover the button.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>activeforeground</td>
+<td>It represents the font color of the button when the mouse hover the button.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Bd</td>
+<td>It represents the border width in pixels.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Bg</td>
+<td>It represents the background color of the button.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Command</td>
+<td>It is set to the function call which is scheduled when the function is called.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Fg</td>
+<td>Foreground color of the button.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Font</td>
+<td>The font of the button text. </td>
+</tr>
+<tr>
+<td>8</td>
+<td>Height</td>
+<td>The height of the button. The height is represented in the number of text lines for the textual lines or the number of pixels for the images.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Highlightcolor</td>
+<td>The color of the highlight when the button has the focus.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Image</td>
+<td>It is set to the image displayed on the button.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>justify</td>
+<td>It illustrates the way by which the multiple text lines are represented. It is set to LEFT for left justification, RIGHT for the right justification, and CENTER for the center.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Padx</td>
+<td>Additional padding to the button in the horizontal direction.</td>
+</tr>
+<tr>
+<td>14</td>
+<td>pady</td>
+<td>Additional padding to the button in the vertical direction.</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Relief</td>
+<td>It represents the type of the border. It can be SUNKEN, RAISED, GROOVE, and RIDGE.</td>
+</tr>
+<tr>
+<td>17</td>
+<td>State</td>
+<td>This option is set to DISABLED to make the button unresponsive. The ACTIVE represents the active state of the button.</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Underline</td>
+<td>Set this option to make the button text underlined.</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Width</td>
+<td>The width of the button. It exists as a number of letters for textual buttons or pixels for image buttons.</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Wraplength</td>
+<td>If the value is set to a positive number, the text lines will be wrapped to fit within this length.</td>
+</tr>
+</table>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+#python application to create a simple button
+
+from tkinter import * 
+
+
+top = Tk()
+
+top.geometry("200x100")
+
+b = Button(top,text = "Simple")
+
+b.pack()
+
+top.mainaloop()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Button" src="python/images/python-tkinter-button.png"/>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+from tkinter import * 
+
+top = Tk()
+
+top.geometry("200x100")
+
+def fun():
+    messagebox.showinfo("Hello", "Red Button clicked")
+
+
+b1 = Button(top,text = "Red",command = fun,activeforeground = "red",activebackground = "pink",pady=10)
+
+b2 = Button(top, text = "Blue",activeforeground = "blue",activebackground = "pink",pady=10)
+
+b3 = Button(top, text = "Green",activeforeground = "green",activebackground = "pink",pady = 10)
+
+b4 = Button(top, text = "Yellow",activeforeground = "yellow",activebackground = "pink",pady = 10)
+
+b1.pack(side = LEFT)
+
+b2.pack(side = RIGHT)
+
+b3.pack(side = TOP)
+
+b4.pack(side = BOTTOM)
+
+top.mainloop()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Button" src="python/images/python-tkinter-button2.png"/><br/>
+<img alt="Python Tkinter Button" src="python/images/python-tkinter-button3.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-canvas">Python Tkinter Canvas</a></span>
+</div>
+<!-- link -->
+<br><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-canvas" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</br></td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-canvas">next ¡ú</a>
+<a class="next" href="python-tkinter">¡û prev</a>
+</div>
+<h1 class="h1">Python Tkinter Button</h1>
+<p>The button widget is used to add various types of buttons to the python application. Python allows us to configure the look of the button according to our requirements. Various options can be set or reset depending upon the requirements.</p>
+<p>We can also associate a method or function with a button which is called when the button is pressed.</p>
+<p>The syntax to use the button widget is given below.</p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+W = Button(parent, options) 
+
+</textarea></div>
+<p>A list of possible options is given below.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>activebackground</td>
+<td>It represents the background of the button when the mouse hover the button.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>activeforeground</td>
+<td>It represents the font color of the button when the mouse hover the button.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Bd</td>
+<td>It represents the border width in pixels.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Bg</td>
+<td>It represents the background color of the button.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Command</td>
+<td>It is set to the function call which is scheduled when the function is called.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Fg</td>
+<td>Foreground color of the button.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Font</td>
+<td>The font of the button text. </td>
+</tr>
+<tr>
+<td>8</td>
+<td>Height</td>
+<td>The height of the button. The height is represented in the number of text lines for the textual lines or the number of pixels for the images.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Highlightcolor</td>
+<td>The color of the highlight when the button has the focus.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Image</td>
+<td>It is set to the image displayed on the button.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>justify</td>
+<td>It illustrates the way by which the multiple text lines are represented. It is set to LEFT for left justification, RIGHT for the right justification, and CENTER for the center.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Padx</td>
+<td>Additional padding to the button in the horizontal direction.</td>
+</tr>
+<tr>
+<td>14</td>
+<td>pady</td>
+<td>Additional padding to the button in the vertical direction.</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Relief</td>
+<td>It represents the type of the border. It can be SUNKEN, RAISED, GROOVE, and RIDGE.</td>
+</tr>
+<tr>
+<td>17</td>
+<td>State</td>
+<td>This option is set to DISABLED to make the button unresponsive. The ACTIVE represents the active state of the button.</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Underline</td>
+<td>Set this option to make the button text underlined.</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Width</td>
+<td>The width of the button. It exists as a number of letters for textual buttons or pixels for image buttons.</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Wraplength</td>
+<td>If the value is set to a positive number, the text lines will be wrapped to fit within this length.</td>
+</tr>
+</table>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+#python application to create a simple button
+
+
+
+from tkinter import * 
+
+
+
+
+
+top = Tk()
+
+
+
+top.geometry("200x100")
+
+
+
+b = Button(top,text = "Simple")
+
+
+
+b.pack()
+
+
+
+top.mainaloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Button" src="python/images/python-tkinter-button.png"/>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+from tkinter import * 
+
+
+
+top = Tk()
+
+
+
+top.geometry("200x100")
+
+
+
+def fun():
+
+    messagebox.showinfo("Hello", "Red Button clicked")
+
+
+
+
+
+b1 = Button(top,text = "Red",command = fun,activeforeground = "red",activebackground = "pink",pady=10)
+
+
+
+b2 = Button(top, text = "Blue",activeforeground = "blue",activebackground = "pink",pady=10)
+
+
+
+b3 = Button(top, text = "Green",activeforeground = "green",activebackground = "pink",pady = 10)
+
+
+
+b4 = Button(top, text = "Yellow",activeforeground = "yellow",activebackground = "pink",pady = 10)
+
+
+
+b1.pack(side = LEFT)
+
+
+
+b2.pack(side = RIGHT)
+
+
+
+b3.pack(side = TOP)
+
+
+
+b4.pack(side = BOTTOM)
+
+
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Button" src="python/images/python-tkinter-button2.png"/><br/>
+<img alt="Python Tkinter Button" src="python/images/python-tkinter-button3.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-canvas">Python Tkinter Canvas</a></span>
+</div>
+<!-- link -->
+<br><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-canvas" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</br></td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-canvas">next ¡ú</a>
+<a class="next" href="python-tkinter">¡û prev</a>
+</div>
+<h1 class="h1">Python Tkinter Button</h1>
+<p>The button widget is used to add various types of buttons to the python application. Python allows us to configure the look of the button according to our requirements. Various options can be set or reset depending upon the requirements.</p>
+<p>We can also associate a method or function with a button which is called when the button is pressed.</p>
+<p>The syntax to use the button widget is given below.</p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+W = Button(parent, options) 
+
+</textarea></div>
+<p>A list of possible options is given below.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>activebackground</td>
+<td>It represents the background of the button when the mouse hover the button.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>activeforeground</td>
+<td>It represents the font color of the button when the mouse hover the button.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Bd</td>
+<td>It represents the border width in pixels.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Bg</td>
+<td>It represents the background color of the button.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Command</td>
+<td>It is set to the function call which is scheduled when the function is called.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Fg</td>
+<td>Foreground color of the button.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Font</td>
+<td>The font of the button text. </td>
+</tr>
+<tr>
+<td>8</td>
+<td>Height</td>
+<td>The height of the button. The height is represented in the number of text lines for the textual lines or the number of pixels for the images.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Highlightcolor</td>
+<td>The color of the highlight when the button has the focus.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Image</td>
+<td>It is set to the image displayed on the button.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>justify</td>
+<td>It illustrates the way by which the multiple text lines are represented. It is set to LEFT for left justification, RIGHT for the right justification, and CENTER for the center.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Padx</td>
+<td>Additional padding to the button in the horizontal direction.</td>
+</tr>
+<tr>
+<td>14</td>
+<td>pady</td>
+<td>Additional padding to the button in the vertical direction.</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Relief</td>
+<td>It represents the type of the border. It can be SUNKEN, RAISED, GROOVE, and RIDGE.</td>
+</tr>
+<tr>
+<td>17</td>
+<td>State</td>
+<td>This option is set to DISABLED to make the button unresponsive. The ACTIVE represents the active state of the button.</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Underline</td>
+<td>Set this option to make the button text underlined.</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Width</td>
+<td>The width of the button. It exists as a number of letters for textual buttons or pixels for image buttons.</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Wraplength</td>
+<td>If the value is set to a positive number, the text lines will be wrapped to fit within this length.</td>
+</tr>
+</table>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+#python application to create a simple button
+
+
+
+from tkinter import * 
+
+
+
+
+
+top = Tk()
+
+
+
+top.geometry("200x100")
+
+
+
+b = Button(top,text = "Simple")
+
+
+
+b.pack()
+
+
+
+top.mainaloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Button" src="python/images/python-tkinter-button.png"/>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+from tkinter import * 
+
+
+
+top = Tk()
+
+
+
+top.geometry("200x100")
+
+
+
+def fun():
+
+    messagebox.showinfo("Hello", "Red Button clicked")
+
+
+
+
+
+b1 = Button(top,text = "Red",command = fun,activeforeground = "red",activebackground = "pink",pady=10)
+
+
+
+b2 = Button(top, text = "Blue",activeforeground = "blue",activebackground = "pink",pady=10)
+
+
+
+b3 = Button(top, text = "Green",activeforeground = "green",activebackground = "pink",pady = 10)
+
+
+
+b4 = Button(top, text = "Yellow",activeforeground = "yellow",activebackground = "pink",pady = 10)
+
+
+
+b1.pack(side = LEFT)
+
+
+
+b2.pack(side = RIGHT)
+
+
+
+b3.pack(side = TOP)
+
+
+
+b4.pack(side = BOTTOM)
+
+
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Button" src="python/images/python-tkinter-button2.png"/><br/>
+<img alt="Python Tkinter Button" src="python/images/python-tkinter-button3.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-canvas">Python Tkinter Canvas</a></span>
+</div>
+<!-- link -->
+<br><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-canvas" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</br></td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-canvas">next ¡ú</a>
+<a class="next" href="python-tkinter">¡û prev</a>
+</div>
+<h1 class="h1">Python Tkinter Button</h1>
+<p>The button widget is used to add various types of buttons to the python application. Python allows us to configure the look of the button according to our requirements. Various options can be set or reset depending upon the requirements.</p>
+<p>We can also associate a method or function with a button which is called when the button is pressed.</p>
+<p>The syntax to use the button widget is given below.</p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+W = Button(parent, options) 
+
+</textarea></div>
+<p>A list of possible options is given below.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>activebackground</td>
+<td>It represents the background of the button when the mouse hover the button.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>activeforeground</td>
+<td>It represents the font color of the button when the mouse hover the button.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Bd</td>
+<td>It represents the border width in pixels.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Bg</td>
+<td>It represents the background color of the button.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Command</td>
+<td>It is set to the function call which is scheduled when the function is called.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Fg</td>
+<td>Foreground color of the button.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Font</td>
+<td>The font of the button text. </td>
+</tr>
+<tr>
+<td>8</td>
+<td>Height</td>
+<td>The height of the button. The height is represented in the number of text lines for the textual lines or the number of pixels for the images.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Highlightcolor</td>
+<td>The color of the highlight when the button has the focus.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Image</td>
+<td>It is set to the image displayed on the button.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>justify</td>
+<td>It illustrates the way by which the multiple text lines are represented. It is set to LEFT for left justification, RIGHT for the right justification, and CENTER for the center.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Padx</td>
+<td>Additional padding to the button in the horizontal direction.</td>
+</tr>
+<tr>
+<td>14</td>
+<td>pady</td>
+<td>Additional padding to the button in the vertical direction.</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Relief</td>
+<td>It represents the type of the border. It can be SUNKEN, RAISED, GROOVE, and RIDGE.</td>
+</tr>
+<tr>
+<td>17</td>
+<td>State</td>
+<td>This option is set to DISABLED to make the button unresponsive. The ACTIVE represents the active state of the button.</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Underline</td>
+<td>Set this option to make the button text underlined.</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Width</td>
+<td>The width of the button. It exists as a number of letters for textual buttons or pixels for image buttons.</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Wraplength</td>
+<td>If the value is set to a positive number, the text lines will be wrapped to fit within this length.</td>
+</tr>
+</table>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+#python application to create a simple button
+
+
+
+from tkinter import * 
+
+
+
+
+
+top = Tk()
+
+
+
+top.geometry("200x100")
+
+
+
+b = Button(top,text = "Simple")
+
+
+
+b.pack()
+
+
+
+top.mainaloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Button" src="python/images/python-tkinter-button.png"/>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+from tkinter import * 
+
+
+
+top = Tk()
+
+
+
+top.geometry("200x100")
+
+
+
+def fun():
+
+    messagebox.showinfo("Hello", "Red Button clicked")
+
+
+
+
+
+b1 = Button(top,text = "Red",command = fun,activeforeground = "red",activebackground = "pink",pady=10)
+
+
+
+b2 = Button(top, text = "Blue",activeforeground = "blue",activebackground = "pink",pady=10)
+
+
+
+b3 = Button(top, text = "Green",activeforeground = "green",activebackground = "pink",pady = 10)
+
+
+
+b4 = Button(top, text = "Yellow",activeforeground = "yellow",activebackground = "pink",pady = 10)
+
+
+
+b1.pack(side = LEFT)
+
+
+
+b2.pack(side = RIGHT)
+
+
+
+b3.pack(side = TOP)
+
+
+
+b4.pack(side = BOTTOM)
+
+
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Button" src="python/images/python-tkinter-button2.png"/><br/>
+<img alt="Python Tkinter Button" src="python/images/python-tkinter-button3.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-canvas">Python Tkinter Canvas</a></span>
+</div>
+<!-- link -->
+<br><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-canvas" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</br></td></tr>
+</table>
+</div></body></html></body></html>

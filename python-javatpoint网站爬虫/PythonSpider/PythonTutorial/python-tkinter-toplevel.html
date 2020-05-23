@@ -1,0 +1,775 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-spinbox">next ¡ú</a>
+<a class="next" href="python-tkinter-text">¡û prev</a>
+</div>
+<h1 class="h1">Tkinter Toplevel </h1>
+<p>The Toplevel widget is used to create and display the toplevel windows which are directly managed by the window manager. The toplevel widget may or may not have the parent window on the top of them. </p>
+<p>The toplevel widget is used when a python application needs to represent some extra information, pop-up, or the group of widgets on the new window. </p>
+<p>The toplevel windows have the title bars, borders, and other window decorations.</p>
+<p>The syntax to use the Toplevel widget is given below. </p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+w = Toplevel(options) 
+</textarea></div>
+<p>A List of possible options is given below. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Options</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>bg</td>
+<td>It represents the background color of the window. </td>
+</tr>
+<tr>
+<td>2</td>
+<td>bd</td>
+<td>It represents the border size of the window.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>cursor</td>
+<td>The mouse pointer is changed to the cursor type set to the arrow, dot, etc. when the mouse is in the window.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>class_</td>
+<td>The text selected in the text widget is exported to be selected to the window manager. We can set this to 0 to make this behavior false.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>font</td>
+<td>The font type of the text inserted into the widget.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>fg</td>
+<td>The foreground color of the widget. </td>
+</tr>
+<tr>
+<td>7</td>
+<td>height</td>
+<td>It represents the height of the window.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>relief</td>
+<td>It represents the type of the window. </td>
+</tr>
+<tr>
+<td>9</td>
+<td>width</td>
+<td>It represents the width of the window, </td>
+</tr>
+</table>
+<h2 class="h2">Methods</h2>
+<p>The methods associated with the Toplevel widget is given in the following list. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Method</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>deiconify()</td>
+<td>This method is used to display the window.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>frame()</td>
+<td>It is used to show a system dependent window identifier.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>group(window)</td>
+<td>It is used to add this window to the specified window group.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>iconify()</td>
+<td>It is used to convert the toplevel window into an icon.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>protocol(name, function)</td>
+<td>It is used to mention a function which will be called for the specific protocol.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>state()</td>
+<td>It is used to get the current state of the window. Possible values are normal, iconic, withdrawn, and icon.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>transient([master])</td>
+<td>It is used to convert this window to a transient window (temporary).</td>
+</tr>
+<tr>
+<td>8</td>
+<td>withdraw()</td>
+<td>It is used to delete the window but doesn?t destroy it.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>maxsize(width, height)</td>
+<td>It is used to declare the maximum size for the window.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>minsize(width, height)</td>
+<td>It is used to declare the minimum size for the window.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>positionfrom(who)</td>
+<td>It is used to define the position controller.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>resizable(width, height)</td>
+<td>It is used to control whether the window can be resizable or not. </td>
+</tr>
+<tr>
+<td>13</td>
+<td>sizefrom(who)</td>
+<td>It is used to define the size controller.</td>
+</tr>
+<tr>
+<td>14</td>
+<td>title(string)</td>
+<td>It is used to define the title for the window. </td>
+</tr>
+</table>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+from tkinter import *
+
+root = Tk()
+
+root.geometry("200x200")
+
+def open():
+    top = Toplevel(root)
+    top.mainloop()
+
+btn = Button(root, text = "open", command = open)
+
+btn.place(x=75,y=50)
+
+root.mainloop()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Toplevel" src="https://static.javatpoint.com/python/images/python-tkinter-toplevel-output.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-spinbox">Python Tkinter Spinbox</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-text" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-spinbox" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-spinbox">next ¡ú</a>
+<a class="next" href="python-tkinter-text">¡û prev</a>
+</div>
+<h1 class="h1">Tkinter Toplevel </h1>
+<p>The Toplevel widget is used to create and display the toplevel windows which are directly managed by the window manager. The toplevel widget may or may not have the parent window on the top of them. </p>
+<p>The toplevel widget is used when a python application needs to represent some extra information, pop-up, or the group of widgets on the new window. </p>
+<p>The toplevel windows have the title bars, borders, and other window decorations.</p>
+<p>The syntax to use the Toplevel widget is given below. </p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+w = Toplevel(options) 
+
+</textarea></div>
+<p>A List of possible options is given below. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Options</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>bg</td>
+<td>It represents the background color of the window. </td>
+</tr>
+<tr>
+<td>2</td>
+<td>bd</td>
+<td>It represents the border size of the window.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>cursor</td>
+<td>The mouse pointer is changed to the cursor type set to the arrow, dot, etc. when the mouse is in the window.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>class_</td>
+<td>The text selected in the text widget is exported to be selected to the window manager. We can set this to 0 to make this behavior false.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>font</td>
+<td>The font type of the text inserted into the widget.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>fg</td>
+<td>The foreground color of the widget. </td>
+</tr>
+<tr>
+<td>7</td>
+<td>height</td>
+<td>It represents the height of the window.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>relief</td>
+<td>It represents the type of the window. </td>
+</tr>
+<tr>
+<td>9</td>
+<td>width</td>
+<td>It represents the width of the window, </td>
+</tr>
+</table>
+<h2 class="h2">Methods</h2>
+<p>The methods associated with the Toplevel widget is given in the following list. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Method</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>deiconify()</td>
+<td>This method is used to display the window.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>frame()</td>
+<td>It is used to show a system dependent window identifier.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>group(window)</td>
+<td>It is used to add this window to the specified window group.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>iconify()</td>
+<td>It is used to convert the toplevel window into an icon.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>protocol(name, function)</td>
+<td>It is used to mention a function which will be called for the specific protocol.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>state()</td>
+<td>It is used to get the current state of the window. Possible values are normal, iconic, withdrawn, and icon.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>transient([master])</td>
+<td>It is used to convert this window to a transient window (temporary).</td>
+</tr>
+<tr>
+<td>8</td>
+<td>withdraw()</td>
+<td>It is used to delete the window but doesn?t destroy it.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>maxsize(width, height)</td>
+<td>It is used to declare the maximum size for the window.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>minsize(width, height)</td>
+<td>It is used to declare the minimum size for the window.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>positionfrom(who)</td>
+<td>It is used to define the position controller.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>resizable(width, height)</td>
+<td>It is used to control whether the window can be resizable or not. </td>
+</tr>
+<tr>
+<td>13</td>
+<td>sizefrom(who)</td>
+<td>It is used to define the size controller.</td>
+</tr>
+<tr>
+<td>14</td>
+<td>title(string)</td>
+<td>It is used to define the title for the window. </td>
+</tr>
+</table>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+from tkinter import *
+
+
+
+root = Tk()
+
+
+
+root.geometry("200x200")
+
+
+
+def open():
+
+    top = Toplevel(root)
+
+    top.mainloop()
+
+
+
+btn = Button(root, text = "open", command = open)
+
+
+
+btn.place(x=75,y=50)
+
+
+
+root.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Toplevel" src="https://static.javatpoint.com/python/images/python-tkinter-toplevel-output.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-spinbox">Python Tkinter Spinbox</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-text" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-spinbox" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-spinbox">next ¡ú</a>
+<a class="next" href="python-tkinter-text">¡û prev</a>
+</div>
+<h1 class="h1">Tkinter Toplevel </h1>
+<p>The Toplevel widget is used to create and display the toplevel windows which are directly managed by the window manager. The toplevel widget may or may not have the parent window on the top of them. </p>
+<p>The toplevel widget is used when a python application needs to represent some extra information, pop-up, or the group of widgets on the new window. </p>
+<p>The toplevel windows have the title bars, borders, and other window decorations.</p>
+<p>The syntax to use the Toplevel widget is given below. </p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+w = Toplevel(options) 
+
+</textarea></div>
+<p>A List of possible options is given below. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Options</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>bg</td>
+<td>It represents the background color of the window. </td>
+</tr>
+<tr>
+<td>2</td>
+<td>bd</td>
+<td>It represents the border size of the window.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>cursor</td>
+<td>The mouse pointer is changed to the cursor type set to the arrow, dot, etc. when the mouse is in the window.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>class_</td>
+<td>The text selected in the text widget is exported to be selected to the window manager. We can set this to 0 to make this behavior false.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>font</td>
+<td>The font type of the text inserted into the widget.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>fg</td>
+<td>The foreground color of the widget. </td>
+</tr>
+<tr>
+<td>7</td>
+<td>height</td>
+<td>It represents the height of the window.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>relief</td>
+<td>It represents the type of the window. </td>
+</tr>
+<tr>
+<td>9</td>
+<td>width</td>
+<td>It represents the width of the window, </td>
+</tr>
+</table>
+<h2 class="h2">Methods</h2>
+<p>The methods associated with the Toplevel widget is given in the following list. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Method</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>deiconify()</td>
+<td>This method is used to display the window.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>frame()</td>
+<td>It is used to show a system dependent window identifier.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>group(window)</td>
+<td>It is used to add this window to the specified window group.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>iconify()</td>
+<td>It is used to convert the toplevel window into an icon.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>protocol(name, function)</td>
+<td>It is used to mention a function which will be called for the specific protocol.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>state()</td>
+<td>It is used to get the current state of the window. Possible values are normal, iconic, withdrawn, and icon.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>transient([master])</td>
+<td>It is used to convert this window to a transient window (temporary).</td>
+</tr>
+<tr>
+<td>8</td>
+<td>withdraw()</td>
+<td>It is used to delete the window but doesn?t destroy it.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>maxsize(width, height)</td>
+<td>It is used to declare the maximum size for the window.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>minsize(width, height)</td>
+<td>It is used to declare the minimum size for the window.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>positionfrom(who)</td>
+<td>It is used to define the position controller.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>resizable(width, height)</td>
+<td>It is used to control whether the window can be resizable or not. </td>
+</tr>
+<tr>
+<td>13</td>
+<td>sizefrom(who)</td>
+<td>It is used to define the size controller.</td>
+</tr>
+<tr>
+<td>14</td>
+<td>title(string)</td>
+<td>It is used to define the title for the window. </td>
+</tr>
+</table>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+from tkinter import *
+
+
+
+root = Tk()
+
+
+
+root.geometry("200x200")
+
+
+
+def open():
+
+    top = Toplevel(root)
+
+    top.mainloop()
+
+
+
+btn = Button(root, text = "open", command = open)
+
+
+
+btn.place(x=75,y=50)
+
+
+
+root.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Toplevel" src="https://static.javatpoint.com/python/images/python-tkinter-toplevel-output.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-spinbox">Python Tkinter Spinbox</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-text" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-spinbox" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-spinbox">next ¡ú</a>
+<a class="next" href="python-tkinter-text">¡û prev</a>
+</div>
+<h1 class="h1">Tkinter Toplevel </h1>
+<p>The Toplevel widget is used to create and display the toplevel windows which are directly managed by the window manager. The toplevel widget may or may not have the parent window on the top of them. </p>
+<p>The toplevel widget is used when a python application needs to represent some extra information, pop-up, or the group of widgets on the new window. </p>
+<p>The toplevel windows have the title bars, borders, and other window decorations.</p>
+<p>The syntax to use the Toplevel widget is given below. </p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+w = Toplevel(options) 
+
+</textarea></div>
+<p>A List of possible options is given below. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Options</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>bg</td>
+<td>It represents the background color of the window. </td>
+</tr>
+<tr>
+<td>2</td>
+<td>bd</td>
+<td>It represents the border size of the window.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>cursor</td>
+<td>The mouse pointer is changed to the cursor type set to the arrow, dot, etc. when the mouse is in the window.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>class_</td>
+<td>The text selected in the text widget is exported to be selected to the window manager. We can set this to 0 to make this behavior false.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>font</td>
+<td>The font type of the text inserted into the widget.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>fg</td>
+<td>The foreground color of the widget. </td>
+</tr>
+<tr>
+<td>7</td>
+<td>height</td>
+<td>It represents the height of the window.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>relief</td>
+<td>It represents the type of the window. </td>
+</tr>
+<tr>
+<td>9</td>
+<td>width</td>
+<td>It represents the width of the window, </td>
+</tr>
+</table>
+<h2 class="h2">Methods</h2>
+<p>The methods associated with the Toplevel widget is given in the following list. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Method</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>deiconify()</td>
+<td>This method is used to display the window.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>frame()</td>
+<td>It is used to show a system dependent window identifier.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>group(window)</td>
+<td>It is used to add this window to the specified window group.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>iconify()</td>
+<td>It is used to convert the toplevel window into an icon.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>protocol(name, function)</td>
+<td>It is used to mention a function which will be called for the specific protocol.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>state()</td>
+<td>It is used to get the current state of the window. Possible values are normal, iconic, withdrawn, and icon.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>transient([master])</td>
+<td>It is used to convert this window to a transient window (temporary).</td>
+</tr>
+<tr>
+<td>8</td>
+<td>withdraw()</td>
+<td>It is used to delete the window but doesn?t destroy it.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>maxsize(width, height)</td>
+<td>It is used to declare the maximum size for the window.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>minsize(width, height)</td>
+<td>It is used to declare the minimum size for the window.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>positionfrom(who)</td>
+<td>It is used to define the position controller.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>resizable(width, height)</td>
+<td>It is used to control whether the window can be resizable or not. </td>
+</tr>
+<tr>
+<td>13</td>
+<td>sizefrom(who)</td>
+<td>It is used to define the size controller.</td>
+</tr>
+<tr>
+<td>14</td>
+<td>title(string)</td>
+<td>It is used to define the title for the window. </td>
+</tr>
+</table>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+from tkinter import *
+
+
+
+root = Tk()
+
+
+
+root.geometry("200x200")
+
+
+
+def open():
+
+    top = Toplevel(root)
+
+    top.mainloop()
+
+
+
+btn = Button(root, text = "open", command = open)
+
+
+
+btn.place(x=75,y=50)
+
+
+
+root.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Toplevel" src="https://static.javatpoint.com/python/images/python-tkinter-toplevel-output.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-spinbox">Python Tkinter Spinbox</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-text" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-spinbox" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html></body></html>

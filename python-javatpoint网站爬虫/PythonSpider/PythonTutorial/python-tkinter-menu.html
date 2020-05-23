@@ -1,0 +1,1145 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-message">next ¡ú</a>
+<a class="next" href="python-tkinter-menubutton">¡û prev</a>
+</div>
+<h1 class="h1">Python Tkinter Menu </h1>
+<p>The Menu widget is used to create various types of menus (top level, pull down, and pop up) in the python application. </p>
+<p>The top-level menus are the one which is displayed just under the title bar of the parent window. We need to create a new instance of the Menu widget and add various commands to it by using the add() method.</p>
+<p>The syntax to use the Menu widget is given below. </p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+w = Menu(top, options) 
+</textarea></div>
+<p>A list of possible options is given below. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>activebackground</td>
+<td>The background color of the widget when the widget is under the focus.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>activeborderwidth</td>
+<td>The width of the border of the widget when it is under the mouse. The default is 1 pixel.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>activeforeground</td>
+<td>The font color of the widget when the widget has the focus.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>bg</td>
+<td>The background color of the widget.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>bd</td>
+<td>The border width of the widget.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>cursor</td>
+<td>The mouse pointer is changed to the cursor type when it hovers the widget. The cursor type can be set to arrow or dot. </td>
+</tr>
+<tr>
+<td>7</td>
+<td>disabledforeground</td>
+<td>The font color of the widget when it is disabled. </td>
+</tr>
+<tr>
+<td>8</td>
+<td>font</td>
+<td>The font type of the text of the widget. </td>
+</tr>
+<tr>
+<td>9</td>
+<td>fg</td>
+<td>The foreground color of the widget. </td>
+</tr>
+<tr>
+<td>10</td>
+<td>postcommand</td>
+<td>The postcommand can be set to any of the function which is called when the mourse hovers the menu. </td>
+</tr>
+<tr>
+<td>11</td>
+<td>relief</td>
+<td>The type of the border of the widget. The default type is RAISED. </td>
+</tr>
+<tr>
+<td>12</td>
+<td>image</td>
+<td>It is used to display an image on the menu. </td>
+</tr>
+<tr>
+<td>13</td>
+<td>selectcolor</td>
+<td>The color used to display the checkbutton or radiobutton when they are selected. </td>
+</tr>
+<tr>
+<td>14</td>
+<td>tearoff</td>
+<td>By default, the choices in the menu start taking place from position 1. If we set the tearoff = 1, then it will start taking place from 0th position.</td>
+</tr>
+<tr>
+<td>15</td>
+<td>title</td>
+<td>Set this option to the title of the window if you want to change the title of the window.</td>
+</tr>
+</table>
+<h2 class="h2">Methods </h2>
+<p>The Menu widget contains the following methods. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>add_command(options)</td>
+<td>It is used to add the Menu items to the menu.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>add_radiobutton(options)</td>
+<td>This method adds the radiobutton to the menu.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>add_checkbutton(options)</td>
+<td>This method is used to add the checkbuttons to the menu.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>add_cascade(options)</td>
+<td>It is used to create a hierarchical menu to the parent menu by associating the given menu to the parent menu.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>add_seperator()</td>
+<td>It is used to add the seperator line to the menu.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>add(type, options)</td>
+<td>It is used to add the specific menu item to the menu.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>delete(startindex, endindex)</td>
+<td>It is used to delete the menu items exist in the specified range.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>entryconfig(index, options)</td>
+<td>It is used to configure a menu item identified by the given index.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>index(item)</td>
+<td>It is used to get the index of the specified menu item.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>insert_seperator(index)</td>
+<td>It is used to insert a seperator at the specified index.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>invoke(index)</td>
+<td>It is used to invoke the associated with the choice given at the specified index.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>type(index)</td>
+<td>It is used to get the type of the choice specified by the index. </td>
+</tr>
+</table>
+<h2 class="h2">Creating a top level menu </h2>
+<p>A top-level menu can be created by instantiating the Menu widget and adding the menu items to the menu.</p>
+<h3 class="h3">Example 1</h3>
+<div class="codeblock"><textarea class="python" name="code">
+# !/usr/bin/python3
+
+from tkinter import *
+
+top = Tk()
+
+def hello():
+    print("hello!")
+
+# create a toplevel menu
+menubar = Menu(root)
+menubar.add_command(label="Hello!", command=hello)
+menubar.add_command(label="Quit!", command=top.quit)
+
+# display the menu
+top.config(menu=menubar)
+
+top.mainloop()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Menu" src="python/images/python-tkinter-menu-output1.png"/>
+<p>Clicking the hello Menubutton will print the hello on the console while clicking the Quit Menubutton will make an exit from the python application.</p>
+<h3 class="h3">Example 2</h3>
+<div class="codeblock"><textarea class="python" name="code">
+from tkinter import Toplevel, Button, Tk, Menu
+
+top = Tk()
+menubar = Menu(top)
+file = Menu(menubar, tearoff=0)
+file.add_command(label="New")
+file.add_command(label="Open")
+file.add_command(label="Save")
+file.add_command(label="Save as...")
+file.add_command(label="Close")
+
+file.add_separator()
+
+file.add_command(label="Exit", command=top.quit)
+
+menubar.add_cascade(label="File", menu=file)
+edit = Menu(menubar, tearoff=0)
+edit.add_command(label="Undo")
+
+edit.add_separator()
+
+edit.add_command(label="Cut")
+edit.add_command(label="Copy")
+edit.add_command(label="Paste")
+edit.add_command(label="Delete")
+edit.add_command(label="Select All")
+
+menubar.add_cascade(label="Edit", menu=edit)
+help = Menu(menubar, tearoff=0)
+help.add_command(label="About")
+menubar.add_cascade(label="Help", menu=help)
+
+top.config(menu=menubar)
+top.mainloop()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Menu" src="python/images/python-tkinter-menu-output2.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-message">Python Tkinter Message</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-menubutton" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-message" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-message">next ¡ú</a>
+<a class="next" href="python-tkinter-menubutton">¡û prev</a>
+</div>
+<h1 class="h1">Python Tkinter Menu </h1>
+<p>The Menu widget is used to create various types of menus (top level, pull down, and pop up) in the python application. </p>
+<p>The top-level menus are the one which is displayed just under the title bar of the parent window. We need to create a new instance of the Menu widget and add various commands to it by using the add() method.</p>
+<p>The syntax to use the Menu widget is given below. </p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+w = Menu(top, options) 
+
+</textarea></div>
+<p>A list of possible options is given below. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>activebackground</td>
+<td>The background color of the widget when the widget is under the focus.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>activeborderwidth</td>
+<td>The width of the border of the widget when it is under the mouse. The default is 1 pixel.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>activeforeground</td>
+<td>The font color of the widget when the widget has the focus.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>bg</td>
+<td>The background color of the widget.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>bd</td>
+<td>The border width of the widget.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>cursor</td>
+<td>The mouse pointer is changed to the cursor type when it hovers the widget. The cursor type can be set to arrow or dot. </td>
+</tr>
+<tr>
+<td>7</td>
+<td>disabledforeground</td>
+<td>The font color of the widget when it is disabled. </td>
+</tr>
+<tr>
+<td>8</td>
+<td>font</td>
+<td>The font type of the text of the widget. </td>
+</tr>
+<tr>
+<td>9</td>
+<td>fg</td>
+<td>The foreground color of the widget. </td>
+</tr>
+<tr>
+<td>10</td>
+<td>postcommand</td>
+<td>The postcommand can be set to any of the function which is called when the mourse hovers the menu. </td>
+</tr>
+<tr>
+<td>11</td>
+<td>relief</td>
+<td>The type of the border of the widget. The default type is RAISED. </td>
+</tr>
+<tr>
+<td>12</td>
+<td>image</td>
+<td>It is used to display an image on the menu. </td>
+</tr>
+<tr>
+<td>13</td>
+<td>selectcolor</td>
+<td>The color used to display the checkbutton or radiobutton when they are selected. </td>
+</tr>
+<tr>
+<td>14</td>
+<td>tearoff</td>
+<td>By default, the choices in the menu start taking place from position 1. If we set the tearoff = 1, then it will start taking place from 0th position.</td>
+</tr>
+<tr>
+<td>15</td>
+<td>title</td>
+<td>Set this option to the title of the window if you want to change the title of the window.</td>
+</tr>
+</table>
+<h2 class="h2">Methods </h2>
+<p>The Menu widget contains the following methods. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>add_command(options)</td>
+<td>It is used to add the Menu items to the menu.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>add_radiobutton(options)</td>
+<td>This method adds the radiobutton to the menu.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>add_checkbutton(options)</td>
+<td>This method is used to add the checkbuttons to the menu.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>add_cascade(options)</td>
+<td>It is used to create a hierarchical menu to the parent menu by associating the given menu to the parent menu.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>add_seperator()</td>
+<td>It is used to add the seperator line to the menu.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>add(type, options)</td>
+<td>It is used to add the specific menu item to the menu.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>delete(startindex, endindex)</td>
+<td>It is used to delete the menu items exist in the specified range.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>entryconfig(index, options)</td>
+<td>It is used to configure a menu item identified by the given index.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>index(item)</td>
+<td>It is used to get the index of the specified menu item.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>insert_seperator(index)</td>
+<td>It is used to insert a seperator at the specified index.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>invoke(index)</td>
+<td>It is used to invoke the associated with the choice given at the specified index.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>type(index)</td>
+<td>It is used to get the type of the choice specified by the index. </td>
+</tr>
+</table>
+<h2 class="h2">Creating a top level menu </h2>
+<p>A top-level menu can be created by instantiating the Menu widget and adding the menu items to the menu.</p>
+<h3 class="h3">Example 1</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+# !/usr/bin/python3
+
+
+
+from tkinter import *
+
+
+
+top = Tk()
+
+
+
+def hello():
+
+    print("hello!")
+
+
+
+# create a toplevel menu
+
+menubar = Menu(root)
+
+menubar.add_command(label="Hello!", command=hello)
+
+menubar.add_command(label="Quit!", command=top.quit)
+
+
+
+# display the menu
+
+top.config(menu=menubar)
+
+
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Menu" src="python/images/python-tkinter-menu-output1.png"/>
+<p>Clicking the hello Menubutton will print the hello on the console while clicking the Quit Menubutton will make an exit from the python application.</p>
+<h3 class="h3">Example 2</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+from tkinter import Toplevel, Button, Tk, Menu
+
+
+
+top = Tk()
+
+menubar = Menu(top)
+
+file = Menu(menubar, tearoff=0)
+
+file.add_command(label="New")
+
+file.add_command(label="Open")
+
+file.add_command(label="Save")
+
+file.add_command(label="Save as...")
+
+file.add_command(label="Close")
+
+
+
+file.add_separator()
+
+
+
+file.add_command(label="Exit", command=top.quit)
+
+
+
+menubar.add_cascade(label="File", menu=file)
+
+edit = Menu(menubar, tearoff=0)
+
+edit.add_command(label="Undo")
+
+
+
+edit.add_separator()
+
+
+
+edit.add_command(label="Cut")
+
+edit.add_command(label="Copy")
+
+edit.add_command(label="Paste")
+
+edit.add_command(label="Delete")
+
+edit.add_command(label="Select All")
+
+
+
+menubar.add_cascade(label="Edit", menu=edit)
+
+help = Menu(menubar, tearoff=0)
+
+help.add_command(label="About")
+
+menubar.add_cascade(label="Help", menu=help)
+
+
+
+top.config(menu=menubar)
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Menu" src="python/images/python-tkinter-menu-output2.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-message">Python Tkinter Message</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-menubutton" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-message" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-message">next ¡ú</a>
+<a class="next" href="python-tkinter-menubutton">¡û prev</a>
+</div>
+<h1 class="h1">Python Tkinter Menu </h1>
+<p>The Menu widget is used to create various types of menus (top level, pull down, and pop up) in the python application. </p>
+<p>The top-level menus are the one which is displayed just under the title bar of the parent window. We need to create a new instance of the Menu widget and add various commands to it by using the add() method.</p>
+<p>The syntax to use the Menu widget is given below. </p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+w = Menu(top, options) 
+
+</textarea></div>
+<p>A list of possible options is given below. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>activebackground</td>
+<td>The background color of the widget when the widget is under the focus.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>activeborderwidth</td>
+<td>The width of the border of the widget when it is under the mouse. The default is 1 pixel.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>activeforeground</td>
+<td>The font color of the widget when the widget has the focus.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>bg</td>
+<td>The background color of the widget.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>bd</td>
+<td>The border width of the widget.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>cursor</td>
+<td>The mouse pointer is changed to the cursor type when it hovers the widget. The cursor type can be set to arrow or dot. </td>
+</tr>
+<tr>
+<td>7</td>
+<td>disabledforeground</td>
+<td>The font color of the widget when it is disabled. </td>
+</tr>
+<tr>
+<td>8</td>
+<td>font</td>
+<td>The font type of the text of the widget. </td>
+</tr>
+<tr>
+<td>9</td>
+<td>fg</td>
+<td>The foreground color of the widget. </td>
+</tr>
+<tr>
+<td>10</td>
+<td>postcommand</td>
+<td>The postcommand can be set to any of the function which is called when the mourse hovers the menu. </td>
+</tr>
+<tr>
+<td>11</td>
+<td>relief</td>
+<td>The type of the border of the widget. The default type is RAISED. </td>
+</tr>
+<tr>
+<td>12</td>
+<td>image</td>
+<td>It is used to display an image on the menu. </td>
+</tr>
+<tr>
+<td>13</td>
+<td>selectcolor</td>
+<td>The color used to display the checkbutton or radiobutton when they are selected. </td>
+</tr>
+<tr>
+<td>14</td>
+<td>tearoff</td>
+<td>By default, the choices in the menu start taking place from position 1. If we set the tearoff = 1, then it will start taking place from 0th position.</td>
+</tr>
+<tr>
+<td>15</td>
+<td>title</td>
+<td>Set this option to the title of the window if you want to change the title of the window.</td>
+</tr>
+</table>
+<h2 class="h2">Methods </h2>
+<p>The Menu widget contains the following methods. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>add_command(options)</td>
+<td>It is used to add the Menu items to the menu.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>add_radiobutton(options)</td>
+<td>This method adds the radiobutton to the menu.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>add_checkbutton(options)</td>
+<td>This method is used to add the checkbuttons to the menu.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>add_cascade(options)</td>
+<td>It is used to create a hierarchical menu to the parent menu by associating the given menu to the parent menu.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>add_seperator()</td>
+<td>It is used to add the seperator line to the menu.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>add(type, options)</td>
+<td>It is used to add the specific menu item to the menu.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>delete(startindex, endindex)</td>
+<td>It is used to delete the menu items exist in the specified range.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>entryconfig(index, options)</td>
+<td>It is used to configure a menu item identified by the given index.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>index(item)</td>
+<td>It is used to get the index of the specified menu item.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>insert_seperator(index)</td>
+<td>It is used to insert a seperator at the specified index.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>invoke(index)</td>
+<td>It is used to invoke the associated with the choice given at the specified index.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>type(index)</td>
+<td>It is used to get the type of the choice specified by the index. </td>
+</tr>
+</table>
+<h2 class="h2">Creating a top level menu </h2>
+<p>A top-level menu can be created by instantiating the Menu widget and adding the menu items to the menu.</p>
+<h3 class="h3">Example 1</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+# !/usr/bin/python3
+
+
+
+from tkinter import *
+
+
+
+top = Tk()
+
+
+
+def hello():
+
+    print("hello!")
+
+
+
+# create a toplevel menu
+
+menubar = Menu(root)
+
+menubar.add_command(label="Hello!", command=hello)
+
+menubar.add_command(label="Quit!", command=top.quit)
+
+
+
+# display the menu
+
+top.config(menu=menubar)
+
+
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Menu" src="python/images/python-tkinter-menu-output1.png"/>
+<p>Clicking the hello Menubutton will print the hello on the console while clicking the Quit Menubutton will make an exit from the python application.</p>
+<h3 class="h3">Example 2</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+from tkinter import Toplevel, Button, Tk, Menu
+
+
+
+top = Tk()
+
+menubar = Menu(top)
+
+file = Menu(menubar, tearoff=0)
+
+file.add_command(label="New")
+
+file.add_command(label="Open")
+
+file.add_command(label="Save")
+
+file.add_command(label="Save as...")
+
+file.add_command(label="Close")
+
+
+
+file.add_separator()
+
+
+
+file.add_command(label="Exit", command=top.quit)
+
+
+
+menubar.add_cascade(label="File", menu=file)
+
+edit = Menu(menubar, tearoff=0)
+
+edit.add_command(label="Undo")
+
+
+
+edit.add_separator()
+
+
+
+edit.add_command(label="Cut")
+
+edit.add_command(label="Copy")
+
+edit.add_command(label="Paste")
+
+edit.add_command(label="Delete")
+
+edit.add_command(label="Select All")
+
+
+
+menubar.add_cascade(label="Edit", menu=edit)
+
+help = Menu(menubar, tearoff=0)
+
+help.add_command(label="About")
+
+menubar.add_cascade(label="Help", menu=help)
+
+
+
+top.config(menu=menubar)
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Menu" src="python/images/python-tkinter-menu-output2.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-message">Python Tkinter Message</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-menubutton" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-message" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-message">next ¡ú</a>
+<a class="next" href="python-tkinter-menubutton">¡û prev</a>
+</div>
+<h1 class="h1">Python Tkinter Menu </h1>
+<p>The Menu widget is used to create various types of menus (top level, pull down, and pop up) in the python application. </p>
+<p>The top-level menus are the one which is displayed just under the title bar of the parent window. We need to create a new instance of the Menu widget and add various commands to it by using the add() method.</p>
+<p>The syntax to use the Menu widget is given below. </p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+w = Menu(top, options) 
+
+</textarea></div>
+<p>A list of possible options is given below. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>activebackground</td>
+<td>The background color of the widget when the widget is under the focus.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>activeborderwidth</td>
+<td>The width of the border of the widget when it is under the mouse. The default is 1 pixel.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>activeforeground</td>
+<td>The font color of the widget when the widget has the focus.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>bg</td>
+<td>The background color of the widget.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>bd</td>
+<td>The border width of the widget.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>cursor</td>
+<td>The mouse pointer is changed to the cursor type when it hovers the widget. The cursor type can be set to arrow or dot. </td>
+</tr>
+<tr>
+<td>7</td>
+<td>disabledforeground</td>
+<td>The font color of the widget when it is disabled. </td>
+</tr>
+<tr>
+<td>8</td>
+<td>font</td>
+<td>The font type of the text of the widget. </td>
+</tr>
+<tr>
+<td>9</td>
+<td>fg</td>
+<td>The foreground color of the widget. </td>
+</tr>
+<tr>
+<td>10</td>
+<td>postcommand</td>
+<td>The postcommand can be set to any of the function which is called when the mourse hovers the menu. </td>
+</tr>
+<tr>
+<td>11</td>
+<td>relief</td>
+<td>The type of the border of the widget. The default type is RAISED. </td>
+</tr>
+<tr>
+<td>12</td>
+<td>image</td>
+<td>It is used to display an image on the menu. </td>
+</tr>
+<tr>
+<td>13</td>
+<td>selectcolor</td>
+<td>The color used to display the checkbutton or radiobutton when they are selected. </td>
+</tr>
+<tr>
+<td>14</td>
+<td>tearoff</td>
+<td>By default, the choices in the menu start taking place from position 1. If we set the tearoff = 1, then it will start taking place from 0th position.</td>
+</tr>
+<tr>
+<td>15</td>
+<td>title</td>
+<td>Set this option to the title of the window if you want to change the title of the window.</td>
+</tr>
+</table>
+<h2 class="h2">Methods </h2>
+<p>The Menu widget contains the following methods. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>add_command(options)</td>
+<td>It is used to add the Menu items to the menu.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>add_radiobutton(options)</td>
+<td>This method adds the radiobutton to the menu.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>add_checkbutton(options)</td>
+<td>This method is used to add the checkbuttons to the menu.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>add_cascade(options)</td>
+<td>It is used to create a hierarchical menu to the parent menu by associating the given menu to the parent menu.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>add_seperator()</td>
+<td>It is used to add the seperator line to the menu.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>add(type, options)</td>
+<td>It is used to add the specific menu item to the menu.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>delete(startindex, endindex)</td>
+<td>It is used to delete the menu items exist in the specified range.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>entryconfig(index, options)</td>
+<td>It is used to configure a menu item identified by the given index.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>index(item)</td>
+<td>It is used to get the index of the specified menu item.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>insert_seperator(index)</td>
+<td>It is used to insert a seperator at the specified index.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>invoke(index)</td>
+<td>It is used to invoke the associated with the choice given at the specified index.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>type(index)</td>
+<td>It is used to get the type of the choice specified by the index. </td>
+</tr>
+</table>
+<h2 class="h2">Creating a top level menu </h2>
+<p>A top-level menu can be created by instantiating the Menu widget and adding the menu items to the menu.</p>
+<h3 class="h3">Example 1</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+# !/usr/bin/python3
+
+
+
+from tkinter import *
+
+
+
+top = Tk()
+
+
+
+def hello():
+
+    print("hello!")
+
+
+
+# create a toplevel menu
+
+menubar = Menu(root)
+
+menubar.add_command(label="Hello!", command=hello)
+
+menubar.add_command(label="Quit!", command=top.quit)
+
+
+
+# display the menu
+
+top.config(menu=menubar)
+
+
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Menu" src="python/images/python-tkinter-menu-output1.png"/>
+<p>Clicking the hello Menubutton will print the hello on the console while clicking the Quit Menubutton will make an exit from the python application.</p>
+<h3 class="h3">Example 2</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+from tkinter import Toplevel, Button, Tk, Menu
+
+
+
+top = Tk()
+
+menubar = Menu(top)
+
+file = Menu(menubar, tearoff=0)
+
+file.add_command(label="New")
+
+file.add_command(label="Open")
+
+file.add_command(label="Save")
+
+file.add_command(label="Save as...")
+
+file.add_command(label="Close")
+
+
+
+file.add_separator()
+
+
+
+file.add_command(label="Exit", command=top.quit)
+
+
+
+menubar.add_cascade(label="File", menu=file)
+
+edit = Menu(menubar, tearoff=0)
+
+edit.add_command(label="Undo")
+
+
+
+edit.add_separator()
+
+
+
+edit.add_command(label="Cut")
+
+edit.add_command(label="Copy")
+
+edit.add_command(label="Paste")
+
+edit.add_command(label="Delete")
+
+edit.add_command(label="Select All")
+
+
+
+menubar.add_cascade(label="Edit", menu=edit)
+
+help = Menu(menubar, tearoff=0)
+
+help.add_command(label="About")
+
+menubar.add_cascade(label="Help", menu=help)
+
+
+
+top.config(menu=menubar)
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Menu" src="python/images/python-tkinter-menu-output2.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-message">Python Tkinter Message</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-menubutton" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-message" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html></body></html>

@@ -1,0 +1,172 @@
+Exception in thread Thread-48401:
+Traceback (most recent call last):
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 45, in baseoperation
+    cursor.execute(sql)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\cursors.py", line 312, in _query
+    db.query(q)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 224, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.OperationalError: (2013, 'Lost connection to MySQL server during query')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 31, in page_parse
+    save_tail(full_list)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 66, in save_tail
+    mysql_operation.baseoperation(db, update_sql)
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 51, in baseoperation
+    self.rollback()
+MySQLdb._exceptions.OperationalError: (2006, 'MySQL server has gone away')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 37, in page_parse
+    error_word(keyword)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 43, in error_word
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (2002, "Can't connect to MySQL server on '127.0.0.1' (10061)")
+
+Exception in thread Thread-48405:
+Traceback (most recent call last):
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 45, in baseoperation
+    cursor.execute(sql)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\cursors.py", line 312, in _query
+    db.query(q)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 224, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.OperationalError: (2013, 'Lost connection to MySQL server during query')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 31, in page_parse
+    save_tail(full_list)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 66, in save_tail
+    mysql_operation.baseoperation(db, update_sql)
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 51, in baseoperation
+    self.rollback()
+MySQLdb._exceptions.OperationalError: (2006, 'MySQL server has gone away')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 37, in page_parse
+    error_word(keyword)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 43, in error_word
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (2002, "Can't connect to MySQL server on '127.0.0.1' (10061)")
+Exception in thread Thread-48413:
+Traceback (most recent call last):
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 45, in baseoperation
+    cursor.execute(sql)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\cursors.py", line 312, in _query
+    db.query(q)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 224, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.OperationalError: (2013, 'Lost connection to MySQL server during query')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 31, in page_parse
+    save_tail(full_list)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 66, in save_tail
+    mysql_operation.baseoperation(db, update_sql)
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 51, in baseoperation
+    self.rollback()
+MySQLdb._exceptions.OperationalError: (2006, 'MySQL server has gone away')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "D:\Develop\Tools\Python37\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 37, in page_parse
+    error_word(keyword)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 43, in error_word
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (2002, "Can't connect to MySQL server on '127.0.0.1' (10061)")
+
+
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 149, in <module>
+    timer(5)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 143, in timer
+    read_tail()
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 97, in read_tail
+    no_repeat()
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 84, in no_repeat
+    db = mysql_operation.getcon()
+  File "D:\Develop\WorkSpace\Python\seo_prj\sql\mysql_operation.py", line 13, in getcon
+    db = MySQLdb.connect("127.0.0.1", "root", "123456", 'db_seo', charset='utf8')
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\Develop\Tools\Python37\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (2002, "Can't connect to MySQL server on '127.0.0.1' (10061)")
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 149, in <module>
+    timer(20)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 143, in timer
+    read_tail()
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 97, in read_tail
+    no_repeat()
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 89, in no_repeat
+    for row in results:
+TypeError: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 149, in <module>
+    timer(20)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 143, in timer
+    read_tail()
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 97, in read_tail
+    no_repeat()
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 89, in no_repeat
+    for row in results:
+TypeError: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 149, in <module>
+    timer(20)
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 143, in timer
+    read_tail()
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 97, in read_tail
+    no_repeat()
+  File "D:/Develop/WorkSpace/Python/seo_prj/spider/baidu_relevantSearch.py", line 89, in no_repeat
+    for row in results:
+TypeError: 'NoneType' object is not iterable
