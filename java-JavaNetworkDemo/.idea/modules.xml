@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ChatRoom/ChatRoom.iml" filepath="$PROJECT_DIR$/ChatRoom/ChatRoom.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaNetworkDemo.iml" filepath="$PROJECT_DIR$/JavaNetworkDemo.iml" />
+    </modules>
+  </component>
+</project>
