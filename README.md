@@ -1,6 +1,8 @@
 ### 项目整理集合 <img src="_img/Ship.ico">
 
 ---
+![](./_img/dogs.gif)
+
 
 <div align="center">
 	<img src="_img/touxiang.jpg" width="100" height="100">
@@ -15,6 +17,16 @@
 	<a href="#"><img src="_markdown/javascript.min.js.svg"></a>
 	<a href="#"><img src="_markdown/html.min.js.svg"></a>
 </div>
+
+
+✨项目开发记录，开发语言有Java、C、Python等，大量的学习实践项目，所有的项目源代码都在这，可以直接导入工具运行，感兴趣的欢迎star✨和fork。My project development record,and those who are interested are welcome to study with star and fork.
+
+
+
+
+---
+
+![files](./_img/file_pic.png)
 
 ---
 
@@ -44,4 +56,5 @@
 |      21       |      | C/S图书管理系统          | 基于C/S开发的图书管理系统，实现功能有图书管理、用户管理、借书/还书功能、查找功能。。。 |      |
 |      22       |      | java学生管理系统         | 基于C/S设计开发的学生管理系统，实现了教师和学生的用户管理、成绩管理、课程管理、选课服务。。。 |      |
 |      23       |      | java服装销售系统         | 基于C/S架构设计的服装销售系统，使用简单的MVC实现功能，具有仓库管理、订单管理、销售管理... |      |
-|      24       |      |                          |||
+|      24       |      | ...... |.......||
+
