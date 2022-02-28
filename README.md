@@ -6,7 +6,9 @@
 <div align="center">
 	<img src="_img/touxiang.jpg" width="100" height="100">
 </div>
+
 ---
+
 [![](https://img.shields.io/badge/Java-007396.svg?logo=java&logoColor=white)]()
 [![](https://img.shields.io/badge/JavaScript-F7DF1E.svg?logo=javascript&logoColor=black)]()
 [![](https://img.shields.io/badge/-HTML5-E34F26?&logo=html5&logoColor=white)](https://html.spec.whatwg.org/)
@@ -19,8 +21,8 @@
 [![](https://img.shields.io/badge/MySQL-00f.svg?logo=mysql&logoColor=white)]()
 [![](https://img.shields.io/badge/PostgreSQL-316192.svg?logo=postgresql&logoColor=white)]()
 [![](https://img.shields.io/badge/Oracle-F00000.svg?logo=oracle&logoColor=white)]()
-
 [![](https://img.shields.io/badge/GitHub%20Pages-327FC7.svg?logo=github&logoColor=white)]()
+
 ---
 ## intro
 ✨项目开发记录，开发语言有Java、C、Python等，大量的学习实践项目，所有的项目源代码都在这，可以直接导入工具运行，感兴趣的欢迎star✨和fork。My project development record,and those who are interested are welcome to study with star and fork.
