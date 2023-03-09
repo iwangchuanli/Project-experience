@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>异步加载、更新</title>
+    <!-- 引入 echarts.js -->
+    <script src="echarts.min.js"></script>
+    <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="width: 600px;height:400px;">
+    </div>
+
+
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+        // 指定图表的配置项和数据
+        myChart.setOption({
+                title: {
+                    text: '异步加载示例'
+                },
+                tooltip: {},
+                legend: {
+                    data:['销量']
+                },
+                xAxis: {
+                    data: []
+                },
+                yAxis: {},
+                series: [{
+                    name: '销量',
+                    type: 'bar',
+                    data: []
+                }]
+            });
+        //myChart.showLoading();
+        // 异步加载数据
+        $.get('data.json').done(function (resule) {
+            resule = JSON.parse(resule);//把string字符串转换为json数组
+
+            myChart.setOption({
+                xAxis: {
+                    data: resule.name
+                },
+                yAxis: {},
+                series: [{
+                    name: '销量',
+                    type: 'bar',
+                    data: resule.value
+                }]
+            });
+        });
+
+
+    </script>
+
+</body>
+</html>
