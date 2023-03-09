@@ -1,0 +1,1505 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-datatypes">next ¡ú</a>
+<a class="next" href="numpy-environment-setup">¡û prev</a>
+</div>
+<h1 class="h1">NumPy Ndarray</h1>
+<p>Ndarray is the n-dimensional array object defined in the numpy which stores the collection of the similar type of elements. In other words, we can define a ndarray as the collection of the data type (dtype) objects.</p>
+<p>The ndarray object can be accessed by using the 0 based indexing. Each element of the Array object contains the same size in the memory.</p>
+<h2 class="h2">Creating a ndarray object</h2>
+<p>The ndarray object can be created by using the array routine of the numpy module. For this purpose, we need to import the numpy. </p>
+<div class="codeblock"><textarea class="python" name="code">
+&gt;&gt;&gt; a = numpy.array
+</textarea></div>
+<p>Consider the below image. </p>
+<img alt="NumPy Ndarray" src="https://static.javatpoint.com/tutorial/numpy/images/numpy-ndarray.png"/>
+<p>We can also pass a collection object into the array routine to create the equivalent n-dimensional array. The syntax is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+&gt;&gt;&gt; numpy.array(object, dtype = None, copy = True, order = None, subok = False, ndmin = 0)
+</textarea></div>
+<p>The parameters are described in the following table. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>object</td>
+<td>It represents the collection object. It can be a list, tuple, dictionary, set, etc.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>dtype</td>
+<td>We can change the data type of the array elements by changing this option to the specified type. The default is none.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>copy</td>
+<td>It is optional. By default, it is true which means the object is copied.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>order</td>
+<td>There can be 3 possible values assigned to this option. It can be C (column order), R (row order), or A (any)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>subok</td>
+<td>The returned array will be base class array by default. We can change this to make the subclasses passes through by setting this option to true.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>ndmin</td>
+<td>It represents the minimum dimensions of the resultant array.</td>
+</tr>
+</table>
+<p>To create an array using the list, use the following syntax. </p>
+<div class="codeblock"><textarea class="python" name="code">
+&gt;&gt;&gt; a = numpy.array([1, 2, 3])
+</textarea></div>
+<img alt="NumPy Ndarray" src="https://static.javatpoint.com/tutorial/numpy/images/numpy-ndarray2.png"/>
+<p>To create a multi-dimensional array object, use the following syntax. </p>
+<div class="codeblock"><textarea class="python" name="code">
+&gt;&gt;&gt; a = numpy.array([[1, 2, 3], [4, 5, 6]])
+</textarea></div>
+<img alt="NumPy Ndarray" src="https://static.javatpoint.com/tutorial/numpy/images/numpy-ndarray3.png"/>
+<p>To change the data type of the array elements, mention the name of the data type along with the collection. </p>
+<div class="codeblock"><textarea class="python" name="code">
+&gt;&gt;&gt; a = numpy.array([1, 3, 5, 7], complex)
+</textarea></div>
+<img alt="NumPy Ndarray" src="https://static.javatpoint.com/tutorial/numpy/images/numpy-ndarray4.png"/>
+<h2 class="h2">Finding the dimensions of the Array</h2>
+<p>The <strong>ndim</strong> function can be used to find the dimensions of the array.</p>
+<div class="codeblock"><textarea class="python" name="code">
+&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; arr = np.array([[1, 2, 3, 4], [4, 5, 6, 7], [9, 10, 11, 23]])
+
+&gt;&gt;&gt; print(arr.ndim)
+</textarea></div>
+<img alt="NumPy Ndarray" src="https://static.javatpoint.com/tutorial/numpy/images/numpy-ndarray5.png"/>
+<h2 class="h2">Finding the size of each array element </h2>
+<p>The itemsize function is used to get the size of each array item. It returns the number of bytes taken by each array element.</p>
+<p>Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+#finding the size of each item in the array
+import numpy as np
+a = np.array([[1,2,3]])
+print("Each item contains",a.itemsize,"bytes")
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Each item contains 8 bytes.
+</pre></div>
+<h2 class="h2">Finding the data type of each array item</h2>
+<p>To check the data type of each array item, the dtype function is used. Consider the following example to check the data type of the array items. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+#finding the data type of each array item
+import numpy as np
+a = np.array([[1,2,3]])
+print("Each item is of the type",a.dtype)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Each item is of the type int64
+</pre></div>
+<h2 class="h2">Finding the shape and size of the array</h2>
+<p>To get the shape and size of the array, the size and shape function associated with the numpy array is used. </p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+a = np.array([[1,2,3,4,5,6,7]])
+print("Array Size:",a.size)
+print("Shape:",a.shape)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Array Size: 7
+Shape: (1, 7)
+</pre></div>
+<h2 class="h2">Reshaping the array objects </h2>
+<p>By the shape of the array, we mean the number of rows and columns of a multi-dimensional array. However, the numpy module provides us the way to reshape the array by changing the number of rows and columns of the multi-dimensional array.</p>
+<p>The reshape() function associated with the ndarray object is used to reshape the array. It accepts the two parameters indicating the row and columns of the new shape of the array. </p>
+<p>Let's reshape the array given in the following image.</p>
+<img alt="NumPy Ndarray" src="https://static.javatpoint.com/tutorial/numpy/images/numpy-ndarray6.png"/>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+a = np.array([[1,2],[3,4],[5,6]])
+print("printing the original array..")
+print(a)
+a=a.reshape(2,3)
+print("printing the reshaped array..")
+print(a)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+printing the original array..
+[[1 2]
+ [3 4]
+ [5 6]]
+printing the reshaped array..
+[[1 2 3]
+ [4 5 6]]
+</pre></div>
+<h2 class="h2">Slicing in the Array </h2>
+<p>Slicing in the NumPy array is the way to extract a range of elements from an array. Slicing in the array is performed in the same way as it is performed in the python list.</p>
+<p>Consider the following example to print a particular element of the array. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+a = np.array([[1,2],[3,4],[5,6]])
+print(a[0,1])
+print(a[2,0])
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+2
+5
+</pre></div>
+<p>The above program prints the 2<sup>nd</sup> element from the 0<sup>th</sup> index and 0<sup>th</sup> element from the 2<sup>nd</sup> index of the array. </p>
+<h2 class="h2">Linspace</h2>
+<p>The linspace() function returns the evenly spaced values over the given interval. The following example returns the 10 evenly separated values over the given interval 5-15  </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+a=np.linspace(5,15,10) #prints 10 values which are evenly spaced over the given interval 5-15
+print(a)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+[ 5.          6.11111111  7.22222222  8.33333333  9.44444444 10.55555556
+ 11.66666667 12.77777778 13.88888889 15.        ]
+</pre></div>
+<h2 class="h2">Finding the maximum, minimum, and sum of the array elements </h2>
+<p>The NumPy provides the max(), min(), and sum() functions which are used to find the maximum, minimum, and sum of the array elements respectively.</p>
+<p>Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+a = np.array([1,2,3,10,15,4])
+print("The array:",a)
+print("The maximum element:",a.max())
+print("The minimum element:",a.min())
+print("The sum of the elements:",a.sum())
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+The array: [ 1  2  3 10 15  4]
+The maximum element: 15
+The minimum element: 1
+The sum of the elements: 35
+</pre></div>
+<h2 class="h2">NumPy Array Axis </h2>
+<p>A NumPy multi-dimensional array is represented by the axis where axis-0 represents the columns and axis-1 represents the rows. We can mention the axis to perform row-level or column-level calculations like the addition of row or column elements.</p>
+<img alt="NumPy Ndarray" src="https://static.javatpoint.com/tutorial/numpy/images/numpy-array-axis.png"/>
+<p>To calculate the maximum element among each column, the minimum element among each row, and the addition of all the row elements, consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+a = np.array([[1,2,30],[10,15,4]])
+print("The array:",a)
+print("The maximum elements of columns:",a.max(axis = 0)) 
+print("The minimum element of rows",a.min(axis = 1))
+print("The sum of all rows",a.sum(axis = 1))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+The array: [[1  2  30]
+		   [10  15  4]]
+The maximum elements of columns: [10 15 30]
+The minimum element of rows [1 4]
+The sum of all rows [33 29]
+</pre></div>
+<h2 class="h2">Finding square root and standard deviation</h2>
+<p>The sqrt() and std() functions associated with the numpy array are used to find the square root and standard deviation of the array elements respectively. </p>
+<p>Standard deviation means how much each element of the array varies from the mean value of the numpy array.</p>
+<p>Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+a = np.array([[1,2,30],[10,15,4]])
+print(np.sqrt(a))
+print(np.std(a))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+[[1.         1.41421356 5.47722558]
+ [3.16227766 3.87298335 2.        ]]
+10.044346115546242
+</pre></div>
+<h2 class="h2">Arithmetic operations on the array </h2>
+<p>The numpy module allows us to perform the arithmetic operations on multi-dimensional arrays directly.</p>
+<p>In the following example, the arithmetic operations are performed on the two multi-dimensional arrays a and b. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+a = np.array([[1,2,30],[10,15,4]])
+b = np.array([[1,2,3],[12, 19, 29]])
+print("Sum of array a and b\n",a+b)
+print("Product of array a and b\n",a*b)
+print("Division of array a and b\n",a/b)
+</textarea></div>
+<h2 class="h2">Array Concatenation </h2>
+<p>The numpy provides us with the vertical stacking and horizontal stacking which allows us to concatenate two multi-dimensional arrays vertically or horizontally. </p>
+<p>Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+a = np.array([[1,2,30],[10,15,4]])
+b = np.array([[1,2,3],[12, 19, 29]])
+print("Arrays vertically concatenated\n",np.vstack((a,b)));
+print("Arrays horizontally concatenated\n",np.hstack((a,b)))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Arrays vertically concatenated
+ [[ 1  2 30]
+ [10 15  4]
+ [ 1  2  3]
+ [12 19 29]]
+Arrays horizontally concatenated
+ [[ 1  2 30  1  2  3]
+ [10 15  4 12 19 29]]
+</pre></div>
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-datatypes">NumPy DataTypes</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="numpy-environment-setup" style="float:left">¡û prev</a>
+<a class="next" href="numpy-datatypes" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-datatypes">next ¡ú</a>
+<a class="next" href="numpy-environment-setup">¡û prev</a>
+</div>
+<h1 class="h1">NumPy Ndarray</h1>
+<p>Ndarray is the n-dimensional array object defined in the numpy which stores the collection of the similar type of elements. In other words, we can define a ndarray as the collection of the data type (dtype) objects.</p>
+<p>The ndarray object can be accessed by using the 0 based indexing. Each element of the Array object contains the same size in the memory.</p>
+<h2 class="h2">Creating a ndarray object</h2>
+<p>The ndarray object can be created by using the array routine of the numpy module. For this purpose, we need to import the numpy. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+&gt;&gt;&gt; a = numpy.array
+
+</textarea></div>
+<p>Consider the below image. </p>
+<img alt="NumPy Ndarray" src="https://static.javatpoint.com/tutorial/numpy/images/numpy-ndarray.png"/>
+<p>We can also pass a collection object into the array routine to create the equivalent n-dimensional array. The syntax is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+&gt;&gt;&gt; numpy.array(object, dtype = None, copy = True, order = None, subok = False, ndmin = 0)
+
+</textarea></div>
+<p>The parameters are described in the following table. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>object</td>
+<td>It represents the collection object. It can be a list, tuple, dictionary, set, etc.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>dtype</td>
+<td>We can change the data type of the array elements by changing this option to the specified type. The default is none.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>copy</td>
+<td>It is optional. By default, it is true which means the object is copied.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>order</td>
+<td>There can be 3 possible values assigned to this option. It can be C (column order), R (row order), or A (any)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>subok</td>
+<td>The returned array will be base class array by default. We can change this to make the subclasses passes through by setting this option to true.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>ndmin</td>
+<td>It represents the minimum dimensions of the resultant array.</td>
+</tr>
+</table>
+<p>To create an array using the list, use the following syntax. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+&gt;&gt;&gt; a = numpy.array([1, 2, 3])
+
+</textarea></div>
+<img alt="NumPy Ndarray" src="https://static.javatpoint.com/tutorial/numpy/images/numpy-ndarray2.png"/>
+<p>To create a multi-dimensional array object, use the following syntax. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+&gt;&gt;&gt; a = numpy.array([[1, 2, 3], [4, 5, 6]])
+
+</textarea></div>
+<img alt="NumPy Ndarray" src="https://static.javatpoint.com/tutorial/numpy/images/numpy-ndarray3.png"/>
+<p>To change the data type of the array elements, mention the name of the data type along with the collection. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+&gt;&gt;&gt; a = numpy.array([1, 3, 5, 7], complex)
+
+</textarea></div>
+<img alt="NumPy Ndarray" src="https://static.javatpoint.com/tutorial/numpy/images/numpy-ndarray4.png"/>
+<h2 class="h2">Finding the dimensions of the Array</h2>
+<p>The <strong>ndim</strong> function can be used to find the dimensions of the array.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+&gt;&gt;&gt; import numpy as np
+
+&gt;&gt;&gt; arr = np.array([[1, 2, 3, 4], [4, 5, 6, 7], [9, 10, 11, 23]])
+
+
+
+&gt;&gt;&gt; print(arr.ndim)
+
+</textarea></div>
+<img alt="NumPy Ndarray" src="https://static.javatpoint.com/tutorial/numpy/images/numpy-ndarray5.png"/>
+<h2 class="h2">Finding the size of each array element </h2>
+<p>The itemsize function is used to get the size of each array item. It returns the number of bytes taken by each array element.</p>
+<p>Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+#finding the size of each item in the array
+
+import numpy as np
+
+a = np.array([[1,2,3]])
+
+print("Each item contains",a.itemsize,"bytes")
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Each item contains 8 bytes.
+
+</pre></div>
+<h2 class="h2">Finding the data type of each array item</h2>
+<p>To check the data type of each array item, the dtype function is used. Consider the following example to check the data type of the array items. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+#finding the data type of each array item
+
+import numpy as np
+
+a = np.array([[1,2,3]])
+
+print("Each item is of the type",a.dtype)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Each item is of the type int64
+
+</pre></div>
+<h2 class="h2">Finding the shape and size of the array</h2>
+<p>To get the shape and size of the array, the size and shape function associated with the numpy array is used. </p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+a = np.array([[1,2,3,4,5,6,7]])
+
+print("Array Size:",a.size)
+
+print("Shape:",a.shape)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Array Size: 7
+
+Shape: (1, 7)
+
+</pre></div>
+<h2 class="h2">Reshaping the array objects </h2>
+<p>By the shape of the array, we mean the number of rows and columns of a multi-dimensional array. However, the numpy module provides us the way to reshape the array by changing the number of rows and columns of the multi-dimensional array.</p>
+<p>The reshape() function associated with the ndarray object is used to reshape the array. It accepts the two parameters indicating the row and columns of the new shape of the array. </p>
+<p>Let's reshape the array given in the following image.</p>
+<img alt="NumPy Ndarray" src="https://static.javatpoint.com/tutorial/numpy/images/numpy-ndarray6.png"/>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+a = np.array([[1,2],[3,4],[5,6]])
+
+print("printing the original array..")
+
+print(a)
+
+a=a.reshape(2,3)
+
+print("printing the reshaped array..")
+
+print(a)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+printing the original array..
+
+[[1 2]
+
+ [3 4]
+
+ [5 6]]
+
+printing the reshaped array..
+
+[[1 2 3]
+
+ [4 5 6]]
+
+</pre></div>
+<h2 class="h2">Slicing in the Array </h2>
+<p>Slicing in the NumPy array is the way to extract a range of elements from an array. Slicing in the array is performed in the same way as it is performed in the python list.</p>
+<p>Consider the following example to print a particular element of the array. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+a = np.array([[1,2],[3,4],[5,6]])
+
+print(a[0,1])
+
+print(a[2,0])
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+2
+
+5
+
+</pre></div>
+<p>The above program prints the 2<sup>nd</sup> element from the 0<sup>th</sup> index and 0<sup>th</sup> element from the 2<sup>nd</sup> index of the array. </p>
+<h2 class="h2">Linspace</h2>
+<p>The linspace() function returns the evenly spaced values over the given interval. The following example returns the 10 evenly separated values over the given interval 5-15  </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+a=np.linspace(5,15,10) #prints 10 values which are evenly spaced over the given interval 5-15
+
+print(a)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+[ 5.          6.11111111  7.22222222  8.33333333  9.44444444 10.55555556
+
+ 11.66666667 12.77777778 13.88888889 15.        ]
+
+</pre></div>
+<h2 class="h2">Finding the maximum, minimum, and sum of the array elements </h2>
+<p>The NumPy provides the max(), min(), and sum() functions which are used to find the maximum, minimum, and sum of the array elements respectively.</p>
+<p>Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+a = np.array([1,2,3,10,15,4])
+
+print("The array:",a)
+
+print("The maximum element:",a.max())
+
+print("The minimum element:",a.min())
+
+print("The sum of the elements:",a.sum())
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+The array: [ 1  2  3 10 15  4]
+
+The maximum element: 15
+
+The minimum element: 1
+
+The sum of the elements: 35
+
+</pre></div>
+<h2 class="h2">NumPy Array Axis </h2>
+<p>A NumPy multi-dimensional array is represented by the axis where axis-0 represents the columns and axis-1 represents the rows. We can mention the axis to perform row-level or column-level calculations like the addition of row or column elements.</p>
+<img alt="NumPy Ndarray" src="https://static.javatpoint.com/tutorial/numpy/images/numpy-array-axis.png"/>
+<p>To calculate the maximum element among each column, the minimum element among each row, and the addition of all the row elements, consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+a = np.array([[1,2,30],[10,15,4]])
+
+print("The array:",a)
+
+print("The maximum elements of columns:",a.max(axis = 0)) 
+
+print("The minimum element of rows",a.min(axis = 1))
+
+print("The sum of all rows",a.sum(axis = 1))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+The array: [[1  2  30]
+
+		   [10  15  4]]
+
+The maximum elements of columns: [10 15 30]
+
+The minimum element of rows [1 4]
+
+The sum of all rows [33 29]
+
+</pre></div>
+<h2 class="h2">Finding square root and standard deviation</h2>
+<p>The sqrt() and std() functions associated with the numpy array are used to find the square root and standard deviation of the array elements respectively. </p>
+<p>Standard deviation means how much each element of the array varies from the mean value of the numpy array.</p>
+<p>Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+a = np.array([[1,2,30],[10,15,4]])
+
+print(np.sqrt(a))
+
+print(np.std(a))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+[[1.         1.41421356 5.47722558]
+
+ [3.16227766 3.87298335 2.        ]]
+
+10.044346115546242
+
+</pre></div>
+<h2 class="h2">Arithmetic operations on the array </h2>
+<p>The numpy module allows us to perform the arithmetic operations on multi-dimensional arrays directly.</p>
+<p>In the following example, the arithmetic operations are performed on the two multi-dimensional arrays a and b. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+a = np.array([[1,2,30],[10,15,4]])
+
+b = np.array([[1,2,3],[12, 19, 29]])
+
+print("Sum of array a and b\n",a+b)
+
+print("Product of array a and b\n",a*b)
+
+print("Division of array a and b\n",a/b)
+
+</textarea></div>
+<h2 class="h2">Array Concatenation </h2>
+<p>The numpy provides us with the vertical stacking and horizontal stacking which allows us to concatenate two multi-dimensional arrays vertically or horizontally. </p>
+<p>Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+a = np.array([[1,2,30],[10,15,4]])
+
+b = np.array([[1,2,3],[12, 19, 29]])
+
+print("Arrays vertically concatenated\n",np.vstack((a,b)));
+
+print("Arrays horizontally concatenated\n",np.hstack((a,b)))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Arrays vertically concatenated
+
+ [[ 1  2 30]
+
+ [10 15  4]
+
+ [ 1  2  3]
+
+ [12 19 29]]
+
+Arrays horizontally concatenated
+
+ [[ 1  2 30  1  2  3]
+
+ [10 15  4 12 19 29]]
+
+</pre></div>
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-datatypes">NumPy DataTypes</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="numpy-environment-setup" style="float:left">¡û prev</a>
+<a class="next" href="numpy-datatypes" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-datatypes">next ¡ú</a>
+<a class="next" href="numpy-environment-setup">¡û prev</a>
+</div>
+<h1 class="h1">NumPy Ndarray</h1>
+<p>Ndarray is the n-dimensional array object defined in the numpy which stores the collection of the similar type of elements. In other words, we can define a ndarray as the collection of the data type (dtype) objects.</p>
+<p>The ndarray object can be accessed by using the 0 based indexing. Each element of the Array object contains the same size in the memory.</p>
+<h2 class="h2">Creating a ndarray object</h2>
+<p>The ndarray object can be created by using the array routine of the numpy module. For this purpose, we need to import the numpy. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+&gt;&gt;&gt; a = numpy.array
+
+</textarea></div>
+<p>Consider the below image. </p>
+<img alt="NumPy Ndarray" src="https://static.javatpoint.com/tutorial/numpy/images/numpy-ndarray.png"/>
+<p>We can also pass a collection object into the array routine to create the equivalent n-dimensional array. The syntax is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+&gt;&gt;&gt; numpy.array(object, dtype = None, copy = True, order = None, subok = False, ndmin = 0)
+
+</textarea></div>
+<p>The parameters are described in the following table. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>object</td>
+<td>It represents the collection object. It can be a list, tuple, dictionary, set, etc.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>dtype</td>
+<td>We can change the data type of the array elements by changing this option to the specified type. The default is none.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>copy</td>
+<td>It is optional. By default, it is true which means the object is copied.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>order</td>
+<td>There can be 3 possible values assigned to this option. It can be C (column order), R (row order), or A (any)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>subok</td>
+<td>The returned array will be base class array by default. We can change this to make the subclasses passes through by setting this option to true.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>ndmin</td>
+<td>It represents the minimum dimensions of the resultant array.</td>
+</tr>
+</table>
+<p>To create an array using the list, use the following syntax. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+&gt;&gt;&gt; a = numpy.array([1, 2, 3])
+
+</textarea></div>
+<img alt="NumPy Ndarray" src="https://static.javatpoint.com/tutorial/numpy/images/numpy-ndarray2.png"/>
+<p>To create a multi-dimensional array object, use the following syntax. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+&gt;&gt;&gt; a = numpy.array([[1, 2, 3], [4, 5, 6]])
+
+</textarea></div>
+<img alt="NumPy Ndarray" src="https://static.javatpoint.com/tutorial/numpy/images/numpy-ndarray3.png"/>
+<p>To change the data type of the array elements, mention the name of the data type along with the collection. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+&gt;&gt;&gt; a = numpy.array([1, 3, 5, 7], complex)
+
+</textarea></div>
+<img alt="NumPy Ndarray" src="https://static.javatpoint.com/tutorial/numpy/images/numpy-ndarray4.png"/>
+<h2 class="h2">Finding the dimensions of the Array</h2>
+<p>The <strong>ndim</strong> function can be used to find the dimensions of the array.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+&gt;&gt;&gt; import numpy as np
+
+&gt;&gt;&gt; arr = np.array([[1, 2, 3, 4], [4, 5, 6, 7], [9, 10, 11, 23]])
+
+
+
+&gt;&gt;&gt; print(arr.ndim)
+
+</textarea></div>
+<img alt="NumPy Ndarray" src="https://static.javatpoint.com/tutorial/numpy/images/numpy-ndarray5.png"/>
+<h2 class="h2">Finding the size of each array element </h2>
+<p>The itemsize function is used to get the size of each array item. It returns the number of bytes taken by each array element.</p>
+<p>Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+#finding the size of each item in the array
+
+import numpy as np
+
+a = np.array([[1,2,3]])
+
+print("Each item contains",a.itemsize,"bytes")
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Each item contains 8 bytes.
+
+</pre></div>
+<h2 class="h2">Finding the data type of each array item</h2>
+<p>To check the data type of each array item, the dtype function is used. Consider the following example to check the data type of the array items. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+#finding the data type of each array item
+
+import numpy as np
+
+a = np.array([[1,2,3]])
+
+print("Each item is of the type",a.dtype)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Each item is of the type int64
+
+</pre></div>
+<h2 class="h2">Finding the shape and size of the array</h2>
+<p>To get the shape and size of the array, the size and shape function associated with the numpy array is used. </p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+a = np.array([[1,2,3,4,5,6,7]])
+
+print("Array Size:",a.size)
+
+print("Shape:",a.shape)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Array Size: 7
+
+Shape: (1, 7)
+
+</pre></div>
+<h2 class="h2">Reshaping the array objects </h2>
+<p>By the shape of the array, we mean the number of rows and columns of a multi-dimensional array. However, the numpy module provides us the way to reshape the array by changing the number of rows and columns of the multi-dimensional array.</p>
+<p>The reshape() function associated with the ndarray object is used to reshape the array. It accepts the two parameters indicating the row and columns of the new shape of the array. </p>
+<p>Let's reshape the array given in the following image.</p>
+<img alt="NumPy Ndarray" src="https://static.javatpoint.com/tutorial/numpy/images/numpy-ndarray6.png"/>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+a = np.array([[1,2],[3,4],[5,6]])
+
+print("printing the original array..")
+
+print(a)
+
+a=a.reshape(2,3)
+
+print("printing the reshaped array..")
+
+print(a)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+printing the original array..
+
+[[1 2]
+
+ [3 4]
+
+ [5 6]]
+
+printing the reshaped array..
+
+[[1 2 3]
+
+ [4 5 6]]
+
+</pre></div>
+<h2 class="h2">Slicing in the Array </h2>
+<p>Slicing in the NumPy array is the way to extract a range of elements from an array. Slicing in the array is performed in the same way as it is performed in the python list.</p>
+<p>Consider the following example to print a particular element of the array. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+a = np.array([[1,2],[3,4],[5,6]])
+
+print(a[0,1])
+
+print(a[2,0])
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+2
+
+5
+
+</pre></div>
+<p>The above program prints the 2<sup>nd</sup> element from the 0<sup>th</sup> index and 0<sup>th</sup> element from the 2<sup>nd</sup> index of the array. </p>
+<h2 class="h2">Linspace</h2>
+<p>The linspace() function returns the evenly spaced values over the given interval. The following example returns the 10 evenly separated values over the given interval 5-15  </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+a=np.linspace(5,15,10) #prints 10 values which are evenly spaced over the given interval 5-15
+
+print(a)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+[ 5.          6.11111111  7.22222222  8.33333333  9.44444444 10.55555556
+
+ 11.66666667 12.77777778 13.88888889 15.        ]
+
+</pre></div>
+<h2 class="h2">Finding the maximum, minimum, and sum of the array elements </h2>
+<p>The NumPy provides the max(), min(), and sum() functions which are used to find the maximum, minimum, and sum of the array elements respectively.</p>
+<p>Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+a = np.array([1,2,3,10,15,4])
+
+print("The array:",a)
+
+print("The maximum element:",a.max())
+
+print("The minimum element:",a.min())
+
+print("The sum of the elements:",a.sum())
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+The array: [ 1  2  3 10 15  4]
+
+The maximum element: 15
+
+The minimum element: 1
+
+The sum of the elements: 35
+
+</pre></div>
+<h2 class="h2">NumPy Array Axis </h2>
+<p>A NumPy multi-dimensional array is represented by the axis where axis-0 represents the columns and axis-1 represents the rows. We can mention the axis to perform row-level or column-level calculations like the addition of row or column elements.</p>
+<img alt="NumPy Ndarray" src="https://static.javatpoint.com/tutorial/numpy/images/numpy-array-axis.png"/>
+<p>To calculate the maximum element among each column, the minimum element among each row, and the addition of all the row elements, consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+a = np.array([[1,2,30],[10,15,4]])
+
+print("The array:",a)
+
+print("The maximum elements of columns:",a.max(axis = 0)) 
+
+print("The minimum element of rows",a.min(axis = 1))
+
+print("The sum of all rows",a.sum(axis = 1))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+The array: [[1  2  30]
+
+		   [10  15  4]]
+
+The maximum elements of columns: [10 15 30]
+
+The minimum element of rows [1 4]
+
+The sum of all rows [33 29]
+
+</pre></div>
+<h2 class="h2">Finding square root and standard deviation</h2>
+<p>The sqrt() and std() functions associated with the numpy array are used to find the square root and standard deviation of the array elements respectively. </p>
+<p>Standard deviation means how much each element of the array varies from the mean value of the numpy array.</p>
+<p>Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+a = np.array([[1,2,30],[10,15,4]])
+
+print(np.sqrt(a))
+
+print(np.std(a))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+[[1.         1.41421356 5.47722558]
+
+ [3.16227766 3.87298335 2.        ]]
+
+10.044346115546242
+
+</pre></div>
+<h2 class="h2">Arithmetic operations on the array </h2>
+<p>The numpy module allows us to perform the arithmetic operations on multi-dimensional arrays directly.</p>
+<p>In the following example, the arithmetic operations are performed on the two multi-dimensional arrays a and b. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+a = np.array([[1,2,30],[10,15,4]])
+
+b = np.array([[1,2,3],[12, 19, 29]])
+
+print("Sum of array a and b\n",a+b)
+
+print("Product of array a and b\n",a*b)
+
+print("Division of array a and b\n",a/b)
+
+</textarea></div>
+<h2 class="h2">Array Concatenation </h2>
+<p>The numpy provides us with the vertical stacking and horizontal stacking which allows us to concatenate two multi-dimensional arrays vertically or horizontally. </p>
+<p>Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+a = np.array([[1,2,30],[10,15,4]])
+
+b = np.array([[1,2,3],[12, 19, 29]])
+
+print("Arrays vertically concatenated\n",np.vstack((a,b)));
+
+print("Arrays horizontally concatenated\n",np.hstack((a,b)))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Arrays vertically concatenated
+
+ [[ 1  2 30]
+
+ [10 15  4]
+
+ [ 1  2  3]
+
+ [12 19 29]]
+
+Arrays horizontally concatenated
+
+ [[ 1  2 30  1  2  3]
+
+ [10 15  4 12 19 29]]
+
+</pre></div>
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-datatypes">NumPy DataTypes</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="numpy-environment-setup" style="float:left">¡û prev</a>
+<a class="next" href="numpy-datatypes" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-datatypes">next ¡ú</a>
+<a class="next" href="numpy-environment-setup">¡û prev</a>
+</div>
+<h1 class="h1">NumPy Ndarray</h1>
+<p>Ndarray is the n-dimensional array object defined in the numpy which stores the collection of the similar type of elements. In other words, we can define a ndarray as the collection of the data type (dtype) objects.</p>
+<p>The ndarray object can be accessed by using the 0 based indexing. Each element of the Array object contains the same size in the memory.</p>
+<h2 class="h2">Creating a ndarray object</h2>
+<p>The ndarray object can be created by using the array routine of the numpy module. For this purpose, we need to import the numpy. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+&gt;&gt;&gt; a = numpy.array
+
+</textarea></div>
+<p>Consider the below image. </p>
+<img alt="NumPy Ndarray" src="https://static.javatpoint.com/tutorial/numpy/images/numpy-ndarray.png"/>
+<p>We can also pass a collection object into the array routine to create the equivalent n-dimensional array. The syntax is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+&gt;&gt;&gt; numpy.array(object, dtype = None, copy = True, order = None, subok = False, ndmin = 0)
+
+</textarea></div>
+<p>The parameters are described in the following table. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>object</td>
+<td>It represents the collection object. It can be a list, tuple, dictionary, set, etc.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>dtype</td>
+<td>We can change the data type of the array elements by changing this option to the specified type. The default is none.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>copy</td>
+<td>It is optional. By default, it is true which means the object is copied.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>order</td>
+<td>There can be 3 possible values assigned to this option. It can be C (column order), R (row order), or A (any)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>subok</td>
+<td>The returned array will be base class array by default. We can change this to make the subclasses passes through by setting this option to true.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>ndmin</td>
+<td>It represents the minimum dimensions of the resultant array.</td>
+</tr>
+</table>
+<p>To create an array using the list, use the following syntax. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+&gt;&gt;&gt; a = numpy.array([1, 2, 3])
+
+</textarea></div>
+<img alt="NumPy Ndarray" src="https://static.javatpoint.com/tutorial/numpy/images/numpy-ndarray2.png"/>
+<p>To create a multi-dimensional array object, use the following syntax. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+&gt;&gt;&gt; a = numpy.array([[1, 2, 3], [4, 5, 6]])
+
+</textarea></div>
+<img alt="NumPy Ndarray" src="https://static.javatpoint.com/tutorial/numpy/images/numpy-ndarray3.png"/>
+<p>To change the data type of the array elements, mention the name of the data type along with the collection. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+&gt;&gt;&gt; a = numpy.array([1, 3, 5, 7], complex)
+
+</textarea></div>
+<img alt="NumPy Ndarray" src="https://static.javatpoint.com/tutorial/numpy/images/numpy-ndarray4.png"/>
+<h2 class="h2">Finding the dimensions of the Array</h2>
+<p>The <strong>ndim</strong> function can be used to find the dimensions of the array.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+&gt;&gt;&gt; import numpy as np
+
+&gt;&gt;&gt; arr = np.array([[1, 2, 3, 4], [4, 5, 6, 7], [9, 10, 11, 23]])
+
+
+
+&gt;&gt;&gt; print(arr.ndim)
+
+</textarea></div>
+<img alt="NumPy Ndarray" src="https://static.javatpoint.com/tutorial/numpy/images/numpy-ndarray5.png"/>
+<h2 class="h2">Finding the size of each array element </h2>
+<p>The itemsize function is used to get the size of each array item. It returns the number of bytes taken by each array element.</p>
+<p>Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+#finding the size of each item in the array
+
+import numpy as np
+
+a = np.array([[1,2,3]])
+
+print("Each item contains",a.itemsize,"bytes")
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Each item contains 8 bytes.
+
+</pre></div>
+<h2 class="h2">Finding the data type of each array item</h2>
+<p>To check the data type of each array item, the dtype function is used. Consider the following example to check the data type of the array items. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+#finding the data type of each array item
+
+import numpy as np
+
+a = np.array([[1,2,3]])
+
+print("Each item is of the type",a.dtype)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Each item is of the type int64
+
+</pre></div>
+<h2 class="h2">Finding the shape and size of the array</h2>
+<p>To get the shape and size of the array, the size and shape function associated with the numpy array is used. </p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+a = np.array([[1,2,3,4,5,6,7]])
+
+print("Array Size:",a.size)
+
+print("Shape:",a.shape)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Array Size: 7
+
+Shape: (1, 7)
+
+</pre></div>
+<h2 class="h2">Reshaping the array objects </h2>
+<p>By the shape of the array, we mean the number of rows and columns of a multi-dimensional array. However, the numpy module provides us the way to reshape the array by changing the number of rows and columns of the multi-dimensional array.</p>
+<p>The reshape() function associated with the ndarray object is used to reshape the array. It accepts the two parameters indicating the row and columns of the new shape of the array. </p>
+<p>Let's reshape the array given in the following image.</p>
+<img alt="NumPy Ndarray" src="https://static.javatpoint.com/tutorial/numpy/images/numpy-ndarray6.png"/>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+a = np.array([[1,2],[3,4],[5,6]])
+
+print("printing the original array..")
+
+print(a)
+
+a=a.reshape(2,3)
+
+print("printing the reshaped array..")
+
+print(a)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+printing the original array..
+
+[[1 2]
+
+ [3 4]
+
+ [5 6]]
+
+printing the reshaped array..
+
+[[1 2 3]
+
+ [4 5 6]]
+
+</pre></div>
+<h2 class="h2">Slicing in the Array </h2>
+<p>Slicing in the NumPy array is the way to extract a range of elements from an array. Slicing in the array is performed in the same way as it is performed in the python list.</p>
+<p>Consider the following example to print a particular element of the array. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+a = np.array([[1,2],[3,4],[5,6]])
+
+print(a[0,1])
+
+print(a[2,0])
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+2
+
+5
+
+</pre></div>
+<p>The above program prints the 2<sup>nd</sup> element from the 0<sup>th</sup> index and 0<sup>th</sup> element from the 2<sup>nd</sup> index of the array. </p>
+<h2 class="h2">Linspace</h2>
+<p>The linspace() function returns the evenly spaced values over the given interval. The following example returns the 10 evenly separated values over the given interval 5-15  </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+a=np.linspace(5,15,10) #prints 10 values which are evenly spaced over the given interval 5-15
+
+print(a)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+[ 5.          6.11111111  7.22222222  8.33333333  9.44444444 10.55555556
+
+ 11.66666667 12.77777778 13.88888889 15.        ]
+
+</pre></div>
+<h2 class="h2">Finding the maximum, minimum, and sum of the array elements </h2>
+<p>The NumPy provides the max(), min(), and sum() functions which are used to find the maximum, minimum, and sum of the array elements respectively.</p>
+<p>Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+a = np.array([1,2,3,10,15,4])
+
+print("The array:",a)
+
+print("The maximum element:",a.max())
+
+print("The minimum element:",a.min())
+
+print("The sum of the elements:",a.sum())
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+The array: [ 1  2  3 10 15  4]
+
+The maximum element: 15
+
+The minimum element: 1
+
+The sum of the elements: 35
+
+</pre></div>
+<h2 class="h2">NumPy Array Axis </h2>
+<p>A NumPy multi-dimensional array is represented by the axis where axis-0 represents the columns and axis-1 represents the rows. We can mention the axis to perform row-level or column-level calculations like the addition of row or column elements.</p>
+<img alt="NumPy Ndarray" src="https://static.javatpoint.com/tutorial/numpy/images/numpy-array-axis.png"/>
+<p>To calculate the maximum element among each column, the minimum element among each row, and the addition of all the row elements, consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+a = np.array([[1,2,30],[10,15,4]])
+
+print("The array:",a)
+
+print("The maximum elements of columns:",a.max(axis = 0)) 
+
+print("The minimum element of rows",a.min(axis = 1))
+
+print("The sum of all rows",a.sum(axis = 1))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+The array: [[1  2  30]
+
+		   [10  15  4]]
+
+The maximum elements of columns: [10 15 30]
+
+The minimum element of rows [1 4]
+
+The sum of all rows [33 29]
+
+</pre></div>
+<h2 class="h2">Finding square root and standard deviation</h2>
+<p>The sqrt() and std() functions associated with the numpy array are used to find the square root and standard deviation of the array elements respectively. </p>
+<p>Standard deviation means how much each element of the array varies from the mean value of the numpy array.</p>
+<p>Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+a = np.array([[1,2,30],[10,15,4]])
+
+print(np.sqrt(a))
+
+print(np.std(a))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+[[1.         1.41421356 5.47722558]
+
+ [3.16227766 3.87298335 2.        ]]
+
+10.044346115546242
+
+</pre></div>
+<h2 class="h2">Arithmetic operations on the array </h2>
+<p>The numpy module allows us to perform the arithmetic operations on multi-dimensional arrays directly.</p>
+<p>In the following example, the arithmetic operations are performed on the two multi-dimensional arrays a and b. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+a = np.array([[1,2,30],[10,15,4]])
+
+b = np.array([[1,2,3],[12, 19, 29]])
+
+print("Sum of array a and b\n",a+b)
+
+print("Product of array a and b\n",a*b)
+
+print("Division of array a and b\n",a/b)
+
+</textarea></div>
+<h2 class="h2">Array Concatenation </h2>
+<p>The numpy provides us with the vertical stacking and horizontal stacking which allows us to concatenate two multi-dimensional arrays vertically or horizontally. </p>
+<p>Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+a = np.array([[1,2,30],[10,15,4]])
+
+b = np.array([[1,2,3],[12, 19, 29]])
+
+print("Arrays vertically concatenated\n",np.vstack((a,b)));
+
+print("Arrays horizontally concatenated\n",np.hstack((a,b)))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Arrays vertically concatenated
+
+ [[ 1  2 30]
+
+ [10 15  4]
+
+ [ 1  2  3]
+
+ [12 19 29]]
+
+Arrays horizontally concatenated
+
+ [[ 1  2 30  1  2  3]
+
+ [10 15  4 12 19 29]]
+
+</pre></div>
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-datatypes">NumPy DataTypes</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="numpy-environment-setup" style="float:left">¡û prev</a>
+<a class="next" href="numpy-datatypes" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html></body></html>

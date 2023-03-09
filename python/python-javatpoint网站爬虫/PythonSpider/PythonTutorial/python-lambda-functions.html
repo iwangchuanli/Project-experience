@@ -1,0 +1,381 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-files-io">next ¡ú</a>
+<a class="next" href="python-functions">¡û prev</a>
+</div>
+<h1 class="h1">Python Lambda Functions</h1>
+<p>Python allows us to not declare the function in the standard manner, i.e., by using the def keyword. Rather, the anonymous functions are declared by using lambda keyword. However, Lambda functions can accept any number of arguments, but they can return only one value in the form of expression. </p>
+<p>The anonymous function contains a small piece of code. It simulates inline functions of C and C++, but it is not exactly an inline function. </p>
+<p>The syntax to define an Anonymous function is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+lambda arguments : expression   
+</textarea></div>
+<h2 class="h3">Example 1</h2>
+<div class="codeblock"><textarea class="python" name="code">
+x = lambda a:a+10 # a is an argument and a+10 is an expression which got evaluated and returned. 
+print("sum = ",x(20)) 
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+sum =  30
+</pre></div>
+<h2 class="h3">Example 2</h2>
+<p>Multiple arguments to Lambda function</p>
+<div class="codeblock"><textarea class="python" name="code">
+x = lambda a,b:a+b # a and b are the arguments and a+b is the expression which gets evaluated and returned. 
+print("sum = ",x(20,10))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+sum =  30
+</pre></div>
+<h2 class="h2">Why use lambda functions?</h2>
+<p>The main role of the lambda function is better described in the scenarios when we use them anonymously inside another function.  In python, the lambda function can be used as an argument to the higher order functions as arguments. Lambda functions are also used in the scenario where we need a Consider the following example.</p>
+<h2 class="h3">Example 1</h2>
+<div class="codeblock"><textarea class="python" name="code">
+#the function table(n) prints the table of n
+def table(n):
+    return lambda a:a*n; # a will contain the iteration variable i and a multiple of n is returned at each function call
+n = int(input("Enter the number?"))
+b = table(n) #the entered number is passed into the function table. b will contain a lambda function which is called again and again with the iteration variable i
+for i in range(1,11):
+    print(n,"X",i,"=",b(i)); #the lambda function b is called with the iteration variable i, 
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Enter the number?10
+10 X 1 = 10
+10 X 2 = 20
+10 X 3 = 30
+10 X 4 = 40
+10 X 5 = 50
+10 X 6 = 60
+10 X 7 = 70
+10 X 8 = 80
+10 X 9 = 90
+10 X 10 = 100
+</pre></div>
+<h2 class="h3">Example 2</h2>
+<p>Use of lambda function with filter</p>
+<div class="codeblock"><textarea class="python" name="code">
+#program to filter out the list which contains odd numbers
+List = {1,2,3,4,10,123,22}
+Oddlist = list(filter(lambda x:(x%3 == 0),List)) # the list contains all the items of the list for which the lambda function evaluates to true
+print(Oddlist)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+[3, 123]
+</pre></div>
+<h2 class="h3">Example 3</h2>
+<p>Use of lambda function with map</p>
+<div class="codeblock"><textarea class="python" name="code">
+#program to triple each number of the list using map
+List = {1,2,3,4,10,123,22}
+new_list = list(map(lambda x:x*3,List)) # this will return the triple of each item of the list and add it to new_list
+print(new_list)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+[3, 6, 9, 12, 30, 66, 369]
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-files-io">Python Files Io</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-functions" style="float:left">¡û prev</a>
+<a class="next" href="python-files-io" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-files-io">next ¡ú</a>
+<a class="next" href="python-functions">¡û prev</a>
+</div>
+<h1 class="h1">Python Lambda Functions</h1>
+<p>Python allows us to not declare the function in the standard manner, i.e., by using the def keyword. Rather, the anonymous functions are declared by using lambda keyword. However, Lambda functions can accept any number of arguments, but they can return only one value in the form of expression. </p>
+<p>The anonymous function contains a small piece of code. It simulates inline functions of C and C++, but it is not exactly an inline function. </p>
+<p>The syntax to define an Anonymous function is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+lambda arguments : expression   
+</textarea></div>
+<h2 class="h3">Example 1</h2>
+<div class="codeblock"><textarea class="python" name="code">
+x = lambda a:a+10 # a is an argument and a+10 is an expression which got evaluated and returned. 
+print("sum = ",x(20)) 
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+sum =  30
+</pre></div>
+<h2 class="h3">Example 2</h2>
+<p>Multiple arguments to Lambda function</p>
+<div class="codeblock"><textarea class="python" name="code">
+x = lambda a,b:a+b # a and b are the arguments and a+b is the expression which gets evaluated and returned. 
+print("sum = ",x(20,10))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+sum =  30
+</pre></div>
+<h2 class="h2">Why use lambda functions?</h2>
+<p>The main role of the lambda function is better described in the scenarios when we use them anonymously inside another function.  In python, the lambda function can be used as an argument to the higher order functions as arguments. Lambda functions are also used in the scenario where we need a Consider the following example.</p>
+<h2 class="h3">Example 1</h2>
+<div class="codeblock"><textarea class="python" name="code">
+#the function table(n) prints the table of n
+def table(n):
+    return lambda a:a*n; # a will contain the iteration variable i and a multiple of n is returned at each function call
+n = int(input("Enter the number?"))
+b = table(n) #the entered number is passed into the function table. b will contain a lambda function which is called again and again with the iteration variable i
+for i in range(1,11):
+    print(n,"X",i,"=",b(i)); #the lambda function b is called with the iteration variable i, 
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Enter the number?10
+10 X 1 = 10
+10 X 2 = 20
+10 X 3 = 30
+10 X 4 = 40
+10 X 5 = 50
+10 X 6 = 60
+10 X 7 = 70
+10 X 8 = 80
+10 X 9 = 90
+10 X 10 = 100
+</pre></div>
+<h2 class="h3">Example 2</h2>
+<p>Use of lambda function with filter</p>
+<div class="codeblock"><textarea class="python" name="code">
+#program to filter out the list which contains odd numbers
+List = {1,2,3,4,10,123,22}
+Oddlist = list(filter(lambda x:(x%3 == 0),List)) # the list contains all the items of the list for which the lambda function evaluates to true
+print(Oddlist)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+[3, 123]
+</pre></div>
+<h2 class="h3">Example 3</h2>
+<p>Use of lambda function with map</p>
+<div class="codeblock"><textarea class="python" name="code">
+#program to triple each number of the list using map
+List = {1,2,3,4,10,123,22}
+new_list = list(map(lambda x:x*3,List)) # this will return the triple of each item of the list and add it to new_list
+print(new_list)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+[3, 6, 9, 12, 30, 66, 369]
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-files-io">Python Files Io</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-functions" style="float:left">¡û prev</a>
+<a class="next" href="python-files-io" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-files-io">next ¡ú</a>
+<a class="next" href="python-functions">¡û prev</a>
+</div>
+<h1 class="h1">Python Lambda Functions</h1>
+<p>Python allows us to not declare the function in the standard manner, i.e., by using the def keyword. Rather, the anonymous functions are declared by using lambda keyword. However, Lambda functions can accept any number of arguments, but they can return only one value in the form of expression. </p>
+<p>The anonymous function contains a small piece of code. It simulates inline functions of C and C++, but it is not exactly an inline function. </p>
+<p>The syntax to define an Anonymous function is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+lambda arguments : expression   
+</textarea></div>
+<h2 class="h3">Example 1</h2>
+<div class="codeblock"><textarea class="python" name="code">
+x = lambda a:a+10 # a is an argument and a+10 is an expression which got evaluated and returned. 
+print("sum = ",x(20)) 
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+sum =  30
+</pre></div>
+<h2 class="h3">Example 2</h2>
+<p>Multiple arguments to Lambda function</p>
+<div class="codeblock"><textarea class="python" name="code">
+x = lambda a,b:a+b # a and b are the arguments and a+b is the expression which gets evaluated and returned. 
+print("sum = ",x(20,10))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+sum =  30
+</pre></div>
+<h2 class="h2">Why use lambda functions?</h2>
+<p>The main role of the lambda function is better described in the scenarios when we use them anonymously inside another function.  In python, the lambda function can be used as an argument to the higher order functions as arguments. Lambda functions are also used in the scenario where we need a Consider the following example.</p>
+<h2 class="h3">Example 1</h2>
+<div class="codeblock"><textarea class="python" name="code">
+#the function table(n) prints the table of n
+def table(n):
+    return lambda a:a*n; # a will contain the iteration variable i and a multiple of n is returned at each function call
+n = int(input("Enter the number?"))
+b = table(n) #the entered number is passed into the function table. b will contain a lambda function which is called again and again with the iteration variable i
+for i in range(1,11):
+    print(n,"X",i,"=",b(i)); #the lambda function b is called with the iteration variable i, 
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Enter the number?10
+10 X 1 = 10
+10 X 2 = 20
+10 X 3 = 30
+10 X 4 = 40
+10 X 5 = 50
+10 X 6 = 60
+10 X 7 = 70
+10 X 8 = 80
+10 X 9 = 90
+10 X 10 = 100
+</pre></div>
+<h2 class="h3">Example 2</h2>
+<p>Use of lambda function with filter</p>
+<div class="codeblock"><textarea class="python" name="code">
+#program to filter out the list which contains odd numbers
+List = {1,2,3,4,10,123,22}
+Oddlist = list(filter(lambda x:(x%3 == 0),List)) # the list contains all the items of the list for which the lambda function evaluates to true
+print(Oddlist)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+[3, 123]
+</pre></div>
+<h2 class="h3">Example 3</h2>
+<p>Use of lambda function with map</p>
+<div class="codeblock"><textarea class="python" name="code">
+#program to triple each number of the list using map
+List = {1,2,3,4,10,123,22}
+new_list = list(map(lambda x:x*3,List)) # this will return the triple of each item of the list and add it to new_list
+print(new_list)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+[3, 6, 9, 12, 30, 66, 369]
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-files-io">Python Files Io</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-functions" style="float:left">¡û prev</a>
+<a class="next" href="python-files-io" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-files-io">next ¡ú</a>
+<a class="next" href="python-functions">¡û prev</a>
+</div>
+<h1 class="h1">Python Lambda Functions</h1>
+<p>Python allows us to not declare the function in the standard manner, i.e., by using the def keyword. Rather, the anonymous functions are declared by using lambda keyword. However, Lambda functions can accept any number of arguments, but they can return only one value in the form of expression. </p>
+<p>The anonymous function contains a small piece of code. It simulates inline functions of C and C++, but it is not exactly an inline function. </p>
+<p>The syntax to define an Anonymous function is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+lambda arguments : expression   
+</textarea></div>
+<h2 class="h3">Example 1</h2>
+<div class="codeblock"><textarea class="python" name="code">
+x = lambda a:a+10 # a is an argument and a+10 is an expression which got evaluated and returned. 
+print("sum = ",x(20)) 
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+sum =  30
+</pre></div>
+<h2 class="h3">Example 2</h2>
+<p>Multiple arguments to Lambda function</p>
+<div class="codeblock"><textarea class="python" name="code">
+x = lambda a,b:a+b # a and b are the arguments and a+b is the expression which gets evaluated and returned. 
+print("sum = ",x(20,10))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+sum =  30
+</pre></div>
+<h2 class="h2">Why use lambda functions?</h2>
+<p>The main role of the lambda function is better described in the scenarios when we use them anonymously inside another function.  In python, the lambda function can be used as an argument to the higher order functions as arguments. Lambda functions are also used in the scenario where we need a Consider the following example.</p>
+<h2 class="h3">Example 1</h2>
+<div class="codeblock"><textarea class="python" name="code">
+#the function table(n) prints the table of n
+def table(n):
+    return lambda a:a*n; # a will contain the iteration variable i and a multiple of n is returned at each function call
+n = int(input("Enter the number?"))
+b = table(n) #the entered number is passed into the function table. b will contain a lambda function which is called again and again with the iteration variable i
+for i in range(1,11):
+    print(n,"X",i,"=",b(i)); #the lambda function b is called with the iteration variable i, 
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Enter the number?10
+10 X 1 = 10
+10 X 2 = 20
+10 X 3 = 30
+10 X 4 = 40
+10 X 5 = 50
+10 X 6 = 60
+10 X 7 = 70
+10 X 8 = 80
+10 X 9 = 90
+10 X 10 = 100
+</pre></div>
+<h2 class="h3">Example 2</h2>
+<p>Use of lambda function with filter</p>
+<div class="codeblock"><textarea class="python" name="code">
+#program to filter out the list which contains odd numbers
+List = {1,2,3,4,10,123,22}
+Oddlist = list(filter(lambda x:(x%3 == 0),List)) # the list contains all the items of the list for which the lambda function evaluates to true
+print(Oddlist)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+[3, 123]
+</pre></div>
+<h2 class="h3">Example 3</h2>
+<p>Use of lambda function with map</p>
+<div class="codeblock"><textarea class="python" name="code">
+#program to triple each number of the list using map
+List = {1,2,3,4,10,123,22}
+new_list = list(map(lambda x:x*3,List)) # this will return the triple of each item of the list and add it to new_list
+print(new_list)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+[3, 6, 9, 12, 30, 66, 369]
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-files-io">Python Files Io</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-functions" style="float:left">¡û prev</a>
+<a class="next" href="python-files-io" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html></body></html>

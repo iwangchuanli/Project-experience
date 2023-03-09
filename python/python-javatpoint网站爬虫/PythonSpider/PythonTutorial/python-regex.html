@@ -1,0 +1,1238 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-oops-concepts">next ¡ú</a>
+<a class="next" href="python-date">¡û prev</a>
+</div>
+<h1 class="h1">Python Regular Expressions</h1>
+<p>The regular expressions can be defined as the sequence of characters which are used to search for a pattern in a string. The module re provides the support to use regex in the python program. The re module throws an exception if there is some error while using the regular expression. </p>
+<p>The <strong>re</strong> module must be imported to use the regex functionalities in python. </p>
+<div class="codeblock"><textarea class="python" name="code">
+import re 
+</textarea></div>
+<h2 class="h2">Regex Functions </h2>
+<p>The following regex functions are used in the python. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Function</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>match</td>
+<td>This method matches the regex pattern in the string with the optional flag. It returns true if a match is found in the string otherwise it returns false. </td>
+</tr>
+<tr>
+<td>2</td>
+<td>search</td>
+<td>This method returns the match object if there is a match found in the string. </td>
+</tr>
+<tr>
+<td>3</td>
+<td>findall</td>
+<td>It returns a list that contains all the matches of a pattern in the string.  </td>
+</tr>
+<tr>
+<td>4</td>
+<td>split</td>
+<td>Returns a list in which the string has been split in each match. </td>
+</tr>
+<tr>
+<td>5</td>
+<td>sub</td>
+<td>Replace one or many matches in the string.</td>
+</tr>
+</table>
+<h2 class="h2">Forming a regular expression </h2>
+<p>A regular expression can be formed by using the mix of meta-characters, special sequences, and sets. </p>
+<h3 class="h3">Meta-Characters</h3>
+<p>Metacharacter is a character with the specified meaning. </p>
+<table class="alt">
+<tr>
+<th>Metacharacter</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+<tr>
+<td>[]</td>
+<td>It represents the set of characters.</td>
+<td>"[a-z]"</td>
+</tr>
+<tr>
+<td>\</td>
+<td>It represents the special sequence.</td>
+<td>"\r"</td>
+</tr>
+<tr>
+<td>.</td>
+<td>It signals that any character is present at some specific place.</td>
+<td>"Ja.v."</td>
+</tr>
+<tr>
+<td>^</td>
+<td>It represents the pattern present at the beginning of the string.</td>
+<td>"^Java"</td>
+</tr>
+<tr>
+<td>$</td>
+<td>It represents the pattern present at the end of the string.</td>
+<td>"point"</td>
+</tr>
+<tr>
+<td>*</td>
+<td>It represents zero or more occurrences of a pattern in the string.</td>
+<td>"hello*"</td>
+</tr>
+<tr>
+<td>+</td>
+<td>It represents one or more occurrences of a pattern in the string.</td>
+<td>"hello+"</td>
+</tr>
+<tr>
+<td>{}</td>
+<td>The specified number of occurrences of a pattern the string.</td>
+<td>"java{2}"</td>
+</tr>
+<tr>
+<td>|</td>
+<td>It represents either this or that character is present.</td>
+<td>"java|point"</td>
+</tr>
+<tr>
+<td>()</td>
+<td>Capture and group</td>
+<td></td>
+</tr>
+</table>
+<h3 class="h3">Special Sequences </h3>
+<p>Special sequences are the sequences containing \ followed by one of the characters. </p>
+<table class="alt">
+<tr>
+<th>Character</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>\A</td>
+<td>It returns a match if the specified characters are present at the beginning of the string. </td>
+</tr>
+<tr>
+<td>\b</td>
+<td>It returns a match if the specified characters are present at the beginning or the end of the string.</td>
+</tr>
+<tr>
+<td>\B</td>
+<td>It returns a match if the specified characters are present at the beginning of the string but not at the end. </td>
+</tr>
+<tr>
+<td>\d</td>
+<td>It returns a match if the string contains digits [0-9]. </td>
+</tr>
+<tr>
+<td>\D</td>
+<td>It returns a match if the string doesn't contain the digits [0-9].</td>
+</tr>
+<tr>
+<td>\s</td>
+<td>It returns a match if the string contains any white space character.</td>
+</tr>
+<tr>
+<td>\S</td>
+<td>It returns a match if the string doesn't contain any white space character. </td>
+</tr>
+<tr>
+<td>\w</td>
+<td>It returns a match if the string contains any word characters. </td>
+</tr>
+<tr>
+<td>\W</td>
+<td>It returns a match if the string doesn't contain any word. </td>
+</tr>
+<tr>
+<td>\Z</td>
+<td>Returns a match if the specified characters are at the end of the string. </td>
+</tr>
+</table>
+<h3 class="h3">Sets</h3>
+<p>A set is a group of characters given inside a pair of square brackets. It represents the special meaning. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Set</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>[arn]</td>
+<td>Returns a match if the string contains any of the specified characters in the set. </td>
+</tr>
+<tr>
+<td>2</td>
+<td>[a-n]</td>
+<td>Returns a match if the string contains any of the characters between a to n.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>[^arn]</td>
+<td>Returns a match if the string contains the characters except a, r, and n. </td>
+</tr>
+<tr>
+<td>4</td>
+<td>[0123]</td>
+<td>Returns a match if the string contains any of the specified digits. </td>
+</tr>
+<tr>
+<td>5</td>
+<td>[0-9]</td>
+<td>Returns a match if the string contains any digit between 0 and 9. </td>
+</tr>
+<tr>
+<td>6</td>
+<td>[0-5][0-9]</td>
+<td>Returns a match if the string contains any digit between 00 and 59.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>[a-zA-Z]</td>
+<td>Returns a match if the string contains any alphabet (lower-case or upper-case). </td>
+</tr>
+</table>
+<h3 class="h3">The findall() function </h3>
+<p>This method returns a list containing a list of all matches of a pattern within the string. It returns the patterns in the order they are found. If there are no matches, then an empty list is returned. </p>
+<p>Consider the following example. </p>
+<p><strong>Example </strong></p>
+<div class="codeblock"><textarea class="python" name="code">
+import re
+
+str = "How are you. How is everything"
+
+matches = re.findall("How", str)
+
+print(matches)
+
+print(matches)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+['How', 'How']
+</pre></div>
+<h2 class="h2">The match object </h2>
+<p>The match object contains the information about the search and the output. If there is no match found, the None object is returned. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import re
+
+str = "How are you. How is everything"
+
+matches = re.search("How", str)
+
+print(type(matches))
+
+print(matches) #matches is the search object
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+&lt;class '_sre.SRE_Match'&gt;
+&lt;_sre.SRE_Match object; span=(0, 3), match='How'&gt;
+</pre></div>
+<h3 class="h3">The Match object methods </h3>
+<p>There are the following methods associated with the Match object. </p>
+<ol class="points">
+<li><strong>span():</strong> It returns the tuple containing the starting and end position of the match. </li>
+<li><strong>string():</strong> It returns a string passed into the function.</li>
+<li><strong>group():</strong> The part of the string is returned where the match is found. </li>
+</ol>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import re
+
+str = "How are you. How is everything"
+
+matches = re.search("How", str)
+
+print(matches.span())
+
+print(matches.group())
+
+print(matches.string)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+(0, 3)
+How
+How are you. How is everything
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-oops-concepts">Python OOPs Concepts</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-date" style="float:left">¡û prev</a>
+<a class="next" href="python-oops-concepts" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-oops-concepts">next ¡ú</a>
+<a class="next" href="python-date">¡û prev</a>
+</div>
+<h1 class="h1">Python Regular Expressions</h1>
+<p>The regular expressions can be defined as the sequence of characters which are used to search for a pattern in a string. The module re provides the support to use regex in the python program. The re module throws an exception if there is some error while using the regular expression. </p>
+<p>The <strong>re</strong> module must be imported to use the regex functionalities in python. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+import re 
+
+</textarea></div>
+<h2 class="h2">Regex Functions </h2>
+<p>The following regex functions are used in the python. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Function</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>match</td>
+<td>This method matches the regex pattern in the string with the optional flag. It returns true if a match is found in the string otherwise it returns false. </td>
+</tr>
+<tr>
+<td>2</td>
+<td>search</td>
+<td>This method returns the match object if there is a match found in the string. </td>
+</tr>
+<tr>
+<td>3</td>
+<td>findall</td>
+<td>It returns a list that contains all the matches of a pattern in the string.  </td>
+</tr>
+<tr>
+<td>4</td>
+<td>split</td>
+<td>Returns a list in which the string has been split in each match. </td>
+</tr>
+<tr>
+<td>5</td>
+<td>sub</td>
+<td>Replace one or many matches in the string.</td>
+</tr>
+</table>
+<h2 class="h2">Forming a regular expression </h2>
+<p>A regular expression can be formed by using the mix of meta-characters, special sequences, and sets. </p>
+<h3 class="h3">Meta-Characters</h3>
+<p>Metacharacter is a character with the specified meaning. </p>
+<table class="alt">
+<tr>
+<th>Metacharacter</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+<tr>
+<td>[]</td>
+<td>It represents the set of characters.</td>
+<td>"[a-z]"</td>
+</tr>
+<tr>
+<td>\</td>
+<td>It represents the special sequence.</td>
+<td>"\r"</td>
+</tr>
+<tr>
+<td>.</td>
+<td>It signals that any character is present at some specific place.</td>
+<td>"Ja.v."</td>
+</tr>
+<tr>
+<td>^</td>
+<td>It represents the pattern present at the beginning of the string.</td>
+<td>"^Java"</td>
+</tr>
+<tr>
+<td>$</td>
+<td>It represents the pattern present at the end of the string.</td>
+<td>"point"</td>
+</tr>
+<tr>
+<td>*</td>
+<td>It represents zero or more occurrences of a pattern in the string.</td>
+<td>"hello*"</td>
+</tr>
+<tr>
+<td>+</td>
+<td>It represents one or more occurrences of a pattern in the string.</td>
+<td>"hello+"</td>
+</tr>
+<tr>
+<td>{}</td>
+<td>The specified number of occurrences of a pattern the string.</td>
+<td>"java{2}"</td>
+</tr>
+<tr>
+<td>|</td>
+<td>It represents either this or that character is present.</td>
+<td>"java|point"</td>
+</tr>
+<tr>
+<td>()</td>
+<td>Capture and group</td>
+<td></td>
+</tr>
+</table>
+<h3 class="h3">Special Sequences </h3>
+<p>Special sequences are the sequences containing \ followed by one of the characters. </p>
+<table class="alt">
+<tr>
+<th>Character</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>\A</td>
+<td>It returns a match if the specified characters are present at the beginning of the string. </td>
+</tr>
+<tr>
+<td>\b</td>
+<td>It returns a match if the specified characters are present at the beginning or the end of the string.</td>
+</tr>
+<tr>
+<td>\B</td>
+<td>It returns a match if the specified characters are present at the beginning of the string but not at the end. </td>
+</tr>
+<tr>
+<td>\d</td>
+<td>It returns a match if the string contains digits [0-9]. </td>
+</tr>
+<tr>
+<td>\D</td>
+<td>It returns a match if the string doesn't contain the digits [0-9].</td>
+</tr>
+<tr>
+<td>\s</td>
+<td>It returns a match if the string contains any white space character.</td>
+</tr>
+<tr>
+<td>\S</td>
+<td>It returns a match if the string doesn't contain any white space character. </td>
+</tr>
+<tr>
+<td>\w</td>
+<td>It returns a match if the string contains any word characters. </td>
+</tr>
+<tr>
+<td>\W</td>
+<td>It returns a match if the string doesn't contain any word. </td>
+</tr>
+<tr>
+<td>\Z</td>
+<td>Returns a match if the specified characters are at the end of the string. </td>
+</tr>
+</table>
+<h3 class="h3">Sets</h3>
+<p>A set is a group of characters given inside a pair of square brackets. It represents the special meaning. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Set</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>[arn]</td>
+<td>Returns a match if the string contains any of the specified characters in the set. </td>
+</tr>
+<tr>
+<td>2</td>
+<td>[a-n]</td>
+<td>Returns a match if the string contains any of the characters between a to n.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>[^arn]</td>
+<td>Returns a match if the string contains the characters except a, r, and n. </td>
+</tr>
+<tr>
+<td>4</td>
+<td>[0123]</td>
+<td>Returns a match if the string contains any of the specified digits. </td>
+</tr>
+<tr>
+<td>5</td>
+<td>[0-9]</td>
+<td>Returns a match if the string contains any digit between 0 and 9. </td>
+</tr>
+<tr>
+<td>6</td>
+<td>[0-5][0-9]</td>
+<td>Returns a match if the string contains any digit between 00 and 59.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>[a-zA-Z]</td>
+<td>Returns a match if the string contains any alphabet (lower-case or upper-case). </td>
+</tr>
+</table>
+<h3 class="h3">The findall() function </h3>
+<p>This method returns a list containing a list of all matches of a pattern within the string. It returns the patterns in the order they are found. If there are no matches, then an empty list is returned. </p>
+<p>Consider the following example. </p>
+<p><strong>Example </strong></p>
+<div class="codeblock"><textarea class="python" name="code">
+
+import re
+
+
+
+str = "How are you. How is everything"
+
+
+
+matches = re.findall("How", str)
+
+
+
+print(matches)
+
+
+
+print(matches)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+['How', 'How']
+
+</pre></div>
+<h2 class="h2">The match object </h2>
+<p>The match object contains the information about the search and the output. If there is no match found, the None object is returned. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import re
+
+
+
+str = "How are you. How is everything"
+
+
+
+matches = re.search("How", str)
+
+
+
+print(type(matches))
+
+
+
+print(matches) #matches is the search object
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+&lt;class '_sre.SRE_Match'&gt;
+
+&lt;_sre.SRE_Match object; span=(0, 3), match='How'&gt;
+
+</pre></div>
+<h3 class="h3">The Match object methods </h3>
+<p>There are the following methods associated with the Match object. </p>
+<ol class="points">
+<li><strong>span():</strong> It returns the tuple containing the starting and end position of the match. </li>
+<li><strong>string():</strong> It returns a string passed into the function.</li>
+<li><strong>group():</strong> The part of the string is returned where the match is found. </li>
+</ol>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import re
+
+
+
+str = "How are you. How is everything"
+
+
+
+matches = re.search("How", str)
+
+
+
+print(matches.span())
+
+
+
+print(matches.group())
+
+
+
+print(matches.string)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+(0, 3)
+
+How
+
+How are you. How is everything
+
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-oops-concepts">Python OOPs Concepts</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-date" style="float:left">¡û prev</a>
+<a class="next" href="python-oops-concepts" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-oops-concepts">next ¡ú</a>
+<a class="next" href="python-date">¡û prev</a>
+</div>
+<h1 class="h1">Python Regular Expressions</h1>
+<p>The regular expressions can be defined as the sequence of characters which are used to search for a pattern in a string. The module re provides the support to use regex in the python program. The re module throws an exception if there is some error while using the regular expression. </p>
+<p>The <strong>re</strong> module must be imported to use the regex functionalities in python. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+import re 
+
+</textarea></div>
+<h2 class="h2">Regex Functions </h2>
+<p>The following regex functions are used in the python. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Function</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>match</td>
+<td>This method matches the regex pattern in the string with the optional flag. It returns true if a match is found in the string otherwise it returns false. </td>
+</tr>
+<tr>
+<td>2</td>
+<td>search</td>
+<td>This method returns the match object if there is a match found in the string. </td>
+</tr>
+<tr>
+<td>3</td>
+<td>findall</td>
+<td>It returns a list that contains all the matches of a pattern in the string.  </td>
+</tr>
+<tr>
+<td>4</td>
+<td>split</td>
+<td>Returns a list in which the string has been split in each match. </td>
+</tr>
+<tr>
+<td>5</td>
+<td>sub</td>
+<td>Replace one or many matches in the string.</td>
+</tr>
+</table>
+<h2 class="h2">Forming a regular expression </h2>
+<p>A regular expression can be formed by using the mix of meta-characters, special sequences, and sets. </p>
+<h3 class="h3">Meta-Characters</h3>
+<p>Metacharacter is a character with the specified meaning. </p>
+<table class="alt">
+<tr>
+<th>Metacharacter</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+<tr>
+<td>[]</td>
+<td>It represents the set of characters.</td>
+<td>"[a-z]"</td>
+</tr>
+<tr>
+<td>\</td>
+<td>It represents the special sequence.</td>
+<td>"\r"</td>
+</tr>
+<tr>
+<td>.</td>
+<td>It signals that any character is present at some specific place.</td>
+<td>"Ja.v."</td>
+</tr>
+<tr>
+<td>^</td>
+<td>It represents the pattern present at the beginning of the string.</td>
+<td>"^Java"</td>
+</tr>
+<tr>
+<td>$</td>
+<td>It represents the pattern present at the end of the string.</td>
+<td>"point"</td>
+</tr>
+<tr>
+<td>*</td>
+<td>It represents zero or more occurrences of a pattern in the string.</td>
+<td>"hello*"</td>
+</tr>
+<tr>
+<td>+</td>
+<td>It represents one or more occurrences of a pattern in the string.</td>
+<td>"hello+"</td>
+</tr>
+<tr>
+<td>{}</td>
+<td>The specified number of occurrences of a pattern the string.</td>
+<td>"java{2}"</td>
+</tr>
+<tr>
+<td>|</td>
+<td>It represents either this or that character is present.</td>
+<td>"java|point"</td>
+</tr>
+<tr>
+<td>()</td>
+<td>Capture and group</td>
+<td></td>
+</tr>
+</table>
+<h3 class="h3">Special Sequences </h3>
+<p>Special sequences are the sequences containing \ followed by one of the characters. </p>
+<table class="alt">
+<tr>
+<th>Character</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>\A</td>
+<td>It returns a match if the specified characters are present at the beginning of the string. </td>
+</tr>
+<tr>
+<td>\b</td>
+<td>It returns a match if the specified characters are present at the beginning or the end of the string.</td>
+</tr>
+<tr>
+<td>\B</td>
+<td>It returns a match if the specified characters are present at the beginning of the string but not at the end. </td>
+</tr>
+<tr>
+<td>\d</td>
+<td>It returns a match if the string contains digits [0-9]. </td>
+</tr>
+<tr>
+<td>\D</td>
+<td>It returns a match if the string doesn't contain the digits [0-9].</td>
+</tr>
+<tr>
+<td>\s</td>
+<td>It returns a match if the string contains any white space character.</td>
+</tr>
+<tr>
+<td>\S</td>
+<td>It returns a match if the string doesn't contain any white space character. </td>
+</tr>
+<tr>
+<td>\w</td>
+<td>It returns a match if the string contains any word characters. </td>
+</tr>
+<tr>
+<td>\W</td>
+<td>It returns a match if the string doesn't contain any word. </td>
+</tr>
+<tr>
+<td>\Z</td>
+<td>Returns a match if the specified characters are at the end of the string. </td>
+</tr>
+</table>
+<h3 class="h3">Sets</h3>
+<p>A set is a group of characters given inside a pair of square brackets. It represents the special meaning. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Set</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>[arn]</td>
+<td>Returns a match if the string contains any of the specified characters in the set. </td>
+</tr>
+<tr>
+<td>2</td>
+<td>[a-n]</td>
+<td>Returns a match if the string contains any of the characters between a to n.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>[^arn]</td>
+<td>Returns a match if the string contains the characters except a, r, and n. </td>
+</tr>
+<tr>
+<td>4</td>
+<td>[0123]</td>
+<td>Returns a match if the string contains any of the specified digits. </td>
+</tr>
+<tr>
+<td>5</td>
+<td>[0-9]</td>
+<td>Returns a match if the string contains any digit between 0 and 9. </td>
+</tr>
+<tr>
+<td>6</td>
+<td>[0-5][0-9]</td>
+<td>Returns a match if the string contains any digit between 00 and 59.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>[a-zA-Z]</td>
+<td>Returns a match if the string contains any alphabet (lower-case or upper-case). </td>
+</tr>
+</table>
+<h3 class="h3">The findall() function </h3>
+<p>This method returns a list containing a list of all matches of a pattern within the string. It returns the patterns in the order they are found. If there are no matches, then an empty list is returned. </p>
+<p>Consider the following example. </p>
+<p><strong>Example </strong></p>
+<div class="codeblock"><textarea class="python" name="code">
+
+import re
+
+
+
+str = "How are you. How is everything"
+
+
+
+matches = re.findall("How", str)
+
+
+
+print(matches)
+
+
+
+print(matches)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+['How', 'How']
+
+</pre></div>
+<h2 class="h2">The match object </h2>
+<p>The match object contains the information about the search and the output. If there is no match found, the None object is returned. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import re
+
+
+
+str = "How are you. How is everything"
+
+
+
+matches = re.search("How", str)
+
+
+
+print(type(matches))
+
+
+
+print(matches) #matches is the search object
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+&lt;class '_sre.SRE_Match'&gt;
+
+&lt;_sre.SRE_Match object; span=(0, 3), match='How'&gt;
+
+</pre></div>
+<h3 class="h3">The Match object methods </h3>
+<p>There are the following methods associated with the Match object. </p>
+<ol class="points">
+<li><strong>span():</strong> It returns the tuple containing the starting and end position of the match. </li>
+<li><strong>string():</strong> It returns a string passed into the function.</li>
+<li><strong>group():</strong> The part of the string is returned where the match is found. </li>
+</ol>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import re
+
+
+
+str = "How are you. How is everything"
+
+
+
+matches = re.search("How", str)
+
+
+
+print(matches.span())
+
+
+
+print(matches.group())
+
+
+
+print(matches.string)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+(0, 3)
+
+How
+
+How are you. How is everything
+
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-oops-concepts">Python OOPs Concepts</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-date" style="float:left">¡û prev</a>
+<a class="next" href="python-oops-concepts" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-oops-concepts">next ¡ú</a>
+<a class="next" href="python-date">¡û prev</a>
+</div>
+<h1 class="h1">Python Regular Expressions</h1>
+<p>The regular expressions can be defined as the sequence of characters which are used to search for a pattern in a string. The module re provides the support to use regex in the python program. The re module throws an exception if there is some error while using the regular expression. </p>
+<p>The <strong>re</strong> module must be imported to use the regex functionalities in python. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+import re 
+
+</textarea></div>
+<h2 class="h2">Regex Functions </h2>
+<p>The following regex functions are used in the python. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Function</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>match</td>
+<td>This method matches the regex pattern in the string with the optional flag. It returns true if a match is found in the string otherwise it returns false. </td>
+</tr>
+<tr>
+<td>2</td>
+<td>search</td>
+<td>This method returns the match object if there is a match found in the string. </td>
+</tr>
+<tr>
+<td>3</td>
+<td>findall</td>
+<td>It returns a list that contains all the matches of a pattern in the string.  </td>
+</tr>
+<tr>
+<td>4</td>
+<td>split</td>
+<td>Returns a list in which the string has been split in each match. </td>
+</tr>
+<tr>
+<td>5</td>
+<td>sub</td>
+<td>Replace one or many matches in the string.</td>
+</tr>
+</table>
+<h2 class="h2">Forming a regular expression </h2>
+<p>A regular expression can be formed by using the mix of meta-characters, special sequences, and sets. </p>
+<h3 class="h3">Meta-Characters</h3>
+<p>Metacharacter is a character with the specified meaning. </p>
+<table class="alt">
+<tr>
+<th>Metacharacter</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+<tr>
+<td>[]</td>
+<td>It represents the set of characters.</td>
+<td>"[a-z]"</td>
+</tr>
+<tr>
+<td>\</td>
+<td>It represents the special sequence.</td>
+<td>"\r"</td>
+</tr>
+<tr>
+<td>.</td>
+<td>It signals that any character is present at some specific place.</td>
+<td>"Ja.v."</td>
+</tr>
+<tr>
+<td>^</td>
+<td>It represents the pattern present at the beginning of the string.</td>
+<td>"^Java"</td>
+</tr>
+<tr>
+<td>$</td>
+<td>It represents the pattern present at the end of the string.</td>
+<td>"point"</td>
+</tr>
+<tr>
+<td>*</td>
+<td>It represents zero or more occurrences of a pattern in the string.</td>
+<td>"hello*"</td>
+</tr>
+<tr>
+<td>+</td>
+<td>It represents one or more occurrences of a pattern in the string.</td>
+<td>"hello+"</td>
+</tr>
+<tr>
+<td>{}</td>
+<td>The specified number of occurrences of a pattern the string.</td>
+<td>"java{2}"</td>
+</tr>
+<tr>
+<td>|</td>
+<td>It represents either this or that character is present.</td>
+<td>"java|point"</td>
+</tr>
+<tr>
+<td>()</td>
+<td>Capture and group</td>
+<td></td>
+</tr>
+</table>
+<h3 class="h3">Special Sequences </h3>
+<p>Special sequences are the sequences containing \ followed by one of the characters. </p>
+<table class="alt">
+<tr>
+<th>Character</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>\A</td>
+<td>It returns a match if the specified characters are present at the beginning of the string. </td>
+</tr>
+<tr>
+<td>\b</td>
+<td>It returns a match if the specified characters are present at the beginning or the end of the string.</td>
+</tr>
+<tr>
+<td>\B</td>
+<td>It returns a match if the specified characters are present at the beginning of the string but not at the end. </td>
+</tr>
+<tr>
+<td>\d</td>
+<td>It returns a match if the string contains digits [0-9]. </td>
+</tr>
+<tr>
+<td>\D</td>
+<td>It returns a match if the string doesn't contain the digits [0-9].</td>
+</tr>
+<tr>
+<td>\s</td>
+<td>It returns a match if the string contains any white space character.</td>
+</tr>
+<tr>
+<td>\S</td>
+<td>It returns a match if the string doesn't contain any white space character. </td>
+</tr>
+<tr>
+<td>\w</td>
+<td>It returns a match if the string contains any word characters. </td>
+</tr>
+<tr>
+<td>\W</td>
+<td>It returns a match if the string doesn't contain any word. </td>
+</tr>
+<tr>
+<td>\Z</td>
+<td>Returns a match if the specified characters are at the end of the string. </td>
+</tr>
+</table>
+<h3 class="h3">Sets</h3>
+<p>A set is a group of characters given inside a pair of square brackets. It represents the special meaning. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Set</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>[arn]</td>
+<td>Returns a match if the string contains any of the specified characters in the set. </td>
+</tr>
+<tr>
+<td>2</td>
+<td>[a-n]</td>
+<td>Returns a match if the string contains any of the characters between a to n.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>[^arn]</td>
+<td>Returns a match if the string contains the characters except a, r, and n. </td>
+</tr>
+<tr>
+<td>4</td>
+<td>[0123]</td>
+<td>Returns a match if the string contains any of the specified digits. </td>
+</tr>
+<tr>
+<td>5</td>
+<td>[0-9]</td>
+<td>Returns a match if the string contains any digit between 0 and 9. </td>
+</tr>
+<tr>
+<td>6</td>
+<td>[0-5][0-9]</td>
+<td>Returns a match if the string contains any digit between 00 and 59.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>[a-zA-Z]</td>
+<td>Returns a match if the string contains any alphabet (lower-case or upper-case). </td>
+</tr>
+</table>
+<h3 class="h3">The findall() function </h3>
+<p>This method returns a list containing a list of all matches of a pattern within the string. It returns the patterns in the order they are found. If there are no matches, then an empty list is returned. </p>
+<p>Consider the following example. </p>
+<p><strong>Example </strong></p>
+<div class="codeblock"><textarea class="python" name="code">
+
+import re
+
+
+
+str = "How are you. How is everything"
+
+
+
+matches = re.findall("How", str)
+
+
+
+print(matches)
+
+
+
+print(matches)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+['How', 'How']
+
+</pre></div>
+<h2 class="h2">The match object </h2>
+<p>The match object contains the information about the search and the output. If there is no match found, the None object is returned. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import re
+
+
+
+str = "How are you. How is everything"
+
+
+
+matches = re.search("How", str)
+
+
+
+print(type(matches))
+
+
+
+print(matches) #matches is the search object
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+&lt;class '_sre.SRE_Match'&gt;
+
+&lt;_sre.SRE_Match object; span=(0, 3), match='How'&gt;
+
+</pre></div>
+<h3 class="h3">The Match object methods </h3>
+<p>There are the following methods associated with the Match object. </p>
+<ol class="points">
+<li><strong>span():</strong> It returns the tuple containing the starting and end position of the match. </li>
+<li><strong>string():</strong> It returns a string passed into the function.</li>
+<li><strong>group():</strong> The part of the string is returned where the match is found. </li>
+</ol>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import re
+
+
+
+str = "How are you. How is everything"
+
+
+
+matches = re.search("How", str)
+
+
+
+print(matches.span())
+
+
+
+print(matches.group())
+
+
+
+print(matches.string)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+(0, 3)
+
+How
+
+How are you. How is everything
+
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-oops-concepts">Python OOPs Concepts</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-date" style="float:left">¡û prev</a>
+<a class="next" href="python-oops-concepts" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html></body></html>

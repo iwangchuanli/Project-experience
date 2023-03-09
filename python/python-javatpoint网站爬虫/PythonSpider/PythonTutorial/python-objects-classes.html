@@ -1,0 +1,327 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-constructors">next ¡ú</a>
+<a class="next" href="python-oops-concepts">¡û prev</a>
+</div>
+<h1 class="h1">Python Class and Objects</h1>
+<p>As we have already discussed, a class is a virtual entity and can be seen as a blueprint of an object. The class came into existence when it instantiated. Let's understand it by an example.</p>
+<p>Suppose a class is a prototype of a building. A building contains all the details about the floor, doors, windows, etc. we can make as many buildings as we want, based on these details. Hence, the building can be seen as a class, and we can create as many objects of this class. </p>
+<p>On the other hand, the object is the instance of a class. The process of creating an object can be called as instantiation. </p>
+<p>In this section of the tutorial, we will discuss creating classes and objects in python. We will also talk about how an attribute is accessed by using the class object.</p>
+<h2 class="h2">Creating classes in python</h2>
+<p>In python, a class can be created by using the keyword class followed by the class name. The syntax to create a class is given below.</p>
+<h2 class="h2">Syntax</h2>
+<div class="codeblock"><textarea class="python" name="code">
+class ClassName:
+	#statement_suite 
+</textarea></div>
+<p>In python, we must notice that each class is associated with a documentation string which can be accessed by using <strong>&lt;class-name&gt;.__doc__</strong>.  A class contains a statement suite including fields, constructor, function, etc. definition. </p>
+<p>Consider the following example to create a class Employee which contains two fields as Employee id, and name. </p>
+<p>The class also contains a function display() which is used to display the information of the Employee.</p>
+<h3 class="h2">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+class Employee:
+    id = 10;
+    name = "ayush"
+    def display (self):
+        print(self.id,self.name)
+</textarea></div>
+<p>Here, the self is used as a reference variable which refers to the current class object. It is always the first argument in the function definition. However, using self is optional in the function call.</p>
+<h2 class="h2">Creating an instance of the class</h2>
+<p>A class needs to be instantiated if we want to use the class attributes in another class or method. A class can be instantiated by calling the class using the class name. </p>
+<p>The syntax to create the instance of the class is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+&lt;object-name&gt; = &lt;class-name&gt;(&lt;arguments&gt;) 
+</textarea></div>
+<p>The following example creates the instance of the class Employee defined in the above example.</p>
+<h3 class="h2">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+class Employee:
+    id = 10;
+    name = "John"
+    def display (self):
+        print("ID: %d \nName: %s"%(self.id,self.name))
+emp = Employee()
+emp.display()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+ID: 10 
+Name: ayush
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-constructors">Python Constructors</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-oops-concepts" style="float:left">¡û prev</a>
+<a class="next" href="python-constructors" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-constructors">next ¡ú</a>
+<a class="next" href="python-oops-concepts">¡û prev</a>
+</div>
+<h1 class="h1">Python Class and Objects</h1>
+<p>As we have already discussed, a class is a virtual entity and can be seen as a blueprint of an object. The class came into existence when it instantiated. Let's understand it by an example.</p>
+<p>Suppose a class is a prototype of a building. A building contains all the details about the floor, doors, windows, etc. we can make as many buildings as we want, based on these details. Hence, the building can be seen as a class, and we can create as many objects of this class. </p>
+<p>On the other hand, the object is the instance of a class. The process of creating an object can be called as instantiation. </p>
+<p>In this section of the tutorial, we will discuss creating classes and objects in python. We will also talk about how an attribute is accessed by using the class object.</p>
+<h2 class="h2">Creating classes in python</h2>
+<p>In python, a class can be created by using the keyword class followed by the class name. The syntax to create a class is given below.</p>
+<h2 class="h2">Syntax</h2>
+<div class="codeblock"><textarea class="python" name="code">
+
+class ClassName:
+
+	#statement_suite 
+
+</textarea></div>
+<p>In python, we must notice that each class is associated with a documentation string which can be accessed by using <strong>&lt;class-name&gt;.__doc__</strong>.  A class contains a statement suite including fields, constructor, function, etc. definition. </p>
+<p>Consider the following example to create a class Employee which contains two fields as Employee id, and name. </p>
+<p>The class also contains a function display() which is used to display the information of the Employee.</p>
+<h3 class="h2">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Employee:
+
+    id = 10;
+
+    name = "ayush"
+
+    def display (self):
+
+        print(self.id,self.name)
+
+</textarea></div>
+<p>Here, the self is used as a reference variable which refers to the current class object. It is always the first argument in the function definition. However, using self is optional in the function call.</p>
+<h2 class="h2">Creating an instance of the class</h2>
+<p>A class needs to be instantiated if we want to use the class attributes in another class or method. A class can be instantiated by calling the class using the class name. </p>
+<p>The syntax to create the instance of the class is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+&lt;object-name&gt; = &lt;class-name&gt;(&lt;arguments&gt;) 
+
+</textarea></div>
+<p>The following example creates the instance of the class Employee defined in the above example.</p>
+<h3 class="h2">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Employee:
+
+    id = 10;
+
+    name = "John"
+
+    def display (self):
+
+        print("ID: %d \nName: %s"%(self.id,self.name))
+
+emp = Employee()
+
+emp.display()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+ID: 10 
+
+Name: ayush
+
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-constructors">Python Constructors</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-oops-concepts" style="float:left">¡û prev</a>
+<a class="next" href="python-constructors" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-constructors">next ¡ú</a>
+<a class="next" href="python-oops-concepts">¡û prev</a>
+</div>
+<h1 class="h1">Python Class and Objects</h1>
+<p>As we have already discussed, a class is a virtual entity and can be seen as a blueprint of an object. The class came into existence when it instantiated. Let's understand it by an example.</p>
+<p>Suppose a class is a prototype of a building. A building contains all the details about the floor, doors, windows, etc. we can make as many buildings as we want, based on these details. Hence, the building can be seen as a class, and we can create as many objects of this class. </p>
+<p>On the other hand, the object is the instance of a class. The process of creating an object can be called as instantiation. </p>
+<p>In this section of the tutorial, we will discuss creating classes and objects in python. We will also talk about how an attribute is accessed by using the class object.</p>
+<h2 class="h2">Creating classes in python</h2>
+<p>In python, a class can be created by using the keyword class followed by the class name. The syntax to create a class is given below.</p>
+<h2 class="h2">Syntax</h2>
+<div class="codeblock"><textarea class="python" name="code">
+
+class ClassName:
+
+	#statement_suite 
+
+</textarea></div>
+<p>In python, we must notice that each class is associated with a documentation string which can be accessed by using <strong>&lt;class-name&gt;.__doc__</strong>.  A class contains a statement suite including fields, constructor, function, etc. definition. </p>
+<p>Consider the following example to create a class Employee which contains two fields as Employee id, and name. </p>
+<p>The class also contains a function display() which is used to display the information of the Employee.</p>
+<h3 class="h2">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Employee:
+
+    id = 10;
+
+    name = "ayush"
+
+    def display (self):
+
+        print(self.id,self.name)
+
+</textarea></div>
+<p>Here, the self is used as a reference variable which refers to the current class object. It is always the first argument in the function definition. However, using self is optional in the function call.</p>
+<h2 class="h2">Creating an instance of the class</h2>
+<p>A class needs to be instantiated if we want to use the class attributes in another class or method. A class can be instantiated by calling the class using the class name. </p>
+<p>The syntax to create the instance of the class is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+&lt;object-name&gt; = &lt;class-name&gt;(&lt;arguments&gt;) 
+
+</textarea></div>
+<p>The following example creates the instance of the class Employee defined in the above example.</p>
+<h3 class="h2">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Employee:
+
+    id = 10;
+
+    name = "John"
+
+    def display (self):
+
+        print("ID: %d \nName: %s"%(self.id,self.name))
+
+emp = Employee()
+
+emp.display()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+ID: 10 
+
+Name: ayush
+
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-constructors">Python Constructors</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-oops-concepts" style="float:left">¡û prev</a>
+<a class="next" href="python-constructors" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-constructors">next ¡ú</a>
+<a class="next" href="python-oops-concepts">¡û prev</a>
+</div>
+<h1 class="h1">Python Class and Objects</h1>
+<p>As we have already discussed, a class is a virtual entity and can be seen as a blueprint of an object. The class came into existence when it instantiated. Let's understand it by an example.</p>
+<p>Suppose a class is a prototype of a building. A building contains all the details about the floor, doors, windows, etc. we can make as many buildings as we want, based on these details. Hence, the building can be seen as a class, and we can create as many objects of this class. </p>
+<p>On the other hand, the object is the instance of a class. The process of creating an object can be called as instantiation. </p>
+<p>In this section of the tutorial, we will discuss creating classes and objects in python. We will also talk about how an attribute is accessed by using the class object.</p>
+<h2 class="h2">Creating classes in python</h2>
+<p>In python, a class can be created by using the keyword class followed by the class name. The syntax to create a class is given below.</p>
+<h2 class="h2">Syntax</h2>
+<div class="codeblock"><textarea class="python" name="code">
+
+class ClassName:
+
+	#statement_suite 
+
+</textarea></div>
+<p>In python, we must notice that each class is associated with a documentation string which can be accessed by using <strong>&lt;class-name&gt;.__doc__</strong>.  A class contains a statement suite including fields, constructor, function, etc. definition. </p>
+<p>Consider the following example to create a class Employee which contains two fields as Employee id, and name. </p>
+<p>The class also contains a function display() which is used to display the information of the Employee.</p>
+<h3 class="h2">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Employee:
+
+    id = 10;
+
+    name = "ayush"
+
+    def display (self):
+
+        print(self.id,self.name)
+
+</textarea></div>
+<p>Here, the self is used as a reference variable which refers to the current class object. It is always the first argument in the function definition. However, using self is optional in the function call.</p>
+<h2 class="h2">Creating an instance of the class</h2>
+<p>A class needs to be instantiated if we want to use the class attributes in another class or method. A class can be instantiated by calling the class using the class name. </p>
+<p>The syntax to create the instance of the class is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+&lt;object-name&gt; = &lt;class-name&gt;(&lt;arguments&gt;) 
+
+</textarea></div>
+<p>The following example creates the instance of the class Employee defined in the above example.</p>
+<h3 class="h2">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Employee:
+
+    id = 10;
+
+    name = "John"
+
+    def display (self):
+
+        print("ID: %d \nName: %s"%(self.id,self.name))
+
+emp = Employee()
+
+emp.display()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+ID: 10 
+
+Name: ayush
+
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-constructors">Python Constructors</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-oops-concepts" style="float:left">¡û prev</a>
+<a class="next" href="python-constructors" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html></body></html>

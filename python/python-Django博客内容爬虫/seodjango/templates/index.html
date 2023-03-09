@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>关键词爬取选择</title>
+    <script src="/static/js/jquery.js"></script>
+    <script type="text/javascript" src="/static/js/jszip.min.js"></script>
+    <script type="text/javascript" src="/static/js/FileSaver.js"></script>
+    <script type="text/javascript" src="/static/js/excel-gen.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/font-awesome.min.css">
+    <style>
+        ul {
+            list-style-type: decimal;
+        }
+
+        ul li {
+        {#display: block;#} width: 50%;
+            background: #ccc;
+        }
+
+        ul li:hover {
+            background: #999;
+        }
+
+        div#choice_div {
+            width: 35%;
+            background: lightslategray;
+        }
+
+        div#show_div {
+            width: 55%;
+            background: rgba(198, 233, 255, 0.37);
+            position: absolute;
+            right: 10px;
+            top: 0px;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            {#$(".word_btn").click(function (e) {#}
+            $("#word_ul").on('click', 'li', function () {
+                $(this).css('background', '#999')
+                $(this).addClass('selected')
+                $.ajax({
+                    url: "/crawler/",
+                    async: "true",
+                    type: "get",
+                    data: "word=" + this.innerHTML + "&b=" + Math.random(),
+                    success: function (result) {
+                        if (result.relevant_word.length < 9) {
+                            alert("爬取失败！")
+                        } else {
+                            {#alert(result.relevant_word[1])#}
+                            for (var i = 0; i < result.relevant_word.length; i++) {
+                                var html = "<li class=\"word_li\">" + result.relevant_word[i] + "</li>"
+                                $("#word_ul").append(html)
+                                {#alert(result.relevant_word[i])#}
+                            }
+                            if (result.php_flag) {
+                                var select_html = "<tr><td class='show_word_li' style='background: rgb(180, 37, 7);'>" + result.keyword + "</td><td>有</td>"
+                            } else {
+                                var select_html = "<tr><td class='show_word_li'>" + result.keyword + "</td>无<td></td>"
+                            }
+                            if (result.baidu_index[3] == 0) {
+                                select_html = select_html + "<td>有</td><td>"
+                                    + result.baidu_index[4] + "</td><td>" + result.baidu_index[5] + "%</td><td>" + result.baidu_index[6] + "%</td>" +
+                                    "<td>" + result.baidu_index[7] + "</td><td>" + result.baidu_index[8] + "%</td><td>" + result.baidu_index[9] + "%</td>" +
+                                    "<td>" + result.baidu_index[10] + "</td><td>" + result.baidu_index[11] + "%</td><td>" + result.baidu_index[12] + "%</td></tr>"
+                                {#alert(result.baidu_index)#}
+                            } else {
+                                select_html = select_html + "<td>无</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>"
+                            }
+                            $('#show_table').append(select_html);
+                            {#alert(result.relevant_word[3])#}
+                            {#alert($("#word_ul").html())#}
+                        }
+                    }
+                });
+
+            });
+        });
+
+    </script>
+    <script>
+        $(document).ready(function () {
+            excel = new ExcelGen({
+                "src_id": "show_table",
+                "show_header": true
+            });
+            $("#generate-excel").click(function () {
+                excel.generate();
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="choice_div">
+    选择列表(点击列表项进行爬取并选择)：
+    <ul id="word_ul">
+        {#    {% for id in word %}#}
+        <li class="word_li">{{ word }}</li>
+        {#    {% endfor %}#}
+    </ul>
+    <div class="page">
+        <div id="page">
+        </div>
+    </div>
+</div>
+<div id="show_div">
+    已选择的词条（已选词条百度指数查询结果）：
+    <button type="button" class="btn btn-success btn-block" id="generate-excel"><i class="fa fa-file-excel-o"
+                                                                                   aria-hidden="true"></i> 将表格转换为Excel
+    </button>
+    <ul id="show_ul">
+    </ul>
+    <table id="show_table" border="1px">
+        <thead>
+        <th>关键词</th>
+        <th>PHP中文网TOP</th>
+        <th>百度是否收录</th>
+        <th>整体日均</th>
+        <th>整体同比</th>
+        <th>整体环比</th>
+        <th> p c日均</th>
+        <th> p c同比</th>
+        <th> p c环比</th>
+        <th>移动日均</th>
+        <th>移动同比</th>
+        <th>移动环比</th>
+        </thead>
+    </table>
+</div>
+
+{% comment %}<script>
+    function getzz() {
+        var a = $("ul#word_ul li");
+        var zz = new Array(a.length);
+        for (var i = 0; i < a.length; i++) {
+            zz[i] = a[i].innerHTML;
+        } //div的字符串数组付给zz
+        return zz;
+    }
+
+    function change(e) {
+
+        pageno = e;
+        if (e < 1) {
+            e = 1;
+            pageno = 1;//就等于第1页 ， 当前页为1
+        }
+        if (e > pageall) {  //如果输入页大于最大页
+            e = pageall;
+            pageno = pageall; //输入页和当前页都=最大页
+        }
+        $("#word_ul").html("");//全部清空
+        var html = "";
+        for (var i = 0; i < pagesize; i++) {
+            html += '<li>' + zz[(e - 1) * pagesize + i] + '</li>';//创建一页的li列表
+            if (zz[(e - 1) * pagesize + i + 1] == null) break;//超出最后的范围跳出
+        }
+        $("ul#word_ul").html(html);//给ul列表写入html
+        var ye = "";
+        for (var j = 1; j <= pageall; j++) {
+            if (e == j) {
+                ye = ye + "<span><a href='#' onClick='change(" + j + ")' style='color:#FF0000'>" + j + "</a></span> "
+            } else {
+                ye = ye + "<a href='#' onClick='change(" + j + ")'>" + j + "</a> "
+            }
+        }
+        var pageContent = "";
+        pageContent += '第<span id=\"a2\">' + pageno + '</span>/';
+        pageContent += '<span id="a1">' + pageall + '</span>页';
+        pageContent += '<span id="a3">' + ye + '</span>';
+        pageContent += '<a href="#" onClick="change(--pageno)">上一页</a>';
+        pageContent += '<a href="#" onClick="change(++pageno)">下一页</a>';
+        $("#page").html(pageContent);
+    }
+
+</script>
+<script>
+    var zz = getzz()
+    var pageno = 1; //当前页
+    var pagesize = 5; //每页多少条信息
+    if (zz.length % pagesize == 0) {
+        var pageall = zz.length / pagesize;
+    } else {
+        var pageall = parseInt(zz.length / pagesize) + 1;
+    }   //一共多少页
+    change(1);
+</script>{% endcomment %}
+</body>
+</html>

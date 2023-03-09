@@ -1,0 +1,1011 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-string-functions">next ¡ú</a>
+<a class="next" href="numpy-array-iteration">¡û prev</a>
+</div>
+<h1 class="h1">NumPy Bitwise Operators </h1>
+<p>Numpy provides the following bitwise operators. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Operator</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>bitwise_and</td>
+<td>It is used to calculate the bitwise and operation between the corresponding array elements. </td>
+</tr>
+<tr>
+<td>2</td>
+<td>bitwise_or</td>
+<td>It is used to calculate the bitwise or operation between the corresponding array elements.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>invert</td>
+<td>It is used to calculate the bitwise not the operation of the array elements.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>left_shift</td>
+<td>It is used to shift the bits of the binary representation of the elements to the left.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>right_shift</td>
+<td>It is used to shift the bits of the binary representation of the elements to the right.</td>
+</tr>
+</table>
+<h2 class="h2">bitwise_and Operation</h2>
+<p>The NumPy provides the bitwise_and() function which is used to calculate the bitwise_and operation of the two operands. </p>
+<p>The bitwise and operation is performed on the corresponding bits of the binary representation of the operands. If both the corresponding bit in the operands is set to 1, then only the resultant bit in the AND result will be set to 1 otherwise it will be set to 0.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+
+a = 10
+b = 12
+
+print("binary representation of a:",bin(a))
+print("binary representation of b:",bin(b))
+print("Bitwise-and of a and b: ",np.bitwise_and(a,b))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+binary representation of a: 0b1010
+binary representation of b: 0b1100
+Bitwise-and of a and b:  8
+</pre></div>
+<h2 class="h2">AND Truth Table</h2>
+<p>The output of the AND result of the two bits is 1 if and only if both the bits are 1 otherwise it will be 0. </p>
+<table class="alt">
+<tr>
+<th>A</th>
+<th>B</th>
+<th>AND (A, B)</th>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+<h2 class="h2">bitwise_or Operator</h2>
+<p>The NumPy provides the bitwise_or() function which is used to calculate the bitwise or operation of the two operands. </p>
+<p>The bitwise or operation is performed on the corresponding bits of the binary representation of the operands. If one of the corresponding bit in the operands is set to 1 then the resultant bit in the OR result will be set to 1; otherwise it will be set to 0.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+
+a = 50
+b = 90
+print("binary representation of a:",bin(a))
+print("binary representation of b:",bin(b))
+print("Bitwise-or of a and b: ",np.bitwise_or(a,b))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+binary representation of a: 0b110010
+binary representation of b: 0b1011010
+Bitwise-or of a and b:  122
+</pre></div>
+<h2 class="h2">Or truth table</h2>
+<p>The output of the OR result of the two bits is 1 if one of the bits are 1 otherwise it will be 0. </p>
+<table class="alt">
+<tr>
+<th>A</th>
+<th>B</th>
+<th>Or (A, B)</th>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+<h2 class="h2">Invert operation </h2>
+<p>It is used to calculate the bitwise not the operation of the given operand. The 2's complement is returned if the signed integer is passed in the function.</p>
+<p>Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+
+arr = np.array([20],dtype = np.uint8)
+print("Binary representation:",np.binary_repr(20,8))
+
+print(np.invert(arr))
+
+print("Binary representation: ", np.binary_repr(235,8))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Binary representation: 00010100
+[235]
+Binary representation:  11101011
+</pre></div>
+<p>It shifts the bits in the binary representation of the operand to the left by the specified position. An equal number of 0s are appended from the right. Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+
+print("left shift of 20 by 3 bits",np.left_shift(20, 3))
+
+print("Binary representation of 20 in 8 bits",np.binary_repr(20, 8))
+
+print("Binary representation of 160 in 8 bits",np.binary_repr(160,8))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+left shift of 20 by 3 bits 160
+Binary representation of 20 in 8 bits 00010100
+Binary representation of 160 in 8 bits 10100000
+</pre></div>
+<h2 class="h2">Right Shift Operation </h2>
+<p>It shifts the bits in the binary representation of the operand to the right by the specified position. An equal number of 0s are appended from the left. Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+
+print("left shift of 20 by 3 bits",np.right_shift(20, 3))
+
+print("Binary representation of 20 in 8 bits",np.binary_repr(20, 8))
+
+print("Binary representation of 160 in 8 bits",np.binary_repr(160,8))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+left shift of 20 by 3 bits 2
+Binary representation of 20 in 8 bits 00010100
+Binary representation of 160 in 8 bits 10100000
+</pre></div>
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-string-functions">NumPy String Functions</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="numpy-array-iteration" style="float:left">¡û prev</a>
+<a class="next" href="numpy-string-functions" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-string-functions">next ¡ú</a>
+<a class="next" href="numpy-array-iteration">¡û prev</a>
+</div>
+<h1 class="h1">NumPy Bitwise Operators </h1>
+<p>Numpy provides the following bitwise operators. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Operator</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>bitwise_and</td>
+<td>It is used to calculate the bitwise and operation between the corresponding array elements. </td>
+</tr>
+<tr>
+<td>2</td>
+<td>bitwise_or</td>
+<td>It is used to calculate the bitwise or operation between the corresponding array elements.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>invert</td>
+<td>It is used to calculate the bitwise not the operation of the array elements.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>left_shift</td>
+<td>It is used to shift the bits of the binary representation of the elements to the left.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>right_shift</td>
+<td>It is used to shift the bits of the binary representation of the elements to the right.</td>
+</tr>
+</table>
+<h2 class="h2">bitwise_and Operation</h2>
+<p>The NumPy provides the bitwise_and() function which is used to calculate the bitwise_and operation of the two operands. </p>
+<p>The bitwise and operation is performed on the corresponding bits of the binary representation of the operands. If both the corresponding bit in the operands is set to 1, then only the resultant bit in the AND result will be set to 1 otherwise it will be set to 0.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+a = 10
+
+b = 12
+
+
+
+print("binary representation of a:",bin(a))
+
+print("binary representation of b:",bin(b))
+
+print("Bitwise-and of a and b: ",np.bitwise_and(a,b))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+binary representation of a: 0b1010
+
+binary representation of b: 0b1100
+
+Bitwise-and of a and b:  8
+
+</pre></div>
+<h2 class="h2">AND Truth Table</h2>
+<p>The output of the AND result of the two bits is 1 if and only if both the bits are 1 otherwise it will be 0. </p>
+<table class="alt">
+<tr>
+<th>A</th>
+<th>B</th>
+<th>AND (A, B)</th>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+<h2 class="h2">bitwise_or Operator</h2>
+<p>The NumPy provides the bitwise_or() function which is used to calculate the bitwise or operation of the two operands. </p>
+<p>The bitwise or operation is performed on the corresponding bits of the binary representation of the operands. If one of the corresponding bit in the operands is set to 1 then the resultant bit in the OR result will be set to 1; otherwise it will be set to 0.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+a = 50
+
+b = 90
+
+print("binary representation of a:",bin(a))
+
+print("binary representation of b:",bin(b))
+
+print("Bitwise-or of a and b: ",np.bitwise_or(a,b))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+binary representation of a: 0b110010
+
+binary representation of b: 0b1011010
+
+Bitwise-or of a and b:  122
+
+</pre></div>
+<h2 class="h2">Or truth table</h2>
+<p>The output of the OR result of the two bits is 1 if one of the bits are 1 otherwise it will be 0. </p>
+<table class="alt">
+<tr>
+<th>A</th>
+<th>B</th>
+<th>Or (A, B)</th>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+<h2 class="h2">Invert operation </h2>
+<p>It is used to calculate the bitwise not the operation of the given operand. The 2's complement is returned if the signed integer is passed in the function.</p>
+<p>Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+arr = np.array([20],dtype = np.uint8)
+
+print("Binary representation:",np.binary_repr(20,8))
+
+
+
+print(np.invert(arr))
+
+
+
+print("Binary representation: ", np.binary_repr(235,8))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Binary representation: 00010100
+
+[235]
+
+Binary representation:  11101011
+
+</pre></div>
+<p>It shifts the bits in the binary representation of the operand to the left by the specified position. An equal number of 0s are appended from the right. Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+print("left shift of 20 by 3 bits",np.left_shift(20, 3))
+
+
+
+print("Binary representation of 20 in 8 bits",np.binary_repr(20, 8))
+
+
+
+print("Binary representation of 160 in 8 bits",np.binary_repr(160,8))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+left shift of 20 by 3 bits 160
+
+Binary representation of 20 in 8 bits 00010100
+
+Binary representation of 160 in 8 bits 10100000
+
+</pre></div>
+<h2 class="h2">Right Shift Operation </h2>
+<p>It shifts the bits in the binary representation of the operand to the right by the specified position. An equal number of 0s are appended from the left. Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+print("left shift of 20 by 3 bits",np.right_shift(20, 3))
+
+
+
+print("Binary representation of 20 in 8 bits",np.binary_repr(20, 8))
+
+
+
+print("Binary representation of 160 in 8 bits",np.binary_repr(160,8))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+left shift of 20 by 3 bits 2
+
+Binary representation of 20 in 8 bits 00010100
+
+Binary representation of 160 in 8 bits 10100000
+
+</pre></div>
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-string-functions">NumPy String Functions</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="numpy-array-iteration" style="float:left">¡û prev</a>
+<a class="next" href="numpy-string-functions" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-string-functions">next ¡ú</a>
+<a class="next" href="numpy-array-iteration">¡û prev</a>
+</div>
+<h1 class="h1">NumPy Bitwise Operators </h1>
+<p>Numpy provides the following bitwise operators. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Operator</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>bitwise_and</td>
+<td>It is used to calculate the bitwise and operation between the corresponding array elements. </td>
+</tr>
+<tr>
+<td>2</td>
+<td>bitwise_or</td>
+<td>It is used to calculate the bitwise or operation between the corresponding array elements.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>invert</td>
+<td>It is used to calculate the bitwise not the operation of the array elements.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>left_shift</td>
+<td>It is used to shift the bits of the binary representation of the elements to the left.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>right_shift</td>
+<td>It is used to shift the bits of the binary representation of the elements to the right.</td>
+</tr>
+</table>
+<h2 class="h2">bitwise_and Operation</h2>
+<p>The NumPy provides the bitwise_and() function which is used to calculate the bitwise_and operation of the two operands. </p>
+<p>The bitwise and operation is performed on the corresponding bits of the binary representation of the operands. If both the corresponding bit in the operands is set to 1, then only the resultant bit in the AND result will be set to 1 otherwise it will be set to 0.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+a = 10
+
+b = 12
+
+
+
+print("binary representation of a:",bin(a))
+
+print("binary representation of b:",bin(b))
+
+print("Bitwise-and of a and b: ",np.bitwise_and(a,b))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+binary representation of a: 0b1010
+
+binary representation of b: 0b1100
+
+Bitwise-and of a and b:  8
+
+</pre></div>
+<h2 class="h2">AND Truth Table</h2>
+<p>The output of the AND result of the two bits is 1 if and only if both the bits are 1 otherwise it will be 0. </p>
+<table class="alt">
+<tr>
+<th>A</th>
+<th>B</th>
+<th>AND (A, B)</th>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+<h2 class="h2">bitwise_or Operator</h2>
+<p>The NumPy provides the bitwise_or() function which is used to calculate the bitwise or operation of the two operands. </p>
+<p>The bitwise or operation is performed on the corresponding bits of the binary representation of the operands. If one of the corresponding bit in the operands is set to 1 then the resultant bit in the OR result will be set to 1; otherwise it will be set to 0.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+a = 50
+
+b = 90
+
+print("binary representation of a:",bin(a))
+
+print("binary representation of b:",bin(b))
+
+print("Bitwise-or of a and b: ",np.bitwise_or(a,b))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+binary representation of a: 0b110010
+
+binary representation of b: 0b1011010
+
+Bitwise-or of a and b:  122
+
+</pre></div>
+<h2 class="h2">Or truth table</h2>
+<p>The output of the OR result of the two bits is 1 if one of the bits are 1 otherwise it will be 0. </p>
+<table class="alt">
+<tr>
+<th>A</th>
+<th>B</th>
+<th>Or (A, B)</th>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+<h2 class="h2">Invert operation </h2>
+<p>It is used to calculate the bitwise not the operation of the given operand. The 2's complement is returned if the signed integer is passed in the function.</p>
+<p>Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+arr = np.array([20],dtype = np.uint8)
+
+print("Binary representation:",np.binary_repr(20,8))
+
+
+
+print(np.invert(arr))
+
+
+
+print("Binary representation: ", np.binary_repr(235,8))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Binary representation: 00010100
+
+[235]
+
+Binary representation:  11101011
+
+</pre></div>
+<p>It shifts the bits in the binary representation of the operand to the left by the specified position. An equal number of 0s are appended from the right. Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+print("left shift of 20 by 3 bits",np.left_shift(20, 3))
+
+
+
+print("Binary representation of 20 in 8 bits",np.binary_repr(20, 8))
+
+
+
+print("Binary representation of 160 in 8 bits",np.binary_repr(160,8))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+left shift of 20 by 3 bits 160
+
+Binary representation of 20 in 8 bits 00010100
+
+Binary representation of 160 in 8 bits 10100000
+
+</pre></div>
+<h2 class="h2">Right Shift Operation </h2>
+<p>It shifts the bits in the binary representation of the operand to the right by the specified position. An equal number of 0s are appended from the left. Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+print("left shift of 20 by 3 bits",np.right_shift(20, 3))
+
+
+
+print("Binary representation of 20 in 8 bits",np.binary_repr(20, 8))
+
+
+
+print("Binary representation of 160 in 8 bits",np.binary_repr(160,8))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+left shift of 20 by 3 bits 2
+
+Binary representation of 20 in 8 bits 00010100
+
+Binary representation of 160 in 8 bits 10100000
+
+</pre></div>
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-string-functions">NumPy String Functions</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="numpy-array-iteration" style="float:left">¡û prev</a>
+<a class="next" href="numpy-string-functions" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-string-functions">next ¡ú</a>
+<a class="next" href="numpy-array-iteration">¡û prev</a>
+</div>
+<h1 class="h1">NumPy Bitwise Operators </h1>
+<p>Numpy provides the following bitwise operators. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Operator</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>bitwise_and</td>
+<td>It is used to calculate the bitwise and operation between the corresponding array elements. </td>
+</tr>
+<tr>
+<td>2</td>
+<td>bitwise_or</td>
+<td>It is used to calculate the bitwise or operation between the corresponding array elements.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>invert</td>
+<td>It is used to calculate the bitwise not the operation of the array elements.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>left_shift</td>
+<td>It is used to shift the bits of the binary representation of the elements to the left.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>right_shift</td>
+<td>It is used to shift the bits of the binary representation of the elements to the right.</td>
+</tr>
+</table>
+<h2 class="h2">bitwise_and Operation</h2>
+<p>The NumPy provides the bitwise_and() function which is used to calculate the bitwise_and operation of the two operands. </p>
+<p>The bitwise and operation is performed on the corresponding bits of the binary representation of the operands. If both the corresponding bit in the operands is set to 1, then only the resultant bit in the AND result will be set to 1 otherwise it will be set to 0.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+a = 10
+
+b = 12
+
+
+
+print("binary representation of a:",bin(a))
+
+print("binary representation of b:",bin(b))
+
+print("Bitwise-and of a and b: ",np.bitwise_and(a,b))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+binary representation of a: 0b1010
+
+binary representation of b: 0b1100
+
+Bitwise-and of a and b:  8
+
+</pre></div>
+<h2 class="h2">AND Truth Table</h2>
+<p>The output of the AND result of the two bits is 1 if and only if both the bits are 1 otherwise it will be 0. </p>
+<table class="alt">
+<tr>
+<th>A</th>
+<th>B</th>
+<th>AND (A, B)</th>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+<h2 class="h2">bitwise_or Operator</h2>
+<p>The NumPy provides the bitwise_or() function which is used to calculate the bitwise or operation of the two operands. </p>
+<p>The bitwise or operation is performed on the corresponding bits of the binary representation of the operands. If one of the corresponding bit in the operands is set to 1 then the resultant bit in the OR result will be set to 1; otherwise it will be set to 0.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+a = 50
+
+b = 90
+
+print("binary representation of a:",bin(a))
+
+print("binary representation of b:",bin(b))
+
+print("Bitwise-or of a and b: ",np.bitwise_or(a,b))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+binary representation of a: 0b110010
+
+binary representation of b: 0b1011010
+
+Bitwise-or of a and b:  122
+
+</pre></div>
+<h2 class="h2">Or truth table</h2>
+<p>The output of the OR result of the two bits is 1 if one of the bits are 1 otherwise it will be 0. </p>
+<table class="alt">
+<tr>
+<th>A</th>
+<th>B</th>
+<th>Or (A, B)</th>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</table>
+<h2 class="h2">Invert operation </h2>
+<p>It is used to calculate the bitwise not the operation of the given operand. The 2's complement is returned if the signed integer is passed in the function.</p>
+<p>Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+arr = np.array([20],dtype = np.uint8)
+
+print("Binary representation:",np.binary_repr(20,8))
+
+
+
+print(np.invert(arr))
+
+
+
+print("Binary representation: ", np.binary_repr(235,8))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Binary representation: 00010100
+
+[235]
+
+Binary representation:  11101011
+
+</pre></div>
+<p>It shifts the bits in the binary representation of the operand to the left by the specified position. An equal number of 0s are appended from the right. Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+print("left shift of 20 by 3 bits",np.left_shift(20, 3))
+
+
+
+print("Binary representation of 20 in 8 bits",np.binary_repr(20, 8))
+
+
+
+print("Binary representation of 160 in 8 bits",np.binary_repr(160,8))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+left shift of 20 by 3 bits 160
+
+Binary representation of 20 in 8 bits 00010100
+
+Binary representation of 160 in 8 bits 10100000
+
+</pre></div>
+<h2 class="h2">Right Shift Operation </h2>
+<p>It shifts the bits in the binary representation of the operand to the right by the specified position. An equal number of 0s are appended from the left. Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+print("left shift of 20 by 3 bits",np.right_shift(20, 3))
+
+
+
+print("Binary representation of 20 in 8 bits",np.binary_repr(20, 8))
+
+
+
+print("Binary representation of 160 in 8 bits",np.binary_repr(160,8))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+left shift of 20 by 3 bits 2
+
+Binary representation of 20 in 8 bits 00010100
+
+Binary representation of 160 in 8 bits 10100000
+
+</pre></div>
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-string-functions">NumPy String Functions</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="numpy-array-iteration" style="float:left">¡û prev</a>
+<a class="next" href="numpy-string-functions" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html></body></html>

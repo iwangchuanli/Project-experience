@@ -1,0 +1,903 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-panedwindow">next ¡ú</a>
+<a class="next" href="python-tkinter-toplevel">¡û prev</a>
+</div>
+<h1 class="h1">Python Tkinter Spinbox </h1>
+<p>The Spinbox widget is an alternative to the Entry widget. It provides the range of values to the user, out of which, the user can select the one.</p>
+<p>It is used in the case where a user is given some fixed number of values to choose from. </p>
+<p>We can use various options with the Spinbox to decorate the widget. The syntax to use the Spinbox is given below. </p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+w = Spinbox(top, options) 
+</textarea></div>
+<p>A list of possible options is given below. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>activebackground</td>
+<td>The background color of the widget when it has the focus.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>bg</td>
+<td>The background color of the widget.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>bd</td>
+<td>The border width of the widget.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>command</td>
+<td>The associated callback with the widget which is called each time the state of the widget is called.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>cursor</td>
+<td>The mouse pointer is changed to the cursor type assigned to this option.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>disabledbackground</td>
+<td>The background color of the widget when it is disabled.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>disabledforeground</td>
+<td>The foreground color of the widget when it is disabled.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>fg</td>
+<td>The normal foreground color of the widget.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>font</td>
+<td>The font type of the widget content.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>format</td>
+<td>This option is used for the format string. It has no default value.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>from_</td>
+<td>It is used to show the starting range of the widget.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>justify</td>
+<td>It is used to specify the justification of the multi-line widget content. The default is LEFT.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>relief</td>
+<td>It is used to specify the type of the border. The default is SUNKEN.</td>
+</tr>
+<tr>
+<td>14</td>
+<td>repeatdelay</td>
+<td>This option is used to control the button auto repeat. The value is given in milliseconds.</td>
+</tr>
+<tr>
+<td>15</td>
+<td>repeatinterval</td>
+<td>It is similar to repeatdelay. The value is given in milliseconds.</td>
+</tr>
+<tr>
+<td>16</td>
+<td>state</td>
+<td>It represents the state of the widget. The default is NORMAL. The possible values are NORMAL, DISABLED, or "readonly".</td>
+</tr>
+<tr>
+<td>17</td>
+<td>textvariable</td>
+<td>It is like a control variable which is used to control the behaviour of the widget text.</td>
+</tr>
+<tr>
+<td>18</td>
+<td>to</td>
+<td>It specify the maximum limit of the widget value. The other is specified by the from_ option.</td>
+</tr>
+<tr>
+<td>19</td>
+<td>validate</td>
+<td>This option controls how the widget value is validated.</td>
+</tr>
+<tr>
+<td>20</td>
+<td>validatecommand</td>
+<td>It is associated to the function callback which is used for the validation of the widget content.</td>
+</tr>
+<tr>
+<td>21</td>
+<td>values</td>
+<td>It represents the tuple containing the values for this widget.</td>
+</tr>
+<tr>
+<td>22</td>
+<td>vcmd</td>
+<td>It is same as validation command.</td>
+</tr>
+<tr>
+<td>23</td>
+<td>width</td>
+<td>It represents the width of the widget.</td>
+</tr>
+<tr>
+<td>24</td>
+<td>wrap</td>
+<td>This option wraps up the up and down button the Spinbox.</td>
+</tr>
+<tr>
+<td>25</td>
+<td>xscrollcommand</td>
+<td>This options is set to the set() method of scrollbar to make this widget horizontally scrollable. </td>
+</tr>
+</table>
+<h2 class="h2">Methods </h2>
+<p>There are the following methods associated with the widget. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>delete(startindex, endindex)</td>
+<td>This method is used to delete the characters present at the specified range.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>get(startindex, endindex)</td>
+<td>It is used to get the characters present in the specified range.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>identify(x, y)</td>
+<td>It is used to identify the widget?s element within the specified range.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>index(index)</td>
+<td>It is used to get the absolute value of the given index.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>insert(index, string)</td>
+<td>This method is used to insert the string at the specified index.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>invoke(element)</td>
+<td>It is used to invoke the callback associated with the widget. </td>
+</tr>
+</table>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+from tkinter import *
+
+top = Tk()
+
+top.geometry("200x200")
+
+spin = Spinbox(top, from_= 0, to = 25)
+
+spin.pack()
+
+top.mainloop()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Spinbox" src="https://static.javatpoint.com/python/images/python-tkinter-spinbox-output.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-panedwindow">Python Tkinter PanedWindow</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-toplevel" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-panedwindow" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-panedwindow">next ¡ú</a>
+<a class="next" href="python-tkinter-toplevel">¡û prev</a>
+</div>
+<h1 class="h1">Python Tkinter Spinbox </h1>
+<p>The Spinbox widget is an alternative to the Entry widget. It provides the range of values to the user, out of which, the user can select the one.</p>
+<p>It is used in the case where a user is given some fixed number of values to choose from. </p>
+<p>We can use various options with the Spinbox to decorate the widget. The syntax to use the Spinbox is given below. </p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+w = Spinbox(top, options) 
+
+</textarea></div>
+<p>A list of possible options is given below. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>activebackground</td>
+<td>The background color of the widget when it has the focus.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>bg</td>
+<td>The background color of the widget.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>bd</td>
+<td>The border width of the widget.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>command</td>
+<td>The associated callback with the widget which is called each time the state of the widget is called.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>cursor</td>
+<td>The mouse pointer is changed to the cursor type assigned to this option.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>disabledbackground</td>
+<td>The background color of the widget when it is disabled.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>disabledforeground</td>
+<td>The foreground color of the widget when it is disabled.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>fg</td>
+<td>The normal foreground color of the widget.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>font</td>
+<td>The font type of the widget content.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>format</td>
+<td>This option is used for the format string. It has no default value.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>from_</td>
+<td>It is used to show the starting range of the widget.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>justify</td>
+<td>It is used to specify the justification of the multi-line widget content. The default is LEFT.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>relief</td>
+<td>It is used to specify the type of the border. The default is SUNKEN.</td>
+</tr>
+<tr>
+<td>14</td>
+<td>repeatdelay</td>
+<td>This option is used to control the button auto repeat. The value is given in milliseconds.</td>
+</tr>
+<tr>
+<td>15</td>
+<td>repeatinterval</td>
+<td>It is similar to repeatdelay. The value is given in milliseconds.</td>
+</tr>
+<tr>
+<td>16</td>
+<td>state</td>
+<td>It represents the state of the widget. The default is NORMAL. The possible values are NORMAL, DISABLED, or "readonly".</td>
+</tr>
+<tr>
+<td>17</td>
+<td>textvariable</td>
+<td>It is like a control variable which is used to control the behaviour of the widget text.</td>
+</tr>
+<tr>
+<td>18</td>
+<td>to</td>
+<td>It specify the maximum limit of the widget value. The other is specified by the from_ option.</td>
+</tr>
+<tr>
+<td>19</td>
+<td>validate</td>
+<td>This option controls how the widget value is validated.</td>
+</tr>
+<tr>
+<td>20</td>
+<td>validatecommand</td>
+<td>It is associated to the function callback which is used for the validation of the widget content.</td>
+</tr>
+<tr>
+<td>21</td>
+<td>values</td>
+<td>It represents the tuple containing the values for this widget.</td>
+</tr>
+<tr>
+<td>22</td>
+<td>vcmd</td>
+<td>It is same as validation command.</td>
+</tr>
+<tr>
+<td>23</td>
+<td>width</td>
+<td>It represents the width of the widget.</td>
+</tr>
+<tr>
+<td>24</td>
+<td>wrap</td>
+<td>This option wraps up the up and down button the Spinbox.</td>
+</tr>
+<tr>
+<td>25</td>
+<td>xscrollcommand</td>
+<td>This options is set to the set() method of scrollbar to make this widget horizontally scrollable. </td>
+</tr>
+</table>
+<h2 class="h2">Methods </h2>
+<p>There are the following methods associated with the widget. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>delete(startindex, endindex)</td>
+<td>This method is used to delete the characters present at the specified range.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>get(startindex, endindex)</td>
+<td>It is used to get the characters present in the specified range.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>identify(x, y)</td>
+<td>It is used to identify the widget?s element within the specified range.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>index(index)</td>
+<td>It is used to get the absolute value of the given index.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>insert(index, string)</td>
+<td>This method is used to insert the string at the specified index.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>invoke(element)</td>
+<td>It is used to invoke the callback associated with the widget. </td>
+</tr>
+</table>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+from tkinter import *
+
+
+
+top = Tk()
+
+
+
+top.geometry("200x200")
+
+
+
+spin = Spinbox(top, from_= 0, to = 25)
+
+
+
+spin.pack()
+
+
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Spinbox" src="https://static.javatpoint.com/python/images/python-tkinter-spinbox-output.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-panedwindow">Python Tkinter PanedWindow</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-toplevel" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-panedwindow" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-panedwindow">next ¡ú</a>
+<a class="next" href="python-tkinter-toplevel">¡û prev</a>
+</div>
+<h1 class="h1">Python Tkinter Spinbox </h1>
+<p>The Spinbox widget is an alternative to the Entry widget. It provides the range of values to the user, out of which, the user can select the one.</p>
+<p>It is used in the case where a user is given some fixed number of values to choose from. </p>
+<p>We can use various options with the Spinbox to decorate the widget. The syntax to use the Spinbox is given below. </p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+w = Spinbox(top, options) 
+
+</textarea></div>
+<p>A list of possible options is given below. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>activebackground</td>
+<td>The background color of the widget when it has the focus.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>bg</td>
+<td>The background color of the widget.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>bd</td>
+<td>The border width of the widget.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>command</td>
+<td>The associated callback with the widget which is called each time the state of the widget is called.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>cursor</td>
+<td>The mouse pointer is changed to the cursor type assigned to this option.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>disabledbackground</td>
+<td>The background color of the widget when it is disabled.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>disabledforeground</td>
+<td>The foreground color of the widget when it is disabled.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>fg</td>
+<td>The normal foreground color of the widget.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>font</td>
+<td>The font type of the widget content.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>format</td>
+<td>This option is used for the format string. It has no default value.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>from_</td>
+<td>It is used to show the starting range of the widget.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>justify</td>
+<td>It is used to specify the justification of the multi-line widget content. The default is LEFT.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>relief</td>
+<td>It is used to specify the type of the border. The default is SUNKEN.</td>
+</tr>
+<tr>
+<td>14</td>
+<td>repeatdelay</td>
+<td>This option is used to control the button auto repeat. The value is given in milliseconds.</td>
+</tr>
+<tr>
+<td>15</td>
+<td>repeatinterval</td>
+<td>It is similar to repeatdelay. The value is given in milliseconds.</td>
+</tr>
+<tr>
+<td>16</td>
+<td>state</td>
+<td>It represents the state of the widget. The default is NORMAL. The possible values are NORMAL, DISABLED, or "readonly".</td>
+</tr>
+<tr>
+<td>17</td>
+<td>textvariable</td>
+<td>It is like a control variable which is used to control the behaviour of the widget text.</td>
+</tr>
+<tr>
+<td>18</td>
+<td>to</td>
+<td>It specify the maximum limit of the widget value. The other is specified by the from_ option.</td>
+</tr>
+<tr>
+<td>19</td>
+<td>validate</td>
+<td>This option controls how the widget value is validated.</td>
+</tr>
+<tr>
+<td>20</td>
+<td>validatecommand</td>
+<td>It is associated to the function callback which is used for the validation of the widget content.</td>
+</tr>
+<tr>
+<td>21</td>
+<td>values</td>
+<td>It represents the tuple containing the values for this widget.</td>
+</tr>
+<tr>
+<td>22</td>
+<td>vcmd</td>
+<td>It is same as validation command.</td>
+</tr>
+<tr>
+<td>23</td>
+<td>width</td>
+<td>It represents the width of the widget.</td>
+</tr>
+<tr>
+<td>24</td>
+<td>wrap</td>
+<td>This option wraps up the up and down button the Spinbox.</td>
+</tr>
+<tr>
+<td>25</td>
+<td>xscrollcommand</td>
+<td>This options is set to the set() method of scrollbar to make this widget horizontally scrollable. </td>
+</tr>
+</table>
+<h2 class="h2">Methods </h2>
+<p>There are the following methods associated with the widget. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>delete(startindex, endindex)</td>
+<td>This method is used to delete the characters present at the specified range.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>get(startindex, endindex)</td>
+<td>It is used to get the characters present in the specified range.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>identify(x, y)</td>
+<td>It is used to identify the widget?s element within the specified range.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>index(index)</td>
+<td>It is used to get the absolute value of the given index.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>insert(index, string)</td>
+<td>This method is used to insert the string at the specified index.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>invoke(element)</td>
+<td>It is used to invoke the callback associated with the widget. </td>
+</tr>
+</table>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+from tkinter import *
+
+
+
+top = Tk()
+
+
+
+top.geometry("200x200")
+
+
+
+spin = Spinbox(top, from_= 0, to = 25)
+
+
+
+spin.pack()
+
+
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Spinbox" src="https://static.javatpoint.com/python/images/python-tkinter-spinbox-output.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-panedwindow">Python Tkinter PanedWindow</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-toplevel" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-panedwindow" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-panedwindow">next ¡ú</a>
+<a class="next" href="python-tkinter-toplevel">¡û prev</a>
+</div>
+<h1 class="h1">Python Tkinter Spinbox </h1>
+<p>The Spinbox widget is an alternative to the Entry widget. It provides the range of values to the user, out of which, the user can select the one.</p>
+<p>It is used in the case where a user is given some fixed number of values to choose from. </p>
+<p>We can use various options with the Spinbox to decorate the widget. The syntax to use the Spinbox is given below. </p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+w = Spinbox(top, options) 
+
+</textarea></div>
+<p>A list of possible options is given below. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>activebackground</td>
+<td>The background color of the widget when it has the focus.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>bg</td>
+<td>The background color of the widget.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>bd</td>
+<td>The border width of the widget.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>command</td>
+<td>The associated callback with the widget which is called each time the state of the widget is called.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>cursor</td>
+<td>The mouse pointer is changed to the cursor type assigned to this option.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>disabledbackground</td>
+<td>The background color of the widget when it is disabled.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>disabledforeground</td>
+<td>The foreground color of the widget when it is disabled.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>fg</td>
+<td>The normal foreground color of the widget.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>font</td>
+<td>The font type of the widget content.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>format</td>
+<td>This option is used for the format string. It has no default value.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>from_</td>
+<td>It is used to show the starting range of the widget.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>justify</td>
+<td>It is used to specify the justification of the multi-line widget content. The default is LEFT.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>relief</td>
+<td>It is used to specify the type of the border. The default is SUNKEN.</td>
+</tr>
+<tr>
+<td>14</td>
+<td>repeatdelay</td>
+<td>This option is used to control the button auto repeat. The value is given in milliseconds.</td>
+</tr>
+<tr>
+<td>15</td>
+<td>repeatinterval</td>
+<td>It is similar to repeatdelay. The value is given in milliseconds.</td>
+</tr>
+<tr>
+<td>16</td>
+<td>state</td>
+<td>It represents the state of the widget. The default is NORMAL. The possible values are NORMAL, DISABLED, or "readonly".</td>
+</tr>
+<tr>
+<td>17</td>
+<td>textvariable</td>
+<td>It is like a control variable which is used to control the behaviour of the widget text.</td>
+</tr>
+<tr>
+<td>18</td>
+<td>to</td>
+<td>It specify the maximum limit of the widget value. The other is specified by the from_ option.</td>
+</tr>
+<tr>
+<td>19</td>
+<td>validate</td>
+<td>This option controls how the widget value is validated.</td>
+</tr>
+<tr>
+<td>20</td>
+<td>validatecommand</td>
+<td>It is associated to the function callback which is used for the validation of the widget content.</td>
+</tr>
+<tr>
+<td>21</td>
+<td>values</td>
+<td>It represents the tuple containing the values for this widget.</td>
+</tr>
+<tr>
+<td>22</td>
+<td>vcmd</td>
+<td>It is same as validation command.</td>
+</tr>
+<tr>
+<td>23</td>
+<td>width</td>
+<td>It represents the width of the widget.</td>
+</tr>
+<tr>
+<td>24</td>
+<td>wrap</td>
+<td>This option wraps up the up and down button the Spinbox.</td>
+</tr>
+<tr>
+<td>25</td>
+<td>xscrollcommand</td>
+<td>This options is set to the set() method of scrollbar to make this widget horizontally scrollable. </td>
+</tr>
+</table>
+<h2 class="h2">Methods </h2>
+<p>There are the following methods associated with the widget. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>delete(startindex, endindex)</td>
+<td>This method is used to delete the characters present at the specified range.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>get(startindex, endindex)</td>
+<td>It is used to get the characters present in the specified range.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>identify(x, y)</td>
+<td>It is used to identify the widget?s element within the specified range.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>index(index)</td>
+<td>It is used to get the absolute value of the given index.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>insert(index, string)</td>
+<td>This method is used to insert the string at the specified index.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>invoke(element)</td>
+<td>It is used to invoke the callback associated with the widget. </td>
+</tr>
+</table>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+from tkinter import *
+
+
+
+top = Tk()
+
+
+
+top.geometry("200x200")
+
+
+
+spin = Spinbox(top, from_= 0, to = 25)
+
+
+
+spin.pack()
+
+
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Spinbox" src="https://static.javatpoint.com/python/images/python-tkinter-spinbox-output.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-panedwindow">Python Tkinter PanedWindow</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-toplevel" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-panedwindow" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html></body></html>

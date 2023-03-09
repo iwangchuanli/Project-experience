@@ -1,0 +1,467 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-array-from-existing-data">next ¡ú</a>
+<a class="next" href="numpy-datatypes">¡û prev</a>
+</div>
+<h1 class="h1">Numpy Array Creation</h1>
+<p>The ndarray object can be constructed by using the following routines. </p>
+<h2 class="h2">Numpy.empty </h2>
+<p>As the name specifies, The empty routine is used to create an uninitialized array of specified shape and data type. </p>
+<p>The syntax is given below. </p>
+<div class="codeblock"><textarea class="python" name="code">
+numpy.empty(shape, dtype = float, order = 'C')
+</textarea></div>
+<p>It accepts the following parameters. </p>
+<ul class="points">
+<li><strong>Shape:</strong> The desired shape of the specified array.</li>
+<li><strong>dtype:</strong> The data type of the array items. The default is the float.</li>
+<li><strong>Order:</strong> The default order is the c-style row-major order. It can be set to F for FORTRAN-style column-major order.</li>
+</ul>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+arr = np.empty((3,2), dtype = int)
+print(arr)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+[[    140482883954664            36917984]
+ [    140482883954648     140482883954648]
+ [6497921830368665435  172026472699604272]]
+</pre></div>
+<h2 class="h2">NumPy.Zeros</h2>
+<p>This routine is used to create the numpy array with the specified shape where each numpy array item is initialized to 0. </p>
+<p>The syntax is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+numpy.zeros(shape, dtype = float, order = 'C')
+</textarea></div>
+<p>It accepts the following parameters. </p>
+<ul class="points">
+<li><strong>Shape:</strong> The desired shape of the specified array.</li>
+<li><strong>dtype:</strong> The data type of the array items. The default is the float.</li>
+<li><strong>Order:</strong> The default order is the c-style row-major order. It can be set to F for FORTRAN-style column-major order.</li>
+</ul>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+arr = np.zeros((3,2), dtype = int)
+print(arr)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+[[0 0]
+ [0 0]
+ [0 0]]
+</pre></div>
+<h2 class="h2">NumPy.ones </h2>
+<p>This routine is used to create the numpy array with the specified shape where each numpy array item is initialized to 1.</p>
+<p>The syntax to use this module is given below. </p>
+<div class="codeblock"><textarea class="python" name="code">
+numpy.ones(shape, dtype = none, order = 'C')
+</textarea></div>
+<p>It accepts the following parameters. </p>
+<ul class="points">
+<li><strong>Shape:</strong> The desired shape of the specified array.</li>
+<li><strong>dtype:</strong> The data type of the array items.</li>
+<li><strong>Order:</strong> The default order is the c-style row-major order. It can be set to F for FORTRAN-style column-major order.</li>
+</ul>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+arr = np.ones((3,2), dtype = int)
+print(arr)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+[[1 1]
+ [1 1]
+ [1 1]]
+</pre></div>
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-array-from-existing-data">Numpy array from existing data</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="numpy-datatypes" style="float:left">¡û prev</a>
+<a class="next" href="numpy-array-from-existing-data" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-array-from-existing-data">next ¡ú</a>
+<a class="next" href="numpy-datatypes">¡û prev</a>
+</div>
+<h1 class="h1">Numpy Array Creation</h1>
+<p>The ndarray object can be constructed by using the following routines. </p>
+<h2 class="h2">Numpy.empty </h2>
+<p>As the name specifies, The empty routine is used to create an uninitialized array of specified shape and data type. </p>
+<p>The syntax is given below. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+numpy.empty(shape, dtype = float, order = 'C')
+
+</textarea></div>
+<p>It accepts the following parameters. </p>
+<ul class="points">
+<li><strong>Shape:</strong> The desired shape of the specified array.</li>
+<li><strong>dtype:</strong> The data type of the array items. The default is the float.</li>
+<li><strong>Order:</strong> The default order is the c-style row-major order. It can be set to F for FORTRAN-style column-major order.</li>
+</ul>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+arr = np.empty((3,2), dtype = int)
+
+print(arr)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+[[    140482883954664            36917984]
+
+ [    140482883954648     140482883954648]
+
+ [6497921830368665435  172026472699604272]]
+
+</pre></div>
+<h2 class="h2">NumPy.Zeros</h2>
+<p>This routine is used to create the numpy array with the specified shape where each numpy array item is initialized to 0. </p>
+<p>The syntax is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+numpy.zeros(shape, dtype = float, order = 'C')
+
+</textarea></div>
+<p>It accepts the following parameters. </p>
+<ul class="points">
+<li><strong>Shape:</strong> The desired shape of the specified array.</li>
+<li><strong>dtype:</strong> The data type of the array items. The default is the float.</li>
+<li><strong>Order:</strong> The default order is the c-style row-major order. It can be set to F for FORTRAN-style column-major order.</li>
+</ul>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+arr = np.zeros((3,2), dtype = int)
+
+print(arr)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+[[0 0]
+
+ [0 0]
+
+ [0 0]]
+
+</pre></div>
+<h2 class="h2">NumPy.ones </h2>
+<p>This routine is used to create the numpy array with the specified shape where each numpy array item is initialized to 1.</p>
+<p>The syntax to use this module is given below. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+numpy.ones(shape, dtype = none, order = 'C')
+
+</textarea></div>
+<p>It accepts the following parameters. </p>
+<ul class="points">
+<li><strong>Shape:</strong> The desired shape of the specified array.</li>
+<li><strong>dtype:</strong> The data type of the array items.</li>
+<li><strong>Order:</strong> The default order is the c-style row-major order. It can be set to F for FORTRAN-style column-major order.</li>
+</ul>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+arr = np.ones((3,2), dtype = int)
+
+print(arr)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+[[1 1]
+
+ [1 1]
+
+ [1 1]]
+
+</pre></div>
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-array-from-existing-data">Numpy array from existing data</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="numpy-datatypes" style="float:left">¡û prev</a>
+<a class="next" href="numpy-array-from-existing-data" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-array-from-existing-data">next ¡ú</a>
+<a class="next" href="numpy-datatypes">¡û prev</a>
+</div>
+<h1 class="h1">Numpy Array Creation</h1>
+<p>The ndarray object can be constructed by using the following routines. </p>
+<h2 class="h2">Numpy.empty </h2>
+<p>As the name specifies, The empty routine is used to create an uninitialized array of specified shape and data type. </p>
+<p>The syntax is given below. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+numpy.empty(shape, dtype = float, order = 'C')
+
+</textarea></div>
+<p>It accepts the following parameters. </p>
+<ul class="points">
+<li><strong>Shape:</strong> The desired shape of the specified array.</li>
+<li><strong>dtype:</strong> The data type of the array items. The default is the float.</li>
+<li><strong>Order:</strong> The default order is the c-style row-major order. It can be set to F for FORTRAN-style column-major order.</li>
+</ul>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+arr = np.empty((3,2), dtype = int)
+
+print(arr)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+[[    140482883954664            36917984]
+
+ [    140482883954648     140482883954648]
+
+ [6497921830368665435  172026472699604272]]
+
+</pre></div>
+<h2 class="h2">NumPy.Zeros</h2>
+<p>This routine is used to create the numpy array with the specified shape where each numpy array item is initialized to 0. </p>
+<p>The syntax is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+numpy.zeros(shape, dtype = float, order = 'C')
+
+</textarea></div>
+<p>It accepts the following parameters. </p>
+<ul class="points">
+<li><strong>Shape:</strong> The desired shape of the specified array.</li>
+<li><strong>dtype:</strong> The data type of the array items. The default is the float.</li>
+<li><strong>Order:</strong> The default order is the c-style row-major order. It can be set to F for FORTRAN-style column-major order.</li>
+</ul>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+arr = np.zeros((3,2), dtype = int)
+
+print(arr)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+[[0 0]
+
+ [0 0]
+
+ [0 0]]
+
+</pre></div>
+<h2 class="h2">NumPy.ones </h2>
+<p>This routine is used to create the numpy array with the specified shape where each numpy array item is initialized to 1.</p>
+<p>The syntax to use this module is given below. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+numpy.ones(shape, dtype = none, order = 'C')
+
+</textarea></div>
+<p>It accepts the following parameters. </p>
+<ul class="points">
+<li><strong>Shape:</strong> The desired shape of the specified array.</li>
+<li><strong>dtype:</strong> The data type of the array items.</li>
+<li><strong>Order:</strong> The default order is the c-style row-major order. It can be set to F for FORTRAN-style column-major order.</li>
+</ul>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+arr = np.ones((3,2), dtype = int)
+
+print(arr)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+[[1 1]
+
+ [1 1]
+
+ [1 1]]
+
+</pre></div>
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-array-from-existing-data">Numpy array from existing data</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="numpy-datatypes" style="float:left">¡û prev</a>
+<a class="next" href="numpy-array-from-existing-data" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-array-from-existing-data">next ¡ú</a>
+<a class="next" href="numpy-datatypes">¡û prev</a>
+</div>
+<h1 class="h1">Numpy Array Creation</h1>
+<p>The ndarray object can be constructed by using the following routines. </p>
+<h2 class="h2">Numpy.empty </h2>
+<p>As the name specifies, The empty routine is used to create an uninitialized array of specified shape and data type. </p>
+<p>The syntax is given below. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+numpy.empty(shape, dtype = float, order = 'C')
+
+</textarea></div>
+<p>It accepts the following parameters. </p>
+<ul class="points">
+<li><strong>Shape:</strong> The desired shape of the specified array.</li>
+<li><strong>dtype:</strong> The data type of the array items. The default is the float.</li>
+<li><strong>Order:</strong> The default order is the c-style row-major order. It can be set to F for FORTRAN-style column-major order.</li>
+</ul>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+arr = np.empty((3,2), dtype = int)
+
+print(arr)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+[[    140482883954664            36917984]
+
+ [    140482883954648     140482883954648]
+
+ [6497921830368665435  172026472699604272]]
+
+</pre></div>
+<h2 class="h2">NumPy.Zeros</h2>
+<p>This routine is used to create the numpy array with the specified shape where each numpy array item is initialized to 0. </p>
+<p>The syntax is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+numpy.zeros(shape, dtype = float, order = 'C')
+
+</textarea></div>
+<p>It accepts the following parameters. </p>
+<ul class="points">
+<li><strong>Shape:</strong> The desired shape of the specified array.</li>
+<li><strong>dtype:</strong> The data type of the array items. The default is the float.</li>
+<li><strong>Order:</strong> The default order is the c-style row-major order. It can be set to F for FORTRAN-style column-major order.</li>
+</ul>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+arr = np.zeros((3,2), dtype = int)
+
+print(arr)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+[[0 0]
+
+ [0 0]
+
+ [0 0]]
+
+</pre></div>
+<h2 class="h2">NumPy.ones </h2>
+<p>This routine is used to create the numpy array with the specified shape where each numpy array item is initialized to 1.</p>
+<p>The syntax to use this module is given below. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+numpy.ones(shape, dtype = none, order = 'C')
+
+</textarea></div>
+<p>It accepts the following parameters. </p>
+<ul class="points">
+<li><strong>Shape:</strong> The desired shape of the specified array.</li>
+<li><strong>dtype:</strong> The data type of the array items.</li>
+<li><strong>Order:</strong> The default order is the c-style row-major order. It can be set to F for FORTRAN-style column-major order.</li>
+</ul>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+arr = np.ones((3,2), dtype = int)
+
+print(arr)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+[[1 1]
+
+ [1 1]
+
+ [1 1]]
+
+</pre></div>
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-array-from-existing-data">Numpy array from existing data</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="numpy-datatypes" style="float:left">¡û prev</a>
+<a class="next" href="numpy-array-from-existing-data" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html></body></html>

@@ -1,0 +1,553 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-data-types">next ¡ú</a>
+<a class="next" href="how-to-execute-python">¡û prev</a>
+</div>
+<h1 class="h1">Python Variables</h1>
+<p>Variable is a name which is used to refer memory location. Variable also known as identifier and used to hold value.</p>
+<p>In Python, we don't need to specify the type of variable because Python is a type infer language and smart enough to get variable type.</p>
+<p> Variable names can be a group of both letters and digits, but they have to begin with a letter or an underscore.</p>
+<p> It is recomended to use lowercase letters for variable name. Rahul and rahul both are two different variables.</p>
+<h2 class="h2">Identifier Naming </h2>
+<p>Variables are the example of identifiers. An Identifier is used to identify the literals used in the program. The rules to name an identifier are given below. </p>
+<ul class="points">
+<li>The first character of the variable must be an alphabet or underscore ( _ ).</li>
+<li>All the characters except the first character may be an alphabet of lower-case(a-z), upper-case (A-Z), underscore or digit (0-9). </li>
+<li>Identifier name must not contain any white-space, or special character (!, @, #, %, ^, &amp;, *).</li>
+<li>Identifier name must not be similar to any keyword defined in the language.</li>
+<li>Identifier names are case sensitive for example my name, and MyName is not the same.</li>
+<li>Examples of valid identifiers : a123, _n, n_9, etc.</li>
+<li>Examples of invalid identifiers: 1a, n%4, n 9, etc.</li>
+</ul>
+<h2 class="h2">Declaring Variable and Assigning Values</h2>
+<p>Python does not bound us to declare variable before using in the application. It allows us to create variable at required time.</p>
+<p>We don't need to declare explicitly variable in Python. When we assign any value to the variable that variable is declared automatically.</p>
+<p>The equal (=) operator is used to assign value to a variable.</p>
+<p><b>Eg:</b></p>
+<img alt="Assigning Values to Variable" src="python/images/assigningvaluestovariable.png"/>
+<p><b>Output:</b></p>
+<div class="codeblock"><pre class="python" name="code">
+&gt;&gt;&gt; 
+10
+ravi
+20000.67
+&gt;&gt;&gt;
+</pre></div>
+<h2 class="h2">Multiple Assignment</h2>
+<p>Python allows us to assign a value to multiple variables in a single statement which is also known as multiple assignment.</p>
+<p>We can apply multiple assignments in two ways either by assigning a single value to multiple variables or assigning multiple values to multiple variables. Lets see given examples.</p>
+<p><b>1. Assigning single value to multiple variables</b></p>
+<p><b>Eg:</b></p>
+<div class="codeblock"><pre class="python" name="code">
+x=y=z=50
+print iple
+print y
+print z
+</pre></div>
+<p><b>Output:</b></p>
+<div class="codeblock"><pre class="python" name="code">
+&gt;&gt;&gt; 
+50
+50
+50
+&gt;&gt;&gt;
+</pre></div>
+<p><b>2.Assigning multiple values to multiple variables:</b></p>
+<p><b>Eg:</b></p>
+<div class="codeblock"><pre class="python" name="code">
+a,b,c=5,10,15
+print a
+print b
+print c
+</pre></div>
+<p><b>Output:</b></p>
+<div class="codeblock"><pre class="python" name="code">
+&gt;&gt;&gt; 
+5
+10
+15
+&gt;&gt;&gt;
+</pre></div>
+<p>The values will be assigned in the order in which variables appears.</p>
+<h3 class="h3">Basic Fundamentals:</h3>
+<p>This section contains the basic fundamentals of Python like :</p>
+<p><b>i)Tokens and their types.</b></p>
+<p><b>ii) Comments</b></p>
+<p><b>a)Tokens:</b></p>
+<ul>
+<li>Tokens can be defined as a punctuator mark, reserved words and each individual word in a statement.</li>
+<li>Token is the smallest unit inside the given program.</li>
+</ul>
+<p>There are following tokens in Python:</p>
+<ul>
+<li>Keywords.</li>
+<li>Identifiers.</li>
+<li>Literals.</li>
+<li>Operators.</li>
+</ul>
+<h3 class="h3">Tuples:</h3>
+<ul>
+<li>Tuple is another form of collection where different type of data can be stored.</li>
+<li>It is similar to list where data is separated by commas. Only the difference is that list uses square bracket and tuple uses parenthesis.</li>
+<li>Tuples are enclosed in parenthesis and cannot be changed.</li>
+</ul>
+<p><b>Eg:</b></p>
+<div class="codeblock"><pre class="python" name="code">
+&gt;&gt;&gt; tuple=('rahul',100,60.4,'deepak')
+&gt;&gt;&gt; tuple1=('sanjay',10)
+&gt;&gt;&gt; tuple
+('rahul', 100, 60.4, 'deepak')
+&gt;&gt;&gt; tuple[2:]
+(60.4, 'deepak')
+&gt;&gt;&gt; tuple1[0]
+'sanjay'
+&gt;&gt;&gt; tuple+tuple1
+('rahul', 100, 60.4, 'deepak', 'sanjay', 10)
+&gt;&gt;&gt;
+</pre></div>
+<h3 class="h3">Dictionary:</h3>
+<ul>
+<li>Dictionary is a collection which works on a key-value pair.</li>
+<li>It works like an associated array where no two keys can be same.</li>
+<li>Dictionaries are enclosed by curly braces ({}) and values can be retrieved by square bracket([]).</li>
+</ul>
+<p><b>Eg:</b></p>
+<div class="codeblock"><pre class="python" name="code">
+&gt;&gt;&gt; dictionary={'name':'charlie','id':100,'dept':'it'}
+&gt;&gt;&gt; dictionary
+{'dept': 'it', 'name': 'charlie', 'id': 100}
+&gt;&gt;&gt; dictionary.keys()
+['dept', 'name', 'id']
+&gt;&gt;&gt; dictionary.values()
+['it', 'charlie', 100]
+&gt;&gt;&gt;
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-data-types">Python Data Types</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="how-to-execute-python" style="float:left">¡û prev</a>
+<a class="next" href="python-data-types" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-data-types">next ¡ú</a>
+<a class="next" href="how-to-execute-python">¡û prev</a>
+</div>
+<h1 class="h1">Python Variables</h1>
+<p>Variable is a name which is used to refer memory location. Variable also known as identifier and used to hold value.</p>
+<p>In Python, we don't need to specify the type of variable because Python is a type infer language and smart enough to get variable type.</p>
+<p> Variable names can be a group of both letters and digits, but they have to begin with a letter or an underscore.</p>
+<p> It is recomended to use lowercase letters for variable name. Rahul and rahul both are two different variables.</p>
+<h2 class="h2">Identifier Naming </h2>
+<p>Variables are the example of identifiers. An Identifier is used to identify the literals used in the program. The rules to name an identifier are given below. </p>
+<ul class="points">
+<li>The first character of the variable must be an alphabet or underscore ( _ ).</li>
+<li>All the characters except the first character may be an alphabet of lower-case(a-z), upper-case (A-Z), underscore or digit (0-9). </li>
+<li>Identifier name must not contain any white-space, or special character (!, @, #, %, ^, &amp;, *).</li>
+<li>Identifier name must not be similar to any keyword defined in the language.</li>
+<li>Identifier names are case sensitive for example my name, and MyName is not the same.</li>
+<li>Examples of valid identifiers : a123, _n, n_9, etc.</li>
+<li>Examples of invalid identifiers: 1a, n%4, n 9, etc.</li>
+</ul>
+<h2 class="h2">Declaring Variable and Assigning Values</h2>
+<p>Python does not bound us to declare variable before using in the application. It allows us to create variable at required time.</p>
+<p>We don't need to declare explicitly variable in Python. When we assign any value to the variable that variable is declared automatically.</p>
+<p>The equal (=) operator is used to assign value to a variable.</p>
+<p><b>Eg:</b></p>
+<img alt="Assigning Values to Variable" src="python/images/assigningvaluestovariable.png"/>
+<p><b>Output:</b></p>
+<div class="codeblock"><pre class="python" name="code">
+&gt;&gt;&gt; 
+10
+ravi
+20000.67
+&gt;&gt;&gt;
+</pre></div>
+<h2 class="h2">Multiple Assignment</h2>
+<p>Python allows us to assign a value to multiple variables in a single statement which is also known as multiple assignment.</p>
+<p>We can apply multiple assignments in two ways either by assigning a single value to multiple variables or assigning multiple values to multiple variables. Lets see given examples.</p>
+<p><b>1. Assigning single value to multiple variables</b></p>
+<p><b>Eg:</b></p>
+<div class="codeblock"><pre class="python" name="code">
+x=y=z=50
+print iple
+print y
+print z
+</pre></div>
+<p><b>Output:</b></p>
+<div class="codeblock"><pre class="python" name="code">
+&gt;&gt;&gt; 
+50
+50
+50
+&gt;&gt;&gt;
+</pre></div>
+<p><b>2.Assigning multiple values to multiple variables:</b></p>
+<p><b>Eg:</b></p>
+<div class="codeblock"><pre class="python" name="code">
+a,b,c=5,10,15
+print a
+print b
+print c
+</pre></div>
+<p><b>Output:</b></p>
+<div class="codeblock"><pre class="python" name="code">
+&gt;&gt;&gt; 
+5
+10
+15
+&gt;&gt;&gt;
+</pre></div>
+<p>The values will be assigned in the order in which variables appears.</p>
+<h3 class="h3">Basic Fundamentals:</h3>
+<p>This section contains the basic fundamentals of Python like :</p>
+<p><b>i)Tokens and their types.</b></p>
+<p><b>ii) Comments</b></p>
+<p><b>a)Tokens:</b></p>
+<ul>
+<li>Tokens can be defined as a punctuator mark, reserved words and each individual word in a statement.</li>
+<li>Token is the smallest unit inside the given program.</li>
+</ul>
+<p>There are following tokens in Python:</p>
+<ul>
+<li>Keywords.</li>
+<li>Identifiers.</li>
+<li>Literals.</li>
+<li>Operators.</li>
+</ul>
+<h3 class="h3">Tuples:</h3>
+<ul>
+<li>Tuple is another form of collection where different type of data can be stored.</li>
+<li>It is similar to list where data is separated by commas. Only the difference is that list uses square bracket and tuple uses parenthesis.</li>
+<li>Tuples are enclosed in parenthesis and cannot be changed.</li>
+</ul>
+<p><b>Eg:</b></p>
+<div class="codeblock"><pre class="python" name="code">
+&gt;&gt;&gt; tuple=('rahul',100,60.4,'deepak')
+&gt;&gt;&gt; tuple1=('sanjay',10)
+&gt;&gt;&gt; tuple
+('rahul', 100, 60.4, 'deepak')
+&gt;&gt;&gt; tuple[2:]
+(60.4, 'deepak')
+&gt;&gt;&gt; tuple1[0]
+'sanjay'
+&gt;&gt;&gt; tuple+tuple1
+('rahul', 100, 60.4, 'deepak', 'sanjay', 10)
+&gt;&gt;&gt;
+</pre></div>
+<h3 class="h3">Dictionary:</h3>
+<ul>
+<li>Dictionary is a collection which works on a key-value pair.</li>
+<li>It works like an associated array where no two keys can be same.</li>
+<li>Dictionaries are enclosed by curly braces ({}) and values can be retrieved by square bracket([]).</li>
+</ul>
+<p><b>Eg:</b></p>
+<div class="codeblock"><pre class="python" name="code">
+&gt;&gt;&gt; dictionary={'name':'charlie','id':100,'dept':'it'}
+&gt;&gt;&gt; dictionary
+{'dept': 'it', 'name': 'charlie', 'id': 100}
+&gt;&gt;&gt; dictionary.keys()
+['dept', 'name', 'id']
+&gt;&gt;&gt; dictionary.values()
+['it', 'charlie', 100]
+&gt;&gt;&gt;
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-data-types">Python Data Types</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="how-to-execute-python" style="float:left">¡û prev</a>
+<a class="next" href="python-data-types" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-data-types">next ¡ú</a>
+<a class="next" href="how-to-execute-python">¡û prev</a>
+</div>
+<h1 class="h1">Python Variables</h1>
+<p>Variable is a name which is used to refer memory location. Variable also known as identifier and used to hold value.</p>
+<p>In Python, we don't need to specify the type of variable because Python is a type infer language and smart enough to get variable type.</p>
+<p> Variable names can be a group of both letters and digits, but they have to begin with a letter or an underscore.</p>
+<p> It is recomended to use lowercase letters for variable name. Rahul and rahul both are two different variables.</p>
+<h2 class="h2">Identifier Naming </h2>
+<p>Variables are the example of identifiers. An Identifier is used to identify the literals used in the program. The rules to name an identifier are given below. </p>
+<ul class="points">
+<li>The first character of the variable must be an alphabet or underscore ( _ ).</li>
+<li>All the characters except the first character may be an alphabet of lower-case(a-z), upper-case (A-Z), underscore or digit (0-9). </li>
+<li>Identifier name must not contain any white-space, or special character (!, @, #, %, ^, &amp;, *).</li>
+<li>Identifier name must not be similar to any keyword defined in the language.</li>
+<li>Identifier names are case sensitive for example my name, and MyName is not the same.</li>
+<li>Examples of valid identifiers : a123, _n, n_9, etc.</li>
+<li>Examples of invalid identifiers: 1a, n%4, n 9, etc.</li>
+</ul>
+<h2 class="h2">Declaring Variable and Assigning Values</h2>
+<p>Python does not bound us to declare variable before using in the application. It allows us to create variable at required time.</p>
+<p>We don't need to declare explicitly variable in Python. When we assign any value to the variable that variable is declared automatically.</p>
+<p>The equal (=) operator is used to assign value to a variable.</p>
+<p><b>Eg:</b></p>
+<img alt="Assigning Values to Variable" src="python/images/assigningvaluestovariable.png"/>
+<p><b>Output:</b></p>
+<div class="codeblock"><pre class="python" name="code">
+&gt;&gt;&gt; 
+10
+ravi
+20000.67
+&gt;&gt;&gt;
+</pre></div>
+<h2 class="h2">Multiple Assignment</h2>
+<p>Python allows us to assign a value to multiple variables in a single statement which is also known as multiple assignment.</p>
+<p>We can apply multiple assignments in two ways either by assigning a single value to multiple variables or assigning multiple values to multiple variables. Lets see given examples.</p>
+<p><b>1. Assigning single value to multiple variables</b></p>
+<p><b>Eg:</b></p>
+<div class="codeblock"><pre class="python" name="code">
+x=y=z=50
+print iple
+print y
+print z
+</pre></div>
+<p><b>Output:</b></p>
+<div class="codeblock"><pre class="python" name="code">
+&gt;&gt;&gt; 
+50
+50
+50
+&gt;&gt;&gt;
+</pre></div>
+<p><b>2.Assigning multiple values to multiple variables:</b></p>
+<p><b>Eg:</b></p>
+<div class="codeblock"><pre class="python" name="code">
+a,b,c=5,10,15
+print a
+print b
+print c
+</pre></div>
+<p><b>Output:</b></p>
+<div class="codeblock"><pre class="python" name="code">
+&gt;&gt;&gt; 
+5
+10
+15
+&gt;&gt;&gt;
+</pre></div>
+<p>The values will be assigned in the order in which variables appears.</p>
+<h3 class="h3">Basic Fundamentals:</h3>
+<p>This section contains the basic fundamentals of Python like :</p>
+<p><b>i)Tokens and their types.</b></p>
+<p><b>ii) Comments</b></p>
+<p><b>a)Tokens:</b></p>
+<ul>
+<li>Tokens can be defined as a punctuator mark, reserved words and each individual word in a statement.</li>
+<li>Token is the smallest unit inside the given program.</li>
+</ul>
+<p>There are following tokens in Python:</p>
+<ul>
+<li>Keywords.</li>
+<li>Identifiers.</li>
+<li>Literals.</li>
+<li>Operators.</li>
+</ul>
+<h3 class="h3">Tuples:</h3>
+<ul>
+<li>Tuple is another form of collection where different type of data can be stored.</li>
+<li>It is similar to list where data is separated by commas. Only the difference is that list uses square bracket and tuple uses parenthesis.</li>
+<li>Tuples are enclosed in parenthesis and cannot be changed.</li>
+</ul>
+<p><b>Eg:</b></p>
+<div class="codeblock"><pre class="python" name="code">
+&gt;&gt;&gt; tuple=('rahul',100,60.4,'deepak')
+&gt;&gt;&gt; tuple1=('sanjay',10)
+&gt;&gt;&gt; tuple
+('rahul', 100, 60.4, 'deepak')
+&gt;&gt;&gt; tuple[2:]
+(60.4, 'deepak')
+&gt;&gt;&gt; tuple1[0]
+'sanjay'
+&gt;&gt;&gt; tuple+tuple1
+('rahul', 100, 60.4, 'deepak', 'sanjay', 10)
+&gt;&gt;&gt;
+</pre></div>
+<h3 class="h3">Dictionary:</h3>
+<ul>
+<li>Dictionary is a collection which works on a key-value pair.</li>
+<li>It works like an associated array where no two keys can be same.</li>
+<li>Dictionaries are enclosed by curly braces ({}) and values can be retrieved by square bracket([]).</li>
+</ul>
+<p><b>Eg:</b></p>
+<div class="codeblock"><pre class="python" name="code">
+&gt;&gt;&gt; dictionary={'name':'charlie','id':100,'dept':'it'}
+&gt;&gt;&gt; dictionary
+{'dept': 'it', 'name': 'charlie', 'id': 100}
+&gt;&gt;&gt; dictionary.keys()
+['dept', 'name', 'id']
+&gt;&gt;&gt; dictionary.values()
+['it', 'charlie', 100]
+&gt;&gt;&gt;
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-data-types">Python Data Types</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="how-to-execute-python" style="float:left">¡û prev</a>
+<a class="next" href="python-data-types" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-data-types">next ¡ú</a>
+<a class="next" href="how-to-execute-python">¡û prev</a>
+</div>
+<h1 class="h1">Python Variables</h1>
+<p>Variable is a name which is used to refer memory location. Variable also known as identifier and used to hold value.</p>
+<p>In Python, we don't need to specify the type of variable because Python is a type infer language and smart enough to get variable type.</p>
+<p> Variable names can be a group of both letters and digits, but they have to begin with a letter or an underscore.</p>
+<p> It is recomended to use lowercase letters for variable name. Rahul and rahul both are two different variables.</p>
+<h2 class="h2">Identifier Naming </h2>
+<p>Variables are the example of identifiers. An Identifier is used to identify the literals used in the program. The rules to name an identifier are given below. </p>
+<ul class="points">
+<li>The first character of the variable must be an alphabet or underscore ( _ ).</li>
+<li>All the characters except the first character may be an alphabet of lower-case(a-z), upper-case (A-Z), underscore or digit (0-9). </li>
+<li>Identifier name must not contain any white-space, or special character (!, @, #, %, ^, &amp;, *).</li>
+<li>Identifier name must not be similar to any keyword defined in the language.</li>
+<li>Identifier names are case sensitive for example my name, and MyName is not the same.</li>
+<li>Examples of valid identifiers : a123, _n, n_9, etc.</li>
+<li>Examples of invalid identifiers: 1a, n%4, n 9, etc.</li>
+</ul>
+<h2 class="h2">Declaring Variable and Assigning Values</h2>
+<p>Python does not bound us to declare variable before using in the application. It allows us to create variable at required time.</p>
+<p>We don't need to declare explicitly variable in Python. When we assign any value to the variable that variable is declared automatically.</p>
+<p>The equal (=) operator is used to assign value to a variable.</p>
+<p><b>Eg:</b></p>
+<img alt="Assigning Values to Variable" src="python/images/assigningvaluestovariable.png"/>
+<p><b>Output:</b></p>
+<div class="codeblock"><pre class="python" name="code">
+&gt;&gt;&gt; 
+10
+ravi
+20000.67
+&gt;&gt;&gt;
+</pre></div>
+<h2 class="h2">Multiple Assignment</h2>
+<p>Python allows us to assign a value to multiple variables in a single statement which is also known as multiple assignment.</p>
+<p>We can apply multiple assignments in two ways either by assigning a single value to multiple variables or assigning multiple values to multiple variables. Lets see given examples.</p>
+<p><b>1. Assigning single value to multiple variables</b></p>
+<p><b>Eg:</b></p>
+<div class="codeblock"><pre class="python" name="code">
+x=y=z=50
+print iple
+print y
+print z
+</pre></div>
+<p><b>Output:</b></p>
+<div class="codeblock"><pre class="python" name="code">
+&gt;&gt;&gt; 
+50
+50
+50
+&gt;&gt;&gt;
+</pre></div>
+<p><b>2.Assigning multiple values to multiple variables:</b></p>
+<p><b>Eg:</b></p>
+<div class="codeblock"><pre class="python" name="code">
+a,b,c=5,10,15
+print a
+print b
+print c
+</pre></div>
+<p><b>Output:</b></p>
+<div class="codeblock"><pre class="python" name="code">
+&gt;&gt;&gt; 
+5
+10
+15
+&gt;&gt;&gt;
+</pre></div>
+<p>The values will be assigned in the order in which variables appears.</p>
+<h3 class="h3">Basic Fundamentals:</h3>
+<p>This section contains the basic fundamentals of Python like :</p>
+<p><b>i)Tokens and their types.</b></p>
+<p><b>ii) Comments</b></p>
+<p><b>a)Tokens:</b></p>
+<ul>
+<li>Tokens can be defined as a punctuator mark, reserved words and each individual word in a statement.</li>
+<li>Token is the smallest unit inside the given program.</li>
+</ul>
+<p>There are following tokens in Python:</p>
+<ul>
+<li>Keywords.</li>
+<li>Identifiers.</li>
+<li>Literals.</li>
+<li>Operators.</li>
+</ul>
+<h3 class="h3">Tuples:</h3>
+<ul>
+<li>Tuple is another form of collection where different type of data can be stored.</li>
+<li>It is similar to list where data is separated by commas. Only the difference is that list uses square bracket and tuple uses parenthesis.</li>
+<li>Tuples are enclosed in parenthesis and cannot be changed.</li>
+</ul>
+<p><b>Eg:</b></p>
+<div class="codeblock"><pre class="python" name="code">
+&gt;&gt;&gt; tuple=('rahul',100,60.4,'deepak')
+&gt;&gt;&gt; tuple1=('sanjay',10)
+&gt;&gt;&gt; tuple
+('rahul', 100, 60.4, 'deepak')
+&gt;&gt;&gt; tuple[2:]
+(60.4, 'deepak')
+&gt;&gt;&gt; tuple1[0]
+'sanjay'
+&gt;&gt;&gt; tuple+tuple1
+('rahul', 100, 60.4, 'deepak', 'sanjay', 10)
+&gt;&gt;&gt;
+</pre></div>
+<h3 class="h3">Dictionary:</h3>
+<ul>
+<li>Dictionary is a collection which works on a key-value pair.</li>
+<li>It works like an associated array where no two keys can be same.</li>
+<li>Dictionaries are enclosed by curly braces ({}) and values can be retrieved by square bracket([]).</li>
+</ul>
+<p><b>Eg:</b></p>
+<div class="codeblock"><pre class="python" name="code">
+&gt;&gt;&gt; dictionary={'name':'charlie','id':100,'dept':'it'}
+&gt;&gt;&gt; dictionary
+{'dept': 'it', 'name': 'charlie', 'id': 100}
+&gt;&gt;&gt; dictionary.keys()
+['dept', 'name', 'id']
+&gt;&gt;&gt; dictionary.values()
+['it', 'charlie', 100]
+&gt;&gt;&gt;
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-data-types">Python Data Types</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="how-to-execute-python" style="float:left">¡û prev</a>
+<a class="next" href="python-data-types" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html></body></html>

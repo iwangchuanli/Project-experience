@@ -1,0 +1,1394 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-bitwise-operators">next ¡ú</a>
+<a class="next" href="numpy-broadcasting">¡û prev</a>
+</div>
+<h1 class="h1">NumPy Array Iteration</h1>
+<p>NumPy provides an iterator object, i.e., nditer which can be used to iterate over the given array using python standard Iterator interface.</p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+a = np.array([[1,2,3,4],[2,4,5,6],[10,20,39,3]])
+print("Printing array:")
+print(a);
+print("Iterating over the array:")
+for x in np.nditer(a):
+    print(x,end=' ')
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Printing array:
+[[ 1  2  3  4]
+ [ 2  4  5  6]
+ [10 20 39  3]]
+Iterating over the array:
+1 2 3 4 2 4 5 6 10 20 39 3 
+</pre></div>
+<p>Order of the iteration doesn't follow any special ordering like row-major or column-order. However, it is intended to match the memory layout of the array. </p>
+<p>Let's iterate over the transpose of the array given in the above example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+a = np.array([[1,2,3,4],[2,4,5,6],[10,20,39,3]])
+print("Printing the array:")
+print(a)
+print("Printing the transpose of the array:")
+at = a.T
+print(at)
+
+#this will be same as previous 
+for x in np.nditer(at):
+    print(print("Iterating over the array:")
+for x in np.nditer(a):
+    print(x,end=' ')
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Printing the array:
+[[ 1  2  3  4]
+ [ 2  4  5  6]
+ [10 20 39  3]]
+Printing the transpose of the array:
+[[ 1  2 10]
+ [ 2  4 20]
+ [ 3  5 39]
+ [ 4  6  3]]
+1 2 3 4 2 4 5 6 10 20 39 3 
+</pre></div>
+<h2 class="h2">Order of Iteration</h2>
+<p>As we know, there are two ways of storing values into the numpy arrays:</p>
+<ol class="points">
+<li>F-style order</li>
+<li>C-style order </li>
+</ol>
+<p>Let's see an example of how the numpy Iterator treats the specific orders (F or C).</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+
+a = np.array([[1,2,3,4],[2,4,5,6],[10,20,39,3]])
+
+print("\nPrinting the array:\n")
+
+print(a)
+
+print("\nPrinting the transpose of the array:\n")
+at = a.T
+
+print(at)
+
+print("\nIterating over the transposed array\n")
+
+for x in np.nditer(at):
+    print(x, end= ' ')
+
+print("\nSorting the transposed array in C-style:\n")
+
+c = at.copy(order = 'C')
+
+print(c)
+
+print("\nIterating over the C-style array:\n")
+for x in np.nditer(c):
+    print(x,end=' ')
+    
+
+d = at.copy(order = 'F')
+
+print(d)
+print("Iterating over the F-style array:\n")
+for x in np.nditer(d):
+    print(x,end=' ')
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Printing the array:
+
+[[ 1  2  3  4]
+ [ 2  4  5  6]
+ [10 20 39  3]]
+
+Printing the transpose of the array:
+
+[[ 1  2 10]
+ [ 2  4 20]
+ [ 3  5 39]
+ [ 4  6  3]]
+
+Iterating over the transposed array
+
+1 2 3 4 2 4 5 6 10 20 39 3 
+Sorting the transposed array in C-style:
+
+[[ 1  2 10]
+ [ 2  4 20]
+ [ 3  5 39]
+ [ 4  6  3]]
+
+Iterating over the C-style array:
+
+1 2 10 2 4 20 3 5 39 4 6 3 [[ 1  2 10]
+ [ 2  4 20]
+ [ 3  5 39]
+ [ 4  6  3]]
+Iterating over the F-style array:
+
+1 2 3 4 2 4 5 6 10 20 39 3 
+</pre></div>
+<p>We can mention the order 'C' or 'F' while defining the Iterator object itself. Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+
+a = np.array([[1,2,3,4],[2,4,5,6],[10,20,39,3]])
+
+print("\nPrinting the array:\n")
+
+print(a)
+
+print("\nPrinting the transpose of the array:\n")
+at = a.T
+
+print(at)
+
+print("\nIterating over the transposed array\n")
+
+for x in np.nditer(at):
+    print(x, end= ' ')
+
+print("\nSorting the transposed array in C-style:\n")
+
+print("\nIterating over the C-style array:\n")
+for x in np.nditer(at, order = 'C'):
+    print(x,end=' ')
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Iterating over the transposed array
+
+1 2 3 4 2 4 5 6 10 20 39 3
+Sorting the transposed array in C-style:
+
+
+Iterating over the C-style array:
+
+1 2 10 2 4 20 3 5 39 4 6 3 
+</pre></div>
+<h2 class="h2">Array Values Modification</h2>
+<p>We can not modify the array elements during the iteration since the op-flag associated with the Iterator object is set to readonly.</p>
+<p>However, we can set this flag to readwrite or write only to modify the array values. Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+
+a = np.array([[1,2,3,4],[2,4,5,6],[10,20,39,3]])
+
+print("\nPrinting the original array:\n")
+
+print(a)
+
+print("\nIterating over the modified array\n")
+
+for x in np.nditer(a, op_flags = ['readwrite']):
+    x[...] = 3 * x;
+    print(x,end = ' ')
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Printing the original array:
+
+[[ 1  2  3  4]
+ [ 2  4  5  6]
+ [10 20 39  3]]
+
+Iterating over the modified array
+
+3 6 9 12 6 12 15 18 30 60 117 9 
+</pre></div>
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-bitwise-operators">NumPy Bitwise Operators</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="numpy-broadcasting" style="float:left">¡û prev</a>
+<a class="next" href="numpy-bitwise-operators" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-bitwise-operators">next ¡ú</a>
+<a class="next" href="numpy-broadcasting">¡û prev</a>
+</div>
+<h1 class="h1">NumPy Array Iteration</h1>
+<p>NumPy provides an iterator object, i.e., nditer which can be used to iterate over the given array using python standard Iterator interface.</p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+a = np.array([[1,2,3,4],[2,4,5,6],[10,20,39,3]])
+
+print("Printing array:")
+
+print(a);
+
+print("Iterating over the array:")
+
+for x in np.nditer(a):
+
+    print(x,end=' ')
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Printing array:
+
+[[ 1  2  3  4]
+
+ [ 2  4  5  6]
+
+ [10 20 39  3]]
+
+Iterating over the array:
+
+1 2 3 4 2 4 5 6 10 20 39 3 
+
+</pre></div>
+<p>Order of the iteration doesn't follow any special ordering like row-major or column-order. However, it is intended to match the memory layout of the array. </p>
+<p>Let's iterate over the transpose of the array given in the above example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+a = np.array([[1,2,3,4],[2,4,5,6],[10,20,39,3]])
+
+print("Printing the array:")
+
+print(a)
+
+print("Printing the transpose of the array:")
+
+at = a.T
+
+print(at)
+
+
+
+#this will be same as previous 
+
+for x in np.nditer(at):
+
+    print(print("Iterating over the array:")
+
+for x in np.nditer(a):
+
+    print(x,end=' ')
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Printing the array:
+
+[[ 1  2  3  4]
+
+ [ 2  4  5  6]
+
+ [10 20 39  3]]
+
+Printing the transpose of the array:
+
+[[ 1  2 10]
+
+ [ 2  4 20]
+
+ [ 3  5 39]
+
+ [ 4  6  3]]
+
+1 2 3 4 2 4 5 6 10 20 39 3 
+
+</pre></div>
+<h2 class="h2">Order of Iteration</h2>
+<p>As we know, there are two ways of storing values into the numpy arrays:</p>
+<ol class="points">
+<li>F-style order</li>
+<li>C-style order </li>
+</ol>
+<p>Let's see an example of how the numpy Iterator treats the specific orders (F or C).</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+a = np.array([[1,2,3,4],[2,4,5,6],[10,20,39,3]])
+
+
+
+print("\nPrinting the array:\n")
+
+
+
+print(a)
+
+
+
+print("\nPrinting the transpose of the array:\n")
+
+at = a.T
+
+
+
+print(at)
+
+
+
+print("\nIterating over the transposed array\n")
+
+
+
+for x in np.nditer(at):
+
+    print(x, end= ' ')
+
+
+
+print("\nSorting the transposed array in C-style:\n")
+
+
+
+c = at.copy(order = 'C')
+
+
+
+print(c)
+
+
+
+print("\nIterating over the C-style array:\n")
+
+for x in np.nditer(c):
+
+    print(x,end=' ')
+
+    
+
+
+
+d = at.copy(order = 'F')
+
+
+
+print(d)
+
+print("Iterating over the F-style array:\n")
+
+for x in np.nditer(d):
+
+    print(x,end=' ')
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Printing the array:
+
+
+
+[[ 1  2  3  4]
+
+ [ 2  4  5  6]
+
+ [10 20 39  3]]
+
+
+
+Printing the transpose of the array:
+
+
+
+[[ 1  2 10]
+
+ [ 2  4 20]
+
+ [ 3  5 39]
+
+ [ 4  6  3]]
+
+
+
+Iterating over the transposed array
+
+
+
+1 2 3 4 2 4 5 6 10 20 39 3 
+
+Sorting the transposed array in C-style:
+
+
+
+[[ 1  2 10]
+
+ [ 2  4 20]
+
+ [ 3  5 39]
+
+ [ 4  6  3]]
+
+
+
+Iterating over the C-style array:
+
+
+
+1 2 10 2 4 20 3 5 39 4 6 3 [[ 1  2 10]
+
+ [ 2  4 20]
+
+ [ 3  5 39]
+
+ [ 4  6  3]]
+
+Iterating over the F-style array:
+
+
+
+1 2 3 4 2 4 5 6 10 20 39 3 
+
+</pre></div>
+<p>We can mention the order 'C' or 'F' while defining the Iterator object itself. Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+a = np.array([[1,2,3,4],[2,4,5,6],[10,20,39,3]])
+
+
+
+print("\nPrinting the array:\n")
+
+
+
+print(a)
+
+
+
+print("\nPrinting the transpose of the array:\n")
+
+at = a.T
+
+
+
+print(at)
+
+
+
+print("\nIterating over the transposed array\n")
+
+
+
+for x in np.nditer(at):
+
+    print(x, end= ' ')
+
+
+
+print("\nSorting the transposed array in C-style:\n")
+
+
+
+print("\nIterating over the C-style array:\n")
+
+for x in np.nditer(at, order = 'C'):
+
+    print(x,end=' ')
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Iterating over the transposed array
+
+
+
+1 2 3 4 2 4 5 6 10 20 39 3
+
+Sorting the transposed array in C-style:
+
+
+
+
+
+Iterating over the C-style array:
+
+
+
+1 2 10 2 4 20 3 5 39 4 6 3 
+
+</pre></div>
+<h2 class="h2">Array Values Modification</h2>
+<p>We can not modify the array elements during the iteration since the op-flag associated with the Iterator object is set to readonly.</p>
+<p>However, we can set this flag to readwrite or write only to modify the array values. Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+a = np.array([[1,2,3,4],[2,4,5,6],[10,20,39,3]])
+
+
+
+print("\nPrinting the original array:\n")
+
+
+
+print(a)
+
+
+
+print("\nIterating over the modified array\n")
+
+
+
+for x in np.nditer(a, op_flags = ['readwrite']):
+
+    x[...] = 3 * x;
+
+    print(x,end = ' ')
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Printing the original array:
+
+
+
+[[ 1  2  3  4]
+
+ [ 2  4  5  6]
+
+ [10 20 39  3]]
+
+
+
+Iterating over the modified array
+
+
+
+3 6 9 12 6 12 15 18 30 60 117 9 
+
+</pre></div>
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-bitwise-operators">NumPy Bitwise Operators</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="numpy-broadcasting" style="float:left">¡û prev</a>
+<a class="next" href="numpy-bitwise-operators" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-bitwise-operators">next ¡ú</a>
+<a class="next" href="numpy-broadcasting">¡û prev</a>
+</div>
+<h1 class="h1">NumPy Array Iteration</h1>
+<p>NumPy provides an iterator object, i.e., nditer which can be used to iterate over the given array using python standard Iterator interface.</p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+a = np.array([[1,2,3,4],[2,4,5,6],[10,20,39,3]])
+
+print("Printing array:")
+
+print(a);
+
+print("Iterating over the array:")
+
+for x in np.nditer(a):
+
+    print(x,end=' ')
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Printing array:
+
+[[ 1  2  3  4]
+
+ [ 2  4  5  6]
+
+ [10 20 39  3]]
+
+Iterating over the array:
+
+1 2 3 4 2 4 5 6 10 20 39 3 
+
+</pre></div>
+<p>Order of the iteration doesn't follow any special ordering like row-major or column-order. However, it is intended to match the memory layout of the array. </p>
+<p>Let's iterate over the transpose of the array given in the above example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+a = np.array([[1,2,3,4],[2,4,5,6],[10,20,39,3]])
+
+print("Printing the array:")
+
+print(a)
+
+print("Printing the transpose of the array:")
+
+at = a.T
+
+print(at)
+
+
+
+#this will be same as previous 
+
+for x in np.nditer(at):
+
+    print(print("Iterating over the array:")
+
+for x in np.nditer(a):
+
+    print(x,end=' ')
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Printing the array:
+
+[[ 1  2  3  4]
+
+ [ 2  4  5  6]
+
+ [10 20 39  3]]
+
+Printing the transpose of the array:
+
+[[ 1  2 10]
+
+ [ 2  4 20]
+
+ [ 3  5 39]
+
+ [ 4  6  3]]
+
+1 2 3 4 2 4 5 6 10 20 39 3 
+
+</pre></div>
+<h2 class="h2">Order of Iteration</h2>
+<p>As we know, there are two ways of storing values into the numpy arrays:</p>
+<ol class="points">
+<li>F-style order</li>
+<li>C-style order </li>
+</ol>
+<p>Let's see an example of how the numpy Iterator treats the specific orders (F or C).</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+a = np.array([[1,2,3,4],[2,4,5,6],[10,20,39,3]])
+
+
+
+print("\nPrinting the array:\n")
+
+
+
+print(a)
+
+
+
+print("\nPrinting the transpose of the array:\n")
+
+at = a.T
+
+
+
+print(at)
+
+
+
+print("\nIterating over the transposed array\n")
+
+
+
+for x in np.nditer(at):
+
+    print(x, end= ' ')
+
+
+
+print("\nSorting the transposed array in C-style:\n")
+
+
+
+c = at.copy(order = 'C')
+
+
+
+print(c)
+
+
+
+print("\nIterating over the C-style array:\n")
+
+for x in np.nditer(c):
+
+    print(x,end=' ')
+
+    
+
+
+
+d = at.copy(order = 'F')
+
+
+
+print(d)
+
+print("Iterating over the F-style array:\n")
+
+for x in np.nditer(d):
+
+    print(x,end=' ')
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Printing the array:
+
+
+
+[[ 1  2  3  4]
+
+ [ 2  4  5  6]
+
+ [10 20 39  3]]
+
+
+
+Printing the transpose of the array:
+
+
+
+[[ 1  2 10]
+
+ [ 2  4 20]
+
+ [ 3  5 39]
+
+ [ 4  6  3]]
+
+
+
+Iterating over the transposed array
+
+
+
+1 2 3 4 2 4 5 6 10 20 39 3 
+
+Sorting the transposed array in C-style:
+
+
+
+[[ 1  2 10]
+
+ [ 2  4 20]
+
+ [ 3  5 39]
+
+ [ 4  6  3]]
+
+
+
+Iterating over the C-style array:
+
+
+
+1 2 10 2 4 20 3 5 39 4 6 3 [[ 1  2 10]
+
+ [ 2  4 20]
+
+ [ 3  5 39]
+
+ [ 4  6  3]]
+
+Iterating over the F-style array:
+
+
+
+1 2 3 4 2 4 5 6 10 20 39 3 
+
+</pre></div>
+<p>We can mention the order 'C' or 'F' while defining the Iterator object itself. Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+a = np.array([[1,2,3,4],[2,4,5,6],[10,20,39,3]])
+
+
+
+print("\nPrinting the array:\n")
+
+
+
+print(a)
+
+
+
+print("\nPrinting the transpose of the array:\n")
+
+at = a.T
+
+
+
+print(at)
+
+
+
+print("\nIterating over the transposed array\n")
+
+
+
+for x in np.nditer(at):
+
+    print(x, end= ' ')
+
+
+
+print("\nSorting the transposed array in C-style:\n")
+
+
+
+print("\nIterating over the C-style array:\n")
+
+for x in np.nditer(at, order = 'C'):
+
+    print(x,end=' ')
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Iterating over the transposed array
+
+
+
+1 2 3 4 2 4 5 6 10 20 39 3
+
+Sorting the transposed array in C-style:
+
+
+
+
+
+Iterating over the C-style array:
+
+
+
+1 2 10 2 4 20 3 5 39 4 6 3 
+
+</pre></div>
+<h2 class="h2">Array Values Modification</h2>
+<p>We can not modify the array elements during the iteration since the op-flag associated with the Iterator object is set to readonly.</p>
+<p>However, we can set this flag to readwrite or write only to modify the array values. Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+a = np.array([[1,2,3,4],[2,4,5,6],[10,20,39,3]])
+
+
+
+print("\nPrinting the original array:\n")
+
+
+
+print(a)
+
+
+
+print("\nIterating over the modified array\n")
+
+
+
+for x in np.nditer(a, op_flags = ['readwrite']):
+
+    x[...] = 3 * x;
+
+    print(x,end = ' ')
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Printing the original array:
+
+
+
+[[ 1  2  3  4]
+
+ [ 2  4  5  6]
+
+ [10 20 39  3]]
+
+
+
+Iterating over the modified array
+
+
+
+3 6 9 12 6 12 15 18 30 60 117 9 
+
+</pre></div>
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-bitwise-operators">NumPy Bitwise Operators</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="numpy-broadcasting" style="float:left">¡û prev</a>
+<a class="next" href="numpy-bitwise-operators" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-bitwise-operators">next ¡ú</a>
+<a class="next" href="numpy-broadcasting">¡û prev</a>
+</div>
+<h1 class="h1">NumPy Array Iteration</h1>
+<p>NumPy provides an iterator object, i.e., nditer which can be used to iterate over the given array using python standard Iterator interface.</p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+a = np.array([[1,2,3,4],[2,4,5,6],[10,20,39,3]])
+
+print("Printing array:")
+
+print(a);
+
+print("Iterating over the array:")
+
+for x in np.nditer(a):
+
+    print(x,end=' ')
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Printing array:
+
+[[ 1  2  3  4]
+
+ [ 2  4  5  6]
+
+ [10 20 39  3]]
+
+Iterating over the array:
+
+1 2 3 4 2 4 5 6 10 20 39 3 
+
+</pre></div>
+<p>Order of the iteration doesn't follow any special ordering like row-major or column-order. However, it is intended to match the memory layout of the array. </p>
+<p>Let's iterate over the transpose of the array given in the above example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+a = np.array([[1,2,3,4],[2,4,5,6],[10,20,39,3]])
+
+print("Printing the array:")
+
+print(a)
+
+print("Printing the transpose of the array:")
+
+at = a.T
+
+print(at)
+
+
+
+#this will be same as previous 
+
+for x in np.nditer(at):
+
+    print(print("Iterating over the array:")
+
+for x in np.nditer(a):
+
+    print(x,end=' ')
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Printing the array:
+
+[[ 1  2  3  4]
+
+ [ 2  4  5  6]
+
+ [10 20 39  3]]
+
+Printing the transpose of the array:
+
+[[ 1  2 10]
+
+ [ 2  4 20]
+
+ [ 3  5 39]
+
+ [ 4  6  3]]
+
+1 2 3 4 2 4 5 6 10 20 39 3 
+
+</pre></div>
+<h2 class="h2">Order of Iteration</h2>
+<p>As we know, there are two ways of storing values into the numpy arrays:</p>
+<ol class="points">
+<li>F-style order</li>
+<li>C-style order </li>
+</ol>
+<p>Let's see an example of how the numpy Iterator treats the specific orders (F or C).</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+a = np.array([[1,2,3,4],[2,4,5,6],[10,20,39,3]])
+
+
+
+print("\nPrinting the array:\n")
+
+
+
+print(a)
+
+
+
+print("\nPrinting the transpose of the array:\n")
+
+at = a.T
+
+
+
+print(at)
+
+
+
+print("\nIterating over the transposed array\n")
+
+
+
+for x in np.nditer(at):
+
+    print(x, end= ' ')
+
+
+
+print("\nSorting the transposed array in C-style:\n")
+
+
+
+c = at.copy(order = 'C')
+
+
+
+print(c)
+
+
+
+print("\nIterating over the C-style array:\n")
+
+for x in np.nditer(c):
+
+    print(x,end=' ')
+
+    
+
+
+
+d = at.copy(order = 'F')
+
+
+
+print(d)
+
+print("Iterating over the F-style array:\n")
+
+for x in np.nditer(d):
+
+    print(x,end=' ')
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Printing the array:
+
+
+
+[[ 1  2  3  4]
+
+ [ 2  4  5  6]
+
+ [10 20 39  3]]
+
+
+
+Printing the transpose of the array:
+
+
+
+[[ 1  2 10]
+
+ [ 2  4 20]
+
+ [ 3  5 39]
+
+ [ 4  6  3]]
+
+
+
+Iterating over the transposed array
+
+
+
+1 2 3 4 2 4 5 6 10 20 39 3 
+
+Sorting the transposed array in C-style:
+
+
+
+[[ 1  2 10]
+
+ [ 2  4 20]
+
+ [ 3  5 39]
+
+ [ 4  6  3]]
+
+
+
+Iterating over the C-style array:
+
+
+
+1 2 10 2 4 20 3 5 39 4 6 3 [[ 1  2 10]
+
+ [ 2  4 20]
+
+ [ 3  5 39]
+
+ [ 4  6  3]]
+
+Iterating over the F-style array:
+
+
+
+1 2 3 4 2 4 5 6 10 20 39 3 
+
+</pre></div>
+<p>We can mention the order 'C' or 'F' while defining the Iterator object itself. Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+a = np.array([[1,2,3,4],[2,4,5,6],[10,20,39,3]])
+
+
+
+print("\nPrinting the array:\n")
+
+
+
+print(a)
+
+
+
+print("\nPrinting the transpose of the array:\n")
+
+at = a.T
+
+
+
+print(at)
+
+
+
+print("\nIterating over the transposed array\n")
+
+
+
+for x in np.nditer(at):
+
+    print(x, end= ' ')
+
+
+
+print("\nSorting the transposed array in C-style:\n")
+
+
+
+print("\nIterating over the C-style array:\n")
+
+for x in np.nditer(at, order = 'C'):
+
+    print(x,end=' ')
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Iterating over the transposed array
+
+
+
+1 2 3 4 2 4 5 6 10 20 39 3
+
+Sorting the transposed array in C-style:
+
+
+
+
+
+Iterating over the C-style array:
+
+
+
+1 2 10 2 4 20 3 5 39 4 6 3 
+
+</pre></div>
+<h2 class="h2">Array Values Modification</h2>
+<p>We can not modify the array elements during the iteration since the op-flag associated with the Iterator object is set to readonly.</p>
+<p>However, we can set this flag to readwrite or write only to modify the array values. Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+
+
+a = np.array([[1,2,3,4],[2,4,5,6],[10,20,39,3]])
+
+
+
+print("\nPrinting the original array:\n")
+
+
+
+print(a)
+
+
+
+print("\nIterating over the modified array\n")
+
+
+
+for x in np.nditer(a, op_flags = ['readwrite']):
+
+    x[...] = 3 * x;
+
+    print(x,end = ' ')
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Printing the original array:
+
+
+
+[[ 1  2  3  4]
+
+ [ 2  4  5  6]
+
+ [10 20 39  3]]
+
+
+
+Iterating over the modified array
+
+
+
+3 6 9 12 6 12 15 18 30 60 117 9 
+
+</pre></div>
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-bitwise-operators">NumPy Bitwise Operators</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="numpy-broadcasting" style="float:left">¡û prev</a>
+<a class="next" href="numpy-bitwise-operators" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html></body></html>

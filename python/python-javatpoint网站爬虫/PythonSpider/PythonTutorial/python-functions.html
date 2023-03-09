@@ -1,0 +1,1329 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-lambda-functions">next ¡ú</a>
+<a class="next" href="python-dictionary">¡û prev</a>
+</div>
+<h1 class="h1">Python Functions</h1>
+<p>Functions are the most important aspect of an application. A function can be defined as the organized block of reusable code which can be called whenever required.</p>
+<p>Python allows us to divide a large program into the basic building blocks known as function. The function contains the set of programming statements enclosed by {}. A function can be called multiple times to provide reusability and modularity to the python program.</p>
+<p>In other words, we can say that the collection of functions creates a program. The function is also known as procedure or subroutine in other programming languages.</p>
+<p>Python provide us various inbuilt functions like range() or print(). Although, the user can create its functions which can be called user-defined functions.</p>
+<h2 class="h2">Advantage of functions in python</h2>
+<p>There are the following advantages of C functions.</p>
+<ul class="points">
+<li>By using functions, we can avoid rewriting same logic/code again and again in a program.</li>
+<li>We can call python functions any number of times in a program and from any place in a program.</li>
+<li>We can track a large python program easily when it is divided into multiple functions.</li>
+<li>Reusability is the main achievement of python functions.</li>
+<li>However, Function calling is always overhead in a python program.</li>
+</ul>
+<h2 class="h2">Creating a function </h2>
+<p>In python, we can use <strong>def</strong> keyword to define the function. The syntax to define a function in python is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+def my_function():
+	function-suite 
+	return &lt;expression&gt; 
+</textarea></div>
+<p>The function block is started with the colon (:) and all the same level block statements remain at the same indentation.<p>
+<p>A function can accept any number of parameters that must be the same in the definition and function calling.</p>
+<h2 class="h2">Function calling</h2>
+<p>In python, a function must be defined before the function calling otherwise the python interpreter gives an error. Once the function is defined, we can call it from another function or the python prompt.  To call the function, use the function name followed by the parentheses.</p>
+<p>A simple function that prints the message "Hello Word" is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+def hello_world():
+	print("hello world")
+
+hello_world()  
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+hello world
+</pre></div>
+<h2 class="h2">Parameters in function</h2>
+<p>The information into the functions can be passed as the parameters. The parameters are specified in the parentheses. We can give any number of parameters, but we have to separate them with a comma.</p>
+<p>Consider the following example which contains a function that accepts a string as the parameter and prints it.
+</p>
+<h2 class="h3">Example 1</h2>
+<div class="codeblock"><textarea class="python" name="code">
+#defining the function
+def func (name):
+	print("Hi ",name);
+
+#calling the function 
+func("Ayush") 
+</textarea></div>
+<h2 class="h3">Example 2</h2>
+<div class="codeblock"><textarea class="python" name="code">
+#python function to calculate the sum of two variables 
+#defining the function
+def sum (a,b):
+	return a+b;
+
+#taking values from the user
+a = int(input("Enter a: "))
+b = int(input("Enter b: "))
+
+#printing the sum of a and b
+print("Sum = ",sum(a,b))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+Enter a: 10
+Enter b: 20
+Sum =  30
+</pre></div>
+<h2 class="h2">Call by reference in Python </h2>
+<p>In python, all the functions are called by reference, i.e., all the changes made to the reference inside the function revert back to the original value referred by the reference.</p>
+<p>However, there is an exception in the case of mutable objects since the changes made to the mutable objects like string do not revert to the original string rather, a new string object is made, and therefore the two different objects are printed.</p>
+<h2 class="h3">Example 1 Passing Immutable Object (List) </h2>
+<div class="codeblock"><textarea class="python" name="code">
+#defining the function
+def change_list(list1):
+	list1.append(20);
+	list1.append(30);
+	print("list inside function = ",list1)
+
+#defining the list
+list1 = [10,30,40,50]
+
+#calling the function 
+change_list(list1);
+print("list outside function = ",list1);
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+list inside function =  [10, 30, 40, 50, 20, 30]
+list outside function =  [10, 30, 40, 50, 20, 30]
+</pre></div>
+<h2 class="h3">Example 2 Passing Mutable Object (String) </h2>
+<div class="codeblock"><textarea class="python" name="code">
+#defining the function
+def change_string (str):
+	str = str + " Hows you";
+	print("printing the string inside function :",str);
+
+string1 = "Hi I am there"
+
+#calling the function
+change_string(string1)
+
+print("printing the string outside function :",string1)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+printing the string inside function : Hi I am there Hows you
+printing the string outside function : Hi I am there
+</pre></div>
+<h2 class="h2">Types of arguments </h2>
+<p>There may be several types of arguments which can be passed at the time of function calling.</p>
+<ol class="points">
+<li>Required arguments</li>
+<li>Keyword arguments</li>
+<li>Default arguments</li>
+<li>Variable-length arguments</li>
+</ol>
+<h2 class="h2">Required Arguments</h2>
+<p>Till now, we have learned about function calling in python.  However, we can provide the arguments at the time of function calling. As far as the required arguments are concerned, these are the arguments which are required to be passed at the time of function calling with the exact match of their positions in the function call and function definition. If either of the arguments is not provided in the function call, or the position of the arguments is changed, then the python interpreter will show the error.</p>
+<p>Consider the following example.</p>
+<h2 class="h3">Example 1</h2>
+<div class="codeblock"><textarea class="python" name="code">
+#the argument name is the required argument to the function func 
+def func(name):
+    message = "Hi "+name;
+    return message;
+name = input("Enter the name?")
+print(func(name))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+Enter the name?John
+Hi John
+</pre></div>
+<h2 class="h3">Example 2</h2>
+<div class="codeblock"><textarea class="python" name="code">
+#the function simple_interest accepts three arguments and returns the simple interest accordingly
+def simple_interest(p,t,r):
+    return (p*t*r)/100
+p = float(input("Enter the principle amount? "))
+r = float(input("Enter the rate of interest? "))
+t = float(input("Enter the time in years? "))
+print("Simple Interest: ",simple_interest(p,r,t))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+Enter the principle amount? 10000
+Enter the rate of interest? 5
+Enter the time in years? 2
+Simple Interest:  1000.0
+</pre></div>
+<h2 class="h3">Example 3</h2>
+<div class="codeblock"><textarea class="python" name="code">
+#the function calculate returns the sum of two arguments a and b
+def calculate(a,b):
+    return a+b
+calculate(10) # this causes an error as we are missing a required arguments b.
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+TypeError: calculate() missing 1 required positional argument: 'b'
+</pre></div>
+<h2 class="h2">Keyword arguments</h2>
+<p>Python allows us to call the function with the keyword arguments. This kind of function call will enable us to pass the arguments in the random order.</p>
+<p>The name of the arguments is treated as the keywords and matched in the function calling and definition. If the same match is found, the values of the arguments are copied in the function definition.</p>
+<p>Consider the following example.</p>
+<h2 class="h3">Example 1</h2>
+<div class="codeblock"><textarea class="python" name="code">
+#function func is called with the name and message as the keyword arguments
+def func(name,message):
+    print("printing the message with",name,"and ",message)
+func(name = "John",message="hello") #name and message is copied with the values John and hello respectively
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+printing the message with John and  hello
+</pre></div>
+<h2 class="h3">Example 2 providing the values in different order at the calling </h2>
+<div class="codeblock"><textarea class="python" name="code">
+#The function simple_interest(p, t, r) is called with the keyword arguments the order of arguments doesn't matter in this case
+def simple_interest(p,t,r):
+    return (p*t*r)/100
+print("Simple Interest: ",simple_interest(t=10,r=10,p=1900)) 
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+Simple Interest:  1900.0
+</pre></div>
+<p>If we provide the different name of arguments at the time of function call, an error will be thrown.</p>
+<p>Consider the following example.</p>
+<h2 class="h3">Example 3</h2>
+<div class="codeblock"><textarea class="python" name="code">
+#The function simple_interest(p, t, r) is called with the keyword arguments. 
+def simple_interest(p,t,r):
+    return (p*t*r)/100
+
+print("Simple Interest: ",simple_interest(time=10,rate=10,principle=1900)) # doesn?t find the exact match of the name of the arguments (keywords)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+TypeError: simple_interest() got an unexpected keyword argument 'time'
+</pre></div>
+<p>The python allows us to provide the mix of the required arguments and keyword arguments at the time of function call. However, the required argument must not be given after the keyword argument, i.e., once the keyword argument is encountered in the function call,  the following arguments must also be the keyword arguments.</p>
+<p>Consider the following example.</p>
+<h2 class="h3">Example 4</h2>
+<div class="codeblock"><textarea class="python" name="code">
+def func(name1,message,name2):
+    print("printing the message with",name1,",",message,",and",name2)
+func("John",message="hello",name2="David") #the first argument is not the keyword argument
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+printing the message with John , hello ,and David
+</pre></div>
+<p>The following example will cause an error due to an in-proper mix of keyword and required arguments being passed in the function call.</p>
+<h2 class="h3">Example 5</h2>
+<div class="codeblock"><textarea class="python" name="code">
+def func(name1,message,name2):
+    print("printing the message with",name1,",",message,",and",name2)
+func("John",message="hello","David")   
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+SyntaxError: positional argument follows keyword argument
+</pre></div>
+<h2 class="h2">Default Arguments </h2>
+<p>Python allows us to initialize the arguments at the function definition. If the value of any of the argument is not provided at the time of function call, then that argument can be initialized with the value given in the definition even if the argument is not specified at the function call.</p>
+<h2 class="h3">Example 1</h2>
+<div class="codeblock"><textarea class="python" name="code">
+def printme(name,age=22):
+    print("My name is",name,"and age is",age)
+printme(name = "john") #the variable age is not passed into the function however the default value of age is considered in the function
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+My name is john and age is 22
+</pre></div>
+<h2 class="h3">Example 2</h2>
+<div class="codeblock"><textarea class="python" name="code">
+def printme(name,age=22):
+    print("My name is",name,"and age is",age)
+printme(name = "john") #the variable age is not passed into the function however the default value of age is considered in the function
+printme(age = 10,name="David") #the value of age is overwritten here, 10 will be printed as age
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+My name is john and age is 22
+My name is David and age is 10
+</pre></div>
+<h2 class="h2">Variable length Arguments </h2>
+<p>In the large projects, sometimes we may not know the number of arguments to be passed in advance. In such cases, Python provides us the flexibility to provide the comma separated values which are internally treated as tuples at the function call.</p>
+<p>However, at the function definition, we have to define the variable with * (star) as *&lt;variable - name &gt;.</p>
+<p>Consider the following example.</p>
+<h2 class="h3">Example </h2>
+<div class="codeblock"><textarea class="python" name="code">
+def printme(*names):
+    print("type of passed argument is ",type(names))
+    print("printing the passed arguments...")
+    for name in names:
+        print(name)
+printme("john","David","smith","nick")
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+type of passed argument is  <class 'tuple'="">
+printing the passed arguments...
+john
+David
+smith
+nick
+</class></pre></div>
+<h2 class="h2">Scope of variables</h2>
+<p>The scopes of the variables depend upon the location where the variable is being declared. The variable declared in one part of the program may not be accessible to the other parts.</p>
+<p>In python, the variables are defined with the two types of scopes.</p>
+<ol class="points">
+<li>Global variables</li>
+<li>Local variables</li>
+</ol>
+<p>The variable defined outside any function is known to have a global scope whereas the variable defined inside a function is known to have a local scope.</p>
+<p>Consider the following example.</p>
+<h2 class="h3">Example 1</h2>
+<div class="codeblock"><textarea class="python" name="code">
+def print_message():
+    message = "hello !! I am going to print a message." # the variable message is local to the function itself
+    print(message)
+print_message()
+print(message) # this will cause an error since a local variable cannot be accessible here. 
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+hello !! I am going to print a message.
+  File "/root/PycharmProjects/PythonTest/Test1.py", line 5, in <module>
+    print(message)
+NameError: name 'message' is not defined
+</module></pre></div>
+<h2 class="h3">Example 2</h2>
+<div class="codeblock"><textarea class="python" name="code">
+def calculate(*args):
+    sum=0
+    for arg in args:
+        sum = sum +arg
+    print("The sum is",sum)
+sum=0
+calculate(10,20,30) #60 will be printed as the sum
+print("Value of sum outside the function:",sum) # 0 will be printed
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+The sum is 60
+Value of sum outside the function: 0
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-lambda-functions">Python Lambda Functions</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-dictionary" style="float:left">¡û prev</a>
+<a class="next" href="python-lambda-functions" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</p></p></td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-lambda-functions">next ¡ú</a>
+<a class="next" href="python-dictionary">¡û prev</a>
+</div>
+<h1 class="h1">Python Functions</h1>
+<p>Functions are the most important aspect of an application. A function can be defined as the organized block of reusable code which can be called whenever required.</p>
+<p>Python allows us to divide a large program into the basic building blocks known as function. The function contains the set of programming statements enclosed by {}. A function can be called multiple times to provide reusability and modularity to the python program.</p>
+<p>In other words, we can say that the collection of functions creates a program. The function is also known as procedure or subroutine in other programming languages.</p>
+<p>Python provide us various inbuilt functions like range() or print(). Although, the user can create its functions which can be called user-defined functions.</p>
+<h2 class="h2">Advantage of functions in python</h2>
+<p>There are the following advantages of C functions.</p>
+<ul class="points">
+<li>By using functions, we can avoid rewriting same logic/code again and again in a program.</li>
+<li>We can call python functions any number of times in a program and from any place in a program.</li>
+<li>We can track a large python program easily when it is divided into multiple functions.</li>
+<li>Reusability is the main achievement of python functions.</li>
+<li>However, Function calling is always overhead in a python program.</li>
+</ul>
+<h2 class="h2">Creating a function </h2>
+<p>In python, we can use <strong>def</strong> keyword to define the function. The syntax to define a function in python is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+def my_function():
+	function-suite 
+	return &lt;expression&gt; 
+</textarea></div>
+<p>The function block is started with the colon (:) and all the same level block statements remain at the same indentation.<p>
+<p>A function can accept any number of parameters that must be the same in the definition and function calling.</p>
+<h2 class="h2">Function calling</h2>
+<p>In python, a function must be defined before the function calling otherwise the python interpreter gives an error. Once the function is defined, we can call it from another function or the python prompt.  To call the function, use the function name followed by the parentheses.</p>
+<p>A simple function that prints the message "Hello Word" is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+def hello_world():
+	print("hello world")
+
+hello_world()  
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+hello world
+</pre></div>
+<h2 class="h2">Parameters in function</h2>
+<p>The information into the functions can be passed as the parameters. The parameters are specified in the parentheses. We can give any number of parameters, but we have to separate them with a comma.</p>
+<p>Consider the following example which contains a function that accepts a string as the parameter and prints it.
+</p>
+<h2 class="h3">Example 1</h2>
+<div class="codeblock"><textarea class="python" name="code">
+#defining the function
+def func (name):
+	print("Hi ",name);
+
+#calling the function 
+func("Ayush") 
+</textarea></div>
+<h2 class="h3">Example 2</h2>
+<div class="codeblock"><textarea class="python" name="code">
+#python function to calculate the sum of two variables 
+#defining the function
+def sum (a,b):
+	return a+b;
+
+#taking values from the user
+a = int(input("Enter a: "))
+b = int(input("Enter b: "))
+
+#printing the sum of a and b
+print("Sum = ",sum(a,b))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+Enter a: 10
+Enter b: 20
+Sum =  30
+</pre></div>
+<h2 class="h2">Call by reference in Python </h2>
+<p>In python, all the functions are called by reference, i.e., all the changes made to the reference inside the function revert back to the original value referred by the reference.</p>
+<p>However, there is an exception in the case of mutable objects since the changes made to the mutable objects like string do not revert to the original string rather, a new string object is made, and therefore the two different objects are printed.</p>
+<h2 class="h3">Example 1 Passing Immutable Object (List) </h2>
+<div class="codeblock"><textarea class="python" name="code">
+#defining the function
+def change_list(list1):
+	list1.append(20);
+	list1.append(30);
+	print("list inside function = ",list1)
+
+#defining the list
+list1 = [10,30,40,50]
+
+#calling the function 
+change_list(list1);
+print("list outside function = ",list1);
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+list inside function =  [10, 30, 40, 50, 20, 30]
+list outside function =  [10, 30, 40, 50, 20, 30]
+</pre></div>
+<h2 class="h3">Example 2 Passing Mutable Object (String) </h2>
+<div class="codeblock"><textarea class="python" name="code">
+#defining the function
+def change_string (str):
+	str = str + " Hows you";
+	print("printing the string inside function :",str);
+
+string1 = "Hi I am there"
+
+#calling the function
+change_string(string1)
+
+print("printing the string outside function :",string1)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+printing the string inside function : Hi I am there Hows you
+printing the string outside function : Hi I am there
+</pre></div>
+<h2 class="h2">Types of arguments </h2>
+<p>There may be several types of arguments which can be passed at the time of function calling.</p>
+<ol class="points">
+<li>Required arguments</li>
+<li>Keyword arguments</li>
+<li>Default arguments</li>
+<li>Variable-length arguments</li>
+</ol>
+<h2 class="h2">Required Arguments</h2>
+<p>Till now, we have learned about function calling in python.  However, we can provide the arguments at the time of function calling. As far as the required arguments are concerned, these are the arguments which are required to be passed at the time of function calling with the exact match of their positions in the function call and function definition. If either of the arguments is not provided in the function call, or the position of the arguments is changed, then the python interpreter will show the error.</p>
+<p>Consider the following example.</p>
+<h2 class="h3">Example 1</h2>
+<div class="codeblock"><textarea class="python" name="code">
+#the argument name is the required argument to the function func 
+def func(name):
+    message = "Hi "+name;
+    return message;
+name = input("Enter the name?")
+print(func(name))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+Enter the name?John
+Hi John
+</pre></div>
+<h2 class="h3">Example 2</h2>
+<div class="codeblock"><textarea class="python" name="code">
+#the function simple_interest accepts three arguments and returns the simple interest accordingly
+def simple_interest(p,t,r):
+    return (p*t*r)/100
+p = float(input("Enter the principle amount? "))
+r = float(input("Enter the rate of interest? "))
+t = float(input("Enter the time in years? "))
+print("Simple Interest: ",simple_interest(p,r,t))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+Enter the principle amount? 10000
+Enter the rate of interest? 5
+Enter the time in years? 2
+Simple Interest:  1000.0
+</pre></div>
+<h2 class="h3">Example 3</h2>
+<div class="codeblock"><textarea class="python" name="code">
+#the function calculate returns the sum of two arguments a and b
+def calculate(a,b):
+    return a+b
+calculate(10) # this causes an error as we are missing a required arguments b.
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+TypeError: calculate() missing 1 required positional argument: 'b'
+</pre></div>
+<h2 class="h2">Keyword arguments</h2>
+<p>Python allows us to call the function with the keyword arguments. This kind of function call will enable us to pass the arguments in the random order.</p>
+<p>The name of the arguments is treated as the keywords and matched in the function calling and definition. If the same match is found, the values of the arguments are copied in the function definition.</p>
+<p>Consider the following example.</p>
+<h2 class="h3">Example 1</h2>
+<div class="codeblock"><textarea class="python" name="code">
+#function func is called with the name and message as the keyword arguments
+def func(name,message):
+    print("printing the message with",name,"and ",message)
+func(name = "John",message="hello") #name and message is copied with the values John and hello respectively
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+printing the message with John and  hello
+</pre></div>
+<h2 class="h3">Example 2 providing the values in different order at the calling </h2>
+<div class="codeblock"><textarea class="python" name="code">
+#The function simple_interest(p, t, r) is called with the keyword arguments the order of arguments doesn't matter in this case
+def simple_interest(p,t,r):
+    return (p*t*r)/100
+print("Simple Interest: ",simple_interest(t=10,r=10,p=1900)) 
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+Simple Interest:  1900.0
+</pre></div>
+<p>If we provide the different name of arguments at the time of function call, an error will be thrown.</p>
+<p>Consider the following example.</p>
+<h2 class="h3">Example 3</h2>
+<div class="codeblock"><textarea class="python" name="code">
+#The function simple_interest(p, t, r) is called with the keyword arguments. 
+def simple_interest(p,t,r):
+    return (p*t*r)/100
+
+print("Simple Interest: ",simple_interest(time=10,rate=10,principle=1900)) # doesn?t find the exact match of the name of the arguments (keywords)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+TypeError: simple_interest() got an unexpected keyword argument 'time'
+</pre></div>
+<p>The python allows us to provide the mix of the required arguments and keyword arguments at the time of function call. However, the required argument must not be given after the keyword argument, i.e., once the keyword argument is encountered in the function call,  the following arguments must also be the keyword arguments.</p>
+<p>Consider the following example.</p>
+<h2 class="h3">Example 4</h2>
+<div class="codeblock"><textarea class="python" name="code">
+def func(name1,message,name2):
+    print("printing the message with",name1,",",message,",and",name2)
+func("John",message="hello",name2="David") #the first argument is not the keyword argument
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+printing the message with John , hello ,and David
+</pre></div>
+<p>The following example will cause an error due to an in-proper mix of keyword and required arguments being passed in the function call.</p>
+<h2 class="h3">Example 5</h2>
+<div class="codeblock"><textarea class="python" name="code">
+def func(name1,message,name2):
+    print("printing the message with",name1,",",message,",and",name2)
+func("John",message="hello","David")   
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+SyntaxError: positional argument follows keyword argument
+</pre></div>
+<h2 class="h2">Default Arguments </h2>
+<p>Python allows us to initialize the arguments at the function definition. If the value of any of the argument is not provided at the time of function call, then that argument can be initialized with the value given in the definition even if the argument is not specified at the function call.</p>
+<h2 class="h3">Example 1</h2>
+<div class="codeblock"><textarea class="python" name="code">
+def printme(name,age=22):
+    print("My name is",name,"and age is",age)
+printme(name = "john") #the variable age is not passed into the function however the default value of age is considered in the function
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+My name is john and age is 22
+</pre></div>
+<h2 class="h3">Example 2</h2>
+<div class="codeblock"><textarea class="python" name="code">
+def printme(name,age=22):
+    print("My name is",name,"and age is",age)
+printme(name = "john") #the variable age is not passed into the function however the default value of age is considered in the function
+printme(age = 10,name="David") #the value of age is overwritten here, 10 will be printed as age
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+My name is john and age is 22
+My name is David and age is 10
+</pre></div>
+<h2 class="h2">Variable length Arguments </h2>
+<p>In the large projects, sometimes we may not know the number of arguments to be passed in advance. In such cases, Python provides us the flexibility to provide the comma separated values which are internally treated as tuples at the function call.</p>
+<p>However, at the function definition, we have to define the variable with * (star) as *&lt;variable - name &gt;.</p>
+<p>Consider the following example.</p>
+<h2 class="h3">Example </h2>
+<div class="codeblock"><textarea class="python" name="code">
+def printme(*names):
+    print("type of passed argument is ",type(names))
+    print("printing the passed arguments...")
+    for name in names:
+        print(name)
+printme("john","David","smith","nick")
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+type of passed argument is  <class 'tuple'="">
+printing the passed arguments...
+john
+David
+smith
+nick
+</class></pre></div>
+<h2 class="h2">Scope of variables</h2>
+<p>The scopes of the variables depend upon the location where the variable is being declared. The variable declared in one part of the program may not be accessible to the other parts.</p>
+<p>In python, the variables are defined with the two types of scopes.</p>
+<ol class="points">
+<li>Global variables</li>
+<li>Local variables</li>
+</ol>
+<p>The variable defined outside any function is known to have a global scope whereas the variable defined inside a function is known to have a local scope.</p>
+<p>Consider the following example.</p>
+<h2 class="h3">Example 1</h2>
+<div class="codeblock"><textarea class="python" name="code">
+def print_message():
+    message = "hello !! I am going to print a message." # the variable message is local to the function itself
+    print(message)
+print_message()
+print(message) # this will cause an error since a local variable cannot be accessible here. 
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+hello !! I am going to print a message.
+  File "/root/PycharmProjects/PythonTest/Test1.py", line 5, in <module>
+    print(message)
+NameError: name 'message' is not defined
+</module></pre></div>
+<h2 class="h3">Example 2</h2>
+<div class="codeblock"><textarea class="python" name="code">
+def calculate(*args):
+    sum=0
+    for arg in args:
+        sum = sum +arg
+    print("The sum is",sum)
+sum=0
+calculate(10,20,30) #60 will be printed as the sum
+print("Value of sum outside the function:",sum) # 0 will be printed
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+The sum is 60
+Value of sum outside the function: 0
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-lambda-functions">Python Lambda Functions</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-dictionary" style="float:left">¡û prev</a>
+<a class="next" href="python-lambda-functions" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</p></p></td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-lambda-functions">next ¡ú</a>
+<a class="next" href="python-dictionary">¡û prev</a>
+</div>
+<h1 class="h1">Python Functions</h1>
+<p>Functions are the most important aspect of an application. A function can be defined as the organized block of reusable code which can be called whenever required.</p>
+<p>Python allows us to divide a large program into the basic building blocks known as function. The function contains the set of programming statements enclosed by {}. A function can be called multiple times to provide reusability and modularity to the python program.</p>
+<p>In other words, we can say that the collection of functions creates a program. The function is also known as procedure or subroutine in other programming languages.</p>
+<p>Python provide us various inbuilt functions like range() or print(). Although, the user can create its functions which can be called user-defined functions.</p>
+<h2 class="h2">Advantage of functions in python</h2>
+<p>There are the following advantages of C functions.</p>
+<ul class="points">
+<li>By using functions, we can avoid rewriting same logic/code again and again in a program.</li>
+<li>We can call python functions any number of times in a program and from any place in a program.</li>
+<li>We can track a large python program easily when it is divided into multiple functions.</li>
+<li>Reusability is the main achievement of python functions.</li>
+<li>However, Function calling is always overhead in a python program.</li>
+</ul>
+<h2 class="h2">Creating a function </h2>
+<p>In python, we can use <strong>def</strong> keyword to define the function. The syntax to define a function in python is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+def my_function():
+	function-suite 
+	return &lt;expression&gt; 
+</textarea></div>
+<p>The function block is started with the colon (:) and all the same level block statements remain at the same indentation.<p>
+<p>A function can accept any number of parameters that must be the same in the definition and function calling.</p>
+<h2 class="h2">Function calling</h2>
+<p>In python, a function must be defined before the function calling otherwise the python interpreter gives an error. Once the function is defined, we can call it from another function or the python prompt.  To call the function, use the function name followed by the parentheses.</p>
+<p>A simple function that prints the message "Hello Word" is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+def hello_world():
+	print("hello world")
+
+hello_world()  
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+hello world
+</pre></div>
+<h2 class="h2">Parameters in function</h2>
+<p>The information into the functions can be passed as the parameters. The parameters are specified in the parentheses. We can give any number of parameters, but we have to separate them with a comma.</p>
+<p>Consider the following example which contains a function that accepts a string as the parameter and prints it.
+</p>
+<h2 class="h3">Example 1</h2>
+<div class="codeblock"><textarea class="python" name="code">
+#defining the function
+def func (name):
+	print("Hi ",name);
+
+#calling the function 
+func("Ayush") 
+</textarea></div>
+<h2 class="h3">Example 2</h2>
+<div class="codeblock"><textarea class="python" name="code">
+#python function to calculate the sum of two variables 
+#defining the function
+def sum (a,b):
+	return a+b;
+
+#taking values from the user
+a = int(input("Enter a: "))
+b = int(input("Enter b: "))
+
+#printing the sum of a and b
+print("Sum = ",sum(a,b))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+Enter a: 10
+Enter b: 20
+Sum =  30
+</pre></div>
+<h2 class="h2">Call by reference in Python </h2>
+<p>In python, all the functions are called by reference, i.e., all the changes made to the reference inside the function revert back to the original value referred by the reference.</p>
+<p>However, there is an exception in the case of mutable objects since the changes made to the mutable objects like string do not revert to the original string rather, a new string object is made, and therefore the two different objects are printed.</p>
+<h2 class="h3">Example 1 Passing Immutable Object (List) </h2>
+<div class="codeblock"><textarea class="python" name="code">
+#defining the function
+def change_list(list1):
+	list1.append(20);
+	list1.append(30);
+	print("list inside function = ",list1)
+
+#defining the list
+list1 = [10,30,40,50]
+
+#calling the function 
+change_list(list1);
+print("list outside function = ",list1);
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+list inside function =  [10, 30, 40, 50, 20, 30]
+list outside function =  [10, 30, 40, 50, 20, 30]
+</pre></div>
+<h2 class="h3">Example 2 Passing Mutable Object (String) </h2>
+<div class="codeblock"><textarea class="python" name="code">
+#defining the function
+def change_string (str):
+	str = str + " Hows you";
+	print("printing the string inside function :",str);
+
+string1 = "Hi I am there"
+
+#calling the function
+change_string(string1)
+
+print("printing the string outside function :",string1)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+printing the string inside function : Hi I am there Hows you
+printing the string outside function : Hi I am there
+</pre></div>
+<h2 class="h2">Types of arguments </h2>
+<p>There may be several types of arguments which can be passed at the time of function calling.</p>
+<ol class="points">
+<li>Required arguments</li>
+<li>Keyword arguments</li>
+<li>Default arguments</li>
+<li>Variable-length arguments</li>
+</ol>
+<h2 class="h2">Required Arguments</h2>
+<p>Till now, we have learned about function calling in python.  However, we can provide the arguments at the time of function calling. As far as the required arguments are concerned, these are the arguments which are required to be passed at the time of function calling with the exact match of their positions in the function call and function definition. If either of the arguments is not provided in the function call, or the position of the arguments is changed, then the python interpreter will show the error.</p>
+<p>Consider the following example.</p>
+<h2 class="h3">Example 1</h2>
+<div class="codeblock"><textarea class="python" name="code">
+#the argument name is the required argument to the function func 
+def func(name):
+    message = "Hi "+name;
+    return message;
+name = input("Enter the name?")
+print(func(name))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+Enter the name?John
+Hi John
+</pre></div>
+<h2 class="h3">Example 2</h2>
+<div class="codeblock"><textarea class="python" name="code">
+#the function simple_interest accepts three arguments and returns the simple interest accordingly
+def simple_interest(p,t,r):
+    return (p*t*r)/100
+p = float(input("Enter the principle amount? "))
+r = float(input("Enter the rate of interest? "))
+t = float(input("Enter the time in years? "))
+print("Simple Interest: ",simple_interest(p,r,t))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+Enter the principle amount? 10000
+Enter the rate of interest? 5
+Enter the time in years? 2
+Simple Interest:  1000.0
+</pre></div>
+<h2 class="h3">Example 3</h2>
+<div class="codeblock"><textarea class="python" name="code">
+#the function calculate returns the sum of two arguments a and b
+def calculate(a,b):
+    return a+b
+calculate(10) # this causes an error as we are missing a required arguments b.
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+TypeError: calculate() missing 1 required positional argument: 'b'
+</pre></div>
+<h2 class="h2">Keyword arguments</h2>
+<p>Python allows us to call the function with the keyword arguments. This kind of function call will enable us to pass the arguments in the random order.</p>
+<p>The name of the arguments is treated as the keywords and matched in the function calling and definition. If the same match is found, the values of the arguments are copied in the function definition.</p>
+<p>Consider the following example.</p>
+<h2 class="h3">Example 1</h2>
+<div class="codeblock"><textarea class="python" name="code">
+#function func is called with the name and message as the keyword arguments
+def func(name,message):
+    print("printing the message with",name,"and ",message)
+func(name = "John",message="hello") #name and message is copied with the values John and hello respectively
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+printing the message with John and  hello
+</pre></div>
+<h2 class="h3">Example 2 providing the values in different order at the calling </h2>
+<div class="codeblock"><textarea class="python" name="code">
+#The function simple_interest(p, t, r) is called with the keyword arguments the order of arguments doesn't matter in this case
+def simple_interest(p,t,r):
+    return (p*t*r)/100
+print("Simple Interest: ",simple_interest(t=10,r=10,p=1900)) 
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+Simple Interest:  1900.0
+</pre></div>
+<p>If we provide the different name of arguments at the time of function call, an error will be thrown.</p>
+<p>Consider the following example.</p>
+<h2 class="h3">Example 3</h2>
+<div class="codeblock"><textarea class="python" name="code">
+#The function simple_interest(p, t, r) is called with the keyword arguments. 
+def simple_interest(p,t,r):
+    return (p*t*r)/100
+
+print("Simple Interest: ",simple_interest(time=10,rate=10,principle=1900)) # doesn?t find the exact match of the name of the arguments (keywords)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+TypeError: simple_interest() got an unexpected keyword argument 'time'
+</pre></div>
+<p>The python allows us to provide the mix of the required arguments and keyword arguments at the time of function call. However, the required argument must not be given after the keyword argument, i.e., once the keyword argument is encountered in the function call,  the following arguments must also be the keyword arguments.</p>
+<p>Consider the following example.</p>
+<h2 class="h3">Example 4</h2>
+<div class="codeblock"><textarea class="python" name="code">
+def func(name1,message,name2):
+    print("printing the message with",name1,",",message,",and",name2)
+func("John",message="hello",name2="David") #the first argument is not the keyword argument
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+printing the message with John , hello ,and David
+</pre></div>
+<p>The following example will cause an error due to an in-proper mix of keyword and required arguments being passed in the function call.</p>
+<h2 class="h3">Example 5</h2>
+<div class="codeblock"><textarea class="python" name="code">
+def func(name1,message,name2):
+    print("printing the message with",name1,",",message,",and",name2)
+func("John",message="hello","David")   
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+SyntaxError: positional argument follows keyword argument
+</pre></div>
+<h2 class="h2">Default Arguments </h2>
+<p>Python allows us to initialize the arguments at the function definition. If the value of any of the argument is not provided at the time of function call, then that argument can be initialized with the value given in the definition even if the argument is not specified at the function call.</p>
+<h2 class="h3">Example 1</h2>
+<div class="codeblock"><textarea class="python" name="code">
+def printme(name,age=22):
+    print("My name is",name,"and age is",age)
+printme(name = "john") #the variable age is not passed into the function however the default value of age is considered in the function
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+My name is john and age is 22
+</pre></div>
+<h2 class="h3">Example 2</h2>
+<div class="codeblock"><textarea class="python" name="code">
+def printme(name,age=22):
+    print("My name is",name,"and age is",age)
+printme(name = "john") #the variable age is not passed into the function however the default value of age is considered in the function
+printme(age = 10,name="David") #the value of age is overwritten here, 10 will be printed as age
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+My name is john and age is 22
+My name is David and age is 10
+</pre></div>
+<h2 class="h2">Variable length Arguments </h2>
+<p>In the large projects, sometimes we may not know the number of arguments to be passed in advance. In such cases, Python provides us the flexibility to provide the comma separated values which are internally treated as tuples at the function call.</p>
+<p>However, at the function definition, we have to define the variable with * (star) as *&lt;variable - name &gt;.</p>
+<p>Consider the following example.</p>
+<h2 class="h3">Example </h2>
+<div class="codeblock"><textarea class="python" name="code">
+def printme(*names):
+    print("type of passed argument is ",type(names))
+    print("printing the passed arguments...")
+    for name in names:
+        print(name)
+printme("john","David","smith","nick")
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+type of passed argument is  <class 'tuple'="">
+printing the passed arguments...
+john
+David
+smith
+nick
+</class></pre></div>
+<h2 class="h2">Scope of variables</h2>
+<p>The scopes of the variables depend upon the location where the variable is being declared. The variable declared in one part of the program may not be accessible to the other parts.</p>
+<p>In python, the variables are defined with the two types of scopes.</p>
+<ol class="points">
+<li>Global variables</li>
+<li>Local variables</li>
+</ol>
+<p>The variable defined outside any function is known to have a global scope whereas the variable defined inside a function is known to have a local scope.</p>
+<p>Consider the following example.</p>
+<h2 class="h3">Example 1</h2>
+<div class="codeblock"><textarea class="python" name="code">
+def print_message():
+    message = "hello !! I am going to print a message." # the variable message is local to the function itself
+    print(message)
+print_message()
+print(message) # this will cause an error since a local variable cannot be accessible here. 
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+hello !! I am going to print a message.
+  File "/root/PycharmProjects/PythonTest/Test1.py", line 5, in <module>
+    print(message)
+NameError: name 'message' is not defined
+</module></pre></div>
+<h2 class="h3">Example 2</h2>
+<div class="codeblock"><textarea class="python" name="code">
+def calculate(*args):
+    sum=0
+    for arg in args:
+        sum = sum +arg
+    print("The sum is",sum)
+sum=0
+calculate(10,20,30) #60 will be printed as the sum
+print("Value of sum outside the function:",sum) # 0 will be printed
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+The sum is 60
+Value of sum outside the function: 0
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-lambda-functions">Python Lambda Functions</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-dictionary" style="float:left">¡û prev</a>
+<a class="next" href="python-lambda-functions" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</p></p></td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-lambda-functions">next ¡ú</a>
+<a class="next" href="python-dictionary">¡û prev</a>
+</div>
+<h1 class="h1">Python Functions</h1>
+<p>Functions are the most important aspect of an application. A function can be defined as the organized block of reusable code which can be called whenever required.</p>
+<p>Python allows us to divide a large program into the basic building blocks known as function. The function contains the set of programming statements enclosed by {}. A function can be called multiple times to provide reusability and modularity to the python program.</p>
+<p>In other words, we can say that the collection of functions creates a program. The function is also known as procedure or subroutine in other programming languages.</p>
+<p>Python provide us various inbuilt functions like range() or print(). Although, the user can create its functions which can be called user-defined functions.</p>
+<h2 class="h2">Advantage of functions in python</h2>
+<p>There are the following advantages of C functions.</p>
+<ul class="points">
+<li>By using functions, we can avoid rewriting same logic/code again and again in a program.</li>
+<li>We can call python functions any number of times in a program and from any place in a program.</li>
+<li>We can track a large python program easily when it is divided into multiple functions.</li>
+<li>Reusability is the main achievement of python functions.</li>
+<li>However, Function calling is always overhead in a python program.</li>
+</ul>
+<h2 class="h2">Creating a function </h2>
+<p>In python, we can use <strong>def</strong> keyword to define the function. The syntax to define a function in python is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+def my_function():
+	function-suite 
+	return &lt;expression&gt; 
+</textarea></div>
+<p>The function block is started with the colon (:) and all the same level block statements remain at the same indentation.<p>
+<p>A function can accept any number of parameters that must be the same in the definition and function calling.</p>
+<h2 class="h2">Function calling</h2>
+<p>In python, a function must be defined before the function calling otherwise the python interpreter gives an error. Once the function is defined, we can call it from another function or the python prompt.  To call the function, use the function name followed by the parentheses.</p>
+<p>A simple function that prints the message "Hello Word" is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+def hello_world():
+	print("hello world")
+
+hello_world()  
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+hello world
+</pre></div>
+<h2 class="h2">Parameters in function</h2>
+<p>The information into the functions can be passed as the parameters. The parameters are specified in the parentheses. We can give any number of parameters, but we have to separate them with a comma.</p>
+<p>Consider the following example which contains a function that accepts a string as the parameter and prints it.
+</p>
+<h2 class="h3">Example 1</h2>
+<div class="codeblock"><textarea class="python" name="code">
+#defining the function
+def func (name):
+	print("Hi ",name);
+
+#calling the function 
+func("Ayush") 
+</textarea></div>
+<h2 class="h3">Example 2</h2>
+<div class="codeblock"><textarea class="python" name="code">
+#python function to calculate the sum of two variables 
+#defining the function
+def sum (a,b):
+	return a+b;
+
+#taking values from the user
+a = int(input("Enter a: "))
+b = int(input("Enter b: "))
+
+#printing the sum of a and b
+print("Sum = ",sum(a,b))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+Enter a: 10
+Enter b: 20
+Sum =  30
+</pre></div>
+<h2 class="h2">Call by reference in Python </h2>
+<p>In python, all the functions are called by reference, i.e., all the changes made to the reference inside the function revert back to the original value referred by the reference.</p>
+<p>However, there is an exception in the case of mutable objects since the changes made to the mutable objects like string do not revert to the original string rather, a new string object is made, and therefore the two different objects are printed.</p>
+<h2 class="h3">Example 1 Passing Immutable Object (List) </h2>
+<div class="codeblock"><textarea class="python" name="code">
+#defining the function
+def change_list(list1):
+	list1.append(20);
+	list1.append(30);
+	print("list inside function = ",list1)
+
+#defining the list
+list1 = [10,30,40,50]
+
+#calling the function 
+change_list(list1);
+print("list outside function = ",list1);
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+list inside function =  [10, 30, 40, 50, 20, 30]
+list outside function =  [10, 30, 40, 50, 20, 30]
+</pre></div>
+<h2 class="h3">Example 2 Passing Mutable Object (String) </h2>
+<div class="codeblock"><textarea class="python" name="code">
+#defining the function
+def change_string (str):
+	str = str + " Hows you";
+	print("printing the string inside function :",str);
+
+string1 = "Hi I am there"
+
+#calling the function
+change_string(string1)
+
+print("printing the string outside function :",string1)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+printing the string inside function : Hi I am there Hows you
+printing the string outside function : Hi I am there
+</pre></div>
+<h2 class="h2">Types of arguments </h2>
+<p>There may be several types of arguments which can be passed at the time of function calling.</p>
+<ol class="points">
+<li>Required arguments</li>
+<li>Keyword arguments</li>
+<li>Default arguments</li>
+<li>Variable-length arguments</li>
+</ol>
+<h2 class="h2">Required Arguments</h2>
+<p>Till now, we have learned about function calling in python.  However, we can provide the arguments at the time of function calling. As far as the required arguments are concerned, these are the arguments which are required to be passed at the time of function calling with the exact match of their positions in the function call and function definition. If either of the arguments is not provided in the function call, or the position of the arguments is changed, then the python interpreter will show the error.</p>
+<p>Consider the following example.</p>
+<h2 class="h3">Example 1</h2>
+<div class="codeblock"><textarea class="python" name="code">
+#the argument name is the required argument to the function func 
+def func(name):
+    message = "Hi "+name;
+    return message;
+name = input("Enter the name?")
+print(func(name))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+Enter the name?John
+Hi John
+</pre></div>
+<h2 class="h3">Example 2</h2>
+<div class="codeblock"><textarea class="python" name="code">
+#the function simple_interest accepts three arguments and returns the simple interest accordingly
+def simple_interest(p,t,r):
+    return (p*t*r)/100
+p = float(input("Enter the principle amount? "))
+r = float(input("Enter the rate of interest? "))
+t = float(input("Enter the time in years? "))
+print("Simple Interest: ",simple_interest(p,r,t))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+Enter the principle amount? 10000
+Enter the rate of interest? 5
+Enter the time in years? 2
+Simple Interest:  1000.0
+</pre></div>
+<h2 class="h3">Example 3</h2>
+<div class="codeblock"><textarea class="python" name="code">
+#the function calculate returns the sum of two arguments a and b
+def calculate(a,b):
+    return a+b
+calculate(10) # this causes an error as we are missing a required arguments b.
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+TypeError: calculate() missing 1 required positional argument: 'b'
+</pre></div>
+<h2 class="h2">Keyword arguments</h2>
+<p>Python allows us to call the function with the keyword arguments. This kind of function call will enable us to pass the arguments in the random order.</p>
+<p>The name of the arguments is treated as the keywords and matched in the function calling and definition. If the same match is found, the values of the arguments are copied in the function definition.</p>
+<p>Consider the following example.</p>
+<h2 class="h3">Example 1</h2>
+<div class="codeblock"><textarea class="python" name="code">
+#function func is called with the name and message as the keyword arguments
+def func(name,message):
+    print("printing the message with",name,"and ",message)
+func(name = "John",message="hello") #name and message is copied with the values John and hello respectively
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+printing the message with John and  hello
+</pre></div>
+<h2 class="h3">Example 2 providing the values in different order at the calling </h2>
+<div class="codeblock"><textarea class="python" name="code">
+#The function simple_interest(p, t, r) is called with the keyword arguments the order of arguments doesn't matter in this case
+def simple_interest(p,t,r):
+    return (p*t*r)/100
+print("Simple Interest: ",simple_interest(t=10,r=10,p=1900)) 
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+Simple Interest:  1900.0
+</pre></div>
+<p>If we provide the different name of arguments at the time of function call, an error will be thrown.</p>
+<p>Consider the following example.</p>
+<h2 class="h3">Example 3</h2>
+<div class="codeblock"><textarea class="python" name="code">
+#The function simple_interest(p, t, r) is called with the keyword arguments. 
+def simple_interest(p,t,r):
+    return (p*t*r)/100
+
+print("Simple Interest: ",simple_interest(time=10,rate=10,principle=1900)) # doesn?t find the exact match of the name of the arguments (keywords)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+TypeError: simple_interest() got an unexpected keyword argument 'time'
+</pre></div>
+<p>The python allows us to provide the mix of the required arguments and keyword arguments at the time of function call. However, the required argument must not be given after the keyword argument, i.e., once the keyword argument is encountered in the function call,  the following arguments must also be the keyword arguments.</p>
+<p>Consider the following example.</p>
+<h2 class="h3">Example 4</h2>
+<div class="codeblock"><textarea class="python" name="code">
+def func(name1,message,name2):
+    print("printing the message with",name1,",",message,",and",name2)
+func("John",message="hello",name2="David") #the first argument is not the keyword argument
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+printing the message with John , hello ,and David
+</pre></div>
+<p>The following example will cause an error due to an in-proper mix of keyword and required arguments being passed in the function call.</p>
+<h2 class="h3">Example 5</h2>
+<div class="codeblock"><textarea class="python" name="code">
+def func(name1,message,name2):
+    print("printing the message with",name1,",",message,",and",name2)
+func("John",message="hello","David")   
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+SyntaxError: positional argument follows keyword argument
+</pre></div>
+<h2 class="h2">Default Arguments </h2>
+<p>Python allows us to initialize the arguments at the function definition. If the value of any of the argument is not provided at the time of function call, then that argument can be initialized with the value given in the definition even if the argument is not specified at the function call.</p>
+<h2 class="h3">Example 1</h2>
+<div class="codeblock"><textarea class="python" name="code">
+def printme(name,age=22):
+    print("My name is",name,"and age is",age)
+printme(name = "john") #the variable age is not passed into the function however the default value of age is considered in the function
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+My name is john and age is 22
+</pre></div>
+<h2 class="h3">Example 2</h2>
+<div class="codeblock"><textarea class="python" name="code">
+def printme(name,age=22):
+    print("My name is",name,"and age is",age)
+printme(name = "john") #the variable age is not passed into the function however the default value of age is considered in the function
+printme(age = 10,name="David") #the value of age is overwritten here, 10 will be printed as age
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+My name is john and age is 22
+My name is David and age is 10
+</pre></div>
+<h2 class="h2">Variable length Arguments </h2>
+<p>In the large projects, sometimes we may not know the number of arguments to be passed in advance. In such cases, Python provides us the flexibility to provide the comma separated values which are internally treated as tuples at the function call.</p>
+<p>However, at the function definition, we have to define the variable with * (star) as *&lt;variable - name &gt;.</p>
+<p>Consider the following example.</p>
+<h2 class="h3">Example </h2>
+<div class="codeblock"><textarea class="python" name="code">
+def printme(*names):
+    print("type of passed argument is ",type(names))
+    print("printing the passed arguments...")
+    for name in names:
+        print(name)
+printme("john","David","smith","nick")
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+type of passed argument is  <class 'tuple'="">
+printing the passed arguments...
+john
+David
+smith
+nick
+</class></pre></div>
+<h2 class="h2">Scope of variables</h2>
+<p>The scopes of the variables depend upon the location where the variable is being declared. The variable declared in one part of the program may not be accessible to the other parts.</p>
+<p>In python, the variables are defined with the two types of scopes.</p>
+<ol class="points">
+<li>Global variables</li>
+<li>Local variables</li>
+</ol>
+<p>The variable defined outside any function is known to have a global scope whereas the variable defined inside a function is known to have a local scope.</p>
+<p>Consider the following example.</p>
+<h2 class="h3">Example 1</h2>
+<div class="codeblock"><textarea class="python" name="code">
+def print_message():
+    message = "hello !! I am going to print a message." # the variable message is local to the function itself
+    print(message)
+print_message()
+print(message) # this will cause an error since a local variable cannot be accessible here. 
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+hello !! I am going to print a message.
+  File "/root/PycharmProjects/PythonTest/Test1.py", line 5, in <module>
+    print(message)
+NameError: name 'message' is not defined
+</module></pre></div>
+<h2 class="h3">Example 2</h2>
+<div class="codeblock"><textarea class="python" name="code">
+def calculate(*args):
+    sum=0
+    for arg in args:
+        sum = sum +arg
+    print("The sum is",sum)
+sum=0
+calculate(10,20,30) #60 will be printed as the sum
+print("Value of sum outside the function:",sum) # 0 will be printed
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock"><pre>
+The sum is 60
+Value of sum outside the function: 0
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-lambda-functions">Python Lambda Functions</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-dictionary" style="float:left">¡û prev</a>
+<a class="next" href="python-lambda-functions" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</p></p></td></tr>
+</table>
+</div></body></html></body></html>

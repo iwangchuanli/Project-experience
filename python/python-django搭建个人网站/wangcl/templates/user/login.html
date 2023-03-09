@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/login.css"/>
+    <link rel="stylesheet" href="/static/expand/bootstrap/css/bootstrap.min.css">
+    <script src="/static/expand/jquery/jquery-3.3.1.min.js"></script>
+    <script src="/static/expand/bootstrap/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="login_btn_div">
+    <h1>欢迎登录！</h1>
+    {% csrf_token %}
+    {% comment %}<form action="/login/" method="post">
+        <p>
+            用户名：
+            <input type="text" name="username">
+        </p>
+        <p>
+            密码：
+            <input type="text" name="password">
+        </p>
+        <p>
+            <input type="submit" value="登录">
+        </p>
+        <hr>
+    </form>{% endcomment %}
+    <a id="Login_start_" class="btn btn-danger" style="width:100px;height:40px;border-radius: 0;">登陆</a>
+    <a id="Regist_start_" class="btn btn-success" style="width:100px;height:40px;border-radius: 0;">注册</a>
+</div>
+{#按钮#}
+
+<div id='_start' class="col c8 aligncenter">
+    <div id='_close' style="display: none;">
+        <span class="glyphicon glyphicon-remove"></span>
+    </div>
+    <br/>
+    <!--登录框-->
+    <div id="login_container">
+        <div id="lab1">
+            <span id="lab_login">会员登录</span>
+            <span id="lab_toRegist">
+						&emsp;还没有账号&nbsp;
+						<span id='toRegist' style="color: #EB9316;cursor: pointer;">立即注册</span>
+					</span>
+        </div>
+        <div style="width:330px;">
+            <span id="lab_type1">手机号/账号登陆</span>
+        </div>
+        <div id="form_container1">
+            <br/>
+            <input type="text" class="form-control" placeholder="手机号/用户名" id="login_number"/>
+            <input type="password" class="form-control" placeholder="密码" id="login_password"/>
+            <input type="button" value="登录" class="btn btn-success" id="login_btn"/>
+            <span id="rememberOrfindPwd">
+						<span>
+							<input id="remember" type="checkbox" style="margin-bottom: -1.5px;"/>
+						</span>
+					<span style="color:#000000">
+							记住密码&emsp;&emsp;&emsp;&emsp;
+						</span>
+					<span style="color:#000000">
+							忘记密码
+						</span>
+					</span>
+        </div>
+
+        <div style="display:block;width:330px;height: 40px;">
+            <span id="lab_type2">使用第三方直接登陆</span>
+        </div>
+        <div style="width:330px;height:100px;border-bottom: 1px solid #FFFFFF;">
+            <br/>
+            <button id="login_QQ" type="button" class="btn btn-info">
+                <img src="/static/images/qq32.png" style="width:20px;margin-top:-4px;"/>&emsp;QQ登录
+            </button>
+            <button id="login_WB" type="button" class="btn btn-danger">
+                <img src="/static/images/sina32.png" style="width:20px;margin-top:-4px;"/>&emsp;微博登录
+            </button>
+        </div>
+    </div>
+    <!-- 会员注册 -->
+    <div id='regist_container' style="display: none;">
+        <div id="lab1">
+            <span id="lab_login">会员注册</span>
+            <span id="lab_toLogin">
+						&emsp;已有账号&nbsp;
+						<span id='toLogin' style="color: #EB9316;cursor: pointer;">立即登录</span>
+					</span>
+        </div>
+        <div id="form_container2" style="padding-top: 25px;">
+            <input type="text" class="form-control" placeholder="用户名" id="regist_account"/>
+            <input type="password" class="form-control" placeholder="密码" id="regist_password1"/>
+            <input type="password" class="form-control" placeholder="确认密码" id="regist_password2"/>
+            <input type="text" class="form-control" placeholder="手机号" id="regist_phone"/>
+            <input type="text" class="form-control" placeholder="验证码" id="regist_vcode"/>
+            <!--<button id="getVCode" type="button" class="btn btn-success" >获取验证码</button>-->
+            <input id="getVCode" type="button" class="btn btn-success" value="点击发送验证码" onclick="sendCode(this)"/>
+        </div>
+        <input type="button" value="注册" class="btn btn-success" id="regist_btn"/>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    function uuid(len, radix) {
+        var chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('');
+        var uuid = [], i;
+        radix = radix || chars.length;
+        if (len) {
+            // Compact form
+            for (i = 0; i < len; i++) uuid[i] = chars[0 | Math.random() * radix];
+        } else {
+            // rfc4122, version 4 form
+            var r;
+            // rfc4122 requires these characters
+            uuid[8] = uuid[13] = uuid[18] = uuid[23] = '-';
+            uuid[14] = '4';
+            // Fill in random data.  At i==19 set the high bits of clock sequence as
+            // per rfc4122, sec. 4.1.5
+            for (i = 0; i < 36; i++) {
+                if (!uuid[i]) {
+                    r = 0 | Math.random() * 16;
+                    uuid[i] = chars[(i == 19) ? (r & 0x3) | 0x8 : r];
+                }
+            }
+        }
+        return uuid.join('');
+    }
+
+    $(document).ready(function () {
+        //打开会员登录
+        $("#Login_start_").click(function () {
+            $("#regist_container").hide();
+            $("#_close").show();
+            $("#_start").animate({
+                left: '350px',
+                height: '520px',
+                width: '400px'
+            }, 500, function () {
+                $("#login_container").show(500);
+                $("#_close").animate({
+                    height: '40px',
+                    width: '40px'
+                }, 500);
+            });
+        });
+        //打开会员注册
+        $("#Regist_start_").click(function () {
+            $("#login_container").hide();
+            $("#_close").show();
+            $("#_start").animate({
+                left: '350px',
+                height: '520px',
+                width: '400px'
+            }, 500, function () {
+                $("#regist_container").show(500);
+                $("#_close").animate({
+                    height: '40px',
+                    width: '40px'
+                }, 500);
+            });
+            $("#regist_account").attr('value', uuid(6, 16));
+        });
+        //关闭
+        $("#_close").click(function () {
+
+            $("#_close").animate({
+                height: '0px',
+                width: '0px'
+            }, 500, function () {
+                $("#_close").hide(500);
+                $("#login_container").hide(500);
+                $("#regist_container").hide(500);
+                $("#_start").animate({
+                    left: '0px',
+                    height: '0px',
+                    width: '0px'
+                }, 500);
+            });
+        });
+        //去 注册
+        $("#toRegist").click(function () {
+            $("#login_container").hide(500);
+            $("#regist_container").show(500);
+            $("#regist_account").attr('value', uuid(6, 16));
+        });
+        //去 登录
+        $("#toLogin").click(function () {
+            $("#regist_container").hide(500);
+            $("#login_container").show(500);
+        });
+
+        //登录按钮
+        $("#login_btn").click(function () {
+            var user = $("#login_number").val();
+            var pwd = $("#login_password").val();
+            var csrf_token = "{{ csrf_token }}";
+            alert(user + pwd + csrf_token);
+            $.ajax({
+                url: "/login.html",
+                method: "POST",
+                data: {
+                    user: user,
+                    pwd: pwd,
+                    csrf_token: csrf_token
+                },
+                success: function () {
+                    alert("success");
+                }
+            });
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    var clock = '';
+    var nums = 30;
+    var btn;
+
+    function sendCode(thisBtn) {
+        btn = thisBtn;
+        btn.disabled = true; //将按钮置为不可点击
+        btn.value = '重新获取（' + nums + '）';
+        clock = setInterval(doLoop, 1000); //一秒执行一次
+    }
+
+    function doLoop() {
+        nums--;
+        if (nums > 0) {
+            btn.value = '重新获取（' + nums + '）';
+        } else {
+            clearInterval(clock); //清除js定时器
+            btn.disabled = false;
+            btn.value = '点击发送验证码';
+            nums = 10; //重置时间
+        }
+    }
+
+    $(document).ready(function () {
+        $("#login_QQ").click(function () {
+            alert("暂停使用！");
+        });
+        $("#login_WB").click(function () {
+            alert("暂停使用！");
+        });
+    });
+</script>
+</body>
+</html>

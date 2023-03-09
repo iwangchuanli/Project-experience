@@ -1,0 +1,1017 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-set">next ¡ú</a>
+<a class="next" href="python-lists">¡û prev</a>
+</div>
+<h1 class="h1">Python Tuple </h1>
+<p>Python Tuple is used to store the sequence of immutable python objects. Tuple is similar to lists since the value of the items stored in the list can be changed whereas the tuple is immutable and the value of the items stored in the tuple can not be changed.</p>
+<p>A tuple can be written as the collection of comma-separated values enclosed with the small brackets. A tuple can be defined as follows.</p>
+<div class="codeblock"><textarea class="python" name="code">
+T1 = (101, "Ayush", 22)
+T2 = ("Apple", "Banana", "Orange") 
+</textarea></div>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+tuple1 = (10, 20, 30, 40, 50, 60)
+print(tuple1)
+count = 0
+for i in tuple1:
+	print("tuple1[%d] = %d"%(count, i));
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+(10, 20, 30, 40, 50, 60)
+tuple1[0] = 10
+tuple1[0] = 20
+tuple1[0] = 30
+tuple1[0] = 40
+tuple1[0] = 50
+tuple1[0] = 60
+</pre></div>
+<h2 class="h3">Example 2</h2>
+<div class="codeblock"><textarea class="python" name="code">
+tuple1 = tuple(input("Enter the tuple elements ..."))
+print(tuple1)
+count = 0
+for i in tuple1:
+	print("tuple1[%d] = %s"%(count, i));
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Enter the tuple elements ...12345
+('1', '2', '3', '4', '5')
+tuple1[0] = 1
+tuple1[0] = 2
+tuple1[0] = 3
+tuple1[0] = 4
+tuple1[0] = 5
+</pre></div>
+<p>However, if we try to reassign the items of a tuple, we would get an error as the tuple object doesn't support the item assignment. </p>
+<p>An empty tuple can be written as follows. </p>
+<div class="codeblock"><textarea class="python" name="code">
+T3 = ()
+</textarea></div>
+<p>The tuple having a single value must include a comma as given below. </p>
+<div class="codeblock"><textarea class="python" name="code">
+T4 = (90,) 
+</textarea></div>
+<p>A tuple is indexed in the same way as the lists. The items in the tuple can be accessed by using their specific index value. </p>
+<p>We will see all these aspects of tuple in this section of the tutorial. </p>
+<h2 class="h2">Tuple indexing and splitting</h2>
+<p>The indexing and slicing in tuple are similar to lists. The indexing in the tuple starts from 0 and goes to length(tuple) - 1.</p>
+<p>The items in the tuple can be accessed by using the slice operator. Python also allows us to use the colon operator to access multiple items in the tuple.</p>
+<p>Consider the following image to understand the indexing and slicing in detail. </p>
+<img alt="Python Tuple" src="python/images/tuple-indexing-and-splitting.png"/>
+<p>Unlike lists, the tuple items can not be deleted by using the del keyword as tuples are immutable. To delete an entire tuple, we can use the del keyword with the tuple name. </p>
+<p>Consider the following example. </p>
+<div class="codeblock"><textarea class="python" name="code">
+tuple1 = (1, 2, 3, 4, 5, 6)
+print(tuple1)
+del tuple1[0]
+print(tuple1)
+del tuple1
+print(tuple1)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+(1, 2, 3, 4, 5, 6)
+Traceback (most recent call last):
+  File "tuple.py", line 4, in &lt;module&gt;
+    print(tuple1)
+NameError: name 'tuple1' is not defined
+</pre></div>
+<p>Like lists, the tuple elements can be accessed in both the directions. The right most element (last) of the tuple can be accessed by using the index -1. The elements from left to right are traversed using the negative indexing. </p>
+<p>Consider the following example. </p>
+<div class="codeblock"><textarea class="python" name="code">
+tuple1 = (1, 2, 3, 4, 5)
+print(tuple1[-1])
+print(tuple1[-4])
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+5
+2
+</pre></div>
+<h2 class="h2">Basic Tuple operations </h2>
+<p>The operators like concatenation (+), repetition (*), Membership (in) works in the same way as they work with the list. Consider the following table for more detail. </p>
+<p>Let's say Tuple t = (1, 2, 3, 4, 5) and Tuple t1 = (6, 7, 8, 9) are declared. </p>
+<table class="alt">
+<tr>
+<th>Operator </th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+<tr>
+<td>Repetition </td>
+<td>The repetition operator enables the tuple elements to be repeated multiple times. </td>
+<td><pre>T1*2 = (1, 2, 3, 4, 5, 1, 2, 3, 4, 5)</pre></td>
+</tr>
+<tr>
+<td>Concatenation </td>
+<td>It concatenates the tuple mentioned on either side of the operator. </td>
+<td><pre>T1+T2 = (1, 2, 3, 4, 5, 6, 7, 8, 9)</pre></td>
+</tr>
+<tr>
+<td>Membership</td>
+<td>It returns true if a particular item exists in the tuple otherwise false. </td>
+<td><pre>print (2 in T1) prints True. </pre></td>
+</tr>
+<tr>
+<td>Iteration </td>
+<td>The for loop is used to iterate over the tuple elements.</td>
+<td><pre>for i in T1: 
+    print(i)</pre>
+<strong>Output</strong>
+<pre>
+1
+2
+3
+4
+5</pre></td>
+</tr>
+<tr>
+<td>Length</td>
+<td>It is used to get the length of the tuple.</td>
+<td><pre>len(T1) = 5 </pre></td>
+</tr>
+</table>
+<h2 class="h2">Python Tuple inbuilt functions</h2>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Function</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>cmp(tuple1, tuple2)</td>
+<td>It compares two tuples and returns true if tuple1 is greater than tuple2 otherwise false. </td>
+</tr>
+<tr>
+<td>2</td>
+<td>len(tuple) </td>
+<td>It calculates the length of the tuple. </td>
+</tr>
+<tr>
+<td>3</td>
+<td>max(tuple)</td>
+<td>It returns the maximum element of the tuple. </td>
+</tr>
+<tr>
+<td>4</td>
+<td>min(tuple)</td>
+<td>It returns the minimum element of the tuple. </td>
+</tr>
+<tr>
+<td>5</td>
+<td>tuple(seq) </td>
+<td>It converts the specified sequence to the tuple. </td>
+</tr>
+</table>
+<h2 class="h2">Where use tuple </h2>
+<p>Using tuple instead of list is used in the following scenario. </p>
+<p>1. Using tuple instead of list gives us a clear idea that tuple data is constant and must not be changed. </p>
+<p>2. Tuple can simulate dictionary without keys. Consider the following nested structure which can be used as a dictionary. </p>
+<div class="codeblock"><textarea class="python" name="code">
+[(101, "John", 22), (102, "Mike", 28), 	(103, "Dustin", 30)] 
+</textarea></div>
+<p>3. Tuple can be used as the key inside dictionary due to its immutable nature. </p>
+<h2 class="h2">List VS Tuple </h2>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>List</th>
+<th>Tuple</th>
+</tr>
+<tr>
+<td>1</td>
+<td>The literal syntax of list is shown by the []. </td>
+<td>The literal syntax of the tuple is shown by the (). </td>
+</tr>
+<tr>
+<td>2</td>
+<td>The List is mutable. </td>
+<td>The tuple is immutable. </td>
+</tr>
+<tr>
+<td>3</td>
+<td>The List has the variable length. </td>
+<td>The tuple has the fixed length. </td>
+</tr>
+<tr>
+<td>4</td>
+<td>The list provides more functionality than tuple. </td>
+<td>The tuple provides less functionality than the list. </td>
+</tr>
+<tr>
+<td>5</td>
+<td>The list Is used in the scenario in which we need to store the simple collections with no constraints where the value of the items can be changed.</td>
+<td>The tuple is used in the cases where we need to store the read-only collections i.e., the value of the items can not be changed. It can be used as the key inside the dictionary. </td>
+</tr>
+</table>
+<h2 class="h2">Nesting List and tuple</h2>
+<p>We can store list inside tuple or tuple inside the list up to any number of level. </p>
+<p>Lets see an example of how can we store the tuple inside the list. </p>
+<div class="codeblock"><textarea class="python" name="code">
+Employees = [(101, "Ayush", 22), (102, "john", 29), (103, "james", 45), (104, "Ben", 34)]
+print("----Printing list----"); 
+for i in Employees:
+	print(i)
+Employees[0] = (110, "David",22)
+print();
+print("----Printing list after modification----");
+for i in Employees: 
+	print(i)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+----Printing list----
+(101, 'Ayush', 22)
+(102, 'john', 29)
+(103, 'james', 45)
+(104, 'Ben', 34)
+
+----Printing list after modification----
+
+(110, 'David', 22)
+(102, 'john', 29)
+(103, 'james', 45)
+(104, 'Ben', 34)
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-set">Python Set</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-lists" style="float:left">¡û prev</a>
+<a class="next" href="python-set" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-set">next ¡ú</a>
+<a class="next" href="python-lists">¡û prev</a>
+</div>
+<h1 class="h1">Python Tuple </h1>
+<p>Python Tuple is used to store the sequence of immutable python objects. Tuple is similar to lists since the value of the items stored in the list can be changed whereas the tuple is immutable and the value of the items stored in the tuple can not be changed.</p>
+<p>A tuple can be written as the collection of comma-separated values enclosed with the small brackets. A tuple can be defined as follows.</p>
+<div class="codeblock"><textarea class="python" name="code">
+T1 = (101, "Ayush", 22)
+T2 = ("Apple", "Banana", "Orange") 
+</textarea></div>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+tuple1 = (10, 20, 30, 40, 50, 60)
+print(tuple1)
+count = 0
+for i in tuple1:
+	print("tuple1[%d] = %d"%(count, i));
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+(10, 20, 30, 40, 50, 60)
+tuple1[0] = 10
+tuple1[0] = 20
+tuple1[0] = 30
+tuple1[0] = 40
+tuple1[0] = 50
+tuple1[0] = 60
+</pre></div>
+<h2 class="h3">Example 2</h2>
+<div class="codeblock"><textarea class="python" name="code">
+tuple1 = tuple(input("Enter the tuple elements ..."))
+print(tuple1)
+count = 0
+for i in tuple1:
+	print("tuple1[%d] = %s"%(count, i));
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Enter the tuple elements ...12345
+('1', '2', '3', '4', '5')
+tuple1[0] = 1
+tuple1[0] = 2
+tuple1[0] = 3
+tuple1[0] = 4
+tuple1[0] = 5
+</pre></div>
+<p>However, if we try to reassign the items of a tuple, we would get an error as the tuple object doesn't support the item assignment. </p>
+<p>An empty tuple can be written as follows. </p>
+<div class="codeblock"><textarea class="python" name="code">
+T3 = ()
+</textarea></div>
+<p>The tuple having a single value must include a comma as given below. </p>
+<div class="codeblock"><textarea class="python" name="code">
+T4 = (90,) 
+</textarea></div>
+<p>A tuple is indexed in the same way as the lists. The items in the tuple can be accessed by using their specific index value. </p>
+<p>We will see all these aspects of tuple in this section of the tutorial. </p>
+<h2 class="h2">Tuple indexing and splitting</h2>
+<p>The indexing and slicing in tuple are similar to lists. The indexing in the tuple starts from 0 and goes to length(tuple) - 1.</p>
+<p>The items in the tuple can be accessed by using the slice operator. Python also allows us to use the colon operator to access multiple items in the tuple.</p>
+<p>Consider the following image to understand the indexing and slicing in detail. </p>
+<img alt="Python Tuple" src="python/images/tuple-indexing-and-splitting.png"/>
+<p>Unlike lists, the tuple items can not be deleted by using the del keyword as tuples are immutable. To delete an entire tuple, we can use the del keyword with the tuple name. </p>
+<p>Consider the following example. </p>
+<div class="codeblock"><textarea class="python" name="code">
+tuple1 = (1, 2, 3, 4, 5, 6)
+print(tuple1)
+del tuple1[0]
+print(tuple1)
+del tuple1
+print(tuple1)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+(1, 2, 3, 4, 5, 6)
+Traceback (most recent call last):
+  File "tuple.py", line 4, in &lt;module&gt;
+    print(tuple1)
+NameError: name 'tuple1' is not defined
+</pre></div>
+<p>Like lists, the tuple elements can be accessed in both the directions. The right most element (last) of the tuple can be accessed by using the index -1. The elements from left to right are traversed using the negative indexing. </p>
+<p>Consider the following example. </p>
+<div class="codeblock"><textarea class="python" name="code">
+tuple1 = (1, 2, 3, 4, 5)
+print(tuple1[-1])
+print(tuple1[-4])
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+5
+2
+</pre></div>
+<h2 class="h2">Basic Tuple operations </h2>
+<p>The operators like concatenation (+), repetition (*), Membership (in) works in the same way as they work with the list. Consider the following table for more detail. </p>
+<p>Let's say Tuple t = (1, 2, 3, 4, 5) and Tuple t1 = (6, 7, 8, 9) are declared. </p>
+<table class="alt">
+<tr>
+<th>Operator </th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+<tr>
+<td>Repetition </td>
+<td>The repetition operator enables the tuple elements to be repeated multiple times. </td>
+<td><pre>T1*2 = (1, 2, 3, 4, 5, 1, 2, 3, 4, 5)</pre></td>
+</tr>
+<tr>
+<td>Concatenation </td>
+<td>It concatenates the tuple mentioned on either side of the operator. </td>
+<td><pre>T1+T2 = (1, 2, 3, 4, 5, 6, 7, 8, 9)</pre></td>
+</tr>
+<tr>
+<td>Membership</td>
+<td>It returns true if a particular item exists in the tuple otherwise false. </td>
+<td><pre>print (2 in T1) prints True. </pre></td>
+</tr>
+<tr>
+<td>Iteration </td>
+<td>The for loop is used to iterate over the tuple elements.</td>
+<td><pre>for i in T1: 
+    print(i)</pre>
+<strong>Output</strong>
+<pre>
+1
+2
+3
+4
+5</pre></td>
+</tr>
+<tr>
+<td>Length</td>
+<td>It is used to get the length of the tuple.</td>
+<td><pre>len(T1) = 5 </pre></td>
+</tr>
+</table>
+<h2 class="h2">Python Tuple inbuilt functions</h2>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Function</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>cmp(tuple1, tuple2)</td>
+<td>It compares two tuples and returns true if tuple1 is greater than tuple2 otherwise false. </td>
+</tr>
+<tr>
+<td>2</td>
+<td>len(tuple) </td>
+<td>It calculates the length of the tuple. </td>
+</tr>
+<tr>
+<td>3</td>
+<td>max(tuple)</td>
+<td>It returns the maximum element of the tuple. </td>
+</tr>
+<tr>
+<td>4</td>
+<td>min(tuple)</td>
+<td>It returns the minimum element of the tuple. </td>
+</tr>
+<tr>
+<td>5</td>
+<td>tuple(seq) </td>
+<td>It converts the specified sequence to the tuple. </td>
+</tr>
+</table>
+<h2 class="h2">Where use tuple </h2>
+<p>Using tuple instead of list is used in the following scenario. </p>
+<p>1. Using tuple instead of list gives us a clear idea that tuple data is constant and must not be changed. </p>
+<p>2. Tuple can simulate dictionary without keys. Consider the following nested structure which can be used as a dictionary. </p>
+<div class="codeblock"><textarea class="python" name="code">
+[(101, "John", 22), (102, "Mike", 28), 	(103, "Dustin", 30)] 
+</textarea></div>
+<p>3. Tuple can be used as the key inside dictionary due to its immutable nature. </p>
+<h2 class="h2">List VS Tuple </h2>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>List</th>
+<th>Tuple</th>
+</tr>
+<tr>
+<td>1</td>
+<td>The literal syntax of list is shown by the []. </td>
+<td>The literal syntax of the tuple is shown by the (). </td>
+</tr>
+<tr>
+<td>2</td>
+<td>The List is mutable. </td>
+<td>The tuple is immutable. </td>
+</tr>
+<tr>
+<td>3</td>
+<td>The List has the variable length. </td>
+<td>The tuple has the fixed length. </td>
+</tr>
+<tr>
+<td>4</td>
+<td>The list provides more functionality than tuple. </td>
+<td>The tuple provides less functionality than the list. </td>
+</tr>
+<tr>
+<td>5</td>
+<td>The list Is used in the scenario in which we need to store the simple collections with no constraints where the value of the items can be changed.</td>
+<td>The tuple is used in the cases where we need to store the read-only collections i.e., the value of the items can not be changed. It can be used as the key inside the dictionary. </td>
+</tr>
+</table>
+<h2 class="h2">Nesting List and tuple</h2>
+<p>We can store list inside tuple or tuple inside the list up to any number of level. </p>
+<p>Lets see an example of how can we store the tuple inside the list. </p>
+<div class="codeblock"><textarea class="python" name="code">
+Employees = [(101, "Ayush", 22), (102, "john", 29), (103, "james", 45), (104, "Ben", 34)]
+print("----Printing list----"); 
+for i in Employees:
+	print(i)
+Employees[0] = (110, "David",22)
+print();
+print("----Printing list after modification----");
+for i in Employees: 
+	print(i)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+----Printing list----
+(101, 'Ayush', 22)
+(102, 'john', 29)
+(103, 'james', 45)
+(104, 'Ben', 34)
+
+----Printing list after modification----
+
+(110, 'David', 22)
+(102, 'john', 29)
+(103, 'james', 45)
+(104, 'Ben', 34)
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-set">Python Set</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-lists" style="float:left">¡û prev</a>
+<a class="next" href="python-set" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-set">next ¡ú</a>
+<a class="next" href="python-lists">¡û prev</a>
+</div>
+<h1 class="h1">Python Tuple </h1>
+<p>Python Tuple is used to store the sequence of immutable python objects. Tuple is similar to lists since the value of the items stored in the list can be changed whereas the tuple is immutable and the value of the items stored in the tuple can not be changed.</p>
+<p>A tuple can be written as the collection of comma-separated values enclosed with the small brackets. A tuple can be defined as follows.</p>
+<div class="codeblock"><textarea class="python" name="code">
+T1 = (101, "Ayush", 22)
+T2 = ("Apple", "Banana", "Orange") 
+</textarea></div>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+tuple1 = (10, 20, 30, 40, 50, 60)
+print(tuple1)
+count = 0
+for i in tuple1:
+	print("tuple1[%d] = %d"%(count, i));
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+(10, 20, 30, 40, 50, 60)
+tuple1[0] = 10
+tuple1[0] = 20
+tuple1[0] = 30
+tuple1[0] = 40
+tuple1[0] = 50
+tuple1[0] = 60
+</pre></div>
+<h2 class="h3">Example 2</h2>
+<div class="codeblock"><textarea class="python" name="code">
+tuple1 = tuple(input("Enter the tuple elements ..."))
+print(tuple1)
+count = 0
+for i in tuple1:
+	print("tuple1[%d] = %s"%(count, i));
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Enter the tuple elements ...12345
+('1', '2', '3', '4', '5')
+tuple1[0] = 1
+tuple1[0] = 2
+tuple1[0] = 3
+tuple1[0] = 4
+tuple1[0] = 5
+</pre></div>
+<p>However, if we try to reassign the items of a tuple, we would get an error as the tuple object doesn't support the item assignment. </p>
+<p>An empty tuple can be written as follows. </p>
+<div class="codeblock"><textarea class="python" name="code">
+T3 = ()
+</textarea></div>
+<p>The tuple having a single value must include a comma as given below. </p>
+<div class="codeblock"><textarea class="python" name="code">
+T4 = (90,) 
+</textarea></div>
+<p>A tuple is indexed in the same way as the lists. The items in the tuple can be accessed by using their specific index value. </p>
+<p>We will see all these aspects of tuple in this section of the tutorial. </p>
+<h2 class="h2">Tuple indexing and splitting</h2>
+<p>The indexing and slicing in tuple are similar to lists. The indexing in the tuple starts from 0 and goes to length(tuple) - 1.</p>
+<p>The items in the tuple can be accessed by using the slice operator. Python also allows us to use the colon operator to access multiple items in the tuple.</p>
+<p>Consider the following image to understand the indexing and slicing in detail. </p>
+<img alt="Python Tuple" src="python/images/tuple-indexing-and-splitting.png"/>
+<p>Unlike lists, the tuple items can not be deleted by using the del keyword as tuples are immutable. To delete an entire tuple, we can use the del keyword with the tuple name. </p>
+<p>Consider the following example. </p>
+<div class="codeblock"><textarea class="python" name="code">
+tuple1 = (1, 2, 3, 4, 5, 6)
+print(tuple1)
+del tuple1[0]
+print(tuple1)
+del tuple1
+print(tuple1)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+(1, 2, 3, 4, 5, 6)
+Traceback (most recent call last):
+  File "tuple.py", line 4, in &lt;module&gt;
+    print(tuple1)
+NameError: name 'tuple1' is not defined
+</pre></div>
+<p>Like lists, the tuple elements can be accessed in both the directions. The right most element (last) of the tuple can be accessed by using the index -1. The elements from left to right are traversed using the negative indexing. </p>
+<p>Consider the following example. </p>
+<div class="codeblock"><textarea class="python" name="code">
+tuple1 = (1, 2, 3, 4, 5)
+print(tuple1[-1])
+print(tuple1[-4])
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+5
+2
+</pre></div>
+<h2 class="h2">Basic Tuple operations </h2>
+<p>The operators like concatenation (+), repetition (*), Membership (in) works in the same way as they work with the list. Consider the following table for more detail. </p>
+<p>Let's say Tuple t = (1, 2, 3, 4, 5) and Tuple t1 = (6, 7, 8, 9) are declared. </p>
+<table class="alt">
+<tr>
+<th>Operator </th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+<tr>
+<td>Repetition </td>
+<td>The repetition operator enables the tuple elements to be repeated multiple times. </td>
+<td><pre>T1*2 = (1, 2, 3, 4, 5, 1, 2, 3, 4, 5)</pre></td>
+</tr>
+<tr>
+<td>Concatenation </td>
+<td>It concatenates the tuple mentioned on either side of the operator. </td>
+<td><pre>T1+T2 = (1, 2, 3, 4, 5, 6, 7, 8, 9)</pre></td>
+</tr>
+<tr>
+<td>Membership</td>
+<td>It returns true if a particular item exists in the tuple otherwise false. </td>
+<td><pre>print (2 in T1) prints True. </pre></td>
+</tr>
+<tr>
+<td>Iteration </td>
+<td>The for loop is used to iterate over the tuple elements.</td>
+<td><pre>for i in T1: 
+    print(i)</pre>
+<strong>Output</strong>
+<pre>
+1
+2
+3
+4
+5</pre></td>
+</tr>
+<tr>
+<td>Length</td>
+<td>It is used to get the length of the tuple.</td>
+<td><pre>len(T1) = 5 </pre></td>
+</tr>
+</table>
+<h2 class="h2">Python Tuple inbuilt functions</h2>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Function</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>cmp(tuple1, tuple2)</td>
+<td>It compares two tuples and returns true if tuple1 is greater than tuple2 otherwise false. </td>
+</tr>
+<tr>
+<td>2</td>
+<td>len(tuple) </td>
+<td>It calculates the length of the tuple. </td>
+</tr>
+<tr>
+<td>3</td>
+<td>max(tuple)</td>
+<td>It returns the maximum element of the tuple. </td>
+</tr>
+<tr>
+<td>4</td>
+<td>min(tuple)</td>
+<td>It returns the minimum element of the tuple. </td>
+</tr>
+<tr>
+<td>5</td>
+<td>tuple(seq) </td>
+<td>It converts the specified sequence to the tuple. </td>
+</tr>
+</table>
+<h2 class="h2">Where use tuple </h2>
+<p>Using tuple instead of list is used in the following scenario. </p>
+<p>1. Using tuple instead of list gives us a clear idea that tuple data is constant and must not be changed. </p>
+<p>2. Tuple can simulate dictionary without keys. Consider the following nested structure which can be used as a dictionary. </p>
+<div class="codeblock"><textarea class="python" name="code">
+[(101, "John", 22), (102, "Mike", 28), 	(103, "Dustin", 30)] 
+</textarea></div>
+<p>3. Tuple can be used as the key inside dictionary due to its immutable nature. </p>
+<h2 class="h2">List VS Tuple </h2>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>List</th>
+<th>Tuple</th>
+</tr>
+<tr>
+<td>1</td>
+<td>The literal syntax of list is shown by the []. </td>
+<td>The literal syntax of the tuple is shown by the (). </td>
+</tr>
+<tr>
+<td>2</td>
+<td>The List is mutable. </td>
+<td>The tuple is immutable. </td>
+</tr>
+<tr>
+<td>3</td>
+<td>The List has the variable length. </td>
+<td>The tuple has the fixed length. </td>
+</tr>
+<tr>
+<td>4</td>
+<td>The list provides more functionality than tuple. </td>
+<td>The tuple provides less functionality than the list. </td>
+</tr>
+<tr>
+<td>5</td>
+<td>The list Is used in the scenario in which we need to store the simple collections with no constraints where the value of the items can be changed.</td>
+<td>The tuple is used in the cases where we need to store the read-only collections i.e., the value of the items can not be changed. It can be used as the key inside the dictionary. </td>
+</tr>
+</table>
+<h2 class="h2">Nesting List and tuple</h2>
+<p>We can store list inside tuple or tuple inside the list up to any number of level. </p>
+<p>Lets see an example of how can we store the tuple inside the list. </p>
+<div class="codeblock"><textarea class="python" name="code">
+Employees = [(101, "Ayush", 22), (102, "john", 29), (103, "james", 45), (104, "Ben", 34)]
+print("----Printing list----"); 
+for i in Employees:
+	print(i)
+Employees[0] = (110, "David",22)
+print();
+print("----Printing list after modification----");
+for i in Employees: 
+	print(i)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+----Printing list----
+(101, 'Ayush', 22)
+(102, 'john', 29)
+(103, 'james', 45)
+(104, 'Ben', 34)
+
+----Printing list after modification----
+
+(110, 'David', 22)
+(102, 'john', 29)
+(103, 'james', 45)
+(104, 'Ben', 34)
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-set">Python Set</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-lists" style="float:left">¡û prev</a>
+<a class="next" href="python-set" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-set">next ¡ú</a>
+<a class="next" href="python-lists">¡û prev</a>
+</div>
+<h1 class="h1">Python Tuple </h1>
+<p>Python Tuple is used to store the sequence of immutable python objects. Tuple is similar to lists since the value of the items stored in the list can be changed whereas the tuple is immutable and the value of the items stored in the tuple can not be changed.</p>
+<p>A tuple can be written as the collection of comma-separated values enclosed with the small brackets. A tuple can be defined as follows.</p>
+<div class="codeblock"><textarea class="python" name="code">
+T1 = (101, "Ayush", 22)
+T2 = ("Apple", "Banana", "Orange") 
+</textarea></div>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+tuple1 = (10, 20, 30, 40, 50, 60)
+print(tuple1)
+count = 0
+for i in tuple1:
+	print("tuple1[%d] = %d"%(count, i));
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+(10, 20, 30, 40, 50, 60)
+tuple1[0] = 10
+tuple1[0] = 20
+tuple1[0] = 30
+tuple1[0] = 40
+tuple1[0] = 50
+tuple1[0] = 60
+</pre></div>
+<h2 class="h3">Example 2</h2>
+<div class="codeblock"><textarea class="python" name="code">
+tuple1 = tuple(input("Enter the tuple elements ..."))
+print(tuple1)
+count = 0
+for i in tuple1:
+	print("tuple1[%d] = %s"%(count, i));
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Enter the tuple elements ...12345
+('1', '2', '3', '4', '5')
+tuple1[0] = 1
+tuple1[0] = 2
+tuple1[0] = 3
+tuple1[0] = 4
+tuple1[0] = 5
+</pre></div>
+<p>However, if we try to reassign the items of a tuple, we would get an error as the tuple object doesn't support the item assignment. </p>
+<p>An empty tuple can be written as follows. </p>
+<div class="codeblock"><textarea class="python" name="code">
+T3 = ()
+</textarea></div>
+<p>The tuple having a single value must include a comma as given below. </p>
+<div class="codeblock"><textarea class="python" name="code">
+T4 = (90,) 
+</textarea></div>
+<p>A tuple is indexed in the same way as the lists. The items in the tuple can be accessed by using their specific index value. </p>
+<p>We will see all these aspects of tuple in this section of the tutorial. </p>
+<h2 class="h2">Tuple indexing and splitting</h2>
+<p>The indexing and slicing in tuple are similar to lists. The indexing in the tuple starts from 0 and goes to length(tuple) - 1.</p>
+<p>The items in the tuple can be accessed by using the slice operator. Python also allows us to use the colon operator to access multiple items in the tuple.</p>
+<p>Consider the following image to understand the indexing and slicing in detail. </p>
+<img alt="Python Tuple" src="python/images/tuple-indexing-and-splitting.png"/>
+<p>Unlike lists, the tuple items can not be deleted by using the del keyword as tuples are immutable. To delete an entire tuple, we can use the del keyword with the tuple name. </p>
+<p>Consider the following example. </p>
+<div class="codeblock"><textarea class="python" name="code">
+tuple1 = (1, 2, 3, 4, 5, 6)
+print(tuple1)
+del tuple1[0]
+print(tuple1)
+del tuple1
+print(tuple1)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+(1, 2, 3, 4, 5, 6)
+Traceback (most recent call last):
+  File "tuple.py", line 4, in &lt;module&gt;
+    print(tuple1)
+NameError: name 'tuple1' is not defined
+</pre></div>
+<p>Like lists, the tuple elements can be accessed in both the directions. The right most element (last) of the tuple can be accessed by using the index -1. The elements from left to right are traversed using the negative indexing. </p>
+<p>Consider the following example. </p>
+<div class="codeblock"><textarea class="python" name="code">
+tuple1 = (1, 2, 3, 4, 5)
+print(tuple1[-1])
+print(tuple1[-4])
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+5
+2
+</pre></div>
+<h2 class="h2">Basic Tuple operations </h2>
+<p>The operators like concatenation (+), repetition (*), Membership (in) works in the same way as they work with the list. Consider the following table for more detail. </p>
+<p>Let's say Tuple t = (1, 2, 3, 4, 5) and Tuple t1 = (6, 7, 8, 9) are declared. </p>
+<table class="alt">
+<tr>
+<th>Operator </th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+<tr>
+<td>Repetition </td>
+<td>The repetition operator enables the tuple elements to be repeated multiple times. </td>
+<td><pre>T1*2 = (1, 2, 3, 4, 5, 1, 2, 3, 4, 5)</pre></td>
+</tr>
+<tr>
+<td>Concatenation </td>
+<td>It concatenates the tuple mentioned on either side of the operator. </td>
+<td><pre>T1+T2 = (1, 2, 3, 4, 5, 6, 7, 8, 9)</pre></td>
+</tr>
+<tr>
+<td>Membership</td>
+<td>It returns true if a particular item exists in the tuple otherwise false. </td>
+<td><pre>print (2 in T1) prints True. </pre></td>
+</tr>
+<tr>
+<td>Iteration </td>
+<td>The for loop is used to iterate over the tuple elements.</td>
+<td><pre>for i in T1: 
+    print(i)</pre>
+<strong>Output</strong>
+<pre>
+1
+2
+3
+4
+5</pre></td>
+</tr>
+<tr>
+<td>Length</td>
+<td>It is used to get the length of the tuple.</td>
+<td><pre>len(T1) = 5 </pre></td>
+</tr>
+</table>
+<h2 class="h2">Python Tuple inbuilt functions</h2>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Function</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>cmp(tuple1, tuple2)</td>
+<td>It compares two tuples and returns true if tuple1 is greater than tuple2 otherwise false. </td>
+</tr>
+<tr>
+<td>2</td>
+<td>len(tuple) </td>
+<td>It calculates the length of the tuple. </td>
+</tr>
+<tr>
+<td>3</td>
+<td>max(tuple)</td>
+<td>It returns the maximum element of the tuple. </td>
+</tr>
+<tr>
+<td>4</td>
+<td>min(tuple)</td>
+<td>It returns the minimum element of the tuple. </td>
+</tr>
+<tr>
+<td>5</td>
+<td>tuple(seq) </td>
+<td>It converts the specified sequence to the tuple. </td>
+</tr>
+</table>
+<h2 class="h2">Where use tuple </h2>
+<p>Using tuple instead of list is used in the following scenario. </p>
+<p>1. Using tuple instead of list gives us a clear idea that tuple data is constant and must not be changed. </p>
+<p>2. Tuple can simulate dictionary without keys. Consider the following nested structure which can be used as a dictionary. </p>
+<div class="codeblock"><textarea class="python" name="code">
+[(101, "John", 22), (102, "Mike", 28), 	(103, "Dustin", 30)] 
+</textarea></div>
+<p>3. Tuple can be used as the key inside dictionary due to its immutable nature. </p>
+<h2 class="h2">List VS Tuple </h2>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>List</th>
+<th>Tuple</th>
+</tr>
+<tr>
+<td>1</td>
+<td>The literal syntax of list is shown by the []. </td>
+<td>The literal syntax of the tuple is shown by the (). </td>
+</tr>
+<tr>
+<td>2</td>
+<td>The List is mutable. </td>
+<td>The tuple is immutable. </td>
+</tr>
+<tr>
+<td>3</td>
+<td>The List has the variable length. </td>
+<td>The tuple has the fixed length. </td>
+</tr>
+<tr>
+<td>4</td>
+<td>The list provides more functionality than tuple. </td>
+<td>The tuple provides less functionality than the list. </td>
+</tr>
+<tr>
+<td>5</td>
+<td>The list Is used in the scenario in which we need to store the simple collections with no constraints where the value of the items can be changed.</td>
+<td>The tuple is used in the cases where we need to store the read-only collections i.e., the value of the items can not be changed. It can be used as the key inside the dictionary. </td>
+</tr>
+</table>
+<h2 class="h2">Nesting List and tuple</h2>
+<p>We can store list inside tuple or tuple inside the list up to any number of level. </p>
+<p>Lets see an example of how can we store the tuple inside the list. </p>
+<div class="codeblock"><textarea class="python" name="code">
+Employees = [(101, "Ayush", 22), (102, "john", 29), (103, "james", 45), (104, "Ben", 34)]
+print("----Printing list----"); 
+for i in Employees:
+	print(i)
+Employees[0] = (110, "David",22)
+print();
+print("----Printing list after modification----");
+for i in Employees: 
+	print(i)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+----Printing list----
+(101, 'Ayush', 22)
+(102, 'john', 29)
+(103, 'james', 45)
+(104, 'Ben', 34)
+
+----Printing list after modification----
+
+(110, 'David', 22)
+(102, 'john', 29)
+(103, 'james', 45)
+(104, 'Ben', 34)
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-set">Python Set</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-lists" style="float:left">¡û prev</a>
+<a class="next" href="python-set" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html></body></html>

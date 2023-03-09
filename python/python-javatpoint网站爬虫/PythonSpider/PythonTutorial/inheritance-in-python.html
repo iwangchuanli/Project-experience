@@ -1,0 +1,1454 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-mysql-environment-setup">next ¡ú</a>
+<a class="next" href="python-constructors">¡û prev</a>
+</div>
+<h1 class="h1">Python Inheritance</h1>
+<p>Inheritance is an important aspect of the object-oriented paradigm. Inheritance provides code reusability to the program because we can use an existing class to create a new class instead of creating it from scratch.</p>
+<p>In inheritance, the child class acquires the properties and can access all the data members and functions defined in the parent class. A child class can also provide its specific implementation to the functions of the parent class. In this section of the tutorial, we will discuss inheritance in detail.</p>
+<p>In python, a derived class can inherit base class by just mentioning the base in the bracket after the derived class name. Consider the following syntax to inherit a base class into the derived class.</p>
+<img alt="Python Inheritance" src="https://static.javatpoint.com/python/images/python-inheritance.png"/>
+<h3 class="h2">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+class derived-class(base class):
+	&lt;class-suite&gt; 
+</textarea></div>
+<p>A class can inherit multiple classes by mentioning all of them inside the bracket. Consider the following syntax.</p>
+<h3 class="h2">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+class derive-class(&lt;base class 1&gt;, &lt;base class 2&gt;, ..... &lt;base class n&gt;):
+	&lt;class - suite&gt; 
+</textarea></div>
+<h3 class="h2">Example 1</h3>
+<div class="codeblock"><textarea class="python" name="code">
+class Animal:
+    def speak(self):
+        print("Animal Speaking")
+#child class Dog inherits the base class Animal
+class Dog(Animal):
+    def bark(self):
+        print("dog barking")
+d = Dog()
+d.bark()
+d.speak()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+dog barking
+Animal Speaking
+</pre></div><hr/>
+<h2 class="h2">Python Multi-Level inheritance</h2>
+<p>Multi-Level inheritance is possible in python like other object-oriented languages. Multi-level inheritance is archived when a derived class inherits another derived class. There is no limit on the number of levels up to which, the multi-level inheritance is archived in python.</p>
+<img alt="Python Inheritance" src="https://static.javatpoint.com/python/images/python-inheritance2.png"/>
+<p>The syntax of multi-level inheritance is given below.</p>
+<h3 class="h2">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+class class1:
+	&lt;class-suite&gt; 
+class class2(class1):
+	&lt;class suite&gt;
+class class3(class2):
+	&lt;class suite&gt;
+.
+.
+</textarea></div>
+<h3 class="h2">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+class Animal:
+    def speak(self):
+        print("Animal Speaking")
+#The child class Dog inherits the base class Animal
+class Dog(Animal):
+    def bark(self):
+        print("dog barking")
+#The child class Dogchild inherits another child class Dog
+class DogChild(Dog):
+    def eat(self):
+        print("Eating bread...")
+d = DogChild()
+d.bark()
+d.speak()
+d.eat()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+dog barking
+Animal Speaking
+Eating bread...
+</pre></div><hr/>
+<h2 class="h2">Python Multiple inheritance</h2>
+<p>Python provides us the flexibility to inherit multiple base classes in the child class.</p>
+<img alt="Python Inheritance" src="https://static.javatpoint.com/python/images/python-inheritance3.png"/>
+<p>The syntax to perform multiple inheritance is given below.</p>
+<h3 class="h2">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+class Base1:
+	&lt;class-suite&gt;
+
+class Base2:
+	&lt;class-suite&gt;
+.
+.
+.
+class BaseN:
+	&lt;class-suite&gt;
+
+class Derived(Base1, Base2, ...... BaseN):
+	&lt;class-suite&gt;
+</textarea></div>
+<h3 class="h2">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+class Calculation1:
+    def Summation(self,a,b):
+        return a+b;
+class Calculation2:
+    def Multiplication(self,a,b):
+        return a*b;
+class Derived(Calculation1,Calculation2):
+    def Divide(self,a,b):
+        return a/b;
+d = Derived()
+print(d.Summation(10,20))
+print(d.Multiplication(10,20))
+print(d.Divide(10,20))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+30
+200
+0.5
+</pre></div><hr/>
+<h2 class="h2">The issubclass(sub,sup) method</h2>
+<p>The issubclass(sub, sup) method is used to check the relationships between the specified classes. It returns true if the first class is the subclass of the second class, and false otherwise.</p>
+<p>Consider the following example.</p>
+<h3 class="h2">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+class Calculation1:
+    def Summation(self,a,b):
+        return a+b;
+class Calculation2:
+    def Multiplication(self,a,b):
+        return a*b;
+class Derived(Calculation1,Calculation2):
+    def Divide(self,a,b):
+        return a/b;
+d = Derived()
+print(issubclass(Derived,Calculation2))
+print(issubclass(Calculation1,Calculation2))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+True
+False
+</pre></div><hr/>
+<h2 class="h2">The isinstance (obj, class) method</h2>
+<p>The isinstance() method is used to check the relationship between the objects and classes. It returns true if the first parameter, i.e., obj is the instance of the second parameter, i.e., class. </p>
+<p>Consider the following example.</p>
+<h3 class="h2">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+class Calculation1:
+    def Summation(self,a,b):
+        return a+b;
+class Calculation2:
+    def Multiplication(self,a,b):
+        return a*b;
+class Derived(Calculation1,Calculation2):
+    def Divide(self,a,b):
+        return a/b;
+d = Derived()
+print(isinstance(d,Derived))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+True
+</pre></div><hr/>
+<h2 class="h2">Method Overriding</h2>
+<p>We can provide some specific implementation of the parent class method in our child class. When the parent class method is defined in the child class with some specific implementation, then the concept is called method overriding. We may need to perform method overriding in the scenario where the different definition of a parent class method is needed in the child class. </p>
+<p>Consider the following example to perform method overriding in python.</p>
+<h3 class="h2">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+class Animal:
+    def speak(self):
+        print("speaking")
+class Dog(Animal):
+    def speak(self):
+        print("Barking")
+d = Dog()
+d.speak()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Barking
+</pre></div>
+<h3 class="h2">Real Life Example of method overriding</h3>
+<div class="codeblock"><textarea class="python" name="code">
+class Bank:
+	def getroi(self):
+		return 10;
+class SBI(Bank):
+    def getroi(self):
+        return 7;
+
+class ICICI(Bank):
+    def getroi(self):
+        return 8;
+b1 = Bank()
+b2 = SBI()
+b3 = ICICI()
+print("Bank Rate of interest:",b1.getroi());
+print("SBI Rate of interest:",b2.getroi());
+print("ICICI Rate of interest:",b3.getroi());
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Bank Rate of interest: 10
+SBI Rate of interest: 7
+ICICI Rate of interest: 8
+</pre></div><hr/>
+<h2 class="h2">Data abstraction in python</h2>
+<p>Abstraction is an important aspect of object-oriented programming. In python, we can also perform data hiding by adding the double underscore (___) as a prefix to the attribute which is to be hidden. After this, the attribute will not be visible outside of the class through the object.</p>
+<p>Consider the following example.</p>
+<h3 class="h2">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+class Employee:
+    __count = 0;
+    def __init__(self):
+        Employee.__count = Employee.__count+1
+    def display(self):
+        print("The number of employees",Employee.__count)
+emp = Employee()
+emp2 = Employee()
+try:
+    print(emp.__count)
+finally:
+    emp.display()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+The number of employees 2
+AttributeError: 'Employee' object has no attribute '__count'
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-mysql-environment-setup">Environment Setup</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-constructors" style="float:left">¡û prev</a>
+<a class="next" href="python-mysql-environment-setup" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-mysql-environment-setup">next ¡ú</a>
+<a class="next" href="python-constructors">¡û prev</a>
+</div>
+<h1 class="h1">Python Inheritance</h1>
+<p>Inheritance is an important aspect of the object-oriented paradigm. Inheritance provides code reusability to the program because we can use an existing class to create a new class instead of creating it from scratch.</p>
+<p>In inheritance, the child class acquires the properties and can access all the data members and functions defined in the parent class. A child class can also provide its specific implementation to the functions of the parent class. In this section of the tutorial, we will discuss inheritance in detail.</p>
+<p>In python, a derived class can inherit base class by just mentioning the base in the bracket after the derived class name. Consider the following syntax to inherit a base class into the derived class.</p>
+<img alt="Python Inheritance" src="https://static.javatpoint.com/python/images/python-inheritance.png"/>
+<h3 class="h2">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class derived-class(base class):
+
+	&lt;class-suite&gt; 
+
+</textarea></div>
+<p>A class can inherit multiple classes by mentioning all of them inside the bracket. Consider the following syntax.</p>
+<h3 class="h2">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class derive-class(&lt;base class 1&gt;, &lt;base class 2&gt;, ..... &lt;base class n&gt;):
+
+	&lt;class - suite&gt; 
+
+</textarea></div>
+<h3 class="h2">Example 1</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Animal:
+
+    def speak(self):
+
+        print("Animal Speaking")
+
+#child class Dog inherits the base class Animal
+
+class Dog(Animal):
+
+    def bark(self):
+
+        print("dog barking")
+
+d = Dog()
+
+d.bark()
+
+d.speak()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+dog barking
+
+Animal Speaking
+
+</pre></div><hr/>
+<h2 class="h2">Python Multi-Level inheritance</h2>
+<p>Multi-Level inheritance is possible in python like other object-oriented languages. Multi-level inheritance is archived when a derived class inherits another derived class. There is no limit on the number of levels up to which, the multi-level inheritance is archived in python.</p>
+<img alt="Python Inheritance" src="https://static.javatpoint.com/python/images/python-inheritance2.png"/>
+<p>The syntax of multi-level inheritance is given below.</p>
+<h3 class="h2">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class class1:
+
+	&lt;class-suite&gt; 
+
+class class2(class1):
+
+	&lt;class suite&gt;
+
+class class3(class2):
+
+	&lt;class suite&gt;
+
+.
+
+.
+
+</textarea></div>
+<h3 class="h2">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Animal:
+
+    def speak(self):
+
+        print("Animal Speaking")
+
+#The child class Dog inherits the base class Animal
+
+class Dog(Animal):
+
+    def bark(self):
+
+        print("dog barking")
+
+#The child class Dogchild inherits another child class Dog
+
+class DogChild(Dog):
+
+    def eat(self):
+
+        print("Eating bread...")
+
+d = DogChild()
+
+d.bark()
+
+d.speak()
+
+d.eat()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+dog barking
+
+Animal Speaking
+
+Eating bread...
+
+</pre></div><hr/>
+<h2 class="h2">Python Multiple inheritance</h2>
+<p>Python provides us the flexibility to inherit multiple base classes in the child class.</p>
+<img alt="Python Inheritance" src="https://static.javatpoint.com/python/images/python-inheritance3.png"/>
+<p>The syntax to perform multiple inheritance is given below.</p>
+<h3 class="h2">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Base1:
+
+	&lt;class-suite&gt;
+
+
+
+class Base2:
+
+	&lt;class-suite&gt;
+
+.
+
+.
+
+.
+
+class BaseN:
+
+	&lt;class-suite&gt;
+
+
+
+class Derived(Base1, Base2, ...... BaseN):
+
+	&lt;class-suite&gt;
+
+</textarea></div>
+<h3 class="h2">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Calculation1:
+
+    def Summation(self,a,b):
+
+        return a+b;
+
+class Calculation2:
+
+    def Multiplication(self,a,b):
+
+        return a*b;
+
+class Derived(Calculation1,Calculation2):
+
+    def Divide(self,a,b):
+
+        return a/b;
+
+d = Derived()
+
+print(d.Summation(10,20))
+
+print(d.Multiplication(10,20))
+
+print(d.Divide(10,20))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+30
+
+200
+
+0.5
+
+</pre></div><hr/>
+<h2 class="h2">The issubclass(sub,sup) method</h2>
+<p>The issubclass(sub, sup) method is used to check the relationships between the specified classes. It returns true if the first class is the subclass of the second class, and false otherwise.</p>
+<p>Consider the following example.</p>
+<h3 class="h2">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Calculation1:
+
+    def Summation(self,a,b):
+
+        return a+b;
+
+class Calculation2:
+
+    def Multiplication(self,a,b):
+
+        return a*b;
+
+class Derived(Calculation1,Calculation2):
+
+    def Divide(self,a,b):
+
+        return a/b;
+
+d = Derived()
+
+print(issubclass(Derived,Calculation2))
+
+print(issubclass(Calculation1,Calculation2))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+True
+
+False
+
+</pre></div><hr/>
+<h2 class="h2">The isinstance (obj, class) method</h2>
+<p>The isinstance() method is used to check the relationship between the objects and classes. It returns true if the first parameter, i.e., obj is the instance of the second parameter, i.e., class. </p>
+<p>Consider the following example.</p>
+<h3 class="h2">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Calculation1:
+
+    def Summation(self,a,b):
+
+        return a+b;
+
+class Calculation2:
+
+    def Multiplication(self,a,b):
+
+        return a*b;
+
+class Derived(Calculation1,Calculation2):
+
+    def Divide(self,a,b):
+
+        return a/b;
+
+d = Derived()
+
+print(isinstance(d,Derived))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+True
+
+</pre></div><hr/>
+<h2 class="h2">Method Overriding</h2>
+<p>We can provide some specific implementation of the parent class method in our child class. When the parent class method is defined in the child class with some specific implementation, then the concept is called method overriding. We may need to perform method overriding in the scenario where the different definition of a parent class method is needed in the child class. </p>
+<p>Consider the following example to perform method overriding in python.</p>
+<h3 class="h2">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Animal:
+
+    def speak(self):
+
+        print("speaking")
+
+class Dog(Animal):
+
+    def speak(self):
+
+        print("Barking")
+
+d = Dog()
+
+d.speak()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Barking
+
+</pre></div>
+<h3 class="h2">Real Life Example of method overriding</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Bank:
+
+	def getroi(self):
+
+		return 10;
+
+class SBI(Bank):
+
+    def getroi(self):
+
+        return 7;
+
+
+
+class ICICI(Bank):
+
+    def getroi(self):
+
+        return 8;
+
+b1 = Bank()
+
+b2 = SBI()
+
+b3 = ICICI()
+
+print("Bank Rate of interest:",b1.getroi());
+
+print("SBI Rate of interest:",b2.getroi());
+
+print("ICICI Rate of interest:",b3.getroi());
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Bank Rate of interest: 10
+
+SBI Rate of interest: 7
+
+ICICI Rate of interest: 8
+
+</pre></div><hr/>
+<h2 class="h2">Data abstraction in python</h2>
+<p>Abstraction is an important aspect of object-oriented programming. In python, we can also perform data hiding by adding the double underscore (___) as a prefix to the attribute which is to be hidden. After this, the attribute will not be visible outside of the class through the object.</p>
+<p>Consider the following example.</p>
+<h3 class="h2">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Employee:
+
+    __count = 0;
+
+    def __init__(self):
+
+        Employee.__count = Employee.__count+1
+
+    def display(self):
+
+        print("The number of employees",Employee.__count)
+
+emp = Employee()
+
+emp2 = Employee()
+
+try:
+
+    print(emp.__count)
+
+finally:
+
+    emp.display()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+The number of employees 2
+
+AttributeError: 'Employee' object has no attribute '__count'
+
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-mysql-environment-setup">Environment Setup</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-constructors" style="float:left">¡û prev</a>
+<a class="next" href="python-mysql-environment-setup" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-mysql-environment-setup">next ¡ú</a>
+<a class="next" href="python-constructors">¡û prev</a>
+</div>
+<h1 class="h1">Python Inheritance</h1>
+<p>Inheritance is an important aspect of the object-oriented paradigm. Inheritance provides code reusability to the program because we can use an existing class to create a new class instead of creating it from scratch.</p>
+<p>In inheritance, the child class acquires the properties and can access all the data members and functions defined in the parent class. A child class can also provide its specific implementation to the functions of the parent class. In this section of the tutorial, we will discuss inheritance in detail.</p>
+<p>In python, a derived class can inherit base class by just mentioning the base in the bracket after the derived class name. Consider the following syntax to inherit a base class into the derived class.</p>
+<img alt="Python Inheritance" src="https://static.javatpoint.com/python/images/python-inheritance.png"/>
+<h3 class="h2">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class derived-class(base class):
+
+	&lt;class-suite&gt; 
+
+</textarea></div>
+<p>A class can inherit multiple classes by mentioning all of them inside the bracket. Consider the following syntax.</p>
+<h3 class="h2">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class derive-class(&lt;base class 1&gt;, &lt;base class 2&gt;, ..... &lt;base class n&gt;):
+
+	&lt;class - suite&gt; 
+
+</textarea></div>
+<h3 class="h2">Example 1</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Animal:
+
+    def speak(self):
+
+        print("Animal Speaking")
+
+#child class Dog inherits the base class Animal
+
+class Dog(Animal):
+
+    def bark(self):
+
+        print("dog barking")
+
+d = Dog()
+
+d.bark()
+
+d.speak()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+dog barking
+
+Animal Speaking
+
+</pre></div><hr/>
+<h2 class="h2">Python Multi-Level inheritance</h2>
+<p>Multi-Level inheritance is possible in python like other object-oriented languages. Multi-level inheritance is archived when a derived class inherits another derived class. There is no limit on the number of levels up to which, the multi-level inheritance is archived in python.</p>
+<img alt="Python Inheritance" src="https://static.javatpoint.com/python/images/python-inheritance2.png"/>
+<p>The syntax of multi-level inheritance is given below.</p>
+<h3 class="h2">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class class1:
+
+	&lt;class-suite&gt; 
+
+class class2(class1):
+
+	&lt;class suite&gt;
+
+class class3(class2):
+
+	&lt;class suite&gt;
+
+.
+
+.
+
+</textarea></div>
+<h3 class="h2">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Animal:
+
+    def speak(self):
+
+        print("Animal Speaking")
+
+#The child class Dog inherits the base class Animal
+
+class Dog(Animal):
+
+    def bark(self):
+
+        print("dog barking")
+
+#The child class Dogchild inherits another child class Dog
+
+class DogChild(Dog):
+
+    def eat(self):
+
+        print("Eating bread...")
+
+d = DogChild()
+
+d.bark()
+
+d.speak()
+
+d.eat()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+dog barking
+
+Animal Speaking
+
+Eating bread...
+
+</pre></div><hr/>
+<h2 class="h2">Python Multiple inheritance</h2>
+<p>Python provides us the flexibility to inherit multiple base classes in the child class.</p>
+<img alt="Python Inheritance" src="https://static.javatpoint.com/python/images/python-inheritance3.png"/>
+<p>The syntax to perform multiple inheritance is given below.</p>
+<h3 class="h2">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Base1:
+
+	&lt;class-suite&gt;
+
+
+
+class Base2:
+
+	&lt;class-suite&gt;
+
+.
+
+.
+
+.
+
+class BaseN:
+
+	&lt;class-suite&gt;
+
+
+
+class Derived(Base1, Base2, ...... BaseN):
+
+	&lt;class-suite&gt;
+
+</textarea></div>
+<h3 class="h2">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Calculation1:
+
+    def Summation(self,a,b):
+
+        return a+b;
+
+class Calculation2:
+
+    def Multiplication(self,a,b):
+
+        return a*b;
+
+class Derived(Calculation1,Calculation2):
+
+    def Divide(self,a,b):
+
+        return a/b;
+
+d = Derived()
+
+print(d.Summation(10,20))
+
+print(d.Multiplication(10,20))
+
+print(d.Divide(10,20))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+30
+
+200
+
+0.5
+
+</pre></div><hr/>
+<h2 class="h2">The issubclass(sub,sup) method</h2>
+<p>The issubclass(sub, sup) method is used to check the relationships between the specified classes. It returns true if the first class is the subclass of the second class, and false otherwise.</p>
+<p>Consider the following example.</p>
+<h3 class="h2">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Calculation1:
+
+    def Summation(self,a,b):
+
+        return a+b;
+
+class Calculation2:
+
+    def Multiplication(self,a,b):
+
+        return a*b;
+
+class Derived(Calculation1,Calculation2):
+
+    def Divide(self,a,b):
+
+        return a/b;
+
+d = Derived()
+
+print(issubclass(Derived,Calculation2))
+
+print(issubclass(Calculation1,Calculation2))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+True
+
+False
+
+</pre></div><hr/>
+<h2 class="h2">The isinstance (obj, class) method</h2>
+<p>The isinstance() method is used to check the relationship between the objects and classes. It returns true if the first parameter, i.e., obj is the instance of the second parameter, i.e., class. </p>
+<p>Consider the following example.</p>
+<h3 class="h2">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Calculation1:
+
+    def Summation(self,a,b):
+
+        return a+b;
+
+class Calculation2:
+
+    def Multiplication(self,a,b):
+
+        return a*b;
+
+class Derived(Calculation1,Calculation2):
+
+    def Divide(self,a,b):
+
+        return a/b;
+
+d = Derived()
+
+print(isinstance(d,Derived))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+True
+
+</pre></div><hr/>
+<h2 class="h2">Method Overriding</h2>
+<p>We can provide some specific implementation of the parent class method in our child class. When the parent class method is defined in the child class with some specific implementation, then the concept is called method overriding. We may need to perform method overriding in the scenario where the different definition of a parent class method is needed in the child class. </p>
+<p>Consider the following example to perform method overriding in python.</p>
+<h3 class="h2">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Animal:
+
+    def speak(self):
+
+        print("speaking")
+
+class Dog(Animal):
+
+    def speak(self):
+
+        print("Barking")
+
+d = Dog()
+
+d.speak()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Barking
+
+</pre></div>
+<h3 class="h2">Real Life Example of method overriding</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Bank:
+
+	def getroi(self):
+
+		return 10;
+
+class SBI(Bank):
+
+    def getroi(self):
+
+        return 7;
+
+
+
+class ICICI(Bank):
+
+    def getroi(self):
+
+        return 8;
+
+b1 = Bank()
+
+b2 = SBI()
+
+b3 = ICICI()
+
+print("Bank Rate of interest:",b1.getroi());
+
+print("SBI Rate of interest:",b2.getroi());
+
+print("ICICI Rate of interest:",b3.getroi());
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Bank Rate of interest: 10
+
+SBI Rate of interest: 7
+
+ICICI Rate of interest: 8
+
+</pre></div><hr/>
+<h2 class="h2">Data abstraction in python</h2>
+<p>Abstraction is an important aspect of object-oriented programming. In python, we can also perform data hiding by adding the double underscore (___) as a prefix to the attribute which is to be hidden. After this, the attribute will not be visible outside of the class through the object.</p>
+<p>Consider the following example.</p>
+<h3 class="h2">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Employee:
+
+    __count = 0;
+
+    def __init__(self):
+
+        Employee.__count = Employee.__count+1
+
+    def display(self):
+
+        print("The number of employees",Employee.__count)
+
+emp = Employee()
+
+emp2 = Employee()
+
+try:
+
+    print(emp.__count)
+
+finally:
+
+    emp.display()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+The number of employees 2
+
+AttributeError: 'Employee' object has no attribute '__count'
+
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-mysql-environment-setup">Environment Setup</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-constructors" style="float:left">¡û prev</a>
+<a class="next" href="python-mysql-environment-setup" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-mysql-environment-setup">next ¡ú</a>
+<a class="next" href="python-constructors">¡û prev</a>
+</div>
+<h1 class="h1">Python Inheritance</h1>
+<p>Inheritance is an important aspect of the object-oriented paradigm. Inheritance provides code reusability to the program because we can use an existing class to create a new class instead of creating it from scratch.</p>
+<p>In inheritance, the child class acquires the properties and can access all the data members and functions defined in the parent class. A child class can also provide its specific implementation to the functions of the parent class. In this section of the tutorial, we will discuss inheritance in detail.</p>
+<p>In python, a derived class can inherit base class by just mentioning the base in the bracket after the derived class name. Consider the following syntax to inherit a base class into the derived class.</p>
+<img alt="Python Inheritance" src="https://static.javatpoint.com/python/images/python-inheritance.png"/>
+<h3 class="h2">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class derived-class(base class):
+
+	&lt;class-suite&gt; 
+
+</textarea></div>
+<p>A class can inherit multiple classes by mentioning all of them inside the bracket. Consider the following syntax.</p>
+<h3 class="h2">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class derive-class(&lt;base class 1&gt;, &lt;base class 2&gt;, ..... &lt;base class n&gt;):
+
+	&lt;class - suite&gt; 
+
+</textarea></div>
+<h3 class="h2">Example 1</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Animal:
+
+    def speak(self):
+
+        print("Animal Speaking")
+
+#child class Dog inherits the base class Animal
+
+class Dog(Animal):
+
+    def bark(self):
+
+        print("dog barking")
+
+d = Dog()
+
+d.bark()
+
+d.speak()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+dog barking
+
+Animal Speaking
+
+</pre></div><hr/>
+<h2 class="h2">Python Multi-Level inheritance</h2>
+<p>Multi-Level inheritance is possible in python like other object-oriented languages. Multi-level inheritance is archived when a derived class inherits another derived class. There is no limit on the number of levels up to which, the multi-level inheritance is archived in python.</p>
+<img alt="Python Inheritance" src="https://static.javatpoint.com/python/images/python-inheritance2.png"/>
+<p>The syntax of multi-level inheritance is given below.</p>
+<h3 class="h2">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class class1:
+
+	&lt;class-suite&gt; 
+
+class class2(class1):
+
+	&lt;class suite&gt;
+
+class class3(class2):
+
+	&lt;class suite&gt;
+
+.
+
+.
+
+</textarea></div>
+<h3 class="h2">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Animal:
+
+    def speak(self):
+
+        print("Animal Speaking")
+
+#The child class Dog inherits the base class Animal
+
+class Dog(Animal):
+
+    def bark(self):
+
+        print("dog barking")
+
+#The child class Dogchild inherits another child class Dog
+
+class DogChild(Dog):
+
+    def eat(self):
+
+        print("Eating bread...")
+
+d = DogChild()
+
+d.bark()
+
+d.speak()
+
+d.eat()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+dog barking
+
+Animal Speaking
+
+Eating bread...
+
+</pre></div><hr/>
+<h2 class="h2">Python Multiple inheritance</h2>
+<p>Python provides us the flexibility to inherit multiple base classes in the child class.</p>
+<img alt="Python Inheritance" src="https://static.javatpoint.com/python/images/python-inheritance3.png"/>
+<p>The syntax to perform multiple inheritance is given below.</p>
+<h3 class="h2">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Base1:
+
+	&lt;class-suite&gt;
+
+
+
+class Base2:
+
+	&lt;class-suite&gt;
+
+.
+
+.
+
+.
+
+class BaseN:
+
+	&lt;class-suite&gt;
+
+
+
+class Derived(Base1, Base2, ...... BaseN):
+
+	&lt;class-suite&gt;
+
+</textarea></div>
+<h3 class="h2">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Calculation1:
+
+    def Summation(self,a,b):
+
+        return a+b;
+
+class Calculation2:
+
+    def Multiplication(self,a,b):
+
+        return a*b;
+
+class Derived(Calculation1,Calculation2):
+
+    def Divide(self,a,b):
+
+        return a/b;
+
+d = Derived()
+
+print(d.Summation(10,20))
+
+print(d.Multiplication(10,20))
+
+print(d.Divide(10,20))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+30
+
+200
+
+0.5
+
+</pre></div><hr/>
+<h2 class="h2">The issubclass(sub,sup) method</h2>
+<p>The issubclass(sub, sup) method is used to check the relationships between the specified classes. It returns true if the first class is the subclass of the second class, and false otherwise.</p>
+<p>Consider the following example.</p>
+<h3 class="h2">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Calculation1:
+
+    def Summation(self,a,b):
+
+        return a+b;
+
+class Calculation2:
+
+    def Multiplication(self,a,b):
+
+        return a*b;
+
+class Derived(Calculation1,Calculation2):
+
+    def Divide(self,a,b):
+
+        return a/b;
+
+d = Derived()
+
+print(issubclass(Derived,Calculation2))
+
+print(issubclass(Calculation1,Calculation2))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+True
+
+False
+
+</pre></div><hr/>
+<h2 class="h2">The isinstance (obj, class) method</h2>
+<p>The isinstance() method is used to check the relationship between the objects and classes. It returns true if the first parameter, i.e., obj is the instance of the second parameter, i.e., class. </p>
+<p>Consider the following example.</p>
+<h3 class="h2">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Calculation1:
+
+    def Summation(self,a,b):
+
+        return a+b;
+
+class Calculation2:
+
+    def Multiplication(self,a,b):
+
+        return a*b;
+
+class Derived(Calculation1,Calculation2):
+
+    def Divide(self,a,b):
+
+        return a/b;
+
+d = Derived()
+
+print(isinstance(d,Derived))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+True
+
+</pre></div><hr/>
+<h2 class="h2">Method Overriding</h2>
+<p>We can provide some specific implementation of the parent class method in our child class. When the parent class method is defined in the child class with some specific implementation, then the concept is called method overriding. We may need to perform method overriding in the scenario where the different definition of a parent class method is needed in the child class. </p>
+<p>Consider the following example to perform method overriding in python.</p>
+<h3 class="h2">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Animal:
+
+    def speak(self):
+
+        print("speaking")
+
+class Dog(Animal):
+
+    def speak(self):
+
+        print("Barking")
+
+d = Dog()
+
+d.speak()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Barking
+
+</pre></div>
+<h3 class="h2">Real Life Example of method overriding</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Bank:
+
+	def getroi(self):
+
+		return 10;
+
+class SBI(Bank):
+
+    def getroi(self):
+
+        return 7;
+
+
+
+class ICICI(Bank):
+
+    def getroi(self):
+
+        return 8;
+
+b1 = Bank()
+
+b2 = SBI()
+
+b3 = ICICI()
+
+print("Bank Rate of interest:",b1.getroi());
+
+print("SBI Rate of interest:",b2.getroi());
+
+print("ICICI Rate of interest:",b3.getroi());
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Bank Rate of interest: 10
+
+SBI Rate of interest: 7
+
+ICICI Rate of interest: 8
+
+</pre></div><hr/>
+<h2 class="h2">Data abstraction in python</h2>
+<p>Abstraction is an important aspect of object-oriented programming. In python, we can also perform data hiding by adding the double underscore (___) as a prefix to the attribute which is to be hidden. After this, the attribute will not be visible outside of the class through the object.</p>
+<p>Consider the following example.</p>
+<h3 class="h2">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+class Employee:
+
+    __count = 0;
+
+    def __init__(self):
+
+        Employee.__count = Employee.__count+1
+
+    def display(self):
+
+        print("The number of employees",Employee.__count)
+
+emp = Employee()
+
+emp2 = Employee()
+
+try:
+
+    print(emp.__count)
+
+finally:
+
+    emp.display()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+The number of employees 2
+
+AttributeError: 'Employee' object has no attribute '__count'
+
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-mysql-environment-setup">Environment Setup</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-constructors" style="float:left">¡û prev</a>
+<a class="next" href="python-mysql-environment-setup" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html></body></html>

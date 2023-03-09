@@ -1,0 +1,728 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-mysql-read-operation">next ¡ú</a>
+<a class="next" href="python-mysql-creating-tables">¡û prev</a>
+</div>
+<h1 class="h1">Insert Operation</h1>
+<h2 class="h2">Adding a record to the table</h2>
+<p>The <strong>INSERT INTO</strong> statement is used to add a record to the table. In python, we can mention the format specifier (%s) in place of values. </p>
+<p>We provide the actual values in the form of tuple in the execute() method of the cursor. </p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import mysql.connector
+#Create the connection object 
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+#creating the cursor object
+cur = myconn.cursor()
+sql = "insert into Employee(name, id, salary, dept_id, branch_name) values (%s, %s, %s, %s, %s)"
+
+#The row values are provided in the form of tuple 
+val = ("John", 110, 25000.00, 201, "Newyork")
+
+try:
+    #inserting the values into the table
+    cur.execute(sql,val)
+
+    #commit the transaction 
+    myconn.commit()
+    
+except:
+    myconn.rollback()
+
+print(cur.rowcount,"record inserted!")
+myconn.close()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+1 record inserted!
+</pre></div>
+<img alt="Insert Operation" src="python/images/insert-operation.png"/>
+<hr/>
+<h2 class="h2">Insert multiple rows</h2>
+<p>We can also insert multiple rows at once using the python script. The multiple rows are mentioned as the list of various tuples.</p>
+<p>Each element of the list is treated as one particular row, whereas each element of the tuple is treated as one particular column value (attribute).</p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import mysql.connector
+    
+#Create the connection object 
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+#creating the cursor object
+cur = myconn.cursor()
+sql = "insert into Employee(name, id, salary, dept_id, branch_name) values (%s, %s, %s, %s, %s)"
+val = [("John", 102, 25000.00, 201, "Newyork"),("David",103,25000.00,202,"Port of spain"),("Nick",104,90000.00,201,"Newyork")]
+    
+try:
+    #inserting the values into the table
+    cur.executemany(sql,val)
+
+    #commit the transaction 
+    myconn.commit()
+    print(cur.rowcount,"records inserted!")
+    
+except:
+    myconn.rollback()
+
+myconn.close()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+3 records inserted! 
+</pre></div>
+<img alt="Insert Operation" src="python/images/insert-operation2.png"/>
+<hr/>
+<h2 class="h2">Row ID</h2>
+<p>In SQL, a particular row is represented by an insertion id which is known as row id. We can get the last inserted row id by using the attribute lastrowid of the cursor object.</p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import mysql.connector
+#Create the connection object 
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+#creating the cursor object
+cur = myconn.cursor()
+    
+sql = "insert into Employee(name, id, salary, dept_id, branch_name) values (%s, %s, %s, %s, %s)"
+    
+val = ("Mike",105,28000,202,"Guyana")
+    
+try:
+    #inserting the values into the table
+    cur.execute(sql,val)
+
+    #commit the transaction 
+    myconn.commit()
+    
+    #getting rowid
+    print(cur.rowcount,"record inserted! id:",cur.lastrowid)
+
+except:
+    myconn.rollback()
+
+myconn.close()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+1 record inserted! Id: 0
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-mysql-read-operation">Read Operation</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-mysql-creating-tables" style="float:left">¡û prev</a>
+<a class="next" href="python-mysql-read-operation" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-mysql-read-operation">next ¡ú</a>
+<a class="next" href="python-mysql-creating-tables">¡û prev</a>
+</div>
+<h1 class="h1">Insert Operation</h1>
+<h2 class="h2">Adding a record to the table</h2>
+<p>The <strong>INSERT INTO</strong> statement is used to add a record to the table. In python, we can mention the format specifier (%s) in place of values. </p>
+<p>We provide the actual values in the form of tuple in the execute() method of the cursor. </p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+sql = "insert into Employee(name, id, salary, dept_id, branch_name) values (%s, %s, %s, %s, %s)"
+
+
+
+#The row values are provided in the form of tuple 
+
+val = ("John", 110, 25000.00, 201, "Newyork")
+
+
+
+try:
+
+    #inserting the values into the table
+
+    cur.execute(sql,val)
+
+
+
+    #commit the transaction 
+
+    myconn.commit()
+
+    
+
+except:
+
+    myconn.rollback()
+
+
+
+print(cur.rowcount,"record inserted!")
+
+myconn.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+1 record inserted!
+
+</pre></div>
+<img alt="Insert Operation" src="python/images/insert-operation.png"/>
+<hr/>
+<h2 class="h2">Insert multiple rows</h2>
+<p>We can also insert multiple rows at once using the python script. The multiple rows are mentioned as the list of various tuples.</p>
+<p>Each element of the list is treated as one particular row, whereas each element of the tuple is treated as one particular column value (attribute).</p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+    
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+sql = "insert into Employee(name, id, salary, dept_id, branch_name) values (%s, %s, %s, %s, %s)"
+
+val = [("John", 102, 25000.00, 201, "Newyork"),("David",103,25000.00,202,"Port of spain"),("Nick",104,90000.00,201,"Newyork")]
+
+    
+
+try:
+
+    #inserting the values into the table
+
+    cur.executemany(sql,val)
+
+
+
+    #commit the transaction 
+
+    myconn.commit()
+
+    print(cur.rowcount,"records inserted!")
+
+    
+
+except:
+
+    myconn.rollback()
+
+
+
+myconn.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+3 records inserted! 
+
+</pre></div>
+<img alt="Insert Operation" src="python/images/insert-operation2.png"/>
+<hr/>
+<h2 class="h2">Row ID</h2>
+<p>In SQL, a particular row is represented by an insertion id which is known as row id. We can get the last inserted row id by using the attribute lastrowid of the cursor object.</p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+    
+
+sql = "insert into Employee(name, id, salary, dept_id, branch_name) values (%s, %s, %s, %s, %s)"
+
+    
+
+val = ("Mike",105,28000,202,"Guyana")
+
+    
+
+try:
+
+    #inserting the values into the table
+
+    cur.execute(sql,val)
+
+
+
+    #commit the transaction 
+
+    myconn.commit()
+
+    
+
+    #getting rowid
+
+    print(cur.rowcount,"record inserted! id:",cur.lastrowid)
+
+
+
+except:
+
+    myconn.rollback()
+
+
+
+myconn.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+1 record inserted! Id: 0
+
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-mysql-read-operation">Read Operation</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-mysql-creating-tables" style="float:left">¡û prev</a>
+<a class="next" href="python-mysql-read-operation" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-mysql-read-operation">next ¡ú</a>
+<a class="next" href="python-mysql-creating-tables">¡û prev</a>
+</div>
+<h1 class="h1">Insert Operation</h1>
+<h2 class="h2">Adding a record to the table</h2>
+<p>The <strong>INSERT INTO</strong> statement is used to add a record to the table. In python, we can mention the format specifier (%s) in place of values. </p>
+<p>We provide the actual values in the form of tuple in the execute() method of the cursor. </p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+sql = "insert into Employee(name, id, salary, dept_id, branch_name) values (%s, %s, %s, %s, %s)"
+
+
+
+#The row values are provided in the form of tuple 
+
+val = ("John", 110, 25000.00, 201, "Newyork")
+
+
+
+try:
+
+    #inserting the values into the table
+
+    cur.execute(sql,val)
+
+
+
+    #commit the transaction 
+
+    myconn.commit()
+
+    
+
+except:
+
+    myconn.rollback()
+
+
+
+print(cur.rowcount,"record inserted!")
+
+myconn.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+1 record inserted!
+
+</pre></div>
+<img alt="Insert Operation" src="python/images/insert-operation.png"/>
+<hr/>
+<h2 class="h2">Insert multiple rows</h2>
+<p>We can also insert multiple rows at once using the python script. The multiple rows are mentioned as the list of various tuples.</p>
+<p>Each element of the list is treated as one particular row, whereas each element of the tuple is treated as one particular column value (attribute).</p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+    
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+sql = "insert into Employee(name, id, salary, dept_id, branch_name) values (%s, %s, %s, %s, %s)"
+
+val = [("John", 102, 25000.00, 201, "Newyork"),("David",103,25000.00,202,"Port of spain"),("Nick",104,90000.00,201,"Newyork")]
+
+    
+
+try:
+
+    #inserting the values into the table
+
+    cur.executemany(sql,val)
+
+
+
+    #commit the transaction 
+
+    myconn.commit()
+
+    print(cur.rowcount,"records inserted!")
+
+    
+
+except:
+
+    myconn.rollback()
+
+
+
+myconn.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+3 records inserted! 
+
+</pre></div>
+<img alt="Insert Operation" src="python/images/insert-operation2.png"/>
+<hr/>
+<h2 class="h2">Row ID</h2>
+<p>In SQL, a particular row is represented by an insertion id which is known as row id. We can get the last inserted row id by using the attribute lastrowid of the cursor object.</p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+    
+
+sql = "insert into Employee(name, id, salary, dept_id, branch_name) values (%s, %s, %s, %s, %s)"
+
+    
+
+val = ("Mike",105,28000,202,"Guyana")
+
+    
+
+try:
+
+    #inserting the values into the table
+
+    cur.execute(sql,val)
+
+
+
+    #commit the transaction 
+
+    myconn.commit()
+
+    
+
+    #getting rowid
+
+    print(cur.rowcount,"record inserted! id:",cur.lastrowid)
+
+
+
+except:
+
+    myconn.rollback()
+
+
+
+myconn.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+1 record inserted! Id: 0
+
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-mysql-read-operation">Read Operation</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-mysql-creating-tables" style="float:left">¡û prev</a>
+<a class="next" href="python-mysql-read-operation" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-mysql-read-operation">next ¡ú</a>
+<a class="next" href="python-mysql-creating-tables">¡û prev</a>
+</div>
+<h1 class="h1">Insert Operation</h1>
+<h2 class="h2">Adding a record to the table</h2>
+<p>The <strong>INSERT INTO</strong> statement is used to add a record to the table. In python, we can mention the format specifier (%s) in place of values. </p>
+<p>We provide the actual values in the form of tuple in the execute() method of the cursor. </p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+sql = "insert into Employee(name, id, salary, dept_id, branch_name) values (%s, %s, %s, %s, %s)"
+
+
+
+#The row values are provided in the form of tuple 
+
+val = ("John", 110, 25000.00, 201, "Newyork")
+
+
+
+try:
+
+    #inserting the values into the table
+
+    cur.execute(sql,val)
+
+
+
+    #commit the transaction 
+
+    myconn.commit()
+
+    
+
+except:
+
+    myconn.rollback()
+
+
+
+print(cur.rowcount,"record inserted!")
+
+myconn.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+1 record inserted!
+
+</pre></div>
+<img alt="Insert Operation" src="python/images/insert-operation.png"/>
+<hr/>
+<h2 class="h2">Insert multiple rows</h2>
+<p>We can also insert multiple rows at once using the python script. The multiple rows are mentioned as the list of various tuples.</p>
+<p>Each element of the list is treated as one particular row, whereas each element of the tuple is treated as one particular column value (attribute).</p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+    
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+sql = "insert into Employee(name, id, salary, dept_id, branch_name) values (%s, %s, %s, %s, %s)"
+
+val = [("John", 102, 25000.00, 201, "Newyork"),("David",103,25000.00,202,"Port of spain"),("Nick",104,90000.00,201,"Newyork")]
+
+    
+
+try:
+
+    #inserting the values into the table
+
+    cur.executemany(sql,val)
+
+
+
+    #commit the transaction 
+
+    myconn.commit()
+
+    print(cur.rowcount,"records inserted!")
+
+    
+
+except:
+
+    myconn.rollback()
+
+
+
+myconn.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+3 records inserted! 
+
+</pre></div>
+<img alt="Insert Operation" src="python/images/insert-operation2.png"/>
+<hr/>
+<h2 class="h2">Row ID</h2>
+<p>In SQL, a particular row is represented by an insertion id which is known as row id. We can get the last inserted row id by using the attribute lastrowid of the cursor object.</p>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+    
+
+sql = "insert into Employee(name, id, salary, dept_id, branch_name) values (%s, %s, %s, %s, %s)"
+
+    
+
+val = ("Mike",105,28000,202,"Guyana")
+
+    
+
+try:
+
+    #inserting the values into the table
+
+    cur.execute(sql,val)
+
+
+
+    #commit the transaction 
+
+    myconn.commit()
+
+    
+
+    #getting rowid
+
+    print(cur.rowcount,"record inserted! id:",cur.lastrowid)
+
+
+
+except:
+
+    myconn.rollback()
+
+
+
+myconn.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+1 record inserted! Id: 0
+
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-mysql-read-operation">Read Operation</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-mysql-creating-tables" style="float:left">¡û prev</a>
+<a class="next" href="python-mysql-read-operation" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html></body></html>

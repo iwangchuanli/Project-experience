@@ -1,0 +1,417 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-mysql-join-operation">next ¡ú</a>
+<a class="next" href="python-mysql-read-operation">¡û prev</a>
+</div>
+<h1 class="h1">Update Operation</h1>
+<p>The UPDATE-SET statement is used to update any column inside the table. The following SQL query is used to update a column. </p>
+<div class="codeblock"><textarea class="python" name="code">
+&gt;  update Employee set name = 'alex' where id = 110
+</textarea></div>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import mysql.connector
+
+#Create the connection object 
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+#creating the cursor object
+cur = myconn.cursor()
+
+try:
+    #updating the name of the employee whose id is 110
+    cur.execute("update Employee set name = 'alex' where id = 110")
+    myconn.commit()
+except:
+    
+    myconn.rollback()
+
+myconn.close()
+</textarea></div>
+<img alt="Update Operation" src="python/images/update-operation.png"/>
+<hr/>
+<h2 class="h2">Delete Operation</h2>
+<p>The DELETE FROM statement is used to delete a specific record from the table. Here, we must impose a condition using WHERE clause otherwise all the records from the table will be removed. </p>
+<p>The following SQL query is used to delete the employee detail whose id is 110 from the table.</p>
+<div class="codeblock"><textarea class="python" name="code">
+&gt;  delete from Employee where id = 110
+</textarea></div>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import mysql.connector
+
+#Create the connection object 
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+#creating the cursor object
+cur = myconn.cursor()
+
+try:
+    #Deleting the employee details whose id is 110
+    cur.execute("delete from Employee where id = 110")
+    myconn.commit()
+except:
+    
+    myconn.rollback()
+
+myconn.close()
+</textarea></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-mysql-join-operation">Join Operation</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-mysql-read-operation" style="float:left">¡û prev</a>
+<a class="next" href="python-mysql-join-operation" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-mysql-join-operation">next ¡ú</a>
+<a class="next" href="python-mysql-read-operation">¡û prev</a>
+</div>
+<h1 class="h1">Update Operation</h1>
+<p>The UPDATE-SET statement is used to update any column inside the table. The following SQL query is used to update a column. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+&gt;  update Employee set name = 'alex' where id = 110
+
+</textarea></div>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+
+
+try:
+
+    #updating the name of the employee whose id is 110
+
+    cur.execute("update Employee set name = 'alex' where id = 110")
+
+    myconn.commit()
+
+except:
+
+    
+
+    myconn.rollback()
+
+
+
+myconn.close()
+
+</textarea></div>
+<img alt="Update Operation" src="python/images/update-operation.png"/>
+<hr/>
+<h2 class="h2">Delete Operation</h2>
+<p>The DELETE FROM statement is used to delete a specific record from the table. Here, we must impose a condition using WHERE clause otherwise all the records from the table will be removed. </p>
+<p>The following SQL query is used to delete the employee detail whose id is 110 from the table.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+&gt;  delete from Employee where id = 110
+
+</textarea></div>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+
+
+try:
+
+    #Deleting the employee details whose id is 110
+
+    cur.execute("delete from Employee where id = 110")
+
+    myconn.commit()
+
+except:
+
+    
+
+    myconn.rollback()
+
+
+
+myconn.close()
+
+</textarea></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-mysql-join-operation">Join Operation</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-mysql-read-operation" style="float:left">¡û prev</a>
+<a class="next" href="python-mysql-join-operation" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-mysql-join-operation">next ¡ú</a>
+<a class="next" href="python-mysql-read-operation">¡û prev</a>
+</div>
+<h1 class="h1">Update Operation</h1>
+<p>The UPDATE-SET statement is used to update any column inside the table. The following SQL query is used to update a column. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+&gt;  update Employee set name = 'alex' where id = 110
+
+</textarea></div>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+
+
+try:
+
+    #updating the name of the employee whose id is 110
+
+    cur.execute("update Employee set name = 'alex' where id = 110")
+
+    myconn.commit()
+
+except:
+
+    
+
+    myconn.rollback()
+
+
+
+myconn.close()
+
+</textarea></div>
+<img alt="Update Operation" src="python/images/update-operation.png"/>
+<hr/>
+<h2 class="h2">Delete Operation</h2>
+<p>The DELETE FROM statement is used to delete a specific record from the table. Here, we must impose a condition using WHERE clause otherwise all the records from the table will be removed. </p>
+<p>The following SQL query is used to delete the employee detail whose id is 110 from the table.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+&gt;  delete from Employee where id = 110
+
+</textarea></div>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+
+
+try:
+
+    #Deleting the employee details whose id is 110
+
+    cur.execute("delete from Employee where id = 110")
+
+    myconn.commit()
+
+except:
+
+    
+
+    myconn.rollback()
+
+
+
+myconn.close()
+
+</textarea></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-mysql-join-operation">Join Operation</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-mysql-read-operation" style="float:left">¡û prev</a>
+<a class="next" href="python-mysql-join-operation" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-mysql-join-operation">next ¡ú</a>
+<a class="next" href="python-mysql-read-operation">¡û prev</a>
+</div>
+<h1 class="h1">Update Operation</h1>
+<p>The UPDATE-SET statement is used to update any column inside the table. The following SQL query is used to update a column. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+&gt;  update Employee set name = 'alex' where id = 110
+
+</textarea></div>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+
+
+try:
+
+    #updating the name of the employee whose id is 110
+
+    cur.execute("update Employee set name = 'alex' where id = 110")
+
+    myconn.commit()
+
+except:
+
+    
+
+    myconn.rollback()
+
+
+
+myconn.close()
+
+</textarea></div>
+<img alt="Update Operation" src="python/images/update-operation.png"/>
+<hr/>
+<h2 class="h2">Delete Operation</h2>
+<p>The DELETE FROM statement is used to delete a specific record from the table. Here, we must impose a condition using WHERE clause otherwise all the records from the table will be removed. </p>
+<p>The following SQL query is used to delete the employee detail whose id is 110 from the table.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+&gt;  delete from Employee where id = 110
+
+</textarea></div>
+<p>Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+
+
+try:
+
+    #Deleting the employee details whose id is 110
+
+    cur.execute("delete from Employee where id = 110")
+
+    myconn.commit()
+
+except:
+
+    
+
+    myconn.rollback()
+
+
+
+myconn.close()
+
+</textarea></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-mysql-join-operation">Join Operation</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-mysql-read-operation" style="float:left">¡û prev</a>
+<a class="next" href="python-mysql-join-operation" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html></body></html>

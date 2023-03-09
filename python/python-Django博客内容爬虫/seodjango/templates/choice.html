@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>choice</title>
+    <script type="text/javascript">
+        function submit_form() {
+            word = document.forms[0].word;
+            txt = ""
+            for (i = 0; i < word.length; ++i) {
+                if (word[i].checked) {
+                    txt = txt + word[i].value + "~~"
+                }
+            }
+            document.getElementById("sub_data").value = txt;
+        }
+    </script>
+</head>
+<body>
+<form action="/update/" method="post">
+    <ul id="word_ul">
+        {% for word in word_list %}
+            <li class="word_li"><input type="checkbox" name="word" value="{{ word }}"/>{{ word }}</li>
+        {% endfor %}
+    </ul>
+    <input type="button" onclick="submit_form()" value="确认">
+    <input type="text" name="sub_data" id="sub_data" size="100">
+    <br/>
+    <button type="submit">提交</button>
+</form>
+</body>
+</html>

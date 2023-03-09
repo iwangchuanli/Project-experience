@@ -1,0 +1,828 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-website-blocker">next ¡ú</a>
+<a class="next" href="python-tkinter-labelframe">¡û prev</a>
+</div>
+<h1 class="h1">Tkinter messagebox </h1>
+<p>The messagebox module is used to display the message boxes in the python applications. There are the various functions which are used to display the relevant messages depending upon the application requirements. </p>
+<p>The syntax to use the messagebox is given below. </p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+messagebox.function_name(title, message [, options])
+</textarea></div>
+<h3 class="h3">Parameters </h3>
+<ul class="points">
+<li><strong>function_name:</strong> It represents an appropriate message box function.</li>
+<li><strong>title:</strong> It is a string which is shown as a title of a message box. </li>
+<li><strong>message:</strong> It is the string to be displayed as a message on the message box. </li>
+<li><strong>options:</strong> There are various options which can be used to configure the message dialog box. </li>
+</ul>
+<p>The two options that can be used are default and parent. </p>
+<p><strong>1. default</strong></p>
+<p>The default option is used to mention the types of the default button, i.e. ABORT, RETRY, or IGNORE in the message box. </p>
+<p><strong>2. parent</strong></p>
+<p>The parent option specifies the parent window on top of which, the message box is to be displayed. </p>
+<p>There is one of the following functions used to show the appropriate message boxes. All the functions are used with the same syntax but have the specific functionalities. </p>
+<h3 class="h2">1. showinfo()</h3>
+<p>The showinfo() messagebox is used where we need to show some relevant information to the user. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+# !/usr/bin/python3
+
+from tkinter import *
+
+from tkinter import messagebox
+
+top = Tk()
+
+top.geometry("100x100")    
+
+messagebox.showinfo("information","Information")
+
+top.mainloop()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter messagebox" src="https://static.javatpoint.com/python/images/python-tkinter-messagebox-output1.png"/>
+<h3 class="h2">2. showwarning()</h3>
+<p>This method is used to display the warning to the user. Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+# !/usr/bin/python3
+from tkinter import *
+
+from tkinter import messagebox
+
+top = Tk()
+top.geometry("100x100")
+messagebox.showwarning("warning","Warning")
+
+top.mainloop()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter messagebox" src="https://static.javatpoint.com/python/images/python-tkinter-messagebox-output2.png"/>
+<h3 class="h2">3. showerror()</h3>
+<p>This method is used to display the error message to the user. Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+# !/usr/bin/python3
+from tkinter import *
+from tkinter import messagebox
+
+top = Tk()
+top.geometry("100x100")
+messagebox.showerror("error","Error")
+top.mainloop()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter messagebox" src="https://static.javatpoint.com/python/images/python-tkinter-messagebox-output3.png"/>
+<h3 class="h2">4. askquestion()</h3>
+<p>This method is used to ask some question to the user which can be answered in yes or no. Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+# !/usr/bin/python3
+from tkinter import *
+from tkinter import messagebox
+
+top = Tk()
+top.geometry("100x100")
+messagebox.askquestion("Confirm","Are you sure?")
+top.mainloop()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter messagebox" src="https://static.javatpoint.com/python/images/python-tkinter-messagebox-output4.png"/>
+<h3 class="h2">5. askokcancel()</h3>
+<p>This method is used to confirm the user's action regarding some application activity. Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+# !/usr/bin/python3
+from tkinter import *
+from tkinter import messagebox
+
+top = Tk()
+top.geometry("100x100")
+messagebox.askokcancel("Redirect","Redirecting you to www.javatpoint.com")
+top.mainloop()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter messagebox" src="https://static.javatpoint.com/python/images/python-tkinter-messagebox-output5.png"/>
+<h3 class="h2">6. askyesno()</h3>
+<p>This method is used to ask the user about some action to which, the user can answer in yes or no. Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+# !/usr/bin/python3
+from tkinter import *
+from tkinter import messagebox
+
+top = Tk()
+top.geometry("100x100")
+messagebox.askyesno("Application","Got It?")
+top.mainloop()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter messagebox" src="https://static.javatpoint.com/python/images/python-tkinter-messagebox-output6.png"/>
+<h3 class="h2">7. askretrycancel()</h3>
+<p>This method is used to ask the user about doing a particular task again or not. Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+# !/usr/bin/python3
+from tkinter import *
+from tkinter import messagebox
+
+top = Tk()
+top.geometry("100x100")
+messagebox.askretrycancel("Application","try again?")
+
+top.mainloop()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter messagebox" src="https://static.javatpoint.com/python/images/python-tkinter-messagebox-output7.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-website-blocker">Web Blocker Introduction</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-labelframe" style="float:left">¡û prev</a>
+<a class="next" href="python-website-blocker" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-website-blocker">next ¡ú</a>
+<a class="next" href="python-tkinter-labelframe">¡û prev</a>
+</div>
+<h1 class="h1">Tkinter messagebox </h1>
+<p>The messagebox module is used to display the message boxes in the python applications. There are the various functions which are used to display the relevant messages depending upon the application requirements. </p>
+<p>The syntax to use the messagebox is given below. </p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+messagebox.function_name(title, message [, options])
+
+</textarea></div>
+<h3 class="h3">Parameters </h3>
+<ul class="points">
+<li><strong>function_name:</strong> It represents an appropriate message box function.</li>
+<li><strong>title:</strong> It is a string which is shown as a title of a message box. </li>
+<li><strong>message:</strong> It is the string to be displayed as a message on the message box. </li>
+<li><strong>options:</strong> There are various options which can be used to configure the message dialog box. </li>
+</ul>
+<p>The two options that can be used are default and parent. </p>
+<p><strong>1. default</strong></p>
+<p>The default option is used to mention the types of the default button, i.e. ABORT, RETRY, or IGNORE in the message box. </p>
+<p><strong>2. parent</strong></p>
+<p>The parent option specifies the parent window on top of which, the message box is to be displayed. </p>
+<p>There is one of the following functions used to show the appropriate message boxes. All the functions are used with the same syntax but have the specific functionalities. </p>
+<h3 class="h2">1. showinfo()</h3>
+<p>The showinfo() messagebox is used where we need to show some relevant information to the user. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+# !/usr/bin/python3
+
+
+
+from tkinter import *
+
+
+
+from tkinter import messagebox
+
+
+
+top = Tk()
+
+
+
+top.geometry("100x100")    
+
+
+
+messagebox.showinfo("information","Information")
+
+
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter messagebox" src="https://static.javatpoint.com/python/images/python-tkinter-messagebox-output1.png"/>
+<h3 class="h2">2. showwarning()</h3>
+<p>This method is used to display the warning to the user. Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+# !/usr/bin/python3
+
+from tkinter import *
+
+
+
+from tkinter import messagebox
+
+
+
+top = Tk()
+
+top.geometry("100x100")
+
+messagebox.showwarning("warning","Warning")
+
+
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter messagebox" src="https://static.javatpoint.com/python/images/python-tkinter-messagebox-output2.png"/>
+<h3 class="h2">3. showerror()</h3>
+<p>This method is used to display the error message to the user. Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+# !/usr/bin/python3
+
+from tkinter import *
+
+from tkinter import messagebox
+
+
+
+top = Tk()
+
+top.geometry("100x100")
+
+messagebox.showerror("error","Error")
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter messagebox" src="https://static.javatpoint.com/python/images/python-tkinter-messagebox-output3.png"/>
+<h3 class="h2">4. askquestion()</h3>
+<p>This method is used to ask some question to the user which can be answered in yes or no. Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+# !/usr/bin/python3
+
+from tkinter import *
+
+from tkinter import messagebox
+
+
+
+top = Tk()
+
+top.geometry("100x100")
+
+messagebox.askquestion("Confirm","Are you sure?")
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter messagebox" src="https://static.javatpoint.com/python/images/python-tkinter-messagebox-output4.png"/>
+<h3 class="h2">5. askokcancel()</h3>
+<p>This method is used to confirm the user's action regarding some application activity. Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+# !/usr/bin/python3
+
+from tkinter import *
+
+from tkinter import messagebox
+
+
+
+top = Tk()
+
+top.geometry("100x100")
+
+messagebox.askokcancel("Redirect","Redirecting you to www.javatpoint.com")
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter messagebox" src="https://static.javatpoint.com/python/images/python-tkinter-messagebox-output5.png"/>
+<h3 class="h2">6. askyesno()</h3>
+<p>This method is used to ask the user about some action to which, the user can answer in yes or no. Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+# !/usr/bin/python3
+
+from tkinter import *
+
+from tkinter import messagebox
+
+
+
+top = Tk()
+
+top.geometry("100x100")
+
+messagebox.askyesno("Application","Got It?")
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter messagebox" src="https://static.javatpoint.com/python/images/python-tkinter-messagebox-output6.png"/>
+<h3 class="h2">7. askretrycancel()</h3>
+<p>This method is used to ask the user about doing a particular task again or not. Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+# !/usr/bin/python3
+
+from tkinter import *
+
+from tkinter import messagebox
+
+
+
+top = Tk()
+
+top.geometry("100x100")
+
+messagebox.askretrycancel("Application","try again?")
+
+
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter messagebox" src="https://static.javatpoint.com/python/images/python-tkinter-messagebox-output7.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-website-blocker">Web Blocker Introduction</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-labelframe" style="float:left">¡û prev</a>
+<a class="next" href="python-website-blocker" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-website-blocker">next ¡ú</a>
+<a class="next" href="python-tkinter-labelframe">¡û prev</a>
+</div>
+<h1 class="h1">Tkinter messagebox </h1>
+<p>The messagebox module is used to display the message boxes in the python applications. There are the various functions which are used to display the relevant messages depending upon the application requirements. </p>
+<p>The syntax to use the messagebox is given below. </p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+messagebox.function_name(title, message [, options])
+
+</textarea></div>
+<h3 class="h3">Parameters </h3>
+<ul class="points">
+<li><strong>function_name:</strong> It represents an appropriate message box function.</li>
+<li><strong>title:</strong> It is a string which is shown as a title of a message box. </li>
+<li><strong>message:</strong> It is the string to be displayed as a message on the message box. </li>
+<li><strong>options:</strong> There are various options which can be used to configure the message dialog box. </li>
+</ul>
+<p>The two options that can be used are default and parent. </p>
+<p><strong>1. default</strong></p>
+<p>The default option is used to mention the types of the default button, i.e. ABORT, RETRY, or IGNORE in the message box. </p>
+<p><strong>2. parent</strong></p>
+<p>The parent option specifies the parent window on top of which, the message box is to be displayed. </p>
+<p>There is one of the following functions used to show the appropriate message boxes. All the functions are used with the same syntax but have the specific functionalities. </p>
+<h3 class="h2">1. showinfo()</h3>
+<p>The showinfo() messagebox is used where we need to show some relevant information to the user. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+# !/usr/bin/python3
+
+
+
+from tkinter import *
+
+
+
+from tkinter import messagebox
+
+
+
+top = Tk()
+
+
+
+top.geometry("100x100")    
+
+
+
+messagebox.showinfo("information","Information")
+
+
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter messagebox" src="https://static.javatpoint.com/python/images/python-tkinter-messagebox-output1.png"/>
+<h3 class="h2">2. showwarning()</h3>
+<p>This method is used to display the warning to the user. Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+# !/usr/bin/python3
+
+from tkinter import *
+
+
+
+from tkinter import messagebox
+
+
+
+top = Tk()
+
+top.geometry("100x100")
+
+messagebox.showwarning("warning","Warning")
+
+
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter messagebox" src="https://static.javatpoint.com/python/images/python-tkinter-messagebox-output2.png"/>
+<h3 class="h2">3. showerror()</h3>
+<p>This method is used to display the error message to the user. Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+# !/usr/bin/python3
+
+from tkinter import *
+
+from tkinter import messagebox
+
+
+
+top = Tk()
+
+top.geometry("100x100")
+
+messagebox.showerror("error","Error")
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter messagebox" src="https://static.javatpoint.com/python/images/python-tkinter-messagebox-output3.png"/>
+<h3 class="h2">4. askquestion()</h3>
+<p>This method is used to ask some question to the user which can be answered in yes or no. Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+# !/usr/bin/python3
+
+from tkinter import *
+
+from tkinter import messagebox
+
+
+
+top = Tk()
+
+top.geometry("100x100")
+
+messagebox.askquestion("Confirm","Are you sure?")
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter messagebox" src="https://static.javatpoint.com/python/images/python-tkinter-messagebox-output4.png"/>
+<h3 class="h2">5. askokcancel()</h3>
+<p>This method is used to confirm the user's action regarding some application activity. Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+# !/usr/bin/python3
+
+from tkinter import *
+
+from tkinter import messagebox
+
+
+
+top = Tk()
+
+top.geometry("100x100")
+
+messagebox.askokcancel("Redirect","Redirecting you to www.javatpoint.com")
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter messagebox" src="https://static.javatpoint.com/python/images/python-tkinter-messagebox-output5.png"/>
+<h3 class="h2">6. askyesno()</h3>
+<p>This method is used to ask the user about some action to which, the user can answer in yes or no. Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+# !/usr/bin/python3
+
+from tkinter import *
+
+from tkinter import messagebox
+
+
+
+top = Tk()
+
+top.geometry("100x100")
+
+messagebox.askyesno("Application","Got It?")
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter messagebox" src="https://static.javatpoint.com/python/images/python-tkinter-messagebox-output6.png"/>
+<h3 class="h2">7. askretrycancel()</h3>
+<p>This method is used to ask the user about doing a particular task again or not. Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+# !/usr/bin/python3
+
+from tkinter import *
+
+from tkinter import messagebox
+
+
+
+top = Tk()
+
+top.geometry("100x100")
+
+messagebox.askretrycancel("Application","try again?")
+
+
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter messagebox" src="https://static.javatpoint.com/python/images/python-tkinter-messagebox-output7.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-website-blocker">Web Blocker Introduction</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-labelframe" style="float:left">¡û prev</a>
+<a class="next" href="python-website-blocker" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-website-blocker">next ¡ú</a>
+<a class="next" href="python-tkinter-labelframe">¡û prev</a>
+</div>
+<h1 class="h1">Tkinter messagebox </h1>
+<p>The messagebox module is used to display the message boxes in the python applications. There are the various functions which are used to display the relevant messages depending upon the application requirements. </p>
+<p>The syntax to use the messagebox is given below. </p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+messagebox.function_name(title, message [, options])
+
+</textarea></div>
+<h3 class="h3">Parameters </h3>
+<ul class="points">
+<li><strong>function_name:</strong> It represents an appropriate message box function.</li>
+<li><strong>title:</strong> It is a string which is shown as a title of a message box. </li>
+<li><strong>message:</strong> It is the string to be displayed as a message on the message box. </li>
+<li><strong>options:</strong> There are various options which can be used to configure the message dialog box. </li>
+</ul>
+<p>The two options that can be used are default and parent. </p>
+<p><strong>1. default</strong></p>
+<p>The default option is used to mention the types of the default button, i.e. ABORT, RETRY, or IGNORE in the message box. </p>
+<p><strong>2. parent</strong></p>
+<p>The parent option specifies the parent window on top of which, the message box is to be displayed. </p>
+<p>There is one of the following functions used to show the appropriate message boxes. All the functions are used with the same syntax but have the specific functionalities. </p>
+<h3 class="h2">1. showinfo()</h3>
+<p>The showinfo() messagebox is used where we need to show some relevant information to the user. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+# !/usr/bin/python3
+
+
+
+from tkinter import *
+
+
+
+from tkinter import messagebox
+
+
+
+top = Tk()
+
+
+
+top.geometry("100x100")    
+
+
+
+messagebox.showinfo("information","Information")
+
+
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter messagebox" src="https://static.javatpoint.com/python/images/python-tkinter-messagebox-output1.png"/>
+<h3 class="h2">2. showwarning()</h3>
+<p>This method is used to display the warning to the user. Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+# !/usr/bin/python3
+
+from tkinter import *
+
+
+
+from tkinter import messagebox
+
+
+
+top = Tk()
+
+top.geometry("100x100")
+
+messagebox.showwarning("warning","Warning")
+
+
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter messagebox" src="https://static.javatpoint.com/python/images/python-tkinter-messagebox-output2.png"/>
+<h3 class="h2">3. showerror()</h3>
+<p>This method is used to display the error message to the user. Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+# !/usr/bin/python3
+
+from tkinter import *
+
+from tkinter import messagebox
+
+
+
+top = Tk()
+
+top.geometry("100x100")
+
+messagebox.showerror("error","Error")
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter messagebox" src="https://static.javatpoint.com/python/images/python-tkinter-messagebox-output3.png"/>
+<h3 class="h2">4. askquestion()</h3>
+<p>This method is used to ask some question to the user which can be answered in yes or no. Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+# !/usr/bin/python3
+
+from tkinter import *
+
+from tkinter import messagebox
+
+
+
+top = Tk()
+
+top.geometry("100x100")
+
+messagebox.askquestion("Confirm","Are you sure?")
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter messagebox" src="https://static.javatpoint.com/python/images/python-tkinter-messagebox-output4.png"/>
+<h3 class="h2">5. askokcancel()</h3>
+<p>This method is used to confirm the user's action regarding some application activity. Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+# !/usr/bin/python3
+
+from tkinter import *
+
+from tkinter import messagebox
+
+
+
+top = Tk()
+
+top.geometry("100x100")
+
+messagebox.askokcancel("Redirect","Redirecting you to www.javatpoint.com")
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter messagebox" src="https://static.javatpoint.com/python/images/python-tkinter-messagebox-output5.png"/>
+<h3 class="h2">6. askyesno()</h3>
+<p>This method is used to ask the user about some action to which, the user can answer in yes or no. Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+# !/usr/bin/python3
+
+from tkinter import *
+
+from tkinter import messagebox
+
+
+
+top = Tk()
+
+top.geometry("100x100")
+
+messagebox.askyesno("Application","Got It?")
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter messagebox" src="https://static.javatpoint.com/python/images/python-tkinter-messagebox-output6.png"/>
+<h3 class="h2">7. askretrycancel()</h3>
+<p>This method is used to ask the user about doing a particular task again or not. Consider the following example. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+# !/usr/bin/python3
+
+from tkinter import *
+
+from tkinter import messagebox
+
+
+
+top = Tk()
+
+top.geometry("100x100")
+
+messagebox.askretrycancel("Application","try again?")
+
+
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter messagebox" src="https://static.javatpoint.com/python/images/python-tkinter-messagebox-output7.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-website-blocker">Web Blocker Introduction</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-labelframe" style="float:left">¡û prev</a>
+<a class="next" href="python-website-blocker" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html></body></html>

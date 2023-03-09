@@ -1,0 +1,634 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-checkbutton">next ¡ú</a>
+<a class="next" href="python-tkinter-button">¡û prev</a>
+</div>
+<h1 class="h1">Python Tkinter Canvas</h1>
+<p>The canvas widget is used to add the structured graphics to the python application. It is used to draw the graph and plots to the python application. The syntax to use the canvas is given below.</p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+w = canvas(parent, options)
+</textarea></div>
+<p>A list of possible options is given below.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>bd</td>
+<td>The represents the border width. The default width is 2.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>bg</td>
+<td>It represents the background color of the canvas.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>confine</td>
+<td>It is set to make the canvas unscrollable outside the scroll region.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>cursor</td>
+<td>The cursor is used as the arrow, circle, dot, etc. on the canvas.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>height</td>
+<td>It represents the size of the canvas in the vertical direction.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>highlightcolor</td>
+<td>It represents the highlight color when the widget is focused.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>relief</td>
+<td>It represents the type of the border. The possible values are SUNKEN, RAISED, GROOVE, and RIDGE.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>scrollregion</td>
+<td>It represents the coordinates specified as the tuple containing the area of the canvas.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>width</td>
+<td>It represents the width of the canvas.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>xscrollincrement</td>
+<td>If it is set to a positive value. The canvas is placed only to the multiple of this value.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>xscrollcommand</td>
+<td>If the canvas is scrollable, this attribute should be the .set() method of the horizontal scrollbar.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>yscrollincrement</td>
+<td>Works like xscrollincrement, but governs vertical movement.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>yscrollcommand</td>
+<td>If the canvas is scrollable, this attribute should be the .set() method of the vertical scrollbar.</td>
+</tr>
+</table>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+from tkinter import * 
+
+top = Tk()
+
+top.geometry("200x200")
+
+#creating a simple canvas
+c = Canvas(top,bg = "pink",height = "200")
+
+
+c.pack()
+
+top.mainloop()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Canvas" src="python/images/python-tkinter-canvas.png"/>
+<h3 class="h3">Example: Creating an arc</h3>
+<div class="codeblock"><textarea class="python" name="code">
+from tkinter import * 
+
+top = Tk()
+
+top.geometry("200x200")
+
+#creating a simple canvas
+c = Canvas(top,bg = "pink",height = "200",width = 200)
+
+arc = c.create_arc((5,10,150,200),start = 0,extent = 150, fill= "white")
+
+c.pack()
+
+top.mainloop()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Canvas" src="python/images/python-tkinter-canvas2.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-checkbutton">Python Tkinter Checkbutton</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-button" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-checkbutton" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-checkbutton">next ¡ú</a>
+<a class="next" href="python-tkinter-button">¡û prev</a>
+</div>
+<h1 class="h1">Python Tkinter Canvas</h1>
+<p>The canvas widget is used to add the structured graphics to the python application. It is used to draw the graph and plots to the python application. The syntax to use the canvas is given below.</p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+w = canvas(parent, options)
+
+</textarea></div>
+<p>A list of possible options is given below.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>bd</td>
+<td>The represents the border width. The default width is 2.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>bg</td>
+<td>It represents the background color of the canvas.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>confine</td>
+<td>It is set to make the canvas unscrollable outside the scroll region.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>cursor</td>
+<td>The cursor is used as the arrow, circle, dot, etc. on the canvas.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>height</td>
+<td>It represents the size of the canvas in the vertical direction.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>highlightcolor</td>
+<td>It represents the highlight color when the widget is focused.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>relief</td>
+<td>It represents the type of the border. The possible values are SUNKEN, RAISED, GROOVE, and RIDGE.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>scrollregion</td>
+<td>It represents the coordinates specified as the tuple containing the area of the canvas.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>width</td>
+<td>It represents the width of the canvas.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>xscrollincrement</td>
+<td>If it is set to a positive value. The canvas is placed only to the multiple of this value.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>xscrollcommand</td>
+<td>If the canvas is scrollable, this attribute should be the .set() method of the horizontal scrollbar.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>yscrollincrement</td>
+<td>Works like xscrollincrement, but governs vertical movement.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>yscrollcommand</td>
+<td>If the canvas is scrollable, this attribute should be the .set() method of the vertical scrollbar.</td>
+</tr>
+</table>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+from tkinter import * 
+
+
+
+top = Tk()
+
+
+
+top.geometry("200x200")
+
+
+
+#creating a simple canvas
+
+c = Canvas(top,bg = "pink",height = "200")
+
+
+
+
+
+c.pack()
+
+
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Canvas" src="python/images/python-tkinter-canvas.png"/>
+<h3 class="h3">Example: Creating an arc</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+from tkinter import * 
+
+
+
+top = Tk()
+
+
+
+top.geometry("200x200")
+
+
+
+#creating a simple canvas
+
+c = Canvas(top,bg = "pink",height = "200",width = 200)
+
+
+
+arc = c.create_arc((5,10,150,200),start = 0,extent = 150, fill= "white")
+
+
+
+c.pack()
+
+
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Canvas" src="python/images/python-tkinter-canvas2.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-checkbutton">Python Tkinter Checkbutton</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-button" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-checkbutton" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-checkbutton">next ¡ú</a>
+<a class="next" href="python-tkinter-button">¡û prev</a>
+</div>
+<h1 class="h1">Python Tkinter Canvas</h1>
+<p>The canvas widget is used to add the structured graphics to the python application. It is used to draw the graph and plots to the python application. The syntax to use the canvas is given below.</p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+w = canvas(parent, options)
+
+</textarea></div>
+<p>A list of possible options is given below.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>bd</td>
+<td>The represents the border width. The default width is 2.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>bg</td>
+<td>It represents the background color of the canvas.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>confine</td>
+<td>It is set to make the canvas unscrollable outside the scroll region.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>cursor</td>
+<td>The cursor is used as the arrow, circle, dot, etc. on the canvas.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>height</td>
+<td>It represents the size of the canvas in the vertical direction.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>highlightcolor</td>
+<td>It represents the highlight color when the widget is focused.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>relief</td>
+<td>It represents the type of the border. The possible values are SUNKEN, RAISED, GROOVE, and RIDGE.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>scrollregion</td>
+<td>It represents the coordinates specified as the tuple containing the area of the canvas.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>width</td>
+<td>It represents the width of the canvas.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>xscrollincrement</td>
+<td>If it is set to a positive value. The canvas is placed only to the multiple of this value.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>xscrollcommand</td>
+<td>If the canvas is scrollable, this attribute should be the .set() method of the horizontal scrollbar.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>yscrollincrement</td>
+<td>Works like xscrollincrement, but governs vertical movement.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>yscrollcommand</td>
+<td>If the canvas is scrollable, this attribute should be the .set() method of the vertical scrollbar.</td>
+</tr>
+</table>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+from tkinter import * 
+
+
+
+top = Tk()
+
+
+
+top.geometry("200x200")
+
+
+
+#creating a simple canvas
+
+c = Canvas(top,bg = "pink",height = "200")
+
+
+
+
+
+c.pack()
+
+
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Canvas" src="python/images/python-tkinter-canvas.png"/>
+<h3 class="h3">Example: Creating an arc</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+from tkinter import * 
+
+
+
+top = Tk()
+
+
+
+top.geometry("200x200")
+
+
+
+#creating a simple canvas
+
+c = Canvas(top,bg = "pink",height = "200",width = 200)
+
+
+
+arc = c.create_arc((5,10,150,200),start = 0,extent = 150, fill= "white")
+
+
+
+c.pack()
+
+
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Canvas" src="python/images/python-tkinter-canvas2.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-checkbutton">Python Tkinter Checkbutton</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-button" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-checkbutton" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-checkbutton">next ¡ú</a>
+<a class="next" href="python-tkinter-button">¡û prev</a>
+</div>
+<h1 class="h1">Python Tkinter Canvas</h1>
+<p>The canvas widget is used to add the structured graphics to the python application. It is used to draw the graph and plots to the python application. The syntax to use the canvas is given below.</p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+w = canvas(parent, options)
+
+</textarea></div>
+<p>A list of possible options is given below.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>bd</td>
+<td>The represents the border width. The default width is 2.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>bg</td>
+<td>It represents the background color of the canvas.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>confine</td>
+<td>It is set to make the canvas unscrollable outside the scroll region.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>cursor</td>
+<td>The cursor is used as the arrow, circle, dot, etc. on the canvas.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>height</td>
+<td>It represents the size of the canvas in the vertical direction.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>highlightcolor</td>
+<td>It represents the highlight color when the widget is focused.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>relief</td>
+<td>It represents the type of the border. The possible values are SUNKEN, RAISED, GROOVE, and RIDGE.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>scrollregion</td>
+<td>It represents the coordinates specified as the tuple containing the area of the canvas.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>width</td>
+<td>It represents the width of the canvas.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>xscrollincrement</td>
+<td>If it is set to a positive value. The canvas is placed only to the multiple of this value.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>xscrollcommand</td>
+<td>If the canvas is scrollable, this attribute should be the .set() method of the horizontal scrollbar.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>yscrollincrement</td>
+<td>Works like xscrollincrement, but governs vertical movement.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>yscrollcommand</td>
+<td>If the canvas is scrollable, this attribute should be the .set() method of the vertical scrollbar.</td>
+</tr>
+</table>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+from tkinter import * 
+
+
+
+top = Tk()
+
+
+
+top.geometry("200x200")
+
+
+
+#creating a simple canvas
+
+c = Canvas(top,bg = "pink",height = "200")
+
+
+
+
+
+c.pack()
+
+
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Canvas" src="python/images/python-tkinter-canvas.png"/>
+<h3 class="h3">Example: Creating an arc</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+from tkinter import * 
+
+
+
+top = Tk()
+
+
+
+top.geometry("200x200")
+
+
+
+#creating a simple canvas
+
+c = Canvas(top,bg = "pink",height = "200",width = 200)
+
+
+
+arc = c.create_arc((5,10,150,200),start = 0,extent = 150, fill= "white")
+
+
+
+c.pack()
+
+
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Canvas" src="python/images/python-tkinter-canvas2.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-checkbutton">Python Tkinter Checkbutton</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-button" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-checkbutton" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html></body></html>

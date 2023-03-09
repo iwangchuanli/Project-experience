@@ -1,0 +1,593 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-radiobutton">next ¡ú</a>
+<a class="next" href="python-tkinter-menu">¡û prev</a>
+</div>
+<h1 class="h1">Python Tkinter Message</h1>
+<p>The Message widget is used to show the message to the user regarding the behaviour of the python application. The message widget shows the text messages to the user which can not be edited. </p>
+<p>The message text contains more than one line. However, the message can only be shown in the single font. </p>
+<p>The syntax to use the Message widget is given below. </p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+w = Message(parent, options)
+</textarea></div>
+<p>A list of possible options is given below. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>anchor</td>
+<td>It is used to decide the exact position of the text within the space provided to the widget if the widget contains more space than the need of the text. The default is CENTER. </td>
+</tr>
+<tr>
+<td>2</td>
+<td>bg</td>
+<td>The background color of the widget. </td>
+</tr>
+<tr>
+<td>3</td>
+<td>bitmap</td>
+<td>It is used to display the graphics on the widget. It can be set to any graphical or image object. </td>
+</tr>
+<tr>
+<td>4</td>
+<td>bd</td>
+<td>It represents the size of the border in the pixel. The default size is 2 pixel.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>cursor</td>
+<td>The mouse pointer is changed to the specified cursor type. The cursor type can be an arrow, dot, etc.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>font</td>
+<td>The font type of the widget text. </td>
+</tr>
+<tr>
+<td>7</td>
+<td>fg</td>
+<td>The font color of the widget text. </td>
+</tr>
+<tr>
+<td>8</td>
+<td>height</td>
+<td>The vertical dimension of the message.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>image</td>
+<td>We can set this option to a static image to show that onto the widget. </td>
+</tr>
+<tr>
+<td>10</td>
+<td>justify</td>
+<td>This option is used to specify the alignment of multiple line of code with respect to each other. The possible values can be LEFT (left alignment), CENTER (default), and RIGHT (right alignment).  </td>
+</tr>
+<tr>
+<td>11</td>
+<td>padx</td>
+<td>The horizontal padding of the widget.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>pady</td>
+<td>The vertical padding of the widget. </td>
+</tr>
+<tr>
+<td>13</td>
+<td>relief</td>
+<td>It represents the type of the border. The default type is FLAT. </td>
+</tr>
+<tr>
+<td>14</td>
+<td>text</td>
+<td>We can set this option to the string so that the widget can represent the specified text. </td>
+</tr>
+<tr>
+<td>15</td>
+<td>textvariable</td>
+<td>This is used to control the text represented by the widget. The textvariable can be set to the text that is shown in the widget.  </td>
+</tr>
+<tr>
+<td>16</td>
+<td>underline</td>
+<td>The default value of this option is -1 that represents no underline. We can set this option to an existing number to specify that nth letter of the string will be underlined. </td>
+</tr>
+<tr>
+<td>17</td>
+<td>width</td>
+<td>It specifies the horizontal dimension of the widget in the number of characters (not pixel).</td>
+</tr>
+<tr>
+<td>18</td>
+<td>wraplength</td>
+<td>We can wrap the text to the number of lines by setting this option to the desired number so that each line contains only that number of characters. </td>
+</tr>
+</table>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+from tkinter import *
+
+top = Tk()
+top.geometry("100x100")
+var = StringVar()
+msg = Message( top, text = "Welcome to Javatpoint")
+
+msg.pack()
+top.mainloop()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Message" src="python/images/python-tkinter-message-output.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-radiobutton">Python Tkinter Radiobutton</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-menu" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-radiobutton" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-radiobutton">next ¡ú</a>
+<a class="next" href="python-tkinter-menu">¡û prev</a>
+</div>
+<h1 class="h1">Python Tkinter Message</h1>
+<p>The Message widget is used to show the message to the user regarding the behaviour of the python application. The message widget shows the text messages to the user which can not be edited. </p>
+<p>The message text contains more than one line. However, the message can only be shown in the single font. </p>
+<p>The syntax to use the Message widget is given below. </p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+w = Message(parent, options)
+
+</textarea></div>
+<p>A list of possible options is given below. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>anchor</td>
+<td>It is used to decide the exact position of the text within the space provided to the widget if the widget contains more space than the need of the text. The default is CENTER. </td>
+</tr>
+<tr>
+<td>2</td>
+<td>bg</td>
+<td>The background color of the widget. </td>
+</tr>
+<tr>
+<td>3</td>
+<td>bitmap</td>
+<td>It is used to display the graphics on the widget. It can be set to any graphical or image object. </td>
+</tr>
+<tr>
+<td>4</td>
+<td>bd</td>
+<td>It represents the size of the border in the pixel. The default size is 2 pixel.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>cursor</td>
+<td>The mouse pointer is changed to the specified cursor type. The cursor type can be an arrow, dot, etc.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>font</td>
+<td>The font type of the widget text. </td>
+</tr>
+<tr>
+<td>7</td>
+<td>fg</td>
+<td>The font color of the widget text. </td>
+</tr>
+<tr>
+<td>8</td>
+<td>height</td>
+<td>The vertical dimension of the message.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>image</td>
+<td>We can set this option to a static image to show that onto the widget. </td>
+</tr>
+<tr>
+<td>10</td>
+<td>justify</td>
+<td>This option is used to specify the alignment of multiple line of code with respect to each other. The possible values can be LEFT (left alignment), CENTER (default), and RIGHT (right alignment).  </td>
+</tr>
+<tr>
+<td>11</td>
+<td>padx</td>
+<td>The horizontal padding of the widget.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>pady</td>
+<td>The vertical padding of the widget. </td>
+</tr>
+<tr>
+<td>13</td>
+<td>relief</td>
+<td>It represents the type of the border. The default type is FLAT. </td>
+</tr>
+<tr>
+<td>14</td>
+<td>text</td>
+<td>We can set this option to the string so that the widget can represent the specified text. </td>
+</tr>
+<tr>
+<td>15</td>
+<td>textvariable</td>
+<td>This is used to control the text represented by the widget. The textvariable can be set to the text that is shown in the widget.  </td>
+</tr>
+<tr>
+<td>16</td>
+<td>underline</td>
+<td>The default value of this option is -1 that represents no underline. We can set this option to an existing number to specify that nth letter of the string will be underlined. </td>
+</tr>
+<tr>
+<td>17</td>
+<td>width</td>
+<td>It specifies the horizontal dimension of the widget in the number of characters (not pixel).</td>
+</tr>
+<tr>
+<td>18</td>
+<td>wraplength</td>
+<td>We can wrap the text to the number of lines by setting this option to the desired number so that each line contains only that number of characters. </td>
+</tr>
+</table>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+from tkinter import *
+
+
+
+top = Tk()
+
+top.geometry("100x100")
+
+var = StringVar()
+
+msg = Message( top, text = "Welcome to Javatpoint")
+
+
+
+msg.pack()
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Message" src="python/images/python-tkinter-message-output.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-radiobutton">Python Tkinter Radiobutton</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-menu" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-radiobutton" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-radiobutton">next ¡ú</a>
+<a class="next" href="python-tkinter-menu">¡û prev</a>
+</div>
+<h1 class="h1">Python Tkinter Message</h1>
+<p>The Message widget is used to show the message to the user regarding the behaviour of the python application. The message widget shows the text messages to the user which can not be edited. </p>
+<p>The message text contains more than one line. However, the message can only be shown in the single font. </p>
+<p>The syntax to use the Message widget is given below. </p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+w = Message(parent, options)
+
+</textarea></div>
+<p>A list of possible options is given below. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>anchor</td>
+<td>It is used to decide the exact position of the text within the space provided to the widget if the widget contains more space than the need of the text. The default is CENTER. </td>
+</tr>
+<tr>
+<td>2</td>
+<td>bg</td>
+<td>The background color of the widget. </td>
+</tr>
+<tr>
+<td>3</td>
+<td>bitmap</td>
+<td>It is used to display the graphics on the widget. It can be set to any graphical or image object. </td>
+</tr>
+<tr>
+<td>4</td>
+<td>bd</td>
+<td>It represents the size of the border in the pixel. The default size is 2 pixel.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>cursor</td>
+<td>The mouse pointer is changed to the specified cursor type. The cursor type can be an arrow, dot, etc.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>font</td>
+<td>The font type of the widget text. </td>
+</tr>
+<tr>
+<td>7</td>
+<td>fg</td>
+<td>The font color of the widget text. </td>
+</tr>
+<tr>
+<td>8</td>
+<td>height</td>
+<td>The vertical dimension of the message.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>image</td>
+<td>We can set this option to a static image to show that onto the widget. </td>
+</tr>
+<tr>
+<td>10</td>
+<td>justify</td>
+<td>This option is used to specify the alignment of multiple line of code with respect to each other. The possible values can be LEFT (left alignment), CENTER (default), and RIGHT (right alignment).  </td>
+</tr>
+<tr>
+<td>11</td>
+<td>padx</td>
+<td>The horizontal padding of the widget.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>pady</td>
+<td>The vertical padding of the widget. </td>
+</tr>
+<tr>
+<td>13</td>
+<td>relief</td>
+<td>It represents the type of the border. The default type is FLAT. </td>
+</tr>
+<tr>
+<td>14</td>
+<td>text</td>
+<td>We can set this option to the string so that the widget can represent the specified text. </td>
+</tr>
+<tr>
+<td>15</td>
+<td>textvariable</td>
+<td>This is used to control the text represented by the widget. The textvariable can be set to the text that is shown in the widget.  </td>
+</tr>
+<tr>
+<td>16</td>
+<td>underline</td>
+<td>The default value of this option is -1 that represents no underline. We can set this option to an existing number to specify that nth letter of the string will be underlined. </td>
+</tr>
+<tr>
+<td>17</td>
+<td>width</td>
+<td>It specifies the horizontal dimension of the widget in the number of characters (not pixel).</td>
+</tr>
+<tr>
+<td>18</td>
+<td>wraplength</td>
+<td>We can wrap the text to the number of lines by setting this option to the desired number so that each line contains only that number of characters. </td>
+</tr>
+</table>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+from tkinter import *
+
+
+
+top = Tk()
+
+top.geometry("100x100")
+
+var = StringVar()
+
+msg = Message( top, text = "Welcome to Javatpoint")
+
+
+
+msg.pack()
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Message" src="python/images/python-tkinter-message-output.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-radiobutton">Python Tkinter Radiobutton</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-menu" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-radiobutton" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-radiobutton">next ¡ú</a>
+<a class="next" href="python-tkinter-menu">¡û prev</a>
+</div>
+<h1 class="h1">Python Tkinter Message</h1>
+<p>The Message widget is used to show the message to the user regarding the behaviour of the python application. The message widget shows the text messages to the user which can not be edited. </p>
+<p>The message text contains more than one line. However, the message can only be shown in the single font. </p>
+<p>The syntax to use the Message widget is given below. </p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+w = Message(parent, options)
+
+</textarea></div>
+<p>A list of possible options is given below. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>anchor</td>
+<td>It is used to decide the exact position of the text within the space provided to the widget if the widget contains more space than the need of the text. The default is CENTER. </td>
+</tr>
+<tr>
+<td>2</td>
+<td>bg</td>
+<td>The background color of the widget. </td>
+</tr>
+<tr>
+<td>3</td>
+<td>bitmap</td>
+<td>It is used to display the graphics on the widget. It can be set to any graphical or image object. </td>
+</tr>
+<tr>
+<td>4</td>
+<td>bd</td>
+<td>It represents the size of the border in the pixel. The default size is 2 pixel.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>cursor</td>
+<td>The mouse pointer is changed to the specified cursor type. The cursor type can be an arrow, dot, etc.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>font</td>
+<td>The font type of the widget text. </td>
+</tr>
+<tr>
+<td>7</td>
+<td>fg</td>
+<td>The font color of the widget text. </td>
+</tr>
+<tr>
+<td>8</td>
+<td>height</td>
+<td>The vertical dimension of the message.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>image</td>
+<td>We can set this option to a static image to show that onto the widget. </td>
+</tr>
+<tr>
+<td>10</td>
+<td>justify</td>
+<td>This option is used to specify the alignment of multiple line of code with respect to each other. The possible values can be LEFT (left alignment), CENTER (default), and RIGHT (right alignment).  </td>
+</tr>
+<tr>
+<td>11</td>
+<td>padx</td>
+<td>The horizontal padding of the widget.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>pady</td>
+<td>The vertical padding of the widget. </td>
+</tr>
+<tr>
+<td>13</td>
+<td>relief</td>
+<td>It represents the type of the border. The default type is FLAT. </td>
+</tr>
+<tr>
+<td>14</td>
+<td>text</td>
+<td>We can set this option to the string so that the widget can represent the specified text. </td>
+</tr>
+<tr>
+<td>15</td>
+<td>textvariable</td>
+<td>This is used to control the text represented by the widget. The textvariable can be set to the text that is shown in the widget.  </td>
+</tr>
+<tr>
+<td>16</td>
+<td>underline</td>
+<td>The default value of this option is -1 that represents no underline. We can set this option to an existing number to specify that nth letter of the string will be underlined. </td>
+</tr>
+<tr>
+<td>17</td>
+<td>width</td>
+<td>It specifies the horizontal dimension of the widget in the number of characters (not pixel).</td>
+</tr>
+<tr>
+<td>18</td>
+<td>wraplength</td>
+<td>We can wrap the text to the number of lines by setting this option to the desired number so that each line contains only that number of characters. </td>
+</tr>
+</table>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+from tkinter import *
+
+
+
+top = Tk()
+
+top.geometry("100x100")
+
+var = StringVar()
+
+msg = Message( top, text = "Welcome to Javatpoint")
+
+
+
+msg.pack()
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Message" src="python/images/python-tkinter-message-output.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-radiobutton">Python Tkinter Radiobutton</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-menu" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-radiobutton" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html></body></html>

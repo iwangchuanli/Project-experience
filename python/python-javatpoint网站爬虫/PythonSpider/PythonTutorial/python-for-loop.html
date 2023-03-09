@@ -1,0 +1,669 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-while-loop">next ¡ú</a>
+<a class="next" href="python-loops">¡û prev</a>
+</div>
+<h1 class="h1">Python for loop</h1>
+<p>The for <strong>loop in Python</strong> is used to iterate the statements or a part of the program several times. It is frequently used to traverse the data structures like list, tuple, or dictionary.</p>
+<p>The syntax of for loop in python is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+for iterating_var in sequence:
+	statement(s)
+</textarea></div>
+<img alt="Python for loop" src="python/images/python-for-loop.png"/>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+i=1
+n=int(input("Enter the number up to which you want to print the natural numbers?"))
+for i in range(0,10):
+    print(i,end = ' ')
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+0 1 2 3 4 5 6 7 8 9
+</pre></div>
+<h2 class="h3">Python for loop example : printing the table of the given number</h2>
+<div class="codeblock"><textarea class="python" name="code">
+i=1;
+num = int(input("Enter a number:"));
+for i in range(1,11):
+    print("%d X %d = %d"%(num,i,num*i));
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Enter a number:10
+10 X 1 = 10
+10 X 2 = 20
+10 X 3 = 30
+10 X 4 = 40
+10 X 5 = 50
+10 X 6 = 60
+10 X 7 = 70
+10 X 8 = 80
+10 X 9 = 90
+10 X 10 = 100
+</pre></div>
+<hr/>
+<h2 class="h2">Nested for loop in python</h2>
+<p>Python allows us to nest any number of for loops inside a for loop. The inner loop is executed n number of times for every iteration of the outer loop. The syntax of the nested for loop in python is given below. </p>
+<div class="codeblock"><textarea class="python" name="code">
+for iterating_var1 in sequence:
+	for iterating_var2 in sequence:
+		#block of statements 
+#Other statements
+</textarea></div>
+<h2 class="h3">Example 1</h2>
+<div class="codeblock"><textarea class="python" name="code">
+n = int(input("Enter the number of rows you want to print?"))
+i,j=0,0
+for i in range(0,n):
+    print()
+    for j in range(0,i+1):
+        print("*",end="")
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Enter the number of rows you want to print?5
+*
+**
+***
+****
+*****
+</pre></div>
+<hr/>
+<h2 class="h2">Using else statement with for loop</h2>
+<p>Unlike other languages like C, C++, or Java, python allows us to use the else statement with the for loop which can be executed only when all the iterations are exhausted. Here, we must notice that if the loop contains any of the break statement then the else statement will not be executed. </p>
+<h2 class="h3">Example 1</h2>
+<div class="codeblock"><textarea class="python" name="code">
+for i in range(0,5):
+	print(i)
+else:print("for loop completely exhausted, since there is no break.");
+</textarea></div>
+<p>In the above example, for loop is executed completely since there is no break statement in the loop. The control comes out of the loop and hence the else block is executed. </p>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+0
+1
+2
+3
+4
+</pre></div>
+<p>for loop completely exhausted, since there is no break.</p>
+<h2 class="h3">Example 2</h2>
+<div class="codeblock"><textarea class="python" name="code">
+for i in range(0,5):
+	print(i)
+	break;
+else:print("for loop is exhausted");
+print("The loop is broken due to break statement...came out of loop")
+</textarea></div>
+<p>In the above example, the loop is broken due to break statement therefore the else statement will not be executed. The statement present immediate next to else block will be executed.</p>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+0
+</pre></div>
+<p>The loop is broken due to break statement...came out of loop </p>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-while-loop">Python while loop </a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-loops" style="float:left">¡û prev</a>
+<a class="next" href="python-while-loop" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-while-loop">next ¡ú</a>
+<a class="next" href="python-loops">¡û prev</a>
+</div>
+<h1 class="h1">Python for loop</h1>
+<p>The for <strong>loop in Python</strong> is used to iterate the statements or a part of the program several times. It is frequently used to traverse the data structures like list, tuple, or dictionary.</p>
+<p>The syntax of for loop in python is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+for iterating_var in sequence:
+
+	statement(s)
+
+</textarea></div>
+<img alt="Python for loop" src="python/images/python-for-loop.png"/>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+
+i=1
+
+n=int(input("Enter the number up to which you want to print the natural numbers?"))
+
+for i in range(0,10):
+
+    print(i,end = ' ')
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+0 1 2 3 4 5 6 7 8 9
+
+</pre></div>
+<h2 class="h3">Python for loop example : printing the table of the given number</h2>
+<div class="codeblock"><textarea class="python" name="code">
+
+i=1;
+
+num = int(input("Enter a number:"));
+
+for i in range(1,11):
+
+    print("%d X %d = %d"%(num,i,num*i));
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Enter a number:10
+
+10 X 1 = 10
+
+10 X 2 = 20
+
+10 X 3 = 30
+
+10 X 4 = 40
+
+10 X 5 = 50
+
+10 X 6 = 60
+
+10 X 7 = 70
+
+10 X 8 = 80
+
+10 X 9 = 90
+
+10 X 10 = 100
+
+</pre></div>
+<hr/>
+<h2 class="h2">Nested for loop in python</h2>
+<p>Python allows us to nest any number of for loops inside a for loop. The inner loop is executed n number of times for every iteration of the outer loop. The syntax of the nested for loop in python is given below. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+for iterating_var1 in sequence:
+
+	for iterating_var2 in sequence:
+
+		#block of statements 
+
+#Other statements
+
+</textarea></div>
+<h2 class="h3">Example 1</h2>
+<div class="codeblock"><textarea class="python" name="code">
+
+n = int(input("Enter the number of rows you want to print?"))
+
+i,j=0,0
+
+for i in range(0,n):
+
+    print()
+
+    for j in range(0,i+1):
+
+        print("*",end="")
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Enter the number of rows you want to print?5
+
+*
+
+**
+
+***
+
+****
+
+*****
+
+</pre></div>
+<hr/>
+<h2 class="h2">Using else statement with for loop</h2>
+<p>Unlike other languages like C, C++, or Java, python allows us to use the else statement with the for loop which can be executed only when all the iterations are exhausted. Here, we must notice that if the loop contains any of the break statement then the else statement will not be executed. </p>
+<h2 class="h3">Example 1</h2>
+<div class="codeblock"><textarea class="python" name="code">
+
+for i in range(0,5):
+
+	print(i)
+
+else:print("for loop completely exhausted, since there is no break.");
+
+</textarea></div>
+<p>In the above example, for loop is executed completely since there is no break statement in the loop. The control comes out of the loop and hence the else block is executed. </p>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+0
+
+1
+
+2
+
+3
+
+4
+
+</pre></div>
+<p>for loop completely exhausted, since there is no break.</p>
+<h2 class="h3">Example 2</h2>
+<div class="codeblock"><textarea class="python" name="code">
+
+for i in range(0,5):
+
+	print(i)
+
+	break;
+
+else:print("for loop is exhausted");
+
+print("The loop is broken due to break statement...came out of loop")
+
+</textarea></div>
+<p>In the above example, the loop is broken due to break statement therefore the else statement will not be executed. The statement present immediate next to else block will be executed.</p>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+0
+
+</pre></div>
+<p>The loop is broken due to break statement...came out of loop </p>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-while-loop">Python while loop </a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-loops" style="float:left">¡û prev</a>
+<a class="next" href="python-while-loop" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-while-loop">next ¡ú</a>
+<a class="next" href="python-loops">¡û prev</a>
+</div>
+<h1 class="h1">Python for loop</h1>
+<p>The for <strong>loop in Python</strong> is used to iterate the statements or a part of the program several times. It is frequently used to traverse the data structures like list, tuple, or dictionary.</p>
+<p>The syntax of for loop in python is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+for iterating_var in sequence:
+
+	statement(s)
+
+</textarea></div>
+<img alt="Python for loop" src="python/images/python-for-loop.png"/>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+
+i=1
+
+n=int(input("Enter the number up to which you want to print the natural numbers?"))
+
+for i in range(0,10):
+
+    print(i,end = ' ')
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+0 1 2 3 4 5 6 7 8 9
+
+</pre></div>
+<h2 class="h3">Python for loop example : printing the table of the given number</h2>
+<div class="codeblock"><textarea class="python" name="code">
+
+i=1;
+
+num = int(input("Enter a number:"));
+
+for i in range(1,11):
+
+    print("%d X %d = %d"%(num,i,num*i));
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Enter a number:10
+
+10 X 1 = 10
+
+10 X 2 = 20
+
+10 X 3 = 30
+
+10 X 4 = 40
+
+10 X 5 = 50
+
+10 X 6 = 60
+
+10 X 7 = 70
+
+10 X 8 = 80
+
+10 X 9 = 90
+
+10 X 10 = 100
+
+</pre></div>
+<hr/>
+<h2 class="h2">Nested for loop in python</h2>
+<p>Python allows us to nest any number of for loops inside a for loop. The inner loop is executed n number of times for every iteration of the outer loop. The syntax of the nested for loop in python is given below. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+for iterating_var1 in sequence:
+
+	for iterating_var2 in sequence:
+
+		#block of statements 
+
+#Other statements
+
+</textarea></div>
+<h2 class="h3">Example 1</h2>
+<div class="codeblock"><textarea class="python" name="code">
+
+n = int(input("Enter the number of rows you want to print?"))
+
+i,j=0,0
+
+for i in range(0,n):
+
+    print()
+
+    for j in range(0,i+1):
+
+        print("*",end="")
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Enter the number of rows you want to print?5
+
+*
+
+**
+
+***
+
+****
+
+*****
+
+</pre></div>
+<hr/>
+<h2 class="h2">Using else statement with for loop</h2>
+<p>Unlike other languages like C, C++, or Java, python allows us to use the else statement with the for loop which can be executed only when all the iterations are exhausted. Here, we must notice that if the loop contains any of the break statement then the else statement will not be executed. </p>
+<h2 class="h3">Example 1</h2>
+<div class="codeblock"><textarea class="python" name="code">
+
+for i in range(0,5):
+
+	print(i)
+
+else:print("for loop completely exhausted, since there is no break.");
+
+</textarea></div>
+<p>In the above example, for loop is executed completely since there is no break statement in the loop. The control comes out of the loop and hence the else block is executed. </p>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+0
+
+1
+
+2
+
+3
+
+4
+
+</pre></div>
+<p>for loop completely exhausted, since there is no break.</p>
+<h2 class="h3">Example 2</h2>
+<div class="codeblock"><textarea class="python" name="code">
+
+for i in range(0,5):
+
+	print(i)
+
+	break;
+
+else:print("for loop is exhausted");
+
+print("The loop is broken due to break statement...came out of loop")
+
+</textarea></div>
+<p>In the above example, the loop is broken due to break statement therefore the else statement will not be executed. The statement present immediate next to else block will be executed.</p>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+0
+
+</pre></div>
+<p>The loop is broken due to break statement...came out of loop </p>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-while-loop">Python while loop </a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-loops" style="float:left">¡û prev</a>
+<a class="next" href="python-while-loop" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-while-loop">next ¡ú</a>
+<a class="next" href="python-loops">¡û prev</a>
+</div>
+<h1 class="h1">Python for loop</h1>
+<p>The for <strong>loop in Python</strong> is used to iterate the statements or a part of the program several times. It is frequently used to traverse the data structures like list, tuple, or dictionary.</p>
+<p>The syntax of for loop in python is given below.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+for iterating_var in sequence:
+
+	statement(s)
+
+</textarea></div>
+<img alt="Python for loop" src="python/images/python-for-loop.png"/>
+<h2 class="h3">Example</h2>
+<div class="codeblock"><textarea class="python" name="code">
+
+i=1
+
+n=int(input("Enter the number up to which you want to print the natural numbers?"))
+
+for i in range(0,10):
+
+    print(i,end = ' ')
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+0 1 2 3 4 5 6 7 8 9
+
+</pre></div>
+<h2 class="h3">Python for loop example : printing the table of the given number</h2>
+<div class="codeblock"><textarea class="python" name="code">
+
+i=1;
+
+num = int(input("Enter a number:"));
+
+for i in range(1,11):
+
+    print("%d X %d = %d"%(num,i,num*i));
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Enter a number:10
+
+10 X 1 = 10
+
+10 X 2 = 20
+
+10 X 3 = 30
+
+10 X 4 = 40
+
+10 X 5 = 50
+
+10 X 6 = 60
+
+10 X 7 = 70
+
+10 X 8 = 80
+
+10 X 9 = 90
+
+10 X 10 = 100
+
+</pre></div>
+<hr/>
+<h2 class="h2">Nested for loop in python</h2>
+<p>Python allows us to nest any number of for loops inside a for loop. The inner loop is executed n number of times for every iteration of the outer loop. The syntax of the nested for loop in python is given below. </p>
+<div class="codeblock"><textarea class="python" name="code">
+
+for iterating_var1 in sequence:
+
+	for iterating_var2 in sequence:
+
+		#block of statements 
+
+#Other statements
+
+</textarea></div>
+<h2 class="h3">Example 1</h2>
+<div class="codeblock"><textarea class="python" name="code">
+
+n = int(input("Enter the number of rows you want to print?"))
+
+i,j=0,0
+
+for i in range(0,n):
+
+    print()
+
+    for j in range(0,i+1):
+
+        print("*",end="")
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Enter the number of rows you want to print?5
+
+*
+
+**
+
+***
+
+****
+
+*****
+
+</pre></div>
+<hr/>
+<h2 class="h2">Using else statement with for loop</h2>
+<p>Unlike other languages like C, C++, or Java, python allows us to use the else statement with the for loop which can be executed only when all the iterations are exhausted. Here, we must notice that if the loop contains any of the break statement then the else statement will not be executed. </p>
+<h2 class="h3">Example 1</h2>
+<div class="codeblock"><textarea class="python" name="code">
+
+for i in range(0,5):
+
+	print(i)
+
+else:print("for loop completely exhausted, since there is no break.");
+
+</textarea></div>
+<p>In the above example, for loop is executed completely since there is no break statement in the loop. The control comes out of the loop and hence the else block is executed. </p>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+0
+
+1
+
+2
+
+3
+
+4
+
+</pre></div>
+<p>for loop completely exhausted, since there is no break.</p>
+<h2 class="h3">Example 2</h2>
+<div class="codeblock"><textarea class="python" name="code">
+
+for i in range(0,5):
+
+	print(i)
+
+	break;
+
+else:print("for loop is exhausted");
+
+print("The loop is broken due to break statement...came out of loop")
+
+</textarea></div>
+<p>In the above example, the loop is broken due to break statement therefore the else statement will not be executed. The statement present immediate next to else block will be executed.</p>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+0
+
+</pre></div>
+<p>The loop is broken due to break statement...came out of loop </p>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-while-loop">Python while loop </a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-loops" style="float:left">¡û prev</a>
+<a class="next" href="python-while-loop" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html></body></html>

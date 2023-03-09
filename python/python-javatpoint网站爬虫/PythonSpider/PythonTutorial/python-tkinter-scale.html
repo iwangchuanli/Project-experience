@@ -1,0 +1,899 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-scrollbar">next ¡ú</a>
+<a class="next" href="python-tkinter-radiobutton">¡û prev</a>
+</div>
+<h1 class="h1">Python Tkinter Scale </h1>
+<p>The Scale widget is used to implement the graphical slider to the python application so that the user can slide through the range of values shown on the slider and select the one among them. </p>
+<p>We can control the minimum and maximum values along with the resolution of the scale. It provides an alternative to the Entry widget when the user is forced to select only one value from the given range of values. </p>
+<p>The syntax to use the Scale widget is given below. </p>
+<h3 class="h3">Syntax </h3>
+<div class="codeblock"><textarea class="python" name="code">
+  w = Scale(top, options) 
+</textarea></div>
+<p>A list of possible options is given below. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>activebackground</td>
+<td>The background color of the widget when it has the focus.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>bg</td>
+<td>The background color of the widget.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>bd</td>
+<td>The border size of the widget. The default is 2 pixel.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>command</td>
+<td>It is set to the procedure which is called each time when we move the slider. If the slider is moved rapidly, the callback is done when it settles.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>cursor</td>
+<td>The mouse pointer is changed to the cursor type assigned to this option. It can be an arrow, dot, etc.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>digits</td>
+<td>If the control variable used to control the scale data is of string type, this option is used to specify the number of digits when the numeric scale is converted to a string.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>font</td>
+<td>The font type of the widget text.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>fg</td>
+<td>The foreground color of the text.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>from_</td>
+<td>It is used to represent one end of the widget range.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>highlightbackground</td>
+<td>The highlight color when the widget doesn't have the focus.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>highlighcolor</td>
+<td>The highlight color when the widget has the focus.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>label</td>
+<td>This can be set to some text which can be shown as a label with the scale. It is shown in the top left corner if the scale is horizontal or the top right corner if the scale is vertical.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>length</td>
+<td>It represents the length of the widget. It represents the X dimension if the scale is horizontal or y dimension if the scale is vertical.</td>
+</tr>
+<tr>
+<td>14</td>
+<td>orient</td>
+<td>It can be set to horizontal or vertical depending upon the type of the scale.</td>
+</tr>
+<tr>
+<td>15</td>
+<td>relief</td>
+<td>It represents the type of the border. The default is FLAT.</td>
+</tr>
+<tr>
+<td>16</td>
+<td>repeatdelay</td>
+<td>This option tells the duration up to which the button is to be pressed before the slider starts moving in that direction repeatedly. The default is 300 ms.</td>
+</tr>
+<tr>
+<td>17</td>
+<td>resolution</td>
+<td>It is set to the smallest change which is to be made to the scale value.</td>
+</tr>
+<tr>
+<td>18</td>
+<td>showvalue</td>
+<td>The value of the scale is shown in the text form by default. We can set this option to 0 to suppress the label.</td>
+</tr>
+<tr>
+<td>19</td>
+<td>sliderlength</td>
+<td>It represents the length of the slider window along the length of the scale. The default is 30 pixels. However, we can change it to the appropriate value.</td>
+</tr>
+<tr>
+<td>20</td>
+<td>state</td>
+<td>The scale widget is active by default. We can set this to DISABLED to make it unresponsive.</td>
+</tr>
+<tr>
+<td>21</td>
+<td>takefocus</td>
+<td>The focus cycles through the scale widgets by default. We can set this option to 0 if we don't want this to happen.</td>
+</tr>
+<tr>
+<td>22</td>
+<td>tickinterval</td>
+<td>The scale values are displayed on the multiple of the specified tick interval. The default value of the tickinterval is 0.</td>
+</tr>
+<tr>
+<td>23</td>
+<td>to</td>
+<td>It represents a float or integer value that specifies the other end of the range represented by the scale.</td>
+</tr>
+<tr>
+<td>24</td>
+<td>troughcolor</td>
+<td>It represents the color of the through.</td>
+</tr>
+<tr>
+<td>25</td>
+<td>variable</td>
+<td>It represents the control variable for the scale.</td>
+</tr>
+<tr>
+<td>26</td>
+<td>width</td>
+<td>It represents the width of the through part of the widget.</td>
+</tr>
+</table>
+<h2 class="h2">Methods </h2>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Method</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>get()</td>
+<td>It is used to get the current value of the scale.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>set(value)</td>
+<td>It is used to set the value of the scale. </td>
+</tr>
+</table>
+<hr/>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+from tkinter import *
+
+def select():
+   sel = "Value = " + str(v.get())
+   label.config(text = sel)
+   
+top = Tk()
+top.geometry("200x100")
+v = DoubleVar()
+scale = Scale( top, variable = v, from_ = 1, to = 50, orient = HORIZONTAL)
+scale.pack(anchor=CENTER)
+
+btn = Button(top, text="Value", command=select)
+btn.pack(anchor=CENTER)
+
+label = Label(top)
+label.pack()
+
+top.mainloop()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Scale" src="python/images/python-tkinter-scale-output.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-scrollbar">Tkinter Scrollbar</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-radiobutton" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-scrollbar" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-scrollbar">next ¡ú</a>
+<a class="next" href="python-tkinter-radiobutton">¡û prev</a>
+</div>
+<h1 class="h1">Python Tkinter Scale </h1>
+<p>The Scale widget is used to implement the graphical slider to the python application so that the user can slide through the range of values shown on the slider and select the one among them. </p>
+<p>We can control the minimum and maximum values along with the resolution of the scale. It provides an alternative to the Entry widget when the user is forced to select only one value from the given range of values. </p>
+<p>The syntax to use the Scale widget is given below. </p>
+<h3 class="h3">Syntax </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+  w = Scale(top, options) 
+
+</textarea></div>
+<p>A list of possible options is given below. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>activebackground</td>
+<td>The background color of the widget when it has the focus.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>bg</td>
+<td>The background color of the widget.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>bd</td>
+<td>The border size of the widget. The default is 2 pixel.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>command</td>
+<td>It is set to the procedure which is called each time when we move the slider. If the slider is moved rapidly, the callback is done when it settles.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>cursor</td>
+<td>The mouse pointer is changed to the cursor type assigned to this option. It can be an arrow, dot, etc.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>digits</td>
+<td>If the control variable used to control the scale data is of string type, this option is used to specify the number of digits when the numeric scale is converted to a string.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>font</td>
+<td>The font type of the widget text.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>fg</td>
+<td>The foreground color of the text.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>from_</td>
+<td>It is used to represent one end of the widget range.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>highlightbackground</td>
+<td>The highlight color when the widget doesn't have the focus.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>highlighcolor</td>
+<td>The highlight color when the widget has the focus.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>label</td>
+<td>This can be set to some text which can be shown as a label with the scale. It is shown in the top left corner if the scale is horizontal or the top right corner if the scale is vertical.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>length</td>
+<td>It represents the length of the widget. It represents the X dimension if the scale is horizontal or y dimension if the scale is vertical.</td>
+</tr>
+<tr>
+<td>14</td>
+<td>orient</td>
+<td>It can be set to horizontal or vertical depending upon the type of the scale.</td>
+</tr>
+<tr>
+<td>15</td>
+<td>relief</td>
+<td>It represents the type of the border. The default is FLAT.</td>
+</tr>
+<tr>
+<td>16</td>
+<td>repeatdelay</td>
+<td>This option tells the duration up to which the button is to be pressed before the slider starts moving in that direction repeatedly. The default is 300 ms.</td>
+</tr>
+<tr>
+<td>17</td>
+<td>resolution</td>
+<td>It is set to the smallest change which is to be made to the scale value.</td>
+</tr>
+<tr>
+<td>18</td>
+<td>showvalue</td>
+<td>The value of the scale is shown in the text form by default. We can set this option to 0 to suppress the label.</td>
+</tr>
+<tr>
+<td>19</td>
+<td>sliderlength</td>
+<td>It represents the length of the slider window along the length of the scale. The default is 30 pixels. However, we can change it to the appropriate value.</td>
+</tr>
+<tr>
+<td>20</td>
+<td>state</td>
+<td>The scale widget is active by default. We can set this to DISABLED to make it unresponsive.</td>
+</tr>
+<tr>
+<td>21</td>
+<td>takefocus</td>
+<td>The focus cycles through the scale widgets by default. We can set this option to 0 if we don't want this to happen.</td>
+</tr>
+<tr>
+<td>22</td>
+<td>tickinterval</td>
+<td>The scale values are displayed on the multiple of the specified tick interval. The default value of the tickinterval is 0.</td>
+</tr>
+<tr>
+<td>23</td>
+<td>to</td>
+<td>It represents a float or integer value that specifies the other end of the range represented by the scale.</td>
+</tr>
+<tr>
+<td>24</td>
+<td>troughcolor</td>
+<td>It represents the color of the through.</td>
+</tr>
+<tr>
+<td>25</td>
+<td>variable</td>
+<td>It represents the control variable for the scale.</td>
+</tr>
+<tr>
+<td>26</td>
+<td>width</td>
+<td>It represents the width of the through part of the widget.</td>
+</tr>
+</table>
+<h2 class="h2">Methods </h2>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Method</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>get()</td>
+<td>It is used to get the current value of the scale.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>set(value)</td>
+<td>It is used to set the value of the scale. </td>
+</tr>
+</table>
+<hr/>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+from tkinter import *
+
+
+
+def select():
+
+   sel = "Value = " + str(v.get())
+
+   label.config(text = sel)
+
+   
+
+top = Tk()
+
+top.geometry("200x100")
+
+v = DoubleVar()
+
+scale = Scale( top, variable = v, from_ = 1, to = 50, orient = HORIZONTAL)
+
+scale.pack(anchor=CENTER)
+
+
+
+btn = Button(top, text="Value", command=select)
+
+btn.pack(anchor=CENTER)
+
+
+
+label = Label(top)
+
+label.pack()
+
+
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Scale" src="python/images/python-tkinter-scale-output.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-scrollbar">Tkinter Scrollbar</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-radiobutton" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-scrollbar" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-scrollbar">next ¡ú</a>
+<a class="next" href="python-tkinter-radiobutton">¡û prev</a>
+</div>
+<h1 class="h1">Python Tkinter Scale </h1>
+<p>The Scale widget is used to implement the graphical slider to the python application so that the user can slide through the range of values shown on the slider and select the one among them. </p>
+<p>We can control the minimum and maximum values along with the resolution of the scale. It provides an alternative to the Entry widget when the user is forced to select only one value from the given range of values. </p>
+<p>The syntax to use the Scale widget is given below. </p>
+<h3 class="h3">Syntax </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+  w = Scale(top, options) 
+
+</textarea></div>
+<p>A list of possible options is given below. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>activebackground</td>
+<td>The background color of the widget when it has the focus.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>bg</td>
+<td>The background color of the widget.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>bd</td>
+<td>The border size of the widget. The default is 2 pixel.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>command</td>
+<td>It is set to the procedure which is called each time when we move the slider. If the slider is moved rapidly, the callback is done when it settles.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>cursor</td>
+<td>The mouse pointer is changed to the cursor type assigned to this option. It can be an arrow, dot, etc.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>digits</td>
+<td>If the control variable used to control the scale data is of string type, this option is used to specify the number of digits when the numeric scale is converted to a string.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>font</td>
+<td>The font type of the widget text.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>fg</td>
+<td>The foreground color of the text.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>from_</td>
+<td>It is used to represent one end of the widget range.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>highlightbackground</td>
+<td>The highlight color when the widget doesn't have the focus.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>highlighcolor</td>
+<td>The highlight color when the widget has the focus.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>label</td>
+<td>This can be set to some text which can be shown as a label with the scale. It is shown in the top left corner if the scale is horizontal or the top right corner if the scale is vertical.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>length</td>
+<td>It represents the length of the widget. It represents the X dimension if the scale is horizontal or y dimension if the scale is vertical.</td>
+</tr>
+<tr>
+<td>14</td>
+<td>orient</td>
+<td>It can be set to horizontal or vertical depending upon the type of the scale.</td>
+</tr>
+<tr>
+<td>15</td>
+<td>relief</td>
+<td>It represents the type of the border. The default is FLAT.</td>
+</tr>
+<tr>
+<td>16</td>
+<td>repeatdelay</td>
+<td>This option tells the duration up to which the button is to be pressed before the slider starts moving in that direction repeatedly. The default is 300 ms.</td>
+</tr>
+<tr>
+<td>17</td>
+<td>resolution</td>
+<td>It is set to the smallest change which is to be made to the scale value.</td>
+</tr>
+<tr>
+<td>18</td>
+<td>showvalue</td>
+<td>The value of the scale is shown in the text form by default. We can set this option to 0 to suppress the label.</td>
+</tr>
+<tr>
+<td>19</td>
+<td>sliderlength</td>
+<td>It represents the length of the slider window along the length of the scale. The default is 30 pixels. However, we can change it to the appropriate value.</td>
+</tr>
+<tr>
+<td>20</td>
+<td>state</td>
+<td>The scale widget is active by default. We can set this to DISABLED to make it unresponsive.</td>
+</tr>
+<tr>
+<td>21</td>
+<td>takefocus</td>
+<td>The focus cycles through the scale widgets by default. We can set this option to 0 if we don't want this to happen.</td>
+</tr>
+<tr>
+<td>22</td>
+<td>tickinterval</td>
+<td>The scale values are displayed on the multiple of the specified tick interval. The default value of the tickinterval is 0.</td>
+</tr>
+<tr>
+<td>23</td>
+<td>to</td>
+<td>It represents a float or integer value that specifies the other end of the range represented by the scale.</td>
+</tr>
+<tr>
+<td>24</td>
+<td>troughcolor</td>
+<td>It represents the color of the through.</td>
+</tr>
+<tr>
+<td>25</td>
+<td>variable</td>
+<td>It represents the control variable for the scale.</td>
+</tr>
+<tr>
+<td>26</td>
+<td>width</td>
+<td>It represents the width of the through part of the widget.</td>
+</tr>
+</table>
+<h2 class="h2">Methods </h2>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Method</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>get()</td>
+<td>It is used to get the current value of the scale.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>set(value)</td>
+<td>It is used to set the value of the scale. </td>
+</tr>
+</table>
+<hr/>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+from tkinter import *
+
+
+
+def select():
+
+   sel = "Value = " + str(v.get())
+
+   label.config(text = sel)
+
+   
+
+top = Tk()
+
+top.geometry("200x100")
+
+v = DoubleVar()
+
+scale = Scale( top, variable = v, from_ = 1, to = 50, orient = HORIZONTAL)
+
+scale.pack(anchor=CENTER)
+
+
+
+btn = Button(top, text="Value", command=select)
+
+btn.pack(anchor=CENTER)
+
+
+
+label = Label(top)
+
+label.pack()
+
+
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Scale" src="python/images/python-tkinter-scale-output.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-scrollbar">Tkinter Scrollbar</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-radiobutton" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-scrollbar" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-scrollbar">next ¡ú</a>
+<a class="next" href="python-tkinter-radiobutton">¡û prev</a>
+</div>
+<h1 class="h1">Python Tkinter Scale </h1>
+<p>The Scale widget is used to implement the graphical slider to the python application so that the user can slide through the range of values shown on the slider and select the one among them. </p>
+<p>We can control the minimum and maximum values along with the resolution of the scale. It provides an alternative to the Entry widget when the user is forced to select only one value from the given range of values. </p>
+<p>The syntax to use the Scale widget is given below. </p>
+<h3 class="h3">Syntax </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+  w = Scale(top, options) 
+
+</textarea></div>
+<p>A list of possible options is given below. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>activebackground</td>
+<td>The background color of the widget when it has the focus.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>bg</td>
+<td>The background color of the widget.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>bd</td>
+<td>The border size of the widget. The default is 2 pixel.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>command</td>
+<td>It is set to the procedure which is called each time when we move the slider. If the slider is moved rapidly, the callback is done when it settles.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>cursor</td>
+<td>The mouse pointer is changed to the cursor type assigned to this option. It can be an arrow, dot, etc.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>digits</td>
+<td>If the control variable used to control the scale data is of string type, this option is used to specify the number of digits when the numeric scale is converted to a string.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>font</td>
+<td>The font type of the widget text.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>fg</td>
+<td>The foreground color of the text.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>from_</td>
+<td>It is used to represent one end of the widget range.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>highlightbackground</td>
+<td>The highlight color when the widget doesn't have the focus.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>highlighcolor</td>
+<td>The highlight color when the widget has the focus.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>label</td>
+<td>This can be set to some text which can be shown as a label with the scale. It is shown in the top left corner if the scale is horizontal or the top right corner if the scale is vertical.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>length</td>
+<td>It represents the length of the widget. It represents the X dimension if the scale is horizontal or y dimension if the scale is vertical.</td>
+</tr>
+<tr>
+<td>14</td>
+<td>orient</td>
+<td>It can be set to horizontal or vertical depending upon the type of the scale.</td>
+</tr>
+<tr>
+<td>15</td>
+<td>relief</td>
+<td>It represents the type of the border. The default is FLAT.</td>
+</tr>
+<tr>
+<td>16</td>
+<td>repeatdelay</td>
+<td>This option tells the duration up to which the button is to be pressed before the slider starts moving in that direction repeatedly. The default is 300 ms.</td>
+</tr>
+<tr>
+<td>17</td>
+<td>resolution</td>
+<td>It is set to the smallest change which is to be made to the scale value.</td>
+</tr>
+<tr>
+<td>18</td>
+<td>showvalue</td>
+<td>The value of the scale is shown in the text form by default. We can set this option to 0 to suppress the label.</td>
+</tr>
+<tr>
+<td>19</td>
+<td>sliderlength</td>
+<td>It represents the length of the slider window along the length of the scale. The default is 30 pixels. However, we can change it to the appropriate value.</td>
+</tr>
+<tr>
+<td>20</td>
+<td>state</td>
+<td>The scale widget is active by default. We can set this to DISABLED to make it unresponsive.</td>
+</tr>
+<tr>
+<td>21</td>
+<td>takefocus</td>
+<td>The focus cycles through the scale widgets by default. We can set this option to 0 if we don't want this to happen.</td>
+</tr>
+<tr>
+<td>22</td>
+<td>tickinterval</td>
+<td>The scale values are displayed on the multiple of the specified tick interval. The default value of the tickinterval is 0.</td>
+</tr>
+<tr>
+<td>23</td>
+<td>to</td>
+<td>It represents a float or integer value that specifies the other end of the range represented by the scale.</td>
+</tr>
+<tr>
+<td>24</td>
+<td>troughcolor</td>
+<td>It represents the color of the through.</td>
+</tr>
+<tr>
+<td>25</td>
+<td>variable</td>
+<td>It represents the control variable for the scale.</td>
+</tr>
+<tr>
+<td>26</td>
+<td>width</td>
+<td>It represents the width of the through part of the widget.</td>
+</tr>
+</table>
+<h2 class="h2">Methods </h2>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Method</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>get()</td>
+<td>It is used to get the current value of the scale.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>set(value)</td>
+<td>It is used to set the value of the scale. </td>
+</tr>
+</table>
+<hr/>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+from tkinter import *
+
+
+
+def select():
+
+   sel = "Value = " + str(v.get())
+
+   label.config(text = sel)
+
+   
+
+top = Tk()
+
+top.geometry("200x100")
+
+v = DoubleVar()
+
+scale = Scale( top, variable = v, from_ = 1, to = 50, orient = HORIZONTAL)
+
+scale.pack(anchor=CENTER)
+
+
+
+btn = Button(top, text="Value", command=select)
+
+btn.pack(anchor=CENTER)
+
+
+
+label = Label(top)
+
+label.pack()
+
+
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Scale" src="python/images/python-tkinter-scale-output.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-scrollbar">Tkinter Scrollbar</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-radiobutton" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-scrollbar" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html></body></html>

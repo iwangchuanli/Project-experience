@@ -1,0 +1,1016 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-scale">next ¡ú</a>
+<a class="next" href="python-tkinter-message">¡û prev</a>
+</div>
+<h1 class="h1">Python Tkinter Radiobutton </h1>
+<p>The Radiobutton widget is used to implement one-of-many selection in the python application. It shows multiple choices to the user out of which, the user can select only one out of them. We can associate different methods with each of the radiobutton. </p>
+<p>We can display the multiple line text or images on the radiobuttons. To keep track the user's selection the radiobutton, it is associated with a single variable. Each button displays a single value for that particular variable.</p>
+<p>The syntax to use the Radiobutton is given below. </p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+w = Radiobutton(top, options)
+</textarea></div>
+<br/>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>activebackground</td>
+<td>The background color of the widget when it has the focus.  </td>
+</tr>
+<tr>
+<td>2</td>
+<td>activeforeground</td>
+<td>The font color of the widget text when it has the focus. </td>
+</tr>
+<tr>
+<td>3</td>
+<td>anchor</td>
+<td>It represents the exact position of the text within the widget if the widget contains more space than the requirement of the text. The default value is CENTER.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>bg</td>
+<td>The background color of the widget. </td>
+</tr>
+<tr>
+<td>5</td>
+<td>bitmap</td>
+<td>It is used to display the graphics on the widget. It can be set to any graphical or image object. </td>
+</tr>
+<tr>
+<td>6</td>
+<td>borderwidth</td>
+<td>It represents the size of the border. </td>
+</tr>
+<tr>
+<td>7</td>
+<td>command</td>
+<td>This option is set to the procedure which must be called every-time when the state of the radiobutton is changed.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>cursor</td>
+<td>The mouse pointer is changed to the specified cursor type. It can be set to the arrow, dot, etc. </td>
+</tr>
+<tr>
+<td>9</td>
+<td>font</td>
+<td>It represents the font type of the widget text. </td>
+</tr>
+<tr>
+<td>10</td>
+<td>fg</td>
+<td>The normal foreground color of the widget text. </td>
+</tr>
+<tr>
+<td>11</td>
+<td>height</td>
+<td>The vertical dimension of the widget. It is specified as the number of lines (not pixel).</td>
+</tr>
+<tr>
+<td>12</td>
+<td>highlightcolor</td>
+<td>It represents the color of the focus highlight when the widget has the focus.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>highlightbackground</td>
+<td>The color of the focus highlight when the widget is not having the focus. </td>
+</tr>
+<tr>
+<td>14</td>
+<td>image</td>
+<td>It can be set to an image object if we want to display an image on the radiobutton instead the text. </td>
+</tr>
+<tr>
+<td>15</td>
+<td>justify</td>
+<td>It represents the justification of the multi-line text. It can be set to CENTER(default), LEFT, or RIGHT. </td>
+</tr>
+<tr>
+<td>16</td>
+<td>padx</td>
+<td>The horizontal padding of the widget. </td>
+</tr>
+<tr>
+<td>17</td>
+<td>pady</td>
+<td>The vertical padding of the widget. </td>
+</tr>
+<tr>
+<td>18</td>
+<td>relief</td>
+<td>The type of the border. The default value is FLAT. </td>
+</tr>
+<tr>
+<td>19</td>
+<td>selectcolor</td>
+<td>The color of the radio button when it is selected. </td>
+</tr>
+<tr>
+<td>20</td>
+<td>selectimage</td>
+<td>The image to be displayed on the radiobutton when it is selected. </td>
+</tr>
+<tr>
+<td>21</td>
+<td>state</td>
+<td>It represents the state of the radio button. The default state of the Radiobutton is NORMAL. However, we can set this to DISABLED to make the radiobutton unresponsive. </td>
+</tr>
+<tr>
+<td>22</td>
+<td>text</td>
+<td>The text to be displayed on the radiobutton. </td>
+</tr>
+<tr>
+<td>23</td>
+<td>textvariable</td>
+<td>It is of String type that represents the text displayed by the widget. </td>
+</tr>
+<tr>
+<td>24</td>
+<td>underline</td>
+<td>The default value of this option is -1, however, we can set this option to the number of character which is to be underlined. </td>
+</tr>
+<tr>
+<td>25</td>
+<td>value</td>
+<td>The value of each radiobutton is assigned to the control variable when it is turned on by the user. </td>
+</tr>
+<tr>
+<td>26</td>
+<td>variable</td>
+<td>It is the control variable which is used to keep track of the user's choices. It is shared among all the radiobuttons. </td>
+</tr>
+<tr>
+<td>27</td>
+<td>width</td>
+<td>The horizontal dimension of the widget. It is represented as the number of characters.</td>
+</tr>
+<tr>
+<td>28</td>
+<td>wraplength</td>
+<td>We can wrap the text to the number of lines by setting this option to the desired number so that each line contains only that number of characters. </td>
+</tr>
+</table>
+<h2 class="h2">Methods</h2>
+<p>The radiobutton widget provides the following methods. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Method</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>deselect()</td>
+<td>It is used to turn of the radiobutton. </td>
+<tr>
+<td>2</td>
+<td>flash()</td>
+<td>It is used to flash the radiobutton between its active and normal colors few times. </td>
+<tr>
+<td>3</td>
+<td>invoke()</td>
+<td>It is used to call any procedure associated when the state of a Radiobutton is changed. </td>
+<tr>
+<td>4</td>
+<td>select()</td>
+<td>It is used to select the radiobutton. </td>
+</tr>
+</tr></tr></tr></table>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+from tkinter import *
+
+def selection():
+   selection = "You selected the option " + str(radio.get())
+   label.config(text = selection)
+
+top = Tk()
+top.geometry("300x150")
+radio = IntVar()
+lbl = Label(text = "Favourite programming language:")
+lbl.pack()
+R1 = Radiobutton(top, text="C", variable=radio, value=1,
+                  command=selection)
+R1.pack( anchor = W )
+
+R2 = Radiobutton(top, text="C++", variable=radio, value=2,
+                  command=selection)
+R2.pack( anchor = W )
+
+R3 = Radiobutton(top, text="Java", variable=radio, value=3,
+                  command=selection)
+R3.pack( anchor = W)
+
+label = Label(top)
+label.pack()
+top.mainloop()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Radiobutton" src="https://static.javatpoint.com/python/images/python-tkinter-radiobutton-output.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-scale">Python Tkinter Scale</a></span>
+</div>
+<!-- link -->
+<br><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-message" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-scale" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</br></td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-scale">next ¡ú</a>
+<a class="next" href="python-tkinter-message">¡û prev</a>
+</div>
+<h1 class="h1">Python Tkinter Radiobutton </h1>
+<p>The Radiobutton widget is used to implement one-of-many selection in the python application. It shows multiple choices to the user out of which, the user can select only one out of them. We can associate different methods with each of the radiobutton. </p>
+<p>We can display the multiple line text or images on the radiobuttons. To keep track the user's selection the radiobutton, it is associated with a single variable. Each button displays a single value for that particular variable.</p>
+<p>The syntax to use the Radiobutton is given below. </p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+w = Radiobutton(top, options)
+
+</textarea></div>
+<br/>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>activebackground</td>
+<td>The background color of the widget when it has the focus.  </td>
+</tr>
+<tr>
+<td>2</td>
+<td>activeforeground</td>
+<td>The font color of the widget text when it has the focus. </td>
+</tr>
+<tr>
+<td>3</td>
+<td>anchor</td>
+<td>It represents the exact position of the text within the widget if the widget contains more space than the requirement of the text. The default value is CENTER.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>bg</td>
+<td>The background color of the widget. </td>
+</tr>
+<tr>
+<td>5</td>
+<td>bitmap</td>
+<td>It is used to display the graphics on the widget. It can be set to any graphical or image object. </td>
+</tr>
+<tr>
+<td>6</td>
+<td>borderwidth</td>
+<td>It represents the size of the border. </td>
+</tr>
+<tr>
+<td>7</td>
+<td>command</td>
+<td>This option is set to the procedure which must be called every-time when the state of the radiobutton is changed.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>cursor</td>
+<td>The mouse pointer is changed to the specified cursor type. It can be set to the arrow, dot, etc. </td>
+</tr>
+<tr>
+<td>9</td>
+<td>font</td>
+<td>It represents the font type of the widget text. </td>
+</tr>
+<tr>
+<td>10</td>
+<td>fg</td>
+<td>The normal foreground color of the widget text. </td>
+</tr>
+<tr>
+<td>11</td>
+<td>height</td>
+<td>The vertical dimension of the widget. It is specified as the number of lines (not pixel).</td>
+</tr>
+<tr>
+<td>12</td>
+<td>highlightcolor</td>
+<td>It represents the color of the focus highlight when the widget has the focus.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>highlightbackground</td>
+<td>The color of the focus highlight when the widget is not having the focus. </td>
+</tr>
+<tr>
+<td>14</td>
+<td>image</td>
+<td>It can be set to an image object if we want to display an image on the radiobutton instead the text. </td>
+</tr>
+<tr>
+<td>15</td>
+<td>justify</td>
+<td>It represents the justification of the multi-line text. It can be set to CENTER(default), LEFT, or RIGHT. </td>
+</tr>
+<tr>
+<td>16</td>
+<td>padx</td>
+<td>The horizontal padding of the widget. </td>
+</tr>
+<tr>
+<td>17</td>
+<td>pady</td>
+<td>The vertical padding of the widget. </td>
+</tr>
+<tr>
+<td>18</td>
+<td>relief</td>
+<td>The type of the border. The default value is FLAT. </td>
+</tr>
+<tr>
+<td>19</td>
+<td>selectcolor</td>
+<td>The color of the radio button when it is selected. </td>
+</tr>
+<tr>
+<td>20</td>
+<td>selectimage</td>
+<td>The image to be displayed on the radiobutton when it is selected. </td>
+</tr>
+<tr>
+<td>21</td>
+<td>state</td>
+<td>It represents the state of the radio button. The default state of the Radiobutton is NORMAL. However, we can set this to DISABLED to make the radiobutton unresponsive. </td>
+</tr>
+<tr>
+<td>22</td>
+<td>text</td>
+<td>The text to be displayed on the radiobutton. </td>
+</tr>
+<tr>
+<td>23</td>
+<td>textvariable</td>
+<td>It is of String type that represents the text displayed by the widget. </td>
+</tr>
+<tr>
+<td>24</td>
+<td>underline</td>
+<td>The default value of this option is -1, however, we can set this option to the number of character which is to be underlined. </td>
+</tr>
+<tr>
+<td>25</td>
+<td>value</td>
+<td>The value of each radiobutton is assigned to the control variable when it is turned on by the user. </td>
+</tr>
+<tr>
+<td>26</td>
+<td>variable</td>
+<td>It is the control variable which is used to keep track of the user's choices. It is shared among all the radiobuttons. </td>
+</tr>
+<tr>
+<td>27</td>
+<td>width</td>
+<td>The horizontal dimension of the widget. It is represented as the number of characters.</td>
+</tr>
+<tr>
+<td>28</td>
+<td>wraplength</td>
+<td>We can wrap the text to the number of lines by setting this option to the desired number so that each line contains only that number of characters. </td>
+</tr>
+</table>
+<h2 class="h2">Methods</h2>
+<p>The radiobutton widget provides the following methods. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Method</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>deselect()</td>
+<td>It is used to turn of the radiobutton. </td>
+<tr>
+<td>2</td>
+<td>flash()</td>
+<td>It is used to flash the radiobutton between its active and normal colors few times. </td>
+<tr>
+<td>3</td>
+<td>invoke()</td>
+<td>It is used to call any procedure associated when the state of a Radiobutton is changed. </td>
+<tr>
+<td>4</td>
+<td>select()</td>
+<td>It is used to select the radiobutton. </td>
+</tr>
+</tr></tr></tr></table>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+from tkinter import *
+
+
+
+def selection():
+
+   selection = "You selected the option " + str(radio.get())
+
+   label.config(text = selection)
+
+
+
+top = Tk()
+
+top.geometry("300x150")
+
+radio = IntVar()
+
+lbl = Label(text = "Favourite programming language:")
+
+lbl.pack()
+
+R1 = Radiobutton(top, text="C", variable=radio, value=1,
+
+                  command=selection)
+
+R1.pack( anchor = W )
+
+
+
+R2 = Radiobutton(top, text="C++", variable=radio, value=2,
+
+                  command=selection)
+
+R2.pack( anchor = W )
+
+
+
+R3 = Radiobutton(top, text="Java", variable=radio, value=3,
+
+                  command=selection)
+
+R3.pack( anchor = W)
+
+
+
+label = Label(top)
+
+label.pack()
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Radiobutton" src="https://static.javatpoint.com/python/images/python-tkinter-radiobutton-output.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-scale">Python Tkinter Scale</a></span>
+</div>
+<!-- link -->
+<br><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-message" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-scale" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</br></td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-scale">next ¡ú</a>
+<a class="next" href="python-tkinter-message">¡û prev</a>
+</div>
+<h1 class="h1">Python Tkinter Radiobutton </h1>
+<p>The Radiobutton widget is used to implement one-of-many selection in the python application. It shows multiple choices to the user out of which, the user can select only one out of them. We can associate different methods with each of the radiobutton. </p>
+<p>We can display the multiple line text or images on the radiobuttons. To keep track the user's selection the radiobutton, it is associated with a single variable. Each button displays a single value for that particular variable.</p>
+<p>The syntax to use the Radiobutton is given below. </p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+w = Radiobutton(top, options)
+
+</textarea></div>
+<br/>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>activebackground</td>
+<td>The background color of the widget when it has the focus.  </td>
+</tr>
+<tr>
+<td>2</td>
+<td>activeforeground</td>
+<td>The font color of the widget text when it has the focus. </td>
+</tr>
+<tr>
+<td>3</td>
+<td>anchor</td>
+<td>It represents the exact position of the text within the widget if the widget contains more space than the requirement of the text. The default value is CENTER.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>bg</td>
+<td>The background color of the widget. </td>
+</tr>
+<tr>
+<td>5</td>
+<td>bitmap</td>
+<td>It is used to display the graphics on the widget. It can be set to any graphical or image object. </td>
+</tr>
+<tr>
+<td>6</td>
+<td>borderwidth</td>
+<td>It represents the size of the border. </td>
+</tr>
+<tr>
+<td>7</td>
+<td>command</td>
+<td>This option is set to the procedure which must be called every-time when the state of the radiobutton is changed.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>cursor</td>
+<td>The mouse pointer is changed to the specified cursor type. It can be set to the arrow, dot, etc. </td>
+</tr>
+<tr>
+<td>9</td>
+<td>font</td>
+<td>It represents the font type of the widget text. </td>
+</tr>
+<tr>
+<td>10</td>
+<td>fg</td>
+<td>The normal foreground color of the widget text. </td>
+</tr>
+<tr>
+<td>11</td>
+<td>height</td>
+<td>The vertical dimension of the widget. It is specified as the number of lines (not pixel).</td>
+</tr>
+<tr>
+<td>12</td>
+<td>highlightcolor</td>
+<td>It represents the color of the focus highlight when the widget has the focus.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>highlightbackground</td>
+<td>The color of the focus highlight when the widget is not having the focus. </td>
+</tr>
+<tr>
+<td>14</td>
+<td>image</td>
+<td>It can be set to an image object if we want to display an image on the radiobutton instead the text. </td>
+</tr>
+<tr>
+<td>15</td>
+<td>justify</td>
+<td>It represents the justification of the multi-line text. It can be set to CENTER(default), LEFT, or RIGHT. </td>
+</tr>
+<tr>
+<td>16</td>
+<td>padx</td>
+<td>The horizontal padding of the widget. </td>
+</tr>
+<tr>
+<td>17</td>
+<td>pady</td>
+<td>The vertical padding of the widget. </td>
+</tr>
+<tr>
+<td>18</td>
+<td>relief</td>
+<td>The type of the border. The default value is FLAT. </td>
+</tr>
+<tr>
+<td>19</td>
+<td>selectcolor</td>
+<td>The color of the radio button when it is selected. </td>
+</tr>
+<tr>
+<td>20</td>
+<td>selectimage</td>
+<td>The image to be displayed on the radiobutton when it is selected. </td>
+</tr>
+<tr>
+<td>21</td>
+<td>state</td>
+<td>It represents the state of the radio button. The default state of the Radiobutton is NORMAL. However, we can set this to DISABLED to make the radiobutton unresponsive. </td>
+</tr>
+<tr>
+<td>22</td>
+<td>text</td>
+<td>The text to be displayed on the radiobutton. </td>
+</tr>
+<tr>
+<td>23</td>
+<td>textvariable</td>
+<td>It is of String type that represents the text displayed by the widget. </td>
+</tr>
+<tr>
+<td>24</td>
+<td>underline</td>
+<td>The default value of this option is -1, however, we can set this option to the number of character which is to be underlined. </td>
+</tr>
+<tr>
+<td>25</td>
+<td>value</td>
+<td>The value of each radiobutton is assigned to the control variable when it is turned on by the user. </td>
+</tr>
+<tr>
+<td>26</td>
+<td>variable</td>
+<td>It is the control variable which is used to keep track of the user's choices. It is shared among all the radiobuttons. </td>
+</tr>
+<tr>
+<td>27</td>
+<td>width</td>
+<td>The horizontal dimension of the widget. It is represented as the number of characters.</td>
+</tr>
+<tr>
+<td>28</td>
+<td>wraplength</td>
+<td>We can wrap the text to the number of lines by setting this option to the desired number so that each line contains only that number of characters. </td>
+</tr>
+</table>
+<h2 class="h2">Methods</h2>
+<p>The radiobutton widget provides the following methods. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Method</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>deselect()</td>
+<td>It is used to turn of the radiobutton. </td>
+<tr>
+<td>2</td>
+<td>flash()</td>
+<td>It is used to flash the radiobutton between its active and normal colors few times. </td>
+<tr>
+<td>3</td>
+<td>invoke()</td>
+<td>It is used to call any procedure associated when the state of a Radiobutton is changed. </td>
+<tr>
+<td>4</td>
+<td>select()</td>
+<td>It is used to select the radiobutton. </td>
+</tr>
+</tr></tr></tr></table>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+from tkinter import *
+
+
+
+def selection():
+
+   selection = "You selected the option " + str(radio.get())
+
+   label.config(text = selection)
+
+
+
+top = Tk()
+
+top.geometry("300x150")
+
+radio = IntVar()
+
+lbl = Label(text = "Favourite programming language:")
+
+lbl.pack()
+
+R1 = Radiobutton(top, text="C", variable=radio, value=1,
+
+                  command=selection)
+
+R1.pack( anchor = W )
+
+
+
+R2 = Radiobutton(top, text="C++", variable=radio, value=2,
+
+                  command=selection)
+
+R2.pack( anchor = W )
+
+
+
+R3 = Radiobutton(top, text="Java", variable=radio, value=3,
+
+                  command=selection)
+
+R3.pack( anchor = W)
+
+
+
+label = Label(top)
+
+label.pack()
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Radiobutton" src="https://static.javatpoint.com/python/images/python-tkinter-radiobutton-output.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-scale">Python Tkinter Scale</a></span>
+</div>
+<!-- link -->
+<br><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-message" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-scale" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</br></td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-scale">next ¡ú</a>
+<a class="next" href="python-tkinter-message">¡û prev</a>
+</div>
+<h1 class="h1">Python Tkinter Radiobutton </h1>
+<p>The Radiobutton widget is used to implement one-of-many selection in the python application. It shows multiple choices to the user out of which, the user can select only one out of them. We can associate different methods with each of the radiobutton. </p>
+<p>We can display the multiple line text or images on the radiobuttons. To keep track the user's selection the radiobutton, it is associated with a single variable. Each button displays a single value for that particular variable.</p>
+<p>The syntax to use the Radiobutton is given below. </p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+w = Radiobutton(top, options)
+
+</textarea></div>
+<br/>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>activebackground</td>
+<td>The background color of the widget when it has the focus.  </td>
+</tr>
+<tr>
+<td>2</td>
+<td>activeforeground</td>
+<td>The font color of the widget text when it has the focus. </td>
+</tr>
+<tr>
+<td>3</td>
+<td>anchor</td>
+<td>It represents the exact position of the text within the widget if the widget contains more space than the requirement of the text. The default value is CENTER.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>bg</td>
+<td>The background color of the widget. </td>
+</tr>
+<tr>
+<td>5</td>
+<td>bitmap</td>
+<td>It is used to display the graphics on the widget. It can be set to any graphical or image object. </td>
+</tr>
+<tr>
+<td>6</td>
+<td>borderwidth</td>
+<td>It represents the size of the border. </td>
+</tr>
+<tr>
+<td>7</td>
+<td>command</td>
+<td>This option is set to the procedure which must be called every-time when the state of the radiobutton is changed.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>cursor</td>
+<td>The mouse pointer is changed to the specified cursor type. It can be set to the arrow, dot, etc. </td>
+</tr>
+<tr>
+<td>9</td>
+<td>font</td>
+<td>It represents the font type of the widget text. </td>
+</tr>
+<tr>
+<td>10</td>
+<td>fg</td>
+<td>The normal foreground color of the widget text. </td>
+</tr>
+<tr>
+<td>11</td>
+<td>height</td>
+<td>The vertical dimension of the widget. It is specified as the number of lines (not pixel).</td>
+</tr>
+<tr>
+<td>12</td>
+<td>highlightcolor</td>
+<td>It represents the color of the focus highlight when the widget has the focus.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>highlightbackground</td>
+<td>The color of the focus highlight when the widget is not having the focus. </td>
+</tr>
+<tr>
+<td>14</td>
+<td>image</td>
+<td>It can be set to an image object if we want to display an image on the radiobutton instead the text. </td>
+</tr>
+<tr>
+<td>15</td>
+<td>justify</td>
+<td>It represents the justification of the multi-line text. It can be set to CENTER(default), LEFT, or RIGHT. </td>
+</tr>
+<tr>
+<td>16</td>
+<td>padx</td>
+<td>The horizontal padding of the widget. </td>
+</tr>
+<tr>
+<td>17</td>
+<td>pady</td>
+<td>The vertical padding of the widget. </td>
+</tr>
+<tr>
+<td>18</td>
+<td>relief</td>
+<td>The type of the border. The default value is FLAT. </td>
+</tr>
+<tr>
+<td>19</td>
+<td>selectcolor</td>
+<td>The color of the radio button when it is selected. </td>
+</tr>
+<tr>
+<td>20</td>
+<td>selectimage</td>
+<td>The image to be displayed on the radiobutton when it is selected. </td>
+</tr>
+<tr>
+<td>21</td>
+<td>state</td>
+<td>It represents the state of the radio button. The default state of the Radiobutton is NORMAL. However, we can set this to DISABLED to make the radiobutton unresponsive. </td>
+</tr>
+<tr>
+<td>22</td>
+<td>text</td>
+<td>The text to be displayed on the radiobutton. </td>
+</tr>
+<tr>
+<td>23</td>
+<td>textvariable</td>
+<td>It is of String type that represents the text displayed by the widget. </td>
+</tr>
+<tr>
+<td>24</td>
+<td>underline</td>
+<td>The default value of this option is -1, however, we can set this option to the number of character which is to be underlined. </td>
+</tr>
+<tr>
+<td>25</td>
+<td>value</td>
+<td>The value of each radiobutton is assigned to the control variable when it is turned on by the user. </td>
+</tr>
+<tr>
+<td>26</td>
+<td>variable</td>
+<td>It is the control variable which is used to keep track of the user's choices. It is shared among all the radiobuttons. </td>
+</tr>
+<tr>
+<td>27</td>
+<td>width</td>
+<td>The horizontal dimension of the widget. It is represented as the number of characters.</td>
+</tr>
+<tr>
+<td>28</td>
+<td>wraplength</td>
+<td>We can wrap the text to the number of lines by setting this option to the desired number so that each line contains only that number of characters. </td>
+</tr>
+</table>
+<h2 class="h2">Methods</h2>
+<p>The radiobutton widget provides the following methods. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Method</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>deselect()</td>
+<td>It is used to turn of the radiobutton. </td>
+<tr>
+<td>2</td>
+<td>flash()</td>
+<td>It is used to flash the radiobutton between its active and normal colors few times. </td>
+<tr>
+<td>3</td>
+<td>invoke()</td>
+<td>It is used to call any procedure associated when the state of a Radiobutton is changed. </td>
+<tr>
+<td>4</td>
+<td>select()</td>
+<td>It is used to select the radiobutton. </td>
+</tr>
+</tr></tr></tr></table>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+from tkinter import *
+
+
+
+def selection():
+
+   selection = "You selected the option " + str(radio.get())
+
+   label.config(text = selection)
+
+
+
+top = Tk()
+
+top.geometry("300x150")
+
+radio = IntVar()
+
+lbl = Label(text = "Favourite programming language:")
+
+lbl.pack()
+
+R1 = Radiobutton(top, text="C", variable=radio, value=1,
+
+                  command=selection)
+
+R1.pack( anchor = W )
+
+
+
+R2 = Radiobutton(top, text="C++", variable=radio, value=2,
+
+                  command=selection)
+
+R2.pack( anchor = W )
+
+
+
+R3 = Radiobutton(top, text="Java", variable=radio, value=3,
+
+                  command=selection)
+
+R3.pack( anchor = W)
+
+
+
+label = Label(top)
+
+label.pack()
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Radiobutton" src="https://static.javatpoint.com/python/images/python-tkinter-radiobutton-output.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-scale">Python Tkinter Scale</a></span>
+</div>
+<!-- link -->
+<br><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-message" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-scale" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</br></td></tr>
+</table>
+</div></body></html></body></html>

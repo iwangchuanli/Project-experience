@@ -1,0 +1,1284 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-mathematical-functions">next ¡ú</a>
+<a class="next" href="numpy-bitwise-operators">¡û prev</a>
+</div>
+<h1 class="h1">NumPy String Functions </h1>
+<p>NumPy contains the following functions for the operations on the arrays of dtype string. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Function</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>add()</td>
+<td>It is used to concatenate the corresponding array elements (strings). </td>
+</tr>
+<tr>
+<td>2</td>
+<td>multiply()</td>
+<td>It returns the multiple copies of the specified string, i.e., if a string 'hello' is multiplied by 3 then, a string 'hello hello' is returned.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>center()</td>
+<td>It returns the copy of the string where the original string is centered with the left and right padding filled with the specified number of fill characters.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>capitalize()</td>
+<td>It returns a copy of the original string in which the first letter of the original string is converted to the Upper Case.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>title()</td>
+<td>It returns the title cased version of the string, i.e., the first letter of each word of the string is converted into the upper case.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>lower()</td>
+<td>It returns a copy of the string in which all the letters are converted into the lower case. </td>
+</tr>
+<tr>
+<td>7</td>
+<td>upper()</td>
+<td>It returns a copy of the string in which all the letters are converted into the upper case. </td>
+</tr>
+<tr>
+<td>9</td>
+<td>split()</td>
+<td>It returns a list of words in the string. </td>
+</tr>
+<tr>
+<td>9</td>
+<td>splitlines()</td>
+<td>It returns the list of lines in the string, breaking at line boundaries. </td>
+</tr>
+<tr>
+<td>10</td>
+<td>strip()</td>
+<td>Returns a copy of the string with the leading and trailing white spaces removed. </td>
+</tr>
+<tr>
+<td>11</td>
+<td>join()</td>
+<td>It returns a string which is the concatenation of all the strings specified in the given sequence. </td>
+</tr>
+<tr>
+<td>12</td>
+<td>replace()</td>
+<td>It returns a copy of the string by replacing all occurrences of a particular substring with the specified one. </td>
+</tr>
+<tr>
+<td>13</td>
+<td>decode()</td>
+<td>It is used to decode the specified string element-wise using the specified codec.</td>
+</tr>
+<tr>
+<td>14</td>
+<td>encode()</td>
+<td>It is used to encode the decoded string element-wise.</td>
+</tr>
+</table>
+<h3 class="h3">numpy.char.add() method example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np 
+print("Concatenating two string arrays:")
+print(np.char.add(['welcome','Hi'], [' to Javatpoint', ' read python'] ))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Concatenating two string arrays:
+['welcome to Javatpoint' 'Hi read python']
+</pre></div>
+<h3 class="h3">numpy.char.multiply() method example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np 
+print("Printing a string multiple times:")
+print(np.char.multiply("hello ",3))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Printing a string multiple times:
+hello hello hello 
+</pre></div>
+<h3 class="h3">numpy.char.center() method example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np 
+print("Padding the string through left and right with the fill char *");
+#np.char.center(string, width, fillchar)
+print(np.char.center("Javatpoint", 20, '*'))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Padding the string through left and right with the fill char *
+*****Javatpoint*****
+</pre></div>
+<h3 class="h3">numpy.char.capitalize() method example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np 
+print("Capitalizing the string using capitalize()...")
+print(np.char.capitalize("welcome to javatpoint"))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Capitalizing the string using capitalize()...
+Welcome to javatpoint
+</pre></div>
+<h3 class="h3">numpy.char.title() method example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np 
+print("Converting string into title cased version...")
+print(np.char.title("welcome to javatpoint"))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Converting string into title cased version...
+Welcome To Javatpoint
+</pre></div>
+<h3 class="h3">numpy.char.lower() method example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np 
+print("Converting all the characters of the string into lowercase...")
+print(np.char.lower("WELCOME TO JAVATPOINT"))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Converting all the characters of the string into lowercase...
+welcome to javatpoint
+</pre></div>
+<h3 class="h3">numpy.char.upper() method example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np 
+print("Converting all the characters of the string into uppercase...")
+print(np.char.upper("Welcome To Javatpoint"))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Converting all the characters of the string into uppercase...
+WELCOME TO JAVATPOINT
+</pre></div>
+<h3 class="h3">numpy.char.split() method example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np 
+print("Splitting the String word by word..")
+print(np.char.split("Welcome To Javatpoint"),sep = " ")
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Splitting the String word by word..
+['Welcome', 'To', 'Javatpoint']
+</pre></div>
+<h3 class="h3">numpy.char.splitlines() method example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np 
+print("Splitting the String line by line..")
+print(np.char.splitlines("Welcome\nTo\nJavatpoint"))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Splitting the String line by line..
+['Welcome', 'To', 'Javatpoint']
+</pre></div>
+<h3 class="h3">numpy.char.strip() method example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np 
+str = "     welcome to javatpoint     "
+print("Original String:",str)
+print("Removing the leading and trailing whitespaces from the string")
+print(np.char.strip(str))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Original String:      welcome to javatpoint     
+Removing the leading and trailing whitespaces from the string
+welcome to javatpoint
+</pre></div>
+<h3 class="h3">numpy.char.join() method example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np 
+print(np.char.join(':','HM'))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+H:M
+</pre></div>
+<h3 class="h3">numpy.char.replace() method example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+str = "Welcome to Javatpoint"
+print("Original String:",str)
+print("Modified String:",end=" ")
+print(np.char.replace(str, "Welcome to","www."))
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+Original String: Welcome to Javatpoint
+Modified String: www. Javatpoint
+</pre></div>
+<h3 class="h3">numpy.char.encode() and decode() method example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+import numpy as np
+enstr = np.char.encode("welcome to javatpoint", 'cp500')
+dstr =np.char.decode(enstr, 'cp500')
+print(enstr)
+print(dstr)
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+b'\xa6\x85\x93\x83\x96\x94\x85@\xa3\x96@\x91\x81\xa5\x81\xa3\x97\x96\x89\x95\xa3'
+welcome to javatpoint
+</pre></div>
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-mathematical-functions">NumPy Mathematical Functions</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="numpy-bitwise-operators" style="float:left">¡û prev</a>
+<a class="next" href="numpy-mathematical-functions" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-mathematical-functions">next ¡ú</a>
+<a class="next" href="numpy-bitwise-operators">¡û prev</a>
+</div>
+<h1 class="h1">NumPy String Functions </h1>
+<p>NumPy contains the following functions for the operations on the arrays of dtype string. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Function</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>add()</td>
+<td>It is used to concatenate the corresponding array elements (strings). </td>
+</tr>
+<tr>
+<td>2</td>
+<td>multiply()</td>
+<td>It returns the multiple copies of the specified string, i.e., if a string 'hello' is multiplied by 3 then, a string 'hello hello' is returned.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>center()</td>
+<td>It returns the copy of the string where the original string is centered with the left and right padding filled with the specified number of fill characters.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>capitalize()</td>
+<td>It returns a copy of the original string in which the first letter of the original string is converted to the Upper Case.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>title()</td>
+<td>It returns the title cased version of the string, i.e., the first letter of each word of the string is converted into the upper case.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>lower()</td>
+<td>It returns a copy of the string in which all the letters are converted into the lower case. </td>
+</tr>
+<tr>
+<td>7</td>
+<td>upper()</td>
+<td>It returns a copy of the string in which all the letters are converted into the upper case. </td>
+</tr>
+<tr>
+<td>9</td>
+<td>split()</td>
+<td>It returns a list of words in the string. </td>
+</tr>
+<tr>
+<td>9</td>
+<td>splitlines()</td>
+<td>It returns the list of lines in the string, breaking at line boundaries. </td>
+</tr>
+<tr>
+<td>10</td>
+<td>strip()</td>
+<td>Returns a copy of the string with the leading and trailing white spaces removed. </td>
+</tr>
+<tr>
+<td>11</td>
+<td>join()</td>
+<td>It returns a string which is the concatenation of all the strings specified in the given sequence. </td>
+</tr>
+<tr>
+<td>12</td>
+<td>replace()</td>
+<td>It returns a copy of the string by replacing all occurrences of a particular substring with the specified one. </td>
+</tr>
+<tr>
+<td>13</td>
+<td>decode()</td>
+<td>It is used to decode the specified string element-wise using the specified codec.</td>
+</tr>
+<tr>
+<td>14</td>
+<td>encode()</td>
+<td>It is used to encode the decoded string element-wise.</td>
+</tr>
+</table>
+<h3 class="h3">numpy.char.add() method example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np 
+
+print("Concatenating two string arrays:")
+
+print(np.char.add(['welcome','Hi'], [' to Javatpoint', ' read python'] ))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Concatenating two string arrays:
+
+['welcome to Javatpoint' 'Hi read python']
+
+</pre></div>
+<h3 class="h3">numpy.char.multiply() method example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np 
+
+print("Printing a string multiple times:")
+
+print(np.char.multiply("hello ",3))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Printing a string multiple times:
+
+hello hello hello 
+
+</pre></div>
+<h3 class="h3">numpy.char.center() method example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np 
+
+print("Padding the string through left and right with the fill char *");
+
+#np.char.center(string, width, fillchar)
+
+print(np.char.center("Javatpoint", 20, '*'))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Padding the string through left and right with the fill char *
+
+*****Javatpoint*****
+
+</pre></div>
+<h3 class="h3">numpy.char.capitalize() method example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np 
+
+print("Capitalizing the string using capitalize()...")
+
+print(np.char.capitalize("welcome to javatpoint"))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Capitalizing the string using capitalize()...
+
+Welcome to javatpoint
+
+</pre></div>
+<h3 class="h3">numpy.char.title() method example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np 
+
+print("Converting string into title cased version...")
+
+print(np.char.title("welcome to javatpoint"))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Converting string into title cased version...
+
+Welcome To Javatpoint
+
+</pre></div>
+<h3 class="h3">numpy.char.lower() method example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np 
+
+print("Converting all the characters of the string into lowercase...")
+
+print(np.char.lower("WELCOME TO JAVATPOINT"))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Converting all the characters of the string into lowercase...
+
+welcome to javatpoint
+
+</pre></div>
+<h3 class="h3">numpy.char.upper() method example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np 
+
+print("Converting all the characters of the string into uppercase...")
+
+print(np.char.upper("Welcome To Javatpoint"))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Converting all the characters of the string into uppercase...
+
+WELCOME TO JAVATPOINT
+
+</pre></div>
+<h3 class="h3">numpy.char.split() method example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np 
+
+print("Splitting the String word by word..")
+
+print(np.char.split("Welcome To Javatpoint"),sep = " ")
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Splitting the String word by word..
+
+['Welcome', 'To', 'Javatpoint']
+
+</pre></div>
+<h3 class="h3">numpy.char.splitlines() method example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np 
+
+print("Splitting the String line by line..")
+
+print(np.char.splitlines("Welcome\nTo\nJavatpoint"))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Splitting the String line by line..
+
+['Welcome', 'To', 'Javatpoint']
+
+</pre></div>
+<h3 class="h3">numpy.char.strip() method example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np 
+
+str = "     welcome to javatpoint     "
+
+print("Original String:",str)
+
+print("Removing the leading and trailing whitespaces from the string")
+
+print(np.char.strip(str))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Original String:      welcome to javatpoint     
+
+Removing the leading and trailing whitespaces from the string
+
+welcome to javatpoint
+
+</pre></div>
+<h3 class="h3">numpy.char.join() method example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np 
+
+print(np.char.join(':','HM'))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+H:M
+
+</pre></div>
+<h3 class="h3">numpy.char.replace() method example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+str = "Welcome to Javatpoint"
+
+print("Original String:",str)
+
+print("Modified String:",end=" ")
+
+print(np.char.replace(str, "Welcome to","www."))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Original String: Welcome to Javatpoint
+
+Modified String: www. Javatpoint
+
+</pre></div>
+<h3 class="h3">numpy.char.encode() and decode() method example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+enstr = np.char.encode("welcome to javatpoint", 'cp500')
+
+dstr =np.char.decode(enstr, 'cp500')
+
+print(enstr)
+
+print(dstr)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+b'\xa6\x85\x93\x83\x96\x94\x85@\xa3\x96@\x91\x81\xa5\x81\xa3\x97\x96\x89\x95\xa3'
+
+welcome to javatpoint
+
+</pre></div>
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-mathematical-functions">NumPy Mathematical Functions</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="numpy-bitwise-operators" style="float:left">¡û prev</a>
+<a class="next" href="numpy-mathematical-functions" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-mathematical-functions">next ¡ú</a>
+<a class="next" href="numpy-bitwise-operators">¡û prev</a>
+</div>
+<h1 class="h1">NumPy String Functions </h1>
+<p>NumPy contains the following functions for the operations on the arrays of dtype string. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Function</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>add()</td>
+<td>It is used to concatenate the corresponding array elements (strings). </td>
+</tr>
+<tr>
+<td>2</td>
+<td>multiply()</td>
+<td>It returns the multiple copies of the specified string, i.e., if a string 'hello' is multiplied by 3 then, a string 'hello hello' is returned.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>center()</td>
+<td>It returns the copy of the string where the original string is centered with the left and right padding filled with the specified number of fill characters.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>capitalize()</td>
+<td>It returns a copy of the original string in which the first letter of the original string is converted to the Upper Case.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>title()</td>
+<td>It returns the title cased version of the string, i.e., the first letter of each word of the string is converted into the upper case.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>lower()</td>
+<td>It returns a copy of the string in which all the letters are converted into the lower case. </td>
+</tr>
+<tr>
+<td>7</td>
+<td>upper()</td>
+<td>It returns a copy of the string in which all the letters are converted into the upper case. </td>
+</tr>
+<tr>
+<td>9</td>
+<td>split()</td>
+<td>It returns a list of words in the string. </td>
+</tr>
+<tr>
+<td>9</td>
+<td>splitlines()</td>
+<td>It returns the list of lines in the string, breaking at line boundaries. </td>
+</tr>
+<tr>
+<td>10</td>
+<td>strip()</td>
+<td>Returns a copy of the string with the leading and trailing white spaces removed. </td>
+</tr>
+<tr>
+<td>11</td>
+<td>join()</td>
+<td>It returns a string which is the concatenation of all the strings specified in the given sequence. </td>
+</tr>
+<tr>
+<td>12</td>
+<td>replace()</td>
+<td>It returns a copy of the string by replacing all occurrences of a particular substring with the specified one. </td>
+</tr>
+<tr>
+<td>13</td>
+<td>decode()</td>
+<td>It is used to decode the specified string element-wise using the specified codec.</td>
+</tr>
+<tr>
+<td>14</td>
+<td>encode()</td>
+<td>It is used to encode the decoded string element-wise.</td>
+</tr>
+</table>
+<h3 class="h3">numpy.char.add() method example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np 
+
+print("Concatenating two string arrays:")
+
+print(np.char.add(['welcome','Hi'], [' to Javatpoint', ' read python'] ))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Concatenating two string arrays:
+
+['welcome to Javatpoint' 'Hi read python']
+
+</pre></div>
+<h3 class="h3">numpy.char.multiply() method example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np 
+
+print("Printing a string multiple times:")
+
+print(np.char.multiply("hello ",3))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Printing a string multiple times:
+
+hello hello hello 
+
+</pre></div>
+<h3 class="h3">numpy.char.center() method example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np 
+
+print("Padding the string through left and right with the fill char *");
+
+#np.char.center(string, width, fillchar)
+
+print(np.char.center("Javatpoint", 20, '*'))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Padding the string through left and right with the fill char *
+
+*****Javatpoint*****
+
+</pre></div>
+<h3 class="h3">numpy.char.capitalize() method example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np 
+
+print("Capitalizing the string using capitalize()...")
+
+print(np.char.capitalize("welcome to javatpoint"))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Capitalizing the string using capitalize()...
+
+Welcome to javatpoint
+
+</pre></div>
+<h3 class="h3">numpy.char.title() method example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np 
+
+print("Converting string into title cased version...")
+
+print(np.char.title("welcome to javatpoint"))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Converting string into title cased version...
+
+Welcome To Javatpoint
+
+</pre></div>
+<h3 class="h3">numpy.char.lower() method example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np 
+
+print("Converting all the characters of the string into lowercase...")
+
+print(np.char.lower("WELCOME TO JAVATPOINT"))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Converting all the characters of the string into lowercase...
+
+welcome to javatpoint
+
+</pre></div>
+<h3 class="h3">numpy.char.upper() method example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np 
+
+print("Converting all the characters of the string into uppercase...")
+
+print(np.char.upper("Welcome To Javatpoint"))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Converting all the characters of the string into uppercase...
+
+WELCOME TO JAVATPOINT
+
+</pre></div>
+<h3 class="h3">numpy.char.split() method example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np 
+
+print("Splitting the String word by word..")
+
+print(np.char.split("Welcome To Javatpoint"),sep = " ")
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Splitting the String word by word..
+
+['Welcome', 'To', 'Javatpoint']
+
+</pre></div>
+<h3 class="h3">numpy.char.splitlines() method example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np 
+
+print("Splitting the String line by line..")
+
+print(np.char.splitlines("Welcome\nTo\nJavatpoint"))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Splitting the String line by line..
+
+['Welcome', 'To', 'Javatpoint']
+
+</pre></div>
+<h3 class="h3">numpy.char.strip() method example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np 
+
+str = "     welcome to javatpoint     "
+
+print("Original String:",str)
+
+print("Removing the leading and trailing whitespaces from the string")
+
+print(np.char.strip(str))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Original String:      welcome to javatpoint     
+
+Removing the leading and trailing whitespaces from the string
+
+welcome to javatpoint
+
+</pre></div>
+<h3 class="h3">numpy.char.join() method example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np 
+
+print(np.char.join(':','HM'))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+H:M
+
+</pre></div>
+<h3 class="h3">numpy.char.replace() method example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+str = "Welcome to Javatpoint"
+
+print("Original String:",str)
+
+print("Modified String:",end=" ")
+
+print(np.char.replace(str, "Welcome to","www."))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Original String: Welcome to Javatpoint
+
+Modified String: www. Javatpoint
+
+</pre></div>
+<h3 class="h3">numpy.char.encode() and decode() method example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+enstr = np.char.encode("welcome to javatpoint", 'cp500')
+
+dstr =np.char.decode(enstr, 'cp500')
+
+print(enstr)
+
+print(dstr)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+b'\xa6\x85\x93\x83\x96\x94\x85@\xa3\x96@\x91\x81\xa5\x81\xa3\x97\x96\x89\x95\xa3'
+
+welcome to javatpoint
+
+</pre></div>
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-mathematical-functions">NumPy Mathematical Functions</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="numpy-bitwise-operators" style="float:left">¡û prev</a>
+<a class="next" href="numpy-mathematical-functions" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-mathematical-functions">next ¡ú</a>
+<a class="next" href="numpy-bitwise-operators">¡û prev</a>
+</div>
+<h1 class="h1">NumPy String Functions </h1>
+<p>NumPy contains the following functions for the operations on the arrays of dtype string. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Function</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>add()</td>
+<td>It is used to concatenate the corresponding array elements (strings). </td>
+</tr>
+<tr>
+<td>2</td>
+<td>multiply()</td>
+<td>It returns the multiple copies of the specified string, i.e., if a string 'hello' is multiplied by 3 then, a string 'hello hello' is returned.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>center()</td>
+<td>It returns the copy of the string where the original string is centered with the left and right padding filled with the specified number of fill characters.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>capitalize()</td>
+<td>It returns a copy of the original string in which the first letter of the original string is converted to the Upper Case.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>title()</td>
+<td>It returns the title cased version of the string, i.e., the first letter of each word of the string is converted into the upper case.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>lower()</td>
+<td>It returns a copy of the string in which all the letters are converted into the lower case. </td>
+</tr>
+<tr>
+<td>7</td>
+<td>upper()</td>
+<td>It returns a copy of the string in which all the letters are converted into the upper case. </td>
+</tr>
+<tr>
+<td>9</td>
+<td>split()</td>
+<td>It returns a list of words in the string. </td>
+</tr>
+<tr>
+<td>9</td>
+<td>splitlines()</td>
+<td>It returns the list of lines in the string, breaking at line boundaries. </td>
+</tr>
+<tr>
+<td>10</td>
+<td>strip()</td>
+<td>Returns a copy of the string with the leading and trailing white spaces removed. </td>
+</tr>
+<tr>
+<td>11</td>
+<td>join()</td>
+<td>It returns a string which is the concatenation of all the strings specified in the given sequence. </td>
+</tr>
+<tr>
+<td>12</td>
+<td>replace()</td>
+<td>It returns a copy of the string by replacing all occurrences of a particular substring with the specified one. </td>
+</tr>
+<tr>
+<td>13</td>
+<td>decode()</td>
+<td>It is used to decode the specified string element-wise using the specified codec.</td>
+</tr>
+<tr>
+<td>14</td>
+<td>encode()</td>
+<td>It is used to encode the decoded string element-wise.</td>
+</tr>
+</table>
+<h3 class="h3">numpy.char.add() method example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np 
+
+print("Concatenating two string arrays:")
+
+print(np.char.add(['welcome','Hi'], [' to Javatpoint', ' read python'] ))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Concatenating two string arrays:
+
+['welcome to Javatpoint' 'Hi read python']
+
+</pre></div>
+<h3 class="h3">numpy.char.multiply() method example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np 
+
+print("Printing a string multiple times:")
+
+print(np.char.multiply("hello ",3))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Printing a string multiple times:
+
+hello hello hello 
+
+</pre></div>
+<h3 class="h3">numpy.char.center() method example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np 
+
+print("Padding the string through left and right with the fill char *");
+
+#np.char.center(string, width, fillchar)
+
+print(np.char.center("Javatpoint", 20, '*'))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Padding the string through left and right with the fill char *
+
+*****Javatpoint*****
+
+</pre></div>
+<h3 class="h3">numpy.char.capitalize() method example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np 
+
+print("Capitalizing the string using capitalize()...")
+
+print(np.char.capitalize("welcome to javatpoint"))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Capitalizing the string using capitalize()...
+
+Welcome to javatpoint
+
+</pre></div>
+<h3 class="h3">numpy.char.title() method example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np 
+
+print("Converting string into title cased version...")
+
+print(np.char.title("welcome to javatpoint"))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Converting string into title cased version...
+
+Welcome To Javatpoint
+
+</pre></div>
+<h3 class="h3">numpy.char.lower() method example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np 
+
+print("Converting all the characters of the string into lowercase...")
+
+print(np.char.lower("WELCOME TO JAVATPOINT"))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Converting all the characters of the string into lowercase...
+
+welcome to javatpoint
+
+</pre></div>
+<h3 class="h3">numpy.char.upper() method example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np 
+
+print("Converting all the characters of the string into uppercase...")
+
+print(np.char.upper("Welcome To Javatpoint"))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Converting all the characters of the string into uppercase...
+
+WELCOME TO JAVATPOINT
+
+</pre></div>
+<h3 class="h3">numpy.char.split() method example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np 
+
+print("Splitting the String word by word..")
+
+print(np.char.split("Welcome To Javatpoint"),sep = " ")
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Splitting the String word by word..
+
+['Welcome', 'To', 'Javatpoint']
+
+</pre></div>
+<h3 class="h3">numpy.char.splitlines() method example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np 
+
+print("Splitting the String line by line..")
+
+print(np.char.splitlines("Welcome\nTo\nJavatpoint"))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Splitting the String line by line..
+
+['Welcome', 'To', 'Javatpoint']
+
+</pre></div>
+<h3 class="h3">numpy.char.strip() method example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np 
+
+str = "     welcome to javatpoint     "
+
+print("Original String:",str)
+
+print("Removing the leading and trailing whitespaces from the string")
+
+print(np.char.strip(str))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Original String:      welcome to javatpoint     
+
+Removing the leading and trailing whitespaces from the string
+
+welcome to javatpoint
+
+</pre></div>
+<h3 class="h3">numpy.char.join() method example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np 
+
+print(np.char.join(':','HM'))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+H:M
+
+</pre></div>
+<h3 class="h3">numpy.char.replace() method example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+str = "Welcome to Javatpoint"
+
+print("Original String:",str)
+
+print("Modified String:",end=" ")
+
+print(np.char.replace(str, "Welcome to","www."))
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+Original String: Welcome to Javatpoint
+
+Modified String: www. Javatpoint
+
+</pre></div>
+<h3 class="h3">numpy.char.encode() and decode() method example </h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import numpy as np
+
+enstr = np.char.encode("welcome to javatpoint", 'cp500')
+
+dstr =np.char.decode(enstr, 'cp500')
+
+print(enstr)
+
+print(dstr)
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+b'\xa6\x85\x93\x83\x96\x94\x85@\xa3\x96@\x91\x81\xa5\x81\xa3\x97\x96\x89\x95\xa3'
+
+welcome to javatpoint
+
+</pre></div>
+<hr/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-mathematical-functions">NumPy Mathematical Functions</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="numpy-bitwise-operators" style="float:left">¡û prev</a>
+<a class="next" href="numpy-mathematical-functions" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html></body></html>

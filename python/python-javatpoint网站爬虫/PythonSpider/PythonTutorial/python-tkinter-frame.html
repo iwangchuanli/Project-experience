@@ -1,0 +1,528 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-label">next ¡ú</a>
+<a class="next" href="python-tkinter-entry">¡û prev</a>
+</div>
+<h1 class="h1">Python Tkinter Frame</h1>
+<p>Python Tkinter Frame widget is used to organize the group of widgets. It acts like a container which can be used to hold the other widgets. The rectangular areas of the screen are used to organize the widgets to the python application.</p>
+<p>The syntax to use the Frame widget is given below.</p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+w = Frame(parent,  options)
+</textarea></div>
+<p>A list of possible options is given below.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>bd</td>
+<td>It represents the border width.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>bg</td>
+<td>The background color of the widget. </td>
+</tr>
+<tr>
+<td>3</td>
+<td>cursor</td>
+<td>The mouse pointer is changed to the cursor type set to different values like an arrow, dot, etc.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>height</td>
+<td>The height of the frame.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>highlightbackground</td>
+<td>The color of the background color when it is under focus.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>highlightcolor</td>
+<td>The text color when the widget is under focus.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>highlightthickness</td>
+<td>It specifies the thickness around the border when the widget is under the focus.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>relief</td>
+<td>It specifies the type of the border. The default value if FLAT.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>width</td>
+<td>It represents the width of the widget.</td>
+</tr>
+</table>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+from tkinter import *
+
+top = Tk()
+top.geometry("140x100")
+frame = Frame(top)
+frame.pack()
+
+leftframe = Frame(top)
+leftframe.pack(side = LEFT)
+
+rightframe = Frame(top)
+rightframe.pack(side = RIGHT)
+
+btn1 = Button(frame, text="Submit", fg="red",activebackground = "red")
+btn1.pack(side = LEFT)
+
+btn2 = Button(frame, text="Remove", fg="brown", activebackground = "brown")
+btn2.pack(side = RIGHT)
+
+btn3 = Button(rightframe, text="Add", fg="blue", activebackground = "blue")
+btn3.pack(side = LEFT)
+
+btn4 = Button(leftframe, text="Modify", fg="black", activebackground = "white")
+btn4.pack(side = RIGHT)
+
+top.mainloop()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Frame" src="python/images/python-tkinter-frame.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-label">Python Tkinter Label</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-entry" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-label" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-label">next ¡ú</a>
+<a class="next" href="python-tkinter-entry">¡û prev</a>
+</div>
+<h1 class="h1">Python Tkinter Frame</h1>
+<p>Python Tkinter Frame widget is used to organize the group of widgets. It acts like a container which can be used to hold the other widgets. The rectangular areas of the screen are used to organize the widgets to the python application.</p>
+<p>The syntax to use the Frame widget is given below.</p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+w = Frame(parent,  options)
+
+</textarea></div>
+<p>A list of possible options is given below.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>bd</td>
+<td>It represents the border width.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>bg</td>
+<td>The background color of the widget. </td>
+</tr>
+<tr>
+<td>3</td>
+<td>cursor</td>
+<td>The mouse pointer is changed to the cursor type set to different values like an arrow, dot, etc.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>height</td>
+<td>The height of the frame.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>highlightbackground</td>
+<td>The color of the background color when it is under focus.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>highlightcolor</td>
+<td>The text color when the widget is under focus.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>highlightthickness</td>
+<td>It specifies the thickness around the border when the widget is under the focus.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>relief</td>
+<td>It specifies the type of the border. The default value if FLAT.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>width</td>
+<td>It represents the width of the widget.</td>
+</tr>
+</table>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+from tkinter import *
+
+
+
+top = Tk()
+
+top.geometry("140x100")
+
+frame = Frame(top)
+
+frame.pack()
+
+
+
+leftframe = Frame(top)
+
+leftframe.pack(side = LEFT)
+
+
+
+rightframe = Frame(top)
+
+rightframe.pack(side = RIGHT)
+
+
+
+btn1 = Button(frame, text="Submit", fg="red",activebackground = "red")
+
+btn1.pack(side = LEFT)
+
+
+
+btn2 = Button(frame, text="Remove", fg="brown", activebackground = "brown")
+
+btn2.pack(side = RIGHT)
+
+
+
+btn3 = Button(rightframe, text="Add", fg="blue", activebackground = "blue")
+
+btn3.pack(side = LEFT)
+
+
+
+btn4 = Button(leftframe, text="Modify", fg="black", activebackground = "white")
+
+btn4.pack(side = RIGHT)
+
+
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Frame" src="python/images/python-tkinter-frame.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-label">Python Tkinter Label</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-entry" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-label" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-label">next ¡ú</a>
+<a class="next" href="python-tkinter-entry">¡û prev</a>
+</div>
+<h1 class="h1">Python Tkinter Frame</h1>
+<p>Python Tkinter Frame widget is used to organize the group of widgets. It acts like a container which can be used to hold the other widgets. The rectangular areas of the screen are used to organize the widgets to the python application.</p>
+<p>The syntax to use the Frame widget is given below.</p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+w = Frame(parent,  options)
+
+</textarea></div>
+<p>A list of possible options is given below.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>bd</td>
+<td>It represents the border width.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>bg</td>
+<td>The background color of the widget. </td>
+</tr>
+<tr>
+<td>3</td>
+<td>cursor</td>
+<td>The mouse pointer is changed to the cursor type set to different values like an arrow, dot, etc.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>height</td>
+<td>The height of the frame.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>highlightbackground</td>
+<td>The color of the background color when it is under focus.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>highlightcolor</td>
+<td>The text color when the widget is under focus.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>highlightthickness</td>
+<td>It specifies the thickness around the border when the widget is under the focus.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>relief</td>
+<td>It specifies the type of the border. The default value if FLAT.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>width</td>
+<td>It represents the width of the widget.</td>
+</tr>
+</table>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+from tkinter import *
+
+
+
+top = Tk()
+
+top.geometry("140x100")
+
+frame = Frame(top)
+
+frame.pack()
+
+
+
+leftframe = Frame(top)
+
+leftframe.pack(side = LEFT)
+
+
+
+rightframe = Frame(top)
+
+rightframe.pack(side = RIGHT)
+
+
+
+btn1 = Button(frame, text="Submit", fg="red",activebackground = "red")
+
+btn1.pack(side = LEFT)
+
+
+
+btn2 = Button(frame, text="Remove", fg="brown", activebackground = "brown")
+
+btn2.pack(side = RIGHT)
+
+
+
+btn3 = Button(rightframe, text="Add", fg="blue", activebackground = "blue")
+
+btn3.pack(side = LEFT)
+
+
+
+btn4 = Button(leftframe, text="Modify", fg="black", activebackground = "white")
+
+btn4.pack(side = RIGHT)
+
+
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Frame" src="python/images/python-tkinter-frame.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-label">Python Tkinter Label</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-entry" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-label" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-label">next ¡ú</a>
+<a class="next" href="python-tkinter-entry">¡û prev</a>
+</div>
+<h1 class="h1">Python Tkinter Frame</h1>
+<p>Python Tkinter Frame widget is used to organize the group of widgets. It acts like a container which can be used to hold the other widgets. The rectangular areas of the screen are used to organize the widgets to the python application.</p>
+<p>The syntax to use the Frame widget is given below.</p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+w = Frame(parent,  options)
+
+</textarea></div>
+<p>A list of possible options is given below.</p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>bd</td>
+<td>It represents the border width.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>bg</td>
+<td>The background color of the widget. </td>
+</tr>
+<tr>
+<td>3</td>
+<td>cursor</td>
+<td>The mouse pointer is changed to the cursor type set to different values like an arrow, dot, etc.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>height</td>
+<td>The height of the frame.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>highlightbackground</td>
+<td>The color of the background color when it is under focus.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>highlightcolor</td>
+<td>The text color when the widget is under focus.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>highlightthickness</td>
+<td>It specifies the thickness around the border when the widget is under the focus.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>relief</td>
+<td>It specifies the type of the border. The default value if FLAT.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>width</td>
+<td>It represents the width of the widget.</td>
+</tr>
+</table>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+from tkinter import *
+
+
+
+top = Tk()
+
+top.geometry("140x100")
+
+frame = Frame(top)
+
+frame.pack()
+
+
+
+leftframe = Frame(top)
+
+leftframe.pack(side = LEFT)
+
+
+
+rightframe = Frame(top)
+
+rightframe.pack(side = RIGHT)
+
+
+
+btn1 = Button(frame, text="Submit", fg="red",activebackground = "red")
+
+btn1.pack(side = LEFT)
+
+
+
+btn2 = Button(frame, text="Remove", fg="brown", activebackground = "brown")
+
+btn2.pack(side = RIGHT)
+
+
+
+btn3 = Button(rightframe, text="Add", fg="blue", activebackground = "blue")
+
+btn3.pack(side = LEFT)
+
+
+
+btn4 = Button(leftframe, text="Modify", fg="black", activebackground = "white")
+
+btn4.pack(side = RIGHT)
+
+
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter Frame" src="python/images/python-tkinter-frame.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-label">Python Tkinter Label</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-entry" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-label" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html></body></html>

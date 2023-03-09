@@ -1,0 +1,874 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-mysql-performing-transactions">next ¡ú</a>
+<a class="next" href="python-mysql-update-operation">¡û prev</a>
+</div>
+<h1 class="h1">Join Operation</h1>
+<p>We can combine the columns from two or more tables by using some common column among them by using the join statement. </p>
+<p>We have only one table in our database, let's create one more table Departments with two columns department_id and department_name.</p>
+<div class="codeblock"><textarea class="python" name="code">
+create table Departments (Dept_id int(20) primary key not null, Dept_Name varchar(20) not null);
+</textarea></div>
+<img alt="Join Operation" src="python/images/join-operation.png"/>
+<p>As we have created a new table Departments as shown in the above image. However, we haven't yet inserted any value inside it. </p>
+<p>Let's insert some Departments ids and departments names so that we can map this to our Employee table.</p>
+<div class="codeblock"><textarea class="python" name="code">
+insert into Departments values (201, "CS");
+insert into Departments values (202, "IT");
+</textarea></div>
+<p>Let's look at the values inserted in each of the tables. Consider the following image.</p>
+<img alt="Join Operation" src="python/images/join-operation2.png"/>
+<p>Now, let's create a python script that joins the two tables on the common column, i.e., dept_id. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import mysql.connector
+
+#Create the connection object 
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+#creating the cursor object
+cur = myconn.cursor()
+
+try:
+    #joining the two tables on departments_id
+    cur.execute("select Employee.id, Employee.name, Employee.salary, Departments.Dept_id, Departments.Dept_Name from Departments join Employee on Departments.Dept_id = Employee.Dept_id")
+    print("ID    Name    Salary    Dept_Id    Dept_Name")
+    for row in cur:
+        print("%d    %s    %d    %d    %s"%(row[0], row[1],row[2],row[3],row[4]))
+        
+except:
+    myconn.rollback()
+
+myconn.close()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+ID    Name    Salary    Dept_Id    Dept_Name
+101   John    25000    	201    		CS
+102   John    25000    	201    		CS
+103   David   25000       202    		IT
+104   Nick    90000   	201    		CS
+105   Mike    28000   	202   		IT
+</pre></div>
+<hr/>
+<h2 class="h2">Right Join</h2>
+<p>Right join shows all the columns of the right-hand side table as we have two tables in the database PythonDB, i.e., Departments and Employee. We do not have any Employee in the table who is not working for any department (Employee for which department id is null). However, to understand the concept of right join let's create the one. </p>
+<p>Execute the following query on the MySQL server.</p>
+<div class="codeblock"><textarea class="python" name="code">
+insert into Employee(name, id, salary, branch_name) values ("Alex",108,29900,"Mumbai"); 
+</textarea></div>
+<p>This will insert an employee Alex who doesn't work for any department (department id is null). </p>
+<p>Now, we have an employee in the Employee table whose department id is not present in the Departments table. Let's perform the right join on the two tables now.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import mysql.connector
+
+#Create the connection object 
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+#creating the cursor object
+cur = myconn.cursor()
+
+try:
+    #joining the two tables on departments_id
+    result = cur.execute("select Employee.id, Employee.name, Employee.salary, Departments.Dept_id, Departments.Dept_Name from Departments right join Employee on Departments.Dept_id = Employee.Dept_id")
+    
+	print("ID    Name    Salary    Dept_Id    Dept_Name")
+    
+	for row in cur:
+        print(row[0],"    ", row[1],"    ",row[2],"    ",row[3],"    ",row[4])
+    
+    
+        
+except:
+    myconn.rollback()
+
+myconn.close()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+ID    Name    Salary    Dept_Id    Dept_Name
+101      John      25000.0      201      CS
+102      John      25000.0      201      CS
+103      David      25000.0      202      IT
+104      Nick      90000.0      201      CS
+105      Mike      28000.0      202      IT
+108      Alex      29900.0      None      None
+</pre></div>
+<hr/>
+<h2 class="h2">Left Join</h2>
+<p>The left join covers all the data from the left-hand side table. It has just opposite effect to the right join. Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+import mysql.connector
+
+#Create the connection object 
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+#creating the cursor object
+cur = myconn.cursor()
+
+try:
+    #joining the two tables on departments_id
+    result = cur.execute("select Employee.id, Employee.name, Employee.salary, Departments.Dept_id, Departments.Dept_Name from Departments left join Employee on Departments.Dept_id = Employee.Dept_id")
+    print("ID    Name    Salary    Dept_Id    Dept_Name")
+    for row in cur:
+        print(row[0],"    ", row[1],"    ",row[2],"    ",row[3],"    ",row[4])
+    
+    
+        
+except:
+    myconn.rollback()
+
+myconn.close()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+ID    Name    Salary    Dept_Id    Dept_Name
+101      John      25000.0      201      CS
+102      John      25000.0      201      CS
+103      David      25000.0      202      IT
+104      Nick      90000.0      201      CS
+105      Mike      28000.0      202      IT
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-mysql-performing-transactions">Performing Transactions</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-mysql-update-operation" style="float:left">¡û prev</a>
+<a class="next" href="python-mysql-performing-transactions" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-mysql-performing-transactions">next ¡ú</a>
+<a class="next" href="python-mysql-update-operation">¡û prev</a>
+</div>
+<h1 class="h1">Join Operation</h1>
+<p>We can combine the columns from two or more tables by using some common column among them by using the join statement. </p>
+<p>We have only one table in our database, let's create one more table Departments with two columns department_id and department_name.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+create table Departments (Dept_id int(20) primary key not null, Dept_Name varchar(20) not null);
+
+</textarea></div>
+<img alt="Join Operation" src="python/images/join-operation.png"/>
+<p>As we have created a new table Departments as shown in the above image. However, we haven't yet inserted any value inside it. </p>
+<p>Let's insert some Departments ids and departments names so that we can map this to our Employee table.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+insert into Departments values (201, "CS");
+
+insert into Departments values (202, "IT");
+
+</textarea></div>
+<p>Let's look at the values inserted in each of the tables. Consider the following image.</p>
+<img alt="Join Operation" src="python/images/join-operation2.png"/>
+<p>Now, let's create a python script that joins the two tables on the common column, i.e., dept_id. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+
+
+try:
+
+    #joining the two tables on departments_id
+
+    cur.execute("select Employee.id, Employee.name, Employee.salary, Departments.Dept_id, Departments.Dept_Name from Departments join Employee on Departments.Dept_id = Employee.Dept_id")
+
+    print("ID    Name    Salary    Dept_Id    Dept_Name")
+
+    for row in cur:
+
+        print("%d    %s    %d    %d    %s"%(row[0], row[1],row[2],row[3],row[4]))
+
+        
+
+except:
+
+    myconn.rollback()
+
+
+
+myconn.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+ID    Name    Salary    Dept_Id    Dept_Name
+
+101   John    25000    	201    		CS
+
+102   John    25000    	201    		CS
+
+103   David   25000       202    		IT
+
+104   Nick    90000   	201    		CS
+
+105   Mike    28000   	202   		IT
+
+</pre></div>
+<hr/>
+<h2 class="h2">Right Join</h2>
+<p>Right join shows all the columns of the right-hand side table as we have two tables in the database PythonDB, i.e., Departments and Employee. We do not have any Employee in the table who is not working for any department (Employee for which department id is null). However, to understand the concept of right join let's create the one. </p>
+<p>Execute the following query on the MySQL server.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+insert into Employee(name, id, salary, branch_name) values ("Alex",108,29900,"Mumbai"); 
+
+</textarea></div>
+<p>This will insert an employee Alex who doesn't work for any department (department id is null). </p>
+<p>Now, we have an employee in the Employee table whose department id is not present in the Departments table. Let's perform the right join on the two tables now.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+
+
+try:
+
+    #joining the two tables on departments_id
+
+    result = cur.execute("select Employee.id, Employee.name, Employee.salary, Departments.Dept_id, Departments.Dept_Name from Departments right join Employee on Departments.Dept_id = Employee.Dept_id")
+
+    
+
+	print("ID    Name    Salary    Dept_Id    Dept_Name")
+
+    
+
+	for row in cur:
+
+        print(row[0],"    ", row[1],"    ",row[2],"    ",row[3],"    ",row[4])
+
+    
+
+    
+
+        
+
+except:
+
+    myconn.rollback()
+
+
+
+myconn.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+ID    Name    Salary    Dept_Id    Dept_Name
+
+101      John      25000.0      201      CS
+
+102      John      25000.0      201      CS
+
+103      David      25000.0      202      IT
+
+104      Nick      90000.0      201      CS
+
+105      Mike      28000.0      202      IT
+
+108      Alex      29900.0      None      None
+
+</pre></div>
+<hr/>
+<h2 class="h2">Left Join</h2>
+<p>The left join covers all the data from the left-hand side table. It has just opposite effect to the right join. Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+
+
+try:
+
+    #joining the two tables on departments_id
+
+    result = cur.execute("select Employee.id, Employee.name, Employee.salary, Departments.Dept_id, Departments.Dept_Name from Departments left join Employee on Departments.Dept_id = Employee.Dept_id")
+
+    print("ID    Name    Salary    Dept_Id    Dept_Name")
+
+    for row in cur:
+
+        print(row[0],"    ", row[1],"    ",row[2],"    ",row[3],"    ",row[4])
+
+    
+
+    
+
+        
+
+except:
+
+    myconn.rollback()
+
+
+
+myconn.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+ID    Name    Salary    Dept_Id    Dept_Name
+
+101      John      25000.0      201      CS
+
+102      John      25000.0      201      CS
+
+103      David      25000.0      202      IT
+
+104      Nick      90000.0      201      CS
+
+105      Mike      28000.0      202      IT
+
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-mysql-performing-transactions">Performing Transactions</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-mysql-update-operation" style="float:left">¡û prev</a>
+<a class="next" href="python-mysql-performing-transactions" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-mysql-performing-transactions">next ¡ú</a>
+<a class="next" href="python-mysql-update-operation">¡û prev</a>
+</div>
+<h1 class="h1">Join Operation</h1>
+<p>We can combine the columns from two or more tables by using some common column among them by using the join statement. </p>
+<p>We have only one table in our database, let's create one more table Departments with two columns department_id and department_name.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+create table Departments (Dept_id int(20) primary key not null, Dept_Name varchar(20) not null);
+
+</textarea></div>
+<img alt="Join Operation" src="python/images/join-operation.png"/>
+<p>As we have created a new table Departments as shown in the above image. However, we haven't yet inserted any value inside it. </p>
+<p>Let's insert some Departments ids and departments names so that we can map this to our Employee table.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+insert into Departments values (201, "CS");
+
+insert into Departments values (202, "IT");
+
+</textarea></div>
+<p>Let's look at the values inserted in each of the tables. Consider the following image.</p>
+<img alt="Join Operation" src="python/images/join-operation2.png"/>
+<p>Now, let's create a python script that joins the two tables on the common column, i.e., dept_id. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+
+
+try:
+
+    #joining the two tables on departments_id
+
+    cur.execute("select Employee.id, Employee.name, Employee.salary, Departments.Dept_id, Departments.Dept_Name from Departments join Employee on Departments.Dept_id = Employee.Dept_id")
+
+    print("ID    Name    Salary    Dept_Id    Dept_Name")
+
+    for row in cur:
+
+        print("%d    %s    %d    %d    %s"%(row[0], row[1],row[2],row[3],row[4]))
+
+        
+
+except:
+
+    myconn.rollback()
+
+
+
+myconn.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+ID    Name    Salary    Dept_Id    Dept_Name
+
+101   John    25000    	201    		CS
+
+102   John    25000    	201    		CS
+
+103   David   25000       202    		IT
+
+104   Nick    90000   	201    		CS
+
+105   Mike    28000   	202   		IT
+
+</pre></div>
+<hr/>
+<h2 class="h2">Right Join</h2>
+<p>Right join shows all the columns of the right-hand side table as we have two tables in the database PythonDB, i.e., Departments and Employee. We do not have any Employee in the table who is not working for any department (Employee for which department id is null). However, to understand the concept of right join let's create the one. </p>
+<p>Execute the following query on the MySQL server.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+insert into Employee(name, id, salary, branch_name) values ("Alex",108,29900,"Mumbai"); 
+
+</textarea></div>
+<p>This will insert an employee Alex who doesn't work for any department (department id is null). </p>
+<p>Now, we have an employee in the Employee table whose department id is not present in the Departments table. Let's perform the right join on the two tables now.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+
+
+try:
+
+    #joining the two tables on departments_id
+
+    result = cur.execute("select Employee.id, Employee.name, Employee.salary, Departments.Dept_id, Departments.Dept_Name from Departments right join Employee on Departments.Dept_id = Employee.Dept_id")
+
+    
+
+	print("ID    Name    Salary    Dept_Id    Dept_Name")
+
+    
+
+	for row in cur:
+
+        print(row[0],"    ", row[1],"    ",row[2],"    ",row[3],"    ",row[4])
+
+    
+
+    
+
+        
+
+except:
+
+    myconn.rollback()
+
+
+
+myconn.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+ID    Name    Salary    Dept_Id    Dept_Name
+
+101      John      25000.0      201      CS
+
+102      John      25000.0      201      CS
+
+103      David      25000.0      202      IT
+
+104      Nick      90000.0      201      CS
+
+105      Mike      28000.0      202      IT
+
+108      Alex      29900.0      None      None
+
+</pre></div>
+<hr/>
+<h2 class="h2">Left Join</h2>
+<p>The left join covers all the data from the left-hand side table. It has just opposite effect to the right join. Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+
+
+try:
+
+    #joining the two tables on departments_id
+
+    result = cur.execute("select Employee.id, Employee.name, Employee.salary, Departments.Dept_id, Departments.Dept_Name from Departments left join Employee on Departments.Dept_id = Employee.Dept_id")
+
+    print("ID    Name    Salary    Dept_Id    Dept_Name")
+
+    for row in cur:
+
+        print(row[0],"    ", row[1],"    ",row[2],"    ",row[3],"    ",row[4])
+
+    
+
+    
+
+        
+
+except:
+
+    myconn.rollback()
+
+
+
+myconn.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+ID    Name    Salary    Dept_Id    Dept_Name
+
+101      John      25000.0      201      CS
+
+102      John      25000.0      201      CS
+
+103      David      25000.0      202      IT
+
+104      Nick      90000.0      201      CS
+
+105      Mike      28000.0      202      IT
+
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-mysql-performing-transactions">Performing Transactions</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-mysql-update-operation" style="float:left">¡û prev</a>
+<a class="next" href="python-mysql-performing-transactions" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-mysql-performing-transactions">next ¡ú</a>
+<a class="next" href="python-mysql-update-operation">¡û prev</a>
+</div>
+<h1 class="h1">Join Operation</h1>
+<p>We can combine the columns from two or more tables by using some common column among them by using the join statement. </p>
+<p>We have only one table in our database, let's create one more table Departments with two columns department_id and department_name.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+create table Departments (Dept_id int(20) primary key not null, Dept_Name varchar(20) not null);
+
+</textarea></div>
+<img alt="Join Operation" src="python/images/join-operation.png"/>
+<p>As we have created a new table Departments as shown in the above image. However, we haven't yet inserted any value inside it. </p>
+<p>Let's insert some Departments ids and departments names so that we can map this to our Employee table.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+insert into Departments values (201, "CS");
+
+insert into Departments values (202, "IT");
+
+</textarea></div>
+<p>Let's look at the values inserted in each of the tables. Consider the following image.</p>
+<img alt="Join Operation" src="python/images/join-operation2.png"/>
+<p>Now, let's create a python script that joins the two tables on the common column, i.e., dept_id. </p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+
+
+try:
+
+    #joining the two tables on departments_id
+
+    cur.execute("select Employee.id, Employee.name, Employee.salary, Departments.Dept_id, Departments.Dept_Name from Departments join Employee on Departments.Dept_id = Employee.Dept_id")
+
+    print("ID    Name    Salary    Dept_Id    Dept_Name")
+
+    for row in cur:
+
+        print("%d    %s    %d    %d    %s"%(row[0], row[1],row[2],row[3],row[4]))
+
+        
+
+except:
+
+    myconn.rollback()
+
+
+
+myconn.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+ID    Name    Salary    Dept_Id    Dept_Name
+
+101   John    25000    	201    		CS
+
+102   John    25000    	201    		CS
+
+103   David   25000       202    		IT
+
+104   Nick    90000   	201    		CS
+
+105   Mike    28000   	202   		IT
+
+</pre></div>
+<hr/>
+<h2 class="h2">Right Join</h2>
+<p>Right join shows all the columns of the right-hand side table as we have two tables in the database PythonDB, i.e., Departments and Employee. We do not have any Employee in the table who is not working for any department (Employee for which department id is null). However, to understand the concept of right join let's create the one. </p>
+<p>Execute the following query on the MySQL server.</p>
+<div class="codeblock"><textarea class="python" name="code">
+
+insert into Employee(name, id, salary, branch_name) values ("Alex",108,29900,"Mumbai"); 
+
+</textarea></div>
+<p>This will insert an employee Alex who doesn't work for any department (department id is null). </p>
+<p>Now, we have an employee in the Employee table whose department id is not present in the Departments table. Let's perform the right join on the two tables now.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+
+
+try:
+
+    #joining the two tables on departments_id
+
+    result = cur.execute("select Employee.id, Employee.name, Employee.salary, Departments.Dept_id, Departments.Dept_Name from Departments right join Employee on Departments.Dept_id = Employee.Dept_id")
+
+    
+
+	print("ID    Name    Salary    Dept_Id    Dept_Name")
+
+    
+
+	for row in cur:
+
+        print(row[0],"    ", row[1],"    ",row[2],"    ",row[3],"    ",row[4])
+
+    
+
+    
+
+        
+
+except:
+
+    myconn.rollback()
+
+
+
+myconn.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+ID    Name    Salary    Dept_Id    Dept_Name
+
+101      John      25000.0      201      CS
+
+102      John      25000.0      201      CS
+
+103      David      25000.0      202      IT
+
+104      Nick      90000.0      201      CS
+
+105      Mike      28000.0      202      IT
+
+108      Alex      29900.0      None      None
+
+</pre></div>
+<hr/>
+<h2 class="h2">Left Join</h2>
+<p>The left join covers all the data from the left-hand side table. It has just opposite effect to the right join. Consider the following example.</p>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+import mysql.connector
+
+
+
+#Create the connection object 
+
+myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "google",database = "PythonDB")
+
+
+
+#creating the cursor object
+
+cur = myconn.cursor()
+
+
+
+try:
+
+    #joining the two tables on departments_id
+
+    result = cur.execute("select Employee.id, Employee.name, Employee.salary, Departments.Dept_id, Departments.Dept_Name from Departments left join Employee on Departments.Dept_id = Employee.Dept_id")
+
+    print("ID    Name    Salary    Dept_Id    Dept_Name")
+
+    for row in cur:
+
+        print(row[0],"    ", row[1],"    ",row[2],"    ",row[3],"    ",row[4])
+
+    
+
+    
+
+        
+
+except:
+
+    myconn.rollback()
+
+
+
+myconn.close()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>
+
+ID    Name    Salary    Dept_Id    Dept_Name
+
+101      John      25000.0      201      CS
+
+102      John      25000.0      201      CS
+
+103      David      25000.0      202      IT
+
+104      Nick      90000.0      201      CS
+
+105      Mike      28000.0      202      IT
+
+</pre></div>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-mysql-performing-transactions">Performing Transactions</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-mysql-update-operation" style="float:left">¡û prev</a>
+<a class="next" href="python-mysql-performing-transactions" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html></body></html>

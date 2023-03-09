@@ -1,0 +1,683 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-messagebox">next ¡ú</a>
+<a class="next" href="python-tkinter-panedwindow">¡û prev</a>
+</div>
+<h1 class="h1">Tkinter LabelFrame</h1>
+<p>The LabelFrame widget is used to draw a border around its child widgets. We can also display the title for the LabelFrame widget. It acts like a container which can be used to group the number of interrelated widgets such as Radiobuttons. </p>
+<p>This widget is a variant of the Frame widget which has all the features of a frame. It also can display a label.</p>
+<p>The syntax to use the LabelFrame widget is given below.</p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+w = LabelFrame(top, options) 
+</textarea></div>
+<p>A list of options is given below. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>bg</td>
+<td>The background color of the widget. </td>
+</tr>
+<tr>
+<td>2</td>
+<td>bd</td>
+<td>It represents the size of the border shown around the indicator. The default is 2 pixels.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Class</td>
+<td>The default value of the class is LabelFrame.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>colormap</td>
+<td>This option is used to specify which colomap is to be used for this widget. By colormap, we mean the 256 colors that are used to form the graphics. With this option, we can reuse the colormap of another window on this widget. </td>
+</tr>
+<tr>
+<td>5</td>
+<td>container</td>
+<td>If this is set to true, the LabelFrame becomes the container widget. The default value is false. </td>
+</tr>
+<tr>
+<td>6</td>
+<td>cursor</td>
+<td>It can be set to a cursor type, i.e. arrow, dot, etc. the mouse pointer is changed to the cursor type when it is over the widget. </td>
+</tr>
+<tr>
+<td>7</td>
+<td>fg</td>
+<td>It represents the foreground color of the widget. </td>
+</tr>
+<tr>
+<td>8</td>
+<td>font</td>
+<td>It represents the font type of the widget text.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>height</td>
+<td>It represents the height of the widget.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>labelAnchor</td>
+<td>It represents the exact position of the text within the widget. The default is NW(north-west)</td>
+</tr>
+<tr>
+<td>11</td>
+<td>labelwidget</td>
+<td>It represents the widget to be used for the label. The frame uses the text for the label if no value specified. </td>
+</tr>
+<tr>
+<td>12</td>
+<td>highlightbackground</td>
+<td>The color of the focus highlight border when the widget doesn't have the focus. </td>
+</tr>
+<tr>
+<td>13</td>
+<td>highlightcolor</td>
+<td>The color of the focus highlight when the widget has the focus. </td>
+</tr>
+<tr>
+<td>14</td>
+<td>highlightthickness</td>
+<td>The width of the focus highlight border. </td>
+</tr>
+<tr>
+<td>15</td>
+<td>padx</td>
+<td>The horizontal padding of the widget. </td>
+</tr>
+<tr>
+<td>16</td>
+<td>pady</td>
+<td>The vertical padding of the widget. </td>
+</tr>
+<tr>
+<td>17</td>
+<td>relief</td>
+<td>It represents the border style. The default value is GROOVE. </td>
+</tr>
+<tr>
+<td>18</td>
+<td>text</td>
+<td>It represents the string containing the label text.</td>
+</tr>
+<tr>
+<td>19</td>
+<td>width</td>
+<td>It represents the width of the frame. </td>
+</tr>
+</table>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+# !/usr/bin/python3
+from tkinter import *
+
+top = Tk()
+top.geometry("300x200")
+
+labelframe1 = LabelFrame(top, text="Positive Comments")
+labelframe1.pack(fill="both", expand="yes")
+
+toplabel = Label(labelframe1, text="Place to put the positive comments")
+toplabel.pack()
+
+labelframe2 = LabelFrame(top, text = "Negative Comments")
+labelframe2.pack(fill="both", expand = "yes")
+
+bottomlabel = Label(labelframe2,text = "Place to put the negative comments")
+bottomlabel.pack()
+
+top.mainloop()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter LabelFrame" src="python/images/python-tkinter-labelframe-output.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-messagebox">Tkinter messagebox</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-panedwindow" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-messagebox" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-messagebox">next ¡ú</a>
+<a class="next" href="python-tkinter-panedwindow">¡û prev</a>
+</div>
+<h1 class="h1">Tkinter LabelFrame</h1>
+<p>The LabelFrame widget is used to draw a border around its child widgets. We can also display the title for the LabelFrame widget. It acts like a container which can be used to group the number of interrelated widgets such as Radiobuttons. </p>
+<p>This widget is a variant of the Frame widget which has all the features of a frame. It also can display a label.</p>
+<p>The syntax to use the LabelFrame widget is given below.</p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+w = LabelFrame(top, options) 
+
+</textarea></div>
+<p>A list of options is given below. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>bg</td>
+<td>The background color of the widget. </td>
+</tr>
+<tr>
+<td>2</td>
+<td>bd</td>
+<td>It represents the size of the border shown around the indicator. The default is 2 pixels.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Class</td>
+<td>The default value of the class is LabelFrame.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>colormap</td>
+<td>This option is used to specify which colomap is to be used for this widget. By colormap, we mean the 256 colors that are used to form the graphics. With this option, we can reuse the colormap of another window on this widget. </td>
+</tr>
+<tr>
+<td>5</td>
+<td>container</td>
+<td>If this is set to true, the LabelFrame becomes the container widget. The default value is false. </td>
+</tr>
+<tr>
+<td>6</td>
+<td>cursor</td>
+<td>It can be set to a cursor type, i.e. arrow, dot, etc. the mouse pointer is changed to the cursor type when it is over the widget. </td>
+</tr>
+<tr>
+<td>7</td>
+<td>fg</td>
+<td>It represents the foreground color of the widget. </td>
+</tr>
+<tr>
+<td>8</td>
+<td>font</td>
+<td>It represents the font type of the widget text.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>height</td>
+<td>It represents the height of the widget.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>labelAnchor</td>
+<td>It represents the exact position of the text within the widget. The default is NW(north-west)</td>
+</tr>
+<tr>
+<td>11</td>
+<td>labelwidget</td>
+<td>It represents the widget to be used for the label. The frame uses the text for the label if no value specified. </td>
+</tr>
+<tr>
+<td>12</td>
+<td>highlightbackground</td>
+<td>The color of the focus highlight border when the widget doesn't have the focus. </td>
+</tr>
+<tr>
+<td>13</td>
+<td>highlightcolor</td>
+<td>The color of the focus highlight when the widget has the focus. </td>
+</tr>
+<tr>
+<td>14</td>
+<td>highlightthickness</td>
+<td>The width of the focus highlight border. </td>
+</tr>
+<tr>
+<td>15</td>
+<td>padx</td>
+<td>The horizontal padding of the widget. </td>
+</tr>
+<tr>
+<td>16</td>
+<td>pady</td>
+<td>The vertical padding of the widget. </td>
+</tr>
+<tr>
+<td>17</td>
+<td>relief</td>
+<td>It represents the border style. The default value is GROOVE. </td>
+</tr>
+<tr>
+<td>18</td>
+<td>text</td>
+<td>It represents the string containing the label text.</td>
+</tr>
+<tr>
+<td>19</td>
+<td>width</td>
+<td>It represents the width of the frame. </td>
+</tr>
+</table>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+# !/usr/bin/python3
+
+from tkinter import *
+
+
+
+top = Tk()
+
+top.geometry("300x200")
+
+
+
+labelframe1 = LabelFrame(top, text="Positive Comments")
+
+labelframe1.pack(fill="both", expand="yes")
+
+
+
+toplabel = Label(labelframe1, text="Place to put the positive comments")
+
+toplabel.pack()
+
+
+
+labelframe2 = LabelFrame(top, text = "Negative Comments")
+
+labelframe2.pack(fill="both", expand = "yes")
+
+
+
+bottomlabel = Label(labelframe2,text = "Place to put the negative comments")
+
+bottomlabel.pack()
+
+
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter LabelFrame" src="python/images/python-tkinter-labelframe-output.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-messagebox">Tkinter messagebox</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-panedwindow" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-messagebox" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-messagebox">next ¡ú</a>
+<a class="next" href="python-tkinter-panedwindow">¡û prev</a>
+</div>
+<h1 class="h1">Tkinter LabelFrame</h1>
+<p>The LabelFrame widget is used to draw a border around its child widgets. We can also display the title for the LabelFrame widget. It acts like a container which can be used to group the number of interrelated widgets such as Radiobuttons. </p>
+<p>This widget is a variant of the Frame widget which has all the features of a frame. It also can display a label.</p>
+<p>The syntax to use the LabelFrame widget is given below.</p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+w = LabelFrame(top, options) 
+
+</textarea></div>
+<p>A list of options is given below. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>bg</td>
+<td>The background color of the widget. </td>
+</tr>
+<tr>
+<td>2</td>
+<td>bd</td>
+<td>It represents the size of the border shown around the indicator. The default is 2 pixels.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Class</td>
+<td>The default value of the class is LabelFrame.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>colormap</td>
+<td>This option is used to specify which colomap is to be used for this widget. By colormap, we mean the 256 colors that are used to form the graphics. With this option, we can reuse the colormap of another window on this widget. </td>
+</tr>
+<tr>
+<td>5</td>
+<td>container</td>
+<td>If this is set to true, the LabelFrame becomes the container widget. The default value is false. </td>
+</tr>
+<tr>
+<td>6</td>
+<td>cursor</td>
+<td>It can be set to a cursor type, i.e. arrow, dot, etc. the mouse pointer is changed to the cursor type when it is over the widget. </td>
+</tr>
+<tr>
+<td>7</td>
+<td>fg</td>
+<td>It represents the foreground color of the widget. </td>
+</tr>
+<tr>
+<td>8</td>
+<td>font</td>
+<td>It represents the font type of the widget text.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>height</td>
+<td>It represents the height of the widget.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>labelAnchor</td>
+<td>It represents the exact position of the text within the widget. The default is NW(north-west)</td>
+</tr>
+<tr>
+<td>11</td>
+<td>labelwidget</td>
+<td>It represents the widget to be used for the label. The frame uses the text for the label if no value specified. </td>
+</tr>
+<tr>
+<td>12</td>
+<td>highlightbackground</td>
+<td>The color of the focus highlight border when the widget doesn't have the focus. </td>
+</tr>
+<tr>
+<td>13</td>
+<td>highlightcolor</td>
+<td>The color of the focus highlight when the widget has the focus. </td>
+</tr>
+<tr>
+<td>14</td>
+<td>highlightthickness</td>
+<td>The width of the focus highlight border. </td>
+</tr>
+<tr>
+<td>15</td>
+<td>padx</td>
+<td>The horizontal padding of the widget. </td>
+</tr>
+<tr>
+<td>16</td>
+<td>pady</td>
+<td>The vertical padding of the widget. </td>
+</tr>
+<tr>
+<td>17</td>
+<td>relief</td>
+<td>It represents the border style. The default value is GROOVE. </td>
+</tr>
+<tr>
+<td>18</td>
+<td>text</td>
+<td>It represents the string containing the label text.</td>
+</tr>
+<tr>
+<td>19</td>
+<td>width</td>
+<td>It represents the width of the frame. </td>
+</tr>
+</table>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+# !/usr/bin/python3
+
+from tkinter import *
+
+
+
+top = Tk()
+
+top.geometry("300x200")
+
+
+
+labelframe1 = LabelFrame(top, text="Positive Comments")
+
+labelframe1.pack(fill="both", expand="yes")
+
+
+
+toplabel = Label(labelframe1, text="Place to put the positive comments")
+
+toplabel.pack()
+
+
+
+labelframe2 = LabelFrame(top, text = "Negative Comments")
+
+labelframe2.pack(fill="both", expand = "yes")
+
+
+
+bottomlabel = Label(labelframe2,text = "Place to put the negative comments")
+
+bottomlabel.pack()
+
+
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter LabelFrame" src="python/images/python-tkinter-labelframe-output.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-messagebox">Tkinter messagebox</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-panedwindow" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-messagebox" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-messagebox">next ¡ú</a>
+<a class="next" href="python-tkinter-panedwindow">¡û prev</a>
+</div>
+<h1 class="h1">Tkinter LabelFrame</h1>
+<p>The LabelFrame widget is used to draw a border around its child widgets. We can also display the title for the LabelFrame widget. It acts like a container which can be used to group the number of interrelated widgets such as Radiobuttons. </p>
+<p>This widget is a variant of the Frame widget which has all the features of a frame. It also can display a label.</p>
+<p>The syntax to use the LabelFrame widget is given below.</p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+w = LabelFrame(top, options) 
+
+</textarea></div>
+<p>A list of options is given below. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>bg</td>
+<td>The background color of the widget. </td>
+</tr>
+<tr>
+<td>2</td>
+<td>bd</td>
+<td>It represents the size of the border shown around the indicator. The default is 2 pixels.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Class</td>
+<td>The default value of the class is LabelFrame.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>colormap</td>
+<td>This option is used to specify which colomap is to be used for this widget. By colormap, we mean the 256 colors that are used to form the graphics. With this option, we can reuse the colormap of another window on this widget. </td>
+</tr>
+<tr>
+<td>5</td>
+<td>container</td>
+<td>If this is set to true, the LabelFrame becomes the container widget. The default value is false. </td>
+</tr>
+<tr>
+<td>6</td>
+<td>cursor</td>
+<td>It can be set to a cursor type, i.e. arrow, dot, etc. the mouse pointer is changed to the cursor type when it is over the widget. </td>
+</tr>
+<tr>
+<td>7</td>
+<td>fg</td>
+<td>It represents the foreground color of the widget. </td>
+</tr>
+<tr>
+<td>8</td>
+<td>font</td>
+<td>It represents the font type of the widget text.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>height</td>
+<td>It represents the height of the widget.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>labelAnchor</td>
+<td>It represents the exact position of the text within the widget. The default is NW(north-west)</td>
+</tr>
+<tr>
+<td>11</td>
+<td>labelwidget</td>
+<td>It represents the widget to be used for the label. The frame uses the text for the label if no value specified. </td>
+</tr>
+<tr>
+<td>12</td>
+<td>highlightbackground</td>
+<td>The color of the focus highlight border when the widget doesn't have the focus. </td>
+</tr>
+<tr>
+<td>13</td>
+<td>highlightcolor</td>
+<td>The color of the focus highlight when the widget has the focus. </td>
+</tr>
+<tr>
+<td>14</td>
+<td>highlightthickness</td>
+<td>The width of the focus highlight border. </td>
+</tr>
+<tr>
+<td>15</td>
+<td>padx</td>
+<td>The horizontal padding of the widget. </td>
+</tr>
+<tr>
+<td>16</td>
+<td>pady</td>
+<td>The vertical padding of the widget. </td>
+</tr>
+<tr>
+<td>17</td>
+<td>relief</td>
+<td>It represents the border style. The default value is GROOVE. </td>
+</tr>
+<tr>
+<td>18</td>
+<td>text</td>
+<td>It represents the string containing the label text.</td>
+</tr>
+<tr>
+<td>19</td>
+<td>width</td>
+<td>It represents the width of the frame. </td>
+</tr>
+</table>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+# !/usr/bin/python3
+
+from tkinter import *
+
+
+
+top = Tk()
+
+top.geometry("300x200")
+
+
+
+labelframe1 = LabelFrame(top, text="Positive Comments")
+
+labelframe1.pack(fill="both", expand="yes")
+
+
+
+toplabel = Label(labelframe1, text="Place to put the positive comments")
+
+toplabel.pack()
+
+
+
+labelframe2 = LabelFrame(top, text = "Negative Comments")
+
+labelframe2.pack(fill="both", expand = "yes")
+
+
+
+bottomlabel = Label(labelframe2,text = "Place to put the negative comments")
+
+bottomlabel.pack()
+
+
+
+top.mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter LabelFrame" src="python/images/python-tkinter-labelframe-output.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-messagebox">Tkinter messagebox</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-panedwindow" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-messagebox" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html></body></html>

@@ -1,0 +1,734 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-labelframe">next ¡ú</a>
+<a class="next" href="python-tkinter-spinbox">¡û prev</a>
+</div>
+<h1 class="h1">Tkinter PanedWindow</h1>
+<p>The PanedWindow widget acts like a Container widget which contains one or more child widgets (panes) arranged horizontally or vertically. The child panes can be resized by the user, by moving the separator lines known as sashes by using the mouse.</p>
+<p>Each pane contains only one widget. The PanedWindow is used to implement the different layouts in the python applications.</p>
+<p>The syntax to use the PanedWindow is given below. </p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+w= PanedWindow(master, options) 
+</textarea></div>
+<p>A list of possible options is given below. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>bg</td>
+<td>It represents the background color of the widget when it doesn't have the focus.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>bd</td>
+<td>It represents the 3D border size of the widget. The default option specifies that the trough contains no border whereas the arrowheads and slider contain the 2-pixel border size.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>borderwidth</td>
+<td>It represents the border width of the widget. The default is 2 pixel.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>cursor</td>
+<td>The mouse pointer is changed to the specified cursor type when it is over the window.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>handlepad</td>
+<td>This option represents the distance between the handle and the end of the sash. For the horizontal orientation, it is the distance between the top of the sash and the handle. The default is 8 pixels.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>handlesize</td>
+<td>It represents the size of the handle. The default size is 8 pixels. However, the handle will always be a square.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>height</td>
+<td>It represents the height of the widget. If we do not specify the height, it will be calculated by the height of the child window.</td>
+</tr>
+<tr>
+<td>8 orient The orient will be set to HORIZONTAL if we want to place the child windows side by side. It can be set to VERTICAL if we want to place the child windows from top to bottom.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>relief</td>
+<td>It represents the type of the border. The default is FLAT.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>sashpad</td>
+<td>It represents the padding to be done around each sash. The default is 0.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>sashrelief</td>
+<td>It represents the type of the border around each of the sash. The default is FLAT.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>sashwidth</td>
+<td>It represents the width of the sash. The default is 2 pixels.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>showhandle</td>
+<td>It is set to True to display the handles. The default value is false.</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Width</td>
+<td>It represents the width of the widget. If we don't specify the width of the widget, it will be calculated by the size of the child widgets. </td>
+</tr>
+</table>
+<h2 class="h2">Methods </h2>
+<p>There are the following methods that are associated with the PanedWindow. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Method</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>add(child, options)</td>
+<td>It is used to add a window to the parent window. </td>
+</tr>
+<tr>
+<td>2</td>
+<td>get(startindex, endindex)</td>
+<td>This method is used to get the text present at the specified range.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>config(options)</td>
+<td>It is used to configure the widget with the specified options.</td>
+</tr>
+</table>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+# !/usr/bin/python3
+from tkinter import *
+
+def add():
+    a = int(e1.get())
+    b = int(e2.get())
+    leftdata = str(a+b)
+    left.insert(1,leftdata)
+
+w1 = PanedWindow()
+w1.pack(fill = BOTH, expand = 1)
+
+left = Entry(w1, bd = 5)
+w1.add(left)
+
+w2 = PanedWindow(w1, orient = VERTICAL)
+w1.add(w2)
+
+e1 = Entry(w2)
+e2 = Entry(w2)
+
+w2.add(e1)
+w2.add(e2)
+
+bottom = Button(w2, text = "Add", command = add)
+w2.add(bottom)
+
+mainloop()
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter PanedWindow" src="python/images/python-tkinter-panedwindow-output.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-labelframe">Tkinter LabelFrame</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-spinbox" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-labelframe" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-labelframe">next ¡ú</a>
+<a class="next" href="python-tkinter-spinbox">¡û prev</a>
+</div>
+<h1 class="h1">Tkinter PanedWindow</h1>
+<p>The PanedWindow widget acts like a Container widget which contains one or more child widgets (panes) arranged horizontally or vertically. The child panes can be resized by the user, by moving the separator lines known as sashes by using the mouse.</p>
+<p>Each pane contains only one widget. The PanedWindow is used to implement the different layouts in the python applications.</p>
+<p>The syntax to use the PanedWindow is given below. </p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+w= PanedWindow(master, options) 
+
+</textarea></div>
+<p>A list of possible options is given below. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>bg</td>
+<td>It represents the background color of the widget when it doesn't have the focus.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>bd</td>
+<td>It represents the 3D border size of the widget. The default option specifies that the trough contains no border whereas the arrowheads and slider contain the 2-pixel border size.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>borderwidth</td>
+<td>It represents the border width of the widget. The default is 2 pixel.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>cursor</td>
+<td>The mouse pointer is changed to the specified cursor type when it is over the window.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>handlepad</td>
+<td>This option represents the distance between the handle and the end of the sash. For the horizontal orientation, it is the distance between the top of the sash and the handle. The default is 8 pixels.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>handlesize</td>
+<td>It represents the size of the handle. The default size is 8 pixels. However, the handle will always be a square.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>height</td>
+<td>It represents the height of the widget. If we do not specify the height, it will be calculated by the height of the child window.</td>
+</tr>
+<tr>
+<td>8 orient The orient will be set to HORIZONTAL if we want to place the child windows side by side. It can be set to VERTICAL if we want to place the child windows from top to bottom.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>relief</td>
+<td>It represents the type of the border. The default is FLAT.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>sashpad</td>
+<td>It represents the padding to be done around each sash. The default is 0.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>sashrelief</td>
+<td>It represents the type of the border around each of the sash. The default is FLAT.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>sashwidth</td>
+<td>It represents the width of the sash. The default is 2 pixels.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>showhandle</td>
+<td>It is set to True to display the handles. The default value is false.</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Width</td>
+<td>It represents the width of the widget. If we don't specify the width of the widget, it will be calculated by the size of the child widgets. </td>
+</tr>
+</table>
+<h2 class="h2">Methods </h2>
+<p>There are the following methods that are associated with the PanedWindow. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Method</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>add(child, options)</td>
+<td>It is used to add a window to the parent window. </td>
+</tr>
+<tr>
+<td>2</td>
+<td>get(startindex, endindex)</td>
+<td>This method is used to get the text present at the specified range.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>config(options)</td>
+<td>It is used to configure the widget with the specified options.</td>
+</tr>
+</table>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+# !/usr/bin/python3
+
+from tkinter import *
+
+
+
+def add():
+
+    a = int(e1.get())
+
+    b = int(e2.get())
+
+    leftdata = str(a+b)
+
+    left.insert(1,leftdata)
+
+
+
+w1 = PanedWindow()
+
+w1.pack(fill = BOTH, expand = 1)
+
+
+
+left = Entry(w1, bd = 5)
+
+w1.add(left)
+
+
+
+w2 = PanedWindow(w1, orient = VERTICAL)
+
+w1.add(w2)
+
+
+
+e1 = Entry(w2)
+
+e2 = Entry(w2)
+
+
+
+w2.add(e1)
+
+w2.add(e2)
+
+
+
+bottom = Button(w2, text = "Add", command = add)
+
+w2.add(bottom)
+
+
+
+mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter PanedWindow" src="python/images/python-tkinter-panedwindow-output.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-labelframe">Tkinter LabelFrame</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-spinbox" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-labelframe" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-labelframe">next ¡ú</a>
+<a class="next" href="python-tkinter-spinbox">¡û prev</a>
+</div>
+<h1 class="h1">Tkinter PanedWindow</h1>
+<p>The PanedWindow widget acts like a Container widget which contains one or more child widgets (panes) arranged horizontally or vertically. The child panes can be resized by the user, by moving the separator lines known as sashes by using the mouse.</p>
+<p>Each pane contains only one widget. The PanedWindow is used to implement the different layouts in the python applications.</p>
+<p>The syntax to use the PanedWindow is given below. </p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+w= PanedWindow(master, options) 
+
+</textarea></div>
+<p>A list of possible options is given below. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>bg</td>
+<td>It represents the background color of the widget when it doesn't have the focus.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>bd</td>
+<td>It represents the 3D border size of the widget. The default option specifies that the trough contains no border whereas the arrowheads and slider contain the 2-pixel border size.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>borderwidth</td>
+<td>It represents the border width of the widget. The default is 2 pixel.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>cursor</td>
+<td>The mouse pointer is changed to the specified cursor type when it is over the window.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>handlepad</td>
+<td>This option represents the distance between the handle and the end of the sash. For the horizontal orientation, it is the distance between the top of the sash and the handle. The default is 8 pixels.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>handlesize</td>
+<td>It represents the size of the handle. The default size is 8 pixels. However, the handle will always be a square.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>height</td>
+<td>It represents the height of the widget. If we do not specify the height, it will be calculated by the height of the child window.</td>
+</tr>
+<tr>
+<td>8 orient The orient will be set to HORIZONTAL if we want to place the child windows side by side. It can be set to VERTICAL if we want to place the child windows from top to bottom.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>relief</td>
+<td>It represents the type of the border. The default is FLAT.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>sashpad</td>
+<td>It represents the padding to be done around each sash. The default is 0.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>sashrelief</td>
+<td>It represents the type of the border around each of the sash. The default is FLAT.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>sashwidth</td>
+<td>It represents the width of the sash. The default is 2 pixels.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>showhandle</td>
+<td>It is set to True to display the handles. The default value is false.</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Width</td>
+<td>It represents the width of the widget. If we don't specify the width of the widget, it will be calculated by the size of the child widgets. </td>
+</tr>
+</table>
+<h2 class="h2">Methods </h2>
+<p>There are the following methods that are associated with the PanedWindow. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Method</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>add(child, options)</td>
+<td>It is used to add a window to the parent window. </td>
+</tr>
+<tr>
+<td>2</td>
+<td>get(startindex, endindex)</td>
+<td>This method is used to get the text present at the specified range.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>config(options)</td>
+<td>It is used to configure the widget with the specified options.</td>
+</tr>
+</table>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+# !/usr/bin/python3
+
+from tkinter import *
+
+
+
+def add():
+
+    a = int(e1.get())
+
+    b = int(e2.get())
+
+    leftdata = str(a+b)
+
+    left.insert(1,leftdata)
+
+
+
+w1 = PanedWindow()
+
+w1.pack(fill = BOTH, expand = 1)
+
+
+
+left = Entry(w1, bd = 5)
+
+w1.add(left)
+
+
+
+w2 = PanedWindow(w1, orient = VERTICAL)
+
+w1.add(w2)
+
+
+
+e1 = Entry(w2)
+
+e2 = Entry(w2)
+
+
+
+w2.add(e1)
+
+w2.add(e2)
+
+
+
+bottom = Button(w2, text = "Add", command = add)
+
+w2.add(bottom)
+
+
+
+mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter PanedWindow" src="python/images/python-tkinter-panedwindow-output.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-labelframe">Tkinter LabelFrame</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-spinbox" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-labelframe" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="python-tkinter-labelframe">next ¡ú</a>
+<a class="next" href="python-tkinter-spinbox">¡û prev</a>
+</div>
+<h1 class="h1">Tkinter PanedWindow</h1>
+<p>The PanedWindow widget acts like a Container widget which contains one or more child widgets (panes) arranged horizontally or vertically. The child panes can be resized by the user, by moving the separator lines known as sashes by using the mouse.</p>
+<p>Each pane contains only one widget. The PanedWindow is used to implement the different layouts in the python applications.</p>
+<p>The syntax to use the PanedWindow is given below. </p>
+<h3 class="h3">Syntax</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+w= PanedWindow(master, options) 
+
+</textarea></div>
+<p>A list of possible options is given below. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>bg</td>
+<td>It represents the background color of the widget when it doesn't have the focus.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>bd</td>
+<td>It represents the 3D border size of the widget. The default option specifies that the trough contains no border whereas the arrowheads and slider contain the 2-pixel border size.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>borderwidth</td>
+<td>It represents the border width of the widget. The default is 2 pixel.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>cursor</td>
+<td>The mouse pointer is changed to the specified cursor type when it is over the window.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>handlepad</td>
+<td>This option represents the distance between the handle and the end of the sash. For the horizontal orientation, it is the distance between the top of the sash and the handle. The default is 8 pixels.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>handlesize</td>
+<td>It represents the size of the handle. The default size is 8 pixels. However, the handle will always be a square.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>height</td>
+<td>It represents the height of the widget. If we do not specify the height, it will be calculated by the height of the child window.</td>
+</tr>
+<tr>
+<td>8 orient The orient will be set to HORIZONTAL if we want to place the child windows side by side. It can be set to VERTICAL if we want to place the child windows from top to bottom.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>relief</td>
+<td>It represents the type of the border. The default is FLAT.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>sashpad</td>
+<td>It represents the padding to be done around each sash. The default is 0.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>sashrelief</td>
+<td>It represents the type of the border around each of the sash. The default is FLAT.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>sashwidth</td>
+<td>It represents the width of the sash. The default is 2 pixels.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>showhandle</td>
+<td>It is set to True to display the handles. The default value is false.</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Width</td>
+<td>It represents the width of the widget. If we don't specify the width of the widget, it will be calculated by the size of the child widgets. </td>
+</tr>
+</table>
+<h2 class="h2">Methods </h2>
+<p>There are the following methods that are associated with the PanedWindow. </p>
+<table class="alt">
+<tr>
+<th>SN</th>
+<th>Method</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>add(child, options)</td>
+<td>It is used to add a window to the parent window. </td>
+</tr>
+<tr>
+<td>2</td>
+<td>get(startindex, endindex)</td>
+<td>This method is used to get the text present at the specified range.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>config(options)</td>
+<td>It is used to configure the widget with the specified options.</td>
+</tr>
+</table>
+<h3 class="h3">Example</h3>
+<div class="codeblock"><textarea class="python" name="code">
+
+# !/usr/bin/python3
+
+from tkinter import *
+
+
+
+def add():
+
+    a = int(e1.get())
+
+    b = int(e2.get())
+
+    leftdata = str(a+b)
+
+    left.insert(1,leftdata)
+
+
+
+w1 = PanedWindow()
+
+w1.pack(fill = BOTH, expand = 1)
+
+
+
+left = Entry(w1, bd = 5)
+
+w1.add(left)
+
+
+
+w2 = PanedWindow(w1, orient = VERTICAL)
+
+w1.add(w2)
+
+
+
+e1 = Entry(w2)
+
+e2 = Entry(w2)
+
+
+
+w2.add(e1)
+
+w2.add(e2)
+
+
+
+bottom = Button(w2, text = "Add", command = add)
+
+w2.add(bottom)
+
+
+
+mainloop()
+
+</textarea></div>
+<p><strong>Output:</strong></p>
+<img alt="Python Tkinter PanedWindow" src="python/images/python-tkinter-panedwindow-output.png"/>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="python-tkinter-labelframe">Tkinter LabelFrame</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-tkinter-spinbox" style="float:left">¡û prev</a>
+<a class="next" href="python-tkinter-labelframe" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html></body></html>

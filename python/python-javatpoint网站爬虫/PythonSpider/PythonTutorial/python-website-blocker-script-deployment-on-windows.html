@@ -1,0 +1,189 @@
+<div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-tutorial">next ¡ú</a>
+<a class="next" href="python-website-blocker-script-deployment-on-linux">¡û prev</a>
+</div>
+<h1 class="h1">Script Deployment on Windows </h1>
+<p>This section of the tutorial illustrates how the python script will be deployed at start-up so that we don't need to open the terminal all the time to run the script.</p>
+<p>Lets first change our hosts file path from "/etc/hosts" to "C:\System32\drivers\etc\hosts" as the hosts file is stored at this location on windows. </p>
+<p>To schedule the tasks on the windows, we need to open the task scheduler as shown in the below image. </p>
+<img alt="Script Deployment on Windows" src="https://static.javatpoint.com/python/images/script-deployment-on-windows2.png"/>
+<p>Click on <strong>Create Task..</strong> given in the right pane of the application. </p>
+<p>The following window will open. </p>
+<img alt="Script Deployment on Windows" src="https://static.javatpoint.com/python/images/script-deployment-on-windows3.png"/>
+<p>Configure the properties and give the name and other required properties for your script. Do check the Checkbox as "<strong>Run with highest privileges</strong>". </p>
+<img alt="Script Deployment on Windows" src="https://static.javatpoint.com/python/images/script-deployment-on-windows4.png"/>
+<p>Go to Triggers and create a new trigger as shown in the below image. </p>
+<p>Select the "At startup" option from the drop-down list so that the script can run at start-up.</p>
+<img alt="Script Deployment on Windows" src="https://static.javatpoint.com/python/images/script-deployment-on-windows5.png"/>
+<p>Now, go to Actions and create a new action by clicking on new. </p>
+<img alt="Script Deployment on Windows" src="https://static.javatpoint.com/python/images/script-deployment-on-windows6.png"/>
+<p>The following window will open. Select the "<strong>Start a program</strong>" action from the drop-down list and browse the path to the script, i.e. blocker.py (in my case it is E:\blocker.py) and click OK. </p>
+<img alt="Script Deployment on Windows" src="https://static.javatpoint.com/python/images/script-deployment-on-windows7.png"/>
+<p>Now, click on Conditions and deselect the 2nd option which says "<strong>Start the task only if the computer is on AC power.</strong>"</p>
+<img alt="Script Deployment on Windows" src="https://static.javatpoint.com/python/images/script-deployment-on-windows8.png"/>
+<p>Now, go to settings and click OK as shown in the following image. </p>
+<img alt="Script Deployment on Windows" src="https://static.javatpoint.com/python/images/script-deployment-on-windows9.png"/>
+<p>Now, we got our task Website-blocker scheduled at system start-up. We can check this in the task list as shown in the following image.</p>
+<img alt="Script Deployment on Windows" src="https://static.javatpoint.com/python/images/script-deployment-on-windows10.png"/>
+<p>Now, we need to restart our system to make the script active on system start-up. </p>
+<p>Restart the system now, and try to access the blocked website www.facebook.com as we are in working hours now. </p>
+<p>It will show the display which looks like following. </p>
+<img alt="Script Deployment on Windows" src="https://static.javatpoint.com/python/images/script-deployment-on-windows11.png"/>
+<p>Hence, we have got our script working fine on system start-up and block the access to www.facebook.com (or any website you want) automatically. </p>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-tutorial">NumPy Tutorial</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-website-blocker-script-deployment-on-linux" style="float:left">¡û prev</a>
+<a class="next" href="numpy-tutorial" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-tutorial">next ¡ú</a>
+<a class="next" href="python-website-blocker-script-deployment-on-linux">¡û prev</a>
+</div>
+<h1 class="h1">Script Deployment on Windows </h1>
+<p>This section of the tutorial illustrates how the python script will be deployed at start-up so that we don't need to open the terminal all the time to run the script.</p>
+<p>Lets first change our hosts file path from "/etc/hosts" to "C:\System32\drivers\etc\hosts" as the hosts file is stored at this location on windows. </p>
+<p>To schedule the tasks on the windows, we need to open the task scheduler as shown in the below image. </p>
+<img alt="Script Deployment on Windows" src="https://static.javatpoint.com/python/images/script-deployment-on-windows2.png"/>
+<p>Click on <strong>Create Task..</strong> given in the right pane of the application. </p>
+<p>The following window will open. </p>
+<img alt="Script Deployment on Windows" src="https://static.javatpoint.com/python/images/script-deployment-on-windows3.png"/>
+<p>Configure the properties and give the name and other required properties for your script. Do check the Checkbox as "<strong>Run with highest privileges</strong>". </p>
+<img alt="Script Deployment on Windows" src="https://static.javatpoint.com/python/images/script-deployment-on-windows4.png"/>
+<p>Go to Triggers and create a new trigger as shown in the below image. </p>
+<p>Select the "At startup" option from the drop-down list so that the script can run at start-up.</p>
+<img alt="Script Deployment on Windows" src="https://static.javatpoint.com/python/images/script-deployment-on-windows5.png"/>
+<p>Now, go to Actions and create a new action by clicking on new. </p>
+<img alt="Script Deployment on Windows" src="https://static.javatpoint.com/python/images/script-deployment-on-windows6.png"/>
+<p>The following window will open. Select the "<strong>Start a program</strong>" action from the drop-down list and browse the path to the script, i.e. blocker.py (in my case it is E:\blocker.py) and click OK. </p>
+<img alt="Script Deployment on Windows" src="https://static.javatpoint.com/python/images/script-deployment-on-windows7.png"/>
+<p>Now, click on Conditions and deselect the 2nd option which says "<strong>Start the task only if the computer is on AC power.</strong>"</p>
+<img alt="Script Deployment on Windows" src="https://static.javatpoint.com/python/images/script-deployment-on-windows8.png"/>
+<p>Now, go to settings and click OK as shown in the following image. </p>
+<img alt="Script Deployment on Windows" src="https://static.javatpoint.com/python/images/script-deployment-on-windows9.png"/>
+<p>Now, we got our task Website-blocker scheduled at system start-up. We can check this in the task list as shown in the following image.</p>
+<img alt="Script Deployment on Windows" src="https://static.javatpoint.com/python/images/script-deployment-on-windows10.png"/>
+<p>Now, we need to restart our system to make the script active on system start-up. </p>
+<p>Restart the system now, and try to access the blocked website www.facebook.com as we are in working hours now. </p>
+<p>It will show the display which looks like following. </p>
+<img alt="Script Deployment on Windows" src="https://static.javatpoint.com/python/images/script-deployment-on-windows11.png"/>
+<p>Hence, we have got our script working fine on system start-up and block the access to www.facebook.com (or any website you want) automatically. </p>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-tutorial">NumPy Tutorial</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-website-blocker-script-deployment-on-linux" style="float:left">¡û prev</a>
+<a class="next" href="numpy-tutorial" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-tutorial">next ¡ú</a>
+<a class="next" href="python-website-blocker-script-deployment-on-linux">¡û prev</a>
+</div>
+<h1 class="h1">Script Deployment on Windows </h1>
+<p>This section of the tutorial illustrates how the python script will be deployed at start-up so that we don't need to open the terminal all the time to run the script.</p>
+<p>Lets first change our hosts file path from "/etc/hosts" to "C:\System32\drivers\etc\hosts" as the hosts file is stored at this location on windows. </p>
+<p>To schedule the tasks on the windows, we need to open the task scheduler as shown in the below image. </p>
+<img alt="Script Deployment on Windows" src="https://static.javatpoint.com/python/images/script-deployment-on-windows2.png"/>
+<p>Click on <strong>Create Task..</strong> given in the right pane of the application. </p>
+<p>The following window will open. </p>
+<img alt="Script Deployment on Windows" src="https://static.javatpoint.com/python/images/script-deployment-on-windows3.png"/>
+<p>Configure the properties and give the name and other required properties for your script. Do check the Checkbox as "<strong>Run with highest privileges</strong>". </p>
+<img alt="Script Deployment on Windows" src="https://static.javatpoint.com/python/images/script-deployment-on-windows4.png"/>
+<p>Go to Triggers and create a new trigger as shown in the below image. </p>
+<p>Select the "At startup" option from the drop-down list so that the script can run at start-up.</p>
+<img alt="Script Deployment on Windows" src="https://static.javatpoint.com/python/images/script-deployment-on-windows5.png"/>
+<p>Now, go to Actions and create a new action by clicking on new. </p>
+<img alt="Script Deployment on Windows" src="https://static.javatpoint.com/python/images/script-deployment-on-windows6.png"/>
+<p>The following window will open. Select the "<strong>Start a program</strong>" action from the drop-down list and browse the path to the script, i.e. blocker.py (in my case it is E:\blocker.py) and click OK. </p>
+<img alt="Script Deployment on Windows" src="https://static.javatpoint.com/python/images/script-deployment-on-windows7.png"/>
+<p>Now, click on Conditions and deselect the 2nd option which says "<strong>Start the task only if the computer is on AC power.</strong>"</p>
+<img alt="Script Deployment on Windows" src="https://static.javatpoint.com/python/images/script-deployment-on-windows8.png"/>
+<p>Now, go to settings and click OK as shown in the following image. </p>
+<img alt="Script Deployment on Windows" src="https://static.javatpoint.com/python/images/script-deployment-on-windows9.png"/>
+<p>Now, we got our task Website-blocker scheduled at system start-up. We can check this in the task list as shown in the following image.</p>
+<img alt="Script Deployment on Windows" src="https://static.javatpoint.com/python/images/script-deployment-on-windows10.png"/>
+<p>Now, we need to restart our system to make the script active on system start-up. </p>
+<p>Restart the system now, and try to access the blocked website www.facebook.com as we are in working hours now. </p>
+<p>It will show the display which looks like following. </p>
+<img alt="Script Deployment on Windows" src="https://static.javatpoint.com/python/images/script-deployment-on-windows11.png"/>
+<p>Hence, we have got our script working fine on system start-up and block the access to www.facebook.com (or any website you want) automatically. </p>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-tutorial">NumPy Tutorial</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-website-blocker-script-deployment-on-linux" style="float:left">¡û prev</a>
+<a class="next" href="numpy-tutorial" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div><html><head><head><body><div id="city">
+<table>
+<tr><td>
+<div id="bottomnextup">
+<a class="next" href="numpy-tutorial">next ¡ú</a>
+<a class="next" href="python-website-blocker-script-deployment-on-linux">¡û prev</a>
+</div>
+<h1 class="h1">Script Deployment on Windows </h1>
+<p>This section of the tutorial illustrates how the python script will be deployed at start-up so that we don't need to open the terminal all the time to run the script.</p>
+<p>Lets first change our hosts file path from "/etc/hosts" to "C:\System32\drivers\etc\hosts" as the hosts file is stored at this location on windows. </p>
+<p>To schedule the tasks on the windows, we need to open the task scheduler as shown in the below image. </p>
+<img alt="Script Deployment on Windows" src="https://static.javatpoint.com/python/images/script-deployment-on-windows2.png"/>
+<p>Click on <strong>Create Task..</strong> given in the right pane of the application. </p>
+<p>The following window will open. </p>
+<img alt="Script Deployment on Windows" src="https://static.javatpoint.com/python/images/script-deployment-on-windows3.png"/>
+<p>Configure the properties and give the name and other required properties for your script. Do check the Checkbox as "<strong>Run with highest privileges</strong>". </p>
+<img alt="Script Deployment on Windows" src="https://static.javatpoint.com/python/images/script-deployment-on-windows4.png"/>
+<p>Go to Triggers and create a new trigger as shown in the below image. </p>
+<p>Select the "At startup" option from the drop-down list so that the script can run at start-up.</p>
+<img alt="Script Deployment on Windows" src="https://static.javatpoint.com/python/images/script-deployment-on-windows5.png"/>
+<p>Now, go to Actions and create a new action by clicking on new. </p>
+<img alt="Script Deployment on Windows" src="https://static.javatpoint.com/python/images/script-deployment-on-windows6.png"/>
+<p>The following window will open. Select the "<strong>Start a program</strong>" action from the drop-down list and browse the path to the script, i.e. blocker.py (in my case it is E:\blocker.py) and click OK. </p>
+<img alt="Script Deployment on Windows" src="https://static.javatpoint.com/python/images/script-deployment-on-windows7.png"/>
+<p>Now, click on Conditions and deselect the 2nd option which says "<strong>Start the task only if the computer is on AC power.</strong>"</p>
+<img alt="Script Deployment on Windows" src="https://static.javatpoint.com/python/images/script-deployment-on-windows8.png"/>
+<p>Now, go to settings and click OK as shown in the following image. </p>
+<img alt="Script Deployment on Windows" src="https://static.javatpoint.com/python/images/script-deployment-on-windows9.png"/>
+<p>Now, we got our task Website-blocker scheduled at system start-up. We can check this in the task list as shown in the following image.</p>
+<img alt="Script Deployment on Windows" src="https://static.javatpoint.com/python/images/script-deployment-on-windows10.png"/>
+<p>Now, we need to restart our system to make the script active on system start-up. </p>
+<p>Restart the system now, and try to access the blocked website www.facebook.com as we are in working hours now. </p>
+<p>It will show the display which looks like following. </p>
+<img alt="Script Deployment on Windows" src="https://static.javatpoint.com/python/images/script-deployment-on-windows11.png"/>
+<p>Hence, we have got our script working fine on system start-up and block the access to www.facebook.com (or any website you want) automatically. </p>
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="numpy-tutorial">NumPy Tutorial</a></span>
+</div>
+<!-- link -->
+<br/><br/>
+<div id="bottomnext">
+<a class="next" href="python-website-blocker-script-deployment-on-linux" style="float:left">¡û prev</a>
+<a class="next" href="numpy-tutorial" style="float:right">next ¡ú</a>
+</div>
+<br/><br/>
+</td></tr>
+</table>
+</div></body></html></body></html>
