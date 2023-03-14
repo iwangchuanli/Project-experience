@@ -34,29 +34,121 @@
 
 ## menu
 
-[toc]
+1. [intro](#intro)
+2. [about me](#about-me)
+3. [menu](#menu)
+4. [project intro](#project-intro)
+	1. [c](#c)
+		1. [C语言版五子棋](#c语言版五子棋)
+		2. [回溯法](#回溯法)
+		3. [词法分析](#词法分析)
+		4. [俄罗斯方块](#俄罗斯方块)
+		5. [贪吃蛇](#贪吃蛇)
+		6. [猜拳游戏](#猜拳游戏)
+		7. [简单的文件服务器和客户端](#简单的文件服务器和客户端)
+		8. [简易的Mp3](#简易的mp3)
+		9. [定时关机小程序](#定时关机小程序)
+	2. [java](#java)
+		1. [大学课本代码](#大学课本代码)
+		2. [java实用教程课本代码](#java实用教程课本代码)
+		3. [数据库存取excel数据](#数据库存取excel数据)
+		4. [俄罗斯方块](#俄罗斯方块-1)
+		5. [springbootDemo](#springbootdemo)
+		6. [经典算法实现](#经典算法实现)
+		7. [图书馆管理系统](#图书馆管理系统)
+		8. [汤姆猫游戏](#汤姆猫游戏)
+		9. [cas单点登录Demo](#cas单点登录demo)
+		10. [打字游戏](#打字游戏)
+		11. [黑马java课程实践代码](#黑马java课程实践代码)
+		12. [雷霆战机游戏](#雷霆战机游戏)
+		13. [JavaAppletDemo](#javaappletdemo)
+		14. [消息订阅demo](#消息订阅demo)
+		15. [爬虫项目](#爬虫项目)
+		16. [飞机大战](#飞机大战)
+		17. [GetLocalMac](#getlocalmac)
+		18. [\[thinking in java书本练习\](./java/java-thinking in java书本练习)](#thinking-in-java书本练习javajava-thinking-in-java书本练习)
+		19. [FileIODemo](#fileiodemo)
+		20. [算法编程题](#算法编程题)
+		21. [围棋游戏](#围棋游戏)
+		22. [学生成绩管理系统(带文档)](#学生成绩管理系统带文档)
+		23. [网络聊天室](#网络聊天室)
+		24. [Java编译器的实现](#java编译器的实现)
+		25. [AngryBirds愤怒的小鸟](#angrybirds愤怒的小鸟)
+		26. [浏览器](#浏览器)
+		27. [Oracle数据库Demo](#oracle数据库demo)
+		28. [JavaSQLdemo](#javasqldemo)
+		29. [五子棋](#五子棋)
+		30. [JavaNetworkDemo](#javanetworkdemo)
+		31. [JavaThreadDemo](#javathreaddemo)
+		32. [算法大全](#算法大全)
+		33. [代码雨特效](#代码雨特效)
+		34. [学生成绩管理系统](#学生成绩管理系统)
+		35. [JDK方法实现Demo程序](#jdk方法实现demo程序)
+		36. [thinking\_in\_java课本代码实践](#thinking_in_java课本代码实践)
+		37. [email邮件功能](#email邮件功能)
+		38. [Calculator简易计算器](#calculator简易计算器)
+		39. [SSM-Demo](#ssm-demo)
+		40. [简易的聊天程序](#简易的聊天程序)
+		41. [自制java工具类](#自制java工具类)
+		42. [服装销售系统](#服装销售系统)
+		43. [大学实验课代码](#大学实验课代码)
+		44. [贪吃蛇游戏](#贪吃蛇游戏)
+		45. [ssh用户中心](#ssh用户中心)
+		46. [hibernateDemo](#hibernatedemo)
+		47. [扫雷程序](#扫雷程序)
+		48. [扫雷游戏](#扫雷游戏)
+		49. [strutsDemo](#strutsdemo)
+	3. [python](#python)
+		1. [网站日志MR分析](#网站日志mr分析)
+		2. [django搭建个人网站](#django搭建个人网站)
+		3. [网易云音乐爬虫music\_163](#网易云音乐爬虫music_163)
+		4. [Scrapy爬虫框架Demo](#scrapy爬虫框架demo)
+		5. [百度翻译调用](#百度翻译调用)
+		6. [数据库连接Demo](#数据库连接demo)
+		7. [爬虫项目Crawler](#爬虫项目crawler)
+		8. [md文本解析](#md文本解析)
+		9. [Django博客内容爬虫](#django博客内容爬虫)
+		10. [最代码网站爬虫](#最代码网站爬虫)
+		11. [博客网站内容爬取](#博客网站内容爬取)
+		12. [图片AscII转换](#图片ascii转换)
+		13. [CSDN博客爬虫](#csdn博客爬虫)
+		14. [javatpoint网站爬虫](#javatpoint网站爬虫)
+		15. [百度关键字爬虫](#百度关键字爬虫)
+	4. [other](#other)
+		1. [百度ECharts](#百度echarts)
+		2. [简历生成器](#简历生成器)
+		3. [jquery使用示例](#jquery使用示例)
+		4. [网页版拼图游戏](#网页版拼图游戏)
+5. [License](#license)
+
 
 ## project intro
 ### c
 #### [C语言版五子棋](./c/C-小游戏项目)
-	> C语言实现的五子棋小游戏
+> C语言实现的五子棋小游戏
 #### [回溯法](./c/C-小游戏项目)
-	> C语言实现算法--回溯法 
+> C语言实现算法--回溯法 
 #### [词法分析](./c/C-小游戏项目)
-	> C语言实现词法分析器
+> C语言实现词法分析器
 #### [俄罗斯方块](./c/C-小游戏项目)
-	> C语言实现的俄罗斯方块小游戏
+> C语言实现的俄罗斯方块小游戏
 <img src="./_img/俄罗斯方块.PNG" width="200" height="200">
+
 #### [贪吃蛇](./c/C-小游戏项目)
-	> C语言实现的贪吃蛇小游戏
+> C语言实现的贪吃蛇小游戏
 <img src="./_img/贪吃蛇.PNG" width="200" height="200">
+
 #### [猜拳游戏](./c/C-小游戏项目)
-	> C语言实现的猜拳小游戏
-	<img src="./_img/猜拳.PNG" width="200" height="200">
+> C语言实现的猜拳小游戏
+
+<img src="./_img/猜拳.PNG" width="200" height="200">
+
 #### [简单的文件服务器和客户端](./c/C-简单的文件服务器和客户端)
-	> 文件服务器和客户端，可以建立连接
+
+> 文件服务器和客户端，可以建立连接
+
 #### [简易的Mp3](./c/C-简易的Mp3)
-	> MP3
+> MP3
 #### [定时关机小程序](./c/C-小游戏项目)
 
 ### java
@@ -149,4 +241,4 @@
 
 ## License
 
-[Apache](../LICENSE)
+[LICENSE](./LICENSE)
