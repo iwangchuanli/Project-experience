@@ -1,0 +1,132 @@
+<color><param>0100,0100,0100</param>Afternoon All,
+
+
+The work breakdown structure is a method of structuring work 
+scope.  It is the first activity that is undertaken when dealing with 
+projects and breaks the project into manageable sections.
+
+
+For this assignment you are required to examine the whole project 
+and provide a WBS to three levels for the whole project and 
+selecting one area only provide a 4th level.
+
+
+The way you break the project down is up to you and it must make 
+sense.
+
+
+Attached are the notes on WBS and they are repoduced here
+
+
+I can not get onto eeserver so this information is also in the U drive 
+of the NT's under EPM444
+
+<paraindent><param>left</param><bold><italic><bigger><bigger>HIERARCHICAL METHODS</paraindent>
+
+<paraindent><param>left</param></italic></bold>These methods attempt to successively 
+refine the definition of scope.  They are 
+the most common method of scope 
+organisation.</paraindent>
+
+<paraindent><param>left</param>These methods are useful in providing 
+scope checklists and allow for detail to 
+grow with the project.</paraindent>
+
+<paraindent><param>left</param>Other requirements for these systems 
+include:</paraindent>
+
+<paraindent><param>out</param>Manageable where specific authority and 
+responsibility can be assigned</paraindent>
+
+<paraindent><param>out</param>Independent or with minimal interfacing 
+with other elements</paraindent>
+
+<paraindent><param>out</param>can be integrated to give an overall 
+picture</paraindent>
+
+<paraindent><param>out</param>Measurable in terms of progress.</paraindent>
+
+<paraindent><param>left</param>They however can create divisions in 
+organisations as to the split of work 
+responsibilities.  Care should be used in 
+designing these systems to ensure 
+interface points are defined and agreed.</paraindent>
+
+<paraindent><param>left</param>These structures can also grow in size 
+at a rapid rate leading the generation of 
+"clerical monsters".</paraindent>
+
+<paraindent><param>left</param><bold><italic>TYPICAL STRUCTURES</paraindent>
+
+<paraindent><param>left</param></italic></bold>Structures vary from one organisation to 
+another and one project to another.  A 
+hierarchical structure may comprise:</paraindent>
+
+
+<center><bold>Level
+<center>Description
+
+<center></bold>1
+Total Program
+
+<center>2
+Project
+
+<center>3
+Task
+
+<center>4
+Subtask
+
+<center>5
+Work Package
+
+<center>6
+Level of Effort
+
+
+
+<paraindent><param>left</param>The upper three levels are usually 
+specified by the client.  Level 1 is 
+usually used for authorisation and 
+release of all work, budgets are 
+prepared at level 2, schedules at level 3.</paraindent>
+
+<paraindent><param>left</param>The top 3 levels represent integrated 
+efforts and should not be applied to a 
+department.</paraindent>
+
+<paraindent><param>left</param>The summation of all elements in one 
+level must be the sum of all work on the 
+next lowest level.  Each element of work 
+should only be assigned to one and only 
+one level of effort.</paraindent>
+
+<paraindent><param>left</param>In setting up a system, the following 
+should be considered:</paraindent>
+
+<paraindent><param>out</param>The technical and complexity 
+requirements of the program</paraindent>
+
+<paraindent><param>out</param>The program cost.</paraindent>
+
+<paraindent><param>out</param>The time span of the program.</paraindent>
+
+<paraindent><param>out</param>The executor's resource requirements.</paraindent>
+
+<paraindent><param>out</param>Customer and contractor internal 
+management control and reporting 
+structures.</paraindent>
+
+<paraindent><param>out</param>Number of organisations involved in the 
+project.</paraindent>
+
+
+<nofill>
+
+Chris Croft              email: ccroft@ee.uwa.edu.au
+phone: +61 8 9380 3097   fax:   +61 8 9380 1065 
+Dept. of Electrical & Electronic Engineering    
+The University of Western Australia 
+NEDLANDS WA  6907  Western Australia
+

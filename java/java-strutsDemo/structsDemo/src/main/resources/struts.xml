@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+ "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+ "http://struts.apache.org/dtds/struts-2.5.dtd">
+ <struts>
+    <package name="default" namespace="/" extends="struts-default">
+        <!-- 定义一个名为user的Action，实现类为com.zhaoyuan.action.UserAction -->
+        <action name="user" class="com.structs.action.UserAction">
+            <!-- 配置execute()方法返回值与视图资源 之间的映射关系-->
+            <result name="success">/success.jsp</result>
+            <result name="error">/error.jsp</result>
+        </action>
+    </package>
+ </struts>

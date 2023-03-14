@@ -1,0 +1,8 @@
+// These lines grant permissions to any code loaded from the directory shown.
+// Edit the directory to match the installation on your system.
+// On Windows systems, change the forward slashes to double backslashes: "\\".
+grant codeBase "file:/home/david/Books/JavaExamples2/Examples" {
+     // Allow the server to listen for and accept network connections 
+     // from any host on any port > 1024
+     permission java.net.SocketPermission "*:1024-", "listen,accept";
+};

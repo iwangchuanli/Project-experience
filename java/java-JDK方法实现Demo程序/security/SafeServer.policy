@@ -1,0 +1,39 @@
+// This file grants the SafeServer class the permissions it needs to load
+// Service classes through a URLClassLoader, and grants the Service classes
+// permission to read and write files in and beneath the directory specified
+// by the service.tmp system property.  Note that you'll need to edit the 
+// URL that specifies the location of the SafeServer class, and that for 
+// Windows systems, you'll need to replace "/" with "\\"
+
+// Grant permissions to the SafeServer class.  
+// Edit the directory for your system.
+grant codeBase "file:/home/david/Books/JavaExamples2/Examples" {
+     // Allow the server to listen for and accept network connections 
+     // from any host on any port > 1024
+     permission java.net.SocketPermission "*:1024-", "listen,accept";
+
+     // Allow the server to create a class loader to load service classes
+     permission java.lang.RuntimePermission "createClassLoader";
+
+     // Give the server permission to read the directory that contains the
+     // service classes.  If we were using a network URL instead of a file URL
+     // we'd need to add a SocketPermission instead of a FilePermission
+     permission java.io.FilePermission "${service.dir}/-", "read";
+
+     // The server cannot grant permissions to the Service classes unless it
+     // has those permissions itself. So we give the server these two Service
+     // permissions.
+     permission java.util.PropertyPermission "service.tmp", "read";
+     permission java.io.FilePermission "${service.tmp}/-", "read,write";
+};
+
+// Grant permissions to classes loaded from the directory specified by the
+// service.dir system property.  If we were using a network URL instead of a
+// local file: URL, this line would have to be different.
+grant codeBase "file:${service.dir}" {
+     // Services can read the system property "service.tmp"      
+     permission java.util.PropertyPermission "service.tmp", "read";
+     // And they can read and write files in the directory specified by
+     // that system property
+     permission java.io.FilePermission "${service.tmp}/-", "read,write";
+};

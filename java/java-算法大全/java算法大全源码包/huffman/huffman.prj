@@ -1,0 +1,21 @@
+sun.jws.version.2
+sun.jws.altText=If you had a java-enabled browser, you would see an applet here.
+sun.jws.demoURL=tts.html
+sun.jws.alignment=Top
+sun.jws.classname=AlgAnimApp
+sun.jws.useVisual=false
+sun.jws.type=applet
+sun.jws.instance=huffman
+sun.jws.options=-g
+sun.jws.files=List
+AlgAnimApp.java
+AlgAnimFrame.java
+AlgThread.java
+ComPanel.java
+ControlPanel.java
+DrawingPanel.java
+Node.java
+TextFrame.java
+Tree.java
+tts.html
+EndOfList

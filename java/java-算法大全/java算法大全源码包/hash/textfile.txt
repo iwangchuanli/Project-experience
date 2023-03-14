@@ -1,0 +1,86 @@
+Printed Notes
+
+For a ridiculously low price, you can obtain a pre printed copy of the notes
+from the bookshop You are strongly advised to do so, as this will enable
+you to avoid laboriously taking notes in lectures and concentrate on
+understanding the material It will also save you a large amount of time
+printing each page from a Web browser
+
+The printed notes accurately represent the span of the course you will be
+specifically advised if examinable material not appearing in these notes is
+added to the course But note that anything appearing in laboratory
+exercises and assignments is automatically considered examinable this
+includes the feedback notes
+
+However, the Web notes are undergoing constant revision and improvement
+comments are welcome so you are advised to browse through the Web copies
+for updated pages You will be advised in lectures if there is a substantial
+change to any section
+
+Textbooks
+
+The material on data structures and algorithms may be found in many texts
+lists of reference books in the library are part of the Web notes The Web
+notes are, of necessity, abbreviated and should not be considered a
+substitute for studying the material in texts
+
+Using the notes
+
+The notes make use of the hypertext capabilities of Web browsers you will
+find highlighted links to subsidiary information scattered throughout the
+text Occasionally these links will point to Web resources which may be
+located off campus and take some time to download you may find it
+productive to use the Stop facility on the browser to abort the current
+fetch you can try again later when the Net is less heavily loaded
+
+In all cases, the browsers Back command should take you back to the
+original page
+
+Program source
+
+Example source code for programs will sometimes pop up in a separate window
+This is to enable you to scan the code while referring to the notes in the
+main page You will probably need to move the source code page out of the
+way of the main page When you have finished with the source code page,
+select File Close to close the window Selecting File Exit will close the
+window and exit from Netscape possibly not your intention
+
+     The first tutorial will be in the fourth week of semester As long
+     as one tutorial group does not become ridiculously overloaded, you
+     may go to whichever tutorial suits you best
+
+
+Four assignment exercises will be set for the semester You should be able
+to complete most of the first two assignments during the initial laboratory
+sessions Completed assignments which
+should include a summary report, the program code and any relevant output
+should be submitted by following the submission instructions at the end of
+the Web page
+
+The report should be in plain ASCII text The native form of any
+wordprocessor will be rejected If you prefer to use a word processor to
+prepare your report, then ensure that you export a plain text file for
+submission when you have finished all word processors have this capability
+
+This allows you to concentrate on the content of the report, rather than the
+cosmetics of its format However, the general standards for report structure
+and organisation title, authors, introduction, body grouped into related
+paragraphs, conclusion, etc expected for any other unit apply here also
+
+Communication
+
+This course attempts to be paperless as much as possible Assignments will
+be submitted electronically and comments will be emailed back to you Please
+ensure that your reports include email addresses of all authors
+
+The preferred method for communication with the lecturer and tutors is, at
+least initially, email All routine queries will be handled this way we
+will attempt to respond to all email messages by the next day If you have
+more complex problems, email for an appointment suggest a few times when
+you will be free You may of course try to find me in my office at any time
+but early in the morning is likely to be a waste of time, but emailing for
+an appointment first ensures you some priority and enables you to avoid
+wasting a trip to the floor when there may be zero probability of
+success
+
+John Morris

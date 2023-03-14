@@ -1,0 +1,9 @@
+INSERT INTO `reader` (`id`, `readername`, `readertype`, `sex`, `max_num`, `days_num`) VALUES ('00000', '小明', '教师', '男', 10, 30);
+INSERT INTO `reader` (`id`, `readername`, `readertype`, `sex`, `max_num`, `days_num`) VALUES ('00001', '小花', '学生', '女', 5, 15);
+INSERT INTO `reader` (`id`, `readername`, `readertype`, `sex`, `max_num`, `days_num`) VALUES ('00002', '张三', '教师', '男', 10, 90);
+INSERT INTO `reader` (`id`, `readername`, `readertype`, `sex`, `max_num`, `days_num`) VALUES ('00005', '吴雨', '学生', '男', 3, 60);
+INSERT INTO `reader` (`id`, `readername`, `readertype`, `sex`, `max_num`, `days_num`) VALUES ('00006', '张欣欣', '学生', '女', 3, 60);
+INSERT INTO `reader` (`id`, `readername`, `readertype`, `sex`, `max_num`, `days_num`) VALUES ('00007', '杨秀杰', '学生', '女', 3, 60);
+INSERT INTO `reader` (`id`, `readername`, `readertype`, `sex`, `max_num`, `days_num`) VALUES ('00008', '刘浩', '学生', '男', 3, 60);
+INSERT INTO `reader` (`id`, `readername`, `readertype`, `sex`, `max_num`, `days_num`) VALUES ('00009', '李阳', '教师', '男', 5, 90);
+INSERT INTO `reader` (`id`, `readername`, `readertype`, `sex`, `max_num`, `days_num`) VALUES ('00010', '黄汉明', '教师', '男', 5, 90);

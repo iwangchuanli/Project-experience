@@ -1,0 +1,10 @@
+INSERT INTO `borrow` (`id`, `book_id`, `reader_id`, `borrow_date`, `back_date`, `if_back`) VALUES ('000000015', 'A00001', '00001', '2010-7-12', '2010-7-12', '否');
+INSERT INTO `borrow` (`id`, `book_id`, `reader_id`, `borrow_date`, `back_date`, `if_back`) VALUES ('000000016', 'A00004', '00002', '2013-1-12', '2013-1-12', '是');
+INSERT INTO `borrow` (`id`, `book_id`, `reader_id`, `borrow_date`, `back_date`, `if_back`) VALUES ('000000017', 'A00005', '00002', '2008-1-12', '2008-1-12', '是');
+INSERT INTO `borrow` (`id`, `book_id`, `reader_id`, `borrow_date`, `back_date`, `if_back`) VALUES ('000000019', 'A00004', '00002', '2010-7-12', '2010-7-12', '是');
+INSERT INTO `borrow` (`id`, `book_id`, `reader_id`, `borrow_date`, `back_date`, `if_back`) VALUES ('000000020', 'A00009', '00007', '2013-9-1', '2013-9-1', '否');
+INSERT INTO `borrow` (`id`, `book_id`, `reader_id`, `borrow_date`, `back_date`, `if_back`) VALUES ('000000021', 'A00001', '00007', '2013-8-1', '2013-8-1', '否');
+INSERT INTO `borrow` (`id`, `book_id`, `reader_id`, `borrow_date`, `back_date`, `if_back`) VALUES ('000000022', 'A00002', '00007', '2013-9-1', '2013-9-1', '否');
+INSERT INTO `borrow` (`id`, `book_id`, `reader_id`, `borrow_date`, `back_date`, `if_back`) VALUES ('000000023', 'A00004', '00007', '2013-8-11', '2013-8-11', '否');
+INSERT INTO `borrow` (`id`, `book_id`, `reader_id`, `borrow_date`, `back_date`, `if_back`) VALUES ('000000024', 'A00005', '00005', '2013-9-1', '2013-9-1', '是');
+INSERT INTO `borrow` (`id`, `book_id`, `reader_id`, `borrow_date`, `back_date`, `if_back`) VALUES ('000000025', 'A00005', '00008', '2013-9-3', '2013-9-3', '否');
